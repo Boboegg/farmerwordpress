@@ -1,0 +1,291 @@
+/* ===================================================
+   1. 全站基礎優化 (不干擾 Astra 背景色)
+   =================================================== */
+html { scroll-behavior: smooth; }
+
+/* 💡 移除 body 背景設定，確保 Astra 原始背景顯現 */
+body { background-image: none !important; }
+
+/* 自訂文字選取顏色 */
+::selection {
+     background: rgba(93, 109, 61, 0.3);
+     color: #5d6d3d;
+ }
+
+/* 捲動條美化 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb {
+     background: #5d6d3d;
+     border-radius: 10px;
+ }
+::-webkit-scrollbar-thumb:hover { background: #4a5a31; }
+
+/* ===================================================
+   2. 內容卡片與內文互動 (包括計畫說明、場域等)
+   =================================================== */
+.content-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 35px;
+    border-top: 6px solid #5d6d3d;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.content-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* 內文連結美化：滑動底線 */
+.content-body a {
+    color: #5d6d3d;
+    text-decoration: none;
+    position: relative;
+    font-weight: 600;
+}
+.content-body a::after {
+    content: ''; position: absolute; width: 100%; transform: scaleX(0);
+    height: 2px; bottom: 0; left: 0; background-color: #5d6d3d;
+    transform-origin: bottom right; transition: transform 0.3s ease-out;
+}
+.content-body a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+
+/* 圖片互動效果 */
+.content-card img { transition: all 0.4s ease-in-out !important; }
+.content-card img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
+}
+
+/* ===================================================
+   3. 研究團隊：徹底透明版 (完全移除白底框)
+   =================================================== */
+.my-team-card {
+    /* 💡 強制背景透明，確保任何時候都不會出現白框 */
+    background: transparent !important;
+    padding: 20px !important;
+    border-radius: 20px !important;
+
+    /* 移除邊框與陰影，讓它完美融合在米色背景中 */
+    border: none !important;
+    box-shadow: none !important;
+
+    /* 保持滑順的動畫感 */
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 20px !important;
+}
+
+/* 懸停效果：滑動時依然保持透明，只有向上浮動的位移感 */
+.my-team-card:hover {
+    background: transparent !important; /* 💡 確保滑動時絕對不顯示白底 */
+    transform: translateY(-12px) !important;
+    box-shadow: none !important; /* 💡 移除陰影，避免產生顏色塊 */
+}
+
+/* 照片美化：保留圓角與縮放 */
+.my-team-card img {
+    border-radius: 15px !important;
+    transition: transform 0.5s ease !important;
+}
+
+/* 💡 滑鼠移上去時，只有照片會優雅地放大 8% */
+.my-team-card:hover img {
+    transform: scale(1.08) !important;
+}
+
+/* 姓名與職稱文字變色 (尊嚴綠) */
+.my-team-card h2, .my-team-card h3 {
+    transition: color 0.3s !important;
+    margin-top: 15px !important;
+    font-weight: 800 !important;
+}
+
+/* 💡 滑鼠移上去時，老師的名字會變成您的品牌綠色 */
+.my-team-card:hover h2, .my-team-card:hover h3 {
+    color: #5d6d3d !important;
+}
+
+/* ===================================================
+   4. 側邊欄完全體 (Sticky & UI)
+   =================================================== */
+.sidebar-wrapper {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 120px !important;
+    align-self: flex-start !important;
+    z-index: 999;
+}
+
+@media (max-width: 1024px) {
+    .sidebar-wrapper { position: relative !important; top: 0 !important; }
+}
+
+.sidebar-section {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.sidebar-title {
+    font-size: 19px; color: #5d6d3d; margin: 0 0 20px 0; font-weight: 800;
+    display: flex; align-items: center;
+}
+.sidebar-title::after {
+    content: ''; flex-grow: 1; height: 2px; background: #5d6d3d; margin-left: 15px; opacity: 0.2;
+}
+
+.sidebar-links li a { transition: all 0.3s ease; text-decoration: none; color: #555; }
+.sidebar-links li a:hover {
+    color: #5d6d3d;
+    transform: translateX(8px);
+}
+
+/* 社群按鈕漸層 */
+.social-btn {
+    text-decoration: none; text-align: center; padding: 14px; border-radius: 10px;
+    font-size: 14px; font-weight: 700; color: white !important; transition: all 0.3s ease;
+    display: block; margin-bottom: 10px;
+}
+.social-btn.fb { background: linear-gradient(135deg, #1877F2, #0d59bf); }
+.social-btn.line { background: linear-gradient(135deg, #06C755, #05a647); }
+.social-btn:hover { transform: translateY(-3px); filter: brightness(1.1); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+
+/* ===================================================
+   5. 行動設計清單 (Action Items)
+   =================================================== */
+.action-item {
+    display: flex; gap: 20px; padding: 25px; background: #ffffff;
+    border-radius: 12px; border: 1px solid #f0f0f0; transition: all 0.3s ease;
+}
+.action-item:hover {
+    background: #f9fbf7; border-color: #5d6d3d; transform: translateX(10px);
+}
+.action-icon {
+    font-size: 24px; min-width: 45px; height: 45px; background: rgba(93, 109, 61, 0.1);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+
+/* ===================================================
+   6. 頁尾修飾 (Footer)
+   =================================================== */
+footer, .elementor-location-footer { border-top: 4px solid #5d6d3d; }
+
+/* ========================
+   側邊欄小工具樣式 (全站通用)
+   ======================== */
+
+/* 核心：粘性固定容器 */
+.sticky-sidebar-container {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px; /* 距離頂部 100px 時停住 */
+    z-index: 9;
+    align-self: flex-start;
+    width: 100%;
+}
+
+/* 手機版取消固定 */
+@media (max-width: 992px) {
+    .sticky-sidebar-container {
+        position: relative;
+        top: 0;
+    }
+}
+
+/* 小工具外框通用樣式 */
+.side-widget {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.side-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* 標題樣式 */
+.side-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #2c5e2e; /* 尊嚴綠 */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eef2eb;
+}
+
+.side-title i { color: #d4a017; }
+
+/* 工具箱清單 */
+.tool-list { list-style: none; padding: 0; margin: 0; }
+.tool-list li { margin-bottom: 12px; }
+
+.tool-link {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #444; font-weight: 600; font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.tool-link:hover {
+    background: #e8f5e9; color: #2c5e2e;
+    border-color: #a5d6a7; transform: translateX(5px);
+}
+
+.tool-icon {
+    width: 32px; height: 32px; background: #fff;
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; color: #2c5e2e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.download-icon { margin-left: auto; font-size: 0.8rem; color: #999; }
+
+/* 關鍵字雲 */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag-btn {
+    background: #fff; border: 1px solid #e0e0e0;
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 0.85rem; color: #666; text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.tag-btn:hover {
+    background: #2c5e2e; color: #fff;
+    border-color: #2c5e2e; box-shadow: 0 4px 10px rgba(44, 94, 46, 0.2);
+}
+
+/* 友善連結 */
+.link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+.link-item {
+    background: #fff; border: 1px solid #eee;
+    padding: 10px; border-radius: 8px; text-align: center;
+    font-size: 0.9rem; color: #555; text-decoration: none;
+    transition: all 0.2s ease; font-weight: 500;
+}
+
+.link-item:hover {
+    border-color: #2c5e2e; color: #2c5e2e; background: #fdfdfd;
+}

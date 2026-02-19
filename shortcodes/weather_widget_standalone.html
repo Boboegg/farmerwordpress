@@ -1,0 +1,254 @@
+<!-- =======================================================
+     嘉義民雄農事氣象預警 Widget (精美設計版)
+     用途：直接貼入 Elementor「HTML」元素中使用（非 shortcode）
+     特色：漸層質感、動態圖示、CWA 官方連線
+     ======================================================= -->
+
+<!-- 容器 -->
+<div class="season-alert-bar" id="weather-alert-box">
+    <!-- 左側：動態圖示區 -->
+    <div class="alert-icon-wrapper">
+        <i class="fas fa-cloud-sun" id="weather-icon"></i>
+    </div>
+    <!-- 中間：資訊區 -->
+    <div class="alert-content-wrapper">
+        <div class="alert-badge" id="weather-label">氣象載入中...</div>
+        <div class="alert-text" id="weather-message">
+            <strong>連線氣象署資料庫...</strong> 為您分析嘉義民雄即時農事建議。
+        </div>
+    </div>
+    <!-- 右側：按鈕區 -->
+    <a href="/Safety/" class="alert-btn">
+        務農防護指引 <i class="fas fa-arrow-right"></i>
+    </a>
+</div>
+
+<style>
+/* 1. 容器：現代卡片風格 (預設：舒適綠) */
+.season-alert-bar {
+    background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
+    border-left: 6px solid #66bb6a;
+    border-radius: 16px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    font-family: "Noto Sans TC", sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+/* 2. 左側圖示區 */
+.alert-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #66bb6a;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    flex-shrink: 0;
+    animation: pulse 3s infinite;
+}
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+/* 3. 中間文字區 */
+.alert-content-wrapper { flex-grow: 1; }
+.alert-badge {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #2e7d32;
+    background: rgba(46, 125, 50, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+.alert-text {
+    color: #444;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+/* 4. 右側按鈕 */
+.alert-btn {
+    text-decoration: none;
+    color: #2e7d32;
+    background: white;
+    border: 1px solid #a5d6a7;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+.alert-btn:hover {
+    background: #2e7d32;
+    color: white;
+    border-color: #2e7d32;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.2);
+}
+.alert-btn i { transition: transform 0.3s; }
+.alert-btn:hover i { transform: translateX(5px); }
+
+/* =========================================
+   情境變色邏輯 (由 JS 動態加 class 控制)
+   ========================================= */
+/* A. 降雨模式 - 深青色系 */
+.season-alert-bar.rain-alert {
+    background: linear-gradient(135deg, #e0f2f1 0%, #ffffff 100%);
+    border-left-color: #00897b;
+}
+.rain-alert .alert-icon-wrapper { color: #00897b; background: rgba(0, 137, 123, 0.1); }
+.rain-alert .alert-badge        { color: #00695c; background: rgba(0, 105, 92, 0.1); }
+.rain-alert .alert-btn          { color: #00695c; border-color: #80cbc4; }
+.rain-alert .alert-btn:hover    { background: #00695c; color: white; }
+
+/* B. 高溫模式 - 警示橘紅色系 */
+.season-alert-bar.hot-alert {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffffff 100%);
+    border-left-color: #ff7043;
+}
+.hot-alert .alert-icon-wrapper  { color: #d84315; background: rgba(216, 67, 21, 0.1); }
+.hot-alert .alert-badge         { color: #bf360c; background: rgba(191, 54, 12, 0.1); }
+.hot-alert .alert-btn           { color: #bf360c; border-color: #ffccbc; }
+.hot-alert .alert-btn:hover     { background: #d84315; color: white; }
+
+/* C. 低溫模式 - 冰藍色系 */
+.season-alert-bar.cold-alert {
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+    border-left-color: #42a5f5;
+}
+.cold-alert .alert-icon-wrapper { color: #1565c0; background: rgba(21, 101, 192, 0.1); }
+.cold-alert .alert-badge        { color: #0d47a1; background: rgba(13, 71, 161, 0.1); }
+.cold-alert .alert-btn          { color: #1565c0; border-color: #90caf9; }
+.cold-alert .alert-btn:hover    { background: #1565c0; color: white; }
+
+/* D. 維護模式 - 灰色系 */
+.season-alert-bar.maintenance-alert {
+    background: #f5f5f5;
+    border-left-color: #bdbdbd;
+    filter: grayscale(100%);
+}
+
+/* RWD */
+@media (max-width: 768px) {
+    .season-alert-bar   { flex-direction: column; align-items: flex-start; padding: 20px; }
+    .alert-icon-wrapper { width: 45px; height: 45px; font-size: 1.2rem; }
+    .alert-btn          { width: 100%; justify-content: center; margin-top: 10px; }
+}
+</style>
+
+<script>
+(function() {
+    // 1. API 設定（嘉義縣 F-D0047-029）
+    // ★ 維護提醒：若要更換地點，修改 targetLocation；更換 Key 修改 apiKey
+    const apiKey         = "CWA-4B0BCA13-7C84-4ED5-BA80-F090AD64048C";
+    const targetLocation = "民雄鄉";
+    const apiUrl = `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-D0047-029?Authorization=${apiKey}&locationName=${encodeURIComponent(targetLocation)}&elementName=溫度,3小時降雨機率,天氣現象`;
+
+    // 2. 顯示維護模式
+    function showMaintenanceMode(errorMsg) {
+        const weatherBox = document.getElementById("weather-alert-box");
+        if (!weatherBox) return;
+        weatherBox.className = "season-alert-bar maintenance-alert";
+        document.getElementById("weather-icon").className = "fas fa-tools";
+        document.getElementById("weather-label").innerText = "資料維護中";
+        document.getElementById("weather-message").innerHTML = `<strong>⚠️ 系統訊息：</strong> ${errorMsg}，請管理員檢查 API 設定。`;
+    }
+
+    // 3. UI 更新函數
+    function updateWeatherUI(temp, pop, wx) {
+        const weatherBox   = document.getElementById("weather-alert-box");
+        const weatherIcon  = document.getElementById("weather-icon");
+        const weatherLabel = document.getElementById("weather-label");
+        const weatherMsg   = document.getElementById("weather-message");
+        if (!weatherBox) return;
+
+        let message   = "";
+        let iconClass = "fa-cloud-sun";
+        let labelText = "";
+
+        weatherBox.className = "season-alert-bar"; // 重置
+
+        if (pop >= 70) {
+            weatherBox.classList.add("rain-alert");
+            iconClass = "fa-umbrella";
+            labelText = "降雨機率高";
+            message   = `<strong>🌧️ 降雨預警 (${pop}%)：</strong> 民雄地區降雨機率高，請農友注意田間排水與防滑，避免雨中作業。`;
+        } else if (temp >= 30) {
+            weatherBox.classList.add("hot-alert");
+            iconClass = "fa-temperature-high";
+            labelText = "高溫熱危害預警";
+            message   = `<strong>⚠️ 高溫特報 (${temp}°C)：</strong> 請務必多喝水、每工作30分鐘至陰涼處休息，慎防熱衰竭！`;
+        } else if (temp <= 15) {
+            weatherBox.classList.add("cold-alert");
+            iconClass = "fa-snowflake";
+            labelText = "低溫寒害預警";
+            message   = `<strong>❄️ 低溫特報 (${temp}°C)：</strong> 請患有心血管疾病之農友注意保暖，採洋蔥式穿搭。`;
+        } else {
+            iconClass = "fa-seedling";
+            labelText = `今日天氣：${wx}`;
+            message   = `<strong>⛅ 氣候適宜 (${temp}°C)：</strong> 請持續注意田間作業安全，操作農機時請穿著防護裝備。`;
+        }
+
+        if (weatherIcon)  weatherIcon.className = `fas ${iconClass}`;
+        if (weatherLabel) weatherLabel.innerText = labelText;
+        if (weatherMsg)   weatherMsg.innerHTML   = message;
+    }
+
+    // 4. 執行抓取（含 5 秒 timeout）
+    const controller = new AbortController();
+    const timeoutId  = setTimeout(() => controller.abort(), 5000);
+
+    fetch(apiUrl, { signal: controller.signal })
+        .then(response => {
+            if (!response.ok) throw new Error(`API 錯誤 ${response.status}`);
+            return response.json();
+        })
+        .then(data => {
+            clearTimeout(timeoutId);
+            if (!data.records || !data.records.Locations) throw new Error("API 格式錯誤");
+
+            const locations    = data.records.Locations[0].Location;
+            const locationData = locations.find(l => l.LocationName === targetLocation);
+            if (!locationData) throw new Error("找不到民雄鄉");
+
+            const weatherElements = locationData.WeatherElement;
+            const getVal = (elName, key) => {
+                const el = weatherElements.find(e => e.ElementName === elName);
+                if (el && el.Time && el.Time.length > 0) {
+                    return el.Time[0].ElementValue[0][key];
+                }
+                return null;
+            };
+
+            const temp = parseInt(getVal("溫度", "Temperature"));
+            const pop  = parseInt(getVal("3小時降雨機率", "ProbabilityOfPrecipitation"));
+            const wx   = getVal("天氣現象", "Weather");
+
+            if (isNaN(temp)) throw new Error("溫度數據異常");
+            updateWeatherUI(temp, isNaN(pop) ? 0 : pop, wx);
+        })
+        .catch(error => {
+            console.error("氣象失敗:", error);
+            showMaintenanceMode(
+                error.name === "AbortError" ? "連線逾時" : "無法連線"  // 用 name 比對，跨瀏覽器相容
+            );
+        });
+})();
+</script>
