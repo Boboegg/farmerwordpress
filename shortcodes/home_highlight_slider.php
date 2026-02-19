@@ -30,15 +30,15 @@
  *
  *  5）活動卡片資料來源：
  *     - 函數 get_latest_event() 裡：
- *         'post_type' => 'event'
- *       如要改成別的文章類型（例如 campaign），把 event 換成對應 slug。
+ *         'category_name' => 'event'
+ *       如要改成別的分類（例如 campaign），把 event 換成對應分類 slug。
  *     - 卡片顯示內容在 home_highlight_slider_shortcode() 中，
  *       搜尋「最新活動」那段 HTML，就能改標題文字和按鈕文字。
  *
  *  6）Podcast 卡片資料來源：
  *     - 函數 get_latest_podcast() 裡：
- *         'post_type' => 'podcast'
- *       如要改 slug，同樣改這裡。
+ *         'category_name' => 'podcast'
+ *       如要改分類 slug，同樣改這裡。
  *     - 顯示內容在 home_highlight_slider_shortcode() 中，
  *       搜尋「最新 Podcast」那段 HTML 可改字樣。
  *
@@ -73,7 +73,8 @@ add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_fontawesome_for_slider' );
  * ============================== */
 function get_latest_event() {
     $query = new WP_Query(array(
-        'post_type'      => 'event',
+        'post_type'      => 'post',
+        'category_name'  => 'event',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
         'orderby'        => 'date',
@@ -101,7 +102,8 @@ function get_latest_event() {
  * ============================== */
 function get_latest_podcast() {
     $query = new WP_Query(array(
-        'post_type'      => 'podcast',
+        'post_type'      => 'post',
+        'category_name'  => 'podcast',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
         'orderby'        => 'date',
