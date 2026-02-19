@@ -189,29 +189,157 @@
 
 ## 三、技術規範
 
-### 全站 CSS（`/css/global.css`）已定義的 Class
+### 3-1 色彩系統（Color System）
+
+#### 全站品牌色
+
+| 名稱 | HEX | 用途 |
+|------|-----|------|
+| 品牌主色・尊嚴綠 | `#5C8607` | 全站主按鈕、連結、強調色 |
+| 品牌主色・深尊嚴綠（hover） | `#4a6b05` | 按鈕 hover 狀態 |
+| 尊嚴綠（深版） | `#2c5e2e` | 側邊欄標題、tag 按鈕 hover |
+| 全站背景 | `#E3E9D8` | 整體頁面底色 |
+| 全站輔色・稻金黃 | `#D4A017` | 圖示點綴、裝飾線、強調 highlight |
+
+#### 四大分眾入口色（Functional Pastels）
+
+> 以下 HEX 為建議值，部署前請與設計師確認。
+
+| 分眾 | 色彩名稱 | 建議 HEX | 色彩背景 HEX | 說明 |
+|------|---------|----------|------------|------|
+| 新手務農（Start） | 鼠尾草綠 Sage Green | `#87AE73` | `#EEF5EA` | 穩健、安全感 |
+| 青農創業（Pro） | 板岩藍 Slate Blue | `#5B7FA6` | `#E8EFF7` | 科技、數據感 |
+| 資深農友（Senior） | 陶土橘 Terracotta | `#C17F5E` | `#F9EDE7` | 溫暖、高對比 |
+| 一般公眾（Public） | 麥穗黃 Harvest Gold | `#D4A017` | `#FDF4DC` | 農鄉、共感 |
+
+#### 職業安全頁面（02）危害控制層級色
+
+| 層級 | 名稱 | 漸層色 |
+|------|------|--------|
+| Level 1 消除 | Emerald | `#10b981 → #34d399` |
+| Level 2 取代 | Sky Blue | `#0ea5e9 → #38bdf8` |
+| Level 3 工程 | Blue | `#3b82f6 → #60a5fa` |
+| Level 4 行政 | Amber | `#f59e0b → #fbbf24` |
+| Level 5 PPE | Rose | `#f43f5e → #fb7185` |
+
+#### 風險評估紅綠燈色
+
+| 風險等級 | 顏色 | HEX |
+|---------|------|-----|
+| 高度風險（分數 ≥ 8） | 紅 | `#EF5350` |
+| 中度風險（分數 3–7） | 橘 | `#FFB74D` |
+| 低度風險（分數 ≤ 2） | 綠 | `#81C784` |
+
+---
+
+### 3-2 CSS 設計 Token（`:root` 變數）
+
+以下為各 Widget 已採用的 CSS 變數，全站保持一致，新頁面應優先使用這些變數而非直接寫死色碼。
+
+```css
+:root {
+    /* === 品牌色 === */
+    --astra-brand:       #5C8607;
+    --astra-brand-hover: #4a6b05;
+    --astra-text:        #343F1E;
+    --astra-surface:     #FDFAF1;   /* 頁面內容區底色 */
+    --astra-border:      rgba(53, 64, 31, 0.15);
+    --astra-shadow:      0 15px 40px rgba(52, 63, 30, 0.05);
+
+    /* === 職業安全 Widget 專用 === */
+    --text-brand:        #047857;   /* Widget 1 強調綠 */
+    --bg-glass:          rgba(255, 255, 255, 0.65);
+    --border-glass:      rgba(255, 255, 255, 0.9);
+    --shadow-glass:      0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    --shadow-float:      0 10px 25px -5px rgba(0,0,0,0.1);
+
+    /* === 危害分類色 === */
+    --phys-bg:   #FFF3E0; --phys-text:  #E65100;  /* 物理性 */
+    --chem-bg:   #F3E5F5; --chem-text:  #7B1FA2;  /* 化學性 */
+    --bio-bg:    #E8F5E9; --bio-text:   #2E7D32;  /* 生物性 */
+    --ergo-bg:   #E3F2FD; --ergo-text:  #1565C0;  /* 人因性 */
+
+    /* === 風險評估紅綠燈 === */
+    --risk-green:  #81C784;
+    --risk-orange: #FFB74D;
+    --risk-red:    #EF5350;
+}
+```
+
+---
+
+### 3-3 全站 CSS（`/css/global.css`）已定義的 Class
 
 > 建置新頁面前，請先確認使用或避開以下已定義的 class，以免產生樣式衝突。
 
 | Class | 用途 |
 |-------|------|
-| `.content-card` | 一般內容卡片（含 hover 上浮效果） |
-| `.my-team-card` | 研究團隊透明懸浮卡片 |
-| `.sidebar-wrapper` | Sticky 側邊欄容器 |
+| `.content-card` | 一般內容卡片（含 hover 上浮效果，border-top 尊嚴綠） |
+| `.my-team-card` | 研究團隊透明懸浮卡片（背景強制透明） |
+| `.sidebar-wrapper` | Sticky 側邊欄容器（top: 120px） |
+| `.sidebar-section` | 側邊欄區塊 |
+| `.sidebar-title` | 側邊欄標題（含右側延伸線） |
 | `.side-widget` | 側邊欄小工具外框 |
-| `.side-title` | 側邊欄標題 |
-| `.tool-link` | 側邊欄工具連結 |
-| `.tag-btn` | 關鍵字雲按鈕 |
-| `.action-item` | 行動設計清單項目 |
-| `.social-btn` | FB / LINE 社群按鈕 |
+| `.side-title` | 側邊欄標題（帶 border-bottom） |
+| `.tool-list` / `.tool-link` / `.tool-icon` | 側邊欄工具連結組 |
+| `.tag-cloud` / `.tag-btn` | 關鍵字雲（hover 變尊嚴綠底色） |
+| `.action-item` / `.action-icon` | 行動設計清單項目 |
+| `.social-btn` （`.fb` / `.line`） | FB / LINE 社群按鈕（漸層色） |
 | `.link-grid` / `.link-item` | 友善連結格狀排版 |
+| `.sticky-sidebar-container` | 黏性側邊欄外容器（top: 100px） |
+| `.download-icon` | 下載圖示（側邊欄用） |
 
-### 嵌入頁面注意事項
+---
+
+### 3-4 已部署頁面的 CSS Class 清單
+
+以下 Class 已在 `pages/home/index.html` 部署，**新頁面避免重複命名**。
+
+#### 首頁・身分導航（`service-portal-*`）
+
+`.service-portal-wrapper` / `.service-portal` / `.portal-header` / `.portal-grid` /
+`.role-btn` / `.role-icon-box` / `.role-desc` / `.portal-footer` / `.report-btn`
+
+#### 首頁・三大核心主題（`topic-*`）
+
+`.topic-nav-wrapper` / `.topic-header` / `.topic-container` / `.topic-card` /
+`.card-health` / `.card-equip` / `.card-insurance` / `.card-content` /
+`.topic-icon` / `.topic-text` / `.card-arrow`
+
+---
+
+### 3-5 WordPress 嵌入規範（違反項目）
 
 當 HTML 區塊嵌入 WordPress 頁面時，**禁止**在 `<style>` 中出現：
-- `body { ... }` — 會覆蓋 Astra 主題全站樣式
-- `* { margin: 0; padding: 0; }` — 全域重置會破壞 WordPress 版面
-- `.container { ... }` — 與 Astra/Bootstrap 保留 class 衝突，請使用專屬命名
+
+| 禁止項目 | 原因 |
+|---------|------|
+| `body { ... }` | 覆蓋 Astra 主題全站樣式（包含 `display:flex` 會毀版型） |
+| `* { margin:0; padding:0; }` | 全域重置破壞 WordPress 所有元件間距 |
+| `.container { ... }` | 與 Astra / Bootstrap 保留 class 衝突 |
+| `html { ... }` | 影響全域 scroll behavior 等設定 |
+
+**解法**：
+- `body` 的 `padding` → 移到頁面最外層 wrapper
+- `body` 的 `display:flex` 居中 → 改用 `margin: 0 auto` 在 wrapper 上
+- `.container` → 改為 `.risk-assessment-wrapper`、`.hazard-check-wrapper` 等專屬命名
+
+---
+
+### 3-6 字型載入規則
+
+Font Awesome 與 Google Fonts 每個頁面**只載入一次**，放在所有 widget HTML 的最頂端。
+
+```html
+<!-- 字型（每頁僅此一處） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<!-- 圖示庫（每頁僅此一處） -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+```
+
+---
 
 ### 頁面檔案位置
 
