@@ -428,6 +428,9 @@ function home_highlight_slider_shortcode() {
             align-items: flex-start;
             padding: 20px;
         }
+        .home-highlight-slider .season-alert-bar.is-hidden {
+            display: none;
+        }
         .alert-icon-wrapper {
             width: 45px;
             height: 45px;
