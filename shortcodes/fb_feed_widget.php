@@ -1,140 +1,82 @@
 <?php
 /*
- * Plugin Name: Facebook 粉專貼文顯示 [fb_feed_widget]
- * Description: 從 Facebook Graph API 抓取粉絲專頁最新貼文，顯示在頁面或側邊欄。
+ * Plugin Name: Facebook 粉專動態牆 [fb_feed_widget]
+ * Description: 用 Facebook 官方 Page Plugin 嵌入粉絲專頁動態，不需要 API Token。
  *
  * 使用範例：
- *   [fb_feed_widget count="5"]
- *   [fb_feed_widget count="3" show_image="true"]
+ *   [fb_feed_widget]
+ *   [fb_feed_widget width="380" height="600"]
+ *   [fb_feed_widget page="https://www.facebook.com/fwdignity" width="340" height="500"]
  *
  * 【參數說明】
- * - count      ：顯示篇數（預設 5，最多 10）
- * - show_image ：是否顯示縮圖（預設 false）
- *
- * 【需要設定的 WordPress 選項（在後台 設定 > FB 整合 設定，或直接用 wp_options）】
- * - fb_page_id          ：粉絲專頁的 Page ID（數字）
- * - fb_page_access_token：長期 Page Access Token
- *
- * 【如何取得 Access Token】
- * 1. 前往 https://developers.facebook.com/ 建立 App
- * 2. 在 Graph API Explorer 取得 Page Access Token
- * 3. 用 Token Debugger 轉成長期 Token（永久不過期）
- * 4. 將 Token 存到 WordPress 設定
+ * - page   ：粉絲專頁完整網址（預設已設為 fwdignity）
+ * - width  ：元件寬度，px（預設 340，最小 180，最大 500）
+ * - height ：元件高度，px（預設 500，最小 130）
+ * - cover  ：是否顯示封面照片 true/false（預設 true）
+ * - faces  ：是否顯示按讚的朋友頭貼 true/false（預設 false）
  */
 
 add_shortcode('fb_feed_widget', function($atts) {
     $atts = shortcode_atts([
-        'count'      => 5,
-        'show_image' => 'false',
+        'page'   => 'https://www.facebook.com/fwdignity',
+        'width'  => 340,
+        'height' => 500,
+        'cover'  => 'true',
+        'faces'  => 'false',
     ], $atts);
 
-    $count      = min((int)$atts['count'], 10);
-    $show_image = filter_var($atts['show_image'], FILTER_VALIDATE_BOOLEAN);
+    $page_url   = esc_url_raw($atts['page']);
+    $width      = max(180, min(500, (int)$atts['width']));
+    $height     = max(130, (int)$atts['height']);
+    $hide_cover = filter_var($atts['cover'], FILTER_VALIDATE_BOOLEAN) ? 'false' : 'true';
+    $show_faces = filter_var($atts['faces'], FILTER_VALIDATE_BOOLEAN) ? 'true' : 'false';
 
-    // 從 WordPress 選項讀取設定
-    $page_id      = get_option('fb_page_id', '');
-    $access_token = get_option('fb_page_access_token', '');
+    // Facebook Page Plugin 的 iframe 網址
+    $embed_url = add_query_arg([
+        'href'                  => $page_url,
+        'tabs'                  => 'timeline',
+        'width'                 => $width,
+        'height'                => $height,
+        'small_header'          => 'false',
+        'adapt_container_width' => 'true',
+        'hide_cover'            => $hide_cover,
+        'show_facepile'         => $show_faces,
+        'locale'                => 'zh_TW',
+    ], 'https://www.facebook.com/plugins/page.php');
 
-    if (empty($page_id) || empty($access_token)) {
-        if (current_user_can('manage_options')) {
-            return '<p style="color:red;">⚠️ 請先在 WordPress 後台設定 <strong>fb_page_id</strong> 與 <strong>fb_page_access_token</strong>。</p>';
-        }
-        return '';
-    }
+    $output = '<div class="fb-page-plugin-wrap" style="max-width:' . $width . 'px;">';
 
-    // 嘗試從快取取得（避免每次頁面載入都打 API）
-    $cache_key  = 'fb_feed_cache_' . $page_id . '_' . $count;
-    $posts      = get_transient($cache_key);
+    // 載入 Facebook JS SDK（只載入一次）
+    $output .= '<div id="fb-root"></div>';
+    $output .= '<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0">
+    </script>';
 
-    if (false === $posts) {
-        $fields   = 'id,message,story,created_time,full_picture,permalink_url';
-        $api_url  = add_query_arg([
-            'fields'       => $fields,
-            'limit'        => $count,
-            'access_token' => $access_token,
-        ], "https://graph.facebook.com/v19.0/{$page_id}/posts");
+    // 用 iframe 嵌入（不依賴 JS SDK，相容性更好）
+    $output .= '<iframe
+        src="' . esc_url($embed_url) . '"
+        width="' . $width . '"
+        height="' . $height . '"
+        style="border:none;overflow:hidden;border-radius:8px;"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        loading="lazy">
+    </iframe>';
 
-        $response = wp_remote_get($api_url, ['timeout' => 10]);
+    $output .= '</div>';
 
-        if (is_wp_error($response)) {
-            return '<p>無法取得 Facebook 資料，請稍後再試。</p>';
-        }
-
-        $body = json_decode(wp_remote_retrieve_body($response), true);
-
-        if (!empty($body['error'])) {
-            if (current_user_can('manage_options')) {
-                return '<p style="color:red;">FB API 錯誤：' . esc_html($body['error']['message']) . '</p>';
-            }
-            return '';
-        }
-
-        $posts = $body['data'] ?? [];
-
-        // 快取 30 分鐘
-        set_transient($cache_key, $posts, 30 * MINUTE_IN_SECONDS);
-    }
-
-    if (empty($posts)) {
-        return '<p class="fb-no-posts">目前沒有最新貼文。</p>';
-    }
-
-    $output = '<div class="fb-feed-widget">';
-    $output .= '<div class="fb-feed-header"><span class="fb-icon">f</span> 粉專最新動態</div>';
-    $output .= '<ul class="fb-feed-list">';
-
-    foreach ($posts as $post) {
-        $message      = $post['message'] ?? ($post['story'] ?? '');
-        $link         = $post['permalink_url'] ?? '#';
-        $image        = $post['full_picture'] ?? '';
-        $created_time = $post['created_time'] ?? '';
-        $date_display = '';
-
-        if (!empty($created_time)) {
-            $timestamp    = strtotime($created_time);
-            $date_display = date_i18n('Y/m/d', $timestamp);
-        }
-
-        // 截斷過長文字
-        $short_message = mb_strlen($message) > 100
-            ? mb_substr($message, 0, 100) . '…'
-            : $message;
-
-        $output .= '<li class="fb-feed-item">';
-
-        if ($show_image && !empty($image)) {
-            $output .= '<a href="' . esc_url($link) . '" target="_blank" rel="noopener">';
-            $output .= '<img src="' . esc_url($image) . '" alt="" class="fb-feed-thumb" loading="lazy">';
-            $output .= '</a>';
-        }
-
-        $output .= '<div class="fb-feed-content">';
-        if (!empty($date_display)) {
-            $output .= '<span class="fb-feed-date">' . esc_html($date_display) . '</span>';
-        }
-        if (!empty($short_message)) {
-            $output .= '<p class="fb-feed-text">' . esc_html($short_message) . '</p>';
-        }
-        $output .= '<a href="' . esc_url($link) . '" target="_blank" rel="noopener" class="fb-feed-link">在 Facebook 查看 →</a>';
-        $output .= '</div>';
-        $output .= '</li>';
-    }
-
-    $output .= '</ul></div>';
-
-    // 內嵌樣式
+    // 響應式樣式
     $output .= '<style>
-    .fb-feed-widget { font-family: inherit; }
-    .fb-feed-header { background:#1877f2; color:#fff; padding:8px 12px; font-weight:bold; border-radius:6px 6px 0 0; display:flex; align-items:center; gap:6px; }
-    .fb-icon { background:#fff; color:#1877f2; border-radius:4px; padding:0 5px; font-weight:900; font-size:14px; }
-    .fb-feed-list { list-style:none; margin:0; padding:0; border:1px solid #e0e0e0; border-top:none; border-radius:0 0 6px 6px; }
-    .fb-feed-item { padding:10px 12px; border-bottom:1px solid #f0f0f0; }
-    .fb-feed-item:last-child { border-bottom:none; }
-    .fb-feed-thumb { width:100%; height:120px; object-fit:cover; border-radius:4px; margin-bottom:6px; display:block; }
-    .fb-feed-date { font-size:11px; color:#888; display:block; margin-bottom:3px; }
-    .fb-feed-text { font-size:13px; color:#333; margin:0 0 6px; line-height:1.5; }
-    .fb-feed-link { font-size:12px; color:#1877f2; text-decoration:none; }
-    .fb-feed-link:hover { text-decoration:underline; }
+    .fb-page-plugin-wrap {
+        width: 100%;
+        overflow: hidden;
+    }
+    .fb-page-plugin-wrap iframe {
+        width: 100% !important;
+        max-width: 100%;
+    }
     </style>';
 
     return $output;
