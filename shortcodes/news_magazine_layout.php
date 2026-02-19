@@ -45,13 +45,13 @@ add_shortcode('news_magazine_layout', function($atts) {
     // 2. 建立查詢：向 WordPress 資料庫請求文章
     // =================================================================
     $args = [
-        'posts_per_page' => $atts['count'],
+        'posts_per_page' => (int)$atts['count'],   // 強制整數，防止型別錯誤
         'post_status'    => 'publish',
         'orderby'        => 'date',
         'order'          => 'DESC'
     ];
     if (!empty($atts['category'])) {
-        $args['category_name'] = $atts['category'];
+        $args['category_name'] = sanitize_text_field($atts['category']); // 同 my_news_loop 做法
     }
     $query = new WP_Query($args);
 

@@ -247,7 +247,7 @@
         .catch(error => {
             console.error("氣象失敗:", error);
             showMaintenanceMode(
-                error.message === "The user aborted a request." ? "連線逾時" : "無法連線"
+                error.name === "AbortError" ? "連線逾時" : "無法連線"  // 用 name 比對，跨瀏覽器相容
             );
         });
 })();
