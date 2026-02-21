@@ -1,0 +1,454 @@
+<!-- =====================================================
+     子頁面：農藥安全
+     URL：/healthgood/農藥安全/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== Hero ========== -->
+<div class="pest-hero">
+  <div class="pest-hero-badge"><i class="fas fa-flask-vial"></i> 農藥安全</div>
+  <h1 class="pest-hero-title">農藥安全指南</h1>
+  <p class="pest-hero-subtitle">正確防護、安全使用、中毒急救——從源頭降低農藥危害</p>
+  <div class="pest-hero-intro">
+    <p>
+      農藥是農業生產的重要工具，但使用不當就是健康殺手。台灣每年仍有約 390 人因非自殺性農藥中毒住院（住院率 6.87/100,000）。最常被忽略的事實是：超過 95% 的職業性農藥暴露發生在皮膚——不是吸入。很多農友噴藥時只戴口罩卻不戴手套，等於最大的暴露途徑完全沒有防護。
+    </p>
+    <p>
+      2020 年台灣全面禁用巴拉刈後，農藥中毒自殺率下降了 37%（約減少 190 人），且沒有出現方法替代效應，證實農藥管制的公共衛生效益。這一頁整理了安全用藥流程、防護裝備選擇、中毒急救步驟和相關法規。
+    </p>
+  </div>
+  <a href="/healthgood/" class="pest-back-link"><i class="fas fa-arrow-left"></i> 回到健康促進總覽</a>
+</div>
+
+<!-- ========== 內容區 ========== -->
+<div class="pest-sections">
+
+  <!-- 第一節：暴露途徑 -->
+  <div class="pest-sec-card">
+    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
+      <div class="pest-sec-icon"><i class="fas fa-hand"></i></div>
+      <div>
+        <h2>農藥怎麼進入你的身體</h2>
+        <p>知道風險在哪裡，才知道該防哪裡。</p>
+      </div>
+    </div>
+    <div class="pest-sec-body">
+      <div class="pest-route-grid">
+        <div class="pest-route-item pest-route-main">
+          <div class="pest-route-pct">95%</div>
+          <h4>皮膚吸收（最主要途徑）</h4>
+          <p>手部、前臂、臉部是最常接觸的部位。農藥會穿透一般棉質手套和衣物，必須使用耐化學品的材質。皮膚有傷口時吸收速率更快。</p>
+        </div>
+        <div class="pest-route-item">
+          <div class="pest-route-pct" style="font-size:1.5rem;">~4%</div>
+          <h4>呼吸吸入</h4>
+          <p>噴霧時的細小液滴、密閉空間中的揮發氣體。溫室內和高溫天風險更高。</p>
+        </div>
+        <div class="pest-route-item">
+          <div class="pest-route-pct" style="font-size:1.5rem;">~1%</div>
+          <h4>口腔攝入</h4>
+          <p>作業後未洗手就吃東西、喝水或抽菸。雖占比低，但若直接誤食農藥濃液則極度危險。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第二節：防護裝備 -->
+  <div class="pest-sec-card">
+    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
+      <div class="pest-sec-icon"><i class="fas fa-shield-halved"></i></div>
+      <div>
+        <h2>防護裝備：依毒性等級穿戴</h2>
+        <p>農藥瓶上標示的毒性等級決定了你該穿多少防護。</p>
+      </div>
+    </div>
+    <div class="pest-sec-body">
+      <div class="pest-ppe-table-wrap">
+        <table class="pest-ppe-table">
+          <thead>
+            <tr>
+              <th>毒性等級</th>
+              <th>標示顏色</th>
+              <th>最低防護要求</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>低毒</strong></td>
+              <td><span class="pest-label" style="background:#4caf50;">綠色</span></td>
+              <td>長袖衣褲、耐化學手套、防護口罩</td>
+            </tr>
+            <tr>
+              <td><strong>中等毒</strong></td>
+              <td><span class="pest-label" style="background:#2196f3;">藍色</span></td>
+              <td>上述 + 防護衣連身式、寬沿帽、長統膠靴、防護圍裙</td>
+            </tr>
+            <tr>
+              <td><strong>高毒</strong></td>
+              <td><span class="pest-label" style="background:#ff9800;">黃色</span></td>
+              <td>上述 + 防飛濺護目鏡、化學濾罐式防毒面具</td>
+            </tr>
+            <tr>
+              <td><strong>極毒</strong></td>
+              <td><span class="pest-label" style="background:#f44336;">紅色</span></td>
+              <td>全套化學防護衣、全面式防毒面具（專業人員操作）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pest-ppe-tips">
+        <div class="pest-ppe-tip">
+          <i class="fas fa-hand"></i>
+          <div>
+            <strong>手套是第一優先</strong>
+            <p>95% 暴露來自皮膚，手部又是最常接觸的部位。選擇丁腈（nitrile）材質，拋棄式最好。棉手套會吸附農藥，反而更危險。</p>
+          </div>
+        </div>
+        <div class="pest-ppe-tip">
+          <i class="fas fa-wind"></i>
+          <div>
+            <strong>口罩不等於防毒面具</strong>
+            <p>一般外科口罩或布口罩無法過濾農藥蒸氣。噴灑中等毒以上農藥時，必須使用含有機蒸氣/農藥濾罐的防毒面具。</p>
+          </div>
+        </div>
+        <div class="pest-ppe-tip">
+          <i class="fas fa-shirt"></i>
+          <div>
+            <strong>噴藥衣物單獨清洗</strong>
+            <p>噴藥後的衣物不可與一般衣物混洗。先用大量清水沖洗，再單獨以肥皂水清洗，在通風處晾乾。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pest-crosslink-box">
+        <i class="fas fa-link"></i>
+        <span>完整的防護具選購和穿脫 SOP → <a href="/prevention/%e5%80%8b%e4%ba%ba%e9%98%b2%e8%ad%b7%e5%85%b7ppe/">個人防護具（PPE）專區</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第三節：安全用藥流程 -->
+  <div class="pest-sec-card">
+    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
+      <div class="pest-sec-icon"><i class="fas fa-list-check"></i></div>
+      <div>
+        <h2>安全用藥流程</h2>
+        <p>從買藥到施藥完畢，每個環節都有需要注意的細節。</p>
+      </div>
+    </div>
+    <div class="pest-sec-body">
+      <div class="pest-flow-steps">
+        <div class="pest-flow-step">
+          <div class="pest-flow-num">1</div>
+          <div>
+            <h4>購買：看清標示</h4>
+            <p>確認農藥許可證字號、有效期限、毒性等級標示顏色。只向合法農藥販賣業者購買。</p>
+          </div>
+        </div>
+        <div class="pest-flow-step">
+          <div class="pest-flow-num">2</div>
+          <div>
+            <h4>儲存：上鎖、分開、遠離</h4>
+            <p>放在上鎖的專用儲藏室，遠離食物和飲水。保持原裝原瓶，絕對不可分裝到飲料瓶中。兒童和老人不可接觸。</p>
+          </div>
+        </div>
+        <div class="pest-flow-step">
+          <div class="pest-flow-num">3</div>
+          <div>
+            <h4>稀釋：按標籤比例，不多不少</h4>
+            <p>依照瓶身標示的稀釋倍數操作。加倍濃度不會更有效，只會增加殘留和中毒風險。在通風處稀釋，穿戴完整防護具。</p>
+          </div>
+        </div>
+        <div class="pest-flow-step">
+          <div class="pest-flow-num">4</div>
+          <div>
+            <h4>施藥：順風、避開高溫</h4>
+            <p>噴灑時站在上風處，讓藥霧隨風飄離自己。避免在正午高溫或大風天施藥（高溫加速揮發，大風增加飄散）。溫室施藥後關閉入口，等待通風。</p>
+          </div>
+        </div>
+        <div class="pest-flow-step">
+          <div class="pest-flow-num">5</div>
+          <div>
+            <h4>遵守安全採收期</h4>
+            <p>最後一次施藥到採收的最短天數，印在每一瓶農藥的標籤上。這是確保農產品上的農藥殘留降到安全值以下所需的最低時間。</p>
+          </div>
+        </div>
+        <div class="pest-flow-step">
+          <div class="pest-flow-num">6</div>
+          <div>
+            <h4>施藥後：清洗與再進入</h4>
+            <p>施藥後立刻脫除防護具（先洗手套外層再脫）、用肥皂沐浴更衣。溫室施藥後至少通風 2-4 小時才可重新進入（REI，再進入間隔）。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第四節：中毒辨識和急救 -->
+  <div class="pest-sec-card">
+    <div class="pest-sec-header" style="--sec-color:#c62828;">
+      <div class="pest-sec-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-kit-medical"></i></div>
+      <div>
+        <h2>中毒辨識與急救</h2>
+        <p>越早辨識、越早處理，傷害越小。</p>
+      </div>
+    </div>
+    <div class="pest-sec-body">
+
+      <h3 class="pest-sub-title">急性有機磷中毒症狀（SLUDGEM 口訣）</h3>
+      <div class="pest-symptom-grid">
+        <div class="pest-symptom-item"><strong>S</strong>alivation — 流口水</div>
+        <div class="pest-symptom-item"><strong>L</strong>acrimation — 流淚</div>
+        <div class="pest-symptom-item"><strong>U</strong>rination — 頻尿</div>
+        <div class="pest-symptom-item"><strong>D</strong>efecation — 腹瀉</div>
+        <div class="pest-symptom-item"><strong>G</strong>astrointestinal — 噁心嘔吐</div>
+        <div class="pest-symptom-item"><strong>E</strong>mesis — 嘔吐</div>
+        <div class="pest-symptom-item"><strong>M</strong>iosis — 瞳孔縮小</div>
+      </div>
+      <p class="pest-symptom-note">
+        其他警示：肌肉抽搐、呼吸困難、頭暈、視力模糊、大量出汗。
+        嚴重時可能出現意識喪失、呼吸衰竭。
+      </p>
+
+      <h3 class="pest-sub-title">急救步驟</h3>
+      <div class="pest-firstaid-grid">
+        <div class="pest-firstaid-item">
+          <div class="pest-firstaid-icon"><i class="fas fa-hand-sparkles"></i></div>
+          <h4>皮膚接觸</h4>
+          <p>脫除污染衣物 → 用大量清水沖洗至少 15-20 分鐘 → 用肥皂徹底清洗</p>
+        </div>
+        <div class="pest-firstaid-item">
+          <div class="pest-firstaid-icon"><i class="fas fa-eye"></i></div>
+          <h4>眼睛接觸</h4>
+          <p>撐開眼瞼 → 用大量清水持續沖洗至少 15-20 分鐘 → 不可揉眼</p>
+        </div>
+        <div class="pest-firstaid-item">
+          <div class="pest-firstaid-icon"><i class="fas fa-lungs"></i></div>
+          <h4>吸入</h4>
+          <p>立刻移到通風處 → 鬆開衣領 → 若呼吸困難立刻打 119</p>
+        </div>
+        <div class="pest-firstaid-item">
+          <div class="pest-firstaid-icon"><i class="fas fa-glass-water"></i></div>
+          <h4>誤食</h4>
+          <p><strong>不可催吐</strong>（腐蝕性農藥催吐會二次傷害食道）→ 不要灌牛奶 → 立刻打 119 → 帶農藥瓶到醫院</p>
+        </div>
+      </div>
+
+      <div class="pest-emergency-box">
+        <div class="pest-emergency-left">
+          <i class="fas fa-phone-volume"></i>
+          <div>
+            <strong>毒藥物防治諮詢中心</strong>
+            <p>24 小時專線</p>
+          </div>
+        </div>
+        <a href="tel:0228717121" class="pest-emergency-number">02-2871-7121</a>
+      </div>
+
+      <div class="pest-warning-box">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>送醫時務必帶上農藥瓶或拍下標籤。醫生需要知道中毒的是哪一種農藥，才能對症下藥。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第五節：慢性影響 -->
+  <div class="pest-sec-card">
+    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
+      <div class="pest-sec-icon"><i class="fas fa-hourglass-half"></i></div>
+      <div>
+        <h2>農藥的慢性健康影響</h2>
+        <p>不是沒有急性中毒就安全——長期低劑量暴露也會累積傷害。</p>
+      </div>
+    </div>
+    <div class="pest-sec-body">
+      <div class="pest-chronic-grid">
+        <div class="pest-chronic-item">
+          <h4><i class="fas fa-brain"></i> 神經系統</h4>
+          <p>遲發性多發性神經病變、認知功能下降、憂鬱症狀。有機磷農藥長期暴露與神經精神疾病風險增加相關。</p>
+        </div>
+        <div class="pest-chronic-item">
+          <h4><i class="fas fa-lungs"></i> 呼吸系統</h4>
+          <p>慢性支氣管炎、肺功能下降。長年噴灑農藥的農民肺功能檢測數值顯著低於對照組。</p>
+        </div>
+        <div class="pest-chronic-item">
+          <h4><i class="fas fa-ribbon"></i> 癌症風險</h4>
+          <p>部分農藥（如某些有機氯化物）被國際癌症研究機構（IARC）列為可能致癌物。長期暴露可能增加淋巴瘤、白血病風險。</p>
+        </div>
+      </div>
+      <div class="pest-checkup-box">
+        <i class="fas fa-stethoscope"></i>
+        <div>
+          <strong>定期健康檢查</strong>
+          <p>長期接觸農藥的農友建議定期做膽鹼酯酶（cholinesterase）檢測，這是監測有機磷農藥暴露的指標。台大雲林分院、嘉義長庚等醫院可安排。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.pest-sections -->
+
+<!-- ========== 交叉連結 ========== -->
+<div class="pest-crosslinks">
+  <h3><i class="fas fa-link"></i> 相關主題</h3>
+  <div class="pest-crosslink-grid">
+    <a href="/prevention/%e5%80%8b%e4%ba%ba%e9%98%b2%e8%ad%b7%e5%85%b7ppe/" class="pest-crosslink-card">
+      <i class="fas fa-mask-face"></i>
+      <span>個人防護具（PPE）</span>
+      <small>完整的防毒面具選購和穿脫 SOP</small>
+    </a>
+    <a href="/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/" class="pest-crosslink-card">
+      <i class="fas fa-temperature-arrow-up"></i>
+      <span>熱危害預防</span>
+      <small>高溫天噴藥：農藥揮發更快，穿防護衣散熱更差</small>
+    </a>
+    <a href="/prevention/%e6%ba%ab%e5%ae%a4%e5%b0%88%e5%8d%80/" class="pest-crosslink-card">
+      <i class="fas fa-warehouse"></i>
+      <span>溫室作業安全</span>
+      <small>溫室內農藥殘留濃度更高，REI 間隔更重要</small>
+    </a>
+  </div>
+</div>
+
+<!-- ========== 參考資料 ========== -->
+<div class="pest-references">
+  <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+  <div class="pest-ref-list">
+    <p>農業部動植物防疫檢疫署。農藥資訊服務網。<a href="https://pesticide.baphiq.gov.tw/" target="_blank" rel="noopener">https://pesticide.baphiq.gov.tw/</a></p>
+    <p>毒藥物防治諮詢中心。<a href="https://www.pcc-vghtpe.tw/" target="_blank" rel="noopener">https://www.pcc-vghtpe.tw/</a></p>
+    <p>Chang, S.-S. et al. (2021). The early impact of paraquat ban on suicide in Taiwan. <em>Clinical Toxicology, 60</em>(1), 67–73. <a href="https://doi.org/10.1080/15563650.2021.1937642" target="_blank" rel="noopener">https://doi.org/10.1080/15563650.2021.1937642</a></p>
+    <p>Liao, Y.-H. et al. (2006). Prevalence of pesticide poisoning hospitalizations in Taiwan, 1999–2003. <em>Journal of the Formosan Medical Association, 105</em>(12), 969–976.</p>
+    <p>EPA. (2023). <em>Recognition and management of pesticide poisonings</em> (6th ed.). <a href="https://www.epa.gov/pesticide-worker-safety/recognition-and-management-pesticide-poisonings" target="_blank" rel="noopener">https://www.epa.gov/pesticide-worker-safety</a></p>
+    <p>NIOSH. (2009). <em>Pesticide illness and injury surveillance</em>. CDC. <a href="https://www.cdc.gov/pesticide-data-program/" target="_blank" rel="noopener">https://www.cdc.gov/pesticide-data-program/</a></p>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+.pest-hero,.pest-sections,.pest-crosslinks,.pest-references{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#7b1fa2;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.pest-hero *,.pest-sections *,.pest-crosslinks *,.pest-references *{box-sizing:border-box;}
+
+/* Hero */
+.pest-hero{padding:36px;background:linear-gradient(135deg,#f3e5f5 0%,#fff 60%,#e1bee7 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(123,31,162,.1);}
+.pest-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(123,31,162,.1);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
+.pest-hero-title{font-size:2rem;font-weight:900;color:var(--accent);margin:0 0 8px;line-height:1.3;}
+.pest-hero-subtitle{font-size:1.1rem;color:#8e24aa;font-weight:600;margin:0 0 18px;}
+.pest-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(123,31,162,.06);}
+.pest-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.pest-hero-intro p:last-child{margin-bottom:0;}
+.pest-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
+
+/* Section Cards */
+.pest-sections{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}
+.pest-sec-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
+.pest-sec-header{display:flex;align-items:center;gap:16px;padding:24px;background:rgba(123,31,162,.02);border-bottom:1px solid #f0f0f0;}
+.pest-sec-icon{width:52px;height:52px;border-radius:14px;background:rgba(123,31,162,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.pest-sec-header h2{font-size:1.2rem;font-weight:800;color:var(--sec-color,var(--accent));margin:0 0 4px;}
+.pest-sec-header>div>p{font-size:.9rem;color:var(--text-secondary);margin:0;line-height:1.6;}
+.pest-sec-body{padding:24px;}
+
+/* Route Grid */
+.pest-route-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px;}
+.pest-route-item{padding:20px;border-radius:12px;border:1px solid #eee;background:#f9fafb;}
+.pest-route-main{background:rgba(123,31,162,.04);border-color:rgba(123,31,162,.15);}
+.pest-route-pct{font-size:2.2rem;font-weight:900;color:var(--accent);margin-bottom:8px;}
+.pest-route-item h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.pest-route-item p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+/* PPE Table */
+.pest-ppe-table-wrap{overflow-x:auto;margin-bottom:20px;}
+.pest-ppe-table{width:100%;border-collapse:collapse;font-size:.9rem;}
+.pest-ppe-table th{background:#f5f5f5;padding:12px 16px;text-align:left;font-weight:700;font-size:.85rem;color:var(--text-secondary);border-bottom:2px solid #eee;}
+.pest-ppe-table td{padding:12px 16px;border-bottom:1px solid #f0f0f0;line-height:1.6;}
+.pest-label{color:#fff;padding:3px 10px;border-radius:4px;font-size:.8rem;font-weight:800;display:inline-block;}
+
+/* PPE Tips */
+.pest-ppe-tips{display:flex;flex-direction:column;gap:12px;margin-bottom:16px;}
+.pest-ppe-tip{display:flex;gap:14px;padding:16px;background:#f9fafb;border-radius:10px;border:1px solid #f0f0f0;}
+.pest-ppe-tip i{font-size:20px;color:var(--accent);margin-top:2px;flex-shrink:0;}
+.pest-ppe-tip strong{font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:4px;}
+.pest-ppe-tip p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* Crosslink Box */
+.pest-crosslink-box{display:flex;align-items:center;gap:8px;padding:14px 18px;background:rgba(92,134,7,.06);border-radius:10px;font-size:.9rem;color:var(--text-primary);}
+.pest-crosslink-box i{color:#5C8607;flex-shrink:0;}
+.pest-crosslink-box a{color:#5C8607;font-weight:700;text-decoration:none;}
+.pest-crosslink-box a:hover{text-decoration:underline;}
+
+/* Flow Steps */
+.pest-flow-steps{display:flex;flex-direction:column;gap:14px;}
+.pest-flow-step{display:flex;gap:16px;padding:18px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.pest-flow-num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0;}
+.pest-flow-step h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.pest-flow-step p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+/* Symptoms */
+.pest-sub-title{font-size:1.05rem;font-weight:800;color:var(--text-primary);margin:0 0 14px;padding-top:4px;}
+.pest-symptom-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.pest-symptom-item{padding:8px 16px;background:rgba(198,40,40,.05);border:1px solid rgba(198,40,40,.12);border-radius:8px;font-size:.88rem;color:var(--text-primary);}
+.pest-symptom-item strong{color:#c62828;font-size:1rem;}
+.pest-symptom-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 20px;}
+
+/* First Aid */
+.pest-firstaid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:20px;}
+.pest-firstaid-item{padding:20px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.pest-firstaid-icon{width:40px;height:40px;border-radius:10px;background:rgba(198,40,40,.1);color:#c62828;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px;}
+.pest-firstaid-item h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.pest-firstaid-item p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+/* Emergency Box */
+.pest-emergency-box{display:flex;align-items:center;justify-content:space-between;padding:20px;background:rgba(123,31,162,.04);border:2px solid rgba(123,31,162,.15);border-radius:12px;margin-bottom:16px;}
+.pest-emergency-left{display:flex;align-items:center;gap:12px;}
+.pest-emergency-left i{font-size:24px;color:var(--accent);}
+.pest-emergency-left strong{font-size:1rem;color:var(--text-primary);display:block;}
+.pest-emergency-left p{font-size:.85rem;color:var(--text-secondary);margin:0;}
+.pest-emergency-number{font-size:1.6rem;font-weight:900;color:var(--accent);text-decoration:none;letter-spacing:1px;}
+.pest-emergency-number:hover{text-decoration:underline;}
+
+/* Warning Box */
+.pest-warning-box{padding:14px 18px;background:rgba(245,158,11,.08);border-radius:10px;border-left:4px solid #f59e0b;font-size:.9rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;color:var(--text-primary);}
+.pest-warning-box i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+
+/* Chronic */
+.pest-chronic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
+.pest-chronic-item{padding:20px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.pest-chronic-item h4{font-size:.95rem;font-weight:700;margin:0 0 8px;color:var(--accent);display:flex;align-items:center;gap:8px;}
+.pest-chronic-item p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+.pest-checkup-box{display:flex;gap:14px;padding:18px;background:rgba(46,125,50,.05);border:1px solid rgba(46,125,50,.12);border-radius:12px;}
+.pest-checkup-box i{font-size:22px;color:var(--brand);margin-top:2px;flex-shrink:0;}
+.pest-checkup-box strong{display:block;margin-bottom:4px;color:var(--brand-dark);}
+.pest-checkup-box p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+/* Crosslinks */
+.pest-crosslinks{margin-bottom:36px;}
+.pest-crosslinks h3{font-size:1.2rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:8px;margin:0 0 16px;}
+.pest-crosslink-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.pest-crosslink-card{display:flex;flex-direction:column;gap:4px;padding:20px;background:#fff;border-radius:12px;border:1px solid #eee;text-decoration:none;color:inherit;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+.pest-crosslink-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.07);border-color:var(--brand);}
+.pest-crosslink-card i{font-size:1.2rem;color:var(--brand);margin-bottom:4px;}
+.pest-crosslink-card span{font-weight:700;font-size:.95rem;color:var(--brand-dark);}
+.pest-crosslink-card small{font-size:.82rem;color:var(--text-secondary);line-height:1.5;}
+
+/* References */
+.pest-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
+.pest-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.pest-ref-list{display:flex;flex-direction:column;gap:8px;}
+.pest-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
+.pest-ref-list a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .pest-hero{padding:24px;}.pest-hero-title{font-size:1.5rem;}
+  .pest-route-grid,.pest-chronic-grid{grid-template-columns:1fr;}
+  .pest-firstaid-grid,.pest-crosslink-grid{grid-template-columns:1fr;}
+}
+</style>
