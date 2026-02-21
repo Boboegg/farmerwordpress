@@ -1,0 +1,141 @@
+<!-- =====================================================
+     區塊 07：子頁面入口 + 文章列表 + 參考資料
+     檔案：07-subpages-refs.html
+     說明：四張子頁面卡片 + WordPress 文章 shortcode + 學術引用
+     ===================================================== -->
+
+<!-- 子頁面入口 -->
+<div class="hpS-subpage-section">
+  <div class="hpS-section-header">
+    <h2><i class="fas fa-folder-open"></i> 深度專區</h2>
+    <p>
+      每個健康主題都有獨立的完整頁面，提供更詳細的預防知識、操作步驟和就醫建議。
+    </p>
+  </div>
+
+  <div class="hpS-subpage-grid">
+    <a href="/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/" class="hpS-subpage-card">
+      <div class="hpS-subpage-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <i class="fas fa-temperature-arrow-up"></i>
+      </div>
+      <h3>熱危害預防</h3>
+      <p>熱中暑辨識、急救步驟、作息安排、水分補充指南</p>
+      <span class="hpS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/healthgood/%e8%be%b2%e8%97%a5%e5%ae%89%e5%85%a8/" class="hpS-subpage-card">
+      <div class="hpS-subpage-icon" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+        <i class="fas fa-flask-vial"></i>
+      </div>
+      <h3>農藥安全</h3>
+      <p>防護裝備、中毒急救、安全用藥流程、法規須知</p>
+      <span class="hpS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/" class="hpS-subpage-card">
+      <div class="hpS-subpage-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <i class="fas fa-bone"></i>
+      </div>
+      <h3>骨骼肌肉保健</h3>
+      <p>作物別風險分析、暖身伸展、何時就醫、復健資源</p>
+      <span class="hpS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/" class="hpS-subpage-card">
+      <div class="hpS-subpage-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <i class="fas fa-brain"></i>
+      </div>
+      <h3>心靈紓壓</h3>
+      <p>壓力來源、腹式呼吸、社群連結、求助管道</p>
+      <span class="hpS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+  </div>
+
+  <!-- 交叉連結提示 -->
+  <div class="hpS-crosslink">
+    <i class="fas fa-link"></i>
+    <span>也推薦你看：<a href="/prevention/">職業安全專區</a>——了解個人防護具穿戴、省力農機補助、溫室作業安全。</span>
+  </div>
+</div>
+
+<!-- 相關文章 -->
+<div class="hpS-articles-section">
+  <div class="hpS-section-header">
+    <h2><i class="fas fa-newspaper"></i> 相關文章</h2>
+  </div>
+
+  <!-- ★ Shortcode 說明 ★
+       目前不指定分類，會顯示最新 4 篇文章。
+       如果你想只顯示特定分類，改成：
+       [my_newss_loop cat="healthgood" count="4"]
+       
+       前提：
+       1. 佈景主題或外掛有註冊 my_newss_loop 這個 shortcode
+       2. 在 WordPress「文章→分類」裡有建立對應分類
+       3. 用「程式碼編輯器」而非「視覺編輯器」貼入
+  -->
+  [my_newss_loop count="4"]
+</div>
+
+<!-- 參考資料 -->
+<div class="hpS-references">
+  <div class="hpS-section-header">
+    <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+    <p>本頁內容參考以下台灣政府機關與國際職業健康研究的公開資料。</p>
+  </div>
+  <div class="hpS-ref-list">
+    <p class="hpS-ref-item">農業部農業統計年報。<a href="https://agrstat.moa.gov.tw/" target="_blank" rel="noopener">https://agrstat.moa.gov.tw/</a></p>
+    <p class="hpS-ref-item">勞動部（2024）。農職保傷病給付基準提高，農民務農保障再升級。<a href="https://www.mol.gov.tw/1607/1632/1633/76199/" target="_blank" rel="noopener">https://www.mol.gov.tw/1607/1632/1633/76199/</a></p>
+    <p class="hpS-ref-item">勞動部職業安全衛生署（2025）。高氣溫作業熱危害預防指引（第三版）。<a href="https://www.osha.gov.tw/48110/48713/48735/60221/" target="_blank" rel="noopener">https://www.osha.gov.tw/48110/48713/48735/60221/</a></p>
+    <p class="hpS-ref-item">衛福部國民健康署。預防熱傷害衛教專區。<a href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=440" target="_blank" rel="noopener">https://www.hpa.gov.tw/Pages/List.aspx?nodeid=440</a></p>
+    <p class="hpS-ref-item">國衛院（2024）。揭開農業環境健康之謎：透過全國農民和全民健康保險研究資料庫探索台灣農民健康。<a href="https://enews.nhri.edu.tw/research/9879/" target="_blank" rel="noopener">https://enews.nhri.edu.tw/research/9879/</a></p>
+    <p class="hpS-ref-item">Osborne, A. et al. (2012). Prevalence of musculoskeletal disorders among farmers: A systematic review. <em>American Journal of Industrial Medicine, 55</em>(2), 143–158. <a href="https://pubmed.ncbi.nlm.nih.gov/22069159/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/22069159/</a></p>
+    <p class="hpS-ref-item">Chang, S.-S. et al. (2021). The early impact of paraquat ban on suicide in Taiwan. <em>Clinical Toxicology, 60</em>(1), 67–73. <a href="https://doi.org/10.1080/15563650.2021.1937642" target="_blank" rel="noopener">https://doi.org/10.1080/15563650.2021.1937642</a></p>
+    <p class="hpS-ref-item">Huang, C.-H. et al. (2023). Heat exposure and chronic kidney disease: a temporal link in a Taiwanese agricultural county. <em>International Journal of Environmental Health Research, 34</em>(3). <a href="https://doi.org/10.1080/09603123.2023.2223514" target="_blank" rel="noopener">https://doi.org/10.1080/09603123.2023.2223514</a></p>
+    <p class="hpS-ref-item">毒藥物防治諮詢中心。<a href="https://www.pcc-vghtpe.tw/" target="_blank" rel="noopener">https://www.pcc-vghtpe.tw/</a></p>
+    <p class="hpS-ref-item">NIOSH. (2001). <em>Simple solutions: Ergonomics for farm workers</em>. CDC. <a href="https://www.cdc.gov/niosh/docs/2001-111/default.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/docs/2001-111/default.html</a></p>
+  </div>
+</div>
+
+<style>
+/* === 07-subpages-refs 專用樣式（hpS 前綴） === */
+.hpS-subpage-section,.hpS-articles-section,.hpS-references{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.hpS-subpage-section *,.hpS-references *{box-sizing:border-box;}
+
+.hpS-section-header{margin-bottom:20px;}
+.hpS-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 10px;}
+.hpS-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+
+/* Sub-page Cards（4 欄） */
+.hpS-subpage-section{margin:40px 0 0;}
+.hpS-subpage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;}
+.hpS-subpage-card{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;text-decoration:none;color:inherit;transition:all .3s;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpS-subpage-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);border-color:var(--brand);}
+.hpS-subpage-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.hpS-subpage-card h3{font-size:1.1rem;font-weight:800;margin:0 0 8px;color:var(--brand-dark);}
+.hpS-subpage-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;flex:1;}
+.hpS-subpage-arrow{position:absolute;top:28px;right:28px;color:var(--brand);font-size:1rem;transition:transform .3s;}
+.hpS-subpage-card:hover .hpS-subpage-arrow{transform:translateX(4px);}
+
+/* Crosslink */
+.hpS-crosslink{display:flex;align-items:center;gap:8px;margin-top:20px;padding:14px 20px;background:rgba(92,134,7,.06);border-radius:10px;font-size:.9rem;color:var(--text-primary);}
+.hpS-crosslink i{color:#5C8607;flex-shrink:0;}
+.hpS-crosslink a{color:#5C8607;font-weight:700;text-decoration:none;}
+.hpS-crosslink a:hover{text-decoration:underline;}
+
+/* Articles */
+.hpS-articles-section{margin:40px 0 0;}
+
+/* References */
+.hpS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}
+.hpS-ref-list{display:flex;flex-direction:column;gap:10px;}
+.hpS-ref-item{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding-left:24px;text-indent:-24px;}
+.hpS-ref-item a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .hpS-subpage-grid{grid-template-columns:1fr;}
+}
+</style>
