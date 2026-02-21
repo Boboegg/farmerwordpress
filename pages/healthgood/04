@@ -1,0 +1,208 @@
+<!-- =====================================================
+     區塊 05：熱指數對照表 + 心跳計算小工具
+     檔案：05-tool-heat-index.html
+     說明：勞動部四級制熱指數對照 + 心跳警戒計算器
+     ===================================================== -->
+
+<div class="hpH-heat-section">
+  <div class="hpH-section-header">
+    <h2><i class="fas fa-sun"></i> 今天能下田嗎？</h2>
+    <p>對照當日天氣預報的氣溫和濕度，查看你的農作建議和補水頻率。</p>
+  </div>
+
+  <div class="hpH-content-row">
+
+    <!-- 左欄：熱指數對照表 -->
+    <div class="hpH-table-card">
+      <h3><i class="fas fa-temperature-half"></i> 熱指數風險對照表</h3>
+      <p class="hpH-table-note">
+        熱指數 = 結合氣溫和相對濕度的體感溫度。
+        可用中央氣象署「生活氣象」APP 查詢。
+        <strong>直射陽光下或穿不透氣防護衣時，風險等級要再往上升一級。</strong>
+      </p>
+
+      <div class="hpH-table-wrap">
+        <table class="hpH-table">
+          <thead>
+            <tr>
+              <th>熱指數</th>
+              <th>風險等級</th>
+              <th>農作建議</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hpH-row-green">
+              <td><strong>&lt; 27°C</strong></td>
+              <td><span class="hpH-badge" style="background:#81C784;color:#fff;">正常</span></td>
+              <td>可正常作業，注意補水</td>
+            </tr>
+            <tr class="hpH-row-yellow">
+              <td><strong>27-32°C</strong></td>
+              <td><span class="hpH-badge" style="background:#FFD54F;color:#333;">第一級</span></td>
+              <td>重體力活增加休息頻率，每 30 分鐘補水</td>
+            </tr>
+            <tr class="hpH-row-orange">
+              <td><strong>32-41°C</strong></td>
+              <td><span class="hpH-badge" style="background:#FFB74D;color:#fff;">第二級</span></td>
+              <td>減少戶外作業時間，避開 10:00-15:00，每 15-20 分鐘補水</td>
+            </tr>
+            <tr class="hpH-row-red">
+              <td><strong>41-54°C</strong></td>
+              <td><span class="hpH-badge" style="background:#EF5350;color:#fff;">第三級</span></td>
+              <td>避免戶外作業，改清晨或傍晚，穿防護衣再升一級防護</td>
+            </tr>
+            <tr class="hpH-row-black">
+              <td><strong>≥ 54°C</strong></td>
+              <td><span class="hpH-badge" style="background:#424242;color:#fff;">第四級</span></td>
+              <td>停止所有非緊急戶外作業</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="hpH-source">
+        <i class="fas fa-info-circle"></i>
+        依據勞動部《高氣溫作業熱危害預防指引》第三版（2025）。
+        查詢熱指數：<a href="https://hiosha.osha.gov.tw" target="_blank" rel="noopener">hiosha.osha.gov.tw</a>
+      </div>
+    </div>
+
+    <!-- 右欄：心跳警戒值計算 -->
+    <div class="hpH-hr-card">
+      <h3><i class="fas fa-heart-pulse"></i> 心跳警戒值計算</h3>
+      <p class="hpH-hr-desc">
+        在高溫下作業時，心跳是最簡單的身體警報器。<br>
+        輸入你的年齡，馬上知道你的心跳上限。
+      </p>
+
+      <div class="hpH-hr-input-group">
+        <label for="hpH-age-input">你的年齡</label>
+        <div class="hpH-hr-input-row">
+          <input type="number" id="hpH-age-input" min="20" max="90" placeholder="例如 65" class="hpH-hr-input">
+          <button class="hpH-hr-calc-btn" id="hpH-calc-btn">計算</button>
+        </div>
+      </div>
+
+      <div class="hpH-hr-result" id="hpH-hr-result" style="display:none;">
+        <div class="hpH-hr-result-main">
+          <div class="hpH-hr-bpm" id="hpH-hr-bpm"></div>
+          <div class="hpH-hr-unit">下/分鐘</div>
+        </div>
+        <p class="hpH-hr-result-msg">
+          工作中心跳一旦超過這個數字，就要<strong>立刻停下來到陰涼處休息</strong>，
+          補充水分，等心跳恢復正常再繼續。
+        </p>
+        <div class="hpH-hr-how">
+          <strong><i class="fas fa-hand"></i> 怎麼量心跳？</strong>
+          <p>
+            把食指和中指輕壓在手腕內側（靠近拇指那一側），數 15 秒的跳動次數，再乘以 4。
+          </p>
+        </div>
+      </div>
+
+      <div class="hpH-hr-examples">
+        <p class="hpH-hr-examples-title"><strong>常見年齡對照：</strong></p>
+        <div class="hpH-hr-example-tags">
+          <span class="hpH-ex-tag">50 歲 → <strong>130</strong> 下</span>
+          <span class="hpH-ex-tag">55 歲 → <strong>125</strong> 下</span>
+          <span class="hpH-ex-tag">60 歲 → <strong>120</strong> 下</span>
+          <span class="hpH-ex-tag">65 歲 → <strong>115</strong> 下</span>
+          <span class="hpH-ex-tag">70 歲 → <strong>110</strong> 下</span>
+          <span class="hpH-ex-tag">75 歲 → <strong>105</strong> 下</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* === 05-heat-index 專用樣式（hpH 前綴） === */
+.hpH-heat-section{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#c62828;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.hpH-heat-section *{box-sizing:border-box;}
+
+.hpH-section-header{margin-bottom:24px;}
+.hpH-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpH-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;}
+
+.hpH-content-row{display:flex;gap:24px;align-items:flex-start;}
+
+/* Left: Table */
+.hpH-table-card{flex:1.2;background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpH-table-card h3{font-size:1.1rem;font-weight:800;color:var(--accent);display:flex;align-items:center;gap:8px;margin:0 0 12px;}
+.hpH-table-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 16px;}
+
+.hpH-table-wrap{overflow-x:auto;margin-bottom:16px;}
+.hpH-table{width:100%;border-collapse:collapse;font-size:.9rem;}
+.hpH-table th{background:#f5f5f5;padding:12px 16px;text-align:left;font-weight:700;font-size:.85rem;color:var(--text-secondary);border-bottom:2px solid #eee;}
+.hpH-table td{padding:12px 16px;border-bottom:1px solid #f0f0f0;line-height:1.6;}
+.hpH-badge{padding:4px 12px;border-radius:6px;font-size:.8rem;font-weight:800;display:inline-block;}
+
+.hpH-row-green td:first-child{border-left:4px solid #81C784;}
+.hpH-row-yellow td:first-child{border-left:4px solid #FFD54F;}
+.hpH-row-orange td:first-child{border-left:4px solid #FFB74D;}
+.hpH-row-red td:first-child{border-left:4px solid #EF5350;}
+.hpH-row-black td:first-child{border-left:4px solid #424242;}
+
+.hpH-source{font-size:.82rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:6px;line-height:1.6;}
+.hpH-source a{color:var(--brand);}
+
+/* Right: Heart Rate */
+.hpH-hr-card{flex:.8;background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpH-hr-card h3{font-size:1.1rem;font-weight:800;color:var(--accent);display:flex;align-items:center;gap:8px;margin:0 0 12px;}
+.hpH-hr-desc{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 20px;}
+
+.hpH-hr-input-group label{font-size:.9rem;font-weight:700;color:var(--text-primary);display:block;margin-bottom:8px;}
+.hpH-hr-input-row{display:flex;gap:10px;}
+.hpH-hr-input{flex:1;padding:12px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:1.1rem;font-weight:700;font-family:inherit;outline:none;transition:border-color .3s;}
+.hpH-hr-input:focus{border-color:var(--accent);}
+.hpH-hr-calc-btn{padding:12px 24px;border-radius:10px;background:var(--accent);color:#fff;font-size:.95rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;white-space:nowrap;}
+.hpH-hr-calc-btn:hover{background:#b71c1c;}
+
+.hpH-hr-result{margin-top:20px;padding:20px;background:rgba(198,40,40,.04);border-radius:12px;border:1px solid rgba(198,40,40,.12);}
+.hpH-hr-result-main{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;}
+.hpH-hr-bpm{font-size:2.8rem;font-weight:900;color:var(--accent);line-height:1;}
+.hpH-hr-unit{font-size:1rem;font-weight:600;color:var(--accent);}
+.hpH-hr-result-msg{font-size:.9rem;line-height:1.7;color:var(--text-primary);margin:0 0 16px;}
+.hpH-hr-how{background:#fff;padding:14px 16px;border-radius:10px;font-size:.88rem;line-height:1.7;color:var(--text-secondary);}
+.hpH-hr-how strong{display:flex;align-items:center;gap:6px;color:var(--text-primary);margin-bottom:4px;font-size:.9rem;}
+.hpH-hr-how p{margin:0;}
+
+.hpH-hr-examples{margin-top:20px;padding-top:16px;border-top:1px solid #eee;}
+.hpH-hr-examples-title{font-size:.9rem;margin:0 0 10px;}
+.hpH-hr-example-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.hpH-ex-tag{padding:6px 14px;background:#f5f5f5;border-radius:8px;font-size:.85rem;color:var(--text-secondary);}
+.hpH-ex-tag strong{color:var(--accent);}
+
+@media(max-width:768px){
+  .hpH-content-row{flex-direction:column;}
+}
+</style>
+
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    var calcBtn=document.getElementById('hpH-calc-btn');
+    var ageInput=document.getElementById('hpH-age-input');
+    var resultDiv=document.getElementById('hpH-hr-result');
+    var bpmEl=document.getElementById('hpH-hr-bpm');
+
+    calcBtn.addEventListener('click',function(){
+      var age=parseInt(ageInput.value);
+      if(isNaN(age)||age<15||age>100){alert('請輸入合理的年齡（15-100 歲）');return;}
+      var hr=180-age;
+      bpmEl.textContent=hr;
+      resultDiv.style.display='block';
+    });
+
+    ageInput.addEventListener('keypress',function(e){
+      if(e.key==='Enter') calcBtn.click();
+    });
+  });
+})();
+</script>
