@@ -1,0 +1,383 @@
+<!-- =====================================================
+     子頁面：熱危害預防
+     URL：/healthgood/熱危害預防/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== Hero ========== -->
+<div class="heat-hero">
+  <div class="heat-hero-badge"><i class="fas fa-temperature-arrow-up"></i> 熱危害預防</div>
+  <h1 class="heat-hero-title">熱危害預防指南</h1>
+  <p class="heat-hero-subtitle">辨識、預防、急救——在烈日下保護自己的完整知識</p>
+  <div class="heat-hero-intro">
+    <p>
+      台灣農民因熱傷害送急診的人數在三年內增加了 74.4%。每年夏季，雲嘉地區高溫頻繁超過 35°C，溫室內更可突破 40°C。農民是熱傷害的高風險族群——長時間戶外作業、年齡偏高、體力負荷大，加上很多人習慣忍耐不休息。
+    </p>
+    <p>
+      更令人擔心的是：長期熱暴露不只會造成急性中暑，還會累積性地傷害腎臟。研究顯示，氣溫每升高 1°C，農民罹患慢性腎臟病的風險增加 8%。這一頁整理了從辨識症狀到急救處置的完整流程。
+    </p>
+  </div>
+  <a href="/healthgood/" class="heat-back-link"><i class="fas fa-arrow-left"></i> 回到健康促進總覽</a>
+</div>
+
+<!-- ========== 第一節：熱傷害辨識 ========== -->
+<div class="heat-sections">
+
+  <div class="heat-sec-card">
+    <div class="heat-sec-header">
+      <div class="heat-sec-icon"><i class="fas fa-head-side-virus"></i></div>
+      <div>
+        <h2>熱中暑 vs 熱衰竭：怎麼分辨</h2>
+        <p>兩者處理方式不同，分辨清楚才能正確急救。</p>
+      </div>
+    </div>
+    <div class="heat-sec-body">
+      <div class="heat-compare-grid">
+        <div class="heat-compare-box heat-compare-danger">
+          <h3><i class="fas fa-circle-xmark"></i> 熱中暑（致命緊急）</h3>
+          <ul>
+            <li>體溫 ≥ 40°C</li>
+            <li>皮膚發紅、乾燥（不出汗）</li>
+            <li>意識模糊、抽搐、昏迷</li>
+            <li>心跳快但血壓可能下降</li>
+          </ul>
+          <div class="heat-compare-action">
+            <strong>處置：</strong>立刻打 119 → 移到陰涼處 → 冰敷脖子、腋下、鼠蹊部 → 等待救護車
+          </div>
+          <p class="heat-compare-stat">死亡率超過 30%，延遲降溫每 30 分鐘死亡率增加</p>
+        </div>
+        <div class="heat-compare-box heat-compare-warning">
+          <h3><i class="fas fa-triangle-exclamation"></i> 熱衰竭（嚴重但可現場處理）</h3>
+          <ul>
+            <li>體溫通常 < 40°C</li>
+            <li>皮膚濕冷、大量出汗</li>
+            <li>頭暈、噁心、虛弱、肌肉痙攣</li>
+            <li>意識清楚但可能站不穩</li>
+          </ul>
+          <div class="heat-compare-action">
+            <strong>處置：</strong>移到陰涼處 → 鬆開衣物 → 慢慢補充含鹽分的飲料 → 扇風降溫
+          </div>
+          <p class="heat-compare-stat">如未正確處理，可能惡化為熱中暑</p>
+        </div>
+      </div>
+      <div class="heat-warning-box">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>判斷關鍵：<strong>有沒有意識改變</strong>。如果對方說話含糊、反應遲鈍、或叫不醒，請當作中暑處理，立刻叫救護車。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 第二節：預防措施 ========== -->
+  <div class="heat-sec-card">
+    <div class="heat-sec-header">
+      <div class="heat-sec-icon"><i class="fas fa-shield-halved"></i></div>
+      <div>
+        <h2>預防措施：六個關鍵習慣</h2>
+        <p>中暑不是「不小心」，而是防護不足。以下六件事做到了，風險就大幅降低。</p>
+      </div>
+    </div>
+    <div class="heat-sec-body">
+      <div class="heat-habit-grid">
+        <div class="heat-habit-item">
+          <div class="heat-habit-num">1</div>
+          <div>
+            <h4>調整作息，避開高溫時段</h4>
+            <p>清晨 5:00-10:00 作業 → 中午 10:00-15:00 休息（室內或陰涼處）→ 下午 15:00-18:00 作業。台灣夏季最高溫通常出現在 13:00-14:00 之間。</p>
+          </div>
+        </div>
+        <div class="heat-habit-item">
+          <div class="heat-habit-num">2</div>
+          <div>
+            <h4>主動補水，不等口渴</h4>
+            <p>每 15-20 分鐘喝 150-200 mL，一天至少 2-4 公升。口渴代表身體已經缺水 1-2%。可加少量鹽巴（每公升水加 1/4 茶匙）補充電解質。避免含糖飲料和酒精。</p>
+          </div>
+        </div>
+        <div class="heat-habit-item">
+          <div class="heat-habit-num">3</div>
+          <div>
+            <h4>穿淺色、透氣、寬鬆衣物</h4>
+            <p>深色衣物吸熱更多。選擇吸濕排汗材質，搭配寬沿遮陽帽（帽沿 ≥ 7 公分）。如果穿不透氣防護衣（如噴農藥），作業時間要縮短，休息頻率要增加。</p>
+          </div>
+        </div>
+        <div class="heat-habit-item">
+          <div class="heat-habit-num">4</div>
+          <div>
+            <h4>熱適應訓練（acclimatization）</h4>
+            <p>夏季剛開始或休假後回到田間，前 5-7 天要逐步增加作業時間。第一天只做平常的 20%，之後每天增加 20%。這是因為身體需要時間調整排汗和散熱機制。</p>
+          </div>
+        </div>
+        <div class="heat-habit-item">
+          <div class="heat-habit-num">5</div>
+          <div>
+            <h4>用心跳監測身體狀態</h4>
+            <p>公式：<strong>180 − 年齡 = 你的心跳上限</strong>。例如 65 歲農友，心跳超過 115 下/分鐘就要立刻停下來休息。量法：食指中指壓手腕內側，數 15 秒跳動次數 × 4。</p>
+          </div>
+        </div>
+        <div class="heat-habit-item">
+          <div class="heat-habit-num">6</div>
+          <div>
+            <h4>建立「夥伴制」互相看顧</h4>
+            <p>高溫天田間不要一個人作業。和鄰居、家人約好互相觀察。如果對方突然變得安靜、動作遲緩、說話含糊，這些都是熱傷害的早期徵兆。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 第三節：熱-腎連結 ========== -->
+  <div class="heat-sec-card">
+    <div class="heat-sec-header">
+      <div class="heat-sec-icon"><i class="fas fa-disease"></i></div>
+      <div>
+        <h2>為什麼熱會傷腎？</h2>
+        <p>這不只是急性問題——長期累積的傷害更令人擔憂。</p>
+      </div>
+    </div>
+    <div class="heat-sec-body">
+      <div class="heat-kidney-content">
+        <p>
+          近年國際研究逐漸揭示「熱與慢性腎臟病」（heat-CKD nexus）的關聯。在台灣，針對農業縣市的研究發現：
+        </p>
+        <div class="heat-kidney-stats">
+          <div class="heat-kidney-stat">
+            <span class="heat-kidney-num">8%</span>
+            <span>氣溫每升高 1°C，慢性腎臟病門診率增加</span>
+          </div>
+          <div class="heat-kidney-stat">
+            <span class="heat-kidney-num">4.3 倍</span>
+            <span>中暑患者日後罹患慢性腎臟病的風險（HR 4.346）</span>
+          </div>
+          <div class="heat-kidney-stat">
+            <span class="heat-kidney-num">9.1 倍</span>
+            <span>中暑患者日後進展到末期腎病的風險（HR 9.078）</span>
+          </div>
+        </div>
+        <p>
+          機轉：反覆脫水 → 尿液濃縮 → 腎臟持續處於高壓狀態 → 腎小管損傷累積 → 慢性腎臟病。這在中美洲甘蔗工人身上已有大量流行病學證據，台灣的農業縣市也觀察到類似趨勢。
+        </p>
+        <div class="heat-warning-box">
+          <i class="fas fa-lightbulb"></i>
+          <span>最好的預防就是充分補水。上面提到的「每 15-20 分鐘喝 150-200 mL」不只是防中暑，也是保護腎臟。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 第四節：中暑急救 SOP ========== -->
+  <div class="heat-sec-card">
+    <div class="heat-sec-header">
+      <div class="heat-sec-icon"><i class="fas fa-kit-medical"></i></div>
+      <div>
+        <h2>中暑急救 SOP</h2>
+        <p>記住這個口訣：<strong>蔭涼 → 脫衣 → 散熱 → 喝水 → 送醫</strong></p>
+      </div>
+    </div>
+    <div class="heat-sec-body">
+      <div class="heat-sop-steps">
+        <div class="heat-sop-step">
+          <div class="heat-sop-num">1</div>
+          <div>
+            <h4>移到蔭涼處</h4>
+            <p>搬到樹蔭、工寮或有冷氣的地方。如果在田中央，用任何可以遮陽的東西先擋住直射陽光。</p>
+          </div>
+        </div>
+        <div class="heat-sop-step">
+          <div class="heat-sop-num">2</div>
+          <div>
+            <h4>鬆開或脫掉多餘衣物</h4>
+            <p>解開鈕扣、鬆開腰帶、脫掉防護衣和鞋子，讓身體能散熱。</p>
+          </div>
+        </div>
+        <div class="heat-sop-step">
+          <div class="heat-sop-num">3</div>
+          <div>
+            <h4>積極降溫</h4>
+            <p>用濕毛巾或冰塊敷在<strong>脖子兩側、腋下、鼠蹊部</strong>（這三個地方大血管離皮膚最近，降溫效率最高）。有水管就直接用水沖，同時搧風。</p>
+          </div>
+        </div>
+        <div class="heat-sop-step">
+          <div class="heat-sop-num">4</div>
+          <div>
+            <h4>補充水分（限意識清醒者）</h4>
+            <p>小口小口喝水或含鹽飲料。<strong>意識不清的人絕對不可以灌水</strong>，會嗆到窒息。</p>
+          </div>
+        </div>
+        <div class="heat-sop-step heat-sop-step-emergency">
+          <div class="heat-sop-num">5</div>
+          <div>
+            <h4>撥打 119</h4>
+            <p>以下任一情況就要立刻叫救護車：體溫超過 40°C、意識不清或說話含糊、抽搐、降溫後 15 分鐘沒有改善。等待救護車期間持續降溫不要停。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 第五節：氣象資源 ========== -->
+  <div class="heat-sec-card">
+    <div class="heat-sec-header">
+      <div class="heat-sec-icon"><i class="fas fa-cloud-sun"></i></div>
+      <div>
+        <h2>善用氣象資源，提前判斷風險</h2>
+        <p>出門前看一眼天氣預報，就能決定今天的作業計畫。</p>
+      </div>
+    </div>
+    <div class="heat-sec-body">
+      <div class="heat-resource-grid">
+        <div class="heat-resource-item">
+          <h4><i class="fas fa-mobile-screen"></i> 中央氣象署「生活氣象」APP</h4>
+          <p>可查詢鄉鎮級的體感溫度和紫外線指數。設定為你所在的鄉鎮，打開推播通知就能收到高溫特報。</p>
+        </div>
+        <div class="heat-resource-item">
+          <h4><i class="fas fa-triangle-exclamation"></i> 三級高溫燈號</h4>
+          <p>氣象署依鄉鎮發布黃色（連續 3 天 ≥ 36°C）、橙色（連續 3 天 ≥ 38°C）、紅色（≥ 40°C 或連續 3 天 ≥ 38°C）高溫燈號。看到橙色以上，建議取消中午戶外作業。</p>
+        </div>
+        <div class="heat-resource-item">
+          <h4><i class="fas fa-industry"></i> 職安署熱危害預警</h4>
+          <p>勞動部職安署提供工作場所熱指數預警，可至 <a href="https://hiosha.osha.gov.tw" target="_blank" rel="noopener">hiosha.osha.gov.tw</a> 查詢。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.heat-sections -->
+
+<!-- ========== 交叉連結 ========== -->
+<div class="heat-crosslinks">
+  <h3><i class="fas fa-link"></i> 相關主題</h3>
+  <div class="heat-crosslink-grid">
+    <a href="/prevention/%e6%ba%ab%e5%ae%a4%e5%b0%88%e5%8d%80/" class="heat-crosslink-item">
+      <i class="fas fa-warehouse"></i>
+      <span>溫室作業安全</span>
+      <small>溫室內溫度更高，防護標準要升一級</small>
+    </a>
+    <a href="/healthgood/%e8%be%b2%e8%97%a5%e5%ae%89%e5%85%a8/" class="heat-crosslink-item">
+      <i class="fas fa-flask-vial"></i>
+      <span>農藥安全</span>
+      <small>高溫加速農藥揮發，穿防護衣時散熱更差</small>
+    </a>
+    <a href="/prevention/%e5%80%8b%e4%ba%ba%e9%98%b2%e8%ad%b7%e5%85%b7ppe/" class="heat-crosslink-item">
+      <i class="fas fa-mask-face"></i>
+      <span>個人防護具</span>
+      <small>不透氣防護衣的穿著時間限制和替代方案</small>
+    </a>
+  </div>
+</div>
+
+<!-- ========== 參考資料 ========== -->
+<div class="heat-references">
+  <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+  <div class="heat-ref-list">
+    <p>勞動部職業安全衛生署（2025）。高氣溫作業熱危害預防指引（第三版）。<a href="https://www.osha.gov.tw/48110/48713/48735/60221/" target="_blank" rel="noopener">https://www.osha.gov.tw/48110/48713/48735/60221/</a></p>
+    <p>衛福部國民健康署。預防熱傷害衛教專區。<a href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=440" target="_blank" rel="noopener">https://www.hpa.gov.tw/Pages/List.aspx?nodeid=440</a></p>
+    <p>Huang, C.-H. et al. (2023). Heat exposure and chronic kidney disease: A temporal link in a Taiwanese agricultural county. <em>International Journal of Environmental Health Research, 34</em>(3). <a href="https://doi.org/10.1080/09603123.2023.2223514" target="_blank" rel="noopener">https://doi.org/10.1080/09603123.2023.2223514</a></p>
+    <p>Flouris, A. D. et al. (2018). Workers' health and productivity under occupational heat strain: A systematic review and meta-analysis. <em>The Lancet Planetary Health, 2</em>(12), e521–e531. <a href="https://doi.org/10.1016/S2542-5196(18)30237-7" target="_blank" rel="noopener">https://doi.org/10.1016/S2542-5196(18)30237-7</a></p>
+    <p>中央氣象署。高溫資訊。<a href="https://www.cwa.gov.tw/V8/C/W/OBS_Heat.html" target="_blank" rel="noopener">https://www.cwa.gov.tw/V8/C/W/OBS_Heat.html</a></p>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+.heat-hero,.heat-sections,.heat-crosslinks,.heat-references{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#c62828;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.heat-hero *,.heat-sections *,.heat-crosslinks *,.heat-references *{box-sizing:border-box;}
+
+/* Hero */
+.heat-hero{padding:36px;background:linear-gradient(135deg,#ffebee 0%,#fff 60%,#ffcdd2 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(198,40,40,.1);}
+.heat-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(198,40,40,.1);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
+.heat-hero-title{font-size:2rem;font-weight:900;color:var(--accent);margin:0 0 8px;line-height:1.3;}
+.heat-hero-subtitle{font-size:1.1rem;color:#e53935;font-weight:600;margin:0 0 18px;}
+.heat-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(198,40,40,.06);}
+.heat-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.heat-hero-intro p:last-child{margin-bottom:0;}
+.heat-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
+.heat-back-link:hover{text-decoration:underline;}
+
+/* Section Cards */
+.heat-sections{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}
+.heat-sec-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
+.heat-sec-header{display:flex;align-items:center;gap:16px;padding:24px;background:rgba(198,40,40,.02);border-bottom:1px solid #f0f0f0;}
+.heat-sec-icon{width:52px;height:52px;border-radius:14px;background:rgba(198,40,40,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.heat-sec-header h2{font-size:1.2rem;font-weight:800;color:var(--accent);margin:0 0 4px;}
+.heat-sec-header>div>p{font-size:.9rem;color:var(--text-secondary);margin:0;line-height:1.6;}
+.heat-sec-body{padding:24px;}
+
+/* Compare Grid */
+.heat-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;}
+.heat-compare-box{padding:24px;border-radius:12px;border:1px solid #eee;}
+.heat-compare-danger{background:rgba(198,40,40,.03);border-color:rgba(198,40,40,.15);}
+.heat-compare-warning{background:rgba(245,158,11,.03);border-color:rgba(245,158,11,.15);}
+.heat-compare-box h3{font-size:1.05rem;font-weight:800;margin:0 0 14px;display:flex;align-items:center;gap:8px;}
+.heat-compare-danger h3{color:#c62828;}.heat-compare-warning h3{color:#e65100;}
+.heat-compare-box ul{list-style:none;padding:0;margin:0 0 14px;}
+.heat-compare-box li{font-size:.9rem;line-height:1.7;padding:3px 0;padding-left:18px;position:relative;color:var(--text-primary);}
+.heat-compare-box li::before{content:'•';position:absolute;left:0;font-weight:800;}
+.heat-compare-danger li::before{color:#c62828;}.heat-compare-warning li::before{color:#e65100;}
+.heat-compare-action{padding:12px 16px;background:rgba(255,255,255,.7);border-radius:8px;font-size:.9rem;line-height:1.7;margin-bottom:8px;}
+.heat-compare-stat{font-size:.82rem;color:var(--text-secondary);margin:0;font-style:italic;}
+
+/* Warning Box */
+.heat-warning-box{padding:14px 18px;background:rgba(245,158,11,.08);border-radius:10px;border-left:4px solid #f59e0b;font-size:.9rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;color:var(--text-primary);}
+.heat-warning-box i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+
+/* Habit Grid */
+.heat-habit-grid{display:flex;flex-direction:column;gap:16px;}
+.heat-habit-item{display:flex;gap:16px;padding:18px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.heat-habit-num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0;}
+.heat-habit-item h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.heat-habit-item p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+/* Kidney Stats */
+.heat-kidney-content p{font-size:.95rem;line-height:1.8;margin:0 0 16px;color:var(--text-primary);}
+.heat-kidney-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
+.heat-kidney-stat{background:rgba(198,40,40,.04);border-radius:12px;padding:20px;text-align:center;border:1px solid rgba(198,40,40,.1);}
+.heat-kidney-num{display:block;font-size:1.8rem;font-weight:900;color:var(--accent);margin-bottom:6px;}
+.heat-kidney-stat span:last-child{font-size:.85rem;color:var(--text-secondary);line-height:1.5;}
+
+/* SOP Steps */
+.heat-sop-steps{display:flex;flex-direction:column;gap:14px;}
+.heat-sop-step{display:flex;gap:16px;padding:18px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.heat-sop-step-emergency{background:rgba(198,40,40,.04);border-color:rgba(198,40,40,.12);}
+.heat-sop-num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0;}
+.heat-sop-step h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.heat-sop-step p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+/* Resource Grid */
+.heat-resource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.heat-resource-item{padding:20px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.heat-resource-item h4{font-size:.95rem;font-weight:700;margin:0 0 8px;color:var(--text-primary);display:flex;align-items:center;gap:8px;}
+.heat-resource-item h4 i{color:var(--accent);}
+.heat-resource-item p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+.heat-resource-item a{color:var(--brand);font-weight:600;}
+
+/* Cross-links */
+.heat-crosslinks{margin-bottom:36px;}
+.heat-crosslinks h3{font-size:1.2rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:8px;margin:0 0 16px;}
+.heat-crosslink-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.heat-crosslink-item{display:flex;flex-direction:column;gap:4px;padding:20px;background:#fff;border-radius:12px;border:1px solid #eee;text-decoration:none;color:inherit;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+.heat-crosslink-item:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.07);border-color:var(--brand);}
+.heat-crosslink-item i{font-size:1.2rem;color:var(--brand);margin-bottom:4px;}
+.heat-crosslink-item span{font-weight:700;font-size:.95rem;color:var(--brand-dark);}
+.heat-crosslink-item small{font-size:.82rem;color:var(--text-secondary);line-height:1.5;}
+
+/* References */
+.heat-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
+.heat-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.heat-ref-list{display:flex;flex-direction:column;gap:8px;}
+.heat-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
+.heat-ref-list a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .heat-hero{padding:24px;}.heat-hero-title{font-size:1.5rem;}
+  .heat-compare-grid{grid-template-columns:1fr;}
+  .heat-kidney-stats{grid-template-columns:1fr;}
+  .heat-resource-grid,.heat-crosslink-grid{grid-template-columns:1fr;}
+}
+</style>
