@@ -1,0 +1,233 @@
+<!-- =====================================================
+     區塊 06：制度資源區
+     檔案：06-insurance-resources.html
+     說明：農職保 + 雲嘉就醫資源 + 急救電話
+     ===================================================== -->
+
+<div class="hpR-resource-section">
+  <div class="hpR-section-header">
+    <h2><i class="fas fa-hand-holding-heart"></i> 保障你的權益</h2>
+    <p>保險怎麼保？生病去哪裡看？緊急電話是什麼？一次整理清楚。</p>
+  </div>
+
+  <div class="hpR-three-col">
+
+    <!-- 欄 1：農職保 -->
+    <div class="hpR-col-card">
+      <div class="hpR-col-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <i class="fas fa-shield-halved"></i>
+      </div>
+      <h3>農民職業災害保險</h3>
+      <p class="hpR-col-desc">務農受傷也有保障。自願加保，農會辦理。</p>
+
+      <div class="hpR-info-list">
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">月繳保費</span>
+          <span class="hpR-info-value"><strong>NT$25</strong><br><small>雲林縣政府全額補助，農友免繳</small></span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">傷病給付</span>
+          <span class="hpR-info-value">第 1-2 月：NT$680/日<br>第 3 月起：NT$476/日<br>最長給付 2 年</span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">就醫津貼</span>
+          <span class="hpR-info-value">門診 NT$50/日<br>住院 NT$900/日</span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">身心障礙</span>
+          <span class="hpR-info-value">依等級最高 NT$612,000</span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">加保方式</span>
+          <span class="hpR-info-value">攜帶身分證到<strong>戶籍所在地農會</strong>辦理</span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">涵蓋範圍</span>
+          <span class="hpR-info-value">農機傷害、農藥中毒、蛇咬、中暑、墜落等</span>
+        </div>
+      </div>
+
+      <div class="hpR-stat-highlight">
+        <i class="fas fa-chart-line"></i>
+        <span>雲林縣投保率 <strong>50.42%</strong>（全國最高）</span>
+      </div>
+
+      <div class="hpR-disclaimer">
+        <i class="fas fa-exclamation-triangle"></i>
+        <div>
+          <strong>資料僅供參考</strong>
+          <p>以上農職保資訊依據勞動部勞工保險局公開資料整理（2024 年版本）。保費、給付金額與補助政策可能隨法規調整而變動。<strong>最新資訊請洽戶籍所在地農會，或撥打勞保局服務專線 02-2396-1266。</strong></p>
+          <p class="hpR-disclaimer-links">
+            <a href="https://www.bli.gov.tw/0100395.html" target="_blank" rel="noopener">勞保局・農職保專區</a>
+            <a href="https://www.yunlin.gov.tw/" target="_blank" rel="noopener">雲林縣政府</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 欄 2：就醫資源 -->
+    <div class="hpR-col-card">
+      <div class="hpR-col-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <i class="fas fa-hospital"></i>
+      </div>
+      <h3>雲嘉地區就醫資源</h3>
+      <p class="hpR-col-desc">以下醫院距離雲嘉農業區較近，設有相關科別。</p>
+
+      <div class="hpR-hospital-list">
+        <div class="hpR-hospital">
+          <h4>台大醫院雲林分院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">職業醫學科</span>
+            <span class="hpR-htag">復健科</span>
+            <span class="hpR-htag">農業健康中心</span>
+          </div>
+          <p class="hpR-hospital-note">台灣首座農業環境與職業健康中心所在地</p>
+        </div>
+        <div class="hpR-hospital">
+          <h4>雲林長庚醫院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">復健科</span>
+            <span class="hpR-htag">骨科</span>
+            <span class="hpR-htag">慢性病管理</span>
+          </div>
+        </div>
+        <div class="hpR-hospital">
+          <h4>嘉義長庚醫院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">復健科 8 位醫師</span>
+            <span class="hpR-htag">精神科</span>
+          </div>
+          <p class="hpR-hospital-note">69 床復健病房，雲嘉地區規模最大</p>
+        </div>
+        <div class="hpR-hospital">
+          <h4>嘉義基督教醫院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">復健科</span>
+            <span class="hpR-htag">職業病評估</span>
+          </div>
+        </div>
+        <div class="hpR-hospital">
+          <h4>大林慈濟醫院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">復健科</span>
+            <span class="hpR-htag">腎臟內科</span>
+            <span class="hpR-htag">社區照護</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 欄 3：緊急聯絡 -->
+    <div class="hpR-col-card">
+      <div class="hpR-col-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <i class="fas fa-phone-flip"></i>
+      </div>
+      <h3>緊急聯絡資訊</h3>
+      <p class="hpR-col-desc">存在手機裡，需要的時候不用找。</p>
+
+      <div class="hpR-phone-list">
+        <a href="tel:119" class="hpR-phone-item hpR-phone-emergency">
+          <div class="hpR-phone-number">119</div>
+          <div class="hpR-phone-desc">火災、急救、緊急醫療</div>
+        </a>
+        <a href="tel:1925" class="hpR-phone-item hpR-phone-mental">
+          <div class="hpR-phone-number">1925</div>
+          <div class="hpR-phone-desc">安心專線（24hr 心理諮詢）</div>
+        </a>
+        <a href="tel:1995" class="hpR-phone-item">
+          <div class="hpR-phone-number">1995</div>
+          <div class="hpR-phone-desc">生命線</div>
+        </a>
+        <a href="tel:1980" class="hpR-phone-item">
+          <div class="hpR-phone-number">1980</div>
+          <div class="hpR-phone-desc">張老師專線</div>
+        </a>
+        <a href="tel:0228717121" class="hpR-phone-item hpR-phone-poison">
+          <div class="hpR-phone-number">02-2871-7121</div>
+          <div class="hpR-phone-desc">毒藥物防治諮詢中心（24hr）</div>
+        </a>
+        <a href="tel:0800022228" class="hpR-phone-item">
+          <div class="hpR-phone-number">0800-022-228</div>
+          <div class="hpR-phone-desc">植物病蟲害諮詢（免費）</div>
+        </a>
+      </div>
+
+      <div class="hpR-local-contacts">
+        <h4><i class="fas fa-map-marker-alt"></i> 地方心理衛生中心</h4>
+        <p>雲林縣：05-5523338</p>
+        <p>嘉義縣：05-2949193</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* === 06-resources 專用樣式（hpR 前綴） === */
+.hpR-resource-section{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.hpR-resource-section *{box-sizing:border-box;}
+
+.hpR-section-header{margin-bottom:24px;}
+.hpR-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpR-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;}
+
+.hpR-three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
+
+.hpR-col-card{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpR-col-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.hpR-col-card h3{font-size:1.1rem;font-weight:800;color:#222;margin:0 0 6px;}
+.hpR-col-desc{font-size:.88rem;color:var(--text-secondary);margin:0 0 16px;line-height:1.6;}
+
+/* Insurance info */
+.hpR-info-list{display:flex;flex-direction:column;gap:0;}
+.hpR-info-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f5f5f5;}
+.hpR-info-row:last-child{border-bottom:none;}
+.hpR-info-label{flex-shrink:0;width:80px;font-size:.82rem;font-weight:700;color:var(--brand);padding-top:2px;}
+.hpR-info-value{font-size:.88rem;line-height:1.6;color:var(--text-primary);}
+.hpR-info-value small{color:var(--text-secondary);font-size:.8rem;}
+
+.hpR-stat-highlight{display:flex;align-items:center;gap:8px;background:rgba(46,125,50,.06);padding:12px 16px;border-radius:10px;margin-top:14px;font-size:.88rem;color:var(--brand);}
+.hpR-stat-highlight strong{color:#1b5e20;}
+
+/* Disclaimer */
+.hpR-disclaimer{display:flex;gap:10px;padding:14px 16px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:10px;margin-top:14px;}
+.hpR-disclaimer i{color:#f59e0b;margin-top:2px;flex-shrink:0;font-size:14px;}
+.hpR-disclaimer strong{display:block;font-size:.82rem;color:#e65100;margin-bottom:2px;}
+.hpR-disclaimer p{font-size:.78rem;line-height:1.5;color:var(--text-secondary);margin:0 0 4px;}
+.hpR-disclaimer p:last-child{margin-bottom:0;}
+.hpR-disclaimer-links{display:flex;gap:12px;margin-top:4px;}
+.hpR-disclaimer-links a{color:var(--brand);font-weight:600;font-size:.78rem;text-decoration:none;}
+.hpR-disclaimer-links a:hover{text-decoration:underline;}
+
+/* Hospital list */
+.hpR-hospital-list{display:flex;flex-direction:column;gap:12px;}
+.hpR-hospital{padding:12px 0;border-bottom:1px solid #f5f5f5;}
+.hpR-hospital:last-child{border-bottom:none;}
+.hpR-hospital h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:#222;}
+.hpR-hospital-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.hpR-htag{padding:3px 10px;background:#f0f7ff;color:#1565c0;border-radius:6px;font-size:.75rem;font-weight:600;}
+.hpR-hospital-note{font-size:.8rem;color:var(--text-secondary);margin:6px 0 0;font-style:italic;}
+
+/* Phone list */
+.hpR-phone-list{display:flex;flex-direction:column;gap:8px;}
+.hpR-phone-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:#f9fafb;text-decoration:none;color:inherit;transition:all .2s;border:1px solid transparent;}
+.hpR-phone-item:hover{background:#f0f0f0;border-color:#ddd;}
+.hpR-phone-number{font-size:1.05rem;font-weight:800;color:var(--text-primary);white-space:nowrap;min-width:120px;}
+.hpR-phone-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.4;}
+.hpR-phone-emergency .hpR-phone-number{color:#c62828;}
+.hpR-phone-mental .hpR-phone-number{color:#2e7d32;}
+.hpR-phone-poison .hpR-phone-number{color:#7b1fa2;}
+
+.hpR-local-contacts{margin-top:16px;padding:14px;background:rgba(46,125,50,.04);border-radius:10px;}
+.hpR-local-contacts h4{font-size:.88rem;font-weight:700;color:var(--brand);margin:0 0 8px;display:flex;align-items:center;gap:6px;}
+.hpR-local-contacts p{font-size:.85rem;color:var(--text-primary);margin:0 0 4px;line-height:1.6;}
+
+@media(max-width:900px){
+  .hpR-three-col{grid-template-columns:1fr;}
+}
+</style>
