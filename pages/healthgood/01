@@ -1,0 +1,151 @@
+<!-- =====================================================
+     區塊 01：Hero
+     檔案：01-hero.html
+     說明：健康促進主頁面的第一個區塊
+     前綴：hp-（health promotion）避免與 /prevention 的 prev- 衝突
+     貼入方式：WordPress 頁面 → 程式碼編輯器 → 依序貼入
+     ===================================================== -->
+
+<!-- 字型與圖示（整頁只需載入一次，放在第一塊即可） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="hp-hero">
+  <div class="hp-hero-content">
+    <div class="hp-hero-badge"><i class="fas fa-heart-pulse"></i> 健康促進專區</div>
+    <h1 class="hp-hero-title">農民健康促進</h1>
+    <p class="hp-hero-subtitle">保護身體、管理風險、照顧心理——從田間到生活的全方位健康指南</p>
+
+    <div class="hp-hero-intro">
+      <p>
+        務農是高體力、高暴露的工作。台灣農民平均年齡超過 62 歲，超過半數已逾 65 歲。在這個年紀還要面對烈日、農藥、重複搬運和不確定的收入，身體和心理都承受很大的壓力。
+      </p>
+      <p>
+        健康促進不是「生病了才看醫生」，而是在還沒出問題之前就開始保護自己。這個專區整理了跟農民最直接相關的四大健康主題：
+      </p>
+      <ul class="hp-hero-list">
+        <li><i class="fas fa-check-circle"></i> <strong>熱危害預防</strong>——了解熱中暑怎麼辨識、怎麼急救、怎麼安排作息</li>
+        <li><i class="fas fa-check-circle"></i> <strong>農藥安全</strong>——掌握正確的防護方法和中毒急救步驟</li>
+        <li><i class="fas fa-check-circle"></i> <strong>骨骼肌肉保健</strong>——學會暖身伸展，知道什麼時候該就醫</li>
+        <li><i class="fas fa-check-circle"></i> <strong>心靈紓壓</strong>——壓力調適方法和求助管道，照顧心理也是照顧健康</li>
+      </ul>
+      <p class="hp-hero-note">
+        <i class="fas fa-lightbulb"></i>
+        <strong>不知道從哪裡開始？</strong>
+        建議先做下方的「健康風險速篩」，勾選幾個選項就能了解目前最需要注意哪些面向。
+      </p>
+    </div>
+
+    <div class="hp-hero-actions">
+      <a href="#hp-risk-tools" class="hp-btn-primary">
+        <i class="fas fa-clipboard-check"></i> 健康風險速篩
+      </a>
+      <a href="#hp-tabs-section" class="hp-btn-secondary">
+        <i class="fas fa-layer-group"></i> 四大健康主題
+      </a>
+    </div>
+  </div>
+
+  <div class="hp-hero-visual">
+    <div class="hp-hero-stats">
+      <div class="hp-stat-item">
+        <div class="hp-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-user-clock"></i>
+        </div>
+        <div class="hp-stat-text">
+          <span class="hp-stat-number">62+歲</span>
+          <span class="hp-stat-label">台灣農民平均年齡</span>
+          <span class="hp-stat-source">農業部農業統計年報</span>
+        </div>
+      </div>
+      <div class="hp-stat-item">
+        <div class="hp-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-bone"></i>
+        </div>
+        <div class="hp-stat-text">
+          <span class="hp-stat-number">91%</span>
+          <span class="hp-stat-label">農民曾有肌肉骨骼不適</span>
+          <span class="hp-stat-source">Osborne et al., 2012</span>
+        </div>
+      </div>
+      <div class="hp-stat-item">
+        <div class="hp-stat-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+          <i class="fas fa-temperature-arrow-up"></i>
+        </div>
+        <div class="hp-stat-text">
+          <span class="hp-stat-number">71.3%</span>
+          <span class="hp-stat-label">農漁民感知高溫風險</span>
+          <span class="hp-stat-source">國衛院農民健康世代研究, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 01-hero 專用樣式（hp- 前綴） === */
+.hp-hero{
+  --brand:#2e7d32;--brand-hover:#1b5e20;--brand-dark:#1a3a1a;
+  --accent:#c62828;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  display:flex;gap:40px;align-items:flex-start;padding:40px;
+  background:linear-gradient(135deg,#e8f5e9 0%,#fff 60%,#e3f2fd 100%);
+  border-radius:var(--radius);margin-bottom:0;
+  border:1px solid rgba(46,125,50,.1);box-sizing:border-box;
+}
+.hp-hero *{box-sizing:border-box;}
+.hp-hero-content{flex:1.2;}
+.hp-hero-visual{flex:.8;position:sticky;top:20px;}
+.hp-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,125,50,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.hp-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-dark);margin:0 0 8px;line-height:1.2;}
+.hp-hero-subtitle{font-size:1.05rem;color:var(--brand);font-weight:600;margin:0 0 20px;line-height:1.6;}
+
+/* 導讀段落 */
+.hp-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(46,125,50,.08);}
+.hp-hero-intro p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 12px;}
+.hp-hero-intro p:last-child{margin-bottom:0;}
+.hp-hero-list{list-style:none;padding:0;margin:0 0 16px;}
+.hp-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;line-height:1.7;padding:4px 0;color:var(--text-primary);}
+.hp-hero-list li i{color:var(--brand);margin-top:4px;flex-shrink:0;}
+.hp-hero-note{background:rgba(245,158,11,.08);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
+.hp-hero-note i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+
+/* CTA */
+.hp-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.hp-btn-primary,.hp-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
+.hp-btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(46,125,50,.3);}
+.hp-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.hp-btn-secondary{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+.hp-btn-secondary:hover{background:var(--brand);color:#fff;}
+
+/* Stats */
+.hp-hero-stats{display:flex;flex-direction:column;gap:16px;}
+.hp-stat-item{display:flex;align-items:center;gap:16px;background:#fff;padding:16px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hp-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.hp-stat-number{font-size:1.4rem;font-weight:900;display:block;line-height:1;}
+.hp-stat-label{font-size:.85rem;color:var(--text-secondary);}
+.hp-stat-source{font-size:.72rem;color:#aaa;font-style:italic;display:block;margin-top:3px;}
+
+/* 平滑捲動 */
+@media(max-width:768px){
+  .hp-hero{flex-direction:column;padding:24px;gap:24px;}
+  .hp-hero-title{font-size:1.6rem;}
+  .hp-hero-visual{position:static;}
+  .hp-hero-stats{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .hp-stat-item{flex:1;min-width:140px;padding:12px;}
+}
+</style>
+
+<script>
+/* 平滑捲動（放在第一塊，全頁共用） */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href^="#hp-"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+});
+</script>
