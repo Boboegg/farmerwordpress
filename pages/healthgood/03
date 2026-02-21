@@ -1,0 +1,329 @@
+<!-- =====================================================
+     區塊 04：健康風險速篩
+     檔案：04-tool-health-check.html
+     說明：互動式健康風險評估，含年齡加權和主題連結推薦
+     ===================================================== -->
+
+<div class="hp-risk-section" id="hp-risk-tools">
+  <div class="hpQ-section-header">
+    <h2><i class="fas fa-clipboard-check"></i> 健康風險速篩</h2>
+    <p>
+      不需要任何專業知識，兩個步驟就能了解自己目前的健康風險在哪裡。
+      結果會告訴你最需要注意的面向，並直接連結到對應的健康主題。
+    </p>
+  </div>
+
+  <div class="hpQ-tool-card" id="health-quiz">
+    <div class="hpQ-tool-header">
+      <div class="hpQ-tool-icon"><i class="fas fa-user-shield"></i></div>
+      <div>
+        <h3>農友健康風險速篩</h3>
+        <p>選擇年齡 + 勾選作業狀況，馬上看結果。</p>
+      </div>
+    </div>
+
+    <div class="hpQ-disclaimer">
+      <i class="fas fa-info-circle"></i>
+      <div>
+        <strong>關於這個工具</strong>
+        <p>
+          本速篩根據台灣職安署《高氣溫作業熱危害預防指引》、農委會農藥安全使用規範、以及國際農民肌肉骨骼疾病流行病學文獻（Osborne et al., 2012）中確認的主要暴露風險因子編製。年齡加權依據台灣農民健康世代研究中 65 歲以上農民顯著更高的職業傷病風險。本工具為<strong>自我覺察用途</strong>，非臨床診斷工具，結果不代表醫療建議。如有健康疑慮，請諮詢醫療專業人員。
+        </p>
+      </div>
+    </div>
+
+    <div class="hpQ-quiz-body">
+
+      <!-- Step 1：年齡 -->
+      <div class="hpQ-quiz-step">
+        <label class="hpQ-quiz-label">
+          <span class="hpQ-step-num">1</span>
+          您的年齡區間是？
+        </label>
+        <div class="hpQ-age-options" id="hpq-ages">
+          <button class="hpQ-age-btn" data-age="0">50 歲以下</button>
+          <button class="hpQ-age-btn" data-age="1">50-64 歲</button>
+          <button class="hpQ-age-btn" data-age="2">65 歲以上</button>
+        </div>
+      </div>
+
+      <!-- Step 2：勾選 -->
+      <div class="hpQ-quiz-step">
+        <label class="hpQ-quiz-label">
+          <span class="hpQ-step-num">2</span>
+          以下哪些狀況符合您目前的情形？（可複選）
+        </label>
+        <div class="hpQ-check-list" id="hpq-checks">
+          <label class="hpQ-check-item" data-topic="heat">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>每天在戶外作業超過 4 小時</span>
+            <span class="hpQ-topic-tag heat-tag">熱危害</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="heat">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>夏天幾乎不避開中午高溫時段（10:00-15:00）</span>
+            <span class="hpQ-topic-tag heat-tag">熱危害</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="heat">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>作業中很少主動喝水（通常等到渴了才喝）</span>
+            <span class="hpQ-topic-tag heat-tag">熱危害</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="pesticide">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>噴灑農藥時沒有戴耐化學手套</span>
+            <span class="hpQ-topic-tag pest-tag">農藥</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="pesticide">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>噴灑農藥時只戴一般口罩（非防毒面具）</span>
+            <span class="hpQ-topic-tag pest-tag">農藥</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="msd">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>每天需搬運超過 15 公斤重物</span>
+            <span class="hpQ-topic-tag msd-tag">骨骼肌肉</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="msd">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>經常需要蹲著或彎腰超過 1 小時</span>
+            <span class="hpQ-topic-tag msd-tag">骨骼肌肉</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="msd">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>最近經常覺得腰痠背痛或膝蓋痛</span>
+            <span class="hpQ-topic-tag msd-tag">骨骼肌肉</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="pesticide">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>操作農機時沒有戴耳塞或耳罩</span>
+            <span class="hpQ-topic-tag pest-tag">安全</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="mental">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>最近心情低落、睡不好、或對事情失去興趣</span>
+            <span class="hpQ-topic-tag mental-tag">心靈</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 送出按鈕 -->
+      <button class="hpQ-submit-btn" id="hpq-submit">
+        <i class="fas fa-magnifying-glass-chart"></i> 查看結果
+      </button>
+
+      <!-- 結果區塊 -->
+      <div class="hpQ-result" id="hpq-result" style="display:none;">
+        <div class="hpQ-result-header" id="hpq-result-header">
+          <div class="hpQ-result-icon" id="hpq-result-icon"></div>
+          <div>
+            <h4 id="hpq-result-level"></h4>
+            <p id="hpq-result-msg"></p>
+          </div>
+        </div>
+        <div class="hpQ-result-topics" id="hpq-result-topics"></div>
+        <div class="hpQ-result-mental" id="hpq-result-mental" style="display:none;">
+          <div class="hpQ-mental-card">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>安心專線 1925</strong>
+              <p>24 小時免費心理諮詢。感覺撐不住的時候，打一通電話就好。</p>
+            </div>
+          </div>
+        </div>
+        <button class="hpQ-reset-btn" id="hpq-reset">
+          <i class="fas fa-rotate-left"></i> 重新評估
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 04-health-check 專用樣式（hpQ 前綴） === */
+.hp-risk-section{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.hp-risk-section *{box-sizing:border-box;}
+
+.hpQ-section-header{margin-bottom:24px;}
+.hpQ-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+
+.hpQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #f0f0f0;}
+.hpQ-tool-icon{width:56px;height:56px;border-radius:14px;background:rgba(46,125,50,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.hpQ-tool-header h3{font-size:1.15rem;font-weight:800;margin:0 0 4px;color:var(--brand-dark);}
+.hpQ-tool-header p{font-size:.9rem;color:var(--text-secondary);margin:0;}
+
+/* Disclaimer */
+.hpQ-disclaimer{display:flex;gap:12px;padding:16px 20px;background:rgba(21,101,192,.04);border:1px solid rgba(21,101,192,.12);border-radius:12px;margin-bottom:20px;}
+.hpQ-disclaimer i{color:#1565c0;margin-top:2px;flex-shrink:0;font-size:16px;}
+.hpQ-disclaimer strong{display:block;font-size:.9rem;color:#1565c0;margin-bottom:4px;}
+.hpQ-disclaimer p{font-size:.82rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* Steps */
+.hpQ-quiz-step{margin-bottom:24px;}
+.hpQ-quiz-label{display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:14px;}
+.hpQ-step-num{width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;flex-shrink:0;}
+
+/* Age buttons */
+.hpQ-age-options{display:flex;gap:12px;flex-wrap:wrap;}
+.hpQ-age-btn{padding:12px 24px;border-radius:10px;border:2px solid #e0e0e0;background:#fff;font-size:.95rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
+.hpQ-age-btn.is-selected{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+/* Checkboxes */
+.hpQ-check-list{display:flex;flex-direction:column;gap:8px;}
+.hpQ-check-item{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;border:1px solid #eee;cursor:pointer;transition:all .2s;position:relative;}
+.hpQ-check-item:hover{background:#f9fafb;}
+.hpQ-check-item input{display:none;}
+.hpQ-check-mark{width:22px;height:22px;border-radius:6px;border:2px solid #d0d0d0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.hpQ-check-item input:checked ~ .hpQ-check-mark{background:var(--brand);border-color:var(--brand);}
+.hpQ-check-item input:checked ~ .hpQ-check-mark::after{content:'\f00c';font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:12px;}
+.hpQ-check-item input:checked ~ span{color:var(--text-primary);font-weight:600;}
+.hpQ-topic-tag{margin-left:auto;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:12px;flex-shrink:0;}
+.heat-tag{background:rgba(198,40,40,.1);color:#c62828;}
+.pest-tag{background:rgba(123,31,162,.1);color:#7b1fa2;}
+.msd-tag{background:rgba(21,101,192,.1);color:#1565c0;}
+.mental-tag{background:rgba(46,125,50,.1);color:#2e7d32;}
+
+/* Submit */
+.hpQ-submit-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;background:var(--brand);color:#fff;font-size:1rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:8px;}
+.hpQ-submit-btn:hover{background:#1b5e20;transform:translateY(-2px);}
+
+/* Result */
+.hpQ-result{margin-top:24px;padding:24px;border-radius:var(--radius);border:2px solid #eee;}
+.hpQ-result-header{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+.hpQ-result-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.hpQ-result-header h4{font-size:1.1rem;font-weight:800;margin:0 0 4px;}
+.hpQ-result-header p{font-size:.93rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+.hpQ-result-topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.hpQ-topic-link{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .3s;border:1.5px solid;}
+.hpQ-topic-link:hover{transform:translateY(-2px);opacity:.85;}
+.hpQ-topic-link.heat-link{color:#c62828;border-color:#c62828;background:rgba(198,40,40,.05);}
+.hpQ-topic-link.pest-link{color:#7b1fa2;border-color:#7b1fa2;background:rgba(123,31,162,.05);}
+.hpQ-topic-link.msd-link{color:#1565c0;border-color:#1565c0;background:rgba(21,101,192,.05);}
+.hpQ-topic-link.mental-link{color:#2e7d32;border-color:#2e7d32;background:rgba(46,125,50,.05);}
+
+.hpQ-mental-card{display:flex;align-items:center;gap:14px;background:rgba(46,125,50,.06);border:1px solid rgba(46,125,50,.15);border-radius:12px;padding:16px 20px;margin-top:16px;}
+.hpQ-mental-card i{font-size:24px;color:#2e7d32;flex-shrink:0;}
+.hpQ-mental-card strong{color:#2e7d32;font-size:1rem;}
+.hpQ-mental-card p{font-size:.88rem;color:var(--text-secondary);margin:4px 0 0;}
+
+.hpQ-reset-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;background:#f5f5f5;color:var(--text-secondary);font-size:.9rem;font-weight:600;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:16px;}
+.hpQ-reset-btn:hover{background:#e0e0e0;}
+
+@media(max-width:768px){
+  .hpQ-age-options{flex-direction:column;}
+  .hpQ-age-btn{width:100%;text-align:center;}
+}
+</style>
+
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    var ageScore=0,ageSelected=false;
+    var ageBtns=document.querySelectorAll('.hpQ-age-btn');
+    var checks=document.querySelectorAll('#hpq-checks input[type="checkbox"]');
+    var submitBtn=document.getElementById('hpq-submit');
+    var resultDiv=document.getElementById('hpq-result');
+    var resetBtn=document.getElementById('hpq-reset');
+
+    /* Age selection */
+    ageBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        ageBtns.forEach(function(b){b.classList.remove('is-selected');});
+        this.classList.add('is-selected');
+        ageScore=parseInt(this.getAttribute('data-age'));
+        ageSelected=true;
+      });
+    });
+
+    /* Submit */
+    submitBtn.addEventListener('click',function(){
+      if(!ageSelected){alert('請先選擇年齡區間');return;}
+
+      var checkCount=0;
+      var topics={heat:0,pesticide:0,msd:0,mental:0};
+
+      checks.forEach(function(cb){
+        if(cb.checked){
+          checkCount++;
+          var topic=cb.closest('.hpQ-check-item').getAttribute('data-topic');
+          if(topics[topic]!==undefined) topics[topic]++;
+        }
+      });
+
+      var total=checkCount+ageScore;
+
+      /* Determine level */
+      var level,msg,color,icon;
+      if(total<=3){
+        level='低度風險';color='#81C784';icon='fa-circle-check';
+        msg='你目前的健康管理還不錯。建議維持好習慣，定期做免費成人健檢。';
+      }else if(total<=6){
+        level='中度風險';color='#FFB74D';icon='fa-circle-exclamation';
+        msg='你有一些需要注意的風險因子。建議針對下方標示的主題，查看對應的預防建議。';
+      }else if(total<=9){
+        level='高度風險';color='#EF5350';icon='fa-triangle-exclamation';
+        msg='你的健康風險較高，建議盡快改善作業習慣。特別留意下方標示的重點主題。';
+      }else{
+        level='極高風險';color='#c62828';icon='fa-circle-xmark';
+        msg='你同時面臨多項風險因子，建議儘早安排健康檢查，並逐步改善每一個勾選項目。';
+      }
+
+      /* Render result */
+      var resIcon=document.getElementById('hpq-result-icon');
+      resIcon.innerHTML='<i class="fas '+icon+'"></i>';
+      resIcon.style.background=color+'20';resIcon.style.color=color;
+
+      var resHeader=document.getElementById('hpq-result-header');
+      document.getElementById('hpq-result-level').textContent=level+'（'+total+' 分）';
+      document.getElementById('hpq-result-level').style.color=color;
+      document.getElementById('hpq-result-msg').textContent=msg;
+
+      resultDiv.style.borderColor=color;
+
+      /* Topic links */
+      var topicDiv=document.getElementById('hpq-result-topics');
+      topicDiv.innerHTML='';
+      var topicMap={
+        heat:{name:'熱危害預防',cls:'heat-link',icon:'fa-temperature-arrow-up',url:'/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/'},
+        pesticide:{name:'農藥安全',cls:'pest-link',icon:'fa-flask-vial',url:'/healthgood/%e8%be%b2%e8%97%a5%e5%ae%89%e5%85%a8/'},
+        msd:{name:'骨骼肌肉保健',cls:'msd-link',icon:'fa-bone',url:'/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/'},
+        mental:{name:'心靈紓壓',cls:'mental-link',icon:'fa-brain',url:'/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/'}
+      };
+
+      Object.keys(topics).forEach(function(k){
+        if(topics[k]>0){
+          var a=document.createElement('a');
+          a.href=topicMap[k].url;
+          a.className='hpQ-topic-link '+topicMap[k].cls;
+          a.innerHTML='<i class="fas '+topicMap[k].icon+'"></i> '+topicMap[k].name+'（'+topics[k]+' 項）';
+          topicDiv.appendChild(a);
+        }
+      });
+
+      /* Mental health special card */
+      var mentalCard=document.getElementById('hpq-result-mental');
+      mentalCard.style.display=topics.mental>0?'block':'none';
+
+      resultDiv.style.display='block';
+      resultDiv.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+
+    /* Reset */
+    resetBtn.addEventListener('click',function(){
+      ageBtns.forEach(function(b){b.classList.remove('is-selected');});
+      checks.forEach(function(cb){cb.checked=false;});
+      ageScore=0;ageSelected=false;
+      resultDiv.style.display='none';
+    });
+  });
+})();
+</script>
