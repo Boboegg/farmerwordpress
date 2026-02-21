@@ -1,0 +1,94 @@
+<!-- =====================================================
+     子頁：研究成果 / 研究報告
+     URL：/研究成果/研究報告/
+     CSS 前綴：res-（與主頁共用）
+     
+     【維護指南】
+     - 報告條目：複製 .res-bib-item 區塊新增
+     - 此頁需搭配主頁 page-研究成果.html 的 <style> 區塊
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Hero -->
+<div class="res-hero" style="padding:36px 40px;">
+  <div class="res-hero-inner">
+    <div class="res-hero-badge" style="background:rgba(124,58,237,.1);color:#7c3aed;"><i class="fas fa-file-contract"></i> Reports</div>
+    <h1 class="res-hero-title" style="font-size:2rem;">研究報告</h1>
+    <p class="res-hero-subtitle">⚠️ 一句話說明，例如：計畫執行報告、政策建議白皮書、需求評估報告等完整文件。</p>
+    <a href="/研究成果/" class="res-back-link"><i class="fas fa-arrow-left"></i> 回到研究成果總覽</a>
+  </div>
+</div>
+
+<!-- 子頁導覽列 -->
+<div class="res-sections" style="margin-top:16px;">
+  <div class="res-sub-nav">
+    <a href="/研究成果/學術發表/" class="res-sub-nav-item">學術發表</a>
+    <a href="/研究成果/研究報告/" class="res-sub-nav-item is-current">研究報告</a>
+    <a href="/研究成果/研討會與演講/" class="res-sub-nav-item">研討會與演講</a>
+    <a href="/研究成果/影音與podcast/" class="res-sub-nav-item">影音與 Podcast</a>
+    <a href="/研究成果/資料圖表/" class="res-sub-nav-item">資料圖表</a>
+  </div>
+</div>
+
+<!-- 報告列表 -->
+<div class="res-sections">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon" style="background:rgba(124,58,237,.1);color:#7c3aed;"><i class="fas fa-file-contract"></i></div>
+      <div><h2>計畫報告與政策白皮書</h2><p>依年份排序，最新在前。每份報告附 PDF 下載。</p></div>
+    </div>
+
+    <div class="res-filter-bar">
+      <button class="res-filter-btn is-active" data-filter="all">全部</button>
+      <button class="res-filter-btn" data-filter="annual">年度報告</button>
+      <button class="res-filter-btn" data-filter="policy">政策白皮書</button>
+      <button class="res-filter-btn" data-filter="needs">需求評估</button>
+    </div>
+
+    <div class="res-sec-body">
+      <div class="res-bib-list">
+
+        <!-- ===== 報告條目模板 ===== -->
+        <div class="res-bib-item" data-category="annual">
+          <div class="res-bib-num">1.</div>
+          <div class="res-bib-body">
+            <p class="res-bib-ref">⚠️ Author(s). (Year). <em>Title of report</em> (Report No. xxx). Publisher. URL</p>
+            <p class="res-feat-abstract" style="font-size:.88rem;color:#6b7280;line-height:1.6;margin:8px 0 0;">⚠️ 報告摘要，3-4 行。說明報告涵蓋範圍、核心發現與政策建議方向。</p>
+            <div class="res-bib-meta" style="margin-top:10px;">
+              <span class="res-feat-tag">⚠️ 關鍵字</span>
+              <span class="res-feat-tag">⚠️ 頁數：XX 頁</span>
+            </div>
+          </div>
+          <div class="res-bib-actions">
+            <a href="#" class="res-dl-btn"><i class="fas fa-file-pdf"></i> PDF<span class="res-dl-size">⚠️ MB</span></a>
+          </div>
+        </div>
+        <!-- ===== 模板結束 ===== -->
+
+        <div class="res-bib-item" data-category="policy">
+          <div class="res-bib-num">2.</div>
+          <div class="res-bib-body">
+            <p class="res-bib-ref">⚠️ APA 引用。</p>
+            <p class="res-feat-abstract" style="font-size:.88rem;color:#6b7280;line-height:1.6;margin:8px 0 0;">⚠️ 摘要。</p>
+          </div>
+          <div class="res-bib-actions"><a href="#" class="res-dl-btn"><i class="fas fa-file-pdf"></i> PDF<span class="res-dl-size">⚠️ MB</span></a></div>
+        </div>
+
+        <div class="res-bib-item" data-category="needs">
+          <div class="res-bib-num">3.</div>
+          <div class="res-bib-body">
+            <p class="res-bib-ref">⚠️ APA 引用。</p>
+            <p class="res-feat-abstract" style="font-size:.88rem;color:#6b7280;line-height:1.6;margin:8px 0 0;">⚠️ 摘要。</p>
+          </div>
+          <div class="res-bib-actions"><a href="#" class="res-dl-btn"><i class="fas fa-file-pdf"></i> PDF<span class="res-dl-size">⚠️ MB</span></a></div>
+        </div>
+
+        <!-- ⚠️ 繼續複製 .res-bib-item 新增 -->
+      </div>
+    </div>
+  </div>
+</div>
