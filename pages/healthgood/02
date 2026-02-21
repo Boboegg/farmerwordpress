@@ -1,0 +1,479 @@
+<!-- =====================================================
+     四大健康主題：完整 Tabs 整合版
+     包含：Tab 1 熱危害、Tab 2 農藥安全、Tab 3 骨骼肌肉、Tab 4 心靈紓壓
+     ===================================================== -->
+
+<div class="hp-tabs-section" id="hp-tabs-section">
+
+  <!-- 區塊導讀 -->
+  <div class="hp-section-header">
+    <h2><i class="fas fa-layer-group"></i> 四大健康主題</h2>
+    <p class="hp-section-desc">
+      農民最常面對的四種健康風險，每一種都有對應的預防方法。
+      點選下方標籤快速瀏覽重點，想看完整內容請點進各主題的深度專區。
+    </p>
+  </div>
+
+  <!-- Tab 按鈕（四個） -->
+  <div class="hp-tab-btns">
+    <button class="hp-tab-btn is-active" data-tab="hp-tab-heat" style="--tab-color:#c62828;">
+      <i class="fas fa-temperature-arrow-up"></i><span>熱危害預防</span>
+    </button>
+    <button class="hp-tab-btn" data-tab="hp-tab-pesticide" style="--tab-color:#7b1fa2;">
+      <i class="fas fa-flask-vial"></i><span>農藥安全</span>
+    </button>
+    <button class="hp-tab-btn" data-tab="hp-tab-msd" style="--tab-color:#1565c0;">
+      <i class="fas fa-bone"></i><span>骨骼肌肉</span>
+    </button>
+    <button class="hp-tab-btn" data-tab="hp-tab-mental" style="--tab-color:#2e7d32;">
+      <i class="fas fa-brain"></i><span>心靈紓壓</span>
+    </button>
+  </div>
+
+  <!-- ===== Tab 1：熱危害預防 ===== -->
+  <div class="hp-tab-panel is-active" id="hp-tab-heat">
+    <div class="hp-tab-intro" style="border-left:4px solid #c62828;">
+      <div class="hp-tab-intro-text">
+        <p>
+          雲嘉地區夏季高溫經常超過 35°C，溫室內部更可能突破 40°C。農民長時間在烈日下作業，是熱中暑和熱衰竭的高風險族群。更值得注意的是，長期熱暴露與慢性腎臟病風險顯著相關——氣溫每升高 1°C，慢性腎臟病風險增加 8%。
+        </p>
+      </div>
+      <a href="/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/" class="hp-tab-link" style="color:#c62828;border-color:#c62828;">
+        查看完整指南 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hp-icon-grid">
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-head-side-virus"></i>
+        </div>
+        <h4>熱中暑 vs 熱衰竭</h4>
+        <p>體溫 ≥40°C 且意識改變 = 中暑，是急診狀況，死亡率超過 30%</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-droplet"></i>
+        </div>
+        <h4>喝水規則</h4>
+        <p>每 15-20 分鐘喝 150-200 mL，不要等到渴了才喝</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h4>避開高溫時段</h4>
+        <p>建議：清晨 5:00-10:00 作業 → 中午休息 → 下午 15:00-18:00 作業</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-heart-pulse"></i>
+        </div>
+        <h4>心跳監測法</h4>
+        <p>心跳超過（180 − 年齡）就要立刻休息。65 歲農友 → 超過 115 下就要停</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-disease"></i>
+        </div>
+        <h4>熱與腎臟的關係</h4>
+        <p>長期熱暴露會傷腎，中暑患者日後的慢性腎臟病風險比一般人高出數倍</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-kit-medical"></i>
+        </div>
+        <h4>中暑急救</h4>
+        <p>移到陰涼處 → 冰敷脖子腋下鼠蹊部 → 意識不清立刻打 119</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Tab 2：農藥安全 ===== -->
+  <div class="hp-tab-panel" id="hp-tab-pesticide">
+    <div class="hp-tab-intro" style="border-left:4px solid #7b1fa2;">
+      <div class="hp-tab-intro-text">
+        <p>
+          農藥是農業的必要工具，但使用不當就是毒物。台灣每年仍有約 390 人因非自殺性農藥中毒住院。最大的風險不是吸入，而是皮膚接觸——超過 95% 的職業性農藥暴露發生在皮膚，尤其是手部。很多農友噴藥時戴了口罩，卻沒戴手套，等於最大的破口完全沒有防護。
+        </p>
+      </div>
+      <a href="/healthgood/%e8%be%b2%e8%97%a5%e5%ae%89%e5%85%a8/" class="hp-tab-link" style="color:#7b1fa2;border-color:#7b1fa2;">
+        查看完整指南 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hp-icon-grid">
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-hand"></i>
+        </div>
+        <h4>皮膚是最大破口</h4>
+        <p>超過 95% 的農藥暴露經由皮膚吸收，手部和前臂是最常接觸的部位</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-triangle-exclamation"></i>
+        </div>
+        <h4>急性中毒症狀</h4>
+        <p>流口水、瞳孔縮小、肌肉抽搐、呼吸困難 → 立刻打 119</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-clock-rotate-left"></i>
+        </div>
+        <h4>安全採收期</h4>
+        <p>最後一次噴藥到採收的最短天數，標示在農藥瓶標籤上，務必遵守</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-wind"></i>
+        </div>
+        <h4>再進入間隔（REI）</h4>
+        <p>溫室施藥後至少通風 2-4 小時才能重新進入作業區域</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-phone-volume"></i>
+        </div>
+        <h4>中毒急救電話</h4>
+        <p>毒藥物防治諮詢中心 24 小時專線：<strong>02-2871-7121</strong></p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-ban"></i>
+        </div>
+        <h4>巴拉刈已禁用</h4>
+        <p>2020 年全面禁用，農藥中毒自殺率下降 37%，證實管制有效</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Tab 3：骨骼肌肉保健 ===== -->
+  <div class="hp-tab-panel" id="hp-tab-msd">
+    <div class="hp-tab-intro" style="border-left:4px solid #1565c0;">
+      <div class="hp-tab-intro-text">
+        <p>
+          國際研究顯示，超過 90% 的農民一生中會經歷肌肉骨骼疼痛（Osborne et al., 2012）。最常見的部位是腰部、膝蓋和肩膀，跟農務中的蹲姿、搬運和仰頭動作直接相關。國衛院的台灣農民健康世代研究也發現，農民的髖關節退化、膝關節退化和膝蓋滑囊炎風險顯著高於一般人（國衛院, 2024）。
+        </p>
+      </div>
+      <a href="/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/" class="hp-tab-link" style="color:#1565c0;border-color:#1565c0;">
+        查看完整指南 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hp-icon-grid">
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-person-walking-arrow-loop-left"></i>
+        </div>
+        <h4>腰痛</h4>
+        <p>農民下背痛盛行率 63-87%，長時間彎腰和搬重物是主因</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-person-falling"></i>
+        </div>
+        <h4>膝蓋問題</h4>
+        <p>稻農膝關節疼痛盛行率 54-80%，長時間蹲姿是最大元兇</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-hand-holding-medical"></i>
+        </div>
+        <h4>肩膀傷害</h4>
+        <p>果農旋轉肌撕裂盛行率 60%，長時間仰頭採摘修剪造成</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-dumbbell"></i>
+        </div>
+        <h4>工前暖身</h4>
+        <p>5-10 分鐘暖身可顯著降低傷害風險，深蹲、手臂伸展、軀幹旋轉</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <h4>什麼時候該看醫生</h4>
+        <p>疼痛持續超過 2 週、愈來愈嚴重、出現麻木感 → 盡早就醫</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <h4>雲嘉復健資源</h4>
+        <p>台大雲林分院、雲林長庚、嘉義長庚、嘉基、大林慈濟均設有復健科</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Tab 4：心靈紓壓 ===== -->
+  <div class="hp-tab-panel" id="hp-tab-mental">
+    <div class="hp-tab-intro" style="border-left:4px solid #2e7d32;">
+      <div class="hp-tab-intro-text">
+        <p>
+          農民面對的壓力是多重的：天候不確定、收入不穩定、身體疼痛、人口外移後的孤獨感。研究指出，因工受傷的農民罹患憂鬱症的機率顯著更高（Kang et al., 2020）。但超過半數台灣民眾認為精神疾病有汙名，65% 不知道有哪些心理健康服務（Liu et al., 2008）——這意味著很多需要幫助的農友從來沒有尋求過幫助。
+        </p>
+      </div>
+      <a href="/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/" class="hp-tab-link" style="color:#2e7d32;border-color:#2e7d32;">
+        查看完整指南 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hp-icon-grid">
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-cloud-rain"></i>
+        </div>
+        <h4>農民特有壓力源</h4>
+        <p>看天吃飯、收入波動、獨居孤立、身體慢性疼痛</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-lungs"></i>
+        </div>
+        <h4>腹式呼吸</h4>
+        <p>最簡單的紓壓法：吸氣 4 秒、吐氣 8 秒，每天 10 分鐘，田邊就能做</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-phone"></i>
+        </div>
+        <h4>安心專線 1925</h4>
+        <p>24 小時免費，衛福部設置的心理諮詢專線，有人聽你說</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-people-group"></i>
+        </div>
+        <h4>社群連結很重要</h4>
+        <p>參加農會活動、廟口聚會、鄰里互動，人際連結是最好的心理疫苗</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-moon"></i>
+        </div>
+        <h4>睡眠品質</h4>
+        <p>固定作息、睡前避免咖啡和酒精、中午可短睡 15-20 分鐘</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h4>求助是勇敢</h4>
+        <p>尋求幫助不是軟弱，是對自己和家人負責任的表現</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.hp-tabs-section 結束 -->
+
+<!-- =====================================================
+     CSS 樣式表 (已整合並優化動畫與排版)
+     ===================================================== -->
+<style>
+/* === 基礎變數與容器 === */
+.hp-tabs-section {
+  --brand: #2e7d32;
+  --brand-hover: #1b5e20;
+  --brand-dark: #1a3a1a;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --radius: 16px;
+  font-family: "Noto Sans TC", "Lato", sans-serif;
+  color: var(--text-primary);
+  margin: 40px 0 0;
+  box-sizing: border-box;
+}
+.hp-tabs-section * {
+  box-sizing: border-box;
+}
+
+/* 標題區塊 */
+.hp-section-header { margin-bottom: 24px; }
+.hp-section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+.hp-section-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin: 0;
+  max-width: 800px;
+}
+
+/* Tabs 切換按鈕 */
+.hp-tab-btns {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.hp-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all .3s;
+  font-family: inherit;
+}
+.hp-tab-btn.is-active, .hp-tab-btn:hover {
+  background: var(--tab-color, var(--brand));
+  color: #fff;
+  border-color: var(--tab-color, var(--brand));
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Tab 面板 */
+.hp-tab-panel {
+  display: none;
+  animation: fadeIn 0.4s ease-out;
+}
+.hp-tab-panel.is-active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tab 引言區 */
+.hp-tab-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.hp-tab-intro-text {
+  flex: 1;
+  min-width: 240px;
+}
+.hp-tab-intro-text p {
+  margin: 0 0 8px;
+  line-height: 1.8;
+  font-size: .95rem;
+  color: var(--text-primary);
+  text-align: justify;
+}
+.hp-tab-intro-text p:last-child {
+  margin-bottom: 0;
+}
+.hp-tab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1.5px solid;
+  border-radius: 8px;
+  transition: all .3s;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+.hp-tab-link:hover {
+  opacity: .8;
+  transform: translateX(4px);
+}
+
+/* 網格區塊 */
+.hp-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.hp-icon-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0,0,0,.04);
+  transition: all .3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hp-icon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  border-color: #e2e8f0;
+}
+.hp-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.hp-icon-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #222;
+}
+.hp-icon-card p {
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* RWD 響應式設定 */
+@media(max-width: 768px) {
+  .hp-icon-grid { grid-template-columns: 1fr; }
+  .hp-tab-btns { flex-direction: column; }
+  .hp-tab-btn { width: 100%; justify-content: center; }
+  .hp-tab-intro { flex-direction: column; padding: 20px; }
+  .hp-tab-link { width: 100%; justify-content: center; }
+}
+</style>
+
+<!-- =====================================================
+     JavaScript 切換邏輯
+     ===================================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btns = document.querySelectorAll('.hp-tab-btn');
+  var panels = document.querySelectorAll('.hp-tab-panel');
+  
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      // 取得目標 Tab ID
+      var target = this.getAttribute('data-tab');
+      
+      // 移除所有按鈕與面板的 active 狀態
+      btns.forEach(function(b) { b.classList.remove('is-active'); });
+      panels.forEach(function(p) { p.classList.remove('is-active'); });
+      
+      // 為當前點擊的按鈕與目標面板加上 active 狀態
+      this.classList.add('is-active');
+      var panel = document.getElementById(target);
+      if(panel) panel.classList.add('is-active');
+    });
+  });
+});
+</script>
