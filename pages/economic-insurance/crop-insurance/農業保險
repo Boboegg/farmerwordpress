@@ -1,9 +1,9 @@
 <!-- =====================================================
      子頁面：農作物保險
-     URL：/money/crop-insurance/
+     URL：/economic-insurance/crop-insurance/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：crop-
-     主色系：#1565c0（藍色系，與 /money/ 一致）
+     主色系：#1565c0（藍色系，與 /economic-insurance/ 一致）
      ===================================================== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
       <a href="#crop-types" class="crop-btn-primary"><i class="fas fa-list-check"></i> 查看保單類型</a>
       <a href="#crop-items" class="crop-btn-secondary"><i class="fas fa-magnifying-glass"></i> 我的作物能保嗎？</a>
     </div>
-    <a href="/money/" class="crop-back-link"><i class="fas fa-arrow-left"></i> 回到經濟與保險總覽</a>
+    <a href="/economic-insurance/" class="crop-back-link"><i class="fas fa-arrow-left"></i> 回到經濟與保險總覽</a>
   </div>
   <div class="crop-hero-visual">
     <div class="crop-hero-stats">
@@ -379,8 +379,8 @@
     </div>
     <div class="crop-cross-links"><h3><i class="fas fa-link"></i> 相關專區</h3>
       <div class="crop-cross-grid">
-        <a href="/money/occupational-insurance/" class="crop-cross-card"><i class="fas fa-shield-halved"></i><span>農民職災保險</span><small>每月 15 元，務農受傷也有保障</small></a>
-        <a href="/money/subsidy/" class="crop-cross-card"><i class="fas fa-gift"></i><span>補助資源懶人包</span><small>農機補助、天災救助、青農支持一次看</small></a>
+        <a href="/economic-insurance/occupational-accident-insurance/" class="crop-cross-card"><i class="fas fa-shield-halved"></i><span>農民職災保險</span><small>每月 15 元，務農受傷也有保障</small></a>
+        <a href="/economic-insurance/agricultural-subsidy-resources/" class="crop-cross-card"><i class="fas fa-gift"></i><span>補助資源懶人包</span><small>農機補助、天災救助、青農支持一次看</small></a>
       </div>
     </div>
   </div>

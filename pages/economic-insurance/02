@@ -1,5 +1,5 @@
 <!-- =====================================================
-     /money/ 主頁面・區塊 02：三大主題導覽卡片
+     /economic-insurance/ 主頁面・區塊 02：三大主題導覽卡片
      檔案：02-topic-cards.html
      ===================================================== -->
 
@@ -12,7 +12,7 @@
   <div class="money-topic-grid">
 
     <!-- 卡片 1：職業災害保險（已上線） -->
-    <a href="/money/occupational-insurance/" class="money-topic-card money-topic-blue">
+    <a href="/economic-insurance/occupational-accident-insurance/" class="money-topic-card money-topic-blue">
       <div class="money-topic-status money-status-live"><i class="fas fa-check-circle"></i> 已上線</div>
       <div class="money-topic-icon"><i class="fas fa-shield-halved"></i></div>
       <h3>農民職業災害保險</h3>

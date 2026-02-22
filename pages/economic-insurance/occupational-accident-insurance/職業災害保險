@@ -1,6 +1,6 @@
 <!-- =====================================================
      子頁面：農民職業災害保險
-     URL：/money/occupational-insurance/
+     URL：/economic-insurance/occupational-accident-insurance/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：occ-
      主色系：#1565c0（藍色系）
@@ -33,7 +33,7 @@
         <i class="fas fa-calculator"></i> 傷病給付試算
       </a>
     </div>
-    <a href="/money/" class="occ-back-link"><i class="fas fa-arrow-left"></i> 回到經濟與保險總覽</a>
+    <a href="/economic-insurance/" class="occ-back-link"><i class="fas fa-arrow-left"></i> 回到經濟與保險總覽</a>
   </div>
   <div class="occ-hero-visual">
     <div class="occ-hero-stats">
@@ -734,7 +734,7 @@
           <span>健康促進</span>
           <small>農職保涵蓋中暑、農藥中毒 → 了解預防方法</small>
         </a>
-        <a href="/prevention/" class="occ-cross-card">
+        <a href="/occupational-safety/" class="occ-cross-card">
           <i class="fas fa-helmet-safety"></i>
           <span>職業安全</span>
           <small>農機傷害是最常見的職災類型 → 了解安全操作</small>

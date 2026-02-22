@@ -1,5 +1,5 @@
 <!-- =====================================================
-     /money/ 主頁面・區塊 05：免責聲明 + 查詢窗口 + 站內連結
+     /economic-insurance/ 主頁面・區塊 05：免責聲明 + 查詢窗口 + 站內連結
      檔案：05-disclaimer-refs.html
      ===================================================== -->
 
@@ -55,7 +55,7 @@
           <small>中暑、農藥中毒屬農職保涵蓋的職業傷病——先學會預防</small>
         </div>
       </a>
-      <a href="/prevention/" class="money-cross-card">
+      <a href="/occupational-safety/" class="money-cross-card">
         <div class="money-cross-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-helmet-safety"></i></div>
         <div>
           <strong>職業安全</strong>

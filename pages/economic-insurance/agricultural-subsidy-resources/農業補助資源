@@ -1,9 +1,9 @@
 <!-- =====================================================
      子頁面：補助資源懶人包
-     URL：/money/subsidy/
+     URL：/economic-insurance/agricultural-subsidy-resources/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：subs-
-     主色系：#1565c0（藍色系，與 /money/ 一致）
+     主色系：#1565c0（藍色系，與 /economic-insurance/ 一致）
      ===================================================== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
       <a href="#subs-disaster" class="subs-btn-secondary"><i class="fas fa-cloud-showers-heavy"></i> 天災救助</a>
       <a href="#subs-youth" class="subs-btn-secondary"><i class="fas fa-user-graduate"></i> 青農支持</a>
     </div>
-    <a href="/money/" class="subs-back-link"><i class="fas fa-arrow-left"></i> 回到經濟與保險總覽</a>
+    <a href="/economic-insurance/" class="subs-back-link"><i class="fas fa-arrow-left"></i> 回到經濟與保險總覽</a>
   </div>
   <div class="subs-hero-visual">
     <div class="subs-hero-stats">
@@ -211,7 +211,7 @@
 
       <div class="subs-note-box" style="margin-top:12px;">
         <i class="fas fa-lightbulb"></i>
-        <span>天災現金救助與<a href="/money/crop-insurance/" style="color:#1565c0;font-weight:700;">農作物保險</a>理賠可以<strong>同時領取</strong>。建議農友在申請救助的同時，也了解農作物保險以取得更完整的保障。</span>
+        <span>天災現金救助與<a href="/economic-insurance/crop-insurance/" style="color:#1565c0;font-weight:700;">農作物保險</a>理賠可以<strong>同時領取</strong>。建議農友在申請救助的同時，也了解農作物保險以取得更完整的保障。</span>
       </div>
     </div>
   </div>
@@ -348,8 +348,8 @@
     </div>
     <div class="subs-cross-links"><h3><i class="fas fa-link"></i> 相關專區</h3>
       <div class="subs-cross-grid">
-        <a href="/money/occupational-insurance/" class="subs-cross-card"><i class="fas fa-shield-halved"></i><span>農民職災保險</span><small>每月 15 元，務農受傷也有保障</small></a>
-        <a href="/money/crop-insurance/" class="subs-cross-card"><i class="fas fa-seedling"></i><span>農作物保險</span><small>保費政府補助 50%，天災理賠更快更高</small></a>
+        <a href="/economic-insurance/occupational-accident-insurance/" class="subs-cross-card"><i class="fas fa-shield-halved"></i><span>農民職災保險</span><small>每月 15 元，務農受傷也有保障</small></a>
+        <a href="/economic-insurance/crop-insurance/" class="subs-cross-card"><i class="fas fa-seedling"></i><span>農作物保險</span><small>保費政府補助 50%，天災理賠更快更高</small></a>
       </div>
     </div>
   </div>

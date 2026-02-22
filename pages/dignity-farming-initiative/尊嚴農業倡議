@@ -334,9 +334,9 @@
   <div class="adv-sec-card adv-sec-slim">
     <h3 class="adv-cross-title"><i class="fas fa-link"></i> 延伸探索</h3>
     <div class="adv-cross-grid">
-      <a href="/prevention/" class="adv-cross-card"><i class="fas fa-helmet-safety"></i><span>職業安全</span><small>防護具型錄與風險評估</small></a>
+      <a href="/occupational-safety/" class="adv-cross-card"><i class="fas fa-helmet-safety"></i><span>職業安全</span><small>防護具型錄與風險評估</small></a>
       <a href="/healthgood/" class="adv-cross-card"><i class="fas fa-heart-pulse"></i><span>健康促進</span><small>復健運動與職醫地圖</small></a>
-      <a href="/money/" class="adv-cross-card"><i class="fas fa-shield-cat"></i><span>經濟與保險</span><small>職災保險與補助資源</small></a>
+      <a href="/economic-insurance/" class="adv-cross-card"><i class="fas fa-shield-cat"></i><span>經濟與保險</span><small>職災保險與補助資源</small></a>
       <a href="/農學堂/" class="adv-cross-card"><i class="fas fa-graduation-cap"></i><span>農學堂</span><small>微學習影片與工作坊</small></a>
     </div>
   </div>

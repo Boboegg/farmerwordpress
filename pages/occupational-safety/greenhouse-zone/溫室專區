@@ -1,6 +1,6 @@
 <!-- =====================================================
      子頁面：溫室作業安全
-     URL：/prevention/溫室專區/
+     URL：/occupational-safety/greenhouse-zone/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      ===================================================== -->
 
@@ -25,7 +25,7 @@
       了解溫室特有的危害，才能做對防護。
     </p>
   </div>
-  <a href="/prevention/" class="gh-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
+  <a href="/occupational-safety/" class="gh-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
 </div>
 
 <!-- ========== 溫室四大危害 ========== -->

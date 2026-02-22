@@ -1,5 +1,5 @@
 <!-- =====================================================
-     /money/ 主頁面・區塊 03：保險制度速覽比較
+     /economic-insurance/ 主頁面・區塊 03：保險制度速覽比較
      檔案：03-insurance-snapshot.html
      ===================================================== -->
 
@@ -33,7 +33,7 @@
           <td>農民本人</td>
           <td>傷病、就醫津貼、身心障礙、喪葬</td>
           <td><strong>15 元</strong></td>
-          <td><a href="/money/occupational-insurance/" class="money-snap-link">查看詳情 →</a></td>
+          <td><a href="/economic-insurance/occupational-accident-insurance/" class="money-snap-link">查看詳情 →</a></td>
         </tr>
         <tr>
           <td><span class="money-snap-tag money-snap-tag-green">農作物保險</span></td>

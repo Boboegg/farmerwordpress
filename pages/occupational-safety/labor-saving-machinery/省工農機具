@@ -1,6 +1,6 @@
 <!-- =====================================================
      子頁面：省力農機具
-     URL：/prevention/省力農機具/
+     URL：/occupational-safety/labor-saving-machinery/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      ===================================================== -->
 
@@ -29,7 +29,7 @@
       下面會詳細說明怎麼申請。
     </p>
   </div>
-  <a href="/prevention/" class="mach-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
+  <a href="/occupational-safety/" class="mach-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
 </div>
 
 <!-- ========== 依作業類型分類 ========== -->
