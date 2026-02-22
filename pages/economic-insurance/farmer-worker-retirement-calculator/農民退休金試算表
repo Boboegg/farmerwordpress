@@ -1,0 +1,267 @@
+<div id="agri-pension-tool" class="bg-gray-50 p-4 md:p-8 rounded-3xl border border-gray-200 shadow-sm font-sans text-slate-800">
+    
+    <div class="max-w-5xl mx-auto">
+        <header class="mb-8 border-b pb-6">
+            <h2 class="text-2xl font-bold flex items-center gap-2 text-emerald-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="8" x2="16" y1="10" y2="10"/><line x1="8" x2="16" y1="14" y2="14"/><line x1="8" x2="16" y1="18" y2="18"/></svg>
+                勞農職涯退休金試算 4.0
+            </h2>
+            <p class="text-slate-500 text-sm mt-1">對比「一路當勞工」與「中途轉職務農」的退休保障差異。</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-5 space-y-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">基本職涯設定</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">目前年齡</label>
+                            <input type="number" id="currentAge" value="35" class="w-full p-2 border rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">開始工作年齡</label>
+                            <input type="number" id="laborStartAge" value="25" class="w-full p-2 border rounded-lg text-sm">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-xs font-bold text-slate-600 mb-1">目前實際月薪 (元)</label>
+                        <input type="number" id="currentSalary" value="55000" class="w-full p-2 border rounded-lg text-sm">
+                    </div>
+                    <div class="p-4 bg-orange-50 rounded-xl border border-orange-100">
+                        <label class="block text-xs font-bold text-orange-800 mb-1">預計轉職務農年齡</label>
+                        <input type="number" id="switchAge" value="45" class="w-full p-2 border border-orange-200 rounded-lg text-sm bg-white">
+                        <p class="text-[10px] text-orange-600 mt-2">※ 若不想轉職，請設定與退休年齡相同</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">進階提繳設定</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">勞退自提 (%)</label>
+                            <input type="number" id="laborSelfRate" value="0" min="0" max="6" class="w-full p-2 border rounded-lg text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">農退提繳 (%)</label>
+                            <input type="number" id="farmerRate" value="10" min="1" max="10" class="w-full p-2 border rounded-lg text-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-6">
+                <div class="flex justify-end gap-2">
+                    <button onclick="setViewMode('monthly')" id="btn-monthly" class="px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-emerald-600 text-white">月領金額</button>
+                    <button onclick="setViewMode('total')" id="btn-total" class="px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border">預估總額</button>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white p-5 rounded-2xl border-2 border-transparent shadow-md relative overflow-hidden" id="card-labor">
+                        <div class="text-xs font-bold text-blue-600 mb-1 flex items-center gap-1">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            方案 A：續當勞工
+                        </div>
+                        <div class="text-2xl font-black text-slate-800" id="labor-total-display">$0</div>
+                        <div id="labor-winner" class="hidden absolute top-2 right-2 bg-emerald-100 text-emerald-700 text-[10px] px-2 py-0.5 rounded-full font-bold">目前較優</div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-2xl border-2 border-transparent shadow-md relative overflow-hidden" id="card-farmer">
+                        <div class="text-xs font-bold text-emerald-600 mb-1 flex items-center gap-1">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 10 4 2v11H8V12Z"/><path d="M12 22V7"/><path d="m12 10-4-2-4 2"/><path d="m12 10 4-2 4 2"/><path d="M4.5 15.5 3.5 13"/><path d="M19.5 15.5 20.5 13"/></svg>
+                            方案 B：轉職務農
+                        </div>
+                        <div class="text-2xl font-black text-slate-800" id="farmer-total-display">$0</div>
+                        <div id="farmer-winner" class="hidden absolute top-2 right-2 bg-emerald-100 text-emerald-700 text-[10px] px-2 py-0.5 rounded-full font-bold">目前較優</div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 space-y-6">
+                    <h4 class="text-sm font-bold text-slate-700">退休資產組成對比</h4>
+                    <div id="chart-container" class="space-y-6">
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[11px] font-bold text-slate-500 uppercase">
+                                <span>續當勞工路徑</span>
+                                <span id="labor-bar-total"></span>
+                            </div>
+                            <div class="w-full h-8 bg-slate-100 rounded-full flex overflow-hidden border border-slate-200" id="labor-bar"></div>
+                        </div>
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-[11px] font-bold text-slate-500 uppercase">
+                                <span>轉職務農路徑</span>
+                                <span id="farmer-bar-total"></span>
+                            </div>
+                            <div class="w-full h-8 bg-slate-100 rounded-full flex overflow-hidden border border-slate-200" id="farmer-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4 pt-4 border-t text-[10px] text-slate-400">
+                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-blue-500 rounded-sm"></span> 勞保/老農津貼</span>
+                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-blue-300 rounded-sm"></span> 勞退(雇主)</span>
+                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-purple-500 rounded-sm"></span> 勞退(自提)</span>
+                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-emerald-500 rounded-sm"></span> 農民退休儲金</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    // 1. 設定與常數
+    const CONST = {
+        BASIC_WAGE: 28590,        // 2025 預估基本工資
+        OLD_FARMER_ALLOWANCE: 8110, // 老農津貼
+        LABOR_INS_MAX: 45800,     // 勞保投保上限
+        ROI: 0.02,                // 預估投報率 2%
+        GROWTH: 0.02,             // 薪資成長率 2%
+        LIFE_EXP: 20              // 退休後預計領 20 年 (240個月)
+    };
+
+    let viewMode = 'monthly'; // 'monthly' or 'total'
+
+    // 2. 抓取 DOM
+    const inputs = ['currentAge', 'laborStartAge', 'currentSalary', 'switchAge', 'laborSelfRate', 'farmerRate'];
+    const el = (id) => document.getElementById(id);
+
+    // 3. 核心邏輯
+    function calculate() {
+        const data = {};
+        inputs.forEach(id => data[id] = Number(el(id).value));
+
+        const monthsTo領 = CONST.LIFE_EXP * 12;
+        const laborRetireAge = 65; // 假設 65 歲退休
+        
+        // --- 方案 A: 續當勞工 ---
+        const totalLaborYears = laborRetireAge - data.laborStartAge;
+        const yearsLeft = laborRetireAge - data.currentAge;
+        
+        // 勞保年金 (簡化公式：平均薪資 * 年資 * 1.55%)
+        const avgSalary = Math.min(data.currentSalary * Math.pow(1 + CONST.GROWTH, yearsLeft / 2), CONST.LABOR_INS_MAX);
+        const laborAnnuity = avgSalary * totalLaborYears * 0.0155;
+        
+        // 勞退專戶 (複利計算)
+        let lpEmp = 0, lpSelf = 0;
+        let tempSalary = data.currentSalary;
+        for(let i=0; i < yearsLeft; i++) {
+            lpEmp = (lpEmp + (tempSalary * 0.06 * 12)) * (1 + CONST.ROI);
+            lpSelf = (lpSelf + (tempSalary * (data.laborSelfRate/100) * 12)) * (1 + CONST.ROI);
+            tempSalary *= (1 + CONST.GROWTH);
+        }
+
+        const lpEmpMonthly = lpEmp / monthsTo領;
+        const lpSelfMonthly = lpSelf / monthsTo領;
+
+        // --- 方案 B: 轉職務農 ---
+        const yearsUntilSwitch = data.switchAge - data.currentAge;
+        const yearsAsFarmer = laborRetireAge - data.switchAge;
+        const laborYearsAtSwitch = data.switchAge - data.laborStartAge;
+
+        // 舊勞退滾存
+        let oldLpEmp = 0, oldLpSelf = 0;
+        tempSalary = data.currentSalary;
+        for(let i=0; i < yearsUntilSwitch; i++) {
+            oldLpEmp = (oldLpEmp + (tempSalary * 0.06 * 12)) * (1 + CONST.ROI);
+            oldLpSelf = (oldLpSelf + (tempSalary * (data.laborSelfRate/100) * 12)) * (1 + CONST.ROI);
+            tempSalary *= (1 + CONST.GROWTH);
+        }
+        // 轉職後繼續滾利息
+        oldLpEmp *= Math.pow(1 + CONST.ROI, yearsAsFarmer);
+        oldLpSelf *= Math.pow(1 + CONST.ROI, yearsAsFarmer);
+
+        // 農民儲金
+        let farmerPensionAcc = 0;
+        let tempBasicWage = CONST.BASIC_WAGE;
+        for(let i=0; i < yearsAsFarmer; i++) {
+            const userPay = tempBasicWage * (data.farmerRate/100) * 12;
+            farmerPensionAcc = (farmerPensionAcc + (userPay * 2)) * (1 + CONST.ROI); // 政府 1:1 相對提撥
+            tempBasicWage *= (1 + CONST.GROWTH);
+        }
+
+        // 底層保障：勞保保留年資年金 或 老農津貼 (取高者)
+        const laborAnnuityAtSwitch = avgSalary * laborYearsAtSwitch * 0.0155;
+        const baseLayer = Math.max(laborAnnuityAtSwitch, CONST.OLD_FARMER_ALLOWANCE);
+
+        // 4. 更新 UI
+        updateDisplay({
+            labor: {
+                base: laborAnnuity,
+                emp: lpEmpMonthly,
+                self: lpSelfMonthly,
+                total: laborAnnuity + lpEmpMonthly + lpSelfMonthly,
+                totalAsset: (laborAnnuity * monthsTo領) + lpEmp + lpSelf
+            },
+            farmer: {
+                base: baseLayer,
+                emp: oldLpEmp / monthsTo領,
+                self: oldLpSelf / monthsTo領,
+                farm: farmerPensionAcc / monthsTo領,
+                total: baseLayer + (oldLpEmp/monthsTo領) + (oldLpSelf/monthsTo領) + (farmerPensionAcc/monthsTo領),
+                totalAsset: (baseLayer * monthsTo領) + oldLpEmp + oldLpSelf + farmerPensionAcc
+            }
+        }, monthsTo領);
+    }
+
+    function updateDisplay(results, divisor) {
+        const isMonthly = viewMode === 'monthly';
+        const lTotal = isMonthly ? results.labor.total : results.labor.totalAsset;
+        const fTotal = isMonthly ? results.farmer.total : results.farmer.totalAsset;
+
+        el('labor-total-display').innerText = '$' + Math.round(lTotal).toLocaleString();
+        el('farmer-total-display').innerText = '$' + Math.round(fTotal).toLocaleString();
+
+        // 贏家標籤
+        el('labor-winner').classList.toggle('hidden', lTotal <= fTotal);
+        el('farmer-winner').classList.toggle('hidden', fTotal <= lTotal);
+        el('card-labor').style.borderColor = lTotal > fTotal ? '#10b981' : 'transparent';
+        el('card-farmer').style.borderColor = fTotal > lTotal ? '#10b981' : 'transparent';
+
+        // 繪製條圖
+        const max = Math.max(results.labor.totalAsset, results.farmer.totalAsset);
+        
+        function drawBar(containerId, parts) {
+            const container = el(containerId);
+            container.innerHTML = '';
+            parts.forEach(p => {
+                if (p.val <= 0) return;
+                const width = (p.val * (isMonthly ? divisor : 1) / max) * 100;
+                const segment = document.createElement('div');
+                segment.className = `h-full ${p.color} transition-all duration-500`;
+                segment.style.width = width + '%';
+                segment.title = p.label;
+                container.appendChild(segment);
+            });
+        }
+
+        drawBar('labor-bar', [
+            { label: '勞保年金', val: results.labor.base, color: 'bg-blue-500' },
+            { label: '勞退(雇主)', val: results.labor.emp, color: 'bg-blue-300' },
+            { label: '勞退(自提)', val: results.labor.self, color: 'bg-purple-500' }
+        ]);
+
+        drawBar('farmer-bar', [
+            { label: '底層保障', val: results.farmer.base, color: 'bg-blue-500' },
+            { label: '舊勞退(雇)', val: results.farmer.emp, color: 'bg-blue-300' },
+            { label: '舊勞退(自)', val: results.farmer.self, color: 'bg-purple-500' },
+            { label: '農民儲金', val: results.farmer.farm, color: 'bg-emerald-500' }
+        ]);
+
+        el('labor-bar-total').innerText = isMonthly ? `約 $${Math.round(results.labor.total).toLocaleString()}/月` : `總額 $${(results.labor.totalAsset/1000000).toFixed(2)}M`;
+        el('farmer-bar-total').innerText = isMonthly ? `約 $${Math.round(results.farmer.total).toLocaleString()}/月` : `總額 $${(results.farmer.totalAsset/1000000).toFixed(2)}M`;
+    }
+
+    // 5. 事件監聽
+    window.setViewMode = function(mode) {
+        viewMode = mode;
+        el('btn-monthly').className = mode === 'monthly' ? 'px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-emerald-600 text-white' : 'px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border';
+        el('btn-total').className = mode === 'total' ? 'px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-emerald-600 text-white' : 'px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border';
+        calculate();
+    };
+
+    inputs.forEach(id => el(id).addEventListener('input', calculate));
+    
+    // 初始執行
+    calculate();
+})();
+</script>
+<script src="https://cdn.tailwindcss.com"></script>

@@ -1,0 +1,119 @@
+<!-- =====================================================
+     區塊 07（重做版）：子頁面入口 + 文章列表 + 參考資料
+     檔案：07-subpages-refs.html
+     修正：shortcode 不指定分類，避免找不到分類時顯示亂碼。
+           你上線後可以在 WordPress 後台建立分類後再加回 cat 參數。
+     ===================================================== -->
+
+<!-- 子頁面入口 -->
+<div class="prevS-subpage-section">
+  <div class="prevS-section-header">
+    <h2><i class="fas fa-folder-open"></i> 深度專區</h2>
+    <p>
+      想了解更多細節？每個主題都有獨立的完整頁面。
+      點擊進入後可以看到更詳細的說明、選購建議和操作步驟。
+    </p>
+  </div>
+
+  <div class="prevS-subpage-grid">
+    <a href="/prevention/%e5%80%8b%e4%ba%ba%e9%98%b2%e8%ad%b7%e5%85%b7ppe/" class="prevS-subpage-card">
+      <div class="prevS-subpage-icon" style="background:rgba(244,63,94,.1);color:#f43f5e;">
+        <i class="fas fa-mask-face"></i>
+      </div>
+      <h3>個人防護具（PPE）</h3>
+      <p>從頭到腳，每個身體部位該穿戴什麼防護具、怎麼選、怎麼穿脫，一次看清楚。</p>
+      <span class="prevS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/prevention/%e7%9c%81%e5%8a%9b%e8%be%b2%e6%a9%9f%e5%85%b7/" class="prevS-subpage-card">
+      <div class="prevS-subpage-icon" style="background:rgba(14,165,233,.1);color:#0ea5e9;">
+        <i class="fas fa-tractor"></i>
+      </div>
+      <h3>省力農機具</h3>
+      <p>依照整地、管理、採收、搬運分類，看看哪些農機適合你，還有政府補助怎麼申請。</p>
+      <span class="prevS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/prevention/%e6%ba%ab%e5%ae%a4%e5%b0%88%e5%8d%80/" class="prevS-subpage-card">
+      <div class="prevS-subpage-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+        <i class="fas fa-warehouse"></i>
+      </div>
+      <h3>溫室作業安全</h3>
+      <p>溫室裡比外面更熱、農藥殘留更高、黴菌更多。了解溫室特有的風險和防護措施。</p>
+      <span class="prevS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+  </div>
+</div>
+
+<!-- 相關文章 -->
+<div class="prevS-articles-section">
+  <div class="prevS-section-header">
+    <h2><i class="fas fa-newspaper"></i> 相關文章</h2>
+  </div>
+
+  <!-- ★ Shortcode 說明 ★
+       目前不指定分類，會顯示最新 4 篇文章。
+       如果你想只顯示特定分類，改成：
+       [my_newss_loop cat="你的分類slug" count="4"]
+       例如：[my_newss_loop cat="prevention" count="4"]
+       
+       如果 shortcode 完全不顯示或顯示亂碼，
+       請檢查：
+       1. 佈景主題或外掛是否有註冊 my_newss_loop 這個 shortcode
+       2. 在 WordPress「文章→分類」裡有沒有建立對應的分類
+       3. 是否用「程式碼編輯器」而非「視覺編輯器」貼入（視覺編輯器會破壞 shortcode）
+  -->
+  [my_newss_loop count="4"]
+</div>
+
+<!-- 參考資料 -->
+<div class="prevS-references">
+  <div class="prevS-section-header">
+    <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+    <p>本頁內容參考以下台灣政府與國際職業安全機構的公開資料。</p>
+  </div>
+  <div class="prevS-ref-list">
+    <p class="prevS-ref-item">農業部農糧署（年度更新）。農機補助專區。<a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=3314" target="_blank" rel="noopener">https://www.afa.gov.tw/cht/index.php?code=list&ids=3314</a></p>
+    <p class="prevS-ref-item">勞動部（2024）。農職保傷病給付基準提高，農民務農保障再升級。<a href="https://www.mol.gov.tw/1607/1632/1633/76199/" target="_blank" rel="noopener">https://www.mol.gov.tw/1607/1632/1633/76199/</a></p>
+    <p class="prevS-ref-item">勞動部勞動法令查詢系統。職業安全衛生設施規則。<a href="https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021" target="_blank" rel="noopener">https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021</a></p>
+    <p class="prevS-ref-item">NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
+    <p class="prevS-ref-item">OSHA. (n.d.). <em>Agricultural operations: Hazards &amp; controls</em>. United States Department of Labor. <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">https://www.osha.gov/agricultural-operations/hazards</a></p>
+  </div>
+</div>
+
+<style>
+/* === 07-subpages-refs 專用樣式（prevS 前綴） === */
+.prevS-subpage-section,.prevS-articles-section,.prevS-references{
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.prevS-subpage-section *,.prevS-references *{box-sizing:border-box;}
+
+.prevS-section-header{margin-bottom:20px;}
+.prevS-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 10px;}
+.prevS-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+
+/* Sub-page Cards */
+.prevS-subpage-section{margin:40px 0 0;}
+.prevS-subpage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.prevS-subpage-card{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border-radius:var(--radius);padding:30px;border:1px solid #eee;text-decoration:none;color:inherit;transition:all .3s;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.prevS-subpage-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);border-color:var(--brand);}
+.prevS-subpage-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;}
+.prevS-subpage-card h3{font-size:1.15rem;font-weight:800;margin:0 0 8px;color:var(--brand-dark);}
+.prevS-subpage-card p{font-size:.93rem;line-height:1.7;color:var(--text-secondary);margin:0;flex:1;}
+.prevS-subpage-arrow{position:absolute;top:30px;right:30px;color:var(--brand);font-size:1.1rem;transition:transform .3s;}
+.prevS-subpage-card:hover .prevS-subpage-arrow{transform:translateX(4px);}
+
+/* Articles */
+.prevS-articles-section{margin:40px 0 0;}
+
+/* References */
+.prevS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}
+.prevS-ref-list{display:flex;flex-direction:column;gap:10px;}
+.prevS-ref-item{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding-left:24px;text-indent:-24px;}
+.prevS-ref-item a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .prevS-subpage-grid{grid-template-columns:1fr;}
+}
+</style>

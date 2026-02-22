@@ -1,0 +1,147 @@
+<!-- =====================================================
+     區塊 01：Hero
+     檔案：01-hero.html
+     說明：職業安全主頁面的第一個區塊
+     貼入方式：WordPress 頁面 → 程式碼編輯器 → 依序貼入
+     ===================================================== -->
+
+<!-- 字型與圖示（整頁只需載入一次，放在第一塊即可） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="prev-hero">
+  <div class="prev-hero-content">
+    <div class="prev-hero-badge"><i class="fas fa-helmet-safety"></i> 職業安全專區</div>
+    <h1 class="prev-hero-title">農業職業安全</h1>
+    <p class="prev-hero-subtitle">從裝備到制度，降低田間每一個風險因子</p>
+
+    <div class="prev-hero-intro">
+      <p>
+        務農是一份辛苦的工作，每天面對日曬、農藥、重物搬運和機具操作，
+        身體承受的風險其實比許多行業都高。但很多傷害是可以預防的。
+      </p>
+      <p>
+        這個專區整理了<strong>實用的防護知識和工具</strong>，幫助您：
+      </p>
+      <ul class="prev-hero-list">
+        <li><i class="fas fa-check-circle"></i> 了解田間常見的四大危害（物理、化學、生物、人因）</li>
+        <li><i class="fas fa-check-circle"></i> 用「快速風險評估」檢查自己的作業條件安不安全</li>
+        <li><i class="fas fa-check-circle"></i> 查看該穿戴哪些防護具、哪些農機可以減輕負擔</li>
+        <li><i class="fas fa-check-circle"></i> 了解政府的農機補助，省錢又省力</li>
+      </ul>
+      <p class="prev-hero-note">
+        <i class="fas fa-lightbulb"></i>
+        <strong>不知道從哪裡開始？</strong>
+        建議先做下方的「快速風險評估」，只要勾選幾個選項，馬上就能了解您目前的風險等級和改善方向。
+      </p>
+    </div>
+
+    <div class="prev-hero-actions">
+      <a href="#prev-risk-tools" class="prev-btn-primary">
+        <i class="fas fa-shield-halved"></i> 快速風險評估
+      </a>
+      <a href="#prev-tabs-section" class="prev-btn-secondary">
+        <i class="fas fa-boxes-stacked"></i> 瀏覽防護裝備
+      </a>
+    </div>
+  </div>
+
+  <div class="prev-hero-visual">
+    <div class="prev-hero-stats">
+      <div class="prev-stat-item">
+        <div class="prev-stat-icon" style="background:rgba(16,185,129,.1);color:#10b981;">
+          <i class="fas fa-arrow-up-from-bracket"></i>
+        </div>
+        <div class="prev-stat-text">
+          <span class="prev-stat-number">5</span>
+          <span class="prev-stat-label">層安全控制策略</span>
+        </div>
+      </div>
+      <div class="prev-stat-item">
+        <div class="prev-stat-icon" style="background:rgba(59,130,246,.1);color:#3b82f6;">
+          <i class="fas fa-vest"></i>
+        </div>
+        <div class="prev-stat-text">
+          <span class="prev-stat-number">10+</span>
+          <span class="prev-stat-label">種防護具指南</span>
+        </div>
+      </div>
+      <div class="prev-stat-item">
+        <div class="prev-stat-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+          <i class="fas fa-tractor"></i>
+        </div>
+        <div class="prev-stat-text">
+          <span class="prev-stat-number">8</span>
+          <span class="prev-stat-label">類省力農機</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 01-hero 專用樣式 === */
+.prev-hero{
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  display:flex;gap:40px;align-items:flex-start;padding:40px;
+  background:linear-gradient(135deg,#f0f5e8 0%,#fff 60%,#e8f0da 100%);
+  border-radius:var(--radius);margin-bottom:0;
+  border:1px solid rgba(92,134,7,.1);box-sizing:border-box;
+}
+.prev-hero *{box-sizing:border-box;}
+.prev-hero-content{flex:1.2;}
+.prev-hero-visual{flex:.8;position:sticky;top:20px;}
+.prev-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.prev-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-dark);margin:0 0 8px;line-height:1.2;}
+.prev-hero-subtitle{font-size:1.15rem;color:var(--brand);font-weight:600;margin:0 0 20px;}
+
+/* 導讀段落 */
+.prev-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(92,134,7,.08);}
+.prev-hero-intro p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 12px;}
+.prev-hero-intro p:last-child{margin-bottom:0;}
+.prev-hero-list{list-style:none;padding:0;margin:0 0 16px;}
+.prev-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;line-height:1.7;padding:4px 0;color:var(--text-primary);}
+.prev-hero-list li i{color:var(--brand);margin-top:4px;flex-shrink:0;}
+.prev-hero-note{background:rgba(212,160,23,.08);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
+.prev-hero-note i{color:#D4A017;margin-top:3px;flex-shrink:0;}
+
+/* CTA */
+.prev-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.prev-btn-primary,.prev-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
+.prev-btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(92,134,7,.3);}
+.prev-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.prev-btn-secondary{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+.prev-btn-secondary:hover{background:var(--brand);color:#fff;}
+
+/* Stats */
+.prev-hero-stats{display:flex;flex-direction:column;gap:16px;}
+.prev-stat-item{display:flex;align-items:center;gap:16px;background:#fff;padding:16px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.prev-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.prev-stat-number{font-size:1.5rem;font-weight:900;display:block;line-height:1;}
+.prev-stat-label{font-size:.85rem;color:var(--text-secondary);}
+
+/* 平滑捲動 */
+@media(max-width:768px){
+  .prev-hero{flex-direction:column;padding:24px;gap:24px;}
+  .prev-hero-title{font-size:1.6rem;}
+  .prev-hero-visual{position:static;}
+  .prev-hero-stats{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .prev-stat-item{flex:1;min-width:140px;padding:12px;}
+}
+</style>
+
+<script>
+/* 平滑捲動（放在第一塊，全頁共用） */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+});
+</script>

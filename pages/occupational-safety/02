@@ -1,0 +1,226 @@
+<!-- =====================================================
+     區塊 02：Tab 切換 + 省力農機 Grid Cards
+     檔案：02-tabs-machine.html
+     說明：Tab 按鈕 + 省力農機內容（Tab 1）
+     ===================================================== -->
+
+<div class="prev-tabs-section" id="prev-tabs-section">
+
+  <!-- 區塊導讀 -->
+  <div class="prev-section-header">
+    <h2><i class="fas fa-layer-group"></i> 防護裝備型錄</h2>
+    <p class="prev-section-desc">
+      保護自己的方法有兩種：一種是<strong>用機器取代危險動作</strong>（主動降載），
+      另一種是<strong>穿戴防護裝備</strong>（被動防禦）。
+      國際職業安全研究指出，「用機器代替人力」的效果比「穿防護衣」更好，
+      所以我們把省力農機放在第一個。請點選下方標籤切換查看。
+    </p>
+  </div>
+
+  <!-- Tab 按鈕 -->
+  <div class="prev-tab-btns">
+    <button class="prev-tab-btn is-active" data-tab="tab-machine">
+      <i class="fas fa-gears"></i><span>主動降載・省力農機</span>
+    </button>
+    <button class="prev-tab-btn" data-tab="tab-ppe">
+      <i class="fas fa-mask-face"></i><span>被動防禦・個人防護具</span>
+    </button>
+  </div>
+
+  <!-- Tab 1：省力農機 -->
+  <div class="prev-tab-panel is-active" id="tab-machine">
+    <div class="prev-tab-intro">
+      <div class="prev-tab-intro-text">
+        <p><strong>什麼是「主動降載」？</strong></p>
+        <p>
+          簡單說，就是用機器幫你做那些傷身體的動作。
+          例如：用搬運車代替肩扛、用電動剪枝機代替手剪、用無人機代替背著藥桶走田。
+          這些農機不只省力，很多還有政府補助，最高可以補助購買金額的三分之一。
+        </p>
+      </div>
+      <a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=3314" target="_blank" rel="noopener" class="prev-external-link">
+        <i class="fas fa-external-link-alt"></i> 農糧署農機補助專區
+      </a>
+    </div>
+
+    <div class="prev-grid-cards">
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=400&auto=format&fit=crop" alt="農地搬運車" loading="lazy">
+          <span class="prev-card-badge badge-eliminate">消除風險</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>農地搬運車</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 田間搬運、果園採收轉運</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 不用再肩扛重物，直接降低腰部和膝蓋的負擔</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&auto=format&fit=crop" alt="動力噴霧機" loading="lazy">
+          <span class="prev-card-badge badge-substitute">取代人力</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>動力噴霧機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 農藥噴灑作業</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 不用再背著沉重的藥桶，減少肩頸痠痛和農藥直接接觸</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <img src="https://images.unsplash.com/photo-1625246333195-78d1d26d0dda?w=400&auto=format&fit=crop" alt="電動剪枝機" loading="lazy">
+          <span class="prev-card-badge badge-substitute">取代人力</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>電動剪枝機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 果園修剪（柑橘、荔枝、芒果）</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 省去手部反覆用力的動作，降低手腕關節發炎風險</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&auto=format&fit=crop" alt="割草機" loading="lazy">
+          <span class="prev-card-badge badge-substitute">取代人力</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>割（除）草機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 田間雜草管理</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 不用再彎腰蹲著拔草，站著就能完成除草</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <img src="https://images.unsplash.com/photo-1586771107445-b3e7eb3f3b10?w=400&auto=format&fit=crop" alt="中耕管理機" loading="lazy">
+          <span class="prev-card-badge badge-substitute">取代人力</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>中耕管理機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 整地、鬆土、培土</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 機器翻土比人工輕鬆很多，整天下來體力消耗大幅降低</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <img src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?w=400&auto=format&fit=crop" alt="升降平台車" loading="lazy">
+          <span class="prev-card-badge badge-engineering">工程控制</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>升降作業平台車</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 果園高處採收、修剪</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 不用再爬梯子，站在平台上安全作業，避免摔落意外</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 部分機型有補助</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&auto=format&fit=crop" alt="農噴無人機" loading="lazy">
+          <span class="prev-card-badge badge-eliminate">消除風險</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>農噴無人機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 大面積農藥噴灑</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 人完全不用進田裡噴藥，大幅減少農藥沾到皮膚和吸入的機會</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=400&auto=format&fit=crop" alt="田間搬運機" loading="lazy">
+          <span class="prev-card-badge badge-eliminate">消除風險</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>田間搬運機（軌道式）</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 溫室內苗盤 / 成品搬運</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 溫室空間窄，用軌道搬運機取代人工搬運最適合</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+    </div><!-- /prev-grid-cards -->
+  </div><!-- /tab-machine -->
+
+<!-- 注意：Tab 2（PPE）在下一個檔案 03-tabs-ppe.html 中 -->
+
+<style>
+/* === 02-tabs 共用樣式 === */
+.prev-tabs-section{
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.prev-tabs-section *{box-sizing:border-box;}
+
+/* Section Header */
+.prev-section-header{margin-bottom:24px;}
+.prev-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.prev-section-desc{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+
+/* Tab Buttons */
+.prev-tab-btns{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;}
+.prev-tab-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;border:2px solid #e0e0e0;background:#fff;font-size:.95rem;font-weight:700;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
+.prev-tab-btn.is-active,.prev-tab-btn:hover{background:var(--brand);color:#fff;border-color:var(--brand);}
+.prev-tab-panel{display:none;}
+.prev-tab-panel.is-active{display:block;}
+
+/* Tab Intro */
+.prev-tab-intro{display:flex;justify-content:space-between;align-items:flex-start;background:#fff;padding:24px;border-radius:12px;margin-bottom:24px;border:1px solid #f0f0f0;flex-wrap:wrap;gap:16px;}
+.prev-tab-intro-text{flex:1;min-width:240px;}
+.prev-tab-intro-text p{margin:0 0 8px;line-height:1.8;font-size:.95rem;color:var(--text-primary);}
+.prev-tab-intro-text p:last-child{margin-bottom:0;}
+.prev-external-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;padding:10px 18px;border:1.5px solid var(--brand);border-radius:8px;transition:all .3s;white-space:nowrap;align-self:flex-start;margin-top:4px;}
+.prev-external-link:hover{background:var(--brand);color:#fff;}
+
+/* Grid Cards */
+.prev-grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.prev-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);transition:all .3s ease;}
+.prev-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);}
+.prev-card-img{height:180px;position:relative;overflow:hidden;background:#f5f5f5;}
+.prev-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.prev-card:hover .prev-card-img img{transform:scale(1.06);}
+.prev-card-badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:800;color:#fff;}
+.badge-eliminate{background:#10b981;}.badge-substitute{background:#0ea5e9;}.badge-engineering{background:#3b82f6;}.badge-ppe{background:#f43f5e;}
+.prev-card-body{padding:20px;}
+.prev-card-body h3{font-size:1.1rem;font-weight:700;margin:0 0 10px;color:#222;}
+.prev-card-scene,.prev-card-benefit{font-size:.9rem;color:var(--text-secondary);margin:0 0 8px;display:flex;align-items:flex-start;gap:8px;line-height:1.6;}
+.prev-card-scene i,.prev-card-benefit i{margin-top:3px;flex-shrink:0;}
+.prev-card-scene i{color:var(--brand);}.prev-card-benefit i{color:#3b82f6;}
+.prev-card-subsidy{display:inline-flex;align-items:center;gap:6px;background:rgba(212,160,23,.1);color:#b8860b;padding:6px 14px;border-radius:6px;font-size:.85rem;font-weight:700;margin-top:8px;}
+
+@media(max-width:768px){
+  .prev-grid-cards{grid-template-columns:1fr;}
+  .prev-tab-btns{flex-direction:column;}
+  .prev-tab-btn{width:100%;justify-content:center;}
+}
+</style>
+
+<script>
+/* Tab 切換邏輯 */
+document.addEventListener('DOMContentLoaded',function(){
+  var btns=document.querySelectorAll('.prev-tab-btn');
+  var panels=document.querySelectorAll('.prev-tab-panel');
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var target=this.getAttribute('data-tab');
+      btns.forEach(function(b){b.classList.remove('is-active');});
+      panels.forEach(function(p){p.classList.remove('is-active');});
+      this.classList.add('is-active');
+      var panel=document.getElementById(target);
+      if(panel) panel.classList.add('is-active');
+    });
+  });
+});
+</script>

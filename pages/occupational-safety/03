@@ -1,0 +1,179 @@
+<!-- =====================================================
+     區塊 03（v3）：Tab 2 — 個人防護具 Grid Cards
+     檔案：03-tabs-ppe.html
+     說明：圖片區改為 icon + 色彩背景，排版與 Tab 1 一致
+     緊接在 02-tabs-machine.html 之後貼入
+     ===================================================== -->
+
+  <!-- Tab 2：PPE -->
+  <div class="prev-tab-panel" id="tab-ppe">
+    <div class="prev-tab-intro">
+      <div class="prev-tab-intro-text">
+        <p><strong>什麼是「被動防禦」？</strong></p>
+        <p>
+          有些危害沒辦法完全用機器消除，例如噴農藥時的藥霧、割草時飛出來的碎石、
+          長時間蹲著採收對膝蓋的壓力。這時候就需要穿戴適當的防護具來保護自己。
+        </p>
+        <p>
+          防護具的效果取決於兩件事：<strong>「選對」</strong>和<strong>「戴對」</strong>。
+          選錯種類或穿戴不正確，保護效果會大打折扣。
+        </p>
+      </div>
+      <a href="/prevention/%e5%80%8b%e4%ba%ba%e9%98%b2%e8%ad%b7%e5%85%b7ppe/" class="prev-external-link">
+        <i class="fas fa-arrow-right"></i> PPE 完整指南
+      </a>
+    </div>
+
+    <div class="prev-grid-cards">
+
+      <!-- 呼吸防護：防毒面具 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">
+          <i class="fas fa-head-side-mask" style="color:#c62828;"></i>
+          <span class="prev-card-badge badge-ppe">呼吸防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>半面式防毒面具</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 噴灑農藥時使用</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 要搭配「有機蒸氣濾罐」才能擋住農藥氣體，普通口罩擋不住。需通過 CNS 14258 認證。</p>
+        </div>
+      </div>
+
+      <!-- 呼吸防護：N95 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">
+          <i class="fas fa-mask-face" style="color:#c62828;"></i>
+          <span class="prev-card-badge badge-ppe">呼吸防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>N95 防塵口罩</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 翻土、碎土等粉塵多的作業</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 只能擋粉塵，擋不住農藥蒸氣。戴之前要壓緊鼻樑條確認密合，用完就丟。</p>
+        </div>
+      </div>
+
+      <!-- 眼部防護 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);">
+          <i class="fas fa-glasses" style="color:#283593;"></i>
+          <span class="prev-card-badge badge-ppe">眼部防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>護目鏡 / 防護面罩</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 噴藥、割草、碎枝</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 割草時碎石會飛出來打到眼睛，噴藥時藥液會飄到臉上。噴藥建議用密閉式護目鏡。</p>
+        </div>
+      </div>
+
+      <!-- 手部防護：耐化學手套 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7);">
+          <i class="fas fa-hand" style="color:#7b1fa2;"></i>
+          <span class="prev-card-badge badge-ppe">手部防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>耐化學手套（丁腈橡膠）</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 調配農藥、噴灑農藥、接觸肥料</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 農藥會穿透一般棉手套被皮膚吸收。要用丁腈橡膠材質才擋得住。脫手套前先用肥皂水洗外面。</p>
+        </div>
+      </div>
+
+      <!-- 聽力防護 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2);">
+          <i class="fas fa-ear-listen" style="color:#e65100;"></i>
+          <span class="prev-card-badge badge-ppe">聽力防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>防噪耳塞 / 耳罩</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 操作割草機、鏈鋸、耕耘機</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 這些農機運轉聲音超過 85 分貝，長期不戴耳塞會造成聽力永久受損，而且無法恢復。</p>
+        </div>
+      </div>
+
+      <!-- 下肢防護：護膝 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
+          <i class="fas fa-shield-halved" style="color:#1565c0;"></i>
+          <span class="prev-card-badge badge-ppe">下肢防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>緩衝護膝</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 蹲著採收、移苗</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 長時間蹲姿會磨損膝蓋軟骨，戴有緩衝墊的護膝可以減輕壓力，保護關節。</p>
+        </div>
+      </div>
+
+      <!-- 下肢防護：安全鞋 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
+          <i class="fas fa-shoe-prints" style="color:#1565c0;"></i>
+          <span class="prev-card-badge badge-ppe">下肢防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>安全鞋 / 防滑雨鞋</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 田間作業、操作農機</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 鋼頭鞋防止重物掉落砸傷腳趾，防滑底避免在濕泥地上滑倒。田間作業的基本配備。</p>
+        </div>
+      </div>
+
+      <!-- 軀幹防護 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">
+          <i class="fas fa-shirt" style="color:#2e7d32;"></i>
+          <span class="prev-card-badge badge-ppe">軀幹防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>防曬衣 / 長袖工作服</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 露天長時間作業</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 選 UPF 50+ 等級的透氣排汗材質，比擦防曬乳更持久有效，也能防止農藥噴到皮膚上。</p>
+        </div>
+      </div>
+
+      <!-- 頭部防護 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#fff8e1,#ffecb3);">
+          <i class="fas fa-hard-hat" style="color:#f57f17;"></i>
+          <span class="prev-card-badge badge-ppe">頭部防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>安全帽 / 遮陽帽</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 果園高處作業、農機操作、露天耕作</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 高處作業用安全帽（符合 CNS 1336），一般田間用 UPF 50+ 寬沿遮陽帽防曬兼防掉落物。</p>
+        </div>
+      </div>
+
+      <!-- 手部防護：防割手套 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7);">
+          <i class="fas fa-mitten" style="color:#7b1fa2;"></i>
+          <span class="prev-card-badge badge-ppe">手部防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>防割手套</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 修剪枝條、採收、操作刀具</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 剪枝和採收時刀片割傷手很常見。選有 EN 388 防割認證的手套，等級越高防護越好。</p>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /tab-ppe -->
+
+</div><!-- ★ 關閉 prev-tabs-section（配對 02 開頭的 div） -->
+
+<style>
+/* === 03 PPE icon 卡片專用樣式 === */
+.prevP-card-icon-area{
+  height:140px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:16px 16px 0 0;
+}
+.prevP-card-icon-area i{
+  font-size:3.2rem;opacity:.85;
+  transition:transform .3s ease;
+}
+.prev-card:hover .prevP-card-icon-area i{
+  transform:scale(1.15);
+}
+/* badge 沿用 02 的 .prev-card-badge + .badge-ppe */
+</style>

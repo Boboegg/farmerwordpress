@@ -1,0 +1,388 @@
+<!-- =====================================================
+     子頁面：省力農機具
+     URL：/prevention/省力農機具/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== Hero ========== -->
+<div class="mach-hero">
+  <div class="mach-hero-badge"><i class="fas fa-tractor"></i> 省力農機具專區</div>
+  <h1 class="mach-hero-title">省力農機具</h1>
+  <p class="mach-hero-subtitle">用機器代替身體，從根本減少職業傷害</p>
+  <div class="mach-hero-intro">
+    <p>
+      農業工作最傷身體的三件事：<strong>搬重物、維持不良姿勢、反覆做同一個動作</strong>。
+      這些都是肌肉骨骼傷害的主因。省力農機具的目的就是用機器取代這些動作，
+      讓你的腰、膝蓋、肩膀不用每天承受那麼大的負擔。
+    </p>
+    <p>
+      根據國際職安標準（NIOSH），「用機器取代人力」的防護效果比「穿防護具」更好，
+      因為它直接從源頭消除了危險，不用依賴人是否有正確穿戴。
+    </p>
+    <p>
+      而且很多農機都有<strong>政府補助</strong>，最高可以補助購買金額的三分之一（電動款更高到二分之一），
+      下面會詳細說明怎麼申請。
+    </p>
+  </div>
+  <a href="/prevention/" class="mach-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
+</div>
+
+<!-- ========== 依作業類型分類 ========== -->
+<div class="mach-categories">
+
+  <!-- 1. 整地作業 -->
+  <div class="mach-cat-card">
+    <div class="mach-cat-header" style="--cat-color:#795548;">
+      <div class="mach-cat-icon"><i class="fas fa-mountain-sun"></i></div>
+      <div>
+        <h2>整地作業</h2>
+        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工翻土的問題：</strong>全身性體力消耗大，長時間彎腰嚴重壓迫腰椎，是農民下背痛的主因之一。</p>
+      </div>
+    </div>
+    <div class="mach-cat-body">
+      <div class="mach-equip-grid">
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-gears" style="color:#795548;"></i></div>
+          <div>
+            <h4>中耕管理機</h4>
+            <p>整地、鬆土、培土一台搞定，不用再拿鋤頭彎腰翻。適合小面積旱田。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 補助購置金額 1/3</div>
+          </div>
+        </div>
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-gears" style="color:#795548;"></i></div>
+          <div>
+            <h4>碎土機</h4>
+            <p>大面積整地和碎土用，搭配曳引機使用。一次過比人工翻好幾天快。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 補助購置金額 1/3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 田間管理 -->
+  <div class="mach-cat-card">
+    <div class="mach-cat-header" style="--cat-color:#2e7d32;">
+      <div class="mach-cat-icon"><i class="fas fa-seedling"></i></div>
+      <div>
+        <h2>田間管理</h2>
+        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工除草和噴藥的問題：</strong>除草需長時間蹲姿傷膝蓋；背負式噴藥壓迫肩頸，農藥還會直接沾到身上。</p>
+      </div>
+    </div>
+    <div class="mach-cat-body">
+      <div class="mach-equip-grid">
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-fan" style="color:#2e7d32;"></i></div>
+          <div>
+            <h4>割（除）草機</h4>
+            <p>站著就能除草，不用再蹲著拔。手持式適合小面積，自走式適合大面積。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 補助購置金額 1/3</div>
+          </div>
+        </div>
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-spray-can-sparkles" style="color:#2e7d32;"></i></div>
+          <div>
+            <h4>動力噴霧機</h4>
+            <p>不用再背 20 公斤的藥桶走田。定點式或拖車式，肩頸和背部負擔大幅降低。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 補助購置金額 1/3</div>
+          </div>
+        </div>
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-helicopter" style="color:#2e7d32;"></i></div>
+          <div>
+            <h4>農噴無人機</h4>
+            <p>人完全不用進田裡噴藥，大幅減少農藥接觸。大面積稻田和果園特別適合。操作需要考取證照。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 補助購置金額 1/3</div>
+          </div>
+        </div>
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-truck-monster" style="color:#2e7d32;"></i></div>
+          <div>
+            <h4>自走式噴藥機</h4>
+            <p>適合大面積噴藥，有駕駛座。人坐在車上，跟農藥保持距離。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 部分機型列入補助</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 採收作業 -->
+  <div class="mach-cat-card">
+    <div class="mach-cat-header" style="--cat-color:#e65100;">
+      <div class="mach-cat-icon"><i class="fas fa-apple-whole"></i></div>
+      <div>
+        <h2>採收作業</h2>
+        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工採收的問題：</strong>爬梯子摘果有墜落風險（農業職災主因之一）；長時間仰頭伸手造成頸椎和肩關節傷害。</p>
+      </div>
+    </div>
+    <div class="mach-cat-body">
+      <div class="mach-equip-grid">
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-arrows-up-down" style="color:#e65100;"></i></div>
+          <div>
+            <h4>升降作業平台車</h4>
+            <p>站在平台上採收修剪，不用再爬梯子。比梯子穩固，大幅降低墜落風險。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 部分機型有補助</div>
+          </div>
+        </div>
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-scissors" style="color:#e65100;"></i></div>
+          <div>
+            <h4>電動剪枝機</h4>
+            <p>電動出力，手腕不用反覆用力。一天下來手部疲勞感差很多，降低手腕關節發炎風險。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 補助購置金額 1/3（電動款補助 1/2）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 搬運作業 -->
+  <div class="mach-cat-card">
+    <div class="mach-cat-header" style="--cat-color:#1565c0;">
+      <div class="mach-cat-icon"><i class="fas fa-dolly"></i></div>
+      <div>
+        <h2>搬運作業</h2>
+        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工搬運的問題：</strong>經常搬超過 15 公斤的重物，腰椎和膝蓋會逐年退化，嚴重會導致椎間盤突出。</p>
+      </div>
+    </div>
+    <div class="mach-cat-body">
+      <div class="mach-equip-grid">
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-truck-pickup" style="color:#1565c0;"></i></div>
+          <div>
+            <h4>農地搬運車</h4>
+            <p>田間搬運、果園採收轉運。直接把東西放上車，不用再肩扛。有自走式和牽引式。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 補助購置金額 1/3</div>
+          </div>
+        </div>
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-train-tram" style="color:#1565c0;"></i></div>
+          <div>
+            <h4>田間搬運機（軌道式）</h4>
+            <p>溫室內空間窄，用軌道搬運苗盤和成品最適合。完全取代人工來回搬運。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 補助購置金額 1/3</div>
+          </div>
+        </div>
+        <div class="mach-equip-item">
+          <div class="mach-equip-icon"><i class="fas fa-cart-flatbed" style="color:#1565c0;"></i></div>
+          <div>
+            <h4>電動搬運車</h4>
+            <p>比傳統搬運車更省力，適合上坡或不平整地形。電動款有政府加碼補助。</p>
+            <div class="mach-subsidy"><i class="fas fa-coins"></i> 電動款補助購置金額 1/2</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== 補助資訊 ========== -->
+<div class="mach-subsidy-section">
+  <div class="mach-subsidy-header">
+    <h2><i class="fas fa-hand-holding-dollar"></i> 政府農機補助 — 怎麼申請？</h2>
+    <p>農業部農糧署每年都有農機補助，把握時間申請可以省下不少錢。</p>
+  </div>
+
+  <div class="mach-subsidy-grid">
+    <div class="mach-info-card">
+      <div class="mach-info-icon" style="background:rgba(92,134,7,.1);"><i class="fas fa-building-columns" style="color:#5C8607;"></i></div>
+      <h4>主管機關</h4>
+      <p>農業部農糧署</p>
+    </div>
+    <div class="mach-info-card">
+      <div class="mach-info-icon" style="background:rgba(212,160,23,.1);"><i class="fas fa-percent" style="color:#D4A017;"></i></div>
+      <h4>補助金額</h4>
+      <p>一般農機：購置金額 <strong>1/3</strong><br>電動農機：購置金額 <strong>1/2</strong></p>
+    </div>
+    <div class="mach-info-card">
+      <div class="mach-info-icon" style="background:rgba(21,101,192,.1);"><i class="fas fa-clipboard-check" style="color:#1565c0;"></i></div>
+      <h4>補助條件</h4>
+      <p>限新品購買，非中國大陸產製為原則</p>
+    </div>
+    <div class="mach-info-card">
+      <div class="mach-info-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-clock" style="color:#c62828;"></i></div>
+      <h4>注意事項</h4>
+      <p>每年分 3 階段受理，<strong>額滿即截止</strong>。請密切關注農糧署公告。</p>
+    </div>
+  </div>
+
+  <div class="mach-apply-steps">
+    <h3>申請流程（四個步驟）</h3>
+    <div class="mach-steps-row">
+      <div class="mach-step">
+        <div class="mach-step-num">1</div>
+        <h4>到農會申請</h4>
+        <p>帶身分證到<strong>戶籍所在地的農會</strong>填寫申請書</p>
+      </div>
+      <div class="mach-step-arrow"><i class="fas fa-arrow-right"></i></div>
+      <div class="mach-step">
+        <div class="mach-step-num">2</div>
+        <h4>等候審查</h4>
+        <p>農會彙整後送農糧署審查</p>
+      </div>
+      <div class="mach-step-arrow"><i class="fas fa-arrow-right"></i></div>
+      <div class="mach-step">
+        <div class="mach-step-num">3</div>
+        <h4>購買農機</h4>
+        <p>審查通過後 <strong>1 個月內</strong>購買，保留發票</p>
+      </div>
+      <div class="mach-step-arrow"><i class="fas fa-arrow-right"></i></div>
+      <div class="mach-step">
+        <div class="mach-step-num">4</div>
+        <h4>領取補助款</h4>
+        <p>備齊發票和文件，到農會申領補助</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mach-subsidy-cta">
+    <a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=3314" target="_blank" rel="noopener" class="mach-cta-btn">
+      <i class="fas fa-external-link-alt"></i> 前往農糧署農機補助專區（查詢最新補助項目和金額）
+    </a>
+  </div>
+</div>
+
+<!-- ========== 安全提醒 ========== -->
+<div class="mach-safety-section">
+  <h2><i class="fas fa-shield-halved"></i> 農機安全使用提醒</h2>
+  <p>農機雖然省力，但操作不當也會造成嚴重傷害。以下是基本的安全原則：</p>
+  <div class="mach-safety-grid">
+    <div class="mach-safety-item">
+      <i class="fas fa-book-open"></i>
+      <h4>先看說明書</h4>
+      <p>每台農機的操作方式不同，使用前一定要讀過說明書或接受操作訓練。</p>
+    </div>
+    <div class="mach-safety-item">
+      <i class="fas fa-gears"></i>
+      <h4>檢查防護罩</h4>
+      <p>農機的旋轉部件（刀片、皮帶輪）一定要有防護罩。缺了不要用。</p>
+    </div>
+    <div class="mach-safety-item">
+      <i class="fas fa-ear-listen"></i>
+      <h4>戴好防護具</h4>
+      <p>操作割草機戴耳塞和護目鏡；操作鏈鋸戴耳罩和防割手套。</p>
+    </div>
+    <div class="mach-safety-item">
+      <i class="fas fa-shirt"></i>
+      <h4>穿著合身</h4>
+      <p>不要穿寬鬆的衣服操作農機。長袖紮好，頭髮綁好，避免被捲入。</p>
+    </div>
+    <div class="mach-safety-item">
+      <i class="fas fa-power-off"></i>
+      <h4>停機再處理</h4>
+      <p>清除卡住的雜物或做任何調整前，一定要先完全關閉引擎。</p>
+    </div>
+    <div class="mach-safety-item">
+      <i class="fas fa-child"></i>
+      <h4>遠離兒童</h4>
+      <p>農機操作時確保兒童不在附近。飛石、噪音和旋轉部件都可能造成傷害。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 參考資料 ========== -->
+<div class="mach-references">
+  <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+  <div class="mach-ref-list">
+    <p>農業部農糧署（年度更新）。農機補助專區。<a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=3314" target="_blank" rel="noopener">https://www.afa.gov.tw/cht/index.php?code=list&ids=3314</a></p>
+    <p>NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
+    <p>OSHA. (n.d.). <em>Agricultural operations: Hazards &amp; controls</em>. United States Department of Labor. <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">https://www.osha.gov/agricultural-operations/hazards</a></p>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+.mach-hero,.mach-categories,.mach-subsidy-section,.mach-safety-section,.mach-references{
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.mach-hero *,.mach-categories *,.mach-subsidy-section *,.mach-safety-section *,.mach-references *{box-sizing:border-box;}
+
+/* Hero */
+.mach-hero{padding:36px;background:linear-gradient(135deg,#e3f2fd 0%,#fff 60%,#bbdefb 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(21,101,192,.1);}
+.mach-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,165,233,.1);color:#0ea5e9;padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
+.mach-hero-title{font-size:2rem;font-weight:900;color:#1565c0;margin:0 0 8px;line-height:1.3;}
+.mach-hero-subtitle{font-size:1.1rem;color:#0ea5e9;font-weight:600;margin:0 0 18px;}
+.mach-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(21,101,192,.06);}
+.mach-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.mach-hero-intro p:last-child{margin-bottom:0;}
+.mach-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
+.mach-back-link:hover{text-decoration:underline;}
+
+/* Category Cards */
+.mach-categories{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}
+.mach-cat-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
+.mach-cat-header{display:flex;align-items:center;gap:16px;padding:24px;background:rgba(0,0,0,.015);border-bottom:1px solid #f0f0f0;}
+.mach-cat-icon{width:52px;height:52px;border-radius:14px;background:rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--cat-color);flex-shrink:0;}
+.mach-cat-header h2{font-size:1.2rem;font-weight:800;color:var(--cat-color);margin:0 0 6px;}
+.mach-cat-pain{font-size:.9rem;color:var(--text-secondary);margin:0;line-height:1.6;display:flex;align-items:flex-start;gap:6px;}
+.mach-cat-pain i{color:#c62828;margin-top:3px;flex-shrink:0;}
+.mach-cat-body{padding:24px;}
+
+/* Equipment Grid */
+.mach-equip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.mach-equip-item{display:flex;gap:14px;padding:18px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.mach-equip-icon{width:44px;height:44px;border-radius:10px;background:rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.mach-equip-item h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.mach-equip-item p{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0 0 8px;}
+.mach-subsidy{display:inline-flex;align-items:center;gap:6px;background:rgba(212,160,23,.1);color:#b8860b;padding:5px 12px;border-radius:6px;font-size:.82rem;font-weight:700;}
+
+/* Subsidy Section */
+.mach-subsidy-section{margin-bottom:36px;}
+.mach-subsidy-header{margin-bottom:20px;}
+.mach-subsidy-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.mach-subsidy-header p{color:var(--text-secondary);margin:0;font-size:.95rem;line-height:1.7;}
+.mach-subsidy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:28px;}
+.mach-info-card{background:#fff;border-radius:12px;padding:20px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+.mach-info-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px;}
+.mach-info-card h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.mach-info-card p{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* Apply Steps */
+.mach-apply-steps{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:20px;}
+.mach-apply-steps h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 20px;}
+.mach-steps-row{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;justify-content:center;}
+.mach-step{flex:1;min-width:160px;text-align:center;padding:16px;}
+.mach-step-num{width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;font-weight:900;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.mach-step h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.mach-step p{font-size:.85rem;line-height:1.5;color:var(--text-secondary);margin:0;}
+.mach-step-arrow{display:flex;align-items:center;color:#d0d0d0;font-size:1.2rem;padding-top:20px;}
+
+.mach-subsidy-cta{text-align:center;}
+.mach-cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--brand);color:#fff;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(92,134,7,.3);transition:all .3s;}
+.mach-cta-btn:hover{background:#4a6b05;transform:translateY(-2px);}
+
+/* Safety */
+.mach-safety-section{margin-bottom:36px;}
+.mach-safety-section h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.mach-safety-section>p{color:var(--text-secondary);margin:0 0 16px;font-size:.95rem;line-height:1.7;}
+.mach-safety-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.mach-safety-item{background:#fff;border-radius:12px;padding:20px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+.mach-safety-item>i{font-size:1.4rem;color:var(--brand);margin-bottom:10px;display:block;}
+.mach-safety-item h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
+.mach-safety-item p{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* References */
+.mach-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
+.mach-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.mach-ref-list{display:flex;flex-direction:column;gap:8px;}
+.mach-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
+.mach-ref-list a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .mach-hero{padding:24px;}.mach-hero-title{font-size:1.5rem;}
+  .mach-equip-grid{grid-template-columns:1fr;}
+  .mach-subsidy-grid{grid-template-columns:1fr;}
+  .mach-safety-grid{grid-template-columns:1fr;}
+  .mach-steps-row{flex-direction:column;align-items:center;}
+  .mach-step-arrow{transform:rotate(90deg);padding:0;}
+}
+</style>

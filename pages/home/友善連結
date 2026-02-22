@@ -1,0 +1,111 @@
+<!-- =======================================================
+     模組名稱：側邊欄友善連結 (Sidebar Friendly Links)
+     視覺規範：Astra Complete Edition
+     功能描述：修復跑版問題，確保兩欄佈局對齊與懸停動畫
+     ======================================================= -->
+
+<div class="side-widget">
+    <!-- 標題部分：遵循 3.4 側邊欄架構規範 -->
+    <div class="side-title">
+        <i class="fas fa-link"></i> 友善連結
+    </div>
+
+    <!-- 連結網格：遵循 3.5 友善連結規範 (Grid 兩欄) -->
+    <div class="link-grid">
+        <a href="https://www.moa.gov.tw/" target="_blank" class="link-item">農業部</a>
+        <a href="https://www.osha.gov.tw/" target="_blank" class="link-item">職安署</a>
+        <a href="https://www.ccu.edu.tw/" target="_blank" class="link-item">中正大學</a>
+        <a href="https://www.ylh.gov.tw/" target="_blank" class="link-item">臺大雲林分院</a>
+        <!-- 修正處：補上 class="link-item" 確保樣式統一 -->
+        <a href="https://www.hisp.ntu.edu.tw/" target="_blank" class="link-item">新作坊</a>
+        <a href="https://www.bli.gov.tw/" target="_blank" class="link-item">勞保局</a>
+        <a href="https://www.ilosh.gov.tw/" target="_blank" class="link-item">勞動研究所</a>
+    </div>
+</div>
+
+<style>
+/* --- 側邊欄通用組件樣式 (Side Widget) --- */
+.side-widget {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.side-widget:hover {
+    transform: translateY(-5px);
+}
+
+/* --- 標題裝飾 (Sidebar Title) --- */
+.side-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #343F1E; /* Heading Color */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.side-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #5C8607; /* Brand Color */
+    opacity: 0.6;
+    border-radius: 2px;
+}
+
+.side-title i {
+    color: #5C8607;
+    font-size: 17px;
+}
+
+/* --- 連結網格佈局 (Link Grid) --- */
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 核心修復：強制兩欄佈局 */
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* --- 個別連結項目 (Link Item) --- */
+.link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 10px;
+    background: #ffffff;
+    border: 1px solid rgba(53, 64, 31, 0.15); /* Border Spec */
+    border-radius: 10px;
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    color: #343F1E;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    min-height: 48px; /* 確保高度一致 */
+}
+
+/* --- 懸停效果 (Hover) --- */
+.link-item:hover {
+    background: #F9FBF7; /* Subtle Green BG */
+    border-color: #5C8607; /* Brand Border */
+    color: #5C8607;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(92, 134, 7, 0.1);
+}
+
+/* 針對字數較多的處理 */
+.link-item {
+    word-break: break-all;
+    line-height: 1.2;
+}
+</style>

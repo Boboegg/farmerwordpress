@@ -1,0 +1,374 @@
+<!-- =========================================
+     研究團隊頁面設計 (完整版)
+     特色：響應式網格、懸浮卡片、自動圓角照片
+     ========================================= -->
+
+<div class="team-grid-container">
+
+    <!-- ================= 核心團隊 (主持人) ================= -->
+    
+    <!-- 詹盛如 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <!-- 💡 請替換 src 為真實照片網址 -->
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/詹勝如-1-scaled-e1766588165755.jpg">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中正大學</span>
+            <h3 class="member-name">詹盛如</h3>
+            <p class="member-title">計畫主持人</p>
+            <div class="member-desc">教育學研究所 特聘教授暨副校長</div>
+        </div>
+    </div>
+
+    <!-- 管中祥 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/管中祥-1-scaled.jpg">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中正大學</span>
+            <h3 class="member-name">管中祥</h3>
+            <p class="member-title">共同主持人兼執行長</p>
+            <div class="member-desc">傳播學系 教授兼系主任</div>
+        </div>
+    </div>
+
+    <!-- ================= 共同主持人 (中正大學) ================= -->
+
+    <!-- 陳毓璟 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/117640342-scaled.jpg">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中正大學</span>
+            <h3 class="member-name">陳毓璟</h3>
+            <p class="member-title">共同主持人</p>
+            <div class="member-desc">成人及繼續教育 教授</div>
+        </div>
+    </div>
+
+    <!-- 劉黃麗娟 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/劉黃麗娟.png">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中正大學</span>
+            <h3 class="member-name">劉黃麗娟</h3>
+            <p class="member-title">共同主持人</p>
+            <div class="member-desc">勞工關係學系 副教授</div>
+        </div>
+    </div>
+
+    <!-- 李翠萍 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/7C471D2A-22A2-473F-9793-71005024EE3F-1.jpg">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中正大學</span>
+            <h3 class="member-name">李翠萍</h3>
+            <p class="member-title">共同主持人</p>
+            <div class="member-desc">政治學系 教授兼教務長</div>
+        </div>
+    </div>
+
+    <!-- ================= 共同主持人 (臺大醫院雲林分院) ================= -->
+
+    <!-- 李念偉 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/李廿偉.webp">
+        </div>
+        <div class="member-info">
+            <span class="member-org">臺大醫院雲林分院</span>
+            <h3 class="member-name">李念偉</h3>
+            <p class="member-title">共同主持人</p>
+            <div class="member-desc">環境及職業醫學部 主任</div>
+        </div>
+    </div>
+
+    <!-- 陳宗延 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/陳宗延-scaled-e1766846916931.webp">
+        </div>
+        <div class="member-info">
+            <span class="member-org">臺大醫院雲林分院</span>
+            <h3 class="member-name">陳宗延</h3>
+            <p class="member-title">共同主持人</p>
+            <div class="member-desc">環境及職業醫學部 專任主治醫師</div>
+        </div>
+    </div>
+
+    <!-- 謝秉儒 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/謝秉儒-scaled.webp">
+        </div>
+        <div class="member-info">
+            <span class="member-org">臺大醫院雲林分院</span>
+            <h3 class="member-name">謝秉儒</h3>
+            <p class="member-title">共同主持人</p>
+            <div class="member-desc">環境及職業醫學部 主治醫師</div>
+        </div>
+    </div>
+
+    <!-- 魏志阜 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/魏志阜.webp">
+        </div>
+        <div class="member-info">
+            <span class="member-org">臺大醫院雲林分院</span>
+            <h3 class="member-name">魏志阜</h3>
+            <p class="member-title">共同主持人</p>
+            <div class="member-desc">環境及職業醫學部 主治醫師</div>
+        </div>
+    </div>
+
+    <!-- ================= 跨校與協同主持人 ================= -->
+
+    <!-- 林韋至 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/林韋至-1.webp">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中山大學</span>
+            <h3 class="member-name">林韋至</h3>
+            <p class="member-title">共同主持人</p>
+            <div class="member-desc">機械與機電工程學系 特聘教授</div>
+        </div>
+    </div>
+
+    <!-- 蔡崇隆 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/190_img_10-scaled.webp">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中正大學</span>
+            <h3 class="member-name">蔡崇隆</h3>
+            <p class="member-title">協同主持人</p>
+            <div class="member-desc">傳播學系 副教授級專技人員</div>
+        </div>
+    </div>
+
+    <!-- 丁文卿 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/mczh-tw500x500_large25571_496711490427.webp">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中正大學</span>
+            <h3 class="member-name">丁文卿</h3>
+            <p class="member-title">協同主持人</p>
+            <div class="member-desc">勞工關係學系 助理教授</div>
+        </div>
+    </div>
+
+    <!-- 王秀華 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/mczh-tw700x700_large1396_989789945179.webp">
+        </div>
+        <div class="member-info">
+            <span class="member-org">國立中正大學</span>
+            <h3 class="member-name">王秀華</h3>
+            <p class="member-title">協同主持人</p>
+            <div class="member-desc">運動競技學系 教授兼系主任</div>
+        </div>
+    </div>
+
+    <!-- ================= 研究與專案團隊 ================= -->
+
+    <!-- 陳丹怡 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/485657-scaled.jpg">
+        </div>
+        <div class="member-info">
+            <span class="member-org">高齡社會勞動與福祉研究中心</span>
+            <h3 class="member-name">陳丹怡</h3>
+            <p class="member-title">博士後研究員</p>
+            <div class="member-desc">國立中正大學</div>
+        </div>
+    </div>
+
+    <!-- 顏孟芬 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://via.placeholder.com/400x400?text=顏孟芬" alt="顏孟芬">
+        </div>
+        <div class="member-info">
+            <span class="member-org">高齡社會勞動與福祉研究中心</span>
+            <h3 class="member-name">顏孟芬</h3>
+            <p class="member-title">博士後研究員</p>
+            <div class="member-desc">國立中正大學</div>
+        </div>
+    </div>
+
+    <!-- 曾柏鴻 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://via.placeholder.com/400x400?text=曾柏鴻" alt="曾柏鴻">
+        </div>
+        <div class="member-info">
+            <span class="member-org">高齡社會勞動與福祉研究中心</span>
+            <h3 class="member-name">曾柏鴻</h3>
+            <p class="member-title">專案助理</p>
+            <div class="member-desc">國立中正大學</div>
+        </div>
+    </div>
+
+    <!-- 曾志桓 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://fwdignity.com/wp-content/uploads/2025/12/S__10928178.jpg">
+        </div>
+        <div class="member-info">
+            <span class="member-org">高齡社會勞動與福祉研究中心</span>
+            <h3 class="member-name">曾志桓</h3>
+            <p class="member-title">專案助理</p>
+            <div class="member-desc">國立中正大學</div>
+        </div>
+    </div>
+
+    <!-- 卓怡萱 -->
+    <div class="team-member-card">
+        <div class="member-photo">
+            <img src="https://via.placeholder.com/400x400?text=卓怡萱" alt="卓怡萱">
+        </div>
+        <div class="member-info">
+            <span class="member-org">高齡社會勞動與福祉研究中心</span>
+            <h3 class="member-name">卓怡萱</h3>
+            <p class="member-title">專案助理</p>
+            <div class="member-desc">國立中正大學</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ================= CSS 樣式表 ================= -->
+<style>
+/* 1. 操作說明書 (Maintenance Guide) */
+/* - 替換照片：請修改 <img src="..."> 中的網址。
+   - 修改顏色：搜尋 #5d6d3d (尊嚴綠) 並替換。
+   - 調整排版：修改 grid-template-columns 的設定。
+*/
+
+/* 2. 網格容器 */
+.team-grid-container {
+    display: grid;
+    /* 電腦版：自動填滿，每張卡片最窄 280px */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 30px; 
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 3. 成員卡片 */
+.team-member-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* 靜態時的柔和陰影 */
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 平滑過渡 */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* 懸停互動效果 */
+.team-member-card:hover {
+    transform: translateY(-8px); /* 向上浮起 */
+    box-shadow: 0 15px 30px rgba(93, 109, 61, 0.15); /* 綠色光暈陰影 */
+    border-color: #5d6d3d; /* 邊框變色 */
+}
+
+/* 4. 照片區域 */
+.member-photo {
+    width: 100%;
+    height: 260px; /* 統一高度，確保整齊 */
+    overflow: hidden;
+    position: relative;
+    background-color: #f5f5f5;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 自動填滿裁切 */
+    object-position: top center; /* 以人臉為中心 */
+    transition: transform 0.5s ease;
+}
+
+.team-member-card:hover .member-photo img {
+    transform: scale(1.05); /* 懸停時照片微放大 */
+}
+
+/* 5. 文字資訊區域 */
+.member-info {
+    padding: 25px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 單位標籤 */
+.member-org {
+    background: rgba(93, 109, 61, 0.1);
+    color: #5d6d3d;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+/* 姓名 */
+.member-name {
+    margin: 0 0 5px 0;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+/* 職稱 */
+.member-title {
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    color: #5d6d3d;
+    font-weight: 600;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+/* 簡介文字 */
+.member-desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 手機版微調 */
+@media (max-width: 768px) {
+    .team-grid-container {
+        grid-template-columns: 1fr; /* 手機單欄 */
+        gap: 20px;
+        padding: 20px;
+    }
+    .member-photo {
+        height: 300px; /* 手機版照片拉高，更清晰 */
+    }
+}
+</style>

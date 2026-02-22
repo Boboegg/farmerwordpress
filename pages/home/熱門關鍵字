@@ -1,0 +1,15 @@
+<div class="side-widget">
+    <div class="side-title">
+        <i class="fas fa-tags"></i> 熱門關鍵字
+    </div>
+    <div class="tag-cloud">
+        <a href="/?s=熱危害" class="tag-btn">#熱危害</a>
+        <a href="/?s=肌肉骨骼" class="tag-btn">#肌肉骨骼</a>
+        <a href="/?s=農藥安全" class="tag-btn">#農藥安全</a>
+        <a href="/?s=民雄" class="tag-btn">#民雄</a>
+        <a href="/?s=職災保險" class="tag-btn">#職災保險</a>
+        <a href="/?s=青農" class="tag-btn">#青農</a>
+        <a href="/?s=食農教育" class="tag-btn">#食農教育</a>
+        <a href="/?s=高齡農民" class="tag-btn">#高齡農民</a>
+    </div>
+</div>

@@ -1,0 +1,163 @@
+<!-- =======================================================
+     模組名稱：側邊欄實用工具箱 (Utility Toolbox)
+     視覺規範：Astra Complete Edition
+     功能描述：提供職業病標準、健康檢核與數據庫下載入口
+     ======================================================= -->
+
+<div class="side-widget">
+    <!-- 標題部分 -->
+    <div class="side-title">
+        <i class="fas fa-toolbox"></i> 實用工具箱
+    </div>
+    
+    <!-- 工具列表 -->
+    <ul class="tool-list">
+        <li>
+            <!-- [連結修改處]：請更換為 WP 媒體庫中的 PDF 網址 -->
+            <a href="https://www.osha.gov.tw/48110/48363/133456/48395/nodelist" class="tool-link" target="_blank">
+                <div class="tool-icon"><i class="fas fa-file-medical-alt"></i></div>
+                <span>職業病認定標準</span>
+                <i class="fas fa-download download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <!-- [連結修改處]：請更換為您的檢核表檔案網址 -->
+            <a href="/downloads/checklist.pdf" class="tool-link" target="_blank">
+                <div class="tool-icon"><i class="fas fa-heartbeat"></i></div>
+                <span>自我健康檢核表</span>
+                <i class="fas fa-download download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <!-- [連結修改處]：請更換為運動圖卡檔案網址 -->
+            <a href="https://www.hpa.gov.tw/Video/RecommendVideo.aspx?nodeid=851&vid=627" class="tool-link" target="_blank">
+                <div class="tool-icon"><i class="fas fa-running"></i></div>
+                <span>我家也是健身房(故事篇)</span>
+                <i class="fas fa-download download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <!-- [連結修改處]：對應頁面路徑 -->
+            <a href="https://agrstat.moa.gov.tw/sdweb/public/maintenance/Announce.aspx" class="tool-link">
+                <div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
+                <span>農業統計數據庫</span>
+                <i class="fas fa-arrow-right download-icon"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<style>
+/* --- 側邊欄通用組件樣式 --- */
+.side-widget {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(53, 64, 31, 0.05);
+}
+
+.side-widget:hover {
+    transform: translateY(-5px);
+}
+
+.side-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #343F1E;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+/* 標題裝飾線 */
+.side-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #5C8607;
+    opacity: 0.6;
+    border-radius: 2px;
+}
+
+/* --- 工具連結規範 (Tool List) --- */
+.tool-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tool-list li {
+    margin-bottom: 12px;
+}
+
+.tool-list li:last-child {
+    margin-bottom: 0;
+}
+
+.tool-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    background: #f8f9fa; /* 背景色 Surface 2 微調 */
+    border-radius: 12px;
+    text-decoration: none;
+    color: #343F1E;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid transparent;
+}
+
+.tool-icon {
+    width: 38px;
+    height: 38px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: #5C8607;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    font-size: 16px;
+}
+
+.tool-link span {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.download-icon {
+    font-size: 14px;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+}
+
+/* --- 懸停效果 (Hover State) --- */
+.tool-link:hover {
+    background: #e8f5e9;
+    color: #2c5e2e;
+    transform: translateX(8px); /* 遵循規範之位移 */
+    border-color: rgba(92, 134, 7, 0.2);
+}
+
+.tool-link:hover .download-icon {
+    opacity: 1;
+    color: #5C8607;
+    transform: scale(1.1);
+}
+
+.tool-link:hover .tool-icon {
+    background: #5C8607;
+    color: #ffffff;
+}
+</style>

@@ -1,0 +1,252 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+	.young-page-wrapper {
+		--young-brand: #5B7FA6;
+		--young-bg: #E8EFF7;
+		--young-text: #1f3348;
+		--young-muted: #6b7280;
+		--young-card: #ffffff;
+		--young-border: rgba(91, 127, 166, 0.28);
+		font-family: "Noto Sans TC", sans-serif;
+		font-size: 18px;
+		color: var(--young-text);
+		max-width: 820px;
+		margin: 0 auto;
+		padding: 20px 16px 100px;
+		box-sizing: border-box;
+		background: #fff;
+	}
+
+	.young-page-wrapper * { box-sizing: border-box; }
+	.young-page-wrapper h1,
+	.young-page-wrapper h2,
+	.young-page-wrapper h3 {
+		line-height: 1.3;
+		margin: 0 0 10px;
+	}
+
+	.young-hero {
+		background: linear-gradient(135deg, var(--young-bg) 0%, #fff 100%);
+		border: 1px solid var(--young-border);
+		border-radius: 20px;
+		padding: 24px 20px;
+		margin-bottom: 16px;
+	}
+
+	.young-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		background: rgba(91, 127, 166, 0.18);
+		color: #38587d;
+		font-size: 14px;
+		font-weight: 700;
+		border-radius: 999px;
+		padding: 6px 14px;
+		margin-bottom: 10px;
+	}
+
+	.young-title { font-size: 2rem; font-weight: 900; color: #2f4a69; }
+	.young-subtitle { margin: 0; color: var(--young-muted); line-height: 1.8; }
+
+	.young-focus {
+		background: #fff;
+		border: 1px solid #ececec;
+		border-left: 6px solid var(--young-brand);
+		border-radius: 14px;
+		padding: 14px;
+		margin-bottom: 12px;
+	}
+
+	.young-focus-list {
+		margin: 8px 0 0;
+		padding-left: 18px;
+		color: var(--young-muted);
+	}
+
+	.young-focus-list li {
+		margin: 6px 0;
+		line-height: 1.7;
+	}
+
+	.young-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 12px;
+		margin: 14px 0 18px;
+	}
+
+	.young-card {
+		display: block;
+		text-decoration: none;
+		color: var(--young-text);
+		background: var(--young-card);
+		border: 1px solid #ececec;
+		border-left: 6px solid var(--young-brand);
+		border-radius: 14px;
+		padding: 14px;
+	}
+
+	.young-card-title {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		font-size: 1.1rem;
+		font-weight: 800;
+		margin-bottom: 6px;
+	}
+
+	.young-card-desc {
+		margin: 0;
+		color: var(--young-muted);
+		line-height: 1.8;
+	}
+
+	.young-actions {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+		margin-top: 10px;
+	}
+
+	.young-btn {
+		min-height: 48px;
+		border-radius: 12px;
+		border: 1px solid var(--young-border);
+		background: #fff;
+		color: #38587d;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 1rem;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+	}
+
+	.young-btn-primary {
+		background: var(--young-brand);
+		color: #fff;
+		border-color: var(--young-brand);
+	}
+
+	.young-note {
+		background: #fff;
+		border: 1px solid #ececec;
+		border-radius: 14px;
+		padding: 14px;
+		margin-top: 12px;
+	}
+
+	.young-note p { margin: 6px 0; line-height: 1.8; }
+
+	.young-bottom-nav {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 20;
+		background: #fff;
+		border-top: 1px solid #e5e7eb;
+		box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
+	}
+
+	.young-bottom-wrap {
+		max-width: 820px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px;
+		padding: 8px 12px;
+	}
+
+	.young-bottom-link {
+		min-height: 56px;
+		border-radius: 12px;
+		text-decoration: none;
+		color: #38587d;
+		font-size: 0.95rem;
+		font-weight: 700;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+		background: var(--young-bg);
+		border: 1px solid var(--young-border);
+	}
+
+	@media (max-width: 640px) {
+		.young-actions { grid-template-columns: 1fr; }
+		.young-title { font-size: 1.7rem; }
+	}
+</style>
+
+<div class="young-page-wrapper">
+	<section class="young-hero">
+		<div class="young-badge"><i class="fa-solid fa-tractor"></i> 青農入口</div>
+		<h1 class="young-title">技術升級，經營也要有保障</h1>
+		<p class="young-subtitle">
+			這一頁整合青農最關鍵的三件事：省工與安全、保險與補助、經營成長資源。先看能立刻改善現場的工具，再做財務與保障規劃。
+		</p>
+	</section>
+
+	<section class="young-focus">
+		<h2><i class="fa-solid fa-compass"></i> 青農先做這三步</h2>
+		<ol class="young-focus-list">
+			<li>先看省工農機與 PPE，降低受傷與人力成本。</li>
+			<li>再做職災與退休試算，掌握保障差異與申請優先順序。</li>
+			<li>最後看研究與案例資源，把可行做法導入你的農場。</li>
+		</ol>
+	</section>
+
+	<section class="young-grid">
+		<a class="young-card" href="/occupational-safety/labor-saving-machinery/">
+			<div class="young-card-title"><i class="fa-solid fa-gears"></i> 省工農機具（先看）</div>
+			<p class="young-card-desc">用機具改善高負荷作業，降低人力依賴與重複性傷害風險。</p>
+		</a>
+
+		<a class="young-card" href="/occupational-safety/personal-protective-equipment/">
+			<div class="young-card-title"><i class="fa-solid fa-shield-heart"></i> 個人防護具（PPE）</div>
+			<p class="young-card-desc">針對噴藥、高溫、搬運等場景，快速確認防護配備等級與穿戴重點。</p>
+		</a>
+
+		<a class="young-card" href="/economic-insurance/worker-occupational-accident-calculator/">
+			<div class="young-card-title"><i class="fa-solid fa-calculator"></i> 職災保障試算</div>
+			<p class="young-card-desc">輸入基本條件，快速比較不同保障方案與可能理賠範圍。</p>
+		</a>
+
+		<a class="young-card" href="/economic-insurance/farmer-worker-retirement-calculator/">
+			<div class="young-card-title"><i class="fa-solid fa-chart-line"></i> 退休與職涯試算</div>
+			<p class="young-card-desc">評估在職與轉型路徑的長期差異，做更穩健的財務規劃。</p>
+		</a>
+
+		<a class="young-card" href="/research-result/related-resources/">
+			<div class="young-card-title"><i class="fa-solid fa-book-open-reader"></i> 青農延伸資源</div>
+			<p class="young-card-desc">整合研究成果、案例與工具包，作為經營優化與決策參考。</p>
+		</a>
+	</section>
+
+	<section class="young-actions">
+		<a class="young-btn young-btn-primary" href="/economic-insurance/worker-occupational-accident-calculator/"><i class="fa-solid fa-play"></i> 立即做保障試算</a>
+		<a class="young-btn" href="/occupational-safety/labor-saving-machinery/"><i class="fa-solid fa-screwdriver-wrench"></i> 先看機具與補助</a>
+	</section>
+
+	<section class="young-note">
+		<h2>想要更快上手？</h2>
+		<p>可從「省工農機具 → PPE → 試算器」這條路徑開始，先解決高風險與高成本項目。</p>
+		<p>需要最新活動或案例，可到最新消息查看工作坊與現場經驗分享。</p>
+	</section>
+</div>
+
+<nav class="young-bottom-nav" aria-label="青農快捷導覽">
+	<div class="young-bottom-wrap">
+		<a class="young-bottom-link" href="/occupational-safety/labor-saving-machinery/"><i class="fa-solid fa-tractor"></i><span>看機具</span></a>
+		<a class="young-bottom-link" href="/economic-insurance/worker-occupational-accident-calculator/"><i class="fa-solid fa-calculator"></i><span>算保障</span></a>
+		<a class="young-bottom-link" href="/thenews/"><i class="fa-solid fa-newspaper"></i><span>看動態</span></a>
+	</div>
+</nav>

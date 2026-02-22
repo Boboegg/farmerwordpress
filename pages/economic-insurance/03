@@ -1,0 +1,114 @@
+<!-- =====================================================
+     /money/ 主頁面・區塊 03：保險制度速覽比較
+     檔案：03-insurance-snapshot.html
+     ===================================================== -->
+
+<div class="money-snapshot" id="money-snapshot">
+  <div class="money-snap-header">
+    <h2><i class="fas fa-table-columns"></i> 農民保險制度速覽</h2>
+    <p>台灣農民可使用的保險制度一覽，快速掌握「誰保什麼」。</p>
+  </div>
+
+  <div class="money-snap-table-wrap">
+    <table class="money-snap-table">
+      <thead>
+        <tr>
+          <th>保險類型</th>
+          <th>保障對象</th>
+          <th>保障範圍</th>
+          <th>農民每月繳</th>
+          <th>詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="money-snap-tag money-snap-tag-blue">農民健康保險（農保）</span></td>
+          <td>農民本人</td>
+          <td>生育、身心障礙、喪葬</td>
+          <td>78 元</td>
+          <td><span class="money-snap-note">基礎保障，<strong>無</strong>傷病給付</span></td>
+        </tr>
+        <tr class="money-snap-highlight">
+          <td><span class="money-snap-tag money-snap-tag-primary">農民職業災害保險（農職保）</span></td>
+          <td>農民本人</td>
+          <td>傷病、就醫津貼、身心障礙、喪葬</td>
+          <td><strong>15 元</strong></td>
+          <td><a href="/money/occupational-insurance/" class="money-snap-link">查看詳情 →</a></td>
+        </tr>
+        <tr>
+          <td><span class="money-snap-tag money-snap-tag-green">農作物保險</span></td>
+          <td>農作物</td>
+          <td>天災、病蟲害造成的農損</td>
+          <td>依品項不同</td>
+          <td><span class="money-snap-wip">建置中</span></td>
+        </tr>
+        <tr>
+          <td><span class="money-snap-tag money-snap-tag-teal">全民健康保險（健保）</span></td>
+          <td>農民本人</td>
+          <td>就醫費用</td>
+          <td>依投保金額</td>
+          <td><span class="money-snap-note">另行投保，非本專區範圍</span></td>
+        </tr>
+        <tr>
+          <td><span class="money-snap-tag money-snap-tag-amber">農民退休儲金</span></td>
+          <td>農民退休</td>
+          <td>退休年金</td>
+          <td>自選提繳</td>
+          <td><a href="https://www.bli.gov.tw/0105231.html" target="_blank" rel="noopener" class="money-snap-link">試算工具 →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="money-snap-footnote">
+    <i class="fas fa-info-circle"></i>
+    以上為制度概要，各項詳細資格與金額請參閱子頁面或官方網站。農保與農職保僅得擇一請領，不可重複。
+  </div>
+</div>
+
+<style>
+/* === 03-insurance-snapshot 樣式 === */
+.money-snapshot{
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
+  font-family:"Noto Sans TC","Lato",sans-serif;
+  margin-top:24px;background:#fff;border-radius:16px;padding:36px;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-sizing:border-box;
+}
+.money-snapshot *{box-sizing:border-box;}
+
+.money-snap-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--brand-light);}
+.money-snap-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.money-snap-header h2 i{color:var(--brand);}
+.money-snap-header p{font-size:.93rem;color:var(--text-secondary);margin:0;}
+
+.money-snap-table-wrap{overflow-x:auto;margin-bottom:16px;}
+.money-snap-table{width:100%;border-collapse:collapse;font-size:.9rem;}
+.money-snap-table th,.money-snap-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #eef2f7;vertical-align:middle;}
+.money-snap-table th{background:#f8fafc;font-weight:700;color:var(--text-primary);font-size:.85rem;text-transform:uppercase;letter-spacing:.3px;}
+.money-snap-table tbody tr:hover{background:#fafbfc;}
+.money-snap-highlight{background:#eff6ff !important;}
+.money-snap-highlight:hover{background:#e0ecff !important;}
+
+.money-snap-tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.8rem;font-weight:700;white-space:nowrap;}
+.money-snap-tag-primary{background:var(--brand);color:#fff;}
+.money-snap-tag-blue{background:#dbeafe;color:#1e40af;}
+.money-snap-tag-green{background:#dcfce7;color:#166534;}
+.money-snap-tag-teal{background:#ccfbf1;color:#115e59;}
+.money-snap-tag-amber{background:#fef3c7;color:#92400e;}
+
+.money-snap-link{color:var(--brand);font-weight:700;text-decoration:none;font-size:.88rem;transition:color .2s;}
+.money-snap-link:hover{color:var(--brand-dark);text-decoration:underline;}
+.money-snap-wip{font-size:.82rem;color:#92400e;font-weight:600;}
+.money-snap-note{font-size:.82rem;color:var(--text-secondary);}
+
+.money-snap-footnote{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:#f8fafc;border-radius:10px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);border:1px solid #eef2f7;}
+.money-snap-footnote i{color:var(--brand);margin-top:3px;flex-shrink:0;}
+
+@media(max-width:768px){
+  .money-snapshot{padding:20px;}
+  .money-snap-table{font-size:.82rem;}
+  .money-snap-table th,.money-snap-table td{padding:10px 8px;}
+}
+</style>

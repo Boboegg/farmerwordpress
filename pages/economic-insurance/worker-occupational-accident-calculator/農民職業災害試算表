@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>農勞職災權益試算神器 完整版v1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+  body { font-family: 'Noto Sans TC', sans-serif; }
+
+  .fade-in { animation: fadeIn 0.3s ease-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 24px; width: 24px; border-radius: 50%;
+    background: #2563eb; cursor: pointer;
+    border: 4px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  /* 美化職業病下拉選單 */
+  #disease-section label {
+    font-size: 0.9rem;
+  }
+
+/* 下拉選單：用系統 UI 字型，避免跟上面 Noto Sans 衝突 */
+#select-disease {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  padding: 10px 40px 10px 14px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #111827;
+ -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23374151' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px 14px;
+}
+
+  #select-disease:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+  }
+
+  #disease-section {
+    border-radius: 16px;
+    padding: 16px 18px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    margin-top: 10px;               /* 和上面的 Tab 拉開一點 */
+  }
+
+  /* 職業病說明框不要緊貼上方，顏色更柔和 */
+  #disease-detail {
+    margin-top: 10px;
+    border-radius: 14px;
+   font-size: 13px;
+  }
+
+  /* Tab 容器稍微加大底部間距，避免視覺壓住下拉選單 */
+  .bg-gray-100.rounded-lg {
+    margin-bottom: 18px;
+  }
+</style>
+</head>
+<body class="bg-transparent text-slate-800 p-4 md:p-10 min-h-screen">
+
+<div class="max-w-6xl mx-auto">
+  <!-- 標題區 -->
+  <header class="mb-10 text-center">
+    <div class="inline-block bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-bold mb-4">權益試算小工具</div>
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-3 flex items-center justify-center gap-3">
+      <i data-lucide="calculator" class="w-10 h-10 text-blue-600"></i>
+      農民、勞工職災權益試算
+    </h1>
+    <p class="text-slate-600 text-lg">
+      依農民職業災害保險與勞工職業災害保險規定，協助試算傷病給付及就醫津貼，並顯示相關條文摘要。（「本試算工具僅為教學及自我評估用途，實際給付金額仍以勞保局／農保單位審核結果與最新法規為準。」）
+    </p>
+  </header>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- 左側：條件設定 -->
+    <div class="lg:col-span-5 space-y-6">
+      <!-- 投保身分 -->
+      <div class="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-md border border-gray-200">
+        <h2 class="text-xl font-bold mb-5 flex items-center gap-2 text-blue-800">
+          <i data-lucide="user-check" class="w-6 h-6"></i> 1. 設定投保身分
+        </h2>
+        <div class="flex gap-3 mb-6">
+          <button id="btn-farmer" class="flex-1 py-4 px-4 rounded-xl border-2 transition-all flex flex-col items-center gap-2" onclick="setIdentity('farmer')">
+            <i data-lucide="sprout" class="w-6 h-6"></i>
+            <span class="font-bold">農民</span>
+            <span class="text-xs opacity-70">農民職災保險</span>
+          </button>
+          <button id="btn-labor" class="flex-1 py-4 px-4 rounded-xl border-2 transition-all flex flex-col items-center gap-2" onclick="setIdentity('labor')">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+            <span class="font-bold">勞工</span>
+            <span class="text-xs opacity-70">勞工職災保險</span>
+          </button>
+        </div>
+
+        <div class="space-y-2">
+          <label class="text-sm font-bold text-gray-600">月投保薪資 (新台幣)</label>
+          <div class="relative">
+            <input type="number" id="input-salary" class="w-full p-4 rounded-xl border-2 text-xl focus:outline-none transition-all" value="20400" oninput="updateCalculation()">
+            <span id="salary-hint" class="absolute right-4 top-4 text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
+              農民為固定投保金額
+            </span>
+          </div>
+          <p class="text-xs text-gray-500 leading-relaxed">
+            備註：勞工職災保險實務上以事故發生前 6 個月平均月投保薪資計算，這裡以您輸入的金額作為簡化試算依據。
+          </p>
+        </div>
+      </div>
+
+      <!-- 事件內容 -->
+      <div class="bg-white/80 backdrop-blur p-6 rounded-2xl shadow-md border border-gray-200">
+        <h2 class="text-xl font-bold mb-5 flex items-center gap-2 text-blue-800">
+          <i data-lucide="alert-circle" class="w-6 h-6"></i> 2. 發生事件內容
+        </h2>
+
+        <!-- 傷害 / 疾病 -->
+        <div class="flex gap-2 mb-6 p-1 bg-gray-100 rounded-lg">
+          <button id="btn-injury" class="flex-1 py-2 rounded-md font-bold transition-all" onclick="setIncidentType('injury')">職業傷害</button>
+          <button id="btn-disease" class="flex-1 py-2 rounded-md font-bold transition-all" onclick="setIncidentType('disease')">職業病</button>
+        </div>
+
+        <!-- 接下來第 2 段會補上疾病下拉選單與條文清單 -->
+        <div id="disease-section" class="hidden fade-in mb-6">
+          <label class="text-sm font-bold text-gray-600 mb-2 block">請選擇疑似病症：</label>
+          <select id="select-disease" class="w-full p-3 border-2 rounded-xl bg-white mb-3" onchange="updateDiseaseDetail()"></select>
+          <div id="disease-detail" class="p-4 rounded-xl text-sm border-l-4 hidden"></div>
+        </div>
+
+        <!-- 休養天數與醫療 -->
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between items-end mb-2">
+              <label class="font-bold text-gray-600">休養天數 (不能工作)</label>
+              <span class="text-2xl font-black text-blue-600"><span id="display-rest-days">30</span> 天</span>
+            </div>
+            <input type="range" id="range-rest-days" min="4" max="365" value="30"
+                   class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                   oninput="updateCalculation()">
+            <p class="text-xs text-gray-500 mt-1">
+              備註：依規定，前 3 日為等待期不給付，自第 4 日起始得請領傷病給付。
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-gray-50 p-3 rounded-xl">
+              <label class="text-xs font-bold text-gray-500 block mb-1">門診日數</label>
+              <input type="number" id="input-outpatient" min="0" value="5"
+                     class="w-full bg-transparent text-lg font-bold outline-none"
+                     oninput="updateCalculation()">
+            </div>
+            <div class="bg-gray-50 p-3 rounded-xl">
+              <label class="text-xs font-bold text-gray-500 block mb-1">住院天數</label>
+              <input type="number" id="input-inpatient" min="0" value="0"
+                     class="w-full bg-transparent text-lg font-bold outline-none"
+                     oninput="updateCalculation()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右側：結果＋公式 -->
+    <div class="lg:col-span-7 space-y-6">
+      <!-- 試算結果 -->
+      <div id="result-card" class="bg-white/80 backdrop-blur rounded-3xl shadow-xl border border-gray-200 border-t-[12px] transition-all duration-500 overflow-hidden">
+        <div class="p-8">
+          <div class="flex justify-between items-center mb-8">
+            <span id="badge-identity" class="px-4 py-1.5 rounded-full text-sm font-black tracking-widest uppercase"></span>
+            <span class="text-slate-400 text-xs">估算日期：<span id="today-date"></span></span>
+          </div>
+
+          <div class="mb-10">
+            <h3 class="text-gray-500 font-bold mb-1">預估總給付金額（傷病給付＋就醫津貼）</h3>
+            <div class="flex items-baseline gap-2">
+              <span class="text-6xl font-black text-slate-900 tracking-tighter">$<span id="total-amount">0</span></span>
+              <span class="text-2xl font-bold text-gray-400">元</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-5 bg-red-50 rounded-2xl border border-red-100">
+              <div class="flex items-center gap-2 mb-3 text-red-700">
+                <i data-lucide="banknote" class="w-5 h-5"></i>
+                <span class="font-bold">傷病給付 (薪資補償)</span>
+              </div>
+              <div class="text-3xl font-black text-red-600 mb-1">$<span id="injury-amount">0</span></div>
+              <p class="text-xs text-red-600 opacity-80">
+                依第 4 日起的可領天數與投保薪資試算薪資補償金額，最長 2 年；實際給付日數與金額仍以主管機關核定為準。
+              </p>
+            </div>
+
+            <div class="p-5 bg-indigo-50 rounded-2xl border border-indigo-100">
+              <div class="flex items-center gap-2 mb-3 text-indigo-700">
+                <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+                <span class="font-bold">醫療給付 / 就醫津貼</span>
+              </div>
+              <div id="medical-text" class="text-2xl font-black text-indigo-600 mb-1">0 元</div>
+              <p id="medical-subtext" class="text-xs text-indigo-600 opacity-80"></p>
+            </div>
+          </div>
+
+          <p class="mt-6 text-xs text-gray-500 leading-relaxed">
+            本工具依農民職業災害保險與勞工職業災害保險公開說明整理，僅供民眾了解制度與金額概念之用，
+            不構成法律意見或個案保證。實際是否符合職業災害認定、給付期間與金額，仍以最新法規與勞保局／農業部審查結果為準。
+          </p>
+        </div>
+
+        <!-- 公式與條文說明區（第 3 段會補細節） -->
+        <div class="bg-gray-900 text-white p-6">
+          <button onclick="toggleFormula()" class="w-full flex items-center justify-between group">
+            <span class="flex items-center gap-3 font-bold text-lg">
+              <i data-lucide="info" class="text-blue-400"></i> 詳細計算法源與條文摘要
+            </span>
+            <i data-lucide="chevron-down" id="formula-arrow" class="transition-transform duration-300"></i>
+          </button>
+          <div id="formula-content" class="hidden mt-6 space-y-4 text-gray-300 text-sm leading-relaxed border-t border-gray-700 pt-6"></div>
+        </div>
+      </div>
+
+      <!-- 日後可以加：更多教學、申請流程卡片區 -->
+    </div>
+  </div>
+</div>
+
+<script>
+  const FARMER_SALARY = 20400;
+
+  // 之後第 2 段會補農民 / 勞工職業病清單
+    // === 農民職業病：依農民職業災害保險職業傷病審查辦法第9條、第9條之1 ===
+  const farmerDiseaseItems = [
+    {
+      id: 'F-chem-poison',
+      type: 'chem',
+      title: '農藥中毒、甲醛中毒',
+      lawRef: '農職保職業傷病審查辦法第9條第1款',
+      summary: '因實際從事農業工作，長期或一次大量暴露於農藥、甲醛等化學物質，經醫師診斷為中毒相關疾病。',
+      proof: [
+        '診斷書上有「農藥中毒」「有機磷中毒」或類似診斷名稱。',
+        '可證明有施用農藥、消毒藥劑等工作內容（例如農作日誌、照片）。',
+        '必要時，提供農藥使用紀錄或包裝、農會或合作社開立之證明。'
+      ],
+      suggest: '如有長期噴藥或處理藥劑經驗，建議攜帶診斷書、農事紀錄與藥品資訊，至職業醫學科或農會協助轉介之職災服務窗口諮詢。'
+    },
+    {
+      id: 'F-heat',
+      type: 'physical',
+      title: '中暑、熱痙攣、熱衰竭',
+      lawRef: '農職保職業傷病審查辦法第9條第2款',
+      summary: '在高溫、日照強烈環境下從事農業作業（如採收、搬運），導致體溫調節失衡或循環障礙，經診斷為中暑、熱痙攣或熱衰竭。',
+      proof: [
+        '診斷書寫明中暑、熱衰竭等診斷。',
+        '發病當日或前幾日的工作時間、地點、作業內容（例如連續在溫室或烈日下工作）。',
+        '可輔以氣象資料、同工證言或農會證明，說明當時工作環境的高溫負荷。'
+      ],
+      suggest: '若曾在烈日或高溫環境長時間農作後出現中暑症狀，建議保留就醫資料及工作時間紀錄，並諮詢職業醫學科或地方職災服務據點。'
+    },
+    {
+      id: 'F-cold',
+      type: 'physical',
+      title: '凍傷、失溫等低溫作業疾病',
+      lawRef: '農職保職業傷病審查辦法第9條第3款',
+      summary: '在低溫環境或直接接觸低溫物品（如冷藏庫、清晨低溫灌溉）工作，引發凍傷或失溫等疾病。',
+      proof: [
+        '診斷書載明凍傷、失溫或類似診斷。',
+        '工作內容涉及清晨或夜間低溫作業、冷藏設備操作等證據。',
+        '可附上工作現場照片或設備溫度紀錄。'
+      ],
+      suggest: '如長期在冷藏庫、冷鏈作業或極低溫環境工作，建議向職業醫學科說明暴露時間與方式，以利因果關係評估。'
+    },
+    {
+      id: 'F-UV-cancer',
+      type: 'physical',
+      title: '紫外線暴露導致皮膚鱗狀上皮細胞癌',
+      lawRef: '農職保職業傷病審查辦法第9條第4款',
+      summary: '長期在戶外日照強烈環境從事農業工作，皮膚暴露部位（臉、頸、手臂等）罹患鱗狀上皮細胞癌。',
+      proof: [
+        '皮膚病理報告及診斷書，證實為鱗狀上皮細胞癌。',
+        '多年從事戶外農作的工作史與照片（例：插秧、採收、噴藥）。',
+        '必要時可提供工作年資證明或農保加保紀錄。'
+      ],
+      suggest: '如有長期戶外農作與皮膚癌診斷，建議諮詢職業醫學科，討論與紫外線暴露之關聯，並備齊工作年資資料。'
+    },
+    {
+      id: 'F-bio-disease',
+      type: 'bio',
+      title: '黴菌性角膜炎、恙蟲病等生物性疾病',
+      lawRef: '農職保職業傷病審查辦法第9條第5款',
+      summary: '因接觸農作物、土壤、動物或病媒，在農業環境暴露後感染特定傳染病或黴菌性角膜疾病。',
+      proof: [
+        '診斷書寫明恙蟲病、黴菌性角膜炎、鉤端螺旋體病等特定疾病。',
+        '發病前曾在田間、畜舍、水田等高風險場域工作之紀錄。',
+        '必要時可有公衛單位之疫情調查或檢驗報告。'
+      ],
+      suggest: '出現發燒、皮疹或眼部嚴重發炎且有田間工作史時，應主動告知醫師工作內容，並保留相關紀錄以利職業病評估。'
+    },
+    {
+      id: 'F-musculoskeletal',
+      type: 'ergonomic',
+      title: '關節滑囊病變、手指骨關節炎等肌骨病變',
+      lawRef: '農職保職業傷病審查辦法第9條第6、7款',
+      summary: '長期從事重複、費力或特定姿勢的農業工作（如彎腰採收、搬運重物），造成關節滑囊病變或手指骨關節炎致手指變形。',
+      proof: [
+        'X光、MRI 或超音波等影像檢查與骨科／復健科診斷書。',
+        '多年的農作經歷、工作姿勢與負重方式說明（可附照片或影片）。',
+        '若有職業醫學科評估報告，更有利於釐清與工作之因果關係。'
+      ],
+      suggest: '如醫師評估與長期農作姿勢、負重有關，建議向農會或職災服務中心諮詢申請程序及所需文件。'
+    },
+    {
+      id: 'F-other-9-1',
+      type: 'other',
+      title: '其他與農業工作具相當因果關係之疾病',
+      lawRef: '農職保職業傷病審查辦法第9條之1',
+      summary: '未列於第9條各款，但經中央主管機關認可醫療機構之職業醫學科專科醫師診斷，疾病與實際從事農業工作具有相當因果關係者，亦可視為職業病。',
+      proof: [
+        '職業醫學科專科醫師出具之職業病診斷書。',
+        '同一專科醫師撰寫之職業病評估報告書，說明暴露情形與疾病關聯。',
+        '完整的農業工作內容、暴露史、既往病史等資料。'
+      ],
+      suggest: '若疾病較特殊或難以直接歸類，建議先掛號職業醫學科，並備妥工作與就醫資料，由專科醫師評估是否符合第9條之1規定。'
+    }
+  ];
+
+  // === 勞工職業傷病：依勞工職業災害保險職業傷病審查準則常見類型 ===
+  const laborInjuryDiseaseItems = [
+    {
+      id: 'L-ergonomic',
+      type: 'ergonomic',
+      title: '人因性肌肉骨骼傷病（搬重物、重複動作）',
+      lawRef: '職業傷病審查準則 人因性危害相關規定',
+      summary: '長期從事反覆彎腰、扭轉、搬提重物或高頻率重複動作的工作，導致椎間盤突出、肩夾擠症候群、肌腱炎等肌肉骨骼傷病。',
+      proof: [
+        '骨科或復健科診斷書與影像檢查（X光、MRI）。',
+        '工作說明書、排班表或實際工作照片，證明需長期搬重物或採非常姿勢工作。',
+        '工時計算表，包含每日負重時間與重量、工作年資等。'
+      ],
+      suggest: '建議攜帶診斷書與工作紀錄，諮詢職業醫學科或地方職災服務中心，由專業團隊評估動作頻率與負荷是否符合準則認定標準。'
+    },
+    {
+      id: 'L-chemical',
+      type: 'chem',
+      title: '化學性危害（粉塵、有機溶劑、重金屬等）',
+      lawRef: '職業傷病審查準則 化學性危害相關規定',
+      summary: '在含有粉塵、有機溶劑、重金屬或其他有害化學物質之環境工作，引發肺部疾病、神經毒性、肝腎功能異常等職業性疾病。',
+      proof: [
+        '診斷書載明矽肺、溶劑性神經病變、職業性氣喘等相關疾病。',
+        '工作場所環境監測報告（粉塵濃度、溶劑濃度）、化學品安全資料表（MSDS）。',
+        '個人防護具（口罩、呼吸防護器）使用紀錄與教育訓練紀錄。'
+      ],
+      suggest: '如懷疑與化學品暴露相關，建議向職業醫學科出示環境監測與暴露年資資料，並可請勞檢機構或工會協助蒐證。'
+    },
+    {
+      id: 'L-overwork',
+      type: 'overwork',
+      title: '腦心血管疾病（過勞）',
+      lawRef: '職業傷病審查準則 過勞認定相關規定',
+      summary: '在長期工時過長、輪班或工作負荷異常偏高的情況下，於一定期間內發生心肌梗塞、腦中風等重大心血管事件。',
+      proof: [
+        '發病前一段期間的出勤紀錄、加班紀錄、排班表（含夜班、輪班情形）。',
+        '薪資單、勞工保險投保紀錄，用以估算工時與加班費。',
+        '急診或住院病歷、心導管檢查報告等醫療文件。'
+      ],
+      suggest: '過勞認定涉及複雜工時計算與時序判斷，建議儘早與地方勞工局、職災勞工服務中心或工會聯繫，由專業人員協助整理工時資料與申請流程。'
+    },
+    {
+      id: 'L-cancer',
+      type: 'cancer',
+      title: '職業性癌症',
+      lawRef: '職業傷病審查準則 職業性癌症相關規定',
+      summary: '長期接觸已知致癌因子（如石綿、某些有機溶劑、重金屬等）後，罹患特定癌症，經專業評估與暴露具有實質關聯。',
+      proof: [
+        '病理報告與腫瘤診斷書，確認癌別及發生部位。',
+        '暴露清單：曾接觸的化學品種類、作業區域與年資。',
+        '職業病評估報告或研究文獻，說明該致癌物與癌症類型的關聯性。'
+      ],
+      suggest: '職業性癌症認定通常需要長期暴露資料與專業判讀，建議由職業醫學科、勞檢機構及法律扶助單位協助，避免自行推估。'
+    },
+    {
+      id: 'L-others',
+      type: 'other',
+      title: '其他依準則認定之職業傷病',
+      lawRef: '職業傷病審查準則 其他一般規定',
+      summary: '不完全符合理想典型案例，但依準則規定綜合醫學與職業暴露資料，仍可認定與工作有相當因果關係之傷病。',
+      proof: [
+        '詳盡的職業史（歷年工作別、暴露內容）與完整醫療病歷。',
+        '職業醫學科醫師出具之評估報告，說明工作與疾病的關聯推論。',
+        '必要時可提出勞檢報告、同事證言或職場照片等間接證據。'
+      ],
+      suggest: '如案件特殊或爭議性高，宜尋求工會、法律扶助或職災服務據點協助，協同職業醫學科整理所有暴露與醫療證據，再向主管機關申請認定。'
+    }
+  ];
+
+
+  let state = { identity: 'farmer', incident: 'injury', formulaOpen: false, currentDisease: null };
+
+  function setIdentity(id) {
+    state.identity = id;
+    const isFarmer = id === 'farmer';
+
+    // 按鈕樣式
+    document.getElementById('btn-farmer').className =
+      `flex-1 py-4 px-4 rounded-xl border-2 transition-all flex flex-col items-center gap-2 ${
+        isFarmer ? 'border-blue-600 bg-blue-50 text-blue-700 font-bold shadow-inner' :
+                   'border-gray-200 text-gray-400 opacity-60'
+      }`;
+    document.getElementById('btn-labor').className =
+      `flex-1 py-4 px-4 rounded-xl border-2 transition-all flex flex-col items-center gap-2 ${
+        !isFarmer ? 'border-blue-600 bg-blue-50 text-blue-700 font-bold shadow-inner' :
+                    'border-gray-200 text-gray-400 opacity-60'
+      }`;
+
+    // 薪資欄位
+    const salInput = document.getElementById('input-salary');
+    salInput.value = isFarmer ? FARMER_SALARY : 45800;
+    salInput.disabled = isFarmer;
+    salInput.className =
+      `w-full p-4 rounded-xl border-2 text-xl focus:outline-none transition-all ${
+        isFarmer ? 'bg-gray-100 text-gray-400 border-gray-200' :
+                   'bg-white text-blue-900 border-blue-200 focus:border-blue-500'
+      }`;
+    document.getElementById('salary-hint').style.display = isFarmer ? 'block' : 'none';
+
+    // 結果卡顏色與徽章
+    document.getElementById('result-card').style.borderColor = isFarmer ? '#10b981' : '#3b82f6';
+    document.getElementById('badge-identity').innerText =
+      isFarmer ? '農民職業災害保險' : '勞工職業災害保險';
+    document.getElementById('badge-identity').className =
+      `px-4 py-1.5 rounded-full text-sm font-black tracking-widest uppercase ${
+        isFarmer ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700'
+      }`;
+
+    // 更新疾病清單與試算
+    populateDiseaseSelect();
+    updateCalculation();
+  }
+
+  function setIncidentType(type) {
+    state.incident = type;
+    const isInjury = type === 'injury';
+
+    document.getElementById('btn-injury').className =
+      `flex-1 py-2 rounded-md font-bold transition-all ${
+        isInjury ? 'bg-gray-800 text-white shadow-lg' : 'text-gray-500 hover:bg-gray-200'
+      }`;
+    document.getElementById('btn-disease').className =
+      `flex-1 py-2 rounded-md font-bold transition-all ${
+        !isInjury ? 'bg-gray-800 text-white shadow-lg' : 'text-gray-500 hover:bg-gray-200'
+      }`;
+
+    document.getElementById('disease-section').style.display = isInjury ? 'none' : 'block';
+ // ★ 新增這行：切到職業病時重建下拉選單與說明
+    if (!isInjury) {
+      populateDiseaseSelect();
+    }
+
+    updateCalculation();
+  }
+
+  // 先預留，第二段會填入實際 items
+  function populateDiseaseSelect() {
+    const select = document.getElementById('select-disease');
+    const list = state.identity === 'farmer' ? farmerDiseaseItems : laborInjuryDiseaseItems;
+
+    if (!list.length) {
+      select.innerHTML = '<option value="">（稍後補上職業病清單）</option>';
+      state.currentDisease = null;
+      document.getElementById('disease-detail').style.display = 'none';
+      return;
+    }
+
+    select.innerHTML = list.map(d => `<option value="${d.id}">${d.title}</option>`).join('');
+    state.currentDisease = list[0].id;
+    updateDiseaseDetail();
+  }
+
+  function updateDiseaseDetail() {
+    const select = document.getElementById('select-disease');
+    const list = state.identity === 'farmer' ? farmerDiseaseItems : laborInjuryDiseaseItems;
+    const detailDiv = document.getElementById('disease-detail');
+    const item = list.find(d => d.id === select.value);
+    state.currentDisease = item ? item.id : null;
+
+    if (!item) {
+      detailDiv.style.display = 'none';
+      return;
+    }
+
+    const proofList = (item.proof || []).map(p => `<li class="ml-4 list-disc">${p}</li>`).join('');
+    const suggestText = item.suggest || '若案件較複雜或爭議性較高，建議攜帶診斷書、工作與投保紀錄，洽詢職業醫學科或職災勞工服務中心，由專業團隊協助判斷是否屬職業傷病。';
+
+    detailDiv.innerHTML = `
+      <div class="space-y-2">
+        <p class="text-xs font-bold">${item.lawRef || ''}</p>
+        <p class="text-sm">${item.summary || ''}</p>
+        ${proofList ? `<ul class="text-xs mt-1">${proofList}</ul>` : ''}
+        <p class="text-xs mt-2 text-gray-600">${suggestText}</p>
+      </div>
+    `;
+    detailDiv.className =
+ `p-4 rounded-xl text-sm border-l-4 fade-in ${state.identity === 'farmer'
+    ? 'bg-green-50 border-green-500 text-green-800'
+    : 'bg-blue-50 border-blue-500 text-blue-800'}`;
+    detailDiv.style.display = 'block';
+  }
+
+  function updateCalculation() {
+    const salary = parseInt(document.getElementById('input-salary').value) || 0;
+    const days = parseInt(document.getElementById('range-rest-days').value);
+    const opDays = parseInt(document.getElementById('input-outpatient').value) || 0;
+    const ipDays = parseInt(document.getElementById('input-inpatient').value) || 0;
+
+    document.getElementById('display-rest-days').innerText = days;
+
+    // 傷病給付：第4日起，前60日100%，其後70%（最長2年）——農職保第16、17條 / 勞工職災保規定的簡化版
+    const payableDays = Math.max(0, days - 3);
+    const daily = salary / 30;
+    let injuryBenefit = 0;
+    if (payableDays <= 57) {
+      injuryBenefit = payableDays * daily;
+    } else {
+      injuryBenefit = (57 * daily) + ((payableDays - 57) * daily * 0.7);
+    }
+    injuryBenefit = Math.round(injuryBenefit);
+
+    // 醫療給付 / 就醫津貼
+    let medicalBenefit = 0;
+    if (state.identity === 'farmer') {
+      // 114/11/6 以後新標準：門診100、住院1200（用門診/住院天數近似保險給付日數）
+      medicalBenefit = (opDays * 100) + (ipDays * 1200);
+      document.getElementById('medical-text').innerText = `\$${medicalBenefit.toLocaleString()} 元`;
+      document.getElementById('medical-subtext').innerText =
+        '農民職災保險就醫津貼，自第4日起依核定傷病給付日數按門診100元/日、住院1200元/日發給；此處僅以自填日數近似估算。';
+    } else {
+      document.getElementById('medical-text').innerText = '部分負擔減免';
+      document.getElementById('medical-subtext').innerText =
+        '勞工職災保險之醫療給付多採「實物給付」，由保險與健保支付多數醫療費用，勞工通常僅負擔掛號費與非健保給付項目，本工具不逐項計算。';
+    }
+
+    document.getElementById('injury-amount').innerText = injuryBenefit.toLocaleString();
+    document.getElementById('total-amount').innerText = (injuryBenefit + medicalBenefit).toLocaleString();
+
+    updateFormula(salary, days, payableDays, daily, injuryBenefit, medicalBenefit);
+  }
+
+  function updateFormula(salary, days, payableDays, daily, injuryBenefit, medicalBenefit) {
+    const content = document.getElementById('formula-content');
+    const identityText = state.identity === 'farmer' ? '農民職業災害保險' : '勞工職業災害保險';
+
+    content.innerHTML = `
+      <div class="space-y-4">
+        <p class="text-blue-400 font-bold">【傷病給付試算邏輯】（${identityText}）</p>
+        <ul class="space-y-2 list-decimal list-inside">
+          <li>等待期：前 3 日不給付，自第 4 日起始得請領，故可領天數 = 休養天數 ${days} - 3 = <span class="font-bold">${payableDays}</span> 日。</li>
+          <li>投保日額：以您輸入的月投保薪資簡化試算，日額 ≒ ${salary.toLocaleString()} ÷ 30 ≒ <span class="font-bold">${Math.floor(daily)}</span> 元。</li>
+          <li>給付比例：自第 4 日起前 60 日按 100% 給付，第 61 日起按 70% 給付，最長 2 年。本工具僅就您輸入的休養天數區間估算可能金額。</li>
+          <li class="bg-gray-800 p-2 rounded">試算結果：傷病給付約 <span class="font-bold">${injuryBenefit.toLocaleString()}</span> 元。</li>
+        </ul>
+
+        <p class="text-blue-400 font-bold mt-4">【醫療給付 / 就醫津貼說明】</p>
+        <p>
+          ${state.identity === 'farmer'
+            ? '農民職業災害保險依辦法第16、17、22條，自第4日發給傷病給付並按核定日數給予就醫津貼。這裡以門診/住院日數近似保險給付日數，僅做金額概念示意。'
+            : '勞工職災保險之醫療給付依勞工職業災害保險及保護法與相關子法，以實物給付方式減免健保部分負擔，本工具不逐項模擬醫療費計算。'}
+        </p>
+
+        <p class="text-xs text-gray-400 mt-4">
+          ※ 條文來源：農民部分主要依《農民職業災害保險試辦辦法》第16條、第17條、第22條；勞工部分依《勞工職業災害保險及保護法》與勞保局「傷病給付」相關規定整理。
+          本工具為教學用試算，實際申請資格及金額仍以主管機關審查結果及最新公告為準。
+        </p>
+      </div>
+    `;
+  }
+
+  function toggleFormula() {
+    state.formulaOpen = !state.formulaOpen;
+    document.getElementById('formula-content').style.display = state.formulaOpen ? 'block' : 'none';
+    document.getElementById('formula-arrow').style.transform = state.formulaOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+  }
+
+  window.onload = () => {
+  if (window.lucide && typeof lucide.createIcons === 'function') {
+    lucide.createIcons();
+  }
+  document.getElementById('today-date').innerText =
+    new Date().toISOString().slice(0, 10);
+  setIdentity('farmer');
+  setIncidentType('injury');
+};
+</script>
+</body>
+</html>

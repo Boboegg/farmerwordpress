@@ -1,0 +1,203 @@
+<!-- =======================================================
+     身分導航與下載模組 (v4.0 分眾版)
+     特色：已內建詳細修改指引，直接看註解即可維護
+     ======================================================= -->
+
+<!-- 1. 載入 Font Awesome 圖示庫 (若圖示沒顯示請檢查這行) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="service-portal-wrapper">
+    <div class="service-portal">
+        
+        <!-- 2. 標題區 (若要修改標題文字，請直接修改下方白色文字) -->
+        <div class="portal-header">
+            <i class="fas fa-users-viewfinder"></i> 請選擇您的身分與需求
+        </div>
+        
+        <!-- 3. 身分按鈕網格 (請在各按鈕的 href 填入對應的頁面連結) -->
+        <div class="portal-grid">
+            
+            <!-- (1) 想務農與新手農友按鈕 -->
+            <!-- [修改指引] 請將 href 改為「職業健康」分類網址 (建議: /category/health) -->
+            <a href="https://fwdignity.com/%e8%b3%87%e6%b7%b1%e8%be%b2%e5%8f%8b/" class="role-btn">
+                <div class="role-icon-box"><i class="fas fa-hat-cowboy-side"></i></div>
+                <span>想務農與新手農友</span>
+                <small class="role-desc">入門資源、風險介紹</small>
+            </a>
+
+            <!-- (2) 青農與創業按鈕 -->
+            <!-- [修改指引] 請將 href 改為「裝備設施」分類網址 (建議: /category/equipment) -->
+            <a href="/category/equipment" class="role-btn">
+                <div class="role-icon-box"><i class="fas fa-tractor"></i></div>
+                <span>青農與創業</span>
+                <small class="role-desc">技術與保險</small>
+            </a>
+
+            <!-- (3) 資深農友按鈕 -->
+            <!-- [修改指引] 請將 href 改為「新手入門」分類網址 (建議: /category/new-farmers) -->
+            <a href="https://fwdignity.com/%e6%96%b0%e6%89%8b%e5%8b%99%e8%be%b2/?preview_id=1529&preview_nonce=2605d1b225&preview=true" class="role-btn">
+                <div class="role-icon-box"><i class="fas fa-seedling"></i></div>
+                <span>資深農友</span>
+                <small class="role-desc">慢性病、自身權益</small>
+            </a>
+
+            <!-- (4) 一般民眾按鈕 -->
+            <!-- [修改指引] 請將 href 改為「研究成果」分類網址 (建議: /category/research) -->
+            <a href="/category/research" class="role-btn">
+                <div class="role-icon-box"><i class="fas fa-handshake"></i></div>
+                <span>一般民眾</span>
+                <small class="role-desc">尊農倡議與支持</small>
+            </a>
+
+        </div>
+
+        <!-- 4. 底部下載按鈕 (請在 href 填入 PDF 檔案連結) -->
+        <div class="portal-footer">
+            
+            <!-- [修改指引] 請將 href="#" 換成您上傳後的 PDF 檔案網址 -->
+            <a href="#" class="report-btn">
+                <i class="fas fa-file-pdf"></i> 研究成果分享
+            </a>
+            
+        </div>
+    </div>
+</div>
+
+<!-- 5. CSS 樣式表 (無須修改，僅供外觀設定) -->
+<style>
+/* 容器設定 */
+.service-portal-wrapper {
+    font-family: "Noto Sans TC", sans-serif;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.service-portal {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* 標題樣式 */
+.portal-header {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #2c5e2e;
+    border-bottom: 2px solid #2c5e2e;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 網格設定 (兩欄) */
+.portal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* 按鈕樣式 */
+.role-btn {
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #444;
+    position: relative;
+    overflow: hidden;
+}
+
+.role-icon-box {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #5d6d3d;
+    transition: transform 0.3s ease;
+}
+
+.role-btn span {
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    line-height: 1.2;
+}
+
+/* 小字說明樣式 */
+.role-desc {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 4px;
+    transition: color 0.3s ease;
+}
+
+/* 滑鼠懸停效果 */
+.role-btn:hover {
+    background: #2c5e2e;
+    border-color: #2c5e2e;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(44, 94, 46, 0.2);
+}
+
+.role-btn:hover .role-icon-box,
+.role-btn:hover span,
+.role-btn:hover .role-desc {
+    color: #fff !important;
+}
+
+.role-btn:hover .role-icon-box {
+    transform: scale(1.1);
+}
+
+/* 底部按鈕區 */
+.portal-footer {
+    margin-top: auto;
+}
+
+/* 下載按鈕樣式 */
+.report-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #d4a017, #f57f17);
+    color: white !important;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
+    font-size: 0.95rem;
+}
+
+.report-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(212, 160, 23, 0.4);
+}
+
+.report-btn i {
+    animation: bounce 2s infinite;
+}
+
+/* 手機版 RWD */
+@media (max-width: 768px) {
+    .portal-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>

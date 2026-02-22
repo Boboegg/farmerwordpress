@@ -1,0 +1,110 @@
+<!-- =====================================================
+     子頁：研究成果 / 影音與 Podcast
+     URL：/研究成果/影音與podcast/
+     CSS 前綴：res-（與主頁共用）
+     
+     【維護指南】
+     - Podcast 嵌入：複製 .res-embed-card 區塊新增
+     - Spotify 嵌入碼：在 Spotify 分享 → 嵌入播放器 → 複製 iframe
+     - Apple Podcast 同理
+     - YouTube 影片：使用 iframe src="https://www.youtube.com/embed/VIDEO_ID"
+     - 此頁需搭配主頁 page-研究成果.html 的 <style> 區塊
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Hero -->
+<div class="res-hero" style="padding:36px 40px;">
+  <div class="res-hero-inner">
+    <div class="res-hero-badge" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-podcast"></i> Media</div>
+    <h1 class="res-hero-title" style="font-size:2rem;">影音與 Podcast</h1>
+    <p class="res-hero-subtitle">⚠️ 一句話說明，例如：農民訪談錄音、知識轉譯影片、以及與各界對談的 Podcast 節目。支援網頁內直接收聽。</p>
+    <a href="/研究成果/" class="res-back-link"><i class="fas fa-arrow-left"></i> 回到研究成果總覽</a>
+  </div>
+</div>
+
+<!-- 子頁導覽列 -->
+<div class="res-sections" style="margin-top:16px;">
+  <div class="res-sub-nav">
+    <a href="/研究成果/學術發表/" class="res-sub-nav-item">學術發表</a>
+    <a href="/研究成果/研究報告/" class="res-sub-nav-item">研究報告</a>
+    <a href="/研究成果/研討會與演講/" class="res-sub-nav-item">研討會與演講</a>
+    <a href="/研究成果/影音與podcast/" class="res-sub-nav-item is-current">影音與 Podcast</a>
+    <a href="/研究成果/資料圖表/" class="res-sub-nav-item">資料圖表</a>
+  </div>
+</div>
+
+<!-- ========== Podcast 區塊 ========== -->
+<div class="res-sections">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-headphones"></i></div>
+      <div><h2>Podcast 節目</h2><p>可在本頁直接收聽，或前往 Spotify / Apple Podcast 訂閱。</p></div>
+    </div>
+
+    <!-- 選用：平台訂閱連結 -->
+    <div style="display:flex;gap:10px;margin-bottom:24px;flex-wrap:wrap;">
+      <a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;background:#1DB954;color:#fff;font-weight:700;font-size:.88rem;text-decoration:none;transition:.3s;">
+        <i class="fab fa-spotify"></i> ⚠️ Spotify 訂閱
+      </a>
+      <a href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;background:#7C3AED;color:#fff;font-weight:700;font-size:.88rem;text-decoration:none;transition:.3s;">
+        <i class="fab fa-apple"></i> ⚠️ Apple Podcast
+      </a>
+    </div>
+
+    <div class="res-sec-body">
+
+      <!-- ===== Podcast 嵌入模板 ===== -->
+      <div class="res-embed-card">
+        <h3>⚠️ EP.12 — 節目標題</h3>
+        <p class="res-embed-meta"><i class="far fa-calendar"></i> ⚠️ 2025.01.15 ・ ⚠️ 32 分鐘</p>
+        <div class="res-embed-player">
+          <!-- ⚠️ 將下方 src 替換為 Spotify 嵌入 iframe URL -->
+          <iframe src="⚠️ https://open.spotify.com/embed/episode/EPISODE_ID" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px;width:100%;"></iframe>
+        </div>
+        <p class="res-embed-desc">⚠️ 本集摘要，2-3 行。</p>
+      </div>
+      <!-- ===== 模板結束 ===== -->
+
+      <div class="res-embed-card">
+        <h3>⚠️ EP.11 — 節目標題</h3>
+        <p class="res-embed-meta"><i class="far fa-calendar"></i> ⚠️ 日期 ・ ⚠️ 分鐘數</p>
+        <div class="res-embed-player">
+          <iframe src="⚠️ Spotify/Apple 嵌入 URL" height="152" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style="border-radius:12px;width:100%;"></iframe>
+        </div>
+        <p class="res-embed-desc">⚠️ 本集摘要。</p>
+      </div>
+
+      <!-- ⚠️ 繼續複製 .res-embed-card 新增更多集數 -->
+    </div>
+  </div>
+</div>
+
+<!-- ========== 影片區塊 ========== -->
+<div class="res-sections">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-video"></i></div>
+      <div><h2>知識轉譯影片</h2><p>研究成果轉化為一般大眾可理解的影音內容。</p></div>
+    </div>
+    <div class="res-sec-body">
+
+      <!-- ===== 影片嵌入模板 ===== -->
+      <div class="res-embed-card">
+        <h3>⚠️ 影片標題</h3>
+        <p class="res-embed-meta"><i class="far fa-calendar"></i> ⚠️ 日期 ・ ⚠️ 時長</p>
+        <div class="res-embed-player" style="position:relative;padding-bottom:56.25%;height:0;">
+          <!-- ⚠️ 替換 VIDEO_ID -->
+          <iframe src="⚠️ https://www.youtube.com/embed/VIDEO_ID" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <p class="res-embed-desc">⚠️ 影片說明。</p>
+      </div>
+      <!-- ===== 模板結束 ===== -->
+
+      <!-- ⚠️ 繼續複製新增更多影片 -->
+    </div>
+  </div>
+</div>

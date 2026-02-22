@@ -1,0 +1,424 @@
+<!-- =====================================================
+     子頁面：個人防護具（PPE）選用指南
+     URL：/prevention/個人防護具ppe/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== Hero ========== -->
+<div class="ppe-hero">
+  <div class="ppe-hero-badge"><i class="fas fa-mask-face"></i> 個人防護具專區</div>
+  <h1 class="ppe-hero-title">個人防護具（PPE）選用指南</h1>
+  <p class="ppe-hero-subtitle">從頭到腳，選對、戴對，才真正有保護效果</p>
+  <div class="ppe-hero-intro">
+    <p>
+      防護具是保護身體的<strong>最後一道防線</strong>。但很多農友常見的問題是：
+      噴農藥只戴一般口罩（擋不住藥氣）、用棉手套碰農藥（藥會滲透進去）、
+      操作鏈鋸不戴耳塞（聽力會慢慢損壞）。
+    </p>
+    <p>
+      這一頁按照<strong>身體部位</strong>分類，告訴您每個部位該穿戴什麼、怎麼選、怎麼穿脫。
+      最後面有完整的穿脫順序和法規依據。
+    </p>
+  </div>
+  <a href="/prevention/" class="ppe-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
+</div>
+
+<!-- ========== 7 個身體部位分類 ========== -->
+<div class="ppe-categories">
+
+  <!-- 1. 頭部 -->
+  <div class="ppe-cat-card">
+    <div class="ppe-cat-header" style="--cat-color:#f57f17;">
+      <div class="ppe-cat-icon"><i class="fas fa-hard-hat"></i></div>
+      <div>
+        <h2>頭部防護</h2>
+        <p class="ppe-cat-why">果園高處作業有墜落物和跌落風險；露天長時間工作有紫外線傷害。</p>
+      </div>
+    </div>
+    <div class="ppe-cat-body">
+      <div class="ppe-equip-grid">
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(245,127,23,.1);"><i class="fas fa-helmet-safety" style="color:#f57f17;"></i></div>
+          <div>
+            <h4>工業安全帽</h4>
+            <p class="ppe-equip-when">果園高處作業、農機操作</p>
+            <p>需符合 CNS 1336 國家標準。使用前檢查外殼有沒有裂痕，帽帶要扣緊。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(245,127,23,.1);"><i class="fas fa-hat-cowboy-side" style="color:#f57f17;"></i></div>
+          <div>
+            <h4>寬沿遮陽帽</h4>
+            <p class="ppe-equip-when">一般田間作業</p>
+            <p>選 UPF 50+ 材質，帽沿至少 7 公分以上才能有效遮擋臉部和脖子的紫外線。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. 眼部 -->
+  <div class="ppe-cat-card">
+    <div class="ppe-cat-header" style="--cat-color:#283593;">
+      <div class="ppe-cat-icon"><i class="fas fa-glasses"></i></div>
+      <div>
+        <h2>眼部防護</h2>
+        <p class="ppe-cat-why">割草碎枝時碎石和樹屑會飛濺傷眼；噴藥時藥液會飄到臉上。</p>
+      </div>
+    </div>
+    <div class="ppe-cat-body">
+      <div class="ppe-equip-grid">
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(40,53,147,.1);"><i class="fas fa-glasses" style="color:#283593;"></i></div>
+          <div>
+            <h4>防飛濺護目鏡</h4>
+            <p class="ppe-equip-when">割草、碎枝、打石</p>
+            <p>鏡片要通過耐衝擊測試。側面也要有防護，不然碎石從旁邊飛進來一樣會受傷。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(40,53,147,.1);"><i class="fas fa-head-side-mask" style="color:#283593;"></i></div>
+          <div>
+            <h4>密閉式護目鏡</h4>
+            <p class="ppe-equip-when">噴灑農藥</p>
+            <p>施藥時要用密閉式的，藥液才不會從縫隙滲進去。選有防霧設計的款式比較舒服。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 呼吸 -->
+  <div class="ppe-cat-card">
+    <div class="ppe-cat-header" style="--cat-color:#c62828;">
+      <div class="ppe-cat-icon"><i class="fas fa-lungs"></i></div>
+      <div>
+        <h2>呼吸防護</h2>
+        <p class="ppe-cat-why">農藥微粒和蒸氣經口鼻吸入會傷害神經、肝臟和腎臟；翻土碎土的粉塵刺激呼吸道。</p>
+      </div>
+    </div>
+    <div class="ppe-cat-body">
+      <div class="ppe-equip-grid">
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-mask-face" style="color:#c62828;"></i></div>
+          <div>
+            <h4>N95 防塵口罩</h4>
+            <p class="ppe-equip-when">翻土、碎土等粉塵環境</p>
+            <p>只能擋粉塵，<strong>擋不住農藥蒸氣</strong>。每次使用前壓緊鼻樑條做密合測試，用完即丟。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-head-side-mask" style="color:#c62828;"></i></div>
+          <div>
+            <h4>半面式防毒面具</h4>
+            <p class="ppe-equip-when">噴灑農藥（一般露天環境）</p>
+            <p>要搭配<strong>有機蒸氣濾罐</strong>，面具需通過 CNS 14258 認證。濾罐聞到異味就要換新。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-mask-ventilator" style="color:#c62828;"></i></div>
+          <div>
+            <h4>全面式防毒面具</h4>
+            <p class="ppe-equip-when">溫室內施藥、高濃度藥劑環境</p>
+            <p>同時保護呼吸和眼睛。密閉空間施藥一定要用全面式，半面式不夠。</p>
+          </div>
+        </div>
+      </div>
+      <div class="ppe-warning-box">
+        <i class="fas fa-exclamation-triangle"></i>
+        <strong>常見錯誤：</strong>很多農友噴藥時只戴一般布口罩或醫療口罩，這些完全擋不住農藥蒸氣。農藥的氣態分子會直接穿透，等於沒戴。噴藥一定要用含有機蒸氣濾罐的防毒面具。
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. 手部 -->
+  <div class="ppe-cat-card">
+    <div class="ppe-cat-header" style="--cat-color:#7b1fa2;">
+      <div class="ppe-cat-icon"><i class="fas fa-hand"></i></div>
+      <div>
+        <h2>手部防護</h2>
+        <p class="ppe-cat-why">農藥會經皮膚吸收進入人體（手是最常接觸農藥的部位）；修剪和採收時有割傷風險。</p>
+      </div>
+    </div>
+    <div class="ppe-cat-body">
+      <div class="ppe-equip-grid">
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(123,31,162,.1);"><i class="fas fa-hand-sparkles" style="color:#7b1fa2;"></i></div>
+          <div>
+            <h4>耐化學手套（丁腈橡膠）</h4>
+            <p class="ppe-equip-when">調配農藥、噴灑農藥、接觸肥料</p>
+            <p>一般棉手套和乳膠手套擋不住農藥滲透。一定要用<strong>丁腈（nitrile）材質</strong>。脫手套前先把外面用肥皂水洗乾淨，避免農藥沾到手。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(123,31,162,.1);"><i class="fas fa-mitten" style="color:#7b1fa2;"></i></div>
+          <div>
+            <h4>防割手套（EN 388 認證）</h4>
+            <p class="ppe-equip-when">修剪枝條、採收、操作刀具</p>
+            <p>剪枝和採收時刀片割傷手很常見。選有 EN 388 防割認證的手套，等級越高防護越好。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(123,31,162,.1);"><i class="fas fa-hands" style="color:#7b1fa2;"></i></div>
+          <div>
+            <h4>一般工作手套</h4>
+            <p class="ppe-equip-when">搬運、整地</p>
+            <p>搬運重物和整地用的基本手套。選防滑材質，手掌面有橡膠顆粒的抓握力較好。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. 軀幹 -->
+  <div class="ppe-cat-card">
+    <div class="ppe-cat-header" style="--cat-color:#2e7d32;">
+      <div class="ppe-cat-icon"><i class="fas fa-shirt"></i></div>
+      <div>
+        <h2>軀幹防護</h2>
+        <p class="ppe-cat-why">長時間露天作業紫外線會累積傷害皮膚；施藥時農藥會沾附在衣物上被皮膚吸收。</p>
+      </div>
+    </div>
+    <div class="ppe-cat-body">
+      <div class="ppe-equip-grid">
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(46,125,50,.1);"><i class="fas fa-shirt" style="color:#2e7d32;"></i></div>
+          <div>
+            <h4>UPF 50+ 長袖防曬工作服</h4>
+            <p class="ppe-equip-when">一般田間露天作業</p>
+            <p>選透氣排汗的材質，比擦防曬乳持久有效。每次洗完確認 UPF 防護效果是否還在（破損或褪色就該換）。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(46,125,50,.1);"><i class="fas fa-vest" style="color:#2e7d32;"></i></div>
+          <div>
+            <h4>防水圍裙 / 全身防護衣</h4>
+            <p class="ppe-equip-when">施藥、調配農藥</p>
+            <p>施藥時穿的外層防護衣需要有抗滲透功能，避免農藥沾到衣服後被皮膚吸收。用完後外層先沖水再脫。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 下肢 -->
+  <div class="ppe-cat-card">
+    <div class="ppe-cat-header" style="--cat-color:#1565c0;">
+      <div class="ppe-cat-icon"><i class="fas fa-socks"></i></div>
+      <div>
+        <h2>下肢防護</h2>
+        <p class="ppe-cat-why">長時間蹲姿會磨損膝蓋軟骨；田間地面潮濕容易滑倒；重物掉落會砸傷腳。</p>
+      </div>
+    </div>
+    <div class="ppe-cat-body">
+      <div class="ppe-equip-grid">
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(21,101,192,.1);"><i class="fas fa-shield-halved" style="color:#1565c0;"></i></div>
+          <div>
+            <h4>緩衝護膝</h4>
+            <p class="ppe-equip-when">蹲著採收、移苗</p>
+            <p>長時間蹲姿是膝蓋退化的主因之一。選有厚緩衝墊的款式，綁帶式比套筒式穩固。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(21,101,192,.1);"><i class="fas fa-shoe-prints" style="color:#1565c0;"></i></div>
+          <div>
+            <h4>安全鞋 / 防滑雨鞋</h4>
+            <p class="ppe-equip-when">田間作業、操作農機</p>
+            <p>鋼頭防止重物砸傷腳趾，防滑底避免在濕泥地滑倒。有防穿刺鞋底更好（防止釘子或尖銳物刺穿）。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. 聽力 -->
+  <div class="ppe-cat-card">
+    <div class="ppe-cat-header" style="--cat-color:#e65100;">
+      <div class="ppe-cat-icon"><i class="fas fa-ear-listen"></i></div>
+      <div>
+        <h2>聽力防護</h2>
+        <p class="ppe-cat-why">割草機、鏈鋸、耕耘機運轉噪音超過 85 分貝，長期不防護會造成不可逆的聽力損失。</p>
+      </div>
+    </div>
+    <div class="ppe-cat-body">
+      <div class="ppe-equip-grid">
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(230,81,0,.1);"><i class="fas fa-volume-xmark" style="color:#e65100;"></i></div>
+          <div>
+            <h4>泡棉耳塞</h4>
+            <p class="ppe-equip-when">輕度噪音環境（一般動力農機）</p>
+            <p>搓揉壓縮後放入耳道，等它膨脹後才能隔音。便宜、用完即丟。</p>
+          </div>
+        </div>
+        <div class="ppe-equip-item">
+          <div class="ppe-equip-icon" style="background:rgba(230,81,0,.1);"><i class="fas fa-headphones" style="color:#e65100;"></i></div>
+          <div>
+            <h4>防噪耳罩</h4>
+            <p class="ppe-equip-when">重度噪音環境（鏈鋸、大型農機）</p>
+            <p>整個罩住耳朵，隔音效果比耳塞好。確認 NRR（噪音降低等級）至少 25 以上。</p>
+          </div>
+        </div>
+      </div>
+      <div class="ppe-warning-box">
+        <i class="fas fa-exclamation-triangle"></i>
+        <strong>重要提醒：</strong>噪音造成的聽力損失是慢慢累積的，初期不會有感覺，等到發現聽不清楚的時候已經無法恢復。只要操作動力農機就應該戴耳塞或耳罩。
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== 穿脫 SOP ========== -->
+<div class="ppe-sop-section">
+  <div class="ppe-sop-header">
+    <h2><i class="fas fa-list-ol"></i> 穿脫順序 — 順序對了才安全</h2>
+    <p>穿戴和脫除防護具有固定的順序。順序錯了，反而會讓農藥沾到皮膚上。</p>
+  </div>
+
+  <div class="ppe-sop-grid">
+    <div class="ppe-sop-card ppe-sop-on">
+      <h3><i class="fas fa-arrow-down"></i> 穿戴順序（由內到外）</h3>
+      <ol>
+        <li><strong>工作服</strong> — 先穿上長袖長褲工作服或防護衣</li>
+        <li><strong>安全鞋</strong> — 褲管放在鞋筒外面，避免農藥流入鞋內</li>
+        <li><strong>護膝</strong> — 需要蹲姿作業時穿上</li>
+        <li><strong>手套</strong> — 袖口塞進手套裡，不留縫隙</li>
+        <li><strong>護目鏡</strong> — 調整鬆緊確保密合</li>
+        <li><strong>口罩 / 防毒面具</strong> — 壓緊鼻樑條做密合測試</li>
+        <li><strong>安全帽 / 遮陽帽</strong> — 最後戴帽子</li>
+      </ol>
+    </div>
+
+    <div class="ppe-sop-card ppe-sop-off">
+      <h3><i class="fas fa-arrow-up"></i> 脫除順序（由外到內）</h3>
+      <ol>
+        <li><strong>安全帽</strong> — 先脫帽子</li>
+        <li><strong>護目鏡</strong> — 從後方摘下，避免碰觸鏡面</li>
+        <li><strong>口罩 / 防毒面具</strong> — 從後方鬆開，向前取下</li>
+        <li><strong>手套</strong> — <span class="ppe-highlight">外層先用肥皂水清洗後再脫</span>，用另一隻手套的手指從手腕處翻面脫除</li>
+        <li><strong>護膝</strong></li>
+        <li><strong>安全鞋</strong></li>
+        <li><strong>工作服</strong> — 避免內面碰觸外面（污染面）</li>
+      </ol>
+      <p class="ppe-sop-note"><i class="fas fa-hand-sparkles"></i> 全部脫完後用肥皂徹底洗手，並盡快沐浴更換乾淨衣物。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 法規依據 ========== -->
+<div class="ppe-legal-section">
+  <h2><i class="fas fa-gavel"></i> 法規依據</h2>
+  <p>台灣的職業安全衛生法規對防護具有明確規範，以下是與農業作業最相關的條文：</p>
+  <div class="ppe-legal-grid">
+    <div class="ppe-legal-item">
+      <h4>《職業安全衛生法》第 6 條</h4>
+      <p>雇主對於防止有害物質引起之危害，應有符合規定之必要安全衛生設備及措施。</p>
+    </div>
+    <div class="ppe-legal-item">
+      <h4>《職業安全衛生設施規則》第 277-280 條</h4>
+      <p>暴露於有害物、高溫、噪音或粉塵環境之勞工，雇主應置備適當的個人防護具，並使勞工確實使用。</p>
+    </div>
+    <div class="ppe-legal-item">
+      <h4>適用說明</h4>
+      <p>自營農民雖非法律規定的「勞工」身分，但這些規範可作為自我保護的參考標準。保護自己不需要等法律要求。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 參考資料 ========== -->
+<div class="ppe-references">
+  <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+  <div class="ppe-ref-list">
+    <p>勞動部勞動法令查詢系統。職業安全衛生設施規則。<a href="https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021" target="_blank" rel="noopener">https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021</a></p>
+    <p>經濟部標準檢驗局。CNS 14258 呼吸防護具。</p>
+    <p>經濟部標準檢驗局。CNS 1336 工業用安全帽。</p>
+    <p>NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
+    <p>OSHA. (n.d.). <em>Personal protective equipment</em>. United States Department of Labor. <a href="https://www.osha.gov/personal-protective-equipment" target="_blank" rel="noopener">https://www.osha.gov/personal-protective-equipment</a></p>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+/* PPE 子頁面 */
+.ppe-hero,.ppe-categories,.ppe-sop-section,.ppe-legal-section,.ppe-references{
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.ppe-hero *,.ppe-categories *,.ppe-sop-section *,.ppe-legal-section *,.ppe-references *{box-sizing:border-box;}
+
+/* Hero */
+.ppe-hero{padding:36px;background:linear-gradient(135deg,#fce4ec 0%,#fff 60%,#f8bbd0 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(198,40,40,.1);}
+.ppe-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(198,40,40,.1);color:#c62828;padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
+.ppe-hero-title{font-size:2rem;font-weight:900;color:#c62828;margin:0 0 8px;line-height:1.3;}
+.ppe-hero-subtitle{font-size:1.1rem;color:#e53935;font-weight:600;margin:0 0 18px;}
+.ppe-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(198,40,40,.06);}
+.ppe-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.ppe-hero-intro p:last-child{margin-bottom:0;}
+.ppe-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
+.ppe-back-link:hover{text-decoration:underline;}
+
+/* Category Cards */
+.ppe-categories{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}
+.ppe-cat-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
+.ppe-cat-header{display:flex;align-items:center;gap:16px;padding:24px;background:rgba(0,0,0,.015);border-bottom:1px solid #f0f0f0;}
+.ppe-cat-icon{width:52px;height:52px;border-radius:14px;background:rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--cat-color);flex-shrink:0;}
+.ppe-cat-header h2{font-size:1.2rem;font-weight:800;color:var(--cat-color);margin:0 0 4px;}
+.ppe-cat-why{font-size:.9rem;color:var(--text-secondary);margin:0;line-height:1.6;}
+.ppe-cat-body{padding:24px;}
+
+/* Equipment Grid */
+.ppe-equip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
+.ppe-equip-item{display:flex;gap:14px;padding:18px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.ppe-equip-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.ppe-equip-item h4{font-size:1rem;font-weight:700;margin:0 0 4px;color:var(--text-primary);}
+.ppe-equip-when{font-size:.8rem;color:var(--brand);font-weight:600;margin:0 0 6px;}
+.ppe-equip-item p{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* Warning box */
+.ppe-warning-box{margin-top:16px;padding:14px 18px;background:#fff3e0;border-radius:10px;border-left:4px solid #e65100;font-size:.9rem;line-height:1.7;color:#e65100;display:flex;align-items:flex-start;gap:10px;}
+.ppe-warning-box i{margin-top:3px;flex-shrink:0;}
+
+/* SOP */
+.ppe-sop-section{margin-bottom:36px;}
+.ppe-sop-header{margin-bottom:20px;}
+.ppe-sop-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.ppe-sop-header p{color:var(--text-secondary);margin:0;font-size:.95rem;line-height:1.7;}
+.ppe-sop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px;}
+.ppe-sop-card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
+.ppe-sop-card h3{font-size:1.1rem;font-weight:800;margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.ppe-sop-on h3{color:#2e7d32;}.ppe-sop-off h3{color:#c62828;}
+.ppe-sop-card ol{margin:0;padding:0 0 0 20px;counter-reset:sop;}
+.ppe-sop-card li{font-size:.93rem;line-height:1.7;margin-bottom:10px;color:var(--text-primary);}
+.ppe-highlight{background:rgba(255,235,59,.3);padding:2px 6px;border-radius:4px;font-weight:700;}
+.ppe-sop-note{margin:16px 0 0;padding:12px 16px;background:#f0f5e8;border-radius:8px;font-size:.9rem;line-height:1.6;color:var(--brand-dark);display:flex;align-items:flex-start;gap:8px;}
+.ppe-sop-note i{color:var(--brand);margin-top:2px;flex-shrink:0;}
+
+/* Legal */
+.ppe-legal-section{margin-bottom:36px;}
+.ppe-legal-section h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.ppe-legal-section>p{color:var(--text-secondary);margin:0 0 16px;font-size:.95rem;line-height:1.7;}
+.ppe-legal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.ppe-legal-item{background:#fff;border-radius:12px;padding:20px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+.ppe-legal-item h4{font-size:.95rem;font-weight:700;margin:0 0 8px;color:var(--brand-dark);}
+.ppe-legal-item p{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* References */
+.ppe-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
+.ppe-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.ppe-ref-list{display:flex;flex-direction:column;gap:8px;}
+.ppe-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
+.ppe-ref-list a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .ppe-hero{padding:24px;}
+  .ppe-hero-title{font-size:1.5rem;}
+  .ppe-equip-grid{grid-template-columns:1fr;}
+  .ppe-sop-grid{grid-template-columns:1fr;}
+  .ppe-legal-grid{grid-template-columns:1fr;}
+}
+</style>

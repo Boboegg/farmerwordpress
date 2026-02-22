@@ -1,0 +1,89 @@
+<!-- =====================================================
+     /money/ 主頁面・區塊 04：線上試算工具
+     檔案：04-tools.html
+     ===================================================== -->
+
+<div class="money-tools" id="money-tools">
+  <div class="money-tools-header">
+    <h2><i class="fas fa-calculator"></i> 線上試算工具</h2>
+    <p>直接連結勞保局官方試算系統，免登入即可使用。</p>
+  </div>
+
+  <div class="money-tools-grid">
+    <a href="https://www.bli.gov.tw/0100128.html" target="_blank" rel="noopener" class="money-tool-card">
+      <div class="money-tool-icon money-tool-icon-blue"><i class="fas fa-bed-pulse"></i></div>
+      <div class="money-tool-info">
+        <h3>農職保・傷病給付試算</h3>
+        <p>輸入不能工作天數，系統自動算出傷病給付 + 就醫津貼金額。</p>
+        <span class="money-tool-link">前往勞保局 <i class="fas fa-external-link-alt"></i></span>
+      </div>
+    </a>
+
+    <a href="https://www.bli.gov.tw/0105231.html" target="_blank" rel="noopener" class="money-tool-card">
+      <div class="money-tool-icon money-tool-icon-green"><i class="fas fa-piggy-bank"></i></div>
+      <div class="money-tool-info">
+        <h3>農民退休儲金試算</h3>
+        <p>輸入年齡和提繳比例，試算未來每月可領取的退休年金。</p>
+        <span class="money-tool-link">前往勞保局 <i class="fas fa-external-link-alt"></i></span>
+      </div>
+    </a>
+
+    <a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=353" target="_blank" rel="noopener" class="money-tool-card">
+      <div class="money-tool-icon money-tool-icon-amber"><i class="fas fa-wheat-awn"></i></div>
+      <div class="money-tool-info">
+        <h3>農作物保險・品項查詢</h3>
+        <p>查看目前可投保的農作物品項、承保公司及保費補助比例。</p>
+        <span class="money-tool-link">前往農業金融署 <i class="fas fa-external-link-alt"></i></span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+/* === 04-tools 樣式 === */
+.money-tools{
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
+  font-family:"Noto Sans TC","Lato",sans-serif;
+  margin-top:24px;background:#fff;border-radius:16px;padding:36px;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-sizing:border-box;
+}
+.money-tools *{box-sizing:border-box;}
+
+.money-tools-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--brand-light);}
+.money-tools-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.money-tools-header h2 i{color:var(--brand);}
+.money-tools-header p{font-size:.93rem;color:var(--text-secondary);margin:0;}
+
+.money-tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+.money-tool-card{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:24px;background:#f8fafc;border-radius:14px;
+  border:2px solid #e2e8f0;text-decoration:none;color:var(--text-primary);
+  transition:all .3s ease;
+}
+.money-tool-card:hover{
+  border-color:var(--brand);
+  transform:translateY(-4px);
+  box-shadow:0 10px 24px rgba(21,101,192,.1);
+}
+
+.money-tool-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+}
+.money-tool-icon-blue{background:rgba(21,101,192,.1);color:#1565c0;}
+.money-tool-icon-green{background:rgba(21,128,61,.1);color:#15803d;}
+.money-tool-icon-amber{background:rgba(217,119,6,.1);color:#d97706;}
+
+.money-tool-info h3{font-size:1rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
+.money-tool-info p{font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin:0 0 10px;}
+.money-tool-link{font-size:.88rem;font-weight:700;color:var(--brand);display:flex;align-items:center;gap:4px;}
+
+@media(max-width:992px){
+  .money-tools-grid{grid-template-columns:1fr;}
+}
+</style>

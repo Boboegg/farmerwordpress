@@ -1,0 +1,276 @@
+<!-- =====================================================
+     區塊 04（重做版）：紅綠燈快篩風險評估
+     檔案：04-tool-quiz.html
+     改進：選擇作業類型後會自動預勾相關風險項目，
+           結果建議也會針對該農事類型客製化。
+     ===================================================== -->
+
+<div class="prev-risk-section" id="prev-risk-tools">
+  <div class="prevQ-section-header">
+    <h2><i class="fas fa-clipboard-check"></i> 風險評估工具</h2>
+    <p>
+      下面三個工具幫助您自我檢視田間工作的安全狀況。
+      不需要任何專業知識，照著步驟操作就能了解自己的風險在哪裡、該怎麼改善。
+    </p>
+  </div>
+
+  <div class="prevQ-tool-card" id="risk-quiz">
+    <div class="prevQ-tool-header">
+      <div class="prevQ-tool-icon"><i class="fas fa-traffic-light"></i></div>
+      <div>
+        <h3>快速風險評估 — 您的田間安全紅綠燈</h3>
+        <p>兩個步驟，不到一分鐘。選擇農事類型後，系統會自動標出常見風險，您再根據實際情況調整。</p>
+      </div>
+    </div>
+
+    <div class="prevQ-quiz-body">
+
+      <!-- Step 1 -->
+      <div class="prevQ-quiz-step">
+        <label class="prevQ-quiz-label">
+          <span class="prevQ-step-num">1</span>
+          您平常主要做哪一種農事？（點選一個，系統會自動幫您勾選常見風險）
+        </label>
+        <div class="prevQ-quiz-options" id="quiz-types">
+          <button class="prevQ-quiz-type" data-type="outdoor">🌾 露天耕作</button>
+          <button class="prevQ-quiz-type" data-type="greenhouse">🏠 溫室作業</button>
+          <button class="prevQ-quiz-type" data-type="pesticide">💧 農藥噴灑</button>
+          <button class="prevQ-quiz-type" data-type="machine">⚙️ 農機操作</button>
+          <button class="prevQ-quiz-type" data-type="harvest">🧺 採收搬運</button>
+        </div>
+        <p class="prevQ-type-hint" id="type-hint" style="display:none;">
+          <i class="fas fa-info-circle"></i>
+          <span id="type-hint-text"></span>
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="prevQ-quiz-step">
+        <label class="prevQ-quiz-label">
+          <span class="prevQ-step-num">2</span>
+          確認或調整下方的勾選項目（系統已根據您的農事類型預勾，您可以自行增減）
+        </label>
+        <div class="prevQ-quiz-checks" id="quiz-checks">
+          <label class="prevQ-check-item" data-key="hours">
+            <input type="checkbox" class="prevQ-risk-check"> 每天工作超過 6 小時
+          </label>
+          <label class="prevQ-check-item" data-key="heat">
+            <input type="checkbox" class="prevQ-risk-check"> 天氣很熱，經常超過 32°C
+          </label>
+          <label class="prevQ-check-item" data-key="heavy">
+            <input type="checkbox" class="prevQ-risk-check"> 需要搬超過 15 公斤的東西
+          </label>
+          <label class="prevQ-check-item" data-key="machine">
+            <input type="checkbox" class="prevQ-risk-check"> 會操作割草機、耕耘機等動力農機
+          </label>
+          <label class="prevQ-check-item" data-key="chemical">
+            <input type="checkbox" class="prevQ-risk-check"> 會接觸到農藥或化學藥劑
+          </label>
+          <label class="prevQ-check-item" data-key="enclosed">
+            <input type="checkbox" class="prevQ-risk-check"> 在溫室或棚架等密閉空間裡工作
+          </label>
+          <label class="prevQ-check-item" data-key="posture">
+            <input type="checkbox" class="prevQ-risk-check"> 經常要彎腰、蹲著或仰頭工作
+          </label>
+          <label class="prevQ-check-item" data-key="noppe">
+            <input type="checkbox" class="prevQ-risk-check"> 工作時沒有穿戴任何防護具
+          </label>
+        </div>
+      </div>
+
+      <!-- 結果 -->
+      <div class="prevQ-quiz-step">
+        <label class="prevQ-quiz-label">
+          <span class="prevQ-step-num">★</span> 您的風險等級
+        </label>
+        <div class="prevQ-result-display" id="prevQ-risk-display">
+          <div class="prevQ-result-circle" id="prevQ-risk-circle">
+            <span id="prevQ-risk-count">0</span>
+          </div>
+          <div class="prevQ-result-text" id="prevQ-risk-text">
+            請先在上方選擇您的農事類型，再確認勾選項目。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 04-tool-quiz 專用樣式（prevQ 前綴避免衝突） === */
+.prev-risk-section{
+  --brand:#5C8607;--brand-dark:#2c5e2e;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.prev-risk-section *{box-sizing:border-box;}
+.prevQ-section-header{margin-bottom:28px;}
+.prevQ-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.prevQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+
+.prevQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;margin-bottom:24px;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
+.prevQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
+.prevQ-tool-icon{width:52px;height:52px;border-radius:14px;background:rgba(92,134,7,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.prevQ-tool-header h3{font-size:1.15rem;font-weight:800;margin:0;color:var(--brand-dark);}
+.prevQ-tool-header p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
+
+.prevQ-quiz-step{margin-bottom:28px;}
+.prevQ-quiz-label{font-weight:700;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:1.05rem;line-height:1.5;flex-wrap:wrap;}
+.prevQ-step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;font-size:.85rem;font-weight:800;flex-shrink:0;}
+
+.prevQ-quiz-options{display:flex;gap:10px;flex-wrap:wrap;}
+.prevQ-quiz-type{padding:12px 20px;border:2px solid #e0e0e0;border-radius:10px;background:#fff;cursor:pointer;font-size:.95rem;font-weight:600;transition:all .2s;font-family:inherit;}
+.prevQ-quiz-type:hover{border-color:var(--brand);background:rgba(92,134,7,.03);}
+.prevQ-quiz-type.is-selected{border-color:var(--brand);background:rgba(92,134,7,.08);color:var(--brand);}
+
+.prevQ-type-hint{margin-top:12px;padding:10px 14px;background:rgba(92,134,7,.05);border-radius:8px;font-size:.9rem;line-height:1.6;color:var(--brand-dark);display:flex;align-items:flex-start;gap:8px;}
+.prevQ-type-hint i{margin-top:3px;color:var(--brand);flex-shrink:0;}
+
+.prevQ-quiz-checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;}
+.prevQ-check-item{display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:10px;background:#f9fafb;cursor:pointer;transition:all .2s;font-size:.95rem;line-height:1.5;}
+.prevQ-check-item:hover{background:#f0f5e8;}
+.prevQ-check-item.is-highlighted{background:#fef9e7;border:1px solid rgba(212,160,23,.3);}
+.prevQ-check-item input{width:20px;height:20px;accent-color:var(--brand);flex-shrink:0;}
+
+.prevQ-result-display{display:flex;align-items:center;gap:20px;padding:24px;border-radius:12px;background:#f9fafb;border:2px solid #e0e0e0;transition:all .4s;}
+.prevQ-result-circle{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:900;color:#fff;background:#d1d5db;transition:background .4s;flex-shrink:0;}
+.prevQ-result-text{font-size:1rem;line-height:1.7;}
+
+.prevQ-risk-green{background:#81C784!important;}
+.prevQ-risk-orange{background:#FFB74D!important;}
+.prevQ-risk-red{background:#EF5350!important;}
+.prevQ-border-green{border-color:#81C784!important;background:#f0fdf4!important;}
+.prevQ-border-orange{border-color:#FFB74D!important;background:#fffbeb!important;}
+.prevQ-border-red{border-color:#EF5350!important;background:#fef2f2!important;}
+
+@media(max-width:768px){
+  .prevQ-quiz-checks{grid-template-columns:1fr;}
+  .prevQ-quiz-options{flex-direction:column;}
+  .prevQ-quiz-type{width:100%;text-align:center;}
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+
+  /* 各農事類型對應的預設風險項目和說明 */
+  var typeProfiles={
+    outdoor:{
+      checks:['hours','heat','posture','noppe'],
+      hint:'露天耕作常見風險：長時間日曬、高溫、彎腰作業。如果您還需要搬運重物或操作農機，請自行加勾。'
+    },
+    greenhouse:{
+      checks:['heat','enclosed','posture','chemical'],
+      hint:'溫室作業常見風險：密閉空間高溫高濕、農藥殘留濃度高、長時間蹲姿。溫室裡比戶外更容易中暑。'
+    },
+    pesticide:{
+      checks:['chemical','noppe','hours'],
+      hint:'農藥噴灑常見風險：藥劑經皮膚吸收和呼吸吸入。如果在溫室內噴藥，密閉空間會讓風險更高，請加勾「密閉空間」。'
+    },
+    machine:{
+      checks:['machine','hours','noppe'],
+      hint:'農機操作常見風險：噪音超過 85 分貝、振動傷害、捲入翻覆。操作鏈鋸等手持振動工具的時間越長越危險。'
+    },
+    harvest:{
+      checks:['heavy','posture','hours','heat'],
+      hint:'採收搬運常見風險：反覆搬重物傷腰、長時間蹲姿傷膝蓋、高處採果有墜落風險。'
+    }
+  };
+
+  var selectedType=null;
+  var typeButtons=document.querySelectorAll('.prevQ-quiz-type');
+  var allChecks=document.querySelectorAll('.prevQ-risk-check');
+  var allItems=document.querySelectorAll('.prevQ-check-item');
+  var hintBox=document.getElementById('type-hint');
+  var hintText=document.getElementById('type-hint-text');
+
+  /* Step 1: 選擇農事類型 → 自動預勾 + 顯示提示 */
+  typeButtons.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var type=this.getAttribute('data-type');
+      selectedType=type;
+
+      /* UI: 按鈕高亮 */
+      typeButtons.forEach(function(b){b.classList.remove('is-selected');});
+      this.classList.add('is-selected');
+
+      /* 清除所有勾選和高亮 */
+      allChecks.forEach(function(cb){cb.checked=false;});
+      allItems.forEach(function(item){item.classList.remove('is-highlighted');});
+
+      /* 預勾對應項目 */
+      var profile=typeProfiles[type];
+      if(profile){
+        profile.checks.forEach(function(key){
+          var item=document.querySelector('.prevQ-check-item[data-key="'+key+'"]');
+          if(item){
+            item.querySelector('input').checked=true;
+            item.classList.add('is-highlighted');
+          }
+        });
+        hintText.textContent=profile.hint;
+        hintBox.style.display='flex';
+      }
+
+      updateResult();
+    });
+  });
+
+  /* Step 2: 勾選變更時更新結果 */
+  allChecks.forEach(function(cb){
+    cb.addEventListener('change',updateResult);
+  });
+
+  /* 計算結果 */
+  function updateResult(){
+    var circle=document.getElementById('prevQ-risk-circle');
+    var countEl=document.getElementById('prevQ-risk-count');
+    var textEl=document.getElementById('prevQ-risk-text');
+    var displayEl=document.getElementById('prevQ-risk-display');
+
+    var n=document.querySelectorAll('.prevQ-risk-check:checked').length;
+    countEl.textContent=n;
+
+    circle.className='prevQ-result-circle';
+    displayEl.className='prevQ-result-display';
+
+    if(!selectedType){
+      textEl.innerHTML='請先在上方選擇您的農事類型。';
+      return;
+    }
+
+    /* 根據農事類型產生客製建議 */
+    var typeAdvice={
+      outdoor:'建議穿戴防曬衣物（UPF 50+）和護膝，高溫時段避免作業。',
+      greenhouse:'建議確認溫室通風是否良好，並穿戴呼吸防護具。詳情可參考「溫室專區」。',
+      pesticide:'建議穿戴防毒面具（含有機蒸氣濾罐）和耐化學手套，噴藥後遵守再進入間隔時間。',
+      machine:'建議穿戴防噪耳罩和護目鏡，並確認農機防護罩和安全連鎖功能正常。',
+      harvest:'建議使用搬運車取代肩扛、穿戴護膝、使用升降平台取代梯子。'
+    };
+
+    var advice=typeAdvice[selectedType]||'';
+
+    if(n<=2){
+      circle.classList.add('prevQ-risk-green');
+      displayEl.classList.add('prevQ-border-green');
+      textEl.innerHTML='<strong style="color:#2E7D32;">🟢 低度風險（'+n+' 項）</strong><br>'
+        +'您目前的風險在可控範圍內。維持現有防護習慣即可。<br>'
+        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+    }else if(n<=5){
+      circle.classList.add('prevQ-risk-orange');
+      displayEl.classList.add('prevQ-border-orange');
+      textEl.innerHTML='<strong style="color:#E65100;">🟠 中度風險（'+n+' 項）</strong><br>'
+        +'有一定風險，建議往上查看「防護裝備型錄」，確認您有沒有穿戴對的防護具。<br>'
+        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+    }else{
+      circle.classList.add('prevQ-risk-red');
+      displayEl.classList.add('prevQ-border-red');
+      textEl.innerHTML='<strong style="color:#C62828;">🔴 高度風險（'+n+' 項）</strong><br>'
+        +'風險偏高，光靠防護具效果有限。建議優先考慮導入省力農機，從根本改善作業方式。<br>'
+        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+    }
+  }
+});
+</script>

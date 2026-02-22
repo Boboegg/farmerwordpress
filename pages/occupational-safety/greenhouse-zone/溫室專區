@@ -1,0 +1,319 @@
+<!-- =====================================================
+     子頁面：溫室作業安全
+     URL：/prevention/溫室專區/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== Hero ========== -->
+<div class="gh-hero">
+  <div class="gh-hero-badge"><i class="fas fa-warehouse"></i> 溫室安全專區</div>
+  <h1 class="gh-hero-title">溫室作業安全</h1>
+  <p class="gh-hero-subtitle">密閉空間讓每一種風險都被放大</p>
+  <div class="gh-hero-intro">
+    <p>
+      溫室裡的環境跟露天不一樣。因為密閉性高，溫室有四個特別的問題：
+      <strong>更熱</strong>（比外面高 5-15°C）、<strong>農藥殘留更濃</strong>（通風不足時散不掉）、
+      <strong>黴菌更多</strong>（高溫高濕是黴菌的最愛）、<strong>姿勢更受限</strong>（空間窄，經常要蹲著彎著）。
+    </p>
+    <p>
+      這些風險在露天環境下可能還好，但在溫室裡會被放大好幾倍。
+      了解溫室特有的危害，才能做對防護。
+    </p>
+  </div>
+  <a href="/prevention/" class="gh-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
+</div>
+
+<!-- ========== 溫室四大危害 ========== -->
+<div class="gh-hazards-section">
+  <div class="gh-section-header">
+    <h2><i class="fas fa-triangle-exclamation"></i> 溫室四大特有危害</h2>
+    <p>跟露天作業相比，溫室環境有以下四種加重的風險：</p>
+  </div>
+
+  <div class="gh-hazard-grid">
+    <div class="gh-hazard-card" style="--hz-color:#c62828;--hz-bg:#fef2f2;">
+      <div class="gh-hazard-icon"><i class="fas fa-temperature-arrow-up"></i></div>
+      <h3>熱危害（加重）</h3>
+      <div class="gh-hazard-stat">
+        <span class="gh-stat-big">+5~15°C</span>
+        <span>溫室內部比外部高</span>
+      </div>
+      <p>外面 30°C 時溫室裡可能超過 40°C。加上高濕度（常超過 80%），人體散熱效率急劇下降，是<strong>熱衰竭和中暑</strong>的高風險場景。</p>
+      <div class="gh-hazard-tip">
+        <i class="fas fa-lightbulb"></i> 夏天中午（11:00-15:00）是最危險的時段，盡量避開。
+      </div>
+    </div>
+
+    <div class="gh-hazard-card" style="--hz-color:#7b1fa2;--hz-bg:#faf5ff;">
+      <div class="gh-hazard-icon"><i class="fas fa-flask-vial"></i></div>
+      <h3>化學性暴露（加重）</h3>
+      <div class="gh-hazard-stat">
+        <span class="gh-stat-big">2~4 hr</span>
+        <span>施藥後最少通風時間</span>
+      </div>
+      <p>溫室施藥後如果沒有充分通風就進去，農藥蒸氣的濃度會比露天高很多。一定要遵守農藥標示的<strong>再進入間隔時間（REI）</strong>。</p>
+      <div class="gh-hazard-tip">
+        <i class="fas fa-lightbulb"></i> 進入前先打開通風 2-4 小時，聞不到味道不代表安全。
+      </div>
+    </div>
+
+    <div class="gh-hazard-card" style="--hz-color:#2e7d32;--hz-bg:#f0fdf4;">
+      <div class="gh-hazard-icon"><i class="fas fa-virus"></i></div>
+      <h3>生物性危害（加重）</h3>
+      <div class="gh-hazard-stat">
+        <span class="gh-stat-big">> 80%</span>
+        <span>溫室常見相對濕度</span>
+      </div>
+      <p>高溫高濕環境是<strong>黴菌繁殖</strong>的最佳條件。長期吸入黴菌孢子會引起呼吸道不適。溫室中蚊蟲密度也比戶外高。</p>
+      <div class="gh-hazard-tip">
+        <i class="fas fa-lightbulb"></i> 如果經常在溫室裡咳嗽或鼻子不舒服，要注意黴菌問題。
+      </div>
+    </div>
+
+    <div class="gh-hazard-card" style="--hz-color:#1565c0;--hz-bg:#eff6ff;">
+      <div class="gh-hazard-icon"><i class="fas fa-person-walking-arrow-loop-left"></i></div>
+      <h3>人因性危害（加重）</h3>
+      <div class="gh-hazard-stat">
+        <span class="gh-stat-big">空間窄</span>
+        <span>作業姿勢更受限</span>
+      </div>
+      <p>溫室內走道窄、高度低，經常要<strong>蹲著、彎腰、側身</strong>進行移苗和採收。膝蓋和腰椎承受的壓力比露天作業更大。</p>
+      <div class="gh-hazard-tip">
+        <i class="fas fa-lightbulb"></i> 軌道式搬運機可以大幅減少溫室內的搬運需求。
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 環境控制建議 ========== -->
+<div class="gh-controls-section">
+  <div class="gh-section-header">
+    <h2><i class="fas fa-sliders"></i> 環境控制建議 — 讓溫室更安全</h2>
+    <p>在穿戴防護具之前，先把溫室的環境條件改善好，效果更好也更持久。</p>
+  </div>
+
+  <div class="gh-controls-grid">
+    <div class="gh-ctrl-card">
+      <div class="gh-ctrl-icon" style="background:rgba(14,165,233,.1);"><i class="fas fa-wind" style="color:#0ea5e9;"></i></div>
+      <h3>通風</h3>
+      <ul>
+        <li>設置進排氣風扇，每小時換氣至少 <strong>10-20 次</strong></li>
+        <li>施藥後至少通風 <strong>2-4 小時</strong>再進入</li>
+        <li>通風口位置要形成對流（一高一低效果最好）</li>
+      </ul>
+    </div>
+
+    <div class="gh-ctrl-card">
+      <div class="gh-ctrl-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-temperature-half" style="color:#c62828;"></i></div>
+      <h3>溫濕度監測</h3>
+      <ul>
+        <li>安裝溫濕度計，放在作業高度的位置</li>
+        <li>設定警戒值：溫度 <strong>> 35°C</strong> 或濕度 <strong>> 80%</strong> 時啟動降溫</li>
+        <li>有條件的話用自動監測系統，超標會發出警報</li>
+      </ul>
+    </div>
+
+    <div class="gh-ctrl-card">
+      <div class="gh-ctrl-icon" style="background:rgba(245,158,11,.1);"><i class="fas fa-sun" style="color:#f59e0b;"></i></div>
+      <h3>遮蔭降溫</h3>
+      <ul>
+        <li>遮光網遮光率 <strong>50-70%</strong>（太密會影響作物生長）</li>
+        <li>水牆降溫系統或屋頂噴水系統效果好</li>
+        <li>白色或銀色屋頂材料反射陽光，降低溫室內溫度</li>
+      </ul>
+    </div>
+
+    <div class="gh-ctrl-card">
+      <div class="gh-ctrl-icon" style="background:rgba(92,134,7,.1);"><i class="fas fa-clock" style="color:#5C8607;"></i></div>
+      <h3>作息調整</h3>
+      <ul>
+        <li>高溫時段（<strong>11:00-15:00</strong>）減少或暫停溫室作業</li>
+        <li>改為清晨或傍晚進入溫室</li>
+        <li>每工作 <strong>30 分鐘</strong>到陰涼處休息並補充水分</li>
+        <li>現場要備有飲用水和遮蔭休息區</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 溫室作業 SOP ========== -->
+<div class="gh-sop-section">
+  <div class="gh-section-header">
+    <h2><i class="fas fa-list-check"></i> 溫室作業標準流程（SOP）</h2>
+    <p>依照「作業前 → 作業中 → 施藥後 → 作業後」四個階段，建立安全習慣。</p>
+  </div>
+
+  <div class="gh-sop-grid">
+    <div class="gh-sop-card" style="--sop-color:#2e7d32;">
+      <div class="gh-sop-num">1</div>
+      <h3>作業前</h3>
+      <ul>
+        <li>檢查通風系統是否正常運轉</li>
+        <li>確認溫度和濕度在安全範圍內</li>
+        <li>穿戴適當的防護具</li>
+        <li>準備好飲用水</li>
+      </ul>
+    </div>
+
+    <div class="gh-sop-card" style="--sop-color:#0ea5e9;">
+      <div class="gh-sop-num">2</div>
+      <h3>作業中</h3>
+      <ul>
+        <li>每 30 分鐘到外面休息一次、喝水</li>
+        <li>出現<strong>頭暈、噁心、心跳加快</strong>立即停止作業，移到陰涼處</li>
+        <li>跟同事互相注意對方的狀況</li>
+      </ul>
+    </div>
+
+    <div class="gh-sop-card" style="--sop-color:#7b1fa2;">
+      <div class="gh-sop-num">3</div>
+      <h3>施藥後</h3>
+      <ul>
+        <li>啟動全部通風設備</li>
+        <li>確認通風時間滿足農藥標示的 REI 才能再進入</li>
+        <li>最少通風 2-4 小時，密閉溫室可能需要更久</li>
+        <li>再次進入時穿戴呼吸防護具</li>
+      </ul>
+    </div>
+
+    <div class="gh-sop-card" style="--sop-color:#e65100;">
+      <div class="gh-sop-num">4</div>
+      <h3>作業後</h3>
+      <ul>
+        <li>依正確順序脫除防護具（外到內）</li>
+        <li>用肥皂徹底洗手，盡快沐浴</li>
+        <li>記錄當日作業時數和環境溫濕度（自我管理用）</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 急救準備 ========== -->
+<div class="gh-emergency-section">
+  <div class="gh-section-header">
+    <h2><i class="fas fa-kit-medical"></i> 急救準備</h2>
+    <p>溫室裡發生意外時要能馬上處理。以下是基本的準備：</p>
+  </div>
+
+  <div class="gh-emergency-grid">
+    <div class="gh-emerg-card">
+      <div class="gh-emerg-icon"><i class="fas fa-briefcase-medical"></i></div>
+      <h4>急救箱</h4>
+      <p>放在<strong>溫室入口處</strong>，方便取用。內容物：生理食鹽水、冰敷包、紗布、消毒液、OK 繃、剪刀。定期檢查有沒有過期。</p>
+    </div>
+
+    <div class="gh-emerg-card">
+      <div class="gh-emerg-icon"><i class="fas fa-phone-volume"></i></div>
+      <h4>急救聯絡卡</h4>
+      <p>張貼在溫室入口明顯處。內容：<strong>119</strong>、最近的醫療院所電話和地址、家人聯絡電話、熱中暑急救步驟。</p>
+    </div>
+
+    <div class="gh-emerg-card">
+      <div class="gh-emerg-icon"><i class="fas fa-fire-extinguisher"></i></div>
+      <h4>中暑急救步驟</h4>
+      <p>① 移到陰涼處 → ② 鬆開衣物 → ③ 用濕毛巾或冰袋冷敷脖子、腋下、鼠蹊部 → ④ 補充水分 → ⑤ 意識不清立刻打 119</p>
+    </div>
+
+    <div class="gh-emerg-card">
+      <div class="gh-emerg-icon"><i class="fas fa-bug"></i></div>
+      <h4>蛇咬處置</h4>
+      <p>雲嘉農田常見毒蛇：龜殼花、赤尾青竹絲。被咬後：<strong>保持冷靜</strong> → <strong>記住蛇的外觀</strong>（拍照更好）→ <strong>盡速就醫</strong>。不要嘗試吸毒液或用繩子綁紮。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 參考資料 ========== -->
+<div class="gh-references">
+  <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+  <div class="gh-ref-list">
+    <p>勞動部職業安全衛生署。高氣溫戶外作業勞工熱危害預防指引。<a href="https://www.osha.gov.tw" target="_blank" rel="noopener">https://www.osha.gov.tw</a></p>
+    <p>勞動部勞動法令查詢系統。職業安全衛生設施規則。<a href="https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021" target="_blank" rel="noopener">https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021</a></p>
+    <p>NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
+    <p>OSHA. (n.d.). <em>Agricultural operations: Hazards &amp; controls</em>. United States Department of Labor. <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">https://www.osha.gov/agricultural-operations/hazards</a></p>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+.gh-hero,.gh-hazards-section,.gh-controls-section,.gh-sop-section,.gh-emergency-section,.gh-references{
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.gh-hero *,.gh-hazards-section *,.gh-controls-section *,.gh-sop-section *,.gh-emergency-section *,.gh-references *{box-sizing:border-box;}
+
+/* Hero */
+.gh-hero{padding:36px;background:linear-gradient(135deg,#fff8e1 0%,#fff 60%,#ffecb3 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(245,158,11,.15);}
+.gh-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.1);color:#f59e0b;padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
+.gh-hero-title{font-size:2rem;font-weight:900;color:#e65100;margin:0 0 8px;line-height:1.3;}
+.gh-hero-subtitle{font-size:1.1rem;color:#f59e0b;font-weight:600;margin:0 0 18px;}
+.gh-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(245,158,11,.08);}
+.gh-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.gh-hero-intro p:last-child{margin-bottom:0;}
+.gh-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
+.gh-back-link:hover{text-decoration:underline;}
+
+/* Section Header */
+.gh-section-header{margin-bottom:20px;}
+.gh-section-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.gh-section-header p{color:var(--text-secondary);margin:0;font-size:.95rem;line-height:1.7;}
+
+/* Hazard Grid */
+.gh-hazards-section{margin-bottom:36px;}
+.gh-hazard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.gh-hazard-card{background:var(--hz-bg);border-radius:var(--radius);padding:24px;border-left:5px solid var(--hz-color);}
+.gh-hazard-icon{font-size:2rem;color:var(--hz-color);margin-bottom:12px;}
+.gh-hazard-card h3{font-size:1.1rem;font-weight:800;color:var(--hz-color);margin:0 0 12px;}
+.gh-hazard-stat{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;padding:10px 14px;background:rgba(255,255,255,.6);border-radius:8px;}
+.gh-stat-big{font-size:1.4rem;font-weight:900;color:var(--hz-color);}
+.gh-hazard-stat span:last-child{font-size:.85rem;color:var(--text-secondary);}
+.gh-hazard-card p{font-size:.9rem;line-height:1.7;color:var(--text-primary);margin:0 0 12px;}
+.gh-hazard-tip{padding:10px 14px;background:rgba(255,255,255,.5);border-radius:8px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;}
+.gh-hazard-tip i{color:#D4A017;margin-top:2px;flex-shrink:0;}
+
+/* Controls Grid */
+.gh-controls-section{margin-bottom:36px;}
+.gh-controls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.gh-ctrl-card{background:#fff;border-radius:var(--radius);padding:24px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.gh-ctrl-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:14px;}
+.gh-ctrl-card h3{font-size:1.05rem;font-weight:800;margin:0 0 12px;color:var(--brand-dark);}
+.gh-ctrl-card ul{margin:0;padding:0 0 0 16px;list-style:none;}
+.gh-ctrl-card li{font-size:.9rem;line-height:1.7;margin-bottom:6px;color:var(--text-secondary);position:relative;padding-left:4px;}
+.gh-ctrl-card li:before{content:"•";position:absolute;left:-14px;color:var(--brand);}
+
+/* SOP */
+.gh-sop-section{margin-bottom:36px;}
+.gh-sop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.gh-sop-card{background:#fff;border-radius:var(--radius);padding:24px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);border-top:4px solid var(--sop-color);}
+.gh-sop-num{width:36px;height:36px;border-radius:50%;background:var(--sop-color);color:#fff;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.gh-sop-card h3{font-size:1.05rem;font-weight:800;margin:0 0 12px;color:var(--sop-color);}
+.gh-sop-card ul{margin:0;padding:0 0 0 16px;list-style:none;}
+.gh-sop-card li{font-size:.9rem;line-height:1.7;margin-bottom:6px;color:var(--text-secondary);position:relative;padding-left:4px;}
+.gh-sop-card li:before{content:"✓";position:absolute;left:-14px;color:var(--sop-color);font-weight:700;}
+
+/* Emergency */
+.gh-emergency-section{margin-bottom:36px;}
+.gh-emergency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.gh-emerg-card{background:#fff;border-radius:var(--radius);padding:24px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.gh-emerg-icon{font-size:1.6rem;color:#c62828;margin-bottom:12px;}
+.gh-emerg-card h4{font-size:1rem;font-weight:800;margin:0 0 8px;color:var(--text-primary);}
+.gh-emerg-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+/* References */
+.gh-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
+.gh-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.gh-ref-list{display:flex;flex-direction:column;gap:8px;}
+.gh-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
+.gh-ref-list a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .gh-hero{padding:24px;}.gh-hero-title{font-size:1.5rem;}
+  .gh-hazard-grid{grid-template-columns:1fr;}
+  .gh-controls-grid{grid-template-columns:1fr;}
+  .gh-sop-grid{grid-template-columns:1fr;}
+  .gh-emergency-grid{grid-template-columns:1fr;}
+}
+</style>

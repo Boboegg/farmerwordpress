@@ -128,7 +128,7 @@
 
       <div class="pest-crosslink-box">
         <i class="fas fa-link"></i>
-        <span>完整的防護具選購和穿脫 SOP → <a href="/prevention/%e5%80%8b%e4%ba%ba%e9%98%b2%e8%ad%b7%e5%85%b7ppe/">個人防護具（PPE）專區</a></span>
+        <span>完整的防護具選購和穿脫 SOP → <a href="/occupational-safety/personal-protective-equipment/">個人防護具（PPE）專區</a></span>
       </div>
     </div>
   </div>
@@ -298,7 +298,7 @@
 <div class="pest-crosslinks">
   <h3><i class="fas fa-link"></i> 相關主題</h3>
   <div class="pest-crosslink-grid">
-    <a href="/prevention/%e5%80%8b%e4%ba%ba%e9%98%b2%e8%ad%b7%e5%85%b7ppe/" class="pest-crosslink-card">
+    <a href="/occupational-safety/personal-protective-equipment/" class="pest-crosslink-card">
       <i class="fas fa-mask-face"></i>
       <span>個人防護具（PPE）</span>
       <small>完整的防毒面具選購和穿脫 SOP</small>
@@ -308,7 +308,7 @@
       <span>熱危害預防</span>
       <small>高溫天噴藥：農藥揮發更快，穿防護衣散熱更差</small>
     </a>
-    <a href="/prevention/%e6%ba%ab%e5%ae%a4%e5%b0%88%e5%8d%80/" class="pest-crosslink-card">
+    <a href="/occupational-safety/greenhouse-zone/" class="pest-crosslink-card">
       <i class="fas fa-warehouse"></i>
       <span>溫室作業安全</span>
       <small>溫室內農藥殘留濃度更高，REI 間隔更重要</small>

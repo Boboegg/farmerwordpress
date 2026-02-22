@@ -1,0 +1,528 @@
+<!-- =====================================================
+     子頁面：農作物保險
+     URL：/money/crop-insurance/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     CSS 前綴：crop-
+     主色系：#1565c0（藍色系，與 /money/ 一致）
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== 區塊 1：Hero ========== -->
+<div class="crop-hero">
+  <div class="crop-hero-content">
+    <div class="crop-hero-badge"><i class="fas fa-seedling"></i> 農產業保險</div>
+    <h1 class="crop-hero-title">農作物保險</h1>
+    <p class="crop-hero-subtitle">天災農損不再只靠救助——保險理賠更快、更高、更有保障</p>
+    <div class="crop-hero-intro">
+      <p>台灣農業近 19 年平均每年天然災害損失達 <strong>121 億元</strong>，但政府現金救助僅約 31 億，農民仍須自行承擔 <strong>75% 以上</strong>的災害損失。</p>
+      <p>農作物保險就是為了補上這個缺口。政府補助保費 50%，地方政府再加碼 10%–40%，農民最低可能只需自付 10% 的保費，就能在天災後快速獲得理賠，不必苦等勘災、跑行政流程。</p>
+    </div>
+    <div class="crop-hero-actions">
+      <a href="#crop-types" class="crop-btn-primary"><i class="fas fa-list-check"></i> 查看保單類型</a>
+      <a href="#crop-items" class="crop-btn-secondary"><i class="fas fa-magnifying-glass"></i> 我的作物能保嗎？</a>
+    </div>
+    <a href="/money/" class="crop-back-link"><i class="fas fa-arrow-left"></i> 回到經濟與保險總覽</a>
+  </div>
+  <div class="crop-hero-visual">
+    <div class="crop-hero-stats">
+      <div class="crop-stat-item">
+        <div class="crop-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;"><i class="fas fa-leaf"></i></div>
+        <div class="crop-stat-text">
+          <span class="crop-stat-number">28 品項</span>
+          <span class="crop-stat-label">已開辦保險品項數</span>
+          <span class="crop-stat-source">農業金融署，113 年底</span>
+        </div>
+      </div>
+      <div class="crop-stat-item">
+        <div class="crop-stat-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;"><i class="fas fa-percent"></i></div>
+        <div class="crop-stat-text">
+          <span class="crop-stat-number">50% 補助</span>
+          <span class="crop-stat-label">中央政府保費補助比例</span>
+          <span class="crop-stat-source">113/12 起統一調整</span>
+        </div>
+      </div>
+      <div class="crop-stat-item">
+        <div class="crop-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-file-contract"></i></div>
+        <div class="crop-stat-text">
+          <span class="crop-stat-number">44 張保單</span>
+          <span class="crop-stat-label">各品項各式保單組合</span>
+          <span class="crop-stat-source">農業保險基金 TAIF</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 2：保險 vs 天災救助 ========== -->
+<div class="crop-sections" id="crop-compare">
+  <div class="crop-sec-card">
+    <div class="crop-sec-header">
+      <div class="crop-sec-icon"><i class="fas fa-scale-balanced"></i></div>
+      <div>
+        <h2>農業保險 vs 天災現金救助：差在哪？</h2>
+        <p>天災救助是事後的「最低限度」補助，農業保險才是主動的風險管理工具。</p>
+      </div>
+    </div>
+    <div class="crop-sec-body">
+      <div class="crop-table-wrap">
+        <table class="crop-compare-table">
+          <thead><tr><th>比較項目</th><th>天災現金救助</th><th class="crop-highlight-col">農作物保險</th></tr></thead>
+          <tbody>
+            <tr><td>性質</td><td>政府預算撥付（救助金）</td><td class="crop-highlight-col">保險契約（理賠金）</td></tr>
+            <tr><td>啟動條件</td><td>需經農業部公告救助地區</td><td class="crop-highlight-col">達保單起賠標準即啟動</td></tr>
+            <tr><td>理賠速度</td><td>勘災→審核→撥款（數週至數月）</td><td class="crop-highlight-col">天氣參數型：風速達標後最快 <strong>15 天理賠</strong></td></tr>
+            <tr class="crop-row-key"><td><strong>補償程度</strong></td><td>每公頃約 18,000 元（水稻）<br>僅補償約 <strong>25%</strong> 損失</td><td class="crop-highlight-col">依保額理賠，<strong>可達數萬至數十萬元</strong></td></tr>
+            <tr><td>文件準備</td><td>多項文件 + 現場勘災</td><td class="crop-highlight-col">天氣參數型 <strong>免勘災</strong></td></tr>
+            <tr><td>農民負擔</td><td>免費（但補助額度低）</td><td class="crop-highlight-col">自付 10%–50% 保費</td></tr>
+            <tr><td>重複請領</td><td colspan="2" style="text-align:center;">兩者<strong>可同時請領</strong>，互不排斥</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="crop-note-box"><i class="fas fa-lightbulb"></i><span>重點：農業保險與天災救助可以<strong>同時領取</strong>。投保農業保險後，遇到天災不僅能拿到保險理賠，政府的天災救助金照樣可以申請。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 3：5 大保單類型 ========== -->
+<div class="crop-sections" id="crop-types">
+  <div class="crop-sec-card">
+    <div class="crop-sec-header">
+      <div class="crop-sec-icon"><i class="fas fa-layer-group"></i></div>
+      <div>
+        <h2>5 大保單類型：哪一種適合你？</h2>
+        <p>不同保單的理賠機制和適用作物不同，找到最符合你需求的類型。</p>
+      </div>
+    </div>
+    <div class="crop-sec-body">
+      <div class="crop-type-grid">
+        <div class="crop-type-card crop-type-highlight">
+          <div class="crop-type-tag">最多品項採用</div>
+          <div class="crop-type-head"><div class="crop-type-icon" style="background:rgba(14,165,233,.1);color:#0ea5e9;"><i class="fas fa-cloud-sun-rain"></i></div><h3>天氣參數型</h3></div>
+          <p class="crop-type-how"><strong>理賠方式：</strong>以氣象站實測風速、降雨量、溫度等數據為依據，達到約定標準即理賠，<strong>免勘災</strong>。</p>
+          <div class="crop-type-crops"><span class="crop-type-label">適用品項</span><div class="crop-type-tags"><span>梨</span><span>蓮霧</span><span>木瓜</span><span>柚</span><span>甜柿</span><span>番石榴</span><span>荔枝</span><span>棗</span><span>柑橘</span><span>西瓜</span><span>紅豆</span><span>水芋</span><span>養蜂</span></div></div>
+          <div class="crop-type-pros"><i class="fas fa-circle-check"></i> 理賠最快（約 15 天撥款）、免現場查勘</div>
+        </div>
+        <div class="crop-type-card">
+          <div class="crop-type-head"><div class="crop-type-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;"><i class="fas fa-chart-line"></i></div><h3>收入保障型</h3></div>
+          <p class="crop-type-how"><strong>理賠方式：</strong>當農民實際收入低於保障水準時，理賠差額。保障「收入」而非只保障「產量」。</p>
+          <div class="crop-type-crops"><span class="crop-type-label">適用品項</span><div class="crop-type-tags"><span>水稻</span><span>釋迦</span><span>香蕉</span><span>高粱</span></div></div>
+          <div class="crop-type-pros"><i class="fas fa-circle-check"></i> 價格下跌也能理賠，最全面的收入保障</div>
+        </div>
+        <div class="crop-type-card">
+          <div class="crop-type-head"><div class="crop-type-icon" style="background:rgba(59,130,246,.1);color:#3b82f6;"><i class="fas fa-map-location-dot"></i></div><h3>區域收穫型</h3></div>
+          <p class="crop-type-how"><strong>理賠方式：</strong>以鄉鎮區為單位，當該區域平均產量低於約定標準時啟動理賠，個別農戶免勘查。</p>
+          <div class="crop-type-crops"><span class="crop-type-label">適用品項</span><div class="crop-type-tags"><span>水稻</span><span>芒果</span><span>鳳梨</span></div></div>
+          <div class="crop-type-pros"><i class="fas fa-circle-check"></i> 以區域數據為準，降低個別勘查成本</div>
+        </div>
+        <div class="crop-type-card">
+          <div class="crop-type-head"><div class="crop-type-icon" style="background:rgba(16,185,129,.1);color:#10b981;"><i class="fas fa-magnifying-glass-dollar"></i></div><h3>實損實賠型</h3></div>
+          <p class="crop-type-how"><strong>理賠方式：</strong>依實際損失金額理賠，保多少賠多少，需要損害查勘。</p>
+          <div class="crop-type-crops"><span class="crop-type-label">適用品項</span><div class="crop-type-tags"><span>梨</span><span>香蕉植株</span><span>農業設施</span></div></div>
+          <div class="crop-type-pros"><i class="fas fa-circle-check"></i> 理賠最精準，損失多少賠多少</div>
+        </div>
+        <div class="crop-type-card">
+          <div class="crop-type-head"><div class="crop-type-icon" style="background:rgba(124,58,237,.1);color:#7c3aed;"><i class="fas fa-handshake-angle"></i></div><h3>政府災助連結型</h3></div>
+          <p class="crop-type-how"><strong>理賠方式：</strong>當政府公告天災救助時，自動啟動保險理賠，等於在救助金之上再多一層保障。</p>
+          <div class="crop-type-crops"><span class="crop-type-label">適用品項</span><div class="crop-type-tags"><span>梨</span><span>芒果</span></div></div>
+          <div class="crop-type-pros"><i class="fas fa-circle-check"></i> 政府公告救助即可啟動，雙重保障</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 4：已開辦品項總表 ========== -->
+<div class="crop-sections" id="crop-items">
+  <div class="crop-sec-card">
+    <div class="crop-sec-header">
+      <div class="crop-sec-icon"><i class="fas fa-table-list"></i></div>
+      <div>
+        <h2>已開辦保險品項一覽（28 種）</h2>
+        <p>涵蓋農糧、水產、畜產三大類，共 44 張保單。以下標示各品項可投保的保單類型。</p>
+      </div>
+    </div>
+    <div class="crop-sec-body">
+      <h3 class="crop-sub-title"><i class="fas fa-wheat-awn"></i> 農糧類</h3>
+      <div class="crop-table-wrap">
+        <table class="crop-item-table">
+          <thead><tr><th>品項</th><th>天氣參數</th><th>收入保障</th><th>區域收穫</th><th>實損實賠</th><th>災助連結</th></tr></thead>
+          <tbody>
+            <tr><td><strong>水稻</strong> <span class="crop-local-tag">雲嘉常見</span></td><td></td><td><i class="fas fa-circle-check crop-check"></i></td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td></tr>
+            <tr><td><strong>芒果</strong> <span class="crop-local-tag">雲嘉常見</span></td><td></td><td></td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td><i class="fas fa-circle-check crop-check"></i></td></tr>
+            <tr><td><strong>鳳梨</strong> <span class="crop-local-tag">雲嘉常見</span></td><td></td><td></td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td></tr>
+            <tr><td><strong>文旦柚</strong> <span class="crop-local-tag">雲嘉常見</span></td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td><strong>香蕉</strong> <span class="crop-local-tag">雲嘉常見</span></td><td></td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td><i class="fas fa-circle-check crop-check"></i></td><td></td></tr>
+            <tr><td>梨</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td><i class="fas fa-circle-check crop-check"></i></td><td><i class="fas fa-circle-check crop-check"></i></td></tr>
+            <tr><td>釋迦</td><td></td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td></tr>
+            <tr><td>蓮霧</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>木瓜</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>甜柿</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>番石榴</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>荔枝</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>棗</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>桶柑</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>西瓜</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>紅豆</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>水芋</td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>高粱</td><td></td><td><i class="fas fa-circle-check crop-check"></i></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="crop-sub-title" style="margin-top:28px;"><i class="fas fa-fish"></i> 水產養殖類</h3>
+      <div class="crop-table-wrap">
+        <table class="crop-item-table">
+          <thead><tr><th>品項</th><th>保單型態</th><th>說明</th></tr></thead>
+          <tbody>
+            <tr><td>虱目魚</td><td>溫度參數型</td><td>低溫達標即理賠</td></tr>
+            <tr><td>石斑魚</td><td>溫度參數型</td><td>低溫達標即理賠</td></tr>
+            <tr><td>鱸魚</td><td>溫度參數型</td><td>低溫達標即理賠</td></tr>
+            <tr><td>吳郭魚</td><td>溫度參數型</td><td>低溫達標即理賠</td></tr>
+            <tr><td>養殖水產（綜合）</td><td>實損實賠型</td><td>天災實際損失理賠</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 class="crop-sub-title" style="margin-top:28px;"><i class="fas fa-cow"></i> 畜產與其他</h3>
+      <div class="crop-table-wrap">
+        <table class="crop-item-table">
+          <thead><tr><th>品項</th><th>保單型態</th><th>說明</th></tr></thead>
+          <tbody>
+            <tr><td>家禽（禽流感）</td><td>政策型強制險</td><td>禽流感撲殺理賠，保費政府 100% 補助</td></tr>
+            <tr><td>養蜂</td><td>天氣參數型</td><td>高溫或降雨致蜜源不足</td></tr>
+            <tr><td>農業設施（溫室）</td><td>實損實賠型</td><td>颱風/洪水造成溫室結構損壞</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="crop-note-box" style="margin-top:20px;"><i class="fas fa-info-circle"></i><span>水稻收入保險「基本型」保費由政府 <strong>100% 全額補助</strong>（農民免繳），是目前投保率最高的農業保險。「加強型」保費則比照其他自願險，中央補助 50%。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 5：保費補助結構 ========== -->
+<div class="crop-sections" id="crop-subsidy">
+  <div class="crop-sec-card">
+    <div class="crop-sec-header">
+      <div class="crop-sec-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+      <div>
+        <h2>保費補助結構：農民到底要付多少？</h2>
+        <p>中央政府補助 50%，地方政府再加碼 10%–40%，農民最低只需自付 10%。</p>
+      </div>
+    </div>
+    <div class="crop-sec-body">
+      <div class="crop-subsidy-visual">
+        <div class="crop-subsidy-bar-wrap">
+          <div class="crop-subsidy-bar">
+            <div class="crop-bar-segment crop-bar-central" style="width:50%;"><span>中央補助 50%</span></div>
+            <div class="crop-bar-segment crop-bar-local" style="width:25%;"><span>地方加碼</span></div>
+            <div class="crop-bar-segment crop-bar-farmer" style="width:25%;"><span>農民自付</span></div>
+          </div>
+          <div class="crop-bar-legend">
+            <span><i class="fas fa-square" style="color:#1565c0;"></i> 中央政府（50%，全國統一）</span>
+            <span><i class="fas fa-square" style="color:#7c3aed;"></i> 地方政府（10%–40%，各縣市不同）</span>
+            <span><i class="fas fa-square" style="color:#f59e0b;"></i> 農民自付（最低 10%）</span>
+          </div>
+        </div>
+      </div>
+      <h3 class="crop-sub-title"><i class="fas fa-map-location-dot"></i> 各縣市地方加碼補助</h3>
+      <div class="crop-local-grid">
+        <div class="crop-local-card crop-local-top"><div class="crop-local-pct">40%</div><div class="crop-local-name">桃園市・台中市</div><div class="crop-local-result">農民最低自付 <strong>10%</strong></div></div>
+        <div class="crop-local-card"><div class="crop-local-pct">22.5%</div><div class="crop-local-name">台南市</div><div class="crop-local-result">農民最低自付 <strong>27.5%</strong></div></div>
+        <div class="crop-local-card"><div class="crop-local-pct">10~25%</div><div class="crop-local-name">其他縣市</div><div class="crop-local-result">依各縣市年度預算而定</div></div>
+      </div>
+      <div class="crop-note-box"><i class="fas fa-triangle-exclamation"></i><span>地方政府加碼補助比例每年可能調整，投保前請洽詢當地農會確認最新補助額度。《農業保險法》修正後（115 年 1 月 1 日施行），保費補助上限維持 <strong>75%</strong>，不再受施行 6 年後降至 60% 的限制。</span></div>
+      <h3 class="crop-sub-title" style="margin-top:28px;"><i class="fas fa-calculator"></i> 保費參考範例</h3>
+      <div class="crop-table-wrap">
+        <table class="crop-compare-table">
+          <thead><tr><th>品項</th><th>每公頃保費概估</th><th>中央補助 50% 後</th><th>備註</th></tr></thead>
+          <tbody>
+            <tr><td>水稻（基本型）</td><td>—</td><td><strong>政府全額補助</strong></td><td>農民免繳任何保費</td></tr>
+            <tr><td>水稻（加強型）</td><td>約 10,000 元</td><td>約 5,000 元</td><td>含地方加碼可更低</td></tr>
+            <tr><td>果樹類（柚、芒果等）</td><td>30,000–50,000 元</td><td>15,000–25,000 元</td><td>因品項與保額而異</td></tr>
+            <tr><td>養殖漁業</td><td>可達 310,000+ 元</td><td>155,000+ 元</td><td>保費最高的類別</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 6：投保流程 ========== -->
+<div class="crop-sections" id="crop-flow">
+  <div class="crop-sec-card">
+    <div class="crop-sec-header">
+      <div class="crop-sec-icon"><i class="fas fa-route"></i></div>
+      <div>
+        <h2>投保流程：5 步驟完成</h2>
+        <p>透過戶籍所在地或土地所在地農會即可辦理，流程簡便。</p>
+      </div>
+    </div>
+    <div class="crop-sec-body">
+      <div class="crop-step-flow">
+        <div class="crop-step crop-step-wide"><div class="crop-step-num">1</div><div class="crop-step-content"><strong>確認品項與保單</strong><div class="crop-step-sub"><i class="fas fa-chevron-right"></i> 至農業金融署網站或致電農會，確認你的作物是否已開辦保險，以及可選擇的保單類型。</div></div></div>
+        <div class="crop-step-arrow"><i class="fas fa-chevron-down"></i></div>
+        <div class="crop-step crop-step-wide"><div class="crop-step-num">2</div><div class="crop-step-content"><strong>洽詢農會</strong><div class="crop-step-sub"><i class="fas fa-chevron-right"></i> 攜帶<strong>身分證</strong>、<strong>土地所有權狀或租約</strong>、<strong>農保或健保證明</strong>，至農會保險業務窗口諮詢。</div></div></div>
+        <div class="crop-step-arrow"><i class="fas fa-chevron-down"></i></div>
+        <div class="crop-step crop-step-wide"><div class="crop-step-num">3</div><div class="crop-step-content"><strong>填寫要保書</strong><div class="crop-step-sub"><i class="fas fa-chevron-right"></i> 填寫投保面積、選擇保額方案。商業型保單由產險公司承保，政策型保單由農會直接承保。</div></div></div>
+        <div class="crop-step-arrow"><i class="fas fa-chevron-down"></i></div>
+        <div class="crop-step crop-step-wide"><div class="crop-step-num">4</div><div class="crop-step-content"><strong>繳納保費</strong><div class="crop-step-sub"><i class="fas fa-chevron-right"></i> 僅需繳納扣除政府補助後的自付額。中央 50% + 地方加碼由農會代為申請撥付。</div></div></div>
+        <div class="crop-step-arrow"><i class="fas fa-chevron-down"></i></div>
+        <div class="crop-step crop-step-wide"><div class="crop-step-num">5</div><div class="crop-step-content"><strong>災後理賠</strong><div class="crop-step-sub"><i class="fas fa-chevron-right"></i> 天氣參數型：氣象數據達標後自動啟動理賠，約 15 天入帳。<br><i class="fas fa-chevron-right"></i> 實損實賠型：通報損失 → 保險公司查勘 → 核算理賠金額 → 撥款。</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 7：理賠實例 ========== -->
+<div class="crop-sections" id="crop-cases">
+  <div class="crop-sec-card">
+    <div class="crop-sec-header">
+      <div class="crop-sec-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+      <div>
+        <h2>理賠實例：真的有用嗎？</h2>
+        <p>以下為近年實際理賠案例，說明農業保險的具體保障效果。</p>
+      </div>
+    </div>
+    <div class="crop-sec-body">
+      <div class="crop-case-grid">
+        <div class="crop-case-card">
+          <div class="crop-case-header" style="background:linear-gradient(135deg,#e8f5e9,#fff);"><i class="fas fa-seedling" style="color:#2e7d32;"></i><h3>水稻收入保險</h3></div>
+          <div class="crop-case-body">
+            <div class="crop-case-row"><span class="crop-case-label">年度</span><span>111 年（2022）</span></div>
+            <div class="crop-case-row"><span class="crop-case-label">理賠金額</span><span><strong>4.3 億元</strong></span></div>
+            <div class="crop-case-row"><span class="crop-case-label">受惠農戶</span><span>約 <strong>2.1 萬名</strong>稻農</span></div>
+            <div class="crop-case-row"><span class="crop-case-label">保費負擔</span><span>基本型：農民 <strong>免繳</strong></span></div>
+            <div class="crop-case-note">水稻收入保險基本型保費由政府全額補助，稻農無需繳費即享保障，111 年稻米價格波動時成功理賠。</div>
+          </div>
+        </div>
+        <div class="crop-case-card">
+          <div class="crop-case-header" style="background:linear-gradient(135deg,#fff3e0,#fff);"><i class="fas fa-lemon" style="color:#f57f17;"></i><h3>文旦柚天氣參數保險</h3></div>
+          <div class="crop-case-body">
+            <div class="crop-case-row"><span class="crop-case-label">地區</span><span>台南市麻豆區</span></div>
+            <div class="crop-case-row"><span class="crop-case-label">投保面積</span><span>5 分地</span></div>
+            <div class="crop-case-row"><span class="crop-case-label">保費自付</span><span>約 9,000 元（含補助後）</span></div>
+            <div class="crop-case-row"><span class="crop-case-label">理賠金額</span><span><strong>10 萬元</strong></span></div>
+            <div class="crop-case-note">颱風風速達保單起賠標準後，免勘災、15 天內撥款。柚農表示理賠金雖不能完全彌補損失，但遠高於天災救助金。</div>
+          </div>
+        </div>
+        <div class="crop-case-card">
+          <div class="crop-case-header" style="background:linear-gradient(135deg,#e3f2fd,#fff);"><i class="fas fa-wind" style="color:#1565c0;"></i><h3>釋迦收入保險</h3></div>
+          <div class="crop-case-body">
+            <div class="crop-case-row"><span class="crop-case-label">年度</span><span>110–111 年（2021–2022）</span></div>
+            <div class="crop-case-row"><span class="crop-case-label">累計理賠</span><span>超過 <strong>6 億元</strong></span></div>
+            <div class="crop-case-note">因中國大陸暫停進口導致釋迦價格下跌，收入保障型保單啟動理賠，證明此類保單不僅應對天災，也能因應市場風險。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 8：FAQ ========== -->
+<div class="crop-sections" id="crop-faq">
+  <div class="crop-sec-card">
+    <div class="crop-sec-header">
+      <div class="crop-sec-icon"><i class="fas fa-circle-question"></i></div>
+      <div><h2>常見問題</h2><p>農民投保前最常問的問題，整理如下。</p></div>
+    </div>
+    <div class="crop-sec-body">
+      <div class="crop-faq-list">
+        <div class="crop-faq-item"><button class="crop-faq-q">我已經有農保了，還需要投保農作物保險嗎？<i class="fas fa-chevron-down"></i></button><div class="crop-faq-a"><p>農保和農作物保險是<strong>完全不同的兩件事</strong>。農保是「人身保險」，保障的是農民本人的生育、身心障礙、喪葬；農作物保險是「財產保險」，保障的是你的<strong>作物、設施和收入</strong>。兩者互不衝突，可以同時投保。</p></div></div>
+        <div class="crop-faq-item"><button class="crop-faq-q">我租地耕種，可以投保嗎？<i class="fas fa-chevron-down"></i></button><div class="crop-faq-a"><p>可以。只要你有<strong>合法的土地租賃契約</strong>或委託經營契約，且實際從事農業生產，即可以承租人身分投保。投保時需出示有效期間內的租約影本。</p></div></div>
+        <div class="crop-faq-item"><button class="crop-faq-q">理賠和天災救助可以同時領嗎？<i class="fas fa-chevron-down"></i></button><div class="crop-faq-a"><p><strong>可以同時領取。</strong>農業保險理賠金和政府天災現金救助互不排斥。投保農業保險後遇到天災，你可以同時申請保險理賠和政府救助金。</p></div></div>
+        <div class="crop-faq-item"><button class="crop-faq-q">我的作物不在已開辦品項裡面怎麼辦？<i class="fas fa-chevron-down"></i></button><div class="crop-faq-a"><p>目前已開辦 28 種品項、44 張保單，農業部持續擴增中。如果你的作物尚未列入，可向農會反映需求。在此之前，仍可申請政府<strong>天災現金救助</strong>作為基本保障。</p></div></div>
+        <div class="crop-faq-item"><button class="crop-faq-q">投保後沒有發生天災，保費會退嗎？<i class="fas fa-chevron-down"></i></button><div class="crop-faq-a"><p>保費不會退還，這和一般保險相同。但考量政府補助 50% 以上的保費，農民實際負擔有限。以水稻基本型為例，農民完全不需繳費。</p></div></div>
+        <div class="crop-faq-item"><button class="crop-faq-q">理賠大概要多久才能拿到錢？<i class="fas fa-chevron-down"></i></button><div class="crop-faq-a"><p>依保單類型不同：天氣參數型最快，氣象數據達標後約 <strong>15 天</strong>撥款；實損實賠型需經損害查勘，通常數週；收入保障型在期末結算後撥款。整體而言，比傳統天災救助的行政流程更快。</p></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 9：外部連結工具 ========== -->
+<div class="crop-sections" id="crop-tools">
+  <div class="crop-sec-card">
+    <div class="crop-sec-header">
+      <div class="crop-sec-icon"><i class="fas fa-toolbox"></i></div>
+      <div><h2>線上查詢工具</h2><p>前往官方網站查詢品項細節、保費試算或投保窗口。</p></div>
+    </div>
+    <div class="crop-sec-body">
+      <div class="crop-tool-grid">
+        <a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=277" target="_blank" rel="noopener" class="crop-tool-card"><div class="crop-tool-icon"><i class="fas fa-building-columns"></i></div><h3>農業金融署<br>農產業保險專區</h3><p>品項查詢、保單型態說明、投保統計</p><span class="crop-tool-link">前往查看 <i class="fas fa-arrow-up-right-from-square"></i></span></a>
+        <a href="https://www.taif.org.tw" target="_blank" rel="noopener" class="crop-tool-card"><div class="crop-tool-icon"><i class="fas fa-shield-halved"></i></div><h3>財團法人<br>農業保險基金</h3><p>保險基金運作、危險分散機制</p><span class="crop-tool-link">前往查看 <i class="fas fa-arrow-up-right-from-square"></i></span></a>
+        <a href="https://m.moa.gov.tw/Subsidy/Index" target="_blank" rel="noopener" class="crop-tool-card"><div class="crop-tool-icon"><i class="fas fa-hand-holding-heart"></i></div><h3>田邊好幫手<br>保險費補助專區</h3><p>各品項保費補助申請資訊</p><span class="crop-tool-link">前往查看 <i class="fas fa-arrow-up-right-from-square"></i></span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 10：免責聲明 ========== -->
+<div class="crop-sec-disclaimer">
+  <div class="crop-sec-card">
+    <div class="crop-disclaimer-box"><h3><i class="fas fa-triangle-exclamation"></i> 免責聲明</h3><p>本頁資料整理自農業金融署、農業部公開資訊及相關新聞報導，僅供參考，不構成任何保險契約或投資建議。各保單實際保費、保額、理賠條件以承保機構公告及保單條款為準。投保前請務必洽詢當地農會或承保產險公司。</p></div>
+    <div class="crop-contact-grid"><h3><i class="fas fa-phone-volume"></i> 諮詢窗口</h3>
+      <div class="crop-contact-cards">
+        <div class="crop-contact-item"><div class="crop-contact-icon"><i class="fas fa-wheat-awn"></i></div><div><strong>戶籍所在地農會</strong><br><span>各地不同</span><p class="crop-contact-use">投保第一線窗口、保費補助申請</p></div></div>
+        <div class="crop-contact-item"><div class="crop-contact-icon"><i class="fas fa-building-columns"></i></div><div><strong>農業金融署</strong><br><span><i class="fas fa-phone"></i> 02-3393-5858</span><p class="crop-contact-use">保險政策與品項諮詢</p></div></div>
+        <div class="crop-contact-item"><div class="crop-contact-icon"><i class="fas fa-headset"></i></div><div><strong>農業部服務專線</strong><br><span><i class="fas fa-phone"></i> 0800-037-038</span><p class="crop-contact-use">農業相關免費諮詢</p></div></div>
+      </div>
+    </div>
+    <div class="crop-references"><h3><i class="fas fa-book"></i> 參考資料</h3>
+      <ol>
+        <li>農業金融署（n.d.）。推動農業保險。<a href="https://www.boaf.gov.tw/boafwww/index.jsp?a=ct&xItem=955232&ctNode=464" target="_blank" rel="noopener">https://www.boaf.gov.tw/</a></li>
+        <li>農業金融署（n.d.）。農產業保險。<a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=277" target="_blank" rel="noopener">https://www.afa.gov.tw/</a></li>
+        <li>上下游新聞（2025 年 8 月 6 日）。農業保險法修正三讀，政府保費補助不限 6 成，上限 75%。<a href="https://www.newsmarket.com.tw/blog/225871/" target="_blank" rel="noopener">https://www.newsmarket.com.tw/blog/225871/</a></li>
+        <li>聯合新聞網（2025 年 8 月 5 日）。農業保險法三讀修正通過 保費補助統一上限 75%。<a href="https://udn.com/news/story/7314/8918221" target="_blank" rel="noopener">https://udn.com/news/story/7314/8918221</a></li>
+        <li>農業部田邊好幫手（n.d.）。獎補救助專區。<a href="https://m.moa.gov.tw/Subsidy/Index" target="_blank" rel="noopener">https://m.moa.gov.tw/Subsidy/Index</a></li>
+      </ol>
+    </div>
+    <div class="crop-cross-links"><h3><i class="fas fa-link"></i> 相關專區</h3>
+      <div class="crop-cross-grid">
+        <a href="/money/occupational-insurance/" class="crop-cross-card"><i class="fas fa-shield-halved"></i><span>農民職災保險</span><small>每月 15 元，務農受傷也有保障</small></a>
+        <a href="/money/subsidy/" class="crop-cross-card"><i class="fas fa-gift"></i><span>補助資源懶人包</span><small>農機補助、天災救助、青農支持一次看</small></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+.crop-hero,.crop-sections,.crop-sec-disclaimer{--brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;--brand-hover:#0b4a8a;--accent:#f59e0b;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;}
+.crop-hero *,.crop-sections *,.crop-sec-disclaimer *{box-sizing:border-box;}
+.crop-hero{display:flex;gap:40px;align-items:flex-start;padding:40px;background:linear-gradient(135deg,var(--brand-light) 0%,#fff 60%,#e8eaf6 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(21,101,192,.1);}
+.crop-hero-content{flex:1.2;}.crop-hero-visual{flex:.8;position:sticky;top:20px;}
+.crop-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(21,101,192,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.crop-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-dark);margin:0 0 8px;line-height:1.2;}
+.crop-hero-subtitle{font-size:1.05rem;color:var(--brand);font-weight:600;margin:0 0 20px;line-height:1.6;}
+.crop-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(21,101,192,.08);}
+.crop-hero-intro p{font-size:1rem;line-height:1.8;margin:0 0 12px;}.crop-hero-intro p:last-child{margin-bottom:0;}
+.crop-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+.crop-btn-primary,.crop-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
+.crop-btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(21,101,192,.3);}
+.crop-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.crop-btn-secondary{background:#fff;color:var(--brand);border:2px solid var(--brand);}.crop-btn-secondary:hover{background:var(--brand);color:#fff;}
+.crop-back-link{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;color:var(--text-secondary);text-decoration:none;transition:.2s;}.crop-back-link:hover{color:var(--brand);}
+.crop-hero-stats{display:flex;flex-direction:column;gap:16px;}
+.crop-stat-item{display:flex;align-items:center;gap:16px;background:#fff;padding:16px 20px;border-radius:12px;box-shadow:var(--shadow);}
+.crop-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.crop-stat-number{font-size:1.4rem;font-weight:900;display:block;line-height:1;}
+.crop-stat-label{font-size:.85rem;color:var(--text-secondary);}.crop-stat-source{font-size:.72rem;color:#aaa;font-style:italic;display:block;margin-top:3px;}
+.crop-sections{margin-top:24px;}
+.crop-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
+.crop-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-light);}
+.crop-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.crop-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;}
+.crop-sec-header p{font-size:.95rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+.crop-table-wrap{overflow-x:auto;margin-bottom:16px;}
+.crop-compare-table{width:100%;border-collapse:collapse;font-size:.93rem;}
+.crop-compare-table th,.crop-compare-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #eee;}
+.crop-compare-table th{background:#f8f9fa;font-weight:700;color:var(--text-primary);position:sticky;top:0;}
+.crop-compare-table th.crop-highlight-col{background:var(--brand-light);color:var(--brand-dark);}
+.crop-compare-table td.crop-highlight-col{background:rgba(21,101,192,.03);}
+.crop-row-key td{background:#fffbeb;}
+.crop-note-box{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:#fffbeb;border-radius:10px;font-size:.9rem;line-height:1.6;border:1px solid #fde68a;}.crop-note-box i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+.crop-type-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.crop-type-card{background:#f8fafc;border-radius:14px;padding:24px;border:1px solid #e2e8f0;position:relative;transition:all .3s;}
+.crop-type-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-3px);}
+.crop-type-highlight{border-color:var(--brand);border-width:2px;grid-column:1/-1;}
+.crop-type-tag{position:absolute;top:12px;right:12px;background:var(--brand);color:#fff;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;}
+.crop-type-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.crop-type-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.crop-type-card h3{font-size:1.1rem;font-weight:800;margin:0;color:var(--brand-dark);}
+.crop-type-how{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0 0 12px;}
+.crop-type-crops{margin-bottom:12px;}.crop-type-label{font-size:.8rem;font-weight:700;color:var(--brand);display:block;margin-bottom:6px;}
+.crop-type-tags{display:flex;flex-wrap:wrap;gap:6px;}.crop-type-tags span{font-size:.8rem;padding:3px 10px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;color:var(--text-primary);}
+.crop-type-pros{font-size:.88rem;color:#15803d;display:flex;align-items:center;gap:6px;font-weight:600;}.crop-type-pros i{flex-shrink:0;}
+.crop-sub-title{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.crop-item-table{width:100%;border-collapse:collapse;font-size:.9rem;}
+.crop-item-table th,.crop-item-table td{padding:10px 14px;text-align:center;border-bottom:1px solid #eee;}
+.crop-item-table th{background:#f8f9fa;font-weight:700;font-size:.82rem;color:var(--text-secondary);}
+.crop-item-table td:first-child{text-align:left;font-weight:500;}
+.crop-check{color:#15803d;font-size:.9rem;}
+.crop-local-tag{font-size:.7rem;background:#e8f5e9;color:#2e7d32;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:4px;}
+.crop-subsidy-visual{margin-bottom:28px;}.crop-subsidy-bar-wrap{margin-bottom:16px;}
+.crop-subsidy-bar{display:flex;height:48px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);}
+.crop-bar-segment{display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff;}
+.crop-bar-central{background:var(--brand);}.crop-bar-local{background:#7c3aed;}.crop-bar-farmer{background:var(--accent);}
+.crop-bar-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:.82rem;color:var(--text-secondary);}.crop-bar-legend span{display:flex;align-items:center;gap:4px;}
+.crop-local-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
+.crop-local-card{background:#f8fafc;border-radius:12px;padding:20px;text-align:center;border:1px solid #e2e8f0;}
+.crop-local-top{border-color:var(--brand);background:var(--brand-light);}
+.crop-local-pct{font-size:1.8rem;font-weight:900;color:var(--brand);}
+.crop-local-name{font-size:.95rem;font-weight:700;margin:4px 0;color:var(--text-primary);}.crop-local-result{font-size:.85rem;color:var(--text-secondary);}
+.crop-step-flow{display:flex;flex-direction:column;align-items:center;gap:0;}
+.crop-step{display:flex;align-items:flex-start;gap:16px;width:100%;padding:16px 20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;}
+.crop-step-wide{max-width:100%;}
+.crop-step-num{width:32px;height:32px;background:var(--brand);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0;}
+.crop-step-content{font-size:.95rem;line-height:1.6;}
+.crop-step-sub{margin-top:8px;font-size:.88rem;color:var(--text-secondary);line-height:1.7;}.crop-step-sub i{color:var(--brand);margin-right:4px;}
+.crop-step-arrow{color:#bbb;font-size:.8rem;padding:4px 0;}
+.crop-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.crop-case-card{border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;transition:all .3s;}
+.crop-case-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
+.crop-case-header{padding:16px 20px;display:flex;align-items:center;gap:10px;}.crop-case-header i{font-size:24px;}
+.crop-case-header h3{font-size:1.05rem;font-weight:800;margin:0;color:var(--brand-dark);}
+.crop-case-body{padding:20px;}
+.crop-case-row{display:flex;gap:12px;font-size:.9rem;padding:6px 0;border-bottom:1px dashed #e8e8e8;}.crop-case-row:last-of-type{border-bottom:none;}
+.crop-case-label{font-weight:700;color:var(--brand);min-width:80px;flex-shrink:0;}
+.crop-case-note{margin-top:12px;font-size:.85rem;color:var(--text-secondary);line-height:1.6;padding-top:10px;border-top:1px solid #eee;}
+.crop-faq-list{display:flex;flex-direction:column;gap:8px;}
+.crop-faq-item{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:border-color .3s;}
+.crop-faq-item.is-open{border-color:var(--brand);}
+.crop-faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:#f8fafc;border:none;cursor:pointer;font-size:.95rem;font-weight:700;color:var(--brand-dark);text-align:left;transition:all .3s;font-family:inherit;}
+.crop-faq-q:hover{background:var(--brand-light);}
+.crop-faq-q i{transition:transform .3s;color:var(--brand);}.crop-faq-item.is-open .crop-faq-q i{transform:rotate(180deg);}
+.crop-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;}.crop-faq-item.is-open .crop-faq-a{max-height:400px;padding:16px 20px;}
+.crop-faq-a p{font-size:.93rem;line-height:1.7;margin:0 0 8px;}
+.crop-tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.crop-tool-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 24px;background:#f8fafc;border-radius:14px;border:2px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.crop-tool-card:hover{border-color:var(--brand);transform:translateY(-5px);box-shadow:0 12px 28px rgba(21,101,192,.12);}
+.crop-tool-icon{width:64px;height:64px;border-radius:50%;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px;}
+.crop-tool-card h3{font-size:1rem;font-weight:800;color:var(--brand-dark);margin:0 0 8px;line-height:1.4;}
+.crop-tool-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.5;margin:0 0 16px;}
+.crop-tool-link{font-size:.9rem;color:var(--brand);font-weight:700;display:flex;align-items:center;gap:4px;}
+.crop-sec-disclaimer{margin-top:24px;}
+.crop-disclaimer-box{background:#fef3c7;border-radius:12px;padding:20px 24px;margin-bottom:28px;border:1px solid #fde68a;}
+.crop-disclaimer-box h3{font-size:1rem;font-weight:800;color:#92400e;margin:0 0 8px;display:flex;align-items:center;gap:8px;}
+.crop-disclaimer-box p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+.crop-contact-grid{margin-bottom:28px;}.crop-contact-grid h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.crop-contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.crop-contact-item{display:flex;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;font-size:.9rem;}
+.crop-contact-icon{width:40px;height:40px;border-radius:10px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.crop-contact-item strong{display:block;margin-bottom:4px;color:var(--brand-dark);font-size:.9rem;}
+.crop-contact-item span{font-size:.85rem;color:var(--text-secondary);}.crop-contact-use{font-size:.78rem;color:#aaa;margin:4px 0 0;}
+.crop-references{margin-bottom:28px;}.crop-references h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 12px;display:flex;align-items:center;gap:8px;}
+.crop-references ol{padding-left:20px;margin:0;}.crop-references li{font-size:.85rem;line-height:1.7;color:var(--text-secondary);margin-bottom:6px;}.crop-references a{color:var(--brand);word-break:break-all;}
+.crop-cross-links h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.crop-cross-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.crop-cross-card{display:flex;align-items:center;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.crop-cross-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.crop-cross-card i{font-size:24px;color:var(--brand);}.crop-cross-card span{font-weight:700;font-size:.95rem;display:block;}
+.crop-cross-card small{font-size:.8rem;color:var(--text-secondary);display:block;margin-top:2px;}
+@media(max-width:768px){
+  .crop-hero{flex-direction:column;padding:24px;gap:24px;}.crop-hero-title{font-size:1.6rem;}.crop-hero-visual{position:static;}
+  .crop-hero-stats{flex-direction:row;flex-wrap:wrap;gap:10px;}.crop-stat-item{flex:1;min-width:140px;padding:12px;}
+  .crop-sec-card{padding:20px;}.crop-sec-header{flex-direction:column;gap:10px;}
+  .crop-type-grid{grid-template-columns:1fr;}.crop-type-highlight{grid-column:auto;}
+  .crop-case-grid{grid-template-columns:1fr;}.crop-tool-grid{grid-template-columns:1fr;}
+  .crop-contact-cards{grid-template-columns:1fr;}.crop-cross-grid{grid-template-columns:1fr;}
+  .crop-local-grid{grid-template-columns:1fr;}.crop-subsidy-bar span{font-size:.72rem;}
+  .crop-compare-table{font-size:.82rem;}.crop-compare-table th,.crop-compare-table td{padding:10px 8px;}
+  .crop-item-table{font-size:.8rem;}.crop-item-table th,.crop-item-table td{padding:8px 6px;}
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.crop-faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=this.closest('.crop-faq-item');var wasOpen=item.classList.contains('is-open');
+      document.querySelectorAll('.crop-faq-item.is-open').forEach(function(i){i.classList.remove('is-open');});
+      if(!wasOpen) item.classList.add('is-open');
+    });
+  });
+  document.querySelectorAll('a[href^="#crop-"]').forEach(function(a){
+    a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
+  });
+});
+</script>

@@ -1,0 +1,145 @@
+<!-- =====================================================
+     /money/ 主頁面・區塊 01：Hero
+     檔案：01-hero.html
+     CSS 前綴：money-
+     主色系：#1565c0（藍色系）
+     貼入方式：WordPress 頁面 → 程式碼編輯器 → 依序貼入
+     ===================================================== -->
+
+<!-- 字型與圖示（整頁只需載入一次，放在第一塊） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="money-hero">
+  <div class="money-hero-content">
+    <div class="money-hero-badge"><i class="fas fa-shield-halved"></i> 經濟與保險專區</div>
+    <h1 class="money-hero-title">經濟與保險</h1>
+    <p class="money-hero-subtitle">務農受傷有給付、天災有理賠、資源有管道——搞懂你的經濟安全網</p>
+
+    <div class="money-hero-intro">
+      <p>
+        農民面對的經濟風險跟一般上班族完全不同：沒有固定薪水、沒有雇主幫你投保勞保、收入看天吃飯。一場颱風、一次農機意外，就足以讓整季的收入歸零。
+      </p>
+      <p>
+        好消息是，台灣已經建立了一套針對農民的經濟安全制度，但很多農友不知道自己有哪些權益可以主張。這個專區把最實用的三大主題整理在一起：
+      </p>
+      <ul class="money-hero-list">
+        <li><i class="fas fa-check-circle"></i> <strong>職業災害保險</strong>——務農受傷的收入補償與醫療津貼</li>
+        <li><i class="fas fa-check-circle"></i> <strong>農作物保險</strong>——天災造成農損的理賠機制</li>
+        <li><i class="fas fa-check-circle"></i> <strong>補助資源</strong>——農機補助、天災救助、政策貸款一次看</li>
+      </ul>
+      <p class="money-hero-note">
+        <i class="fas fa-lightbulb"></i>
+        <strong>不確定自己的權益？</strong>
+        建議從下方三張主題卡片開始，點進去看詳細說明，或直接使用勞保局的線上試算工具。
+      </p>
+    </div>
+
+    <div class="money-hero-actions">
+      <a href="#money-topics" class="money-btn-primary">
+        <i class="fas fa-layer-group"></i> 三大主題總覽
+      </a>
+      <a href="#money-tools" class="money-btn-secondary">
+        <i class="fas fa-calculator"></i> 線上試算工具
+      </a>
+    </div>
+  </div>
+
+  <div class="money-hero-visual">
+    <div class="money-hero-stats">
+      <div class="money-stat-item">
+        <div class="money-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-coins"></i>
+        </div>
+        <div class="money-stat-text">
+          <span class="money-stat-number">15 元/月</span>
+          <span class="money-stat-label">農職保農民實繳保費</span>
+          <span class="money-stat-source">勞保局，112/2/10 起</span>
+        </div>
+      </div>
+      <div class="money-stat-item">
+        <div class="money-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-bed-pulse"></i>
+        </div>
+        <div class="money-stat-text">
+          <span class="money-stat-number">680 元/日</span>
+          <span class="money-stat-label">農職保傷病給付最高日額</span>
+          <span class="money-stat-source">勞保局，113/9/1 起</span>
+        </div>
+      </div>
+      <div class="money-stat-item">
+        <div class="money-stat-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <div class="money-stat-text">
+          <span class="money-stat-number">27 品項</span>
+          <span class="money-stat-label">農作物保險可投保品項</span>
+          <span class="money-stat-source">農業部農業金融署</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 01-hero 專用樣式（money- 前綴） === */
+.money-hero{
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;--brand-hover:#0b4a8a;
+  --accent:#f59e0b;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  display:flex;gap:40px;align-items:flex-start;padding:40px;
+  background:linear-gradient(135deg,#e3f2fd 0%,#fff 60%,#e8eaf6 100%);
+  border-radius:var(--radius);margin-bottom:0;
+  border:1px solid rgba(21,101,192,.1);box-sizing:border-box;
+}
+.money-hero *{box-sizing:border-box;}
+.money-hero-content{flex:1.2;}
+.money-hero-visual{flex:.8;position:sticky;top:20px;}
+.money-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(21,101,192,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.money-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-dark);margin:0 0 8px;line-height:1.2;}
+.money-hero-subtitle{font-size:1.05rem;color:var(--brand);font-weight:600;margin:0 0 20px;line-height:1.6;}
+
+.money-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(21,101,192,.08);}
+.money-hero-intro p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 12px;}
+.money-hero-intro p:last-child{margin-bottom:0;}
+.money-hero-list{list-style:none;padding:0;margin:0 0 16px;}
+.money-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;line-height:1.7;padding:4px 0;color:var(--text-primary);}
+.money-hero-list li i{color:var(--brand);margin-top:4px;flex-shrink:0;}
+.money-hero-note{background:rgba(245,158,11,.08);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
+.money-hero-note i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+
+.money-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.money-btn-primary,.money-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
+.money-btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(21,101,192,.3);}
+.money-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.money-btn-secondary{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+.money-btn-secondary:hover{background:var(--brand);color:#fff;}
+
+.money-hero-stats{display:flex;flex-direction:column;gap:16px;}
+.money-stat-item{display:flex;align-items:center;gap:16px;background:#fff;padding:16px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.money-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.money-stat-number{font-size:1.4rem;font-weight:900;display:block;line-height:1;}
+.money-stat-label{font-size:.85rem;color:var(--text-secondary);}
+.money-stat-source{font-size:.72rem;color:#aaa;font-style:italic;display:block;margin-top:3px;}
+
+@media(max-width:768px){
+  .money-hero{flex-direction:column;padding:24px;gap:24px;}
+  .money-hero-title{font-size:1.6rem;}
+  .money-hero-visual{position:static;}
+  .money-hero-stats{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .money-stat-item{flex:1;min-width:140px;padding:12px;}
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href^="#money-"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+});
+</script>

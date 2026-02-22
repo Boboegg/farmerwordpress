@@ -1,0 +1,423 @@
+<!-- =====================================================
+     頁面：農學堂（培力與實踐）
+     URL：/農學堂/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     CSS 前綴：edu-
+     主色系：#5C8607（品牌尊嚴綠）
+     
+     【維護指南】
+     - 所有 ⚠️ 標記處為需替換的佔位內容
+     - 影片卡片：複製 .edu-video-card 區塊即可新增
+     - 工作坊項目：複製 .edu-ws-item 區塊即可新增
+     - 難易度標籤：edu-diff-beginner / edu-diff-intermediate / edu-diff-advanced
+     - 狀態標籤：edu-ws-open（報名中）/ edu-ws-closed（已截止）/ edu-ws-full（額滿）
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== 區塊 1：Hero ========== -->
+<div class="edu-hero">
+  <div class="edu-hero-inner">
+    <div class="edu-hero-badge"><i class="fas fa-graduation-cap"></i> 培力與實踐</div>
+    <h1 class="edu-hero-title">農學堂</h1>
+    <p class="edu-hero-subtitle">⚠️ 在此填入農學堂的一句話定位，例如：從影片微學習到實體工作坊，為雲嘉農友打造務實的職安健康學習資源。</p>
+    <div class="edu-hero-nav">
+      <a href="#edu-videos" class="edu-hero-chip"><i class="fas fa-play-circle"></i> 微學習影片</a>
+      <a href="#edu-workshops" class="edu-hero-chip"><i class="fas fa-chalkboard-user"></i> 工作坊課程</a>
+      <a href="#edu-resources" class="edu-hero-chip"><i class="fas fa-download"></i> 學習資源</a>
+    </div>
+  </div>
+  <div class="edu-hero-deco">
+    <div class="edu-hero-stat">
+      <span class="edu-hero-stat-num">⚠️ 12</span>
+      <span class="edu-hero-stat-label">支微學習影片</span>
+    </div>
+    <div class="edu-hero-stat">
+      <span class="edu-hero-stat-num">⚠️ 4</span>
+      <span class="edu-hero-stat-label">場近期工作坊</span>
+    </div>
+    <div class="edu-hero-stat">
+      <span class="edu-hero-stat-num">⚠️ 200+</span>
+      <span class="edu-hero-stat-label">位累計參與農友</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 2：微學習影片網格 ========== -->
+<div class="edu-sections" id="edu-videos">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon"><i class="fas fa-film"></i></div>
+      <div>
+        <h2>微學習影片</h2>
+        <p>每支 1–5 分鐘，務農空檔就能學。依主題與難易度分類。</p>
+      </div>
+    </div>
+
+    <!-- 篩選列 -->
+    <div class="edu-filter-bar">
+      <button class="edu-filter-btn is-active" data-filter="all">全部</button>
+      <button class="edu-filter-btn" data-filter="heat">熱危害</button>
+      <button class="edu-filter-btn" data-filter="ppe">防護具</button>
+      <button class="edu-filter-btn" data-filter="chemical">農藥安全</button>
+      <button class="edu-filter-btn" data-filter="ergonomic">人因工程</button>
+      <button class="edu-filter-btn" data-filter="insurance">保險權益</button>
+      <!-- ⚠️ 可新增更多篩選按鈕，data-filter 值需與卡片 data-topic 對應 -->
+    </div>
+
+    <div class="edu-sec-body">
+      <div class="edu-video-grid">
+
+        <!-- ===== 影片卡片模板（複製此區塊新增影片）===== -->
+        <div class="edu-video-card" data-topic="heat">
+          <div class="edu-video-thumb">
+            <!-- ⚠️ 替換為影片封面圖 URL -->
+            <img src="https://images.unsplash.com/photo-1625246333195-5519a49d75f0?w=400&q=80" alt="⚠️ 影片標題">
+            <div class="edu-video-play"><i class="fas fa-play"></i></div>
+            <span class="edu-video-duration"><i class="fas fa-clock"></i> ⚠️ 3:20</span>
+          </div>
+          <div class="edu-video-info">
+            <div class="edu-video-tags">
+              <span class="edu-tag-topic">⚠️ 熱危害</span>
+              <span class="edu-tag-diff edu-diff-beginner">入門</span>
+            </div>
+            <h3 class="edu-video-title">⚠️ 影片標題：田間中暑急救三步驟</h3>
+            <p class="edu-video-desc">⚠️ 簡短描述，一到兩行即可。</p>
+            <!-- ⚠️ 替換 href 為 YouTube 或文章連結 -->
+            <a href="#" class="edu-video-link"><i class="fas fa-play-circle"></i> 觀看影片</a>
+          </div>
+        </div>
+        <!-- ===== 影片卡片模板結束 ===== -->
+
+        <!-- 影片 2（示範） -->
+        <div class="edu-video-card" data-topic="ppe">
+          <div class="edu-video-thumb">
+            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&q=80" alt="⚠️ 影片標題">
+            <div class="edu-video-play"><i class="fas fa-play"></i></div>
+            <span class="edu-video-duration"><i class="fas fa-clock"></i> ⚠️ 2:45</span>
+          </div>
+          <div class="edu-video-info">
+            <div class="edu-video-tags">
+              <span class="edu-tag-topic">⚠️ 防護具</span>
+              <span class="edu-tag-diff edu-diff-beginner">入門</span>
+            </div>
+            <h3 class="edu-video-title">⚠️ 噴藥時的正確穿戴方式</h3>
+            <p class="edu-video-desc">⚠️ 簡短描述。</p>
+            <a href="#" class="edu-video-link"><i class="fas fa-play-circle"></i> 觀看影片</a>
+          </div>
+        </div>
+
+        <!-- 影片 3（示範） -->
+        <div class="edu-video-card" data-topic="ergonomic">
+          <div class="edu-video-thumb">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80" alt="⚠️ 影片標題">
+            <div class="edu-video-play"><i class="fas fa-play"></i></div>
+            <span class="edu-video-duration"><i class="fas fa-clock"></i> ⚠️ 4:10</span>
+          </div>
+          <div class="edu-video-info">
+            <div class="edu-video-tags">
+              <span class="edu-tag-topic">⚠️ 人因工程</span>
+              <span class="edu-tag-diff edu-diff-intermediate">進階</span>
+            </div>
+            <h3 class="edu-video-title">⚠️ 腰背保護：正確搬運姿勢</h3>
+            <p class="edu-video-desc">⚠️ 簡短描述。</p>
+            <a href="#" class="edu-video-link"><i class="fas fa-play-circle"></i> 觀看影片</a>
+          </div>
+        </div>
+
+        <!-- ⚠️ 繼續複製上方 .edu-video-card 區塊新增更多影片 -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 3：工作坊 / 線下課程 ========== -->
+<div class="edu-sections" id="edu-workshops">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon"><i class="fas fa-chalkboard-user"></i></div>
+      <div>
+        <h2>工作坊與線下課程</h2>
+        <p>雲嘉地區近期實體課程，歡迎農友免費參加。</p>
+      </div>
+    </div>
+    <div class="edu-sec-body">
+      <div class="edu-ws-list">
+
+        <!-- ===== 工作坊項目模板（複製此區塊新增場次）===== -->
+        <div class="edu-ws-item">
+          <div class="edu-ws-date-box">
+            <span class="edu-ws-month">⚠️ 3月</span>
+            <span class="edu-ws-day">⚠️ 15</span>
+            <span class="edu-ws-weekday">⚠️ 六</span>
+          </div>
+          <div class="edu-ws-content">
+            <div class="edu-ws-meta">
+              <span class="edu-ws-status edu-ws-open"><i class="fas fa-circle"></i> 報名中</span>
+              <span class="edu-ws-category">⚠️ 職安實務</span>
+            </div>
+            <h3 class="edu-ws-title">⚠️ 工作坊標題：農機安全操作實務演練</h3>
+            <div class="edu-ws-details">
+              <span><i class="fas fa-clock"></i> ⚠️ 09:00–12:00</span>
+              <span><i class="fas fa-location-dot"></i> ⚠️ 民雄鄉農會二樓會議室</span>
+              <span><i class="fas fa-users"></i> ⚠️ 名額 30 人</span>
+              <span><i class="fas fa-coins"></i> 免費</span>
+            </div>
+            <p class="edu-ws-desc">⚠️ 工作坊簡介：兩到三行說明課程重點與適合對象。</p>
+          </div>
+          <div class="edu-ws-action">
+            <!-- ⚠️ 替換 href 為 Google Form 或報名連結 -->
+            <a href="#" class="edu-ws-register"><i class="fas fa-pen-to-square"></i> 立即報名</a>
+          </div>
+        </div>
+        <!-- ===== 工作坊項目模板結束 ===== -->
+
+        <!-- 工作坊 2（示範，已截止狀態） -->
+        <div class="edu-ws-item">
+          <div class="edu-ws-date-box">
+            <span class="edu-ws-month">⚠️ 2月</span>
+            <span class="edu-ws-day">⚠️ 22</span>
+            <span class="edu-ws-weekday">⚠️ 六</span>
+          </div>
+          <div class="edu-ws-content">
+            <div class="edu-ws-meta">
+              <span class="edu-ws-status edu-ws-closed"><i class="fas fa-circle"></i> 已結束</span>
+              <span class="edu-ws-category">⚠️ 健康促進</span>
+            </div>
+            <h3 class="edu-ws-title">⚠️ 農友肌骨保健操教學</h3>
+            <div class="edu-ws-details">
+              <span><i class="fas fa-clock"></i> ⚠️ 14:00–16:00</span>
+              <span><i class="fas fa-location-dot"></i> ⚠️ 大林鎮社區活動中心</span>
+              <span><i class="fas fa-users"></i> ⚠️ 參與 25 人</span>
+            </div>
+            <p class="edu-ws-desc">⚠️ 工作坊簡介。</p>
+          </div>
+          <div class="edu-ws-action">
+            <span class="edu-ws-ended">活動已結束</span>
+          </div>
+        </div>
+
+        <!-- ⚠️ 繼續複製 .edu-ws-item 區塊新增更多場次 -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 4：學習資源下載 ========== -->
+<div class="edu-sections" id="edu-resources">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon"><i class="fas fa-folder-open"></i></div>
+      <div>
+        <h2>學習資源下載</h2>
+        <p>圖解懶人包、急救卡片等可下載列印的實用教材。</p>
+      </div>
+    </div>
+    <div class="edu-sec-body">
+      <div class="edu-dl-grid">
+
+        <!-- ===== 下載卡片模板 ===== -->
+        <a href="#" class="edu-dl-card">
+          <!-- ⚠️ 替換 href 為 PDF 檔案 URL -->
+          <div class="edu-dl-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="edu-dl-info">
+            <h4>⚠️ 資源名稱：田間急救紅卡</h4>
+            <span class="edu-dl-meta">⚠️ PDF・2 頁・1.2 MB</span>
+          </div>
+          <div class="edu-dl-arrow"><i class="fas fa-download"></i></div>
+        </a>
+        <!-- ===== 下載卡片模板結束 ===== -->
+
+        <a href="#" class="edu-dl-card">
+          <div class="edu-dl-icon" style="color:#f59e0b;"><i class="fas fa-file-image"></i></div>
+          <div class="edu-dl-info">
+            <h4>⚠️ 個人防護具穿戴圖解</h4>
+            <span class="edu-dl-meta">⚠️ PDF・4 頁・3.5 MB</span>
+          </div>
+          <div class="edu-dl-arrow"><i class="fas fa-download"></i></div>
+        </a>
+
+        <a href="#" class="edu-dl-card">
+          <div class="edu-dl-icon" style="color:#7c3aed;"><i class="fas fa-file-lines"></i></div>
+          <div class="edu-dl-info">
+            <h4>⚠️ 農民保險權益懶人包</h4>
+            <span class="edu-dl-meta">⚠️ PDF・6 頁・2.8 MB</span>
+          </div>
+          <div class="edu-dl-arrow"><i class="fas fa-download"></i></div>
+        </a>
+
+        <!-- ⚠️ 繼續複製 .edu-dl-card 新增更多下載項目 -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 5：交叉連結 ========== -->
+<div class="edu-sections">
+  <div class="edu-sec-card edu-sec-slim">
+    <h3 class="edu-cross-title"><i class="fas fa-link"></i> 延伸探索</h3>
+    <div class="edu-cross-grid">
+      <a href="/prevention/" class="edu-cross-card"><i class="fas fa-helmet-safety"></i><span>職業安全</span><small>防護具型錄與風險評估工具</small></a>
+      <a href="/healthgood/" class="edu-cross-card"><i class="fas fa-heart-pulse"></i><span>健康促進</span><small>人體互動圖與復健運動處方</small></a>
+      <a href="/money/" class="edu-cross-card"><i class="fas fa-shield-cat"></i><span>經濟與保險</span><small>職災保險、農作物保險、補助資源</small></a>
+      <a href="/尊嚴農業倡議/" class="edu-cross-card"><i class="fas fa-bullhorn"></i><span>尊嚴農業倡議</span><small>我們在推動什麼、為何而做</small></a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+/* === 全域變數 === */
+.edu-hero,.edu-sections{
+  --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;--brand-hover:#3d5a04;
+  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.edu-hero *,.edu-sections *{box-sizing:border-box;}
+
+/* === Hero === */
+.edu-hero{display:flex;gap:40px;align-items:center;padding:48px 40px;background:linear-gradient(135deg,var(--brand-light) 0%,#fff 60%,#f0f4e8 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(92,134,7,.12);}
+.edu-hero-inner{flex:1.3;}
+.edu-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.edu-hero-title{font-size:2.4rem;font-weight:900;color:var(--brand-dark);margin:0 0 10px;line-height:1.2;}
+.edu-hero-subtitle{font-size:1.05rem;color:var(--text-secondary);font-weight:500;margin:0 0 24px;line-height:1.7;}
+.edu-hero-nav{display:flex;gap:10px;flex-wrap:wrap;}
+.edu-hero-chip{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;background:#fff;color:var(--brand);border:2px solid rgba(92,134,7,.2);transition:all .3s;}
+.edu-hero-chip:hover{background:var(--brand);color:#fff;border-color:var(--brand);transform:translateY(-2px);}
+.edu-hero-deco{flex:.7;display:flex;flex-direction:column;gap:14px;}
+.edu-hero-stat{background:#fff;padding:18px 24px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:baseline;gap:12px;}
+.edu-hero-stat-num{font-size:1.6rem;font-weight:900;color:var(--brand);}
+.edu-hero-stat-label{font-size:.9rem;color:var(--text-secondary);}
+
+/* === 通用區塊 === */
+.edu-sections{margin-top:24px;}
+.edu-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
+.edu-sec-slim{padding:28px 36px;}
+.edu-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-light);}
+.edu-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.edu-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;}
+.edu-sec-header p{font-size:.95rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+
+/* === 篩選列 === */
+.edu-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #f0f0f0;}
+.edu-filter-btn{padding:8px 18px;border-radius:50px;border:1px solid #e2e8f0;background:#f8fafc;font-size:.88rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
+.edu-filter-btn:hover{border-color:var(--brand);color:var(--brand);}
+.edu-filter-btn.is-active{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+/* === 影片網格 === */
+.edu-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.edu-video-card{border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;transition:all .3s;display:flex;flex-direction:column;}
+.edu-video-card.is-hidden{display:none;}
+.edu-video-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1);}
+.edu-video-thumb{position:relative;height:180px;overflow:hidden;background:#111;}
+.edu-video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;opacity:.9;}
+.edu-video-card:hover .edu-video-thumb img{transform:scale(1.08);opacity:1;}
+.edu-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:52px;height:52px;background:rgba(0,0,0,.6);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0;transition:all .3s;padding-left:3px;}
+.edu-video-card:hover .edu-video-play{opacity:1;transform:translate(-50%,-50%) scale(1);}
+.edu-video-duration{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.75);color:#fff;padding:3px 10px;border-radius:4px;font-size:.75rem;font-weight:600;display:flex;align-items:center;gap:4px;}
+.edu-video-info{padding:18px;flex-grow:1;display:flex;flex-direction:column;}
+.edu-video-tags{display:flex;gap:6px;margin-bottom:10px;}
+.edu-tag-topic{font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:12px;background:var(--brand-light);color:var(--brand);}
+.edu-tag-diff{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;}
+.edu-diff-beginner{background:#dbeafe;color:#1d4ed8;}
+.edu-diff-intermediate{background:#fef3c7;color:#92400e;}
+.edu-diff-advanced{background:#fce7f3;color:#be185d;}
+.edu-video-title{font-size:1.05rem;font-weight:700;margin:0 0 8px;line-height:1.4;color:#222;}
+.edu-video-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.5;margin:0 0 14px;flex-grow:1;}
+.edu-video-link{font-size:.9rem;font-weight:700;color:var(--brand);text-decoration:none;display:flex;align-items:center;gap:6px;transition:.2s;}
+.edu-video-link:hover{color:var(--brand-dark);}
+
+/* === 工作坊清單 === */
+.edu-ws-list{display:flex;flex-direction:column;gap:16px;}
+.edu-ws-item{display:flex;gap:20px;padding:24px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;align-items:flex-start;}
+.edu-ws-item:hover{border-color:var(--brand);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.edu-ws-date-box{min-width:72px;text-align:center;background:var(--brand);color:#fff;border-radius:12px;padding:12px 8px;flex-shrink:0;display:flex;flex-direction:column;line-height:1;}
+.edu-ws-month{font-size:.75rem;font-weight:600;opacity:.8;}
+.edu-ws-day{font-size:1.8rem;font-weight:900;margin:2px 0;}
+.edu-ws-weekday{font-size:.8rem;font-weight:600;opacity:.8;}
+.edu-ws-content{flex-grow:1;}
+.edu-ws-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.edu-ws-status{font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:12px;display:flex;align-items:center;gap:4px;}
+.edu-ws-open{background:#dcfce7;color:#15803d;}
+.edu-ws-open i{font-size:6px;animation:pulse-dot 1.5s infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:.3;}}
+.edu-ws-closed{background:#f3f4f6;color:#9ca3af;}
+.edu-ws-full{background:#fef3c7;color:#92400e;}
+.edu-ws-category{font-size:.8rem;font-weight:600;color:var(--text-secondary);padding:3px 10px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;}
+.edu-ws-title{font-size:1.15rem;font-weight:800;margin:0 0 10px;color:var(--brand-dark);}
+.edu-ws-details{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--text-secondary);margin-bottom:10px;}
+.edu-ws-details span{display:flex;align-items:center;gap:4px;}
+.edu-ws-details i{color:var(--brand);font-size:.8rem;}
+.edu-ws-desc{font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0;}
+.edu-ws-action{flex-shrink:0;align-self:center;}
+.edu-ws-register{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;background:var(--brand);color:#fff;font-weight:700;font-size:.93rem;text-decoration:none;transition:all .3s;box-shadow:0 4px 12px rgba(92,134,7,.25);}
+.edu-ws-register:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.edu-ws-ended{font-size:.88rem;color:#9ca3af;font-weight:600;}
+
+/* === 下載資源 === */
+.edu-dl-grid{display:flex;flex-direction:column;gap:12px;}
+.edu-dl-card{display:flex;align-items:center;gap:16px;padding:18px 24px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.edu-dl-card:hover{border-color:var(--brand);transform:translateX(5px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
+.edu-dl-icon{width:44px;height:44px;border-radius:10px;background:rgba(198,40,40,.08);color:#c62828;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.edu-dl-info{flex-grow:1;}
+.edu-dl-info h4{font-size:1rem;font-weight:700;margin:0 0 2px;color:var(--brand-dark);}
+.edu-dl-meta{font-size:.82rem;color:var(--text-secondary);}
+.edu-dl-arrow{font-size:1rem;color:var(--brand);transition:transform .3s;}
+.edu-dl-card:hover .edu-dl-arrow{transform:translateY(3px);}
+
+/* === 交叉連結 === */
+.edu-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.edu-cross-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.edu-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.edu-cross-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.edu-cross-card i{font-size:24px;color:var(--brand);}
+.edu-cross-card span{font-weight:700;font-size:.95rem;}
+.edu-cross-card small{font-size:.78rem;color:var(--text-secondary);}
+
+/* === RWD === */
+@media(max-width:768px){
+  .edu-hero{flex-direction:column;padding:28px 20px;gap:24px;}
+  .edu-hero-title{font-size:1.8rem;}
+  .edu-hero-deco{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .edu-hero-stat{flex:1;min-width:130px;padding:14px 16px;}
+  .edu-sec-card{padding:20px;}.edu-sec-header{flex-direction:column;gap:10px;}
+  .edu-video-grid{grid-template-columns:1fr;}
+  .edu-ws-item{flex-direction:column;}.edu-ws-date-box{flex-direction:row;min-width:auto;gap:8px;padding:10px 16px;align-items:center;}
+  .edu-ws-day{font-size:1.2rem;margin:0;}.edu-ws-action{align-self:flex-start;}
+  .edu-cross-grid{grid-template-columns:1fr 1fr;}
+  .edu-filter-bar{gap:6px;}.edu-filter-btn{padding:6px 14px;font-size:.82rem;}
+}
+</style>
+
+<!-- ========== JavaScript ========== -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  /* 影片篩選 */
+  var filterBtns=document.querySelectorAll('.edu-filter-btn');
+  var cards=document.querySelectorAll('.edu-video-card');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      filterBtns.forEach(function(b){b.classList.remove('is-active');});
+      btn.classList.add('is-active');
+      var filter=btn.getAttribute('data-filter');
+      cards.forEach(function(card){
+        if(filter==='all'||card.getAttribute('data-topic')===filter){
+          card.classList.remove('is-hidden');
+        }else{
+          card.classList.add('is-hidden');
+        }
+      });
+    });
+  });
+  /* 平滑捲動 */
+  document.querySelectorAll('a[href^="#edu-"]').forEach(function(a){
+    a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
+  });
+});
+</script>

@@ -1,81 +1,27 @@
 <!-- =======================================================
-     首頁內容：身分導航 + 三大核心主題
-     維護說明：此檔為首頁 WordPress 頁面的 HTML 區塊內容
-     依賴項目：Font Awesome 6、global.css
+     模組名稱：三大核心主題導航 (Topic Navigation)
+     放置位置：首頁「身分導航」的正下方
+     功能描述：提供「職業健康、安全裝備、經濟保險」三大支柱的快速入口
+     依賴項目：Font Awesome 6
      ======================================================= -->
 
-<!-- Font Awesome 圖示庫（僅載入一次） -->
+<!-- 1. 載入圖示庫 (若上一個區塊已載入，這行其實可省略，但保留著比較保險) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<!-- =====================================================
-     區塊 1：身分導航與下載模組 (v4.0 分眾版)
-     ===================================================== -->
-<div class="service-portal-wrapper">
-    <div class="service-portal">
-
-        <!-- 標題區 -->
-        <div class="portal-header">
-            <i class="fas fa-users-viewfinder"></i> 請選擇您的身分與需求
-        </div>
-
-        <!-- 身分按鈕網格 -->
-        <div class="portal-grid">
-
-            <!-- (1) 想務農與新手農友 -->
-            <a href="https://fwdignity.com/%e8%b3%87%e6%b7%b1%e8%be%b2%e5%8f%8b/" class="role-btn">
-                <div class="role-icon-box"><i class="fas fa-hat-cowboy-side"></i></div>
-                <span>想務農與新手農友</span>
-                <small class="role-desc">入門資源、風險介紹</small>
-            </a>
-
-            <!-- (2) 青農與創業 -->
-            <!-- [修改指引] 請將 href 改為對應頁面網址 -->
-            <a href="/category/equipment" class="role-btn">
-                <div class="role-icon-box"><i class="fas fa-tractor"></i></div>
-                <span>青農與創業</span>
-                <small class="role-desc">技術與保險</small>
-            </a>
-
-            <!-- (3) 資深農友 -->
-            <a href="https://fwdignity.com/%e6%96%b0%e6%89%8b%e5%8b%99%e8%be%b2/?preview_id=1529&preview_nonce=2605d1b225&preview=true" class="role-btn">
-                <div class="role-icon-box"><i class="fas fa-seedling"></i></div>
-                <span>資深農友</span>
-                <small class="role-desc">慢性病、自身權益</small>
-            </a>
-
-            <!-- (4) 一般民眾 -->
-            <!-- [修改指引] 請將 href 改為對應頁面網址 -->
-            <a href="/category/research" class="role-btn">
-                <div class="role-icon-box"><i class="fas fa-handshake"></i></div>
-                <span>一般民眾</span>
-                <small class="role-desc">尊農倡議與支持</small>
-            </a>
-        </div>
-
-        <!-- 底部下載按鈕 -->
-        <div class="portal-footer">
-            <!-- [修改指引] 請將 href="#" 換成上傳後的 PDF 檔案網址 -->
-            <a href="#" class="report-btn">
-                <i class="fas fa-file-pdf"></i> 研究成果分享
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- =====================================================
-     區塊 2：三大核心主題導航
-     ===================================================== -->
 <div class="topic-nav-wrapper">
-
-    <!-- 區塊標題 -->
+    
+    <!-- 2. 區塊標題 (可選，不需要可刪除) -->
     <div class="topic-header">
         <h2><span class="highlight">守護</span> 您的農業生活</h2>
         <p>從健康到經濟，我們提供全方位的支持</p>
     </div>
 
     <div class="topic-container">
-
-        <!-- 卡片 1：健康促進 -->
+        
+        <!-- =======================================================
+             卡片 1：職業健康 (Health)
+             ======================================================= -->
+        <!-- [修改指引] href 請填入「職業健康」的主分類網址 (建議: /category/health) -->
         <a href="/healthgood" class="topic-card card-health">
             <div class="card-content">
                 <div class="topic-icon">
@@ -83,6 +29,7 @@
                 </div>
                 <div class="topic-text">
                     <h3>健康促進</h3>
+                    <!-- [修改指引] 下方是該分類涵蓋的關鍵字 -->
                     <ul>
                         <li><i class="fas fa-check"></i> 熱危害防治</li>
                         <li><i class="fas fa-check"></i> 肌肉骨骼保養</li>
@@ -95,8 +42,11 @@
             </div>
         </a>
 
-        <!-- 卡片 2：職業安全 -->
-        <a href="/prevention" class="topic-card card-equip">
+        <!-- =======================================================
+             卡片 2：安全裝備 (Equipment)
+             ======================================================= -->
+        <!-- [修改指引] href 請填入「安全裝備」的主分類網址 (建議: /category/equipment) -->
+        <a href="/occupational-safety/" class="topic-card card-equip">
             <div class="card-content">
                 <div class="topic-icon">
                     <i class="fas fa-helmet-safety"></i>
@@ -115,8 +65,11 @@
             </div>
         </a>
 
-        <!-- 卡片 3：經濟保險 -->
-        <a href="/money" class="topic-card card-insurance">
+        <!-- =======================================================
+             卡片 3：經濟保險 (Insurance)
+             ======================================================= -->
+        <!-- [修改指引] href 請填入「經濟保險」的主分類網址 (建議: /category/insurance) -->
+        <a href="/economic-insurance/" class="topic-card card-insurance">
             <div class="card-content">
                 <div class="topic-icon">
                     <i class="fas fa-shield-cat"></i>
@@ -134,127 +87,22 @@
                 <i class="fas fa-arrow-right"></i>
             </div>
         </a>
+
     </div>
 </div>
 
-<!-- =====================================================
-     CSS 樣式表（身分導航 + 三大主題，合併版）
-     ===================================================== -->
+<!-- =======================================================
+     CSS 樣式表
+     ======================================================= -->
 <style>
-/* =====================================================
-   區塊 1：身分導航
-   ===================================================== */
-.service-portal-wrapper {
-    font-family: "Noto Sans TC", sans-serif;
-    width: 100%;
-    margin-bottom: 30px;
-}
-.service-portal {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-}
-.portal-header {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #2c5e2e;
-    border-bottom: 2px solid #2c5e2e;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.portal-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-.role-btn {
-    background: #f8f9fa;
-    border: 1px solid #eee;
-    border-radius: 12px;
-    padding: 15px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    color: #444;
-    position: relative;
-    overflow: hidden;
-}
-.role-icon-box {
-    font-size: 24px;
-    margin-bottom: 8px;
-    color: #5d6d3d;
-    transition: transform 0.3s ease;
-}
-.role-btn span {
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: color 0.3s ease;
-    line-height: 1.2;
-}
-.role-desc {
-    font-size: 0.8rem;
-    color: #888;
-    margin-top: 4px;
-    transition: color 0.3s ease;
-}
-.role-btn:hover {
-    background: #2c5e2e;
-    border-color: #2c5e2e;
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(44, 94, 46, 0.2);
-}
-.role-btn:hover .role-icon-box,
-.role-btn:hover span,
-.role-btn:hover .role-desc {
-    color: #fff !important;
-}
-.role-btn:hover .role-icon-box {
-    transform: scale(1.1);
-}
-.portal-footer { margin-top: auto; }
-.report-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(135deg, #d4a017, #f57f17);
-    color: white !important;
-    text-decoration: none;
-    font-weight: 800;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
-    font-size: 0.95rem;
-}
-.report-btn:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(212, 160, 23, 0.4);
-}
-.report-btn i { animation: bounce 2s infinite; }
-
-/* =====================================================
-   區塊 2：三大核心主題
-   ===================================================== */
+/* --- 外層容器 --- */
 .topic-nav-wrapper {
     width: 100%;
     padding: 20px 0;
     font-family: "Noto Sans TC", sans-serif;
 }
+
+/* --- 標題區樣式 --- */
 .topic-header {
     text-align: center;
     margin-bottom: 30px;
@@ -266,10 +114,11 @@
     margin-bottom: 10px;
 }
 .topic-header .highlight {
-    color: #2c5e2e;
+    color: #2c5e2e; /* 尊嚴綠 */
     position: relative;
     display: inline-block;
 }
+/* 標題下方的裝飾線 */
 .topic-header .highlight::after {
     content: '';
     position: absolute;
@@ -277,19 +126,26 @@
     left: 0;
     width: 100%;
     height: 8px;
-    background: rgba(212, 160, 23, 0.3);
+    background: rgba(212, 160, 23, 0.3); /* 金黃色半透明 */
     z-index: -1;
 }
-.topic-header p { color: #666; font-size: 1rem; }
+.topic-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* --- 卡片容器 (Flex排版：電腦版橫排，手機版直排) --- */
 .topic-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
+
+/* --- 卡片通用樣式 --- */
 .topic-card {
     flex: 1;
-    min-width: 280px;
+    min-width: 280px; /* 卡片最小寬度 */
     background: #fff;
     border-radius: 16px;
     padding: 30px 25px;
@@ -304,6 +160,8 @@
     position: relative;
     overflow: hidden;
 }
+
+/* 頂部彩色線條 (依卡片類型不同) */
 .topic-card::before {
     content: '';
     position: absolute;
@@ -312,14 +170,18 @@
     background: #ccc;
     transition: height 0.3s ease;
 }
-.card-health::before  { background: #e74c3c; }
-.card-equip::before   { background: #f39c12; }
-.card-insurance::before { background: #2c5e2e; }
+.card-health::before { background: #e74c3c; }    /* 健康-紅色 */
+.card-equip::before { background: #f39c12; }     /* 裝備-橘色 */
+.card-insurance::before { background: #2c5e2e; } /* 保險-綠色 */
+
+/* --- 卡片內容區 --- */
 .card-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
+/* 圖示圓圈 */
 .topic-icon {
     width: 60px; height: 60px;
     border-radius: 50%;
@@ -331,16 +193,23 @@
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
-.card-health .topic-icon    { color: #e74c3c; background: #fdedec; }
-.card-equip .topic-icon     { color: #f39c12; background: #fef5e7; }
+.card-health .topic-icon { color: #e74c3c; background: #fdedec; }
+.card-equip .topic-icon { color: #f39c12; background: #fef5e7; }
 .card-insurance .topic-icon { color: #2c5e2e; background: #eafaf1; }
+
+/* 文字內容 */
 .topic-text h3 {
     font-size: 1.4rem;
     font-weight: 700;
     margin: 0 0 15px 0;
     color: #222;
 }
-.topic-text ul { list-style: none; padding: 0; margin: 0; }
+
+.topic-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 .topic-text ul li {
     font-size: 0.95rem;
     color: #666;
@@ -349,7 +218,12 @@
     align-items: center;
     gap: 8px;
 }
-.topic-text ul li i { font-size: 0.8rem; color: #aaa; }
+.topic-text ul li i {
+    font-size: 0.8rem;
+    color: #aaa; /* 打勾符號顏色 */
+}
+
+/* --- 右下角箭頭 --- */
 .card-arrow {
     align-self: flex-end;
     margin-top: 20px;
@@ -362,13 +236,15 @@
     justify-content: center;
     transition: all 0.3s ease;
 }
+
+/* --- 滑鼠懸停特效 (Hover) --- */
 .topic-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.08);
 }
 .topic-card:hover::before {
-    height: 100%;
-    opacity: 0.05;
+    height: 100%; /* 背景色填滿效果 */
+    opacity: 0.05; /* 讓背景色變淡，不影響文字閱讀 */
 }
 .topic-card:hover .card-arrow {
     background: #333;
@@ -376,11 +252,10 @@
     transform: translateX(5px);
 }
 
-/* =====================================================
-   RWD 手機版
-   ===================================================== */
+/* 手機版適應 */
 @media (max-width: 768px) {
-    .portal-grid { grid-template-columns: 1fr 1fr; }
-    .topic-container { flex-direction: column; }
+    .topic-container {
+        flex-direction: column; /* 手機版改為直排 */
+    }
 }
 </style>
