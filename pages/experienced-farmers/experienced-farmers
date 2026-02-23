@@ -1,223 +1,244 @@
+<!-- =====================================================
+     分眾入口：資深農友（Senior）— 樂活包
+     URL：/experienced-farmers/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     CSS 前綴：senior-
+     主色系：#C17F5E（赤陶 Terracotta）
+     ===================================================== -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<style>
-    .senior-page-wrapper {
-        --senior-brand: #C17F5E;
-        --senior-bg: #F9EDE7;
-        --senior-text: #343F1E;
-        --senior-muted: #6b7280;
-        --senior-card: #ffffff;
-        --senior-border: rgba(193, 127, 94, 0.25);
-        font-family: "Noto Sans TC", sans-serif;
-        font-size: 18px;
-        color: var(--senior-text);
-        background: #fff;
-        max-width: 820px;
-        margin: 0 auto;
-        padding: 20px 16px 100px;
-        box-sizing: border-box;
-    }
-
-    .senior-page-wrapper * { box-sizing: border-box; }
-    .senior-page-wrapper h1,
-    .senior-page-wrapper h2,
-    .senior-page-wrapper h3 {
-        line-height: 1.3;
-        margin: 0 0 10px;
-    }
-
-    .senior-hero {
-        background: linear-gradient(135deg, var(--senior-bg) 0%, #fff 100%);
-        border: 1px solid var(--senior-border);
-        border-radius: 20px;
-        padding: 24px 20px;
-        margin-bottom: 18px;
-    }
-
-    .senior-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(193, 127, 94, 0.15);
-        color: #8d4c32;
-        font-size: 14px;
-        font-weight: 700;
-        padding: 6px 14px;
-        border-radius: 999px;
-        margin-bottom: 10px;
-    }
-
-    .senior-title { font-size: 2rem; font-weight: 900; color: #5b2a18; }
-    .senior-subtitle { margin: 0; color: var(--senior-muted); line-height: 1.8; }
-
-    .senior-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin: 14px 0 18px;
-    }
-
-    .senior-card {
-        display: block;
-        text-decoration: none;
-        background: var(--senior-card);
-        border: 1px solid #ececec;
-        border-left: 6px solid var(--senior-brand);
-        border-radius: 14px;
-        padding: 14px;
-        color: var(--senior-text);
-    }
-
-    .senior-card-title {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 1.1rem;
-        font-weight: 800;
-        margin-bottom: 6px;
-    }
-
-    .senior-card-desc {
-        margin: 0;
-        color: var(--senior-muted);
-        line-height: 1.8;
-    }
-
-    .senior-actions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .senior-btn {
-        min-height: 48px;
-        border-radius: 12px;
-        border: 1px solid var(--senior-border);
-        background: #fff;
-        color: #8d4c32;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .senior-btn-primary {
-        background: var(--senior-brand);
-        color: #fff;
-        border-color: var(--senior-brand);
-    }
-
-    .senior-note {
-        background: #fff;
-        border: 1px solid #ececec;
-        border-radius: 14px;
-        padding: 14px;
-        margin-top: 12px;
-    }
-
-    .senior-note p { margin: 6px 0; line-height: 1.8; }
-
-    .senior-bottom-nav {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 20;
-        background: #fff;
-        border-top: 1px solid #e5e7eb;
-        box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
-    }
-
-    .senior-bottom-wrap {
-        max-width: 820px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        padding: 8px 12px;
-    }
-
-    .senior-bottom-link {
-        min-height: 56px;
-        border-radius: 12px;
-        text-decoration: none;
-        color: #8d4c32;
-        font-size: 0.95rem;
-        font-weight: 700;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        background: var(--senior-bg);
-        border: 1px solid var(--senior-border);
-    }
-
-    @media (max-width: 640px) {
-        .senior-actions { grid-template-columns: 1fr; }
-        .senior-title { font-size: 1.7rem; }
-    }
-</style>
-
 <div class="senior-page-wrapper">
-    <section class="senior-hero">
-        <div class="senior-badge"><i class="fa-solid fa-seedling"></i> 資深農友專區</div>
-        <h1 class="senior-title">照顧健康，也守住權益</h1>
-        <p class="senior-subtitle">
-            這一頁整合資深農友最常用的醫療、保險與安全資源，建議先看「健康促進」與「職業安全」，再使用下方試算工具掌握補助與保障。
-        </p>
-    </section>
 
-    <section class="senior-grid">
-        <a class="senior-card" href="/healthgood/">
-            <div class="senior-card-title"><i class="fa-solid fa-heart-pulse"></i> 健康促進總覽</div>
-            <p class="senior-card-desc">查看熱傷害、農藥安全、肌肉骨骼與心理健康四大主題，快速找到目前最需要的照護資訊。</p>
-        </a>
-
-        <a class="senior-card" href="/healthgood/subpage-msd/">
-            <div class="senior-card-title"><i class="fa-solid fa-bone"></i> 肌肉骨骼保健</div>
-            <p class="senior-card-desc">針對肩、腰、膝常見不適提供暖身伸展、作業調整與就醫建議，適合長期重複性農務。</p>
-        </a>
-
-        <a class="senior-card" href="/occupational-safety/personal-protective-equipment/">
-            <div class="senior-card-title"><i class="fa-solid fa-shield-heart"></i> 個人防護具（PPE）</div>
-            <p class="senior-card-desc">依作業情境確認口罩、手套與防護衣等級，降低曝曬與接觸風險。</p>
-        </a>
-
-        <a class="senior-card" href="/economic-insurance/farmer-worker-retirement-calculator/">
-            <div class="senior-card-title"><i class="fa-solid fa-calculator"></i> 退休與保險試算</div>
-            <p class="senior-card-desc">輸入年齡與年資，快速試算退休金、職災保險與相關保障。</p>
-        </a>
-
-        <a class="senior-card" href="/research-result/podcast/">
-            <div class="senior-card-title"><i class="fa-solid fa-podcast"></i> 影音與案例學習</div>
-            <p class="senior-card-desc">用短影音與 Podcast 了解實際案例，學會更省力、低風險的工作方式。</p>
-        </a>
-    </section>
-
-    <section class="senior-actions">
-        <a class="senior-btn senior-btn-primary" href="/healthgood/subpage-mental/"><i class="fa-solid fa-phone"></i> 心理支持與求助</a>
-        <a class="senior-btn" href="/research-result/download-zone/"><i class="fa-solid fa-file-arrow-down"></i> 下載照護資源</a>
-    </section>
-
-    <section class="senior-note">
-        <h2>常用聯絡資訊</h2>
-        <p><strong>緊急救護：</strong>119　<strong>安心專線：</strong>1925　<strong>保護專線：</strong>113</p>
-        <p>若出現持續頭暈、胸悶、呼吸不順或情緒低落超過兩週，請優先就醫或尋求專業協助。</p>
-    </section>
-</div>
-
-<nav class="senior-bottom-nav" aria-label="資深農友快捷導覽">
-    <div class="senior-bottom-wrap">
-        <a class="senior-bottom-link" href="/healthgood/"><i class="fa-solid fa-map-location-dot"></i><span>找醫師</span></a>
-        <a class="senior-bottom-link" href="/economic-insurance/farmer-worker-retirement-calculator/"><i class="fa-solid fa-calculator"></i><span>算津貼</span></a>
-        <a class="senior-bottom-link" href="/research-result/podcast/"><i class="fa-solid fa-circle-play"></i><span>看影片</span></a>
+  <!-- ========== ① Hero ========== -->
+  <section class="senior-hero">
+    <div class="senior-hero-badge"><i class="fas fa-leaf"></i> 資深農友</div>
+    <h1 class="senior-hero-title">腰痛不是老了，<br>是工作在傷害你。</h1>
+    <p class="senior-hero-tagline">你的身體為這片田付出一輩子，該讓我們來幫你照顧。</p>
+    <div class="senior-hero-intro">
+      <p>陳宗延醫師走進嘉義農田，驚訝地發現許多農友的身體早已留下長年勞動的痕跡——慢性下背痛、膝蓋磨損、肩頸僵硬——卻從沒有人告訴他們「這是職業傷害，不只是老了」。你務農幾十年積累的痛，不必一個人扛。認識你的權益、學會保護自己的身體，現在開始還來得及。</p>
     </div>
+  </section>
+
+  <!-- ========== ② 數據震撼區 ========== -->
+  <section class="senior-stats">
+    <h2 class="senior-section-title"><i class="fas fa-chart-pie"></i> 數字裡的真實故事</h2>
+    <div class="senior-stats-grid">
+      <div class="senior-stat-card">
+        <div class="senior-stat-number">56<span class="senior-stat-unit">%</span></div>
+        <p class="senior-stat-label">農業致死者中 ≥55 歲的占比</p>
+        <p class="senior-stat-source">CDC/NIOSH AgFF, 2024</p>
+      </div>
+      <div class="senior-stat-card">
+        <div class="senior-stat-number">67.3<span class="senior-stat-unit">歲</span></div>
+        <p class="senior-stat-label">農保被保險人平均年齡——這代表你仍在勞動的年紀</p>
+        <p class="senior-stat-source">農保統計</p>
+      </div>
+      <div class="senior-stat-card">
+        <div class="senior-stat-number">曾女士<span class="senior-stat-unit"></span></div>
+        <p class="senior-stat-label">民雄農友，長年搬運後確認職傷給付</p>
+        <p class="senior-stat-source">計畫個案紀錄</p>
+      </div>
+    </div>
+    <p class="senior-stats-note">曾女士務農超過 40 年，因長期搬運重物導致肩旋轉肌袖損傷。在計畫團隊協助下，她成功申請到農民職業災害傷病給付——這是她原本不知道自己擁有的權利。跟她一樣情況的農友，可能就是你。</p>
+  </section>
+
+  <!-- ========== ③ 場景化導航 ========== -->
+  <section class="senior-scenarios">
+    <h2 class="senior-section-title"><i class="fas fa-hand-holding-medical"></i> 你可能正需要的</h2>
+
+    <div class="senior-scenario-card" style="--accent:#c62828;">
+      <div class="senior-scenario-icon"><i class="fas fa-bone"></i></div>
+      <div class="senior-scenario-body">
+        <h3>這些痛你有嗎？它們比你想的更嚴重</h3>
+        <p>ILO 數據顯示肌肉骨骼疾患是全球農民最普遍的職業傷害。彎腰採收造成下背痛、長期握鋤傷害手腕、蹲跪除草磨損膝蓋──這些不是「老化」，是職業損傷。我們整理了伸展、休息策略和動作改善建議，讓你每天少痛一點。</p>
+        <a href="/healthgood/subpage-msd/" class="senior-scenario-link">看肌肉骨骼保健 →</a>
+      </div>
+    </div>
+
+    <div class="senior-scenario-card" style="--accent:#2e7d32;">
+      <div class="senior-scenario-icon"><i class="fas fa-coins"></i></div>
+      <div class="senior-scenario-body">
+        <h3>你可能少領了！退休金方案比一比</h3>
+        <p>2021 年上路的農民退休儲金讓符合資格的農友可以額外提繳退休金，政府也會相對提撥。但很多資深農友不知道自己能領多少、怎麼領。輸入年齡和年資，3 分鐘就能算出不同方案的差異。</p>
+        <a href="/economic-insurance/farmer-worker-retirement-calculator/" class="senior-scenario-link">退休金試算 →</a>
+      </div>
+    </div>
+
+    <div class="senior-scenario-card" style="--accent:#1565c0;">
+      <div class="senior-scenario-icon"><i class="fas fa-mask-face"></i></div>
+      <div class="senior-scenario-body">
+        <h3>噴藥時你有戴對嗎？防護具不只是口罩</h3>
+        <p>全球每年約 38.5 萬人因農藥暴露死亡（WHO, 2024）。資深農友長年 DIY 噴藥，累積暴露風險遠高於新手。你知道 N95 口罩和活性碳口罩的差別嗎？正確的防護具搭配，能降低超過 98% 的有害物質吸入。</p>
+        <a href="/occupational-safety/personal-protective-equipment/" class="senior-scenario-link">了解正確防護具 →</a>
+      </div>
+    </div>
+
+    <div class="senior-scenario-card" style="--accent:#7b1fa2;">
+      <div class="senior-scenario-icon"><i class="fas fa-comments"></i></div>
+      <div class="senior-scenario-body">
+        <h3>找個人聊聊：農民的心理壓力也需要出口</h3>
+        <p>JAMA Psychiatry (2020) 研究指出農民的壓力來源多元——天災、收入不穩定、身體病痛、社會孤立。你不必一個人扛。安心專線 1925 全天候服務，計畫團隊也提供轉介資源。</p>
+        <a href="/healthgood/subpage-mental/" class="senior-scenario-link">心理健康資源 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ④ 認識尊嚴農業 ========== -->
+  <section class="senior-about">
+    <h2 class="senior-section-title"><i class="fas fa-hand-holding-heart"></i> 認識尊嚴農業計畫</h2>
+    <p class="senior-about-desc">
+      「尊嚴農業」由<strong>國立中正大學</strong>與<strong>臺大醫院雲林分院</strong>共同推動，以嘉義縣民雄鄉為實踐場域。我們的團隊走進農田、走進農會、走入農友的生活裡，進行職業傷害盛行率調查與農機操作風險評估——一步一步理解你的處境，才能真正幫到你。
+    </p>
+    <div class="senior-about-pillars">
+      <div class="senior-pillar"><i class="fas fa-microscope"></i><span>基礎調查</span></div>
+      <div class="senior-pillar"><i class="fas fa-scale-balanced"></i><span>制度研究</span></div>
+      <div class="senior-pillar"><i class="fas fa-chalkboard-user"></i><span>健康教育</span></div>
+      <div class="senior-pillar"><i class="fas fa-bullhorn"></i><span>社會倡議</span></div>
+    </div>
+    <a href="/dignity-farming-initiative/" class="senior-about-link"><i class="fas fa-arrow-right"></i> 了解更多倡議內容</a>
+  </section>
+
+  <!-- ========== ⑤ 快速行動 ========== -->
+  <section class="senior-cta">
+    <a class="senior-cta-btn senior-cta-primary" href="/healthgood/subpage-msd/">
+      <i class="fas fa-hand-holding-medical"></i> 肌肉骨骼保健
+    </a>
+    <a class="senior-cta-btn senior-cta-secondary" href="/economic-insurance/farmer-worker-retirement-calculator/">
+      <i class="fas fa-calculator"></i> 退休金試算
+    </a>
+  </section>
+
+  <!-- ========== ⑥ 緊急資源 ========== -->
+  <section class="senior-emergency">
+    <h2><i class="fas fa-phone-volume"></i> 緊急時刻</h2>
+    <div class="senior-emergency-grid">
+      <div class="senior-emergency-item"><strong>緊急救護</strong><a href="tel:119">119</a></div>
+      <div class="senior-emergency-item"><strong>安心專線</strong><a href="tel:1925">1925</a></div>
+      <div class="senior-emergency-item"><strong>保護專線</strong><a href="tel:113">113</a></div>
+    </div>
+    <p class="senior-emergency-note">身體不舒服，不要硬撐。先休息、先求助、先打電話。你的健康比農事更重要。</p>
+  </section>
+
+  <!-- ========== 更多探索 ========== -->
+  <section class="senior-explore">
+    <h2 class="senior-section-title"><i class="fas fa-link"></i> 探索更多</h2>
+    <div class="senior-explore-grid">
+      <a href="/healthgood/" class="senior-explore-card"><i class="fas fa-heart-pulse"></i><span>健康促進</span></a>
+      <a href="/occupational-safety/" class="senior-explore-card"><i class="fas fa-helmet-safety"></i><span>職業安全</span></a>
+      <a href="/economic-insurance/" class="senior-explore-card"><i class="fas fa-shield-cat"></i><span>經濟保險</span></a>
+      <a href="/thenews/" class="senior-explore-card"><i class="fas fa-newspaper"></i><span>最新消息</span></a>
+    </div>
+  </section>
+
+</div><!-- /senior-page-wrapper -->
+
+<!-- ========== 底部導覽 ========== -->
+<nav class="senior-bottom-nav" aria-label="資深農友的快捷導覽">
+  <div class="senior-bottom-wrap">
+    <a class="senior-bottom-link" href="/healthgood/subpage-msd/"><i class="fas fa-bone"></i><span>筋骨保健</span></a>
+    <a class="senior-bottom-link" href="/economic-insurance/farmer-worker-retirement-calculator/"><i class="fas fa-calculator"></i><span>算退休金</span></a>
+    <a class="senior-bottom-link" href="/healthgood/subpage-mental/"><i class="fas fa-brain"></i><span>找人聊</span></a>
+  </div>
 </nav>
+
+<!-- ========== CSS ========== -->
+<style>
+/* === 資深農友（Senior）=== */
+.senior-page-wrapper{
+  --brand:#C17F5E;--brand-dark:#9e5f3e;--brand-bg:#F9EDE7;
+  --text-primary:#3d2b1f;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
+}
+.senior-page-wrapper *{box-sizing:border-box;}
+
+/* Hero */
+.senior-hero{background:linear-gradient(135deg,var(--brand-bg) 0%,#fff 50%,#f0d5c5 100%);border-radius:var(--radius);padding:36px 24px;margin-bottom:20px;border:1px solid rgba(193,127,94,.2);}
+.senior-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(193,127,94,.18);color:#8b5e3c;font-size:.85rem;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:14px;}
+.senior-hero-title{font-size:1.9rem;font-weight:900;color:#6b3f28;margin:0 0 12px;line-height:1.25;}
+.senior-hero-tagline{font-size:1.05rem;font-weight:600;color:var(--brand-dark);margin:0 0 16px;line-height:1.6;font-family:"Lora","Noto Sans TC",serif;font-style:italic;}
+.senior-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:18px;border:1px solid rgba(193,127,94,.1);}
+.senior-hero-intro p{margin:0;line-height:1.8;font-size:.95rem;color:var(--text-secondary);}
+
+/* 數據區 */
+.senior-section-title{font-size:1.25rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.senior-stats{margin-bottom:24px;}
+.senior-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px;}
+.senior-stat-card{background:#fff;border-radius:14px;padding:18px 14px;text-align:center;border:1px solid #ececec;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+.senior-stat-number{font-size:2rem;font-weight:900;color:var(--brand-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
+.senior-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
+.senior-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
+.senior-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
+.senior-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(193,127,94,.08);border-radius:10px;border-left:4px solid var(--brand);}
+
+/* 情境卡 */
+.senior-scenarios{margin-bottom:24px;}
+.senior-scenario-card{display:flex;gap:14px;background:#fff;border-radius:14px;padding:18px;margin-bottom:12px;border:1px solid #ececec;border-left:5px solid var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.03);transition:all .3s;}
+.senior-scenario-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.07);}
+.senior-scenario-icon{width:48px;height:48px;border-radius:12px;background:rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--accent);flex-shrink:0;}
+.senior-scenario-body{flex:1;min-width:0;}
+.senior-scenario-body h3{font-size:1.05rem;font-weight:800;margin:0 0 8px;color:var(--text-primary);}
+.senior-scenario-body p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
+.senior-scenario-link{font-size:.9rem;font-weight:700;color:var(--brand-dark);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.senior-scenario-link:hover{text-decoration:underline;}
+
+/* 計畫簡介 */
+.senior-about{background:#fff;border-radius:var(--radius);padding:24px;margin-bottom:20px;border:1px solid #ececec;}
+.senior-about-desc{font-size:.93rem;line-height:1.8;color:var(--text-secondary);margin:0 0 16px;}
+.senior-about-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+.senior-pillar{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--brand-bg);border-radius:12px;font-size:.82rem;font-weight:700;color:var(--brand-dark);}
+.senior-pillar i{font-size:1.3rem;color:var(--brand);}
+.senior-about-link{font-size:.9rem;font-weight:700;color:var(--brand-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}.senior-about-link:hover{text-decoration:underline;}
+
+/* CTA */
+.senior-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.senior-cta-btn{min-height:56px;border-radius:14px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;}
+.senior-cta-primary{background:var(--brand);color:#fff;border:2px solid var(--brand);box-shadow:0 4px 12px rgba(193,127,94,.3);}
+.senior-cta-primary:hover{background:var(--brand-dark);border-color:var(--brand-dark);transform:translateY(-2px);}
+.senior-cta-secondary{background:#fff;color:var(--brand-dark);border:2px solid rgba(193,127,94,.3);}
+.senior-cta-secondary:hover{border-color:var(--brand);background:var(--brand-bg);}
+
+/* 緊急資源 */
+.senior-emergency{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:20px;border:1px solid #ececec;}
+.senior-emergency h2{font-size:1.1rem;font-weight:800;color:#c62828;margin:0 0 12px;display:flex;align-items:center;gap:8px;}
+.senior-emergency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
+.senior-emergency-item{text-align:center;padding:14px 8px;background:#fef2f2;border-radius:10px;}
+.senior-emergency-item strong{display:block;font-size:.82rem;color:#991b1b;margin-bottom:4px;}
+.senior-emergency-item a{font-size:1.4rem;font-weight:900;color:#c62828;text-decoration:none;}
+.senior-emergency-note{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* 探索更多 */
+.senior-explore{margin-bottom:20px;}
+.senior-explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.senior-explore-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;background:#fff;border-radius:12px;border:1px solid #ececec;text-decoration:none;color:var(--text-primary);font-size:.85rem;font-weight:700;transition:all .3s;}
+.senior-explore-card i{font-size:1.3rem;color:var(--brand);}
+.senior-explore-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
+
+/* 底部導覽 */
+.senior-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -2px 12px rgba(0,0,0,.06);}
+.senior-bottom-wrap{max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px 12px;}
+.senior-bottom-link{min-height:56px;border-radius:12px;text-decoration:none;color:#8b5e3c;font-size:1rem;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:var(--brand-bg);border:1px solid rgba(193,127,94,.28);}
+
+/* Mobile-First 加強：資深農友需要更大字、更大按鈕 */
+.senior-page-wrapper{font-size:18px;}
+.senior-cta-btn{min-height:56px;font-size:1rem;}
+.senior-bottom-link{min-height:60px;font-size:1rem;}
+.senior-emergency-item a{font-size:1.5rem;}
+
+@media(max-width:640px){
+  .senior-hero{padding:24px 18px;}.senior-hero-title{font-size:1.6rem;}
+  .senior-stats-grid{grid-template-columns:1fr;}.senior-stat-card{display:flex;align-items:center;gap:12px;text-align:left;padding:14px;}
+  .senior-stat-number{font-size:1.5rem;margin-bottom:0;white-space:nowrap;}
+  .senior-scenario-card{flex-direction:column;}
+  .senior-about-pillars{grid-template-columns:repeat(2,1fr);}
+  .senior-cta{grid-template-columns:1fr;}
+  .senior-explore-grid{grid-template-columns:repeat(2,1fr);}
+  .senior-emergency-grid{grid-template-columns:1fr;}
+  .senior-cta-btn{min-height:60px;font-size:1.05rem;}
+  .senior-bottom-link{min-height:64px;font-size:1.05rem;}
+}
+</style>

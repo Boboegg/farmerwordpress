@@ -19,6 +19,13 @@
       點擊每一層可以看到農業上的實際例子。
       實務上不一定每層都做得到，但越往上層做，保護效果越好。
     </p>
+    <p class="prev-niosh-data">
+      <i class="fas fa-chart-bar" style="color:#3b82f6;"></i>
+      <strong>為什麼這很重要？</strong>根據 CDC/NIOSH（2024）統計，2021–2022 年美國農業共有 <strong>21,020 件</strong>需缺勤的非致死傷害事件，
+      其中 <strong>29% 為跌倒</strong>所致，是非致死傷害的首要原因；致死事故方面，交通運輸事故（含拖拉機翻覆）為首要死因。兩類事故皆普遍存在低報現象。
+      越高層級的控制措施，越能從源頭避免這些傷害。
+      <span class="prev-niosh-source-inline">資料來源：CDC/NIOSH. (2024). Agriculture Worker Safety and Health.</span>
+    </p>
   </div>
 
   <div class="prev-hierarchy-body">
@@ -118,7 +125,11 @@
 .prev-tool-header-n p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
 
 .prev-niosh-explain{background:#f9fafb;border-radius:10px;padding:16px 20px;margin-bottom:20px;border:1px solid #f0f0f0;}
-.prev-niosh-explain p{margin:0;font-size:.95rem;line-height:1.7;color:var(--text-primary);}
+.prev-niosh-explain p{margin:0 0 12px;font-size:.95rem;line-height:1.7;color:var(--text-primary);}
+.prev-niosh-explain p:last-child{margin-bottom:0;}
+.prev-niosh-data{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.1);}
+.prev-niosh-data i{margin-top:3px;flex-shrink:0;}
+.prev-niosh-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
 
 .prev-hierarchy-body{display:flex;flex-direction:column;gap:8px;}
 .prev-h-level{border-radius:10px;overflow:hidden;}

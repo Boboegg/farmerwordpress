@@ -20,6 +20,12 @@
       每張卡片列出該類危害在農業中常見的具體風險。
       如果您發現自己的工作中有好幾項都中了，建議搭配上方的「快速風險評估」做一次完整的自我檢查。
     </p>
+    <p class="prev-hazard-data-note">
+      <i class="fas fa-database" style="color:#3b82f6;"></i>
+      美國 OSHA 將農業危害分為 12 大類，涵蓋動物感染、穀倉危害、機械、高溫、墬落、肌肉骨骼、噪音、農藥、呼吸系統、車輛等。
+      本區將其整合為台灣農業現場最相關的四大類別。
+      <span class="prev-hazard-source-inline">資料來源：OSHA. Agricultural Operations: Hazards & Controls. U.S. DOL.；WHO. (2022). Pesticide Residues in Food.；CDC/NIOSH. (2024). Agriculture Worker Safety and Health.</span>
+    </p>
   </div>
 
   <div class="prev-hazard-grid-h">
@@ -31,7 +37,7 @@
       <ul>
         <li><strong>噪音：</strong>割草機、鏈鋸、耕耘機的聲音超過 85 分貝，長期下來聽力會永久受損</li>
         <li><strong>振動：</strong>長期操作鏈鋸等振動工具，手指會變白、發麻（白指症）</li>
-        <li><strong>高處墜落：</strong>爬梯子採果、修剪時最容易發生</li>
+        <li><strong>跌倒與墜落：</strong>爬梯子採果、修剪或在濕滑地面行走時最容易發生。CDC/NIOSH 統計農業非致死傷害中 <strong>29% 為跌倒所致</strong>，是首要傷害原因</li>
         <li><strong>農機意外：</strong>被捲入旋轉零件、翻車</li>
         <li><strong>紫外線：</strong>長期日曬增加皮膚癌風險</li>
         <li><strong>高溫：</strong>中暑、熱衰竭，尤其夏天午間</li>
@@ -43,7 +49,7 @@
       <h4>化學性危害</h4>
       <p class="prev-hazard-sub">跟「農藥、化學藥劑」有關的傷害</p>
       <ul>
-        <li><strong>農藥暴露：</strong>藥液沾到皮膚會被吸收，吸到氣體更危險</li>
+        <li><strong>農藥暴露：</strong>藥液沾到皮膚會被吸收，吸到氣體更危險。WHO 指出全球使用超過 <strong>1,000 種農藥</strong>，慢性暴露可能導致癌症與生殖系統影響</li>
         <li><strong>肥料粉塵：</strong>撒肥料時粉塵刺激呼吸道和眼睛</li>
         <li><strong>有機溶劑：</strong>清洗農具時接觸到的油類和溶劑</li>
         <li><strong>REI 未遵守：</strong>噴完藥太早進入田間，殘留藥氣濃度還很高（REI = 再進入間隔時間）</li>
@@ -68,7 +74,7 @@
       <h4>人因性危害</h4>
       <p class="prev-hazard-sub">跟「姿勢、負重、重複動作」有關的傷害</p>
       <ul>
-        <li><strong>重複性動作：</strong>採收、修剪時同一個動作做幾百次，手腕和手指關節容易發炎</li>
+        <li><strong>重複性動作：</strong>採收、修剪時同一個動作做幾百次，手腕和手指關節容易發炎（腱鞘炎、腕隧道症候群）</li>
         <li><strong>搬運重物：</strong>超過 15 公斤的東西經常搬，腰椎和膝蓋會慢慢受損</li>
         <li><strong>不良姿勢：</strong>長時間蹲著、彎腰、仰頭，脊椎和關節承受持續壓力</li>
         <li><strong>振動白指症：</strong>長期操作振動手工具累積的手部損傷</li>
@@ -78,8 +84,12 @@
   </div>
 
   <div class="prev-hazard-source-h">
-    參考來源：OSHA. <em>Agricultural Operations: Hazards &amp; Controls</em>. U.S. Department of Labor.
+    參考來源：① OSHA. <em>Agricultural Operations: Hazards &amp; Controls</em>. U.S. Department of Labor.
     <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">原文連結</a>
+    ② WHO. (2022). <em>Pesticide Residues in Food</em>.
+    <a href="https://www.who.int/news-room/fact-sheets/detail/pesticide-residues-in-food" target="_blank" rel="noopener">原文連結</a>
+    ③ CDC/NIOSH. (2024). <em>Agriculture Worker Safety and Health</em>.
+    <a href="https://www.cdc.gov/niosh/agriculture/about/index.html" target="_blank" rel="noopener">原文連結</a>
   </div>
 </div>
 
@@ -98,8 +108,11 @@
 .prev-tool-header-h p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
 
 .prev-hazard-explain{background:#f9fafb;border-radius:10px;padding:14px 18px;margin-bottom:20px;border:1px solid #f0f0f0;}
-.prev-hazard-explain p{margin:0;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:8px;}
+.prev-hazard-explain p{margin:0 0 12px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:8px;}
+.prev-hazard-explain p:last-child{margin-bottom:0;}
 .prev-hazard-explain p i{margin-top:3px;flex-shrink:0;}
+.prev-hazard-data-note{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;border:1px solid rgba(59,130,246,.1);flex-wrap:wrap;}
+.prev-hazard-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
 
 .prev-hazard-grid-h{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:16px;}
 .prev-hazard-card-h{border-radius:12px;padding:24px;border-left:5px solid currentColor;}

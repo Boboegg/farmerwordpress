@@ -24,6 +24,13 @@
       這些風險在露天環境下可能還好，但在溫室裡會被放大好幾倍。
       了解溫室特有的危害，才能做對防護。
     </p>
+    <p class="gh-hero-data">
+      <i class="fas fa-chart-line" style="color:#3b82f6;"></i>
+      <strong>數據佐證：</strong>美國 OSHA 將「高溫」、「農藥」、「呼吸系統危害」列為農業重要危害類別，
+      而溫室環境同時具備以上三者。CDC/NIOSH（2024）統計顯示農業致死率為全產業平均的 <strong>5 倍</strong>（每 10 萬 FTE 18.6 人），
+      其中密閉空間作業的風險尤需重視。
+      <span style="display:block;font-size:.78rem;color:#9ca3af;font-style:italic;margin-top:4px;">資料來源：OSHA Agricultural Operations; CDC/NIOSH (2024) Agriculture Worker Safety and Health.</span>
+    </p>
   </div>
   <a href="/occupational-safety/" class="gh-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
 </div>
@@ -43,7 +50,7 @@
         <span class="gh-stat-big">+5~15°C</span>
         <span>溫室內部比外部高</span>
       </div>
-      <p>外面 30°C 時溫室裡可能超過 40°C。加上高濕度（常超過 80%），人體散熱效率急劇下降，是<strong>熱衰竭和中暑</strong>的高風險場景。</p>
+      <p>外面 30°C 時溫室裡可能超過 40°C。加上高濕度（常超過 80%），人體散熱效率急劇下降，是<strong>熱衰竭和中暑</strong>的高風險場景。美國 OSHA「高氣溫作業」指引指出，WBGT（濕球黑球溫度）超過 28°C 即進入警戒區，溫室內極易越過此閾值。</p>
       <div class="gh-hazard-tip">
         <i class="fas fa-lightbulb"></i> 夏天中午（11:00-15:00）是最危險的時段，盡量避開。
       </div>
@@ -56,7 +63,7 @@
         <span class="gh-stat-big">2~4 hr</span>
         <span>施藥後最少通風時間</span>
       </div>
-      <p>溫室施藥後如果沒有充分通風就進去，農藥蒸氣的濃度會比露天高很多。一定要遵守農藥標示的<strong>再進入間隔時間（REI）</strong>。</p>
+      <p>溫室施藥後如果沒有充分通風就進去，農藥蒸氣的濃度會比露天高很多。WHO 指出全球使用超過 <strong>1,000 種農藥</strong>，直接接觸者面臨最高健康風險；ILO 估計每年約 <strong>38.5 萬例</strong>急性農藥中毒。密閉溫室更讓暴露濃度倍增。一定要遵守農藥標示的<strong>再進入間隔時間（REI）</strong>。</p>
       <div class="gh-hazard-tip">
         <i class="fas fa-lightbulb"></i> 進入前先打開通風 2-4 小時，聞不到味道不代表安全。
       </div>
@@ -69,7 +76,7 @@
         <span class="gh-stat-big">> 80%</span>
         <span>溫室常見相對濕度</span>
       </div>
-      <p>高溫高濕環境是<strong>黴菌繁殖</strong>的最佳條件。長期吸入黴菌孢子會引起呼吸道不適。溫室中蚊蟲密度也比戶外高。</p>
+      <p>高溫高濕環境是<strong>黴菌繁殖</strong>的最佳條件。NIOSH 研究指出，長期接觸黴菌孢子與有機粉塵的農業工作者，罹患<strong>職業性哮喘與過敏性肺炎</strong>的風險顯著提高。溫室中蚊蟲密度也比戶外高。</p>
       <div class="gh-hazard-tip">
         <i class="fas fa-lightbulb"></i> 如果經常在溫室裡咳嗽或鼻子不舒服，要注意黴菌問題。
       </div>
@@ -82,7 +89,7 @@
         <span class="gh-stat-big">空間窄</span>
         <span>作業姿勢更受限</span>
       </div>
-      <p>溫室內走道窄、高度低，經常要<strong>蹲著、彎腰、側身</strong>進行移苗和採收。膝蓋和腰椎承受的壓力比露天作業更大。</p>
+      <p>溫室內走道窄、高度低，經常要<strong>蹲著、彎腰、側身</strong>進行移苗和採收。膝蓋和腰椎承受的壓力比露天作業更大。CDC/NIOSH 統計顯示農業傷害中 <strong>29% 為跌倒</strong>所致，溫室濕滑地面更加劇滑倒風險。</p>
       <div class="gh-hazard-tip">
         <i class="fas fa-lightbulb"></i> 軌道式搬運機可以大幅減少溫室內的搬運需求。
       </div>
@@ -94,7 +101,9 @@
 <div class="gh-controls-section">
   <div class="gh-section-header">
     <h2><i class="fas fa-sliders"></i> 環境控制建議 — 讓溫室更安全</h2>
-    <p>在穿戴防護具之前，先把溫室的環境條件改善好，效果更好也更持久。</p>
+    <p>在穿戴防護具之前，先把溫室的環境條件改善好，效果更好也更持久。
+      根據 NIOSH「安全控制層級」，<strong>工程控制（第三層）</strong>的保護效果遠優於僅依賴個人防護具（第五層）。
+    </p>
   </div>
 
   <div class="gh-controls-grid">
@@ -233,8 +242,12 @@
   <div class="gh-ref-list">
     <p>勞動部職業安全衛生署。高氣溫戶外作業勞工熱危害預防指引。<a href="https://www.osha.gov.tw" target="_blank" rel="noopener">https://www.osha.gov.tw</a></p>
     <p>勞動部勞動法令查詢系統。職業安全衛生設施規則。<a href="https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021" target="_blank" rel="noopener">https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021</a></p>
+    <p>CDC/NIOSH. (2024). <em>Agricultural safety</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/agriculture/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/agriculture/about/index.html</a></p>
     <p>NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
     <p>OSHA. (n.d.). <em>Agricultural operations: Hazards &amp; controls</em>. United States Department of Labor. <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">https://www.osha.gov/agricultural-operations/hazards</a></p>
+    <p>WHO. (2022). <em>Pesticide residues in food</em>. World Health Organization. <a href="https://www.who.int/news-room/fact-sheets/detail/pesticide-residues-in-food" target="_blank" rel="noopener">https://www.who.int/news-room/fact-sheets/detail/pesticide-residues-in-food</a></p>
+    <p>ILO. (2023). <em>Employment in agriculture</em>. International Labour Organization. <a href="https://www.ilo.org/topics/agriculture-and-food-services" target="_blank" rel="noopener">https://www.ilo.org/topics/agriculture-and-food-services</a></p>
+    <p>OSHA. (n.d.). <em>Heat — Overview</em>. United States Department of Labor. <a href="https://www.osha.gov/heat" target="_blank" rel="noopener">https://www.osha.gov/heat</a></p>
   </div>
 </div>
 
@@ -253,6 +266,8 @@
 .gh-hero-subtitle{font-size:1.1rem;color:#f59e0b;font-weight:600;margin:0 0 18px;}
 .gh-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(245,158,11,.08);}
 .gh-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.gh-hero-intro p:last-child{margin-bottom:0;}
+.gh-hero-data{background:rgba(59,130,246,.05);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.12);}
+.gh-hero-data i{margin-top:3px;flex-shrink:0;}
 .gh-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
 .gh-back-link:hover{text-decoration:underline;}
 

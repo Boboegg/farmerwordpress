@@ -29,6 +29,14 @@
       下面會詳細說明怎麼申請。
     </p>
   </div>
+  <div class="mach-hero-data">
+    <p><i class="fas fa-chart-bar"></i> <strong>為什麼機械化這麼重要？</strong></p>
+    <ul>
+      <li>CDC/NIOSH 數據：農業致死率達 <strong>18.6/10 萬 FTE</strong>，是全行業平均的 <strong>5 倍</strong></li>
+      <li>BLS 統計：<strong>拖拉機翻覆</strong>（tractor overturns）長期位居農業致死事故首位</li>
+      <li>NIOSH 安全控制層級：以機械代替人力屬於「工程控制」（第 3 層），保護效果遠優於依賴個人防護具（第 5 層）</li>
+    </ul>
+  </div>
   <a href="/occupational-safety/" class="mach-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
 </div>
 
@@ -41,7 +49,7 @@
       <div class="mach-cat-icon"><i class="fas fa-mountain-sun"></i></div>
       <div>
         <h2>整地作業</h2>
-        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工翻土的問題：</strong>全身性體力消耗大，長時間彎腰嚴重壓迫腰椎，是農民下背痛的主因之一。</p>
+        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工翻土的問題：</strong>全身性體力消耗大，長時間彎腰嚴重壓迫腰椎，是農民下背痛的主因之一。NIOSH 研究指出「過度勞累」（overexertion）是農業非致命性傷害的首要原因，其中背部傷害佔比最高。</p>
       </div>
     </div>
     <div class="mach-cat-body">
@@ -72,7 +80,7 @@
       <div class="mach-cat-icon"><i class="fas fa-seedling"></i></div>
       <div>
         <h2>田間管理</h2>
-        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工除草和噴藥的問題：</strong>除草需長時間蹲姿傷膝蓋；背負式噴藥壓迫肩頸，農藥還會直接沾到身上。</p>
+        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工除草和噴藥的問題：</strong>除草需長時間蹲姿傷膝蓋；背負式噴藥壓迫肩頸，農藥還會直接沾到身上。ILO 估計全球每年約 <strong>38.5 萬例急性農藥中毒</strong>，背負式噴灑使農民直接暴露於高濃度藥液中。</p>
       </div>
     </div>
     <div class="mach-cat-body">
@@ -119,7 +127,7 @@
       <div class="mach-cat-icon"><i class="fas fa-apple-whole"></i></div>
       <div>
         <h2>採收作業</h2>
-        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工採收的問題：</strong>爬梯子摘果有墜落風險（農業職災主因之一）；長時間仰頭伸手造成頸椎和肩關節傷害。</p>
+        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工採收的問題：</strong>爬梯子摘果有墜落風險（農業職災主因之一）；長時間仰頭伸手造成頸椎和肩關節傷害。CDC/NIOSH 統計農業傷害中約 <strong>29% 為跌倒所致</strong>，高處墜落致死更是農業職災的主要死因之一。</p>
       </div>
     </div>
     <div class="mach-cat-body">
@@ -150,7 +158,7 @@
       <div class="mach-cat-icon"><i class="fas fa-dolly"></i></div>
       <div>
         <h2>搬運作業</h2>
-        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工搬運的問題：</strong>經常搬超過 15 公斤的重物，腰椎和膝蓋會逐年退化，嚴重會導致椎間盤突出。</p>
+        <p class="mach-cat-pain"><i class="fas fa-user-injured"></i> <strong>人工搬運的問題：</strong>經常搬超過 15 公斤的重物，腰椎和膝蓋會逐年退化，嚴重會導致椎間盤突出。NIOSH 修訂版人工抬舉方程式建議單次抬舉上限為 <strong>23 公斤</strong>，反覆搬運更應大幅降低，超過即有累積性傷害風險。</p>
       </div>
     </div>
     <div class="mach-cat-body">
@@ -254,7 +262,7 @@
 <!-- ========== 安全提醒 ========== -->
 <div class="mach-safety-section">
   <h2><i class="fas fa-shield-halved"></i> 農機安全使用提醒</h2>
-  <p>農機雖然省力，但操作不當也會造成嚴重傷害。以下是基本的安全原則：</p>
+  <p>農機雖然省力，但操作不當也會造成嚴重傷害。根據 OSHA 統計，農機具操作事故（如<strong>捲入旋轉部件、拖拉機翻覆</strong>）是農業致命傷害的主要類型之一，多數可透過正確操作和維護預防。以下是基本的安全原則：</p>
   <div class="mach-safety-grid">
     <div class="mach-safety-item">
       <i class="fas fa-book-open"></i>
@@ -296,6 +304,11 @@
     <p>農業部農糧署（年度更新）。農機補助專區。<a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=3314" target="_blank" rel="noopener">https://www.afa.gov.tw/cht/index.php?code=list&ids=3314</a></p>
     <p>NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
     <p>OSHA. (n.d.). <em>Agricultural operations: Hazards &amp; controls</em>. United States Department of Labor. <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">https://www.osha.gov/agricultural-operations/hazards</a></p>
+    <p>CDC/NIOSH. (2024). <em>Agricultural safety</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/agricultural-safety/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/agricultural-safety/about/index.html</a></p>
+    <p>Bureau of Labor Statistics. (2024). <em>Census of Fatal Occupational Injuries (CFOI)</em>. U.S. Department of Labor. <a href="https://www.bls.gov/iif/fatal-injuries.htm" target="_blank" rel="noopener">https://www.bls.gov/iif/fatal-injuries.htm</a></p>
+    <p>ILO. (2023). <em>Safety and health in agriculture</em>. International Labour Organization. <a href="https://www.ilo.org/global/topics/safety-and-health-at-work/industries-sectors/WCMS_219866/lang--en/index.htm" target="_blank" rel="noopener">https://www.ilo.org/global/topics/safety-and-health-at-work/industries-sectors/WCMS_219866/lang--en/index.htm</a></p>
+    <p>NIOSH. (2021). <em>Revised Lifting Equation (RLE)</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/lifting/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/lifting/about/index.html</a></p>
+    <p>WHO. (2022). <em>Pesticide safety</em>. World Health Organization. <a href="https://www.who.int/news-room/questions-and-answers/item/chemical-safety-pesticides" target="_blank" rel="noopener">https://www.who.int/news-room/questions-and-answers/item/chemical-safety-pesticides</a></p>
   </div>
 </div>
 
@@ -316,6 +329,10 @@
 .mach-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.mach-hero-intro p:last-child{margin-bottom:0;}
 .mach-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
 .mach-back-link:hover{text-decoration:underline;}
+.mach-hero-data{background:rgba(21,101,192,.06);border-left:4px solid #1565c0;border-radius:8px;padding:16px 20px;margin-top:16px;font-size:.93rem;line-height:1.8;}
+.mach-hero-data p{margin:0 0 8px;font-weight:700;color:#1565c0;}
+.mach-hero-data ul{margin:0;padding:0 0 0 20px;}
+.mach-hero-data li{margin-bottom:4px;color:var(--text-secondary);}
 
 /* Category Cards */
 .mach-categories{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}

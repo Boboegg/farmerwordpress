@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>農勞職災權益試算神器 完整版v1</title>
+  <title>農勞職災權益試算神器 v2.0</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -87,8 +87,13 @@
       農民、勞工職災權益試算
     </h1>
     <p class="text-slate-600 text-lg">
-      依農民職業災害保險與勞工職業災害保險規定，協助試算傷病給付及就醫津貼，並顯示相關條文摘要。（「本試算工具僅為教學及自我評估用途，實際給付金額仍以勞保局／農保單位審核結果與最新法規為準。」）
+      依農民職業災害保險與勞工職業災害保險規定，協助試算傷病給付及就醫津貼，並顯示相關條文摘要。
     </p>
+    <div class="mt-4 inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 px-4 py-2 rounded-lg text-sm">
+      <i data-lucide="alert-triangle" class="w-4 h-4 flex-shrink-0"></i>
+      <span>本試算工具僅供教學及自我評估參考，不構成法律意見或給付保證。實際金額以勞保局／農業部審核結果與最新法規為準。</span>
+    </div>
+    <p class="text-slate-400 text-xs mt-2">工具版本 v2.0 ｜ 法規資料更新：2025 年 11 月 ｜ 投保金額如有調整，請以主管機關最新公告為準</p>
   </header>
 
   <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -113,15 +118,15 @@
         </div>
 
         <div class="space-y-2">
-          <label class="text-sm font-bold text-gray-600">月投保薪資 (新台幣)</label>
+          <label id="salary-label" class="text-sm font-bold text-gray-600">月投保金額 (新台幣)</label>
           <div class="relative">
             <input type="number" id="input-salary" class="w-full p-4 rounded-xl border-2 text-xl focus:outline-none transition-all" value="20400" oninput="updateCalculation()">
             <span id="salary-hint" class="absolute right-4 top-4 text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
               農民為固定投保金額
             </span>
           </div>
-          <p class="text-xs text-gray-500 leading-relaxed">
-            備註：勞工職災保險實務上以事故發生前 6 個月平均月投保薪資計算，這裡以您輸入的金額作為簡化試算依據。
+          <p id="salary-note" class="text-xs text-gray-500 leading-relaxed">
+            備註：農民職災保險月投保金額由主管機關統一公告，被保險人不可自行選擇。
           </p>
         </div>
       </div>
@@ -218,9 +223,14 @@
             </div>
           </div>
 
-          <p class="mt-6 text-xs text-gray-500 leading-relaxed">
-            本工具依農民職業災害保險與勞工職業災害保險公開說明整理，僅供民眾了解制度與金額概念之用，
-            不構成法律意見或個案保證。實際是否符合職業災害認定、給付期間與金額，仍以最新法規與勞保局／農業部審查結果為準。
+          <p class="mt-6 text-xs text-gray-500 leading-relaxed border-t border-gray-100 pt-4">
+            <strong>⚠ 重要提醒：</strong>本工具依公開法規資料整理，僅供民眾了解制度與金額概念之用，不構成法律意見或個案保證。
+            農民給付按投保金額 70% 計算（試辦辦法§16）；勞工前 2 月 100%、第 3 月起 70%（勞職保法§42）。
+            實際是否符合職業災害認定、給付期間與金額，仍以最新法規與勞保局／農業部審查結果為準。
+            如有疑義，請洽詢
+            <a href="https://www.bli.gov.tw/" target="_blank" rel="noopener" class="text-blue-600 underline">勞動部勞工保險局</a>、
+            <a href="https://www.moa.gov.tw/" target="_blank" rel="noopener" class="text-blue-600 underline">農業部</a>
+            或各地職業傷病防治中心。
           </p>
         </div>
 
@@ -237,6 +247,56 @@
       </div>
 
       <!-- 日後可以加：更多教學、申請流程卡片區 -->
+    </div>
+  </div>
+
+  <!-- ========== 法規來源與免責聲明 ========== -->
+  <div class="mt-10 bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8">
+    <h3 class="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+      <i data-lucide="scale" class="w-5 h-5 text-blue-600"></i> 法規依據與資料來源
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-600 leading-relaxed">
+      <div>
+        <h4 class="font-bold text-green-700 mb-2">🌾 農民職業災害保險</h4>
+        <ul class="space-y-1 list-disc list-inside text-xs">
+          <li>《農民職業災害保險試辦辦法》第 16 條 — 傷病給付按投保金額 <strong>70%</strong> 發給</li>
+          <li>《農民職業災害保險試辦辦法》第 17 條 — 給付期間最長 2 年</li>
+          <li>《農民職業災害保險試辦辦法》第 22 條 — 就醫津貼（門診/住院）</li>
+          <li>《農民職業災害保險職業傷病審查辦法》第 9 條、第 9 條之 1 — 職業病認定</li>
+        </ul>
+        <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=M0090053" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1 mt-2 text-xs text-blue-600 hover:underline">
+          <i data-lucide="external-link" class="w-3 h-3"></i> 全國法規資料庫：農民職業災害保險試辦辦法
+        </a>
+      </div>
+      <div>
+        <h4 class="font-bold text-blue-700 mb-2">👷 勞工職業災害保險</h4>
+        <ul class="space-y-1 list-disc list-inside text-xs">
+          <li>《勞工職業災害保險及保護法》第 42 條 — 前 2 月 <strong>100%</strong>、第 3 月起 <strong>70%</strong></li>
+          <li>《勞工職業災害保險及保護法》第 39～41 條 — 醫療給付（實物給付）</li>
+          <li>《勞工職業災害保險職業傷病審查準則》— 職業傷病認定</li>
+        </ul>
+        <a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0060076" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-1 mt-2 text-xs text-blue-600 hover:underline">
+          <i data-lucide="external-link" class="w-3 h-3"></i> 全國法規資料庫：勞工職業災害保險及保護法
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+      <p class="text-sm font-bold text-amber-800 mb-2 flex items-center gap-2">
+        <i data-lucide="alert-triangle" class="w-4 h-4"></i> 免責聲明
+      </p>
+      <p class="text-xs text-amber-700 leading-relaxed">
+        本試算工具由「農業尊嚴：共建雲嘉農業工作者職業健康社會安全網」計畫團隊製作，僅供教學及自我評估參考用途，不構成任何法律意見、行政指導或給付保證。
+        所有數據、法條引用及計算邏輯係依公開法規資料整理，可能因法規修訂、投保金額調整或個案差異而與實際結果不同。
+        農民月投保金額（目前適用 NT$20,400）如經主管機關調整，本工具可能尚未同步更新。
+        實際給付資格、金額及職業傷病認定結果，請以
+        <a href="https://www.bli.gov.tw/" target="_blank" rel="noopener" class="font-bold underline">勞動部勞工保險局</a>
+        或
+        <a href="https://www.moa.gov.tw/" target="_blank" rel="noopener" class="font-bold underline">農業部</a>
+        最新公告及審查結果為準。如有個案疑義，建議洽詢各地勞保局服務處、農會、職業傷病防治中心或法律扶助基金會。
+      </p>
     </div>
   </div>
 </div>
@@ -438,6 +498,10 @@
                    'bg-white text-blue-900 border-blue-200 focus:border-blue-500'
       }`;
     document.getElementById('salary-hint').style.display = isFarmer ? 'block' : 'none';
+    document.getElementById('salary-label').innerText = isFarmer ? '月投保金額 (新台幣)' : '月投保薪資 (新台幣)';
+    document.getElementById('salary-note').innerText = isFarmer
+      ? '備註：農民職災保險月投保金額由主管機關統一公告，被保險人不可自行選擇。'
+      : '備註：勞工職災保險實務上以事故發生前 6 個月平均月投保薪資計算，這裡以您輸入的金額作為簡化試算依據。';
 
     // 結果卡顏色與徽章
     document.getElementById('result-card').style.borderColor = isFarmer ? '#10b981' : '#3b82f6';
@@ -530,16 +594,24 @@
 
     document.getElementById('display-rest-days').innerText = days;
 
-    // 傷病給付：第4日起，前60日100%，其後70%（最長2年）——農職保第16、17條 / 勞工職災保規定的簡化版
+    // 傷病給付計算（農民與勞工公式不同）
     const payableDays = Math.max(0, days - 3);
     const daily = salary / 30;
     let injuryBenefit = 0;
-    if (payableDays <= 57) {
-      injuryBenefit = payableDays * daily;
+
+    if (state.identity === 'farmer') {
+      // 農民職災保險：自第4日起，一律按投保金額70%發給，最長2年
+      // 法源：農民職業災害保險試辦辦法第16條
+      injuryBenefit = Math.round(payableDays * daily * 0.7);
     } else {
-      injuryBenefit = (57 * daily) + ((payableDays - 57) * daily * 0.7);
+      // 勞工職災保險：前2個月(60個可領日)按100%，第3個月起按70%，最長2年
+      // 法源：勞工職業災害保險及保護法第42條
+      if (payableDays <= 60) {
+        injuryBenefit = Math.round(payableDays * daily);
+      } else {
+        injuryBenefit = Math.round((60 * daily) + ((payableDays - 60) * daily * 0.7));
+      }
     }
-    injuryBenefit = Math.round(injuryBenefit);
 
     // 醫療給付 / 就醫津貼
     let medicalBenefit = 0;
@@ -564,28 +636,55 @@
   function updateFormula(salary, days, payableDays, daily, injuryBenefit, medicalBenefit) {
     const content = document.getElementById('formula-content');
     const identityText = state.identity === 'farmer' ? '農民職業災害保險' : '勞工職業災害保險';
+    const isFarmer = state.identity === 'farmer';
+
+    const salaryLabel = isFarmer ? '月投保金額' : '月投保薪資';
+    const ratioText = isFarmer
+      ? '給付比例：自第 4 日起，<strong>一律按投保金額 70%</strong> 發給，最長 2 年。<br><span class="text-gray-500">法源：農民職業災害保險試辦辦法第 16 條</span>'
+      : '給付比例：前 2 個月（60 個可領日）按平均月投保薪資 <strong>100%</strong> 發給；第 3 個月起按 <strong>70%</strong> 發給，最長 2 年。<br><span class="text-gray-500">法源：勞工職業災害保險及保護法第 42 條</span>';
+
+    const formulaDetail = isFarmer
+      ? `${payableDays} 日 × ${Math.floor(daily)} 元 × 70% ≒ <span class="font-bold">${injuryBenefit.toLocaleString()}</span> 元`
+      : (payableDays <= 60
+        ? `${payableDays} 日 × ${Math.floor(daily)} 元 × 100% ≒ <span class="font-bold">${injuryBenefit.toLocaleString()}</span> 元`
+        : `(60 日 × ${Math.floor(daily)} 元 × 100%) + (${payableDays - 60} 日 × ${Math.floor(daily)} 元 × 70%) ≒ <span class="font-bold">${injuryBenefit.toLocaleString()}</span> 元`);
 
     content.innerHTML = `
       <div class="space-y-4">
         <p class="text-blue-400 font-bold">【傷病給付試算邏輯】（${identityText}）</p>
         <ul class="space-y-2 list-decimal list-inside">
-          <li>等待期：前 3 日不給付，自第 4 日起始得請領，故可領天數 = 休養天數 ${days} - 3 = <span class="font-bold">${payableDays}</span> 日。</li>
-          <li>投保日額：以您輸入的月投保薪資簡化試算，日額 ≒ ${salary.toLocaleString()} ÷ 30 ≒ <span class="font-bold">${Math.floor(daily)}</span> 元。</li>
-          <li>給付比例：自第 4 日起前 60 日按 100% 給付，第 61 日起按 70% 給付，最長 2 年。本工具僅就您輸入的休養天數區間估算可能金額。</li>
-          <li class="bg-gray-800 p-2 rounded">試算結果：傷病給付約 <span class="font-bold">${injuryBenefit.toLocaleString()}</span> 元。</li>
+          <li>等待期：前 3 日不給付，自第 4 日起始得請領，故可領天數 = 休養天數 ${days} − 3 = <span class="font-bold">${payableDays}</span> 日。</li>
+          <li>投保日額：${salaryLabel} ${salary.toLocaleString()} ÷ 30 ≒ <span class="font-bold">${Math.floor(daily)}</span> 元。</li>
+          <li>${ratioText}</li>
+          <li class="bg-gray-800 p-2 rounded">計算式：${formulaDetail}</li>
         </ul>
 
         <p class="text-blue-400 font-bold mt-4">【醫療給付 / 就醫津貼說明】</p>
         <p>
-          ${state.identity === 'farmer'
-            ? '農民職業災害保險依辦法第16、17、22條，自第4日發給傷病給付並按核定日數給予就醫津貼。這裡以門診/住院日數近似保險給付日數，僅做金額概念示意。'
-            : '勞工職災保險之醫療給付依勞工職業災害保險及保護法與相關子法，以實物給付方式減免健保部分負擔，本工具不逐項模擬醫療費計算。'}
+          ${isFarmer
+            ? '農民職災保險就醫津貼依試辦辦法第 22 條，自不能工作第 4 日起，依核定傷病給付日數，按門診 100 元/日、住院 1,200 元/日發給。本工具以您自填的門診/住院天數近似估算，實際金額以核定給付日數為準。'
+            : '勞工職災保險之醫療給付依《勞工職業災害保險及保護法》第 39～41 條，以實物給付方式由保險支付醫療費用，勞工免繳健保部分負擔。本工具不逐項計算醫療費。'}
         </p>
 
-        <p class="text-xs text-gray-400 mt-4">
-          ※ 條文來源：農民部分主要依《農民職業災害保險試辦辦法》第16條、第17條、第22條；勞工部分依《勞工職業災害保險及保護法》與勞保局「傷病給付」相關規定整理。
-          本工具為教學用試算，實際申請資格及金額仍以主管機關審查結果及最新公告為準。
-        </p>
+        <p class="text-yellow-400 font-bold mt-4">【法規來源】</p>
+        <ul class="space-y-1 text-xs text-gray-400 list-disc list-inside">
+          <li>農民傷病給付：《農民職業災害保險試辦辦法》第 16 條（給付比例 70%）、第 17 條（給付期間）</li>
+          <li>農民就醫津貼：《農民職業災害保險試辦辦法》第 22 條（門診/住院津貼）</li>
+          <li>農民職業病認定：《農民職業災害保險職業傷病審查辦法》第 9 條、第 9 條之 1</li>
+          <li>勞工傷病給付：《勞工職業災害保險及保護法》第 42 條（前2月100%、第3月起70%）</li>
+          <li>勞工醫療給付：《勞工職業災害保險及保護法》第 39～41 條（實物給付）</li>
+          <li>勞工職業病認定：《勞工職業災害保險職業傷病審查準則》</li>
+        </ul>
+
+        <div class="mt-4 p-3 border border-red-800 rounded-lg">
+          <p class="text-red-400 font-bold text-sm mb-1">⚠ 免責聲明</p>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            本試算工具僅供教學及自我評估參考，不構成法律意見或給付保證。所有數據、法條引用及計算邏輯係依公開法規資料整理，可能因法規修訂而有差異。
+            農民月投保金額（目前適用 NT$${FARMER_SALARY.toLocaleString()}）如經主管機關調整，請以最新公告為準。
+            實際給付資格、金額及職業傷病認定結果，請以勞動部勞工保險局或農業部最新公告及審查結果為準。
+            如有個案疑義，建議洽詢各地勞保局服務處、農會或職業傷病防治中心。
+          </p>
+        </div>
       </div>
     `;
   }

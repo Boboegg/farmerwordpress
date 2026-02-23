@@ -1,0 +1,1348 @@
+<!-- =====================================================
+     職業安全主頁（完整組裝版）
+     組裝自：01～07 區塊檔案
+     貼入方式：WordPress 頁面 → 程式碼編輯器 → 全部貼入
+     ===================================================== -->
+
+<!-- =====================================================
+     區塊 01：Hero
+     ===================================================== -->
+
+<!-- 字型與圖示（整頁只需載入一次，放在第一塊即可） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="prev-hero">
+  <div class="prev-hero-content">
+    <div class="prev-hero-badge"><i class="fas fa-helmet-safety"></i> 職業安全專區</div>
+    <h1 class="prev-hero-title">農業職業安全</h1>
+    <p class="prev-hero-subtitle">從裝備到制度，降低田間每一個風險因子</p>
+
+    <div class="prev-hero-intro">
+      <p>
+        務農是一份辛苦的工作，每天面對日曬、農藥、重物搬運和機具操作，
+        身體承受的風險其實比許多行業都高。但很多傷害是可以預防的。
+      </p>
+      <p>
+        這個專區整理了<strong>實用的防護知識和工具</strong>，幫助您：
+      </p>
+      <ul class="prev-hero-list">
+        <li><i class="fas fa-check-circle"></i> 了解田間常見的四大危害（物理、化學、生物、人因）</li>
+        <li><i class="fas fa-check-circle"></i> 用「快速風險評估」檢查自己的作業條件安不安全</li>
+        <li><i class="fas fa-check-circle"></i> 查看該穿戴哪些防護具、哪些農機可以減輕負擔</li>
+        <li><i class="fas fa-check-circle"></i> 了解政府的農機補助，省錢又省力</li>
+      </ul>
+      <p class="prev-hero-note">
+        <i class="fas fa-lightbulb"></i>
+        <strong>不知道從哪裡開始？</strong>
+        建議先做下方的「快速風險評估」，只要勾選幾個選項，馬上就能了解您目前的風險等級和改善方向。
+      </p>
+    </div>
+
+    <div class="prev-hero-actions">
+      <a href="#prev-risk-tools" class="prev-btn-primary">
+        <i class="fas fa-shield-halved"></i> 快速風險評估
+      </a>
+      <a href="#prev-tabs-section" class="prev-btn-secondary">
+        <i class="fas fa-boxes-stacked"></i> 瀏覽防護裝備
+      </a>
+    </div>
+  </div>
+
+  <div class="prev-hero-visual">
+    <div class="prev-hero-stats">
+      <div class="prev-stat-item">
+        <div class="prev-stat-icon" style="background:rgba(239,68,68,.1);color:#ef4444;">
+          <i class="fas fa-skull-crossbones"></i>
+        </div>
+        <div class="prev-stat-text">
+          <span class="prev-stat-number">5×</span>
+          <span class="prev-stat-label">致死率為全產業平均 5 倍</span>
+          <span class="prev-stat-source">CDC/NIOSH, 2024：農業致死率 18.6 / 10 萬 FTE</span>
+        </div>
+      </div>
+      <div class="prev-stat-item">
+        <div class="prev-stat-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+          <i class="fas fa-person-cane"></i>
+        </div>
+        <div class="prev-stat-text">
+          <span class="prev-stat-number">56%</span>
+          <span class="prev-stat-label">農業死亡發生在 55 歲以上</span>
+          <span class="prev-stat-source">CDC/NIOSH, 2024</span>
+        </div>
+      </div>
+      <div class="prev-stat-item">
+        <div class="prev-stat-icon" style="background:rgba(16,185,129,.1);color:#10b981;">
+          <i class="fas fa-arrow-up-from-bracket"></i>
+        </div>
+        <div class="prev-stat-text">
+          <span class="prev-stat-number">5</span>
+          <span class="prev-stat-label">層安全控制策略</span>
+          <span class="prev-stat-source">NIOSH Hierarchy of Controls</span>
+        </div>
+      </div>
+      <div class="prev-stat-item">
+        <div class="prev-stat-icon" style="background:rgba(59,130,246,.1);color:#3b82f6;">
+          <i class="fas fa-vest"></i>
+        </div>
+        <div class="prev-stat-text">
+          <span class="prev-stat-number">10+</span>
+          <span class="prev-stat-label">種防護具指南</span>
+        </div>
+      </div>
+      <div class="prev-stat-item">
+        <div class="prev-stat-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+          <i class="fas fa-tractor"></i>
+        </div>
+        <div class="prev-stat-text">
+          <span class="prev-stat-number">8</span>
+          <span class="prev-stat-label">類省力農機</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 01-hero 專用樣式 === */
+.prev-hero{
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  display:flex;gap:40px;align-items:flex-start;padding:40px;
+  background:linear-gradient(135deg,#f0f5e8 0%,#fff 60%,#e8f0da 100%);
+  border-radius:var(--radius);margin-bottom:0;
+  border:1px solid rgba(92,134,7,.1);box-sizing:border-box;
+}
+.prev-hero *{box-sizing:border-box;}
+.prev-hero-content{flex:1.2;}
+.prev-hero-visual{flex:.8;position:sticky;top:20px;}
+.prev-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.prev-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-dark);margin:0 0 8px;line-height:1.2;}
+.prev-hero-subtitle{font-size:1.15rem;color:var(--brand);font-weight:600;margin:0 0 20px;}
+
+/* 導讀段落 */
+.prev-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(92,134,7,.08);}
+.prev-hero-intro p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 12px;}
+.prev-hero-intro p:last-child{margin-bottom:0;}
+.prev-hero-list{list-style:none;padding:0;margin:0 0 16px;}
+.prev-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;line-height:1.7;padding:4px 0;color:var(--text-primary);}
+.prev-hero-list li i{color:var(--brand);margin-top:4px;flex-shrink:0;}
+.prev-hero-note{background:rgba(212,160,23,.08);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
+.prev-hero-note i{color:#D4A017;margin-top:3px;flex-shrink:0;}
+
+/* CTA */
+.prev-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.prev-btn-primary,.prev-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
+.prev-btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(92,134,7,.3);}
+.prev-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.prev-btn-secondary{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+.prev-btn-secondary:hover{background:var(--brand);color:#fff;}
+
+/* Stats */
+.prev-hero-stats{display:flex;flex-direction:column;gap:16px;}
+.prev-stat-item{display:flex;align-items:center;gap:16px;background:#fff;padding:16px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.prev-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.prev-stat-number{font-size:1.5rem;font-weight:900;display:block;line-height:1;}
+.prev-stat-label{font-size:.85rem;color:var(--text-secondary);}
+.prev-stat-source{font-size:.72rem;color:#9ca3af;display:block;margin-top:2px;font-weight:400;}
+
+/* 平滑捲動 */
+@media(max-width:768px){
+  .prev-hero{flex-direction:column;padding:24px;gap:24px;}
+  .prev-hero-title{font-size:1.6rem;}
+  .prev-hero-visual{position:static;}
+  .prev-hero-stats{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .prev-stat-item{flex:1;min-width:140px;padding:12px;}
+}
+</style>
+
+<script>
+/* 平滑捲動（放在第一塊，全頁共用） */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+});
+</script>
+
+
+<!-- =====================================================
+     區塊 02：Tab 切換 + 省力農機 Grid Cards
+     ===================================================== -->
+
+<div class="prev-tabs-section" id="prev-tabs-section">
+
+  <!-- 區塊導讀 -->
+  <div class="prev-section-header">
+    <h2><i class="fas fa-layer-group"></i> 防護裝備型錄</h2>
+    <p class="prev-section-desc">
+      保護自己的方法有兩種：一種是<strong>用機器取代危險動作</strong>（主動降載），
+      另一種是<strong>穿戴防護裝備</strong>（被動防禦）。
+      美國 NIOSH 研究指出，「用機器代替人力」屬於控制層級的
+      <strong>「消除」與「取代」</strong>，效果優於僅依賴個人防護具（第五層）。
+      根據 CDC/NIOSH 統計，2021–2022 年農業傷害中 <strong>29% 為跌倒所致</strong>，
+      省力農機具能從源頭消除這類風險。
+      請點選下方標籤切換查看。
+    </p>
+    <p class="prev-section-source">資料來源：CDC/NIOSH. (2024). <em>Agriculture Worker Safety and Health</em>.</p>
+  </div>
+
+  <!-- Tab 按鈕 -->
+  <div class="prev-tab-btns">
+    <button class="prev-tab-btn is-active" data-tab="tab-machine">
+      <i class="fas fa-gears"></i><span>主動降載・省力農機</span>
+    </button>
+    <button class="prev-tab-btn" data-tab="tab-ppe">
+      <i class="fas fa-mask-face"></i><span>被動防禦・個人防護具</span>
+    </button>
+  </div>
+
+  <!-- Tab 1：省力農機 -->
+  <div class="prev-tab-panel is-active" id="tab-machine">
+    <div class="prev-tab-intro">
+      <div class="prev-tab-intro-text">
+        <p><strong>什麼是「主動降載」？</strong></p>
+        <p>
+          簡單說，就是用機器幫你做那些傷身體的動作。
+          例如：用搬運車代替肩扛、用電動剪枝機代替手剪、用無人機代替背著藥桶走田。
+          這些農機不只省力，很多還有政府補助，最高可以補助購買金額的三分之一。
+        </p>
+      </div>
+      <a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=3314" target="_blank" rel="noopener" class="prev-external-link">
+        <i class="fas fa-external-link-alt"></i> 農糧署農機補助專區
+      </a>
+    </div>
+
+    <div class="prev-grid-cards">
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <!-- ❗️ 圖片替換：請將下方 Unsplash 圖片替換為實際「農地搬運車」照片，建議尺寸 800×450px -->
+          <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?w=400&auto=format&fit=crop" alt="農地搬運車" loading="lazy">
+          <span class="prev-card-badge badge-eliminate">消除風險</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>農地搬運車</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 田間搬運、果園採收轉運</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 不用再肩扛重物，直接降低腰部和膝蓋的負擔</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <!-- ❗️ 圖片替換：請將下方 Unsplash 圖片替換為實際「動力噴霧機」照片，建議尺寸 800×450px -->
+          <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&auto=format&fit=crop" alt="動力噴霧機" loading="lazy">
+          <span class="prev-card-badge badge-substitute">取代人力</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>動力噴霧機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 農藥噴灑作業</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 不用再背著沉重的藥桶，減少肩頸痠痛和農藥直接接觸</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <!-- ❗️ 圖片替換：請將下方 Unsplash 圖片替換為實際「電動剪枝機」照片，建議尺寸 800×450px -->
+          <img src="https://images.unsplash.com/photo-1625246333195-78d1d26d0dda?w=400&auto=format&fit=crop" alt="電動剪枝機" loading="lazy">
+          <span class="prev-card-badge badge-substitute">取代人力</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>電動剪枝機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 果園修剪（柑橘、荔枝、芒果）</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 省去手部反覆用力的動作，降低手腕關節發炎風險</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <!-- ❗️ 圖片替換：請將下方 Unsplash 圖片替換為實際「割草機」照片，建議尺寸 800×450px -->
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&auto=format&fit=crop" alt="割草機" loading="lazy">
+          <span class="prev-card-badge badge-substitute">取代人力</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>割（除）草機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 田間雜草管理</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 不用再彎腰蹲著拔草，站著就能完成除草</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <!-- ❗️ 圖片替換：請將下方 Unsplash 圖片替換為實際「中耕管理機」照片，建議尺寸 800×450px -->
+          <img src="https://images.unsplash.com/photo-1586771107445-b3e7eb3f3b10?w=400&auto=format&fit=crop" alt="中耕管理機" loading="lazy">
+          <span class="prev-card-badge badge-substitute">取代人力</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>中耕管理機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 整地、鬆土、培土</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 機器翻土比人工輕鬆很多，整天下來體力消耗大幅降低</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <!-- ❗️ 圖片替換：請將下方 Unsplash 圖片替換為實際「升降平台車」照片，建議尺寸 800×450px -->
+          <img src="https://images.unsplash.com/photo-1508444845599-5c89863b1c44?w=400&auto=format&fit=crop" alt="升降平台車" loading="lazy">
+          <span class="prev-card-badge badge-engineering">工程控制</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>升降作業平台車</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 果園高處採收、修剪</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 不用再爬梯子，站在平台上安全作業，避免摔落意外</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 部分機型有補助</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <!-- ❗️ 圖片替換：請將下方 Unsplash 圖片替換為實際「農噴無人機」照片，建議尺寸 800×450px -->
+          <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400&auto=format&fit=crop" alt="農噴無人機" loading="lazy">
+          <span class="prev-card-badge badge-eliminate">消除風險</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>農噴無人機</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 大面積農藥噴灑</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 人完全不用進田裡噴藥，大幅減少農藥沾到皮膚和吸入的機會</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+      <div class="prev-card">
+        <div class="prev-card-img">
+          <!-- ❗️ 圖片替換：請將下方 Unsplash 圖片替換為實際「田間搬運機（軌道式）」照片，建議尺寸 800×450px -->
+          <img src="https://images.unsplash.com/photo-1500651230702-0e2d8a49d4e7?w=400&auto=format&fit=crop" alt="田間搬運機" loading="lazy">
+          <span class="prev-card-badge badge-eliminate">消除風險</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>田間搬運機（軌道式）</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 溫室內苗盤 / 成品搬運</p>
+          <p class="prev-card-benefit"><i class="fas fa-heart-pulse"></i> 溫室空間窄，用軌道搬運機取代人工搬運最適合</p>
+          <div class="prev-card-subsidy"><i class="fas fa-coins"></i> 政府補助購置金額 1/3</div>
+        </div>
+      </div>
+
+    </div><!-- /prev-grid-cards -->
+  </div><!-- /tab-machine -->
+
+<style>
+/* === 02-tabs 共用樣式 === */
+.prev-tabs-section{
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.prev-tabs-section *{box-sizing:border-box;}
+
+/* Section Header */
+.prev-section-header{margin-bottom:24px;}
+.prev-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.prev-section-desc{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 8px;max-width:800px;}
+.prev-section-source{font-size:.78rem;color:#9ca3af;margin:0;font-style:italic;}
+
+/* Tab Buttons */
+.prev-tab-btns{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;}
+.prev-tab-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;border:2px solid #e0e0e0;background:#fff;font-size:.95rem;font-weight:700;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
+.prev-tab-btn.is-active,.prev-tab-btn:hover{background:var(--brand);color:#fff;border-color:var(--brand);}
+.prev-tab-panel{display:none;}
+.prev-tab-panel.is-active{display:block;}
+
+/* Tab Intro */
+.prev-tab-intro{display:flex;justify-content:space-between;align-items:flex-start;background:#fff;padding:24px;border-radius:12px;margin-bottom:24px;border:1px solid #f0f0f0;flex-wrap:wrap;gap:16px;}
+.prev-tab-intro-text{flex:1;min-width:240px;}
+.prev-tab-intro-text p{margin:0 0 8px;line-height:1.8;font-size:.95rem;color:var(--text-primary);}
+.prev-tab-intro-text p:last-child{margin-bottom:0;}
+.prev-external-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;padding:10px 18px;border:1.5px solid var(--brand);border-radius:8px;transition:all .3s;white-space:nowrap;align-self:flex-start;margin-top:4px;}
+.prev-external-link:hover{background:var(--brand);color:#fff;}
+
+/* Grid Cards */
+.prev-grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.prev-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);transition:all .3s ease;}
+.prev-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);}
+.prev-card-img{height:180px;position:relative;overflow:hidden;background:#f5f5f5;}
+.prev-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.prev-card:hover .prev-card-img img{transform:scale(1.06);}
+.prev-card-badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:800;color:#fff;}
+.badge-eliminate{background:#10b981;}.badge-substitute{background:#0ea5e9;}.badge-engineering{background:#3b82f6;}.badge-ppe{background:#f43f5e;}
+.prev-card-body{padding:20px;}
+.prev-card-body h3{font-size:1.1rem;font-weight:700;margin:0 0 10px;color:#222;}
+.prev-card-scene,.prev-card-benefit{font-size:.9rem;color:var(--text-secondary);margin:0 0 8px;display:flex;align-items:flex-start;gap:8px;line-height:1.6;}
+.prev-card-scene i,.prev-card-benefit i{margin-top:3px;flex-shrink:0;}
+.prev-card-scene i{color:var(--brand);}.prev-card-benefit i{color:#3b82f6;}
+.prev-card-subsidy{display:inline-flex;align-items:center;gap:6px;background:rgba(212,160,23,.1);color:#b8860b;padding:6px 14px;border-radius:6px;font-size:.85rem;font-weight:700;margin-top:8px;}
+
+@media(max-width:768px){
+  .prev-grid-cards{grid-template-columns:1fr;}
+  .prev-tab-btns{flex-direction:column;}
+  .prev-tab-btn{width:100%;justify-content:center;}
+}
+</style>
+
+<script>
+/* Tab 切換邏輯 */
+document.addEventListener('DOMContentLoaded',function(){
+  var btns=document.querySelectorAll('.prev-tab-btn');
+  var panels=document.querySelectorAll('.prev-tab-panel');
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var target=this.getAttribute('data-tab');
+      btns.forEach(function(b){b.classList.remove('is-active');});
+      panels.forEach(function(p){p.classList.remove('is-active');});
+      this.classList.add('is-active');
+      var panel=document.getElementById(target);
+      if(panel) panel.classList.add('is-active');
+    });
+  });
+});
+</script>
+
+
+<!-- =====================================================
+     區塊 03：Tab 2 — 個人防護具 Grid Cards
+     ===================================================== -->
+
+  <!-- Tab 2：PPE -->
+  <div class="prev-tab-panel" id="tab-ppe">
+    <div class="prev-tab-intro">
+      <div class="prev-tab-intro-text">
+        <p><strong>什麼是「被動防禦」？</strong></p>
+        <p>
+          有些危害沒辦法完全用機器消除，例如噴農藥時的藥霧、割草時飛出來的碎石、
+          長時間蹲著採收對膝蓋的壓力。這時候就需要穿戴適當的防護具來保護自己。
+        </p>
+        <p>
+          防護具的效果取決於兩件事：<strong>「選對」</strong>和<strong>「戴對」</strong>。
+          選錯種類或穿戴不正確，保護效果會大打折扣。
+        </p>
+      </div>
+      <a href="/occupational-safety/personal-protective-equipment/" class="prev-external-link">
+        <i class="fas fa-arrow-right"></i> PPE 完整指南
+      </a>
+    </div>
+
+    <div class="prev-grid-cards">
+
+      <!-- 呼吸防護：防毒面具 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">
+          <i class="fas fa-head-side-mask" style="color:#c62828;"></i>
+          <span class="prev-card-badge badge-ppe">呼吸防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>半面式防毒面具</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 噴灑農藥時使用</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 要搭配「有機蒸氣濾罐」才能擋住農藥氣體，普通口罩擋不住。需通過 CNS 14258 認證。</p>
+        </div>
+      </div>
+
+      <!-- 呼吸防護：N95 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">
+          <i class="fas fa-mask-face" style="color:#c62828;"></i>
+          <span class="prev-card-badge badge-ppe">呼吸防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>N95 防塵口罩</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 翻土、碎土等粉塵多的作業</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 只能擋粉塵，擋不住農藥蒸氣。戴之前要壓緊鼻樑條確認密合，用完就丟。</p>
+        </div>
+      </div>
+
+      <!-- 眼部防護 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#e8eaf6,#c5cae9);">
+          <i class="fas fa-glasses" style="color:#283593;"></i>
+          <span class="prev-card-badge badge-ppe">眼部防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>護目鏡 / 防護面罩</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 噴藥、割草、碎枝</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 割草時碎石會飛出來打到眼睛，噴藥時藥液會飄到臉上。噴藥建議用密閉式護目鏡。</p>
+        </div>
+      </div>
+
+      <!-- 手部防護：耐化學手套 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7);">
+          <i class="fas fa-hand" style="color:#7b1fa2;"></i>
+          <span class="prev-card-badge badge-ppe">手部防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>耐化學手套（丁腈橡膠）</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 調配農藥、噴灑農藥、接觸肥料</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 農藥會穿透一般棉手套被皮膚吸收。要用丁腈橡膠材質才擋得住。脫手套前先用肥皂水洗外面。</p>
+        </div>
+      </div>
+
+      <!-- 聽力防護 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2);">
+          <i class="fas fa-ear-listen" style="color:#e65100;"></i>
+          <span class="prev-card-badge badge-ppe">聽力防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>防噪耳塞 / 耳罩</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 操作割草機、鏈鋸、耕耘機</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 這些農機運轉聲音超過 85 分貝，長期不戴耳塞會造成聽力永久受損，而且無法恢復。</p>
+        </div>
+      </div>
+
+      <!-- 下肢防護：護膝 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
+          <i class="fas fa-shield-halved" style="color:#1565c0;"></i>
+          <span class="prev-card-badge badge-ppe">下肢防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>緩衝護膝</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 蹲著採收、移苗</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 長時間蹲姿會磨損膝蓋軟骨，戴有緩衝墊的護膝可以減輕壓力，保護關節。</p>
+        </div>
+      </div>
+
+      <!-- 下肢防護：安全鞋 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
+          <i class="fas fa-shoe-prints" style="color:#1565c0;"></i>
+          <span class="prev-card-badge badge-ppe">下肢防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>安全鞋 / 防滑雨鞋</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 田間作業、操作農機</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 鋼頭鞋防止重物掉落砸傷腳趾，防滑底避免在濕泥地上滑倒。田間作業的基本配備。</p>
+        </div>
+      </div>
+
+      <!-- 軀幹防護 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">
+          <i class="fas fa-shirt" style="color:#2e7d32;"></i>
+          <span class="prev-card-badge badge-ppe">軀幹防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>防曬衣 / 長袖工作服</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 露天長時間作業</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 選 UPF 50+ 等級的透氣排汗材質，比擦防曬乳更持久有效，也能防止農藥噴到皮膚上。</p>
+        </div>
+      </div>
+
+      <!-- 頭部防護 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#fff8e1,#ffecb3);">
+          <i class="fas fa-hard-hat" style="color:#f57f17;"></i>
+          <span class="prev-card-badge badge-ppe">頭部防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>安全帽 / 遮陽帽</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 果園高處作業、農機操作、露天耕作</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 高處作業用安全帽（符合 CNS 1336），一般田間用 UPF 50+ 寬沿遮陽帽防曬兼防掉落物。</p>
+        </div>
+      </div>
+
+      <!-- 手部防護：防割手套 -->
+      <div class="prev-card">
+        <div class="prevP-card-icon-area" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7);">
+          <i class="fas fa-mitten" style="color:#7b1fa2;"></i>
+          <span class="prev-card-badge badge-ppe">手部防護</span>
+        </div>
+        <div class="prev-card-body">
+          <h3>防割手套</h3>
+          <p class="prev-card-scene"><i class="fas fa-location-dot"></i> 修剪枝條、採收、操作刀具</p>
+          <p class="prev-card-benefit"><i class="fas fa-circle-info"></i> 剪枝和採收時刀片割傷手很常見。選有 EN 388 防割認證的手套，等級越高防護越好。</p>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /tab-ppe -->
+
+</div><!-- ★ 關閉 prev-tabs-section（配對 02 開頭的 div） -->
+
+<style>
+/* === 03 PPE icon 卡片專用樣式 === */
+.prevP-card-icon-area{
+  height:140px;position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:16px 16px 0 0;
+}
+.prevP-card-icon-area i{
+  font-size:3.2rem;opacity:.85;
+  transition:transform .3s ease;
+}
+.prev-card:hover .prevP-card-icon-area i{
+  transform:scale(1.15);
+}
+/* badge 沿用 02 的 .prev-card-badge + .badge-ppe */
+</style>
+
+
+<!-- =====================================================
+     區塊 04：紅綠燈快篩風險評估
+     ===================================================== -->
+
+<div class="prev-risk-section" id="prev-risk-tools">
+  <div class="prevQ-section-header">
+    <h2><i class="fas fa-clipboard-check"></i> 風險評估工具</h2>
+    <p>
+      下面三個工具幫助您自我檢視田間工作的安全狀況。
+      不需要任何專業知識，照著步驟操作就能了解自己的風險在哪裡、該怎麼改善。
+    </p>
+    <p class="prevQ-data-note">
+      <i class="fas fa-chart-line"></i>
+      <strong>用數據說話：</strong>美國 NIOSH 統計顯示，農業工作者致死率為全產業平均的 <strong>5 倍</strong>（每 10 萬人 18.6 vs. 3.7），
+      且 <strong>56%</strong> 的死亡發生在 55 歲以上工作者。提早了解自己的風險，才能及早預防。
+      <span class="prevQ-source">資料來源：CDC/NIOSH (2024). Agriculture Worker Safety and Health.</span>
+    </p>
+  </div>
+
+  <div class="prevQ-tool-card" id="risk-quiz">
+    <div class="prevQ-tool-header">
+      <div class="prevQ-tool-icon"><i class="fas fa-traffic-light"></i></div>
+      <div>
+        <h3>快速風險評估 — 您的田間安全紅綠燈</h3>
+        <p>兩個步驟，不到一分鐘。選擇農事類型後，系統會自動標出常見風險，您再根據實際情況調整。</p>
+      </div>
+    </div>
+
+    <div class="prevQ-quiz-body">
+
+      <!-- Step 1 -->
+      <div class="prevQ-quiz-step">
+        <label class="prevQ-quiz-label">
+          <span class="prevQ-step-num">1</span>
+          您平常主要做哪一種農事？（點選一個，系統會自動幫您勾選常見風險）
+        </label>
+        <div class="prevQ-quiz-options" id="quiz-types">
+          <button class="prevQ-quiz-type" data-type="outdoor">🌾 露天耕作</button>
+          <button class="prevQ-quiz-type" data-type="greenhouse">🏠 溫室作業</button>
+          <button class="prevQ-quiz-type" data-type="pesticide">💧 農藥噴灑</button>
+          <button class="prevQ-quiz-type" data-type="machine">⚙️ 農機操作</button>
+          <button class="prevQ-quiz-type" data-type="harvest">🧺 採收搬運</button>
+        </div>
+        <p class="prevQ-type-hint" id="type-hint" style="display:none;">
+          <i class="fas fa-info-circle"></i>
+          <span id="type-hint-text"></span>
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="prevQ-quiz-step">
+        <label class="prevQ-quiz-label">
+          <span class="prevQ-step-num">2</span>
+          確認或調整下方的勾選項目（系統已根據您的農事類型預勾，您可以自行增減）
+        </label>
+        <div class="prevQ-quiz-checks" id="quiz-checks">
+          <label class="prevQ-check-item" data-key="hours">
+            <input type="checkbox" class="prevQ-risk-check"> 每天工作超過 6 小時
+          </label>
+          <label class="prevQ-check-item" data-key="heat">
+            <input type="checkbox" class="prevQ-risk-check"> 天氣很熱，經常超過 32°C
+          </label>
+          <label class="prevQ-check-item" data-key="heavy">
+            <input type="checkbox" class="prevQ-risk-check"> 需要搬超過 15 公斤的東西
+          </label>
+          <label class="prevQ-check-item" data-key="machine">
+            <input type="checkbox" class="prevQ-risk-check"> 會操作割草機、耕耘機等動力農機
+          </label>
+          <label class="prevQ-check-item" data-key="chemical">
+            <input type="checkbox" class="prevQ-risk-check"> 會接觸到農藥或化學藥劑
+          </label>
+          <label class="prevQ-check-item" data-key="enclosed">
+            <input type="checkbox" class="prevQ-risk-check"> 在溫室或棚架等密閉空間裡工作
+          </label>
+          <label class="prevQ-check-item" data-key="posture">
+            <input type="checkbox" class="prevQ-risk-check"> 經常要彎腰、蹲著或仰頭工作
+          </label>
+          <label class="prevQ-check-item" data-key="noppe">
+            <input type="checkbox" class="prevQ-risk-check"> 工作時沒有穿戴任何防護具
+          </label>
+        </div>
+      </div>
+
+      <!-- 結果 -->
+      <div class="prevQ-quiz-step">
+        <label class="prevQ-quiz-label">
+          <span class="prevQ-step-num">★</span> 您的風險等級
+        </label>
+        <div class="prevQ-result-display" id="prevQ-risk-display">
+          <div class="prevQ-result-circle" id="prevQ-risk-circle">
+            <span id="prevQ-risk-count">0</span>
+          </div>
+          <div class="prevQ-result-text" id="prevQ-risk-text">
+            請先在上方選擇您的農事類型，再確認勾選項目。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 04-tool-quiz 專用樣式（prevQ 前綴避免衝突） === */
+.prev-risk-section{
+  --brand:#5C8607;--brand-dark:#2c5e2e;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.prev-risk-section *{box-sizing:border-box;}
+.prevQ-section-header{margin-bottom:28px;}
+.prevQ-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.prevQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 10px;max-width:800px;}
+.prevQ-data-note{background:rgba(59,130,246,.05);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.12);}
+.prevQ-data-note i{color:#3b82f6;margin-top:3px;flex-shrink:0;}
+.prevQ-source{display:block;width:100%;font-size:.78rem;color:#9ca3af;font-style:italic;margin-top:4px;}
+
+.prevQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;margin-bottom:24px;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
+.prevQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
+.prevQ-tool-icon{width:52px;height:52px;border-radius:14px;background:rgba(92,134,7,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.prevQ-tool-header h3{font-size:1.15rem;font-weight:800;margin:0;color:var(--brand-dark);}
+.prevQ-tool-header p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
+
+.prevQ-quiz-step{margin-bottom:28px;}
+.prevQ-quiz-label{font-weight:700;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:1.05rem;line-height:1.5;flex-wrap:wrap;}
+.prevQ-step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;font-size:.85rem;font-weight:800;flex-shrink:0;}
+
+.prevQ-quiz-options{display:flex;gap:10px;flex-wrap:wrap;}
+.prevQ-quiz-type{padding:12px 20px;border:2px solid #e0e0e0;border-radius:10px;background:#fff;cursor:pointer;font-size:.95rem;font-weight:600;transition:all .2s;font-family:inherit;}
+.prevQ-quiz-type:hover{border-color:var(--brand);background:rgba(92,134,7,.03);}
+.prevQ-quiz-type.is-selected{border-color:var(--brand);background:rgba(92,134,7,.08);color:var(--brand);}
+
+.prevQ-type-hint{margin-top:12px;padding:10px 14px;background:rgba(92,134,7,.05);border-radius:8px;font-size:.9rem;line-height:1.6;color:var(--brand-dark);display:flex;align-items:flex-start;gap:8px;}
+.prevQ-type-hint i{margin-top:3px;color:var(--brand);flex-shrink:0;}
+
+.prevQ-quiz-checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;}
+.prevQ-check-item{display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:10px;background:#f9fafb;cursor:pointer;transition:all .2s;font-size:.95rem;line-height:1.5;}
+.prevQ-check-item:hover{background:#f0f5e8;}
+.prevQ-check-item.is-highlighted{background:#fef9e7;border:1px solid rgba(212,160,23,.3);}
+.prevQ-check-item input{width:20px;height:20px;accent-color:var(--brand);flex-shrink:0;}
+
+.prevQ-result-display{display:flex;align-items:center;gap:20px;padding:24px;border-radius:12px;background:#f9fafb;border:2px solid #e0e0e0;transition:all .4s;}
+.prevQ-result-circle{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:900;color:#fff;background:#d1d5db;transition:background .4s;flex-shrink:0;}
+.prevQ-result-text{font-size:1rem;line-height:1.7;}
+
+.prevQ-risk-green{background:#81C784!important;}
+.prevQ-risk-orange{background:#FFB74D!important;}
+.prevQ-risk-red{background:#EF5350!important;}
+.prevQ-border-green{border-color:#81C784!important;background:#f0fdf4!important;}
+.prevQ-border-orange{border-color:#FFB74D!important;background:#fffbeb!important;}
+.prevQ-border-red{border-color:#EF5350!important;background:#fef2f2!important;}
+
+@media(max-width:768px){
+  .prevQ-quiz-checks{grid-template-columns:1fr;}
+  .prevQ-quiz-options{flex-direction:column;}
+  .prevQ-quiz-type{width:100%;text-align:center;}
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+
+  /* 各農事類型對應的預設風險項目和說明 */
+  var typeProfiles={
+    outdoor:{
+      checks:['hours','heat','posture','noppe'],
+      hint:'露天耕作常見風險：長時間日曬、高溫、彎腰作業。美國 OSHA 將「高溫」、「紫外線」列為農業重要物理性危害。如果您還需要搬運重物或操作農機，請自行加勾。'
+    },
+    greenhouse:{
+      checks:['heat','enclosed','posture','chemical'],
+      hint:'溫室作業常見風險：密閉空間高溫高濕、農藥殘留濃度高、長時間蹲姿。OSHA 研究指出溫室內「呼吸系統危害」顯著提高（黎菌孢子、殘留藥氣）。'
+    },
+    pesticide:{
+      checks:['chemical','noppe','hours'],
+      hint:'農藥噴灑常見風險：藥劑經皮膚吸收和呼吸吸入。世界衛生組織指出，直接接觸農藥的工作者面臨最高健康風險，全球使用超過 1,000 種農藥。如果在溫室內噴藥，密閉空間會讓風險更高，請加勾「密閉空間」。'
+    },
+    machine:{
+      checks:['machine','hours','noppe'],
+      hint:'農機操作常見風險：噪音超過 85 分貝、振動傷害、捲入翻覆。CDC/NIOSH 統計顯示「接觸物件與設備」是農業死亡主要原因之一。操作鏈鋸等手持振動工具的時間越長越危險。'
+    },
+    harvest:{
+      checks:['heavy','posture','hours','heat'],
+      hint:'採收搬運常見風險：反覆搬重物傷腰、長時間蹲姿傷膝蓋、高處採果有墜落風險。NIOSH 統計顯示跌倒佔農業傷害 29%，是農業非致死傷害的首要原因。'
+    }
+  };
+
+  var selectedType=null;
+  var typeButtons=document.querySelectorAll('.prevQ-quiz-type');
+  var allChecks=document.querySelectorAll('.prevQ-risk-check');
+  var allItems=document.querySelectorAll('.prevQ-check-item');
+  var hintBox=document.getElementById('type-hint');
+  var hintText=document.getElementById('type-hint-text');
+
+  /* Step 1: 選擇農事類型 → 自動預勾 + 顯示提示 */
+  typeButtons.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var type=this.getAttribute('data-type');
+      selectedType=type;
+
+      /* UI: 按鈕高亮 */
+      typeButtons.forEach(function(b){b.classList.remove('is-selected');});
+      this.classList.add('is-selected');
+
+      /* 清除所有勾選和高亮 */
+      allChecks.forEach(function(cb){cb.checked=false;});
+      allItems.forEach(function(item){item.classList.remove('is-highlighted');});
+
+      /* 預勾對應項目 */
+      var profile=typeProfiles[type];
+      if(profile){
+        profile.checks.forEach(function(key){
+          var item=document.querySelector('.prevQ-check-item[data-key="'+key+'"]');
+          if(item){
+            item.querySelector('input').checked=true;
+            item.classList.add('is-highlighted');
+          }
+        });
+        hintText.textContent=profile.hint;
+        hintBox.style.display='flex';
+      }
+
+      updateResult();
+    });
+  });
+
+  /* Step 2: 勾選變更時更新結果 */
+  allChecks.forEach(function(cb){
+    cb.addEventListener('change',updateResult);
+  });
+
+  /* 計算結果 */
+  function updateResult(){
+    var circle=document.getElementById('prevQ-risk-circle');
+    var countEl=document.getElementById('prevQ-risk-count');
+    var textEl=document.getElementById('prevQ-risk-text');
+    var displayEl=document.getElementById('prevQ-risk-display');
+
+    var n=document.querySelectorAll('.prevQ-risk-check:checked').length;
+    countEl.textContent=n;
+
+    circle.className='prevQ-result-circle';
+    displayEl.className='prevQ-result-display';
+
+    if(!selectedType){
+      textEl.innerHTML='請先在上方選擇您的農事類型。';
+      return;
+    }
+
+    /* 根據農事類型產生客製建議 */
+    var typeAdvice={
+      outdoor:'建議穿戴防曬衣物（UPF 50+）和護膝，高溫時段避免作業。',
+      greenhouse:'建議確認溫室通風是否良好，並穿戴呼吸防護具。詳情可參考「溫室專區」。',
+      pesticide:'建議穿戴防毒面具（含有機蒸氣濾罐）和耐化學手套，噴藥後遵守再進入間隔時間。',
+      machine:'建議穿戴防噪耳罩和護目鏡，並確認農機防護罩和安全連鎖功能正常。',
+      harvest:'建議使用搬運車取代肩扛、穿戴護膝、使用升降平台取代梯子。'
+    };
+
+    var advice=typeAdvice[selectedType]||'';
+
+    if(n<=2){
+      circle.classList.add('prevQ-risk-green');
+      displayEl.classList.add('prevQ-border-green');
+      textEl.innerHTML='<strong style="color:#2E7D32;">🟢 低度風險（'+n+' 項）</strong><br>'
+        +'您目前的風險在可控範圍內。維持現有防護習慣即可。<br>'
+        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+    }else if(n<=5){
+      circle.classList.add('prevQ-risk-orange');
+      displayEl.classList.add('prevQ-border-orange');
+      textEl.innerHTML='<strong style="color:#E65100;">🟠 中度風險（'+n+' 項）</strong><br>'
+        +'有一定風險，建議往上查看「防護裝備型錄」，確認您有沒有穿戴對的防護具。<br>'
+        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+    }else{
+      circle.classList.add('prevQ-risk-red');
+      displayEl.classList.add('prevQ-border-red');
+      textEl.innerHTML='<strong style="color:#C62828;">🔴 高度風險（'+n+' 項）</strong><br>'
+        +'風險偏高，光靠防護具效果有限。建議優先考慮導入省力農機，從根本改善作業方式。<br>'
+        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+    }
+  }
+});
+</script>
+
+
+<!-- =====================================================
+     區塊 05：NIOSH 安全控制層級
+     ===================================================== -->
+
+<div class="prev-tool-card-n" id="niosh-hierarchy">
+  <div class="prev-tool-header-n">
+    <div class="prev-tool-icon-n"><i class="fas fa-layer-group"></i></div>
+    <div>
+      <h3>安全控制層級 — 保護自己的五個優先順序</h3>
+      <p>國際職安研究機構 NIOSH 建議：<strong>最好的保護，是直接把危險去掉</strong>；穿防護具是最後的手段。</p>
+    </div>
+  </div>
+
+  <div class="prev-niosh-explain">
+    <p>
+      下面從上到下，第一層效果最好、第五層效果最差。
+      點擊每一層可以看到農業上的實際例子。
+      實務上不一定每層都做得到，但越往上層做，保護效果越好。
+    </p>
+    <p class="prev-niosh-data">
+      <i class="fas fa-chart-bar" style="color:#3b82f6;"></i>
+      <strong>為什麼這很重要？</strong>根據 CDC/NIOSH（2024）統計，2021–2022 年美國農業共有 <strong>21,020 件</strong>需缺勤的非致死傷害事件，
+      其中 <strong>29% 為跌倒</strong>所致，是非致死傷害的首要原因；致死事故方面，交通運輸事故（含拖拉機翻覆）為首要死因。兩類事故皆普遍存在低報現象。
+      越高層級的控制措施，越能從源頭避免這些傷害。
+      <span class="prev-niosh-source-inline">資料來源：CDC/NIOSH. (2024). Agriculture Worker Safety and Health.</span>
+    </p>
+  </div>
+
+  <div class="prev-hierarchy-body">
+    <div class="prev-h-level" data-level="1" style="--level-color:#10b981;">
+      <div class="prev-h-bar">
+        <span class="prev-h-label"><span class="prev-h-num">❶</span> 消除 — 把危險直接去掉</span>
+        <i class="fas fa-chevron-down prev-h-arrow"></i>
+      </div>
+      <div class="prev-h-detail">
+        <p><strong>效果最好。</strong>如果能不接觸危險，就不會受傷。</p>
+        <p>🌾 <strong>農業例子：</strong></p>
+        <p>• 台灣在 2019 年全面禁用巴拉刈（一種劇毒除草劑），農民從此不會再接觸到這種危險藥劑。</p>
+        <p>• 改種不需要爬高採收的矮化果樹品種，從根本消除高處墜落的風險。</p>
+      </div>
+    </div>
+
+    <div class="prev-h-level" data-level="2" style="--level-color:#0ea5e9;">
+      <div class="prev-h-bar">
+        <span class="prev-h-label"><span class="prev-h-num">❷</span> 取代 — 用比較安全的方式代替</span>
+        <i class="fas fa-chevron-down prev-h-arrow"></i>
+      </div>
+      <div class="prev-h-detail">
+        <p><strong>把高風險的做法換成低風險的做法。</strong></p>
+        <p>🌾 <strong>農業例子：</strong></p>
+        <p>• 用生物防治（天敵、微生物製劑）取代化學農藥，減少農藥暴露。</p>
+        <p>• 用電動剪枝機代替手動剪刀，手腕不用反覆出力。</p>
+        <p>• 用農噴無人機代替人工背著藥桶噴藥，人完全不用進田裡。</p>
+      </div>
+    </div>
+
+    <div class="prev-h-level" data-level="3" style="--level-color:#3b82f6;">
+      <div class="prev-h-bar">
+        <span class="prev-h-label"><span class="prev-h-num">❸</span> 工程控制 — 改善環境和設備</span>
+        <i class="fas fa-chevron-down prev-h-arrow"></i>
+      </div>
+      <div class="prev-h-detail">
+        <p><strong>在工作環境裡加裝安全設施，讓危險不容易接觸到人。</strong></p>
+        <p>🌾 <strong>農業例子：</strong></p>
+        <p>• 在溫室裡安裝排風扇和通風系統，噴藥後加速排出殘留藥氣。</p>
+        <p>• 農機加裝防護罩和安全連鎖開關，手一離開就自動停機。</p>
+        <p>• 改善田間排水，減少地面積水造成的滑倒風險。</p>
+      </div>
+    </div>
+
+    <div class="prev-h-level" data-level="4" style="--level-color:#f59e0b;">
+      <div class="prev-h-bar">
+        <span class="prev-h-label"><span class="prev-h-num">❹</span> 行政管理 — 調整工作方式和時間</span>
+        <i class="fas fa-chevron-down prev-h-arrow"></i>
+      </div>
+      <div class="prev-h-detail">
+        <p><strong>透過排班、訓練和規則來降低接觸危險的時間和頻率。</strong></p>
+        <p>🌾 <strong>農業例子：</strong></p>
+        <p>• 中午最熱的時段（11:00-15:00）避免在戶外工作，改到清晨或傍晚。</p>
+        <p>• 定期參加農安教育訓練，學習正確的搬運姿勢和農藥使用方法。</p>
+        <p>• 在農機和儲藥區張貼安全操作步驟圖，隨時提醒自己。</p>
+      </div>
+    </div>
+
+    <div class="prev-h-level" data-level="5" style="--level-color:#f43f5e;">
+      <div class="prev-h-bar">
+        <span class="prev-h-label"><span class="prev-h-num">❺</span> 個人防護具（PPE）— 最後一道防線</span>
+        <i class="fas fa-chevron-down prev-h-arrow"></i>
+      </div>
+      <div class="prev-h-detail">
+        <p><strong>當上面四層都做了還是有殘餘風險時，才靠穿戴防護具來保護自己。</strong></p>
+        <p>🌾 <strong>農業例子：</strong></p>
+        <p>• 噴藥時戴防毒面具和耐化學手套。</p>
+        <p>• 蹲著採收時戴護膝。</p>
+        <p>• 操作割草機時戴耳塞和護目鏡。</p>
+        <p>• 露天工作穿 UPF 50+ 的長袖工作服。</p>
+        <p style="margin-top:12px;padding:12px 16px;background:rgba(244,63,94,.06);border-radius:8px;font-size:.9rem;">
+          <i class="fas fa-info-circle" style="color:#f43f5e;"></i>
+          <strong>為什麼 PPE 排在最後？</strong>因為防護具只在「選對」且「戴對」時才有效，而且戴久了會不舒服，容易被省略。所以能用前面四層解決的，盡量不要只依賴防護具。
+        </p>
+      </div>
+    </div>
+
+    <div class="prev-h-source-n">
+      資料來源：NIOSH. (2021). <em>Hierarchy of Controls</em>. Centers for Disease Control and Prevention.
+      <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">原文連結</a>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 05-tool-niosh 專用樣式 === */
+.prev-tool-card-n{
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  background:#fff;border-radius:var(--radius);padding:30px;margin:0 0 24px;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;box-sizing:border-box;
+}
+.prev-tool-card-n *{box-sizing:border-box;}
+.prev-tool-header-n{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+.prev-tool-icon-n{width:52px;height:52px;border-radius:14px;background:rgba(92,134,7,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.prev-tool-header-n h3{font-size:1.15rem;font-weight:800;margin:0;color:var(--brand-dark);}
+.prev-tool-header-n p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
+
+.prev-niosh-explain{background:#f9fafb;border-radius:10px;padding:16px 20px;margin-bottom:20px;border:1px solid #f0f0f0;}
+.prev-niosh-explain p{margin:0 0 12px;font-size:.95rem;line-height:1.7;color:var(--text-primary);}
+.prev-niosh-explain p:last-child{margin-bottom:0;}
+.prev-niosh-data{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.1);}
+.prev-niosh-data i{margin-top:3px;flex-shrink:0;}
+.prev-niosh-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
+
+.prev-hierarchy-body{display:flex;flex-direction:column;gap:8px;}
+.prev-h-level{border-radius:10px;overflow:hidden;}
+.prev-h-bar{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--level-color);color:#fff;font-weight:700;cursor:pointer;transition:opacity .3s;font-size:.95rem;}
+.prev-h-bar:hover{opacity:.9;}
+.prev-h-num{margin-right:6px;}
+.prev-h-arrow{transition:transform .3s;font-size:.85rem;}
+.prev-h-level.is-open .prev-h-arrow{transform:rotate(180deg);}
+.prev-h-detail{display:none;padding:20px;background:rgba(0,0,0,.02);border:1px solid rgba(0,0,0,.05);border-top:none;border-radius:0 0 10px 10px;}
+.prev-h-detail p{margin:0 0 8px;line-height:1.7;font-size:.95rem;}
+.prev-h-level.is-open .prev-h-detail{display:block;}
+.prev-h-source-n{font-size:.8rem;color:var(--text-secondary);margin-top:16px;text-align:right;}
+.prev-h-source-n a{color:var(--brand);margin-left:4px;}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var levels=document.querySelectorAll('.prev-h-level');
+  levels.forEach(function(level){
+    level.querySelector('.prev-h-bar').addEventListener('click',function(){
+      var isOpen=level.classList.contains('is-open');
+      levels.forEach(function(l){l.classList.remove('is-open');});
+      if(!isOpen) level.classList.add('is-open');
+    });
+  });
+});
+</script>
+
+
+<!-- =====================================================
+     區塊 06：農業四大危害類型
+     ===================================================== -->
+
+<div class="prev-tool-card-h" id="hazard-check">
+  <div class="prev-tool-header-h">
+    <div class="prev-tool-icon-h"><i class="fas fa-triangle-exclamation"></i></div>
+    <div>
+      <h3>農業四大危害類型 — 認識才能預防</h3>
+      <p>田間工作的危害可以分成四大類。了解自己面對的是哪一種，才能選對保護方法。</p>
+    </div>
+  </div>
+
+  <div class="prev-hazard-explain">
+    <p>
+      <i class="fas fa-lightbulb" style="color:#D4A017;"></i>
+      <strong>怎麼看這張表？</strong>
+      每張卡片列出該類危害在農業中常見的具體風險。
+      如果您發現自己的工作中有好幾項都中了，建議搭配上方的「快速風險評估」做一次完整的自我檢查。
+    </p>
+    <p class="prev-hazard-data-note">
+      <i class="fas fa-database" style="color:#3b82f6;"></i>
+      美國 OSHA 將農業危害分為 12 大類，涵蓋動物感染、穀倉危害、機械、高溫、墬落、肌肉骨骼、噪音、農藥、呼吸系統、車輛等。
+      本區將其整合為台灣農業現場最相關的四大類別。
+      <span class="prev-hazard-source-inline">資料來源：OSHA. Agricultural Operations: Hazards & Controls. U.S. DOL.；WHO. (2022). Pesticide Residues in Food.；CDC/NIOSH. (2024). Agriculture Worker Safety and Health.</span>
+    </p>
+  </div>
+
+  <div class="prev-hazard-grid-h">
+
+    <div class="prev-hazard-card-h hz-physical-h">
+      <div class="prev-hazard-icon-h"><i class="fas fa-bolt"></i></div>
+      <h4>物理性危害</h4>
+      <p class="prev-hazard-sub">跟「力量、溫度、聲音」有關的傷害</p>
+      <ul>
+        <li><strong>噪音：</strong>割草機、鏈鋸、耕耘機的聲音超過 85 分貝，長期下來聽力會永久受損</li>
+        <li><strong>振動：</strong>長期操作鏈鋸等振動工具，手指會變白、發麻（白指症）</li>
+        <li><strong>跌倒與墜落：</strong>爬梯子採果、修剪或在濕滑地面行走時最容易發生。CDC/NIOSH 統計農業非致死傷害中 <strong>29% 為跌倒所致</strong>，是首要傷害原因</li>
+        <li><strong>農機意外：</strong>被捲入旋轉零件、翻車</li>
+        <li><strong>紫外線：</strong>長期日曬增加皮膚癌風險</li>
+        <li><strong>高溫：</strong>中暑、熱衰竭，尤其夏天午間</li>
+      </ul>
+    </div>
+
+    <div class="prev-hazard-card-h hz-chemical-h">
+      <div class="prev-hazard-icon-h"><i class="fas fa-flask"></i></div>
+      <h4>化學性危害</h4>
+      <p class="prev-hazard-sub">跟「農藥、化學藥劑」有關的傷害</p>
+      <ul>
+        <li><strong>農藥暴露：</strong>藥液沾到皮膚會被吸收，吸到氣體更危險。WHO 指出全球使用超過 <strong>1,000 種農藥</strong>，慢性暴露可能導致癌症與生殖系統影響</li>
+        <li><strong>肥料粉塵：</strong>撒肥料時粉塵刺激呼吸道和眼睛</li>
+        <li><strong>有機溶劑：</strong>清洗農具時接觸到的油類和溶劑</li>
+        <li><strong>REI 未遵守：</strong>噴完藥太早進入田間，殘留藥氣濃度還很高（REI = 再進入間隔時間）</li>
+      </ul>
+    </div>
+
+    <div class="prev-hazard-card-h hz-biological-h">
+      <div class="prev-hazard-icon-h"><i class="fas fa-bug"></i></div>
+      <h4>生物性危害</h4>
+      <p class="prev-hazard-sub">跟「動物、細菌、黴菌」有關的傷害</p>
+      <ul>
+        <li><strong>蛇咬：</strong>雲嘉農田常見龜殼花和赤尾青竹絲，草叢和田埂要特別注意</li>
+        <li><strong>蜂螫：</strong>果園修剪時容易驚擾蜂巢</li>
+        <li><strong>黴菌孢子：</strong>溫室內高溫高濕，黴菌孢子容易被吸入造成呼吸道不適</li>
+        <li><strong>鉤端螺旋體：</strong>水田環境中經由傷口或黏膜感染</li>
+        <li><strong>破傷風：</strong>被生鏽的農具刺傷時有感染風險</li>
+      </ul>
+    </div>
+
+    <div class="prev-hazard-card-h hz-ergonomic-h">
+      <div class="prev-hazard-icon-h"><i class="fas fa-person-walking-arrow-loop-left"></i></div>
+      <h4>人因性危害</h4>
+      <p class="prev-hazard-sub">跟「姿勢、負重、重複動作」有關的傷害</p>
+      <ul>
+        <li><strong>重複性動作：</strong>採收、修剪時同一個動作做幾百次，手腕和手指關節容易發炎（腱鞘炎、腕隧道症候群）</li>
+        <li><strong>搬運重物：</strong>超過 15 公斤的東西經常搬，腰椎和膝蓋會慢慢受損</li>
+        <li><strong>不良姿勢：</strong>長時間蹲著、彎腰、仰頭，脊椎和關節承受持續壓力</li>
+        <li><strong>振動白指症：</strong>長期操作振動手工具累積的手部損傷</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="prev-hazard-source-h">
+    參考來源：① OSHA. <em>Agricultural Operations: Hazards &amp; Controls</em>. U.S. Department of Labor.
+    <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">原文連結</a>
+    ② WHO. (2022). <em>Pesticide Residues in Food</em>.
+    <a href="https://www.who.int/news-room/fact-sheets/detail/pesticide-residues-in-food" target="_blank" rel="noopener">原文連結</a>
+    ③ CDC/NIOSH. (2024). <em>Agriculture Worker Safety and Health</em>.
+    <a href="https://www.cdc.gov/niosh/agriculture/about/index.html" target="_blank" rel="noopener">原文連結</a>
+  </div>
+</div>
+
+<style>
+/* === 06-tool-hazards 專用樣式 === */
+.prev-tool-card-h{
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  background:#fff;border-radius:var(--radius);padding:30px;margin:0 0 24px;
+  box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;box-sizing:border-box;
+}
+.prev-tool-card-h *{box-sizing:border-box;}
+.prev-tool-header-h{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+.prev-tool-icon-h{width:52px;height:52px;border-radius:14px;background:rgba(92,134,7,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.prev-tool-header-h h3{font-size:1.15rem;font-weight:800;margin:0;color:var(--brand-dark);}
+.prev-tool-header-h p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
+
+.prev-hazard-explain{background:#f9fafb;border-radius:10px;padding:14px 18px;margin-bottom:20px;border:1px solid #f0f0f0;}
+.prev-hazard-explain p{margin:0 0 12px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:8px;}
+.prev-hazard-explain p:last-child{margin-bottom:0;}
+.prev-hazard-explain p i{margin-top:3px;flex-shrink:0;}
+.prev-hazard-data-note{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;border:1px solid rgba(59,130,246,.1);flex-wrap:wrap;}
+.prev-hazard-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
+
+.prev-hazard-grid-h{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:16px;}
+.prev-hazard-card-h{border-radius:12px;padding:24px;border-left:5px solid currentColor;}
+.hz-physical-h{background:#FFF3E0;color:#E65100;border-left-color:#E65100;}
+.hz-chemical-h{background:#F3E5F5;color:#7B1FA2;border-left-color:#7B1FA2;}
+.hz-biological-h{background:#E8F5E9;color:#2E7D32;border-left-color:#2E7D32;}
+.hz-ergonomic-h{background:#E3F2FD;color:#1565C0;border-left-color:#1565C0;}
+
+.prev-hazard-icon-h{font-size:1.8rem;margin-bottom:12px;}
+.prev-hazard-card-h h4{font-size:1.1rem;font-weight:800;margin:0 0 4px;}
+.prev-hazard-sub{font-size:.85rem;opacity:.75;margin:0 0 14px;font-weight:500;}
+.prev-hazard-card-h ul{margin:0;padding:0 0 0 16px;list-style:none;}
+.prev-hazard-card-h li{font-size:.9rem;line-height:1.7;margin-bottom:8px;color:inherit;opacity:.9;position:relative;padding-left:4px;}
+.prev-hazard-card-h li:before{content:"•";position:absolute;left:-14px;}
+
+.prev-hazard-source-h{font-size:.8rem;color:var(--text-secondary);text-align:right;}
+.prev-hazard-source-h a{color:var(--brand);margin-left:4px;}
+
+@media(max-width:768px){
+  .prev-hazard-grid-h{grid-template-columns:1fr;}
+}
+</style>
+
+
+<!-- =====================================================
+     區塊 07：職災概況 + 子頁面入口 + 文章列表 + 參考資料
+     ===================================================== -->
+
+<!-- 國際與台灣農業職災概況 -->
+<div class="prevS-stats-section">
+  <div class="prevS-section-header">
+    <h2><i class="fas fa-chart-bar"></i> 全球與台灣農業職災概況</h2>
+    <p>用數據說話——農業是全球最危險的行業之一，了解現況才能推動改變。</p>
+  </div>
+  <div class="prevS-stats-grid">
+    <div class="prevS-stat-card" style="border-top:4px solid #ef4444;">
+      <div class="prevS-stat-num" style="color:#ef4444;">18.6<small>/10萬</small></div>
+      <h4>農業致死率（美國）</h4>
+      <p>2022 年農業致死率為每 10 萬 FTE 18.6 人，是全產業平均 3.7 的 <strong>5 倍</strong>。交通運輸事故為首要死因。</p>
+      <span class="prevS-stat-source">CDC/NIOSH (2024). Agriculture Worker Safety and Health.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #f59e0b;">
+      <div class="prevS-stat-num" style="color:#f59e0b;">8.79<small>億人</small></div>
+      <h4>全球農業就業人口</h4>
+      <p>2023 年全球約 8.79 億人從事農業，占就業人口 28%。亞太地區最多（5.51 億），農業工作者普遍面臨缺乏勞動與社會保護的困境。</p>
+      <span class="prevS-stat-source">ILO (2023). Employment in Agriculture Sector.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #3b82f6;">
+      <div class="prevS-stat-num" style="color:#3b82f6;">29%</div>
+      <h4>農業傷害為跌倒所致</h4>
+      <p>2021–2022 年美國農業共有 21,020 件需缺勤的傷害，其中將近三分之一為跌倒造成，且普遍存在低報現象。</p>
+      <span class="prevS-stat-source">CDC/NIOSH (2024). Quick Facts and Stats.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #7c3aed;">
+      <div class="prevS-stat-num" style="color:#7c3aed;">67.3<small>歲</small></div>
+      <h4>台灣農保平均年齡</h4>
+      <p>台灣農保被保險人平均年齡 67.3 歲，65 歲以上占比近六成。高齡勞動加上高強度反覆作業，肌肉骨骼疾病盛行率極高。</p>
+      <span class="prevS-stat-source">勞動部 (2024). 農民職業災害保險統計；臺大醫院雲林分院農業環境與職業健康中心研究數據.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #0d9488;">
+      <div class="prevS-stat-num" style="color:#0d9488;">≈30%</div>
+      <h4>台灣農職保投保率</h4>
+      <p>農民職業災害保險投保率僅約三成，新住民農民投保率甚至僅 3%。現行制度嚴重缺乏職災預防與復工重建機制。</p>
+      <span class="prevS-stat-source">勞動部 (2024). 農職保傷病給付基準提高；尊嚴農業倡議研究數據.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #e65100;">
+      <div class="prevS-stat-num" style="color:#e65100;">1,000+</div>
+      <h4>全球農藥種類</h4>
+      <p>WHO 指出全球使用超過 1,000 種農藥，慢性暴露可能導致癌症與生殖系統影響。直接接觸農藥的農業工作者面臨最高健康風險。</p>
+      <span class="prevS-stat-source">WHO (2022). Pesticide Residues in Food — Fact Sheet.</span>
+    </div>
+  </div>
+</div>
+
+<!-- 子頁面入口 -->
+<div class="prevS-subpage-section">
+  <div class="prevS-section-header">
+    <h2><i class="fas fa-folder-open"></i> 深度專區</h2>
+    <p>
+      想了解更多細節？每個主題都有獨立的完整頁面。
+      點擊進入後可以看到更詳細的說明、選購建議和操作步驟。
+    </p>
+  </div>
+
+  <div class="prevS-subpage-grid">
+    <a href="/occupational-safety/personal-protective-equipment/" class="prevS-subpage-card">
+      <div class="prevS-subpage-icon" style="background:rgba(244,63,94,.1);color:#f43f5e;">
+        <i class="fas fa-mask-face"></i>
+      </div>
+      <h3>個人防護具（PPE）</h3>
+      <p>從頭到腳，每個身體部位該穿戴什麼防護具、怎麼選、怎麼穿脫，一次看清楚。</p>
+      <span class="prevS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/occupational-safety/labor-saving-machinery/" class="prevS-subpage-card">
+      <div class="prevS-subpage-icon" style="background:rgba(14,165,233,.1);color:#0ea5e9;">
+        <i class="fas fa-tractor"></i>
+      </div>
+      <h3>省力農機具</h3>
+      <p>依照整地、管理、採收、搬運分類，看看哪些農機適合你，還有政府補助怎麼申請。</p>
+      <span class="prevS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/occupational-safety/greenhouse-zone/" class="prevS-subpage-card">
+      <div class="prevS-subpage-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+        <i class="fas fa-warehouse"></i>
+      </div>
+      <h3>溫室作業安全</h3>
+      <p>溫室裡比外面更熱、農藥殘留更高、黴菌更多。了解溫室特有的風險和防護措施。</p>
+      <span class="prevS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+  </div>
+</div>
+
+<!-- 相關文章 -->
+<div class="prevS-articles-section">
+  <div class="prevS-section-header">
+    <h2><i class="fas fa-newspaper"></i> 相關文章</h2>
+  </div>
+
+  <!-- ★ Shortcode 說明 ★
+       目前不指定分類，會顯示最新 4 篇文章。
+       如果你想只顯示特定分類，改成：
+       [my_newss_loop cat="你的分類slug" count="4"]
+       例如：[my_newss_loop cat="prevention" count="4"]
+       
+       如果 shortcode 完全不顯示或顯示亂碼，
+       請檢查：
+       1. 佈景主題或外掛是否有註冊 my_newss_loop 這個 shortcode
+       2. 在 WordPress「文章→分類」裡有沒有建立對應的分類
+       3. 是否用「程式碼編輯器」而非「視覺編輯器」貼入（視覺編輯器會破壞 shortcode）
+  -->
+  [my_newss_loop count="4"]
+</div>
+
+<!-- 參考資料 -->
+<div class="prevS-references">
+  <div class="prevS-section-header">
+    <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+    <p>本頁內容參考以下台灣政府與國際職業安全機構的公開資料。</p>
+  </div>
+  <div class="prevS-ref-list">
+    <p class="prevS-ref-item">農業部農糧署（年度更新）。農機補助專區。<a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=3314" target="_blank" rel="noopener">https://www.afa.gov.tw/cht/index.php?code=list&ids=3314</a></p>
+    <p class="prevS-ref-item">勞動部（2024）。農職保傷病給付基準提高，農民務農保障再升級。<a href="https://www.mol.gov.tw/1607/1632/1633/76199/" target="_blank" rel="noopener">https://www.mol.gov.tw/1607/1632/1633/76199/</a></p>
+    <p class="prevS-ref-item">勞動部勞動法令查詢系統。職業安全衛生設施規則。<a href="https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021" target="_blank" rel="noopener">https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021</a></p>
+    <p class="prevS-ref-item">勞動部職業安全衛生署（2025）。職業安全衛生法（2025 年 12 月修正）。<a href="https://www.osha.gov.tw/" target="_blank" rel="noopener">https://www.osha.gov.tw/</a></p>
+    <p class="prevS-ref-item">臺大醫院雲林分院農業環境與職業健康中心。農業工作者健康調查研究數據。<a href="https://fwdignity.com/" target="_blank" rel="noopener">https://fwdignity.com/</a></p>
+    <p class="prevS-ref-item">CDC/NIOSH. (2024). <em>Agricultural safety</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/agriculture/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/agriculture/about/index.html</a></p>
+    <p class="prevS-ref-item">NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
+    <p class="prevS-ref-item">OSHA. (n.d.). <em>Agricultural operations: Hazards &amp; controls</em>. United States Department of Labor. <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">https://www.osha.gov/agricultural-operations/hazards</a></p>
+    <p class="prevS-ref-item">ILO. (2023). <em>Employment in agriculture</em> (% of total employment). International Labour Organization. <a href="https://www.ilo.org/topics/agriculture-and-food-services" target="_blank" rel="noopener">https://www.ilo.org/topics/agriculture-and-food-services</a></p>
+    <p class="prevS-ref-item">WHO. (2022). <em>Pesticide residues in food</em>. World Health Organization — Fact Sheet. <a href="https://www.who.int/news-room/fact-sheets/detail/pesticide-residues-in-food" target="_blank" rel="noopener">https://www.who.int/news-room/fact-sheets/detail/pesticide-residues-in-food</a></p>
+    <p class="prevS-ref-item">BLS. (2024). <em>Injuries, illnesses, and fatalities</em>. U.S. Bureau of Labor Statistics. <a href="https://www.bls.gov/iif/" target="_blank" rel="noopener">https://www.bls.gov/iif/</a></p>
+  </div>
+</div>
+
+<style>
+/* === 07-subpages-refs 專用樣式（prevS 前綴） === */
+.prevS-subpage-section,.prevS-articles-section,.prevS-references{
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.prevS-subpage-section *,.prevS-references *{box-sizing:border-box;}
+
+.prevS-section-header{margin-bottom:20px;}
+.prevS-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 10px;}
+.prevS-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+
+/* Sub-page Cards */
+.prevS-subpage-section{margin:40px 0 0;}
+.prevS-subpage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.prevS-subpage-card{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border-radius:var(--radius);padding:30px;border:1px solid #eee;text-decoration:none;color:inherit;transition:all .3s;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.prevS-subpage-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);border-color:var(--brand);}
+.prevS-subpage-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;}
+.prevS-subpage-card h3{font-size:1.15rem;font-weight:800;margin:0 0 8px;color:var(--brand-dark);}
+.prevS-subpage-card p{font-size:.93rem;line-height:1.7;color:var(--text-secondary);margin:0;flex:1;}
+.prevS-subpage-arrow{position:absolute;top:30px;right:30px;color:var(--brand);font-size:1.1rem;transition:transform .3s;}
+.prevS-subpage-card:hover .prevS-subpage-arrow{transform:translateX(4px);}
+
+/* Articles */
+.prevS-articles-section{margin:40px 0 0;}
+
+/* Stats Section */
+.prevS-stats-section{margin:40px 0 0;}
+.prevS-stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.prevS-stat-card{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s;}
+.prevS-stat-card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,.08);}
+.prevS-stat-num{font-size:2.4rem;font-weight:900;margin-bottom:4px;font-family:"Lato","Noto Sans TC",sans-serif;}
+.prevS-stat-num small{font-size:.5em;font-weight:700;opacity:.7;}
+.prevS-stat-card h4{font-size:1.05rem;font-weight:800;color:var(--brand-dark);margin:0 0 8px;}
+.prevS-stat-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
+.prevS-stat-source{font-size:.78rem;color:#9ca3af;font-style:italic;display:block;}
+
+/* References */
+.prevS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}
+.prevS-ref-list{display:flex;flex-direction:column;gap:10px;}
+.prevS-ref-item{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding-left:24px;text-indent:-24px;}
+.prevS-ref-item a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .prevS-subpage-grid{grid-template-columns:1fr;}
+}
+</style>

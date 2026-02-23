@@ -12,6 +12,12 @@
       下面三個工具幫助您自我檢視田間工作的安全狀況。
       不需要任何專業知識，照著步驟操作就能了解自己的風險在哪裡、該怎麼改善。
     </p>
+    <p class="prevQ-data-note">
+      <i class="fas fa-chart-line"></i>
+      <strong>用數據說話：</strong>美國 NIOSH 統計顯示，農業工作者致死率為全產業平均的 <strong>5 倍</strong>（每 10 萬人 18.6 vs. 3.7），
+      且 <strong>56%</strong> 的死亡發生在 55 歲以上工作者。提早了解自己的風險，才能及早預防。
+      <span class="prevQ-source">資料來源：CDC/NIOSH (2024). Agriculture Worker Safety and Health.</span>
+    </p>
   </div>
 
   <div class="prevQ-tool-card" id="risk-quiz">
@@ -108,7 +114,10 @@
 .prev-risk-section *{box-sizing:border-box;}
 .prevQ-section-header{margin-bottom:28px;}
 .prevQ-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
-.prevQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+.prevQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 10px;max-width:800px;}
+.prevQ-data-note{background:rgba(59,130,246,.05);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.12);}
+.prevQ-data-note i{color:#3b82f6;margin-top:3px;flex-shrink:0;}
+.prevQ-source{display:block;width:100%;font-size:.78rem;color:#9ca3af;font-style:italic;margin-top:4px;}
 
 .prevQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;margin-bottom:24px;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
 .prevQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
@@ -159,23 +168,23 @@ document.addEventListener('DOMContentLoaded',function(){
   var typeProfiles={
     outdoor:{
       checks:['hours','heat','posture','noppe'],
-      hint:'露天耕作常見風險：長時間日曬、高溫、彎腰作業。如果您還需要搬運重物或操作農機，請自行加勾。'
+      hint:'露天耕作常見風險：長時間日曬、高溫、彎腰作業。美國 OSHA 將「高溫」、「紫外線」列為農業重要物理性危害。如果您還需要搬運重物或操作農機，請自行加勾。'
     },
     greenhouse:{
       checks:['heat','enclosed','posture','chemical'],
-      hint:'溫室作業常見風險：密閉空間高溫高濕、農藥殘留濃度高、長時間蹲姿。溫室裡比戶外更容易中暑。'
+      hint:'溫室作業常見風險：密閉空間高溫高濕、農藥殘留濃度高、長時間蹲姿。OSHA 研究指出溫室內「呼吸系統危害」顯著提高（黎菌孢子、殘留藥氣）。'
     },
     pesticide:{
       checks:['chemical','noppe','hours'],
-      hint:'農藥噴灑常見風險：藥劑經皮膚吸收和呼吸吸入。如果在溫室內噴藥，密閉空間會讓風險更高，請加勾「密閉空間」。'
+      hint:'農藥噴灑常見風險：藥劑經皮膚吸收和呼吸吸入。世界衛生組織指出，直接接觸農藥的工作者面臨最高健康風險，全球使用超過 1,000 種農藥。如果在溫室內噴藥，密閉空間會讓風險更高，請加勾「密閉空間」。'
     },
     machine:{
       checks:['machine','hours','noppe'],
-      hint:'農機操作常見風險：噪音超過 85 分貝、振動傷害、捲入翻覆。操作鏈鋸等手持振動工具的時間越長越危險。'
+      hint:'農機操作常見風險：噪音超過 85 分貝、振動傷害、捲入翻覆。CDC/NIOSH 統計顯示「接觸物件與設備」是農業死亡主要原因之一。操作鏈鋸等手持振動工具的時間越長越危險。'
     },
     harvest:{
       checks:['heavy','posture','hours','heat'],
-      hint:'採收搬運常見風險：反覆搬重物傷腰、長時間蹲姿傷膝蓋、高處採果有墜落風險。'
+      hint:'採收搬運常見風險：反覆搬重物傷腰、長時間蹲姿傷膝蓋、高處採果有墜落風險。NIOSH 統計顯示跌倒佔農業傷害 29%，是農業非致死傷害的首要原因。'
     }
   };
 

@@ -4,7 +4,7 @@
         <header class="mb-8 border-b pb-6">
             <h2 class="text-2xl font-bold flex items-center gap-2 text-emerald-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="8" x2="16" y1="10" y2="10"/><line x1="8" x2="16" y1="14" y2="14"/><line x1="8" x2="16" y1="18" y2="18"/></svg>
-                勞農職涯退休金試算 4.0
+                勞農職涯退休金試算 5.0
             </h2>
             <p class="text-slate-500 text-sm mt-1">對比「一路當勞工」與「中途轉職務農」的退休保障差異。</p>
         </header>
@@ -16,21 +16,21 @@
                     <div class="grid grid-cols-2 gap-4 mb-4">
                         <div>
                             <label class="block text-xs font-bold text-slate-600 mb-1">目前年齡</label>
-                            <input type="number" id="currentAge" value="35" class="w-full p-2 border rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <input type="number" id="currentAge" value="35" min="18" max="64" class="w-full p-2 border rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-600 mb-1">開始工作年齡</label>
-                            <input type="number" id="laborStartAge" value="25" class="w-full p-2 border rounded-lg text-sm">
+                            <input type="number" id="laborStartAge" value="25" min="15" max="60" class="w-full p-2 border rounded-lg text-sm">
                         </div>
                     </div>
                     <div class="mb-4">
                         <label class="block text-xs font-bold text-slate-600 mb-1">目前實際月薪 (元)</label>
-                        <input type="number" id="currentSalary" value="55000" class="w-full p-2 border rounded-lg text-sm">
+                        <input type="number" id="currentSalary" value="55000" min="29500" class="w-full p-2 border rounded-lg text-sm">
                     </div>
                     <div class="p-4 bg-orange-50 rounded-xl border border-orange-100">
                         <label class="block text-xs font-bold text-orange-800 mb-1">預計轉職務農年齡</label>
-                        <input type="number" id="switchAge" value="45" class="w-full p-2 border border-orange-200 rounded-lg text-sm bg-white">
-                        <p class="text-[10px] text-orange-600 mt-2">※ 若不想轉職，請設定與退休年齡相同</p>
+                        <input type="number" id="switchAge" value="45" min="18" max="65" class="w-full p-2 border border-orange-200 rounded-lg text-sm bg-white">
+                        <p class="text-[10px] text-orange-600 mt-2">※ 若不想轉職，請設定為 65（與退休年齡相同）</p>
                     </div>
                 </div>
 
@@ -40,13 +40,18 @@
                         <div>
                             <label class="block text-xs font-bold text-slate-600 mb-1">勞退自提 (%)</label>
                             <input type="number" id="laborSelfRate" value="0" min="0" max="6" class="w-full p-2 border rounded-lg text-sm">
+                            <p class="text-[10px] text-slate-400 mt-1">勞退條例§14：0–6%</p>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-slate-600 mb-1">農退提繳 (%)</label>
                             <input type="number" id="farmerRate" value="10" min="1" max="10" class="w-full p-2 border rounded-lg text-sm">
+                            <p class="text-[10px] text-slate-400 mt-1">農退儲金條例§7：1–10%</p>
                         </div>
                     </div>
                 </div>
+
+                <!-- 錯誤提示 -->
+                <div id="validation-msg" class="hidden bg-red-50 p-3 rounded-xl border border-red-200 text-xs text-red-700"></div>
             </div>
 
             <div class="lg:col-span-7 space-y-6">
@@ -95,111 +100,206 @@
                     </div>
                     
                     <div class="flex flex-wrap gap-4 pt-4 border-t text-[10px] text-slate-400">
-                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-blue-500 rounded-sm"></span> 勞保/老農津貼</span>
-                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-blue-300 rounded-sm"></span> 勞退(雇主)</span>
+                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-blue-500 rounded-sm"></span> 勞保年金/老農津貼</span>
+                        <span class="flex items-center gap-1"><span class="w-3 h-3 bg-blue-300 rounded-sm"></span> 勞退(雇主6%)</span>
                         <span class="flex items-center gap-1"><span class="w-3 h-3 bg-purple-500 rounded-sm"></span> 勞退(自提)</span>
                         <span class="flex items-center gap-1"><span class="w-3 h-3 bg-emerald-500 rounded-sm"></span> 農民退休儲金</span>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- ===== 計算說明與免責聲明 ===== -->
+        <div class="mt-10 space-y-5">
+
+            <!-- 計算假設 -->
+            <div class="bg-amber-50 p-5 rounded-2xl border border-amber-200">
+                <h4 class="font-bold text-amber-800 mb-3 flex items-center gap-2 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>
+                    計算假設與簡化說明
+                </h4>
+                <ul class="space-y-1.5 text-xs text-amber-900 list-disc pl-4 leading-relaxed">
+                    <li><strong>勞保老年年金</strong>採兩公式擇優（勞保條例 §58-2）：
+                        <br>公式一 ＝ 平均月投保薪資 × 年資 × 0.775% ＋ 3,000 元
+                        <br>公式二 ＝ 平均月投保薪資 × 年資 × 1.55%</li>
+                    <li>平均月投保薪資以職涯中間值近似「加保期間最高 60 個月平均」，實際值依個人投保紀錄而定</li>
+                    <li>勞退新制雇主提繳率固定 6%（勞退條例 §14），自願提繳 0–6%</li>
+                    <li>農民退休儲金以最低工資為計算基礎，農民與政府各提繳 1–10%、1:1 相對提撥（農退儲金條例 §7）</li>
+                    <li>退休金帳戶年投報率預設 <strong>2%</strong>，薪資 / 最低工資年成長率預設 <strong>2%</strong>，退休後預估請領 <strong>20 年</strong>（240 個月）</li>
+                    <li>勞保老年年金需年資滿 <strong>15 年</strong>方可請領月退；未滿 15 年者僅能請領一次金，本工具尚未納入此情境差異</li>
+                    <li>本試算不含國民年金、勞保一次給付、農保喪葬津貼等其他社會保險給付</li>
+                    <li>退休年齡固定假設為 <strong>65 歲</strong></li>
+                </ul>
+            </div>
+
+            <!-- 法規依據 -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200">
+                <h4 class="font-bold text-slate-700 mb-3 text-sm">📖 法規依據</h4>
+                <ul class="space-y-1 text-xs list-disc pl-4 text-slate-600 leading-relaxed">
+                    <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0050001" target="_blank" rel="noopener" class="text-emerald-700 underline hover:text-emerald-900">勞工保險條例</a>（§58、§58-2 老年年金給付）</li>
+                    <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030020" target="_blank" rel="noopener" class="text-emerald-700 underline hover:text-emerald-900">勞工退休金條例</a>（§14 提繳率、§23 請領方式）</li>
+                    <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=M0090035" target="_blank" rel="noopener" class="text-emerald-700 underline hover:text-emerald-900">農民退休儲金條例</a>（§7 提繳比率與政府相對提撥、§14 請領方式）</li>
+                    <li><a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=M0090015" target="_blank" rel="noopener" class="text-emerald-700 underline hover:text-emerald-900">老年農民福利津貼暫行條例</a>（老農津貼發放依據）</li>
+                </ul>
+            </div>
+
+            <!-- 官方試算工具 -->
+            <div class="bg-white p-5 rounded-2xl border border-slate-200">
+                <h4 class="font-bold text-slate-700 mb-3 text-sm">🔗 官方試算工具與資料來源</h4>
+                <ul class="space-y-1 text-xs list-disc pl-4 text-slate-600 leading-relaxed">
+                    <li><a href="https://www.bli.gov.tw/0100114.html" target="_blank" rel="noopener" class="text-emerald-700 underline hover:text-emerald-900">勞動部勞保局 — 勞保老年給付試算</a></li>
+                    <li><a href="https://www.bli.gov.tw/0100136.html" target="_blank" rel="noopener" class="text-emerald-700 underline hover:text-emerald-900">勞動部勞保局 — 勞工退休金試算</a></li>
+                    <li><a href="https://www.bli.gov.tw/0021126.html" target="_blank" rel="noopener" class="text-emerald-700 underline hover:text-emerald-900">勞動部勞保局 — 農民退休儲金試算</a></li>
+                    <li><a href="https://www.mol.gov.tw/" target="_blank" rel="noopener" class="text-emerald-700 underline hover:text-emerald-900">勞動部 — 最低工資公告</a></li>
+                </ul>
+            </div>
+
+            <!-- 免責聲明 -->
+            <div class="bg-red-50 p-4 rounded-xl border border-red-200 text-[11px] text-red-800 leading-relaxed">
+                <strong>⚠️ 免責聲明：</strong>本試算工具僅供參考，計算結果不代表未來實際可領取之金額。各項給付金額受法規修訂、投資報酬率變動、薪資調整、個人投保紀錄等因素影響，實際金額請以<strong>勞動部勞工保險局</strong>及<strong>農業部</strong>公告為準。本站不對試算結果之正確性承擔任何法律責任。使用者在做出相關財務決策前，應諮詢專業顧問或逕洽相關主管機關。
+            </div>
+
+            <!-- 資料更新日期 -->
+            <p class="text-[10px] text-slate-400 text-center pb-2">
+                資料更新日期：2026 年 2 月 ｜ 最低工資 $29,500/月（2026 年） ｜ 老農津貼 $8,110/月 ｜ 勞保投保薪資上限 $45,800
+            </p>
+        </div>
+
     </div>
 </div>
 
 <script>
 (function() {
-    // 1. 設定與常數
+    // ========== 1. 設定與常數 ==========
+    // 資料來源：勞動部公告、農業部公告
     const CONST = {
-        BASIC_WAGE: 28590,        // 2025 預估基本工資
-        OLD_FARMER_ALLOWANCE: 8110, // 老農津貼
-        LABOR_INS_MAX: 45800,     // 勞保投保上限
-        ROI: 0.02,                // 預估投報率 2%
-        GROWTH: 0.02,             // 薪資成長率 2%
-        LIFE_EXP: 20              // 退休後預計領 20 年 (240個月)
+        BASIC_WAGE: 29500,        // 2026 年最低工資（原「基本工資」，依最低工資法自 2025 年起更名）
+        OLD_FARMER_ALLOWANCE: 8110, // 老農津貼（老年農民福利津貼暫行條例）
+        LABOR_INS_MAX: 45800,     // 勞保月投保薪資上限（第12級）
+        ROI: 0.02,                // 預設年投報率 2%（保守估計）
+        GROWTH: 0.02,             // 薪資 / 最低工資年成長率 2%
+        LIFE_EXP: 20              // 退休後預計領 20 年（240 個月）
     };
 
     let viewMode = 'monthly'; // 'monthly' or 'total'
 
-    // 2. 抓取 DOM
+    // ========== 2. DOM ==========
     const inputs = ['currentAge', 'laborStartAge', 'currentSalary', 'switchAge', 'laborSelfRate', 'farmerRate'];
     const el = (id) => document.getElementById(id);
 
-    // 3. 核心邏輯
+    // ========== 3. 輸入驗證 ==========
+    function validate(data) {
+        const msgs = [];
+        if (data.currentAge < data.laborStartAge) msgs.push('目前年齡不可小於開始工作年齡');
+        if (data.switchAge < data.currentAge) msgs.push('轉職年齡不可小於目前年齡');
+        if (data.switchAge > 65) msgs.push('轉職年齡不可大於 65 歲（退休年齡）');
+        if (data.laborSelfRate < 0 || data.laborSelfRate > 6) msgs.push('勞退自提範圍為 0–6%（勞退條例 §14）');
+        if (data.farmerRate < 1 || data.farmerRate > 10) msgs.push('農退提繳範圍為 1–10%（農退儲金條例 §7）');
+        const msgEl = el('validation-msg');
+        if (msgs.length > 0) {
+            msgEl.innerHTML = msgs.join('<br>');
+            msgEl.classList.remove('hidden');
+            return false;
+        }
+        msgEl.classList.add('hidden');
+        return true;
+    }
+
+    // ========== 4. 勞保年金公式（勞保條例 §58-2）==========
+    // 公式一：平均月投保薪資 × 年資 × 0.775% ＋ 3,000
+    // 公式二：平均月投保薪資 × 年資 × 1.55%
+    // 兩者擇優
+    function calcLaborAnnuity(avgInsuredSalary, years) {
+        const f1 = avgInsuredSalary * years * 0.00775 + 3000;
+        const f2 = avgInsuredSalary * years * 0.0155;
+        return Math.max(f1, f2);
+    }
+
+    // ========== 5. 核心邏輯 ==========
     function calculate() {
         const data = {};
         inputs.forEach(id => data[id] = Number(el(id).value));
+        if (!validate(data)) return;
 
-        const monthsTo領 = CONST.LIFE_EXP * 12;
-        const laborRetireAge = 65; // 假設 65 歲退休
+        const monthsToReceive = CONST.LIFE_EXP * 12; // 240 個月
+        const laborRetireAge = 65;
         
-        // --- 方案 A: 續當勞工 ---
+        // --- 方案 A: 續當勞工到 65 歲 ---
         const totalLaborYears = laborRetireAge - data.laborStartAge;
         const yearsLeft = laborRetireAge - data.currentAge;
         
-        // 勞保年金 (簡化公式：平均薪資 * 年資 * 1.55%)
-        const avgSalary = Math.min(data.currentSalary * Math.pow(1 + CONST.GROWTH, yearsLeft / 2), CONST.LABOR_INS_MAX);
-        const laborAnnuity = avgSalary * totalLaborYears * 0.0155;
+        // 平均月投保薪資（以職涯中間值近似最高 60 個月平均）
+        const avgSalary = Math.min(
+            data.currentSalary * Math.pow(1 + CONST.GROWTH, yearsLeft / 2),
+            CONST.LABOR_INS_MAX
+        );
+        const laborAnnuity = calcLaborAnnuity(avgSalary, totalLaborYears);
         
-        // 勞退專戶 (複利計算)
+        // 勞退新制專戶（勞退條例 §14：雇主 6% + 自提 0-6%）
         let lpEmp = 0, lpSelf = 0;
         let tempSalary = data.currentSalary;
-        for(let i=0; i < yearsLeft; i++) {
+        for (let i = 0; i < yearsLeft; i++) {
             lpEmp = (lpEmp + (tempSalary * 0.06 * 12)) * (1 + CONST.ROI);
-            lpSelf = (lpSelf + (tempSalary * (data.laborSelfRate/100) * 12)) * (1 + CONST.ROI);
+            lpSelf = (lpSelf + (tempSalary * (data.laborSelfRate / 100) * 12)) * (1 + CONST.ROI);
             tempSalary *= (1 + CONST.GROWTH);
         }
 
-        const lpEmpMonthly = lpEmp / monthsTo領;
-        const lpSelfMonthly = lpSelf / monthsTo領;
+        const lpEmpMonthly = lpEmp / monthsToReceive;
+        const lpSelfMonthly = lpSelf / monthsToReceive;
 
-        // --- 方案 B: 轉職務農 ---
-        const yearsUntilSwitch = data.switchAge - data.currentAge;
-        const yearsAsFarmer = laborRetireAge - data.switchAge;
+        // --- 方案 B: 中途轉職務農 ---
+        const yearsUntilSwitch = Math.max(0, data.switchAge - data.currentAge);
+        const yearsAsFarmer = Math.max(0, laborRetireAge - data.switchAge);
         const laborYearsAtSwitch = data.switchAge - data.laborStartAge;
 
-        // 舊勞退滾存
+        // 轉職前累積的勞退專戶
         let oldLpEmp = 0, oldLpSelf = 0;
         tempSalary = data.currentSalary;
-        for(let i=0; i < yearsUntilSwitch; i++) {
+        for (let i = 0; i < yearsUntilSwitch; i++) {
             oldLpEmp = (oldLpEmp + (tempSalary * 0.06 * 12)) * (1 + CONST.ROI);
-            oldLpSelf = (oldLpSelf + (tempSalary * (data.laborSelfRate/100) * 12)) * (1 + CONST.ROI);
+            oldLpSelf = (oldLpSelf + (tempSalary * (data.laborSelfRate / 100) * 12)) * (1 + CONST.ROI);
             tempSalary *= (1 + CONST.GROWTH);
         }
-        // 轉職後繼續滾利息
+        // 轉職後帳戶繼續滾利息直到 65 歲
         oldLpEmp *= Math.pow(1 + CONST.ROI, yearsAsFarmer);
         oldLpSelf *= Math.pow(1 + CONST.ROI, yearsAsFarmer);
 
-        // 農民儲金
+        // 農民退休儲金（農退儲金條例 §7：以最低工資為基礎，農民+政府各提繳 1-10%）
         let farmerPensionAcc = 0;
         let tempBasicWage = CONST.BASIC_WAGE;
-        for(let i=0; i < yearsAsFarmer; i++) {
-            const userPay = tempBasicWage * (data.farmerRate/100) * 12;
+        for (let i = 0; i < yearsAsFarmer; i++) {
+            const userPay = tempBasicWage * (data.farmerRate / 100) * 12;
             farmerPensionAcc = (farmerPensionAcc + (userPay * 2)) * (1 + CONST.ROI); // 政府 1:1 相對提撥
             tempBasicWage *= (1 + CONST.GROWTH);
         }
 
-        // 底層保障：勞保保留年資年金 或 老農津貼 (取高者)
-        const laborAnnuityAtSwitch = avgSalary * laborYearsAtSwitch * 0.0155;
+        // 底層保障：勞保保留年資年金 或 老農津貼（取較高者）
+        // ★ 修正：方案B的平均投保薪資要以「轉職前」的薪資水準為基準，不能用全職涯 avgSalary
+        const avgSalaryAtSwitch = Math.min(
+            data.currentSalary * Math.pow(1 + CONST.GROWTH, yearsUntilSwitch / 2),
+            CONST.LABOR_INS_MAX
+        );
+        const laborAnnuityAtSwitch = calcLaborAnnuity(avgSalaryAtSwitch, laborYearsAtSwitch);
         const baseLayer = Math.max(laborAnnuityAtSwitch, CONST.OLD_FARMER_ALLOWANCE);
 
-        // 4. 更新 UI
+        // ========== 6. 更新 UI ==========
         updateDisplay({
             labor: {
                 base: laborAnnuity,
                 emp: lpEmpMonthly,
                 self: lpSelfMonthly,
                 total: laborAnnuity + lpEmpMonthly + lpSelfMonthly,
-                totalAsset: (laborAnnuity * monthsTo領) + lpEmp + lpSelf
+                totalAsset: (laborAnnuity * monthsToReceive) + lpEmp + lpSelf
             },
             farmer: {
                 base: baseLayer,
-                emp: oldLpEmp / monthsTo領,
-                self: oldLpSelf / monthsTo領,
-                farm: farmerPensionAcc / monthsTo領,
-                total: baseLayer + (oldLpEmp/monthsTo領) + (oldLpSelf/monthsTo領) + (farmerPensionAcc/monthsTo領),
-                totalAsset: (baseLayer * monthsTo領) + oldLpEmp + oldLpSelf + farmerPensionAcc
+                emp: oldLpEmp / monthsToReceive,
+                self: oldLpSelf / monthsToReceive,
+                farm: farmerPensionAcc / monthsToReceive,
+                total: baseLayer + (oldLpEmp / monthsToReceive) + (oldLpSelf / monthsToReceive) + (farmerPensionAcc / monthsToReceive),
+                totalAsset: (baseLayer * monthsToReceive) + oldLpEmp + oldLpSelf + farmerPensionAcc
             }
-        }, monthsTo領);
+        }, monthsToReceive);
     }
 
     function updateDisplay(results, divisor) {
@@ -235,22 +335,22 @@
 
         drawBar('labor-bar', [
             { label: '勞保年金', val: results.labor.base, color: 'bg-blue-500' },
-            { label: '勞退(雇主)', val: results.labor.emp, color: 'bg-blue-300' },
+            { label: '勞退(雇主6%)', val: results.labor.emp, color: 'bg-blue-300' },
             { label: '勞退(自提)', val: results.labor.self, color: 'bg-purple-500' }
         ]);
 
         drawBar('farmer-bar', [
-            { label: '底層保障', val: results.farmer.base, color: 'bg-blue-500' },
-            { label: '舊勞退(雇)', val: results.farmer.emp, color: 'bg-blue-300' },
-            { label: '舊勞退(自)', val: results.farmer.self, color: 'bg-purple-500' },
-            { label: '農民儲金', val: results.farmer.farm, color: 'bg-emerald-500' }
+            { label: '勞保年金/老農津貼', val: results.farmer.base, color: 'bg-blue-500' },
+            { label: '舊勞退(雇主)', val: results.farmer.emp, color: 'bg-blue-300' },
+            { label: '舊勞退(自提)', val: results.farmer.self, color: 'bg-purple-500' },
+            { label: '農民退休儲金', val: results.farmer.farm, color: 'bg-emerald-500' }
         ]);
 
         el('labor-bar-total').innerText = isMonthly ? `約 $${Math.round(results.labor.total).toLocaleString()}/月` : `總額 $${(results.labor.totalAsset/1000000).toFixed(2)}M`;
         el('farmer-bar-total').innerText = isMonthly ? `約 $${Math.round(results.farmer.total).toLocaleString()}/月` : `總額 $${(results.farmer.totalAsset/1000000).toFixed(2)}M`;
     }
 
-    // 5. 事件監聽
+    // ========== 7. 事件監聽 ==========
     window.setViewMode = function(mode) {
         viewMode = mode;
         el('btn-monthly').className = mode === 'monthly' ? 'px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-emerald-600 text-white' : 'px-4 py-1.5 rounded-full text-xs font-bold transition-all bg-white text-slate-600 border';

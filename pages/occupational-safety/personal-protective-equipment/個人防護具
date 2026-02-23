@@ -25,6 +25,14 @@
       最後面有完整的穿脫順序和法規依據。
     </p>
   </div>
+  <div class="ppe-hero-data">
+    <p><i class="fas fa-chart-line"></i> <strong>為什麼 PPE 是最後一道防線？</strong></p>
+    <ul>
+      <li>NIOSH 安全控制層級：PPE 位於第 5 層（最低），但對自營農民而言往往是<strong>最實際的第一道保護</strong></li>
+      <li>ILO 數據：農業僅佔全球勞動人口約 27%，卻佔職業致死事故的 <strong>近半數</strong></li>
+      <li>OSHA 研究：正確選用並確實佩戴 PPE，可有效降低農藥暴露、噪音性聽損與眼部傷害的發生率</li>
+    </ul>
+  </div>
   <a href="/occupational-safety/" class="ppe-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
 </div>
 
@@ -68,7 +76,7 @@
       <div class="ppe-cat-icon"><i class="fas fa-glasses"></i></div>
       <div>
         <h2>眼部防護</h2>
-        <p class="ppe-cat-why">割草碎枝時碎石和樹屑會飛濺傷眼；噴藥時藥液會飄到臉上。</p>
+        <p class="ppe-cat-why">割草碎枝時碎石和樹屑會飛濺傷眼；噴藥時藥液會飄到臉上。BLS 統計美國每年約 <strong>20,000 件</strong>工作場所眼部傷害，其中<strong>農林漁牧業佔比顯著</strong>。</p>
       </div>
     </div>
     <div class="ppe-cat-body">
@@ -99,7 +107,7 @@
       <div class="ppe-cat-icon"><i class="fas fa-lungs"></i></div>
       <div>
         <h2>呼吸防護</h2>
-        <p class="ppe-cat-why">農藥微粒和蒸氣經口鼻吸入會傷害神經、肝臟和腎臟；翻土碎土的粉塵刺激呼吸道。</p>
+        <p class="ppe-cat-why">農藥微粒和蒸氣經口鼻吸入會傷害神經、肝臟和腎臟；翻土碎土的粉塵刺激呼吸道。WHO 估計全球每年約 <strong>11,000 人</strong>因農藥中毒死亡，呼吸道吸入是主要暴露途徑之一。</p>
       </div>
     </div>
     <div class="ppe-cat-body">
@@ -142,7 +150,7 @@
       <div class="ppe-cat-icon"><i class="fas fa-hand"></i></div>
       <div>
         <h2>手部防護</h2>
-        <p class="ppe-cat-why">農藥會經皮膚吸收進入人體（手是最常接觸農藥的部位）；修剪和採收時有割傷風險。</p>
+        <p class="ppe-cat-why">農藥會經皮膚吸收進入人體（手是最常接觸農藥的部位）；修剪和採收時有割傷風險。研究顯示農藥經皮膚吸收佔農業工作者總暴露量的 <strong>65%– 90%</strong>，手部是最主要的接觸部位。</p>
       </div>
     </div>
     <div class="ppe-cat-body">
@@ -243,7 +251,7 @@
       <div class="ppe-cat-icon"><i class="fas fa-ear-listen"></i></div>
       <div>
         <h2>聽力防護</h2>
-        <p class="ppe-cat-why">割草機、鏈鋸、耕耘機運轉噪音超過 85 分貝，長期不防護會造成不可逆的聽力損失。</p>
+        <p class="ppe-cat-why">割草機、鏈鋸、耕耘機運轉噪音超過 85 分貝，長期不防護會造成不可逆的聽力損失。CDC 統計美國約 <strong>2,200 萬勞工</strong>暴露於有害噪音中，農業工作者因缺乏聽力防護，噪音性聽力損失發生率特別高。</p>
       </div>
     </div>
     <div class="ppe-cat-body">
@@ -340,6 +348,10 @@
     <p>經濟部標準檢驗局。CNS 1336 工業用安全帽。</p>
     <p>NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
     <p>OSHA. (n.d.). <em>Personal protective equipment</em>. United States Department of Labor. <a href="https://www.osha.gov/personal-protective-equipment" target="_blank" rel="noopener">https://www.osha.gov/personal-protective-equipment</a></p>
+    <p>CDC/NIOSH. (2024). <em>Agricultural safety</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/agricultural-safety/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/agricultural-safety/about/index.html</a></p>
+    <p>WHO. (2022). <em>Pesticide safety</em>. World Health Organization. <a href="https://www.who.int/news-room/questions-and-answers/item/chemical-safety-pesticides" target="_blank" rel="noopener">https://www.who.int/news-room/questions-and-answers/item/chemical-safety-pesticides</a></p>
+    <p>ILO. (2023). <em>Safety and health in agriculture</em>. International Labour Organization. <a href="https://www.ilo.org/global/topics/safety-and-health-at-work/industries-sectors/WCMS_219866/lang--en/index.htm" target="_blank" rel="noopener">https://www.ilo.org/global/topics/safety-and-health-at-work/industries-sectors/WCMS_219866/lang--en/index.htm</a></p>
+    <p>Bureau of Labor Statistics. (2024). <em>Census of Fatal Occupational Injuries (CFOI)</em>. U.S. Department of Labor. <a href="https://www.bls.gov/iif/fatal-injuries.htm" target="_blank" rel="noopener">https://www.bls.gov/iif/fatal-injuries.htm</a></p>
   </div>
 </div>
 
@@ -361,6 +373,10 @@
 .ppe-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.ppe-hero-intro p:last-child{margin-bottom:0;}
 .ppe-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
 .ppe-back-link:hover{text-decoration:underline;}
+.ppe-hero-data{background:rgba(198,40,40,.06);border-left:4px solid #c62828;border-radius:8px;padding:16px 20px;margin-top:16px;font-size:.93rem;line-height:1.8;}
+.ppe-hero-data p{margin:0 0 8px;font-weight:700;color:#c62828;}
+.ppe-hero-data ul{margin:0;padding:0 0 0 20px;}
+.ppe-hero-data li{margin-bottom:4px;color:var(--text-secondary);}
 
 /* Category Cards */
 .ppe-categories{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}

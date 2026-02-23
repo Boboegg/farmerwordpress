@@ -3,7 +3,7 @@
  * Plugin Name: 圖文雜誌風格最新動態 (PHP 自動輪播 + 預覽優先版 - 終極詳解版)
  * Description: 自動抓取文章，左側大圖輪播，右側列表點擊切換預覽，需按「閱讀全文」才跳轉。
  * Author: AI Assistant
- * Version: 2.3 (Maintenance-Ready)
+ * Version: 3.0 (Auto-Route + Full Category Colors)
  *
  * 【操作說明書 / Maintenance Guide】
  * 1. 功能：此程式會自動抓取指定分類的最新文章 (預設 5 篇)。
@@ -16,6 +16,8 @@
  * - 指定分類：[news_magazine_layout category="news"]
  * - 修改標題：[news_magazine_layout title="近期活動"]
  * - 修改數量：[news_magazine_layout count="6"]
+ * - 指定連結：[news_magazine_layout more_url="/custom-page/"]
+ *   （若不指定 more_url，會自動依 category 參數導向對應分類頁面）
  *
  * 3. 常見維護修改：
  * - 修改「閱讀全文」按鈕文字：搜尋 "閱讀全文"
@@ -38,8 +40,61 @@ add_shortcode('news_magazine_layout', function($atts) {
         'category' => '',
         'count'    => 5,
         'title'    => '最新動態',
-        'more_url' => '/thenews/'
+        'more_url' => ''   // 留空 = 自動依 category 決定
     ], $atts);
+
+    // =================================================================
+    // 1.1 分類 → 對應頁面 URL 對照表
+    //     ★ 新增分類時請同步更新此表 & docs/article-category-slugs.md
+    // =================================================================
+    $category_url_map = [
+        // 最新消息系列
+        'news'                 => '/thenews/',
+        'press'                => '/thenews/',
+        'event'                => '/thenews/',
+        'notices'              => '/thenews/',
+        // 安全裝備
+        'equipment'            => '/occupational-safety/',
+        'ppe'                  => '/occupational-safety/personal-protective-equipment/',
+        'assistive-tech'       => '/occupational-safety/labor-saving-machinery/',
+        'media'                => '/occupational-safety/',
+        // 環境設施
+        'environment'          => '/occupational-safety/',
+        'greenhouse'           => '/occupational-safety/greenhouse-zone/',
+        // 研究出版
+        'research'             => '/research-result/research-publication/',
+        'annual-reports'       => '/research-result/research-publication/',
+        'policy-papers'        => '/research-result/research-publication/',
+        'data-viz'             => '/research-result/infographic/',
+        // 影音
+        'podcast'              => '/research-result/podcast/',
+        'youtube'              => '/research-result/podcast/',
+        // 下載中心
+        'downloads'            => '/research-result/download-zone/',
+        'infographic'          => '/research-result/download-zone/',
+        'video'                => '/research-result/download-zone/',
+        // 職業健康
+        'health'               => '/healthgood/',
+        'heat-stress'          => '/healthgood/subpage-heat/',
+        'chemical-safety'      => '/healthgood/subpage-pesticide/',
+        'musculoskeletal'      => '/healthgood/subpage-msd/',
+        // 經濟保險
+        'insurance'            => '/economic-insurance/',
+        'occupation-ins'       => '/economic-insurance/occupational-accident-insurance/',
+        'ins-subsidy-insurance'=> '/economic-insurance/agricultural-subsidy-resources/',
+        'crop-ins'             => '/economic-insurance/crop-insurance/',
+        // 農學堂
+        'agri-school'          => '/farmer-study/',
+        'education-farmer'     => '/farmer-study/',
+    ];
+
+    // 如果使用者沒有手動指定 more_url，就自動從對照表查找
+    if (empty($atts['more_url'])) {
+        $cat_key = sanitize_text_field($atts['category']);
+        $atts['more_url'] = isset($category_url_map[$cat_key])
+            ? $category_url_map[$cat_key]
+            : '/thenews/';  // 最終預設
+    }
 
     // =================================================================
     // 2. 建立查詢：向 WordPress 資料庫請求文章
@@ -92,7 +147,12 @@ add_shortcode('news_magazine_layout', function($atts) {
     // =================================================================
     // 4. 組裝 HTML 結構
     // =================================================================
-    $output = '<div class="news-widget-wrapper" id="news-mag-widget">';
+    // 產生唯一 ID，避免同一頁多個短碼時 JS 衝突
+    static $instance_count = 0;
+    $instance_count++;
+    $widget_id = 'news-mag-widget-' . $instance_count;
+
+    $output = '<div class="news-widget-wrapper" id="' . esc_attr($widget_id) . '">';
 
     // 4.1 區塊標題欄
     $output .= '
@@ -211,10 +271,45 @@ add_shortcode('news_magazine_layout', function($atts) {
         background: #eef2f5; color: #555; padding: 2px 8px;
         border-radius: 4px; font-weight: 600; font-size: 0.8rem;
     }
-    /* 分類配色 */
-    .cat-news { background: #2c5e2e !important; color: #fff !important; }
-    .cat-events { background: #d4a017 !important; color: #fff !important; }
-    .cat-podcast { background: #1976d2 !important; color: #fff !important; }
+    /* ===== 分類配色（對應 docs/article-category-slugs.md）===== */
+    /* 最新消息系列 */
+    .cat-news     { background: #2c5e2e !important; color: #fff !important; }
+    .cat-press    { background: #0d7377 !important; color: #fff !important; }
+    .cat-event    { background: #d4a017 !important; color: #fff !important; }
+    .cat-notices  { background: #6b7280 !important; color: #fff !important; }
+    /* 安全裝備 */
+    .cat-equipment     { background: #e67e22 !important; color: #fff !important; }
+    .cat-ppe           { background: #d35400 !important; color: #fff !important; }
+    .cat-assistive-tech{ background: #f39c12 !important; color: #fff !important; }
+    .cat-media         { background: #8e44ad !important; color: #fff !important; }
+    /* 環境設施 */
+    .cat-environment   { background: #27ae60 !important; color: #fff !important; }
+    .cat-greenhouse    { background: #2ecc71 !important; color: #fff !important; }
+    /* 研究出版 */
+    .cat-research      { background: #1565c0 !important; color: #fff !important; }
+    .cat-annual-reports{ background: #1976d2 !important; color: #fff !important; }
+    .cat-policy-papers { background: #7c3aed !important; color: #fff !important; }
+    .cat-data-viz      { background: #0891b2 !important; color: #fff !important; }
+    /* 影音 */
+    .cat-podcast       { background: #c62828 !important; color: #fff !important; }
+    .cat-youtube       { background: #ff0000 !important; color: #fff !important; }
+    /* 下載中心 */
+    .cat-downloads     { background: #0d9488 !important; color: #fff !important; }
+    .cat-infographic   { background: #059669 !important; color: #fff !important; }
+    .cat-video         { background: #7c3aed !important; color: #fff !important; }
+    /* 職業健康 */
+    .cat-health             { background: #e74c3c !important; color: #fff !important; }
+    .cat-heat-stress        { background: #dc2626 !important; color: #fff !important; }
+    .cat-chemical-safety    { background: #ea580c !important; color: #fff !important; }
+    .cat-musculoskeletal    { background: #b45309 !important; color: #fff !important; }
+    /* 經濟保險 */
+    .cat-insurance               { background: #5C8607 !important; color: #fff !important; }
+    .cat-occupation-ins          { background: #4a6b05 !important; color: #fff !important; }
+    .cat-ins-subsidy-insurance   { background: #16a34a !important; color: #fff !important; }
+    .cat-crop-ins                { background: #15803d !important; color: #fff !important; }
+    /* 農學堂 */
+    .cat-agri-school       { background: #92400e !important; color: #fff !important; }
+    .cat-education-farmer  { background: #a16207 !important; color: #fff !important; }
     .ni-title { font-size: 1.05rem; font-weight: 500; color: #222; line-height: 1.5; transition: 0.2s; }
     .ni-title:hover { color: #2c5e2e; }
     .news-item-side.active .ni-title { color: #2c5e2e; font-weight: 700; }
@@ -235,7 +330,7 @@ add_shortcode('news_magazine_layout', function($atts) {
     $output .= "
     <script>
     (function() {
-        const widget = document.getElementById('news-mag-widget');
+        const widget = document.getElementById('" . esc_js($widget_id) . "');
         if(!widget) return;
 
         const slides    = widget.querySelectorAll('.news-featured-slide');

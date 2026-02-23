@@ -1,252 +1,246 @@
+<!-- =====================================================
+     分眾入口：一般民眾（Public）— 認同包
+     URL：/public/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     CSS 前綴：public-
+     主色系：#D4A017（豐收金 Harvest Gold）
+     ===================================================== -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-<style>
-	.public-page-wrapper {
-		--public-brand: #D4A017;
-		--public-bg: #FDF4DC;
-		--public-text: #3f3420;
-		--public-muted: #6b7280;
-		--public-card: #ffffff;
-		--public-border: rgba(212, 160, 23, 0.28);
-		font-family: "Noto Sans TC", sans-serif;
-		font-size: 18px;
-		color: var(--public-text);
-		max-width: 820px;
-		margin: 0 auto;
-		padding: 20px 16px 100px;
-		box-sizing: border-box;
-		background: #fff;
-	}
-
-	.public-page-wrapper * { box-sizing: border-box; }
-	.public-page-wrapper h1,
-	.public-page-wrapper h2,
-	.public-page-wrapper h3 {
-		line-height: 1.3;
-		margin: 0 0 10px;
-	}
-
-	.public-hero {
-		background: linear-gradient(135deg, var(--public-bg) 0%, #fff 100%);
-		border: 1px solid var(--public-border);
-		border-radius: 20px;
-		padding: 24px 20px;
-		margin-bottom: 16px;
-	}
-
-	.public-badge {
-		display: inline-flex;
-		align-items: center;
-		gap: 8px;
-		background: rgba(212, 160, 23, 0.18);
-		color: #8f6a06;
-		font-size: 14px;
-		font-weight: 700;
-		border-radius: 999px;
-		padding: 6px 14px;
-		margin-bottom: 10px;
-	}
-
-	.public-title { font-size: 2rem; font-weight: 900; color: #5b4300; }
-	.public-subtitle { margin: 0; color: var(--public-muted); line-height: 1.8; }
-
-	.public-intro {
-		background: #fff;
-		border: 1px solid #ececec;
-		border-left: 6px solid var(--public-brand);
-		border-radius: 14px;
-		padding: 14px;
-		margin-bottom: 12px;
-	}
-
-	.public-intro-list {
-		margin: 8px 0 0;
-		padding-left: 18px;
-		color: var(--public-muted);
-	}
-
-	.public-intro-list li {
-		margin: 6px 0;
-		line-height: 1.7;
-	}
-
-	.public-grid {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 12px;
-		margin: 14px 0 18px;
-	}
-
-	.public-card {
-		display: block;
-		text-decoration: none;
-		color: var(--public-text);
-		background: var(--public-card);
-		border: 1px solid #ececec;
-		border-left: 6px solid var(--public-brand);
-		border-radius: 14px;
-		padding: 14px;
-	}
-
-	.public-card-title {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		font-size: 1.1rem;
-		font-weight: 800;
-		margin-bottom: 6px;
-	}
-
-	.public-card-desc {
-		margin: 0;
-		color: var(--public-muted);
-		line-height: 1.8;
-	}
-
-	.public-actions {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 10px;
-		margin-top: 10px;
-	}
-
-	.public-btn {
-		min-height: 48px;
-		border-radius: 12px;
-		border: 1px solid var(--public-border);
-		background: #fff;
-		color: #7b5a05;
-		text-decoration: none;
-		font-weight: 700;
-		font-size: 1rem;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		gap: 8px;
-	}
-
-	.public-btn-primary {
-		background: var(--public-brand);
-		color: #fff;
-		border-color: var(--public-brand);
-	}
-
-	.public-note {
-		background: #fff;
-		border: 1px solid #ececec;
-		border-radius: 14px;
-		padding: 14px;
-		margin-top: 12px;
-	}
-
-	.public-note p { margin: 6px 0; line-height: 1.8; }
-
-	.public-bottom-nav {
-		position: fixed;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 20;
-		background: #fff;
-		border-top: 1px solid #e5e7eb;
-		box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.06);
-	}
-
-	.public-bottom-wrap {
-		max-width: 820px;
-		margin: 0 auto;
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 8px;
-		padding: 8px 12px;
-	}
-
-	.public-bottom-link {
-		min-height: 56px;
-		border-radius: 12px;
-		text-decoration: none;
-		color: #7b5a05;
-		font-size: 0.95rem;
-		font-weight: 700;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 6px;
-		background: var(--public-bg);
-		border: 1px solid var(--public-border);
-	}
-
-	@media (max-width: 640px) {
-		.public-actions { grid-template-columns: 1fr; }
-		.public-title { font-size: 1.7rem; }
-	}
-</style>
-
 <div class="public-page-wrapper">
-	<section class="public-hero">
-		<div class="public-badge"><i class="fa-solid fa-people-group"></i> 一般民眾入口</div>
-		<h1 class="public-title">看見農民處境，也看見你能做的事</h1>
-		<p class="public-subtitle">
-			這一頁幫你快速掌握雲嘉農業工作者的健康與安全議題，並提供可立即行動的資源：先理解、再分享、再支持。
-		</p>
-	</section>
 
-	<section class="public-intro">
-		<h2><i class="fa-solid fa-lightbulb"></i> 第一次來，建議這樣看</h2>
-		<ol class="public-intro-list">
-			<li>先看圖文資訊，快速了解農民最常見風險與現況。</li>
-			<li>再聽 Podcast 或案例故事，理解真實的工作與生活情境。</li>
-			<li>最後到倡議頁面，選擇你願意參與的支持方式。</li>
-		</ol>
-	</section>
+  <!-- ========== ① Hero ========== -->
+  <section class="public-hero">
+    <div class="public-hero-badge"><i class="fas fa-seedling"></i> 一般民眾</div>
+    <h1 class="public-hero-title">你在超市拿起的平價蔬果，<br>種它的人正忍著腰痛。</h1>
+    <p class="public-hero-tagline">每一口食物背後，都有一雙受傷的手。了解農民的真實處境，是改變的第一步。</p>
+    <div class="public-hero-intro">
+      <p>台灣有超過 54 萬農業從業人口，其中六成以上年齡超過 65 歲。他們每天頂著烈日、彎著腰，用身體換你餐桌上的食物——卻是所有職業中獲得最少勞動保護的族群。沒有勞基法保障、沒有雇主替他們繳保費、職災保險投保率不到三成。「尊嚴農業」計畫希望你知道這些事，因為改變需要整個社會的認同。</p>
+    </div>
+  </section>
 
-	<section class="public-grid">
-		<a class="public-card" href="/research-result/infographic/">
-			<div class="public-card-title"><i class="fa-solid fa-chart-column"></i> 圖文資訊（先看）</div>
-			<p class="public-card-desc">用資訊圖表快速理解農業職災、高溫風險、健康議題與在地資料。</p>
-		</a>
+  <!-- ========== ② 數據震撼區 ========== -->
+  <section class="public-stats">
+    <h2 class="public-section-title"><i class="fas fa-chart-bar"></i> 你可能不知道的數字</h2>
+    <div class="public-stats-grid">
+      <div class="public-stat-card">
+        <div class="public-stat-number">5<span class="public-stat-unit">×</span></div>
+        <p class="public-stat-label">農業致死率是全行業平均的 5 倍</p>
+        <p class="public-stat-source">CDC NIOSH, 2024</p>
+      </div>
+      <div class="public-stat-card">
+        <div class="public-stat-number">38.5<span class="public-stat-unit">萬</span></div>
+        <p class="public-stat-label">全球每年因農藥暴露死亡人數</p>
+        <p class="public-stat-source">WHO, 2024</p>
+      </div>
+      <div class="public-stat-card">
+        <div class="public-stat-number">30<span class="public-stat-unit">%</span></div>
+        <p class="public-stat-label">台灣農民職災保險投保率——七成無保障</p>
+        <p class="public-stat-source">勞保局統計</p>
+      </div>
+    </div>
 
-		<a class="public-card" href="/research-result/podcast/">
-			<div class="public-card-title"><i class="fa-solid fa-podcast"></i> Podcast 與訪談</div>
-			<p class="public-card-desc">透過聲音聽見農友經驗、專家建議與第一線現場的真實狀況。</p>
-		</a>
+    <div class="public-quote-card">
+      <blockquote>
+        「農民沒有慣老闆，但他們有兩個更殘酷的超級老闆：天氣和市場。你無法跟天氣談加班費，也無法向市場申請職災認定。」
+      </blockquote>
+      <cite>— 陳宗延 醫師，臺大醫院雲林分院</cite>
+    </div>
+  </section>
 
-		<a class="public-card" href="/thenews/">
-			<div class="public-card-title"><i class="fa-solid fa-newspaper"></i> 最新消息</div>
-			<p class="public-card-desc">掌握近期活動、政策更新、工作坊與倡議動態。</p>
-		</a>
+  <!-- ========== ③ 場景化導航 ========== -->
+  <section class="public-scenarios">
+    <h2 class="public-section-title"><i class="fas fa-eye"></i> 看見、聽見、了解、行動</h2>
 
-		<a class="public-card" href="/dignity-farming-initiative/">
-			<div class="public-card-title"><i class="fa-solid fa-handshake-angle"></i> 尊嚴農業倡議</div>
-			<p class="public-card-desc">了解倡議目標、行動進度與可參與的支持方式。</p>
-		</a>
+    <div class="public-scenario-card" style="--accent:#e65100;">
+      <div class="public-scenario-icon"><i class="fas fa-images"></i></div>
+      <div class="public-scenario-body">
+        <h3>看見農民的一天</h3>
+        <p>圖文資訊帶你走進農田現場：清晨 5 點的採收、正午 38°C 的田間勞動、農藥噴灑時缺乏防護的日常。每張圖卡背後都有真實數據和國際研究佐證。當你看見他們的一天，你對「平價蔬果」的理解會徹底改變。</p>
+        <a href="/research-result/infographic/" class="public-scenario-link">看圖文資訊 →</a>
+      </div>
+    </div>
 
-		<a class="public-card" href="/research-result/related-resources/">
-			<div class="public-card-title"><i class="fa-solid fa-book-open-reader"></i> 延伸資源</div>
-			<p class="public-card-desc">查找研究報告、工具包與教育資源，適合教學、社區推廣與進一步閱讀。</p>
-		</a>
-	</section>
+    <div class="public-scenario-card" style="--accent:#6a1b9a;">
+      <div class="public-scenario-icon"><i class="fas fa-podcast"></i></div>
+      <div class="public-scenario-body">
+        <h3>聽見田裡的聲音</h3>
+        <p>《我的民雄朋友們》Podcast 用第一人稱紀錄農民的真實生活——蓮藕農的斜槓轉全職故事、女農一邊帶小孩一邊務農的拉扯、噴農藥時的「能不戴就不戴」心態。這些聲音，是政策白皮書裡聽不到的。</p>
+        <a href="/research-result/podcast/" class="public-scenario-link">聽 Podcast →</a>
+      </div>
+    </div>
 
-	<section class="public-actions">
-		<a class="public-btn public-btn-primary" href="/research-result/infographic/"><i class="fa-solid fa-eye"></i> 先看重點圖文</a>
-		<a class="public-btn" href="/dignity-farming-initiative/"><i class="fa-solid fa-heart"></i> 參與支持行動</a>
-	</section>
+    <div class="public-scenario-card" style="--accent:#1565c0;">
+      <div class="public-scenario-icon"><i class="fas fa-bullhorn"></i></div>
+      <div class="public-scenario-body">
+        <h3>了解倡議行動：從研究到政策</h3>
+        <p>「尊嚴農業」不只是學術研究，更推動實際制度改變——跨國比較日韓澳的農民職業安全體系、召開焦點團體聽取利害關係人的意見、記錄曾女士等農友成功申請職傷給付的案例。每一個改變，都從理解和發聲開始。</p>
+        <a href="/dignity-farming-initiative/" class="public-scenario-link">了解倡議內容 →</a>
+      </div>
+    </div>
 
-	<section class="public-note">
-		<h2>想進一步參與？</h2>
-		<p>你可以分享圖文、參與活動、轉傳 Podcast，或把頁面提供給更多關心農業的人。</p>
-		<p>若有合作提案或課程需求，歡迎透過關於頁的聯絡資訊與我們聯繫。</p>
-	</section>
-</div>
+    <div class="public-scenario-card" style="--accent:#2e7d32;">
+      <div class="public-scenario-icon"><i class="fas fa-hand-holding-heart"></i></div>
+      <div class="public-scenario-body">
+        <h3>你可以做的事</h3>
+        <p>你不需要會種田，也能支持農民的勞動尊嚴。分享這裡的資訊讓更多人知道、支持友善食材通路、關注農業政策議題——當社會開始在乎，農民的處境才會改變。把這一頁傳給一個朋友，就是行動的開始。</p>
+        <a href="/research-result/" class="public-scenario-link">看更多研究成果 →</a>
+      </div>
+    </div>
+  </section>
 
-<nav class="public-bottom-nav" aria-label="一般民眾快捷導覽">
-	<div class="public-bottom-wrap">
-		<a class="public-bottom-link" href="/research-result/infographic/"><i class="fa-solid fa-chart-pie"></i><span>看圖文</span></a>
-		<a class="public-bottom-link" href="/research-result/podcast/"><i class="fa-solid fa-headphones"></i><span>聽故事</span></a>
-		<a class="public-bottom-link" href="/dignity-farming-initiative/"><i class="fa-solid fa-hand-holding-heart"></i><span>去支持</span></a>
-	</div>
+  <!-- ========== ④ 認識尊嚴農業 ========== -->
+  <section class="public-about">
+    <h2 class="public-section-title"><i class="fas fa-hand-holding-heart"></i> 認識尊嚴農業計畫</h2>
+    <p class="public-about-desc">
+      「尊嚴農業：共構雲嘉農業工作者職業健康社會安全網」由<strong>國立中正大學</strong>與<strong>臺大醫院雲林分院</strong>共同推動，以嘉義縣<strong>民雄鄉</strong>為實踐場域。計畫的核心理念是：農業不只撐起糧食安全，更應該撐起農民的生活尊嚴。我們透過社會倡議和多方利害關係人對話，讓農民的聲音被更多人聽見。
+    </p>
+    <div class="public-about-pillars">
+      <div class="public-pillar"><i class="fas fa-microscope"></i><span>基礎調查</span></div>
+      <div class="public-pillar"><i class="fas fa-scale-balanced"></i><span>制度研究</span></div>
+      <div class="public-pillar"><i class="fas fa-chalkboard-user"></i><span>健康教育</span></div>
+      <div class="public-pillar"><i class="fas fa-bullhorn"></i><span>社會倡議</span></div>
+    </div>
+    <a href="/dignity-farming-initiative/" class="public-about-link"><i class="fas fa-arrow-right"></i> 了解更多倡議內容</a>
+  </section>
+
+  <!-- ========== ⑤ 快速行動 ========== -->
+  <section class="public-cta">
+    <a class="public-cta-btn public-cta-primary" href="/research-result/infographic/">
+      <i class="fas fa-images"></i> 看見農民的世界
+    </a>
+    <a class="public-cta-btn public-cta-secondary" href="/research-result/podcast/">
+      <i class="fas fa-headphones"></i> 聽 Podcast
+    </a>
+  </section>
+
+  <!-- ========== ⑥ 緊急資源 ========== -->
+  <section class="public-emergency">
+    <h2><i class="fas fa-phone-volume"></i> 你身邊有農友需要幫忙嗎？</h2>
+    <div class="public-emergency-grid">
+      <div class="public-emergency-item"><strong>緊急救護</strong><a href="tel:119">119</a></div>
+      <div class="public-emergency-item"><strong>安心專線</strong><a href="tel:1925">1925</a></div>
+      <div class="public-emergency-item"><strong>保護專線</strong><a href="tel:113">113</a></div>
+    </div>
+    <p class="public-emergency-note">如果你認識正在務農的朋友或家人，請把這些號碼傳給他們。有時候，一通電話就能改變結局。</p>
+  </section>
+
+  <!-- ========== 更多探索 ========== -->
+  <section class="public-explore">
+    <h2 class="public-section-title"><i class="fas fa-link"></i> 探索更多</h2>
+    <div class="public-explore-grid">
+      <a href="/healthgood/" class="public-explore-card"><i class="fas fa-heart-pulse"></i><span>健康促進</span></a>
+      <a href="/occupational-safety/" class="public-explore-card"><i class="fas fa-helmet-safety"></i><span>職業安全</span></a>
+      <a href="/economic-insurance/" class="public-explore-card"><i class="fas fa-shield-cat"></i><span>經濟保險</span></a>
+      <a href="/thenews/" class="public-explore-card"><i class="fas fa-newspaper"></i><span>最新消息</span></a>
+    </div>
+  </section>
+
+</div><!-- /public-page-wrapper -->
+
+<!-- ========== 底部導覽 ========== -->
+<nav class="public-bottom-nav" aria-label="民眾快捷導覽">
+  <div class="public-bottom-wrap">
+    <a class="public-bottom-link" href="/research-result/infographic/"><i class="fas fa-images"></i><span>看圖文</span></a>
+    <a class="public-bottom-link" href="/research-result/podcast/"><i class="fas fa-podcast"></i><span>聽故事</span></a>
+    <a class="public-bottom-link" href="/dignity-farming-initiative/"><i class="fas fa-bullhorn"></i><span>倡議行動</span></a>
+  </div>
 </nav>
+
+<!-- ========== CSS ========== -->
+<style>
+/* === 一般民眾（Public）=== */
+.public-page-wrapper{
+  --brand:#D4A017;--brand-dark:#a67c0b;--brand-bg:#FDF4DC;
+  --text-primary:#3d3117;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
+}
+.public-page-wrapper *{box-sizing:border-box;}
+
+/* Hero */
+.public-hero{background:linear-gradient(135deg,var(--brand-bg) 0%,#fff 50%,#f5e6b8 100%);border-radius:var(--radius);padding:36px 24px;margin-bottom:20px;border:1px solid rgba(212,160,23,.2);}
+.public-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,160,23,.18);color:#8b6c10;font-size:.85rem;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:14px;}
+.public-hero-title{font-size:1.9rem;font-weight:900;color:#6b5410;margin:0 0 12px;line-height:1.25;}
+.public-hero-tagline{font-size:1.05rem;font-weight:600;color:var(--brand-dark);margin:0 0 16px;line-height:1.6;font-family:"Lora","Noto Sans TC",serif;font-style:italic;}
+.public-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:18px;border:1px solid rgba(212,160,23,.1);}
+.public-hero-intro p{margin:0;line-height:1.8;font-size:.95rem;color:var(--text-secondary);}
+
+/* 數據區 */
+.public-section-title{font-size:1.25rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.public-stats{margin-bottom:24px;}
+.public-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px;}
+.public-stat-card{background:#fff;border-radius:14px;padding:18px 14px;text-align:center;border:1px solid #ececec;box-shadow:0 2px 8px rgba(0,0,0,.03);}
+.public-stat-number{font-size:2rem;font-weight:900;color:var(--brand-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
+.public-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
+.public-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
+.public-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
+
+/* 引言卡 */
+.public-quote-card{background:linear-gradient(135deg,#fffdf5,#fff8e1);border-radius:14px;padding:22px 20px;border:1px solid rgba(212,160,23,.15);border-left:5px solid var(--brand);}
+.public-quote-card blockquote{margin:0 0 10px;font-size:.98rem;line-height:1.8;color:var(--text-primary);font-family:"Lora","Noto Sans TC",serif;font-style:italic;font-weight:500;}
+.public-quote-card cite{font-size:.82rem;color:var(--text-secondary);font-style:normal;font-weight:600;}
+
+/* 情境卡 */
+.public-scenarios{margin-bottom:24px;}
+.public-scenario-card{display:flex;gap:14px;background:#fff;border-radius:14px;padding:18px;margin-bottom:12px;border:1px solid #ececec;border-left:5px solid var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.03);transition:all .3s;}
+.public-scenario-card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.07);}
+.public-scenario-icon{width:48px;height:48px;border-radius:12px;background:rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--accent);flex-shrink:0;}
+.public-scenario-body{flex:1;min-width:0;}
+.public-scenario-body h3{font-size:1.05rem;font-weight:800;margin:0 0 8px;color:var(--text-primary);}
+.public-scenario-body p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
+.public-scenario-link{font-size:.9rem;font-weight:700;color:var(--brand-dark);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.public-scenario-link:hover{text-decoration:underline;}
+
+/* 計畫簡介 */
+.public-about{background:#fff;border-radius:var(--radius);padding:24px;margin-bottom:20px;border:1px solid #ececec;}
+.public-about-desc{font-size:.93rem;line-height:1.8;color:var(--text-secondary);margin:0 0 16px;}
+.public-about-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
+.public-pillar{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--brand-bg);border-radius:12px;font-size:.82rem;font-weight:700;color:var(--brand-dark);}
+.public-pillar i{font-size:1.3rem;color:var(--brand);}
+.public-about-link{font-size:.9rem;font-weight:700;color:var(--brand-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}.public-about-link:hover{text-decoration:underline;}
+
+/* CTA */
+.public-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.public-cta-btn{min-height:52px;border-radius:14px;text-decoration:none;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;}
+.public-cta-primary{background:var(--brand);color:#fff;border:2px solid var(--brand);box-shadow:0 4px 12px rgba(212,160,23,.3);}
+.public-cta-primary:hover{background:var(--brand-dark);border-color:var(--brand-dark);transform:translateY(-2px);}
+.public-cta-secondary{background:#fff;color:var(--brand-dark);border:2px solid rgba(212,160,23,.3);}
+.public-cta-secondary:hover{border-color:var(--brand);background:var(--brand-bg);}
+
+/* 緊急資源 */
+.public-emergency{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:20px;border:1px solid #ececec;}
+.public-emergency h2{font-size:1.1rem;font-weight:800;color:#c62828;margin:0 0 12px;display:flex;align-items:center;gap:8px;}
+.public-emergency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
+.public-emergency-item{text-align:center;padding:12px 8px;background:#fef2f2;border-radius:10px;}
+.public-emergency-item strong{display:block;font-size:.78rem;color:#991b1b;margin-bottom:4px;}
+.public-emergency-item a{font-size:1.3rem;font-weight:900;color:#c62828;text-decoration:none;}
+.public-emergency-note{font-size:.85rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* 探索更多 */
+.public-explore{margin-bottom:20px;}
+.public-explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.public-explore-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;background:#fff;border-radius:12px;border:1px solid #ececec;text-decoration:none;color:var(--text-primary);font-size:.85rem;font-weight:700;transition:all .3s;}
+.public-explore-card i{font-size:1.3rem;color:var(--brand);}
+.public-explore-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
+
+/* 底部導覽 */
+.public-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -2px 12px rgba(0,0,0,.06);}
+.public-bottom-wrap{max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:8px 12px;}
+.public-bottom-link{min-height:56px;border-radius:12px;text-decoration:none;color:#8b6c10;font-size:.95rem;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:var(--brand-bg);border:1px solid rgba(212,160,23,.28);}
+
+@media(max-width:640px){
+  .public-hero{padding:24px 18px;}.public-hero-title{font-size:1.6rem;}
+  .public-stats-grid{grid-template-columns:1fr;}.public-stat-card{display:flex;align-items:center;gap:12px;text-align:left;padding:14px;}
+  .public-stat-number{font-size:1.5rem;margin-bottom:0;white-space:nowrap;}
+  .public-scenario-card{flex-direction:column;}
+  .public-about-pillars{grid-template-columns:repeat(2,1fr);}
+  .public-cta{grid-template-columns:1fr;}
+  .public-explore-grid{grid-template-columns:repeat(2,1fr);}
+  .public-emergency-grid{grid-template-columns:1fr;}
+}
+</style>

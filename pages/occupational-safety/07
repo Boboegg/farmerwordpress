@@ -5,6 +5,52 @@
            你上線後可以在 WordPress 後台建立分類後再加回 cat 參數。
      ===================================================== -->
 
+<!-- 國際與台灣農業職災概況 -->
+<div class="prevS-stats-section">
+  <div class="prevS-section-header">
+    <h2><i class="fas fa-chart-bar"></i> 全球與台灣農業職災概況</h2>
+    <p>用數據說話——農業是全球最危險的行業之一，了解現況才能推動改變。</p>
+  </div>
+  <div class="prevS-stats-grid">
+    <div class="prevS-stat-card" style="border-top:4px solid #ef4444;">
+      <div class="prevS-stat-num" style="color:#ef4444;">18.6<small>/10萬</small></div>
+      <h4>農業致死率（美國）</h4>
+      <p>2022 年農業致死率為每 10 萬 FTE 18.6 人，是全產業平均 3.7 的 <strong>5 倍</strong>。交通運輸事故為首要死因。</p>
+      <span class="prevS-stat-source">CDC/NIOSH (2024). Agriculture Worker Safety and Health.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #f59e0b;">
+      <div class="prevS-stat-num" style="color:#f59e0b;">8.79<small>億人</small></div>
+      <h4>全球農業就業人口</h4>
+      <p>2023 年全球約 8.79 億人從事農業，占就業人口 28%。亞太地區最多（5.51 億），農業工作者普遍面臨缺乏勞動與社會保護的困境。</p>
+      <span class="prevS-stat-source">ILO (2023). Employment in Agriculture Sector.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #3b82f6;">
+      <div class="prevS-stat-num" style="color:#3b82f6;">29%</div>
+      <h4>農業傷害為跌倒所致</h4>
+      <p>2021–2022 年美國農業共有 21,020 件需缺勤的傷害，其中將近三分之一為跌倒造成，且普遍存在低報現象。</p>
+      <span class="prevS-stat-source">CDC/NIOSH (2024). Quick Facts and Stats.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #7c3aed;">
+      <div class="prevS-stat-num" style="color:#7c3aed;">67.3<small>歲</small></div>
+      <h4>台灣農保平均年齡</h4>
+      <p>台灣農保被保險人平均年齡 67.3 歲，65 歲以上占比近六成。高齡勞動加上高強度反覆作業，肌肉骨骼疾病盛行率極高。</p>
+      <span class="prevS-stat-source">勞動部 (2024). 農民職業災害保險統計；臺大醫院雲林分院農業環境與職業健康中心研究數據.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #0d9488;">
+      <div class="prevS-stat-num" style="color:#0d9488;">≈30%</div>
+      <h4>台灣農職保投保率</h4>
+      <p>農民職業災害保險投保率僅約三成，新住民農民投保率甚至僅 3%。現行制度嚴重缺乏職災預防與復工重建機制。</p>
+      <span class="prevS-stat-source">勞動部 (2024). 農職保傷病給付基準提高；尊嚴農業倡議研究數據.</span>
+    </div>
+    <div class="prevS-stat-card" style="border-top:4px solid #e65100;">
+      <div class="prevS-stat-num" style="color:#e65100;">1,000+</div>
+      <h4>全球農藥種類</h4>
+      <p>WHO 指出全球使用超過 1,000 種農藥，慢性暴露可能導致癌症與生殖系統影響。直接接觸農藥的農業工作者面臨最高健康風險。</p>
+      <span class="prevS-stat-source">WHO (2022). Pesticide Residues in Food — Fact Sheet.</span>
+    </div>
+  </div>
+</div>
+
 <!-- 子頁面入口 -->
 <div class="prevS-subpage-section">
   <div class="prevS-section-header">
@@ -76,8 +122,14 @@
     <p class="prevS-ref-item">農業部農糧署（年度更新）。農機補助專區。<a href="https://www.afa.gov.tw/cht/index.php?code=list&ids=3314" target="_blank" rel="noopener">https://www.afa.gov.tw/cht/index.php?code=list&ids=3314</a></p>
     <p class="prevS-ref-item">勞動部（2024）。農職保傷病給付基準提高，農民務農保障再升級。<a href="https://www.mol.gov.tw/1607/1632/1633/76199/" target="_blank" rel="noopener">https://www.mol.gov.tw/1607/1632/1633/76199/</a></p>
     <p class="prevS-ref-item">勞動部勞動法令查詢系統。職業安全衛生設施規則。<a href="https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021" target="_blank" rel="noopener">https://laws.mol.gov.tw/FLAW/FLAWDAT0201.aspx?id=FL015021</a></p>
+    <p class="prevS-ref-item">勞動部職業安全衛生署（2025）。職業安全衛生法（2025 年 12 月修正）。<a href="https://www.osha.gov.tw/" target="_blank" rel="noopener">https://www.osha.gov.tw/</a></p>
+    <p class="prevS-ref-item">臺大醫院雲林分院農業環境與職業健康中心。農業工作者健康調查研究數據。<a href="https://fwdignity.com/" target="_blank" rel="noopener">https://fwdignity.com/</a></p>
+    <p class="prevS-ref-item">CDC/NIOSH. (2024). <em>Agricultural safety</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/agriculture/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/agriculture/about/index.html</a></p>
     <p class="prevS-ref-item">NIOSH. (2021). <em>Hierarchy of controls</em>. Centers for Disease Control and Prevention. <a href="https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/hierarchy-of-controls/about/index.html</a></p>
     <p class="prevS-ref-item">OSHA. (n.d.). <em>Agricultural operations: Hazards &amp; controls</em>. United States Department of Labor. <a href="https://www.osha.gov/agricultural-operations/hazards" target="_blank" rel="noopener">https://www.osha.gov/agricultural-operations/hazards</a></p>
+    <p class="prevS-ref-item">ILO. (2023). <em>Employment in agriculture</em> (% of total employment). International Labour Organization. <a href="https://www.ilo.org/topics/agriculture-and-food-services" target="_blank" rel="noopener">https://www.ilo.org/topics/agriculture-and-food-services</a></p>
+    <p class="prevS-ref-item">WHO. (2022). <em>Pesticide residues in food</em>. World Health Organization — Fact Sheet. <a href="https://www.who.int/news-room/fact-sheets/detail/pesticide-residues-in-food" target="_blank" rel="noopener">https://www.who.int/news-room/fact-sheets/detail/pesticide-residues-in-food</a></p>
+    <p class="prevS-ref-item">BLS. (2024). <em>Injuries, illnesses, and fatalities</em>. U.S. Bureau of Labor Statistics. <a href="https://www.bls.gov/iif/" target="_blank" rel="noopener">https://www.bls.gov/iif/</a></p>
   </div>
 </div>
 
@@ -106,6 +158,17 @@
 
 /* Articles */
 .prevS-articles-section{margin:40px 0 0;}
+
+/* Stats Section */
+.prevS-stats-section{margin:40px 0 0;}
+.prevS-stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+.prevS-stat-card{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);transition:transform .3s,box-shadow .3s;}
+.prevS-stat-card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,.08);}
+.prevS-stat-num{font-size:2.4rem;font-weight:900;margin-bottom:4px;font-family:"Lato","Noto Sans TC",sans-serif;}
+.prevS-stat-num small{font-size:.5em;font-weight:700;opacity:.7;}
+.prevS-stat-card h4{font-size:1.05rem;font-weight:800;color:var(--brand-dark);margin:0 0 8px;}
+.prevS-stat-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
+.prevS-stat-source{font-size:.78rem;color:#9ca3af;font-style:italic;display:block;}
 
 /* References */
 .prevS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}

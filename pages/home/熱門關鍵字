@@ -3,13 +3,29 @@
         <i class="fas fa-tags"></i> 熱門關鍵字
     </div>
     <div class="tag-cloud">
-        <a href="/?s=熱危害" class="tag-btn">#熱危害</a>
-        <a href="/?s=肌肉骨骼" class="tag-btn">#肌肉骨骼</a>
-        <a href="/?s=農藥安全" class="tag-btn">#農藥安全</a>
-        <a href="/?s=民雄" class="tag-btn">#民雄</a>
-        <a href="/?s=職災保險" class="tag-btn">#職災保險</a>
-        <a href="/?s=青農" class="tag-btn">#青農</a>
-        <a href="/?s=食農教育" class="tag-btn">#食農教育</a>
-        <a href="/?s=高齡農民" class="tag-btn">#高齡農民</a>
+        <a href="/healthgood/subpage-heat/" class="tag-btn">#熱傷害</a>
+        <a href="/healthgood/subpage-msd/" class="tag-btn">#肌肉骨骼</a>
+        <a href="/healthgood/subpage-pesticide/" class="tag-btn">#農藥安全</a>
+        <a href="/dignity-farming-initiative/" class="tag-btn">#民雄</a>
+        <a href="/economic-insurance/crop-insurance/" class="tag-btn">#職災保險</a>
+        <a href="/young-farmers/" class="tag-btn">#青農</a>
+        <a href="/farmer-study/" class="tag-btn">#食農教育</a>
+        <a href="/experienced-farmers/" class="tag-btn">#高齡農民</a>
+        <a href="/occupational-safety/" class="tag-btn">#職業安全</a>
+        <a href="/healthgood/subpage-mental/" class="tag-btn">#心理健康</a>
+        <a href="/occupational-safety/labor-saving-machinery/" class="tag-btn">#省工農機</a>
+        <a href="/research-result/podcast/" class="tag-btn">#Podcast</a>
     </div>
 </div>
+
+<!-- 熱門關鍵字 inline CSS（確保不依賴 global.css 也能正常顯示） -->
+<style>
+.side-widget{background:#fff;border-radius:16px;padding:25px;box-shadow:0 5px 15px rgba(0,0,0,.05);margin-bottom:25px;transition:transform .3s;border:1px solid rgba(53,64,31,.05);}
+.side-widget:hover{transform:translateY(-5px);}
+.side-title{font-family:'Lato','Noto Sans TC',sans-serif;font-size:19px;font-weight:700;color:#343F1E;margin-bottom:25px;display:flex;align-items:center;gap:10px;position:relative;}
+.side-title::after{content:'';position:absolute;bottom:-10px;left:0;width:40px;height:3px;background:#5C8607;opacity:.6;border-radius:2px;}
+.side-title i{color:#d4a017;}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:8px;}
+.tag-btn{background:#fff;border:1px solid #e0e0e0;padding:6px 14px;border-radius:20px;font-size:.85rem;color:#666;text-decoration:none;transition:all .2s;}
+.tag-btn:hover{background:#2c5e2e;color:#fff;border-color:#2c5e2e;box-shadow:0 4px 10px rgba(44,94,46,.2);}
+</style>
