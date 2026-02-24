@@ -39,6 +39,8 @@
 | └─ | 骨骼肌肉 | `musculoskeletal` | 肌肉骨骼傷害預防 |
 | ■ | **農學堂** | `agri-school` | 農學堂專區 |
 | └─ | 課程活動 | `education-farmer` | 課程與活動 |
+| ■ | **勞動圖像** | `labor-image` | 農民勞動圖像蒐集 |
+| └─ | 稻作 | `rice-farming` | 稻作勞動圖像 |
 
 ---
 
@@ -63,6 +65,7 @@
 | `infographic` | 圖解懶人包 | 下載中心 |
 | `ins-subsidy-insurance` | 補助資源 | 經濟保險 |
 | `insurance` | 經濟保險 | — |
+| `labor-image` | 勞動圖像 | — |
 | `media` | 影音與教材 | 安全裝備 |
 | `musculoskeletal` | 骨骼肌肉 | 職業健康 |
 | `news` | 最新消息 | — |
@@ -73,6 +76,7 @@
 | `ppe` | 個人防護 | 安全裝備 |
 | `press` | 媒體報導 | 最新消息 |
 | `research` | 研究出版 | — |
+| `rice-farming` | 稻作 | 勞動圖像 |
 | `video` | 影片教學 | 下載中心 |
 | `youtube` | Youtube | — |
 

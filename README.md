@@ -35,6 +35,7 @@ farmerwordpress/
 │   ├── farmer-study/                 # 05 培力與實踐（農學堂）
 │   ├── dignity-farming-initiative/   # 06 尊嚴農業倡議
 │   ├── research-result/              # 07 研究成果
+│   ├── rice-labor-image/            # 稻作勞動圖像蒐集
 │   └── ...
 └── shortcodes/              # WordPress PHP Shortcodes
 ```

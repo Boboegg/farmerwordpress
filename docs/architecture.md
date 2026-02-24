@@ -352,6 +352,7 @@ Font Awesome 與 Google Fonts 每個頁面**只載入一次**，放在所有 wid
 | 農學堂 | `/pages/農學堂/` |
 | 尊嚴農業倡議 | `/pages/尊嚴農業倡議/` |
 | 研究成果 | `/pages/研究成果/` |
+| 稻作勞動圖像 | `/pages/rice-labor-image/稻作勞動圖像` |
 
 ---
 

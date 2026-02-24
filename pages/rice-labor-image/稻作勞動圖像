@@ -1,0 +1,490 @@
+<!-- =====================================================
+     頁面：稻作勞動圖像蒐集
+     URL：/rice-labor-image/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     CSS 前綴：rli-
+     主色系：#5C8607（品牌尊嚴綠）
+
+     【頁面說明】
+     本頁面為農民勞動圖像蒐集的調查架構頁，以稻米為首要調查對象。
+     記錄稻作農民的種植技術、勞動過程、人際關係三大面向，
+     作為後續研究與倡議的田野素材基礎。
+
+     【維護指南】
+     - 所有 ⚠️ 標記處為需替換的佔位內容
+     - 觀察紀錄卡：複製 .rli-obs-card 區塊即可新增
+     - 階段卡片：複製 .rli-phase-card 區塊即可新增
+     - 關係卡片：複製 .rli-rel-card 區塊即可新增
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== 區塊 1：Hero ========== -->
+<div class="rli-hero">
+  <div class="rli-hero-inner">
+    <div class="rli-hero-badge"><i class="fas fa-camera-retro"></i> 田野調查</div>
+    <h1 class="rli-hero-title">稻作勞動圖像</h1>
+    <p class="rli-hero-subtitle">蒐集農民的勞動圖像——如何種、如何勞動、人的關係，以稻米為首要調查對象，記錄雲嘉稻作農民從育苗到收割的完整勞動樣貌。</p>
+    <div class="rli-hero-nav">
+      <a href="#rli-cultivation" class="rli-hero-chip"><i class="fas fa-seedling"></i> 種植技術</a>
+      <a href="#rli-labor" class="rli-hero-chip"><i class="fas fa-hands"></i> 勞動過程</a>
+      <a href="#rli-relations" class="rli-hero-chip"><i class="fas fa-people-group"></i> 人際關係</a>
+    </div>
+  </div>
+  <div class="rli-hero-deco">
+    <div class="rli-hero-stat">
+      <span class="rli-hero-stat-num"><i class="fas fa-seedling"></i></span>
+      <span class="rli-hero-stat-label">種植技術面向</span>
+    </div>
+    <div class="rli-hero-stat">
+      <span class="rli-hero-stat-num"><i class="fas fa-hands"></i></span>
+      <span class="rli-hero-stat-label">勞動過程面向</span>
+    </div>
+    <div class="rli-hero-stat">
+      <span class="rli-hero-stat-num"><i class="fas fa-people-group"></i></span>
+      <span class="rli-hero-stat-label">人際關係面向</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 2：調查說明 ========== -->
+<div class="rli-sections" id="rli-intro">
+  <div class="rli-sec-card">
+    <div class="rli-sec-header">
+      <div class="rli-sec-icon"><i class="fas fa-bullseye"></i></div>
+      <div>
+        <h2>調查目的與範圍</h2>
+        <p>以稻米為起點，建立農民勞動圖像的系統性紀錄架構</p>
+      </div>
+    </div>
+    <div class="rli-sec-body">
+      <div class="rli-intro-text">
+        <p>本調查旨在蒐集雲嘉地區稻作農民的勞動圖像，從「如何種」、「如何勞動」、「人的關係」三大面向，系統性地記錄農民在稻作生產過程中的身體實踐、技術知識與社會網絡。</p>
+        <p>稻米作為台灣最重要的糧食作物，其生產過程涵蓋育苗、整地、插秧、田間管理、收割等多個階段，每個階段都涉及不同的勞動形態、身體負荷與人際協作模式。透過系統性的圖像蒐集與記錄，我們期望呈現農民勞動的真實面貌，作為職業健康研究與社會倡議的重要素材。</p>
+      </div>
+      <div class="rli-scope-grid">
+        <div class="rli-scope-card">
+          <div class="rli-scope-icon"><i class="fas fa-wheat-awn"></i></div>
+          <h4>調查作物</h4>
+          <p>稻米（一期稻、二期稻）</p>
+        </div>
+        <div class="rli-scope-card">
+          <div class="rli-scope-icon"><i class="fas fa-location-dot"></i></div>
+          <h4>調查區域</h4>
+          <p>⚠️ 嘉義縣民雄鄉及周邊鄉鎮</p>
+        </div>
+        <div class="rli-scope-card">
+          <div class="rli-scope-icon"><i class="fas fa-eye"></i></div>
+          <h4>蒐集方式</h4>
+          <p>⚠️ 田野觀察、訪談紀錄、影像攝影</p>
+        </div>
+        <div class="rli-scope-card">
+          <div class="rli-scope-icon"><i class="fas fa-layer-group"></i></div>
+          <h4>分析面向</h4>
+          <p>種植技術 ・ 勞動過程 ・ 人際關係</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 3：面向一 — 種植技術（如何種） ========== -->
+<div class="rli-sections" id="rli-cultivation">
+  <div class="rli-sec-card">
+    <div class="rli-sec-header">
+      <div class="rli-sec-icon"><i class="fas fa-seedling"></i></div>
+      <div>
+        <h2>面向一：種植技術</h2>
+        <p>記錄農民「如何種」——從選種育苗到收割乾燥的技術知識與實作方式</p>
+      </div>
+    </div>
+    <div class="rli-sec-body">
+      <p class="rli-sec-lead">稻作種植技術是農民長年累積的身體化知識（embodied knowledge），包含對土壤、水源、氣候的判讀能力，以及各階段的操作技巧。以下依稻作生產週期，列出各階段的觀察重點。</p>
+
+      <div class="rli-phase-timeline">
+
+        <!-- ===== 階段卡片模板（複製此區塊新增階段）===== -->
+        <div class="rli-phase-card">
+          <div class="rli-phase-num">01</div>
+          <div class="rli-phase-content">
+            <h3><i class="fas fa-droplet"></i> 浸種與育苗</h3>
+            <div class="rli-obs-list">
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">觀察重點</span>
+                <p>⚠️ 種子浸泡處理方式（浸種時間、藥劑使用）；秧苗培育場所與設備（育苗箱、育苗土配方）；秧苗品質判斷標準（葉齡、根系發展）</p>
+              </div>
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">圖像蒐集</span>
+                <p>⚠️ 浸種作業場景、育苗場環境、農民檢視秧苗的動作與姿態</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ===== 階段卡片模板結束 ===== -->
+
+        <div class="rli-phase-card">
+          <div class="rli-phase-num">02</div>
+          <div class="rli-phase-content">
+            <h3><i class="fas fa-tractor"></i> 整地與翻耕</h3>
+            <div class="rli-obs-list">
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">觀察重點</span>
+                <p>⚠️ 整地方式（耕耘機操作、水田整平技術）；灌溉水源管理；土壤狀態判讀經驗</p>
+              </div>
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">圖像蒐集</span>
+                <p>⚠️ 農機操作場景、農民與機械的互動關係、整地前後田區對比</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rli-phase-card">
+          <div class="rli-phase-num">03</div>
+          <div class="rli-phase-content">
+            <h3><i class="fas fa-spa"></i> 插秧</h3>
+            <div class="rli-obs-list">
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">觀察重點</span>
+                <p>⚠️ 插秧機操作與調校；人工補秧技術；秧苗間距與深度的經驗判斷；插秧時間的選擇依據</p>
+              </div>
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">圖像蒐集</span>
+                <p>⚠️ 插秧機作業全景、農民彎腰補秧的身體姿態、水田中的勞動場景</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rli-phase-card">
+          <div class="rli-phase-num">04</div>
+          <div class="rli-phase-content">
+            <h3><i class="fas fa-water"></i> 田間管理</h3>
+            <div class="rli-obs-list">
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">觀察重點</span>
+                <p>⚠️ 水位管理（灌排水時機與方式）；施肥作業（肥料種類、施用方法與時機）；病蟲害防治（農藥噴灑方式、防護具使用狀況）；除草作業（人工除草或除草劑使用）</p>
+              </div>
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">圖像蒐集</span>
+                <p>⚠️ 巡田場景、施肥與噴藥作業、農民觀察作物生長的方式、田間管理的工具與設備</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rli-phase-card">
+          <div class="rli-phase-num">05</div>
+          <div class="rli-phase-content">
+            <h3><i class="fas fa-wheat-awn"></i> 收割與乾燥</h3>
+            <div class="rli-obs-list">
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">觀察重點</span>
+                <p>⚠️ 收割時機判斷（稻穗成熟度、天候考量）；收割機操作；稻穀乾燥方式（日曬或機械烘乾）；繳交公糧或自售流程</p>
+              </div>
+              <div class="rli-obs-card">
+                <span class="rli-obs-label">圖像蒐集</span>
+                <p>⚠️ 收割機作業場景、農民檢視稻穗的動作、乾燥場作業、稻穀搬運與儲存</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ⚠️ 繼續複製 .rli-phase-card 區塊新增更多階段 -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 4：面向二 — 勞動過程（如何勞動） ========== -->
+<div class="rli-sections" id="rli-labor">
+  <div class="rli-sec-card">
+    <div class="rli-sec-header">
+      <div class="rli-sec-icon"><i class="fas fa-hands"></i></div>
+      <div>
+        <h2>面向二：勞動過程</h2>
+        <p>記錄農民「如何勞動」——身體負荷、作業環境、工時節奏與健康風險</p>
+      </div>
+    </div>
+    <div class="rli-sec-body">
+      <p class="rli-sec-lead">勞動過程的觀察聚焦於農民「身體如何被使用」，包含姿勢負荷、環境暴露、工時安排，以及勞動工具如何改變或維持身體實踐的方式。</p>
+
+      <div class="rli-labor-grid">
+
+        <!-- ===== 勞動面向卡片模板 ===== -->
+        <div class="rli-labor-card">
+          <div class="rli-labor-icon" style="background:rgba(198,40,40,.08);color:#c62828;">
+            <i class="fas fa-person-walking"></i>
+          </div>
+          <h3>身體姿勢與負荷</h3>
+          <ul class="rli-labor-points">
+            <li>⚠️ 長時間彎腰、蹲姿作業的頻率與持續時間</li>
+            <li>⚠️ 重物搬運（肥料袋、農藥桶、稻穀袋）的方式與重量</li>
+            <li>⚠️ 反覆動作對特定關節的影響（肩、腰、膝）</li>
+            <li>⚠️ 農民對身體疲勞與疼痛的描述與因應方式</li>
+          </ul>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 各作業階段的身體姿態紀錄、搬運動作連續攝影、勞動後休息場景</p>
+          </div>
+        </div>
+
+        <div class="rli-labor-card">
+          <div class="rli-labor-icon" style="background:rgba(21,101,192,.08);color:#1565c0;">
+            <i class="fas fa-temperature-high"></i>
+          </div>
+          <h3>作業環境暴露</h3>
+          <ul class="rli-labor-points">
+            <li>⚠️ 高溫環境下的勞動（夏季田間溫度與濕度）</li>
+            <li>⚠️ 農藥暴露情形（噴藥時的防護措施與實際使用狀況）</li>
+            <li>⚠️ 日曬、粉塵、噪音等環境因子</li>
+            <li>⚠️ 田間休息空間與飲水習慣</li>
+          </ul>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 高溫環境下勞動場景、防護具實際穿戴狀況、田間休息與遮蔽設施</p>
+          </div>
+        </div>
+
+        <div class="rli-labor-card">
+          <div class="rli-labor-icon" style="background:rgba(124,58,237,.08);color:#7c3aed;">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3>工時與勞動節奏</h3>
+          <ul class="rli-labor-points">
+            <li>⚠️ 一日作息（起床時間、出工時間、收工時間）</li>
+            <li>⚠️ 農忙與農閒的節奏差異（一期稻 vs. 二期稻）</li>
+            <li>⚠️ 天候對工時的影響（雨天、極端高溫）</li>
+            <li>⚠️ 年齡與工時的關係（體力衰退的調適方式）</li>
+          </ul>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 清晨出工場景、不同時段的勞動狀態、農忙期的作業強度紀錄</p>
+          </div>
+        </div>
+
+        <div class="rli-labor-card">
+          <div class="rli-labor-icon" style="background:rgba(13,148,136,.08);color:#0d9488;">
+            <i class="fas fa-screwdriver-wrench"></i>
+          </div>
+          <h3>工具與機械使用</h3>
+          <ul class="rli-labor-points">
+            <li>⚠️ 傳統手工具與現代農機的使用分配</li>
+            <li>⚠️ 農機操作的學習方式（師徒傳承或自學）</li>
+            <li>⚠️ 機械化程度對勞動形態的改變</li>
+            <li>⚠️ 農機維修保養的自主能力</li>
+          </ul>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 各類農具與農機的使用場景、農民操作機械的技術動作、新舊工具並存的現場</p>
+          </div>
+        </div>
+
+        <!-- ⚠️ 繼續複製 .rli-labor-card 區塊新增更多勞動面向 -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 5：面向三 — 人際關係（人的關係） ========== -->
+<div class="rli-sections" id="rli-relations">
+  <div class="rli-sec-card">
+    <div class="rli-sec-header">
+      <div class="rli-sec-icon"><i class="fas fa-people-group"></i></div>
+      <div>
+        <h2>面向三：人際關係</h2>
+        <p>記錄「人的關係」——稻作生產中的家庭分工、鄰里互助與社會網絡</p>
+      </div>
+    </div>
+    <div class="rli-sec-body">
+      <p class="rli-sec-lead">稻作生產不僅是個人勞動，更是鑲嵌在家庭、鄰里、農會與市場等多層社會網絡中的集體實踐。觀察農民之間的關係，有助於理解勞動如何被組織、分配與協商。</p>
+
+      <div class="rli-rel-grid">
+
+        <!-- ===== 關係面向卡片模板（複製此區塊新增面向）===== -->
+        <div class="rli-rel-card">
+          <div class="rli-rel-icon"><i class="fas fa-house-chimney-user"></i></div>
+          <h3>家庭與世代分工</h3>
+          <p>⚠️ 家庭成員在稻作中的角色分配；夫妻間的勞動分工模式；跨世代的技術傳承與斷裂；年輕一代返鄉務農或離農的決定及其影響。</p>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 家庭成員共同作業場景、不同世代的互動方式、家庭會議或農務討論場景</p>
+          </div>
+        </div>
+        <!-- ===== 關係面向卡片模板結束 ===== -->
+
+        <div class="rli-rel-card">
+          <div class="rli-rel-icon"><i class="fas fa-handshake"></i></div>
+          <h3>鄰里互助與換工</h3>
+          <p>⚠️ 傳統換工（交工）制度的現況與變遷；農忙時期的互助模式；農機共用或代耕的安排方式；鄰田農民之間的資訊交流與技術分享。</p>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 鄰里協力作業場景、田間休息時的交談互動、代耕業者與農民的合作場景</p>
+          </div>
+        </div>
+
+        <div class="rli-rel-card">
+          <div class="rli-rel-icon"><i class="fas fa-building-columns"></i></div>
+          <h3>農會與組織網絡</h3>
+          <p>⚠️ 農會在稻作生產中的角色（資材供應、技術指導、公糧收購）；產銷班的運作模式；農民與農業改良場的互動關係。</p>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 農會活動場景、產銷班聚會與討論、農民接受技術指導的場景</p>
+          </div>
+        </div>
+
+        <div class="rli-rel-card">
+          <div class="rli-rel-icon"><i class="fas fa-users-between-lines"></i></div>
+          <h3>僱傭與代耕關係</h3>
+          <p>⚠️ 代耕業者的角色與服務範圍；臨時工（打工仔）的雇用慣習；外籍農業移工或新住民的參與情形；農業僱傭關係中的權力結構。</p>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 代耕業者作業場景、僱工合作現場、不同身分勞動者的互動方式</p>
+          </div>
+        </div>
+
+        <div class="rli-rel-card">
+          <div class="rli-rel-icon"><i class="fas fa-store"></i></div>
+          <h3>市場與通路關係</h3>
+          <p>⚠️ 稻穀銷售管道（公糧、糧商、自售）的選擇邏輯；農民與糧商的議價關係；契作與自由市場的差異；品牌化或直售對農民關係網絡的影響。</p>
+          <div class="rli-obs-card">
+            <span class="rli-obs-label">圖像蒐集</span>
+            <p>⚠️ 繳交公糧的流程場景、農民與糧商的交易互動、農產品直售或市集場景</p>
+          </div>
+        </div>
+
+        <!-- ⚠️ 繼續複製 .rli-rel-card 區塊新增更多關係面向 -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 6：交叉連結 ========== -->
+<div class="rli-sections">
+  <div class="rli-sec-card rli-sec-slim">
+    <h3 class="rli-cross-title"><i class="fas fa-link"></i> 延伸探索</h3>
+    <div class="rli-cross-grid">
+      <a href="/occupational-safety/" class="rli-cross-card"><i class="fas fa-helmet-safety"></i><span>職業安全</span><small>農民勞動安全防護與裝備</small></a>
+      <a href="/healthgood/" class="rli-cross-card"><i class="fas fa-heart-pulse"></i><span>健康促進</span><small>農民職業健康與傷病預防</small></a>
+      <a href="/dignity-farming-initiative/" class="rli-cross-card"><i class="fas fa-bullhorn"></i><span>尊嚴農業倡議</span><small>推動農業工作者勞動尊嚴</small></a>
+      <a href="/research-result/" class="rli-cross-card"><i class="fas fa-book-open"></i><span>研究成果</span><small>田野調查與學術研究產出</small></a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+/* === 全域變數 === */
+.rli-hero,.rli-sections{
+  --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;--brand-hover:#3d5a04;
+  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.rli-hero *,.rli-sections *{box-sizing:border-box;}
+
+/* === Hero === */
+.rli-hero{display:flex;gap:40px;align-items:center;padding:48px 40px;background:linear-gradient(135deg,var(--brand-light) 0%,#fff 60%,#f0f4e8 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(92,134,7,.12);}
+.rli-hero-inner{flex:1.3;}
+.rli-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.rli-hero-title{font-size:2.4rem;font-weight:900;color:var(--brand-dark);margin:0 0 10px;line-height:1.2;}
+.rli-hero-subtitle{font-size:1.05rem;color:var(--text-secondary);font-weight:500;margin:0 0 24px;line-height:1.7;}
+.rli-hero-nav{display:flex;gap:10px;flex-wrap:wrap;}
+.rli-hero-chip{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;background:#fff;color:var(--brand);border:2px solid rgba(92,134,7,.2);transition:all .3s;}
+.rli-hero-chip:hover{background:var(--brand);color:#fff;border-color:var(--brand);transform:translateY(-2px);}
+.rli-hero-deco{flex:.7;display:flex;flex-direction:column;gap:14px;}
+.rli-hero-stat{background:#fff;padding:18px 24px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;}
+.rli-hero-stat-num{font-size:1.4rem;color:var(--brand);}
+.rli-hero-stat-label{font-size:.9rem;color:var(--text-secondary);font-weight:600;}
+
+/* === 通用區塊 === */
+.rli-sections{margin-top:24px;}
+.rli-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
+.rli-sec-slim{padding:28px 36px;}
+.rli-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-light);}
+.rli-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.rli-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;}
+.rli-sec-header p{font-size:.95rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+.rli-sec-lead{font-size:.98rem;color:var(--text-secondary);line-height:1.8;margin:0 0 24px;padding:16px 20px;background:var(--brand-light);border-radius:12px;border-left:4px solid var(--brand);}
+
+/* === 調查說明 === */
+.rli-intro-text{margin-bottom:24px;}
+.rli-intro-text p{font-size:.98rem;color:var(--text-primary);line-height:1.8;margin:0 0 12px;}
+.rli-scope-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.rli-scope-card{text-align:center;padding:24px 16px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;}
+.rli-scope-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.rli-scope-icon{font-size:28px;color:var(--brand);margin-bottom:12px;}
+.rli-scope-card h4{font-size:1rem;font-weight:700;color:var(--brand-dark);margin:0 0 6px;}
+.rli-scope-card p{font-size:.88rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+
+/* === 種植技術 — 階段時間軸 === */
+.rli-phase-timeline{display:flex;flex-direction:column;gap:20px;}
+.rli-phase-card{display:flex;gap:20px;padding:24px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;}
+.rli-phase-card:hover{border-color:var(--brand);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.rli-phase-num{min-width:52px;height:52px;background:var(--brand);color:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;flex-shrink:0;font-family:"Lato",sans-serif;}
+.rli-phase-content{flex-grow:1;}
+.rli-phase-content h3{font-size:1.15rem;font-weight:800;color:var(--brand-dark);margin:0 0 14px;display:flex;align-items:center;gap:8px;}
+.rli-phase-content h3 i{color:var(--brand);font-size:1rem;}
+.rli-obs-list{display:flex;flex-direction:column;gap:10px;}
+.rli-obs-card{padding:14px 18px;background:#fff;border-radius:10px;border:1px solid #e2e8f0;}
+.rli-obs-label{display:inline-block;font-size:.75rem;font-weight:700;padding:2px 10px;border-radius:8px;background:var(--brand-light);color:var(--brand);margin-bottom:6px;}
+.rli-obs-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0;}
+
+/* === 勞動過程 — 卡片網格 === */
+.rli-labor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.rli-labor-card{padding:28px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;}
+.rli-labor-card:hover{border-color:var(--brand);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.rli-labor-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.rli-labor-card h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 12px;}
+.rli-labor-points{margin:0 0 14px;padding-left:20px;list-style:none;}
+.rli-labor-points li{position:relative;font-size:.9rem;color:var(--text-secondary);line-height:1.6;padding:4px 0 4px 16px;}
+.rli-labor-points li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--brand);}
+
+/* === 人際關係 — 卡片網格 === */
+.rli-rel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.rli-rel-card{padding:28px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;}
+.rli-rel-card:hover{border-color:var(--brand);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.rli-rel-icon{width:48px;height:48px;border-radius:12px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.rli-rel-card h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 10px;}
+.rli-rel-card>p{font-size:.9rem;color:var(--text-secondary);line-height:1.7;margin:0 0 14px;}
+
+/* === 交叉連結 === */
+.rli-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.rli-cross-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.rli-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.rli-cross-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.rli-cross-card i{font-size:24px;color:var(--brand);}
+.rli-cross-card span{font-weight:700;font-size:.95rem;}
+.rli-cross-card small{font-size:.78rem;color:var(--text-secondary);}
+
+/* === RWD === */
+@media(max-width:768px){
+  .rli-hero{flex-direction:column;padding:28px 20px;gap:24px;}
+  .rli-hero-title{font-size:1.8rem;}
+  .rli-hero-deco{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .rli-hero-stat{flex:1;min-width:130px;padding:14px 16px;}
+  .rli-sec-card{padding:20px;}.rli-sec-header{flex-direction:column;gap:10px;}
+  .rli-scope-grid{grid-template-columns:1fr 1fr;}
+  .rli-phase-card{flex-direction:column;gap:12px;}
+  .rli-phase-num{min-width:auto;width:44px;height:44px;font-size:.95rem;}
+  .rli-labor-grid{grid-template-columns:1fr;}
+  .rli-rel-grid{grid-template-columns:1fr;}
+  .rli-cross-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+
+<!-- ========== JavaScript ========== -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  /* 平滑捲動 */
+  document.querySelectorAll('a[href^="#rli-"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+});
+</script>
