@@ -212,16 +212,8 @@ add_shortcode('news_magazine_layout', function($atts) {
     }
     .news-widget-wrapper a { text-decoration: none; color: inherit; transition: 0.3s; }
     .news-widget-wrapper img { max-width: 100%; display: block; }
-    .section-head {
-        display: flex; justify-content: space-between; align-items: center;
-        margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;
-    }
-    .head-title {
-        font-size: 1.5rem; font-weight: 800; color: #2c5e2e;
-        border-left: 5px solid #d4a017; padding-left: 15px; margin: 0;
-    }
-    .head-link { font-size: 0.9rem; color: #555; font-weight: 600; display: flex; align-items: center; gap: 5px; }
-    .head-link:hover { color: #2c5e2e; }
+    /* .section-head 已移至 global.css */
+    /* .head-title 和 .head-link 已移至 global.css */
     .news-container-v2 {
         display: flex; gap: 30px;
         background: #ffffff; border-radius: 16px; padding: 25px;
@@ -241,12 +233,12 @@ add_shortcode('news_magazine_layout', function($atts) {
         padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px;
     }
     .nf-title { font-size: 1.3rem; font-weight: 800; color: #222; margin: 0 0 10px 0; line-height: 1.4; }
-    .nf-title a:hover { color: #2c5e2e; }
+    .nf-title a:hover { color: var(--brand); }
     .nf-desc {
         font-size: 0.95rem; color: #555; line-height: 1.6; margin: 0 0 15px 0;
         display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
-    .nf-link { font-weight: 700; color: #2c5e2e; font-size: 0.95rem; }
+    .nf-link { font-weight: 700; color: var(--brand); font-size: 0.95rem; }
     .nf-link:hover { text-decoration: underline; }
     .news-list-side {
         flex: 1; display: flex; flex-direction: column;
@@ -260,8 +252,8 @@ add_shortcode('news_magazine_layout', function($atts) {
     }
     .news-item-side:hover { background-color: #f9f9f9; }
     .news-item-side.active {
-        background-color: #f0f7ed;
-        border-left-color: #2c5e2e;
+        background-color: var(--brand-light);
+        border-left-color: var(--brand);
     }
     .ni-meta {
         font-size: 0.85rem; color: #888; margin-bottom: 6px;
@@ -271,48 +263,10 @@ add_shortcode('news_magazine_layout', function($atts) {
         background: #eef2f5; color: #555; padding: 2px 8px;
         border-radius: 4px; font-weight: 600; font-size: 0.8rem;
     }
-    /* ===== 分類配色（對應 docs/article-category-slugs.md）===== */
-    /* 最新消息系列 */
-    .cat-news     { background: #2c5e2e !important; color: #fff !important; }
-    .cat-press    { background: #0d7377 !important; color: #fff !important; }
-    .cat-event    { background: #d4a017 !important; color: #fff !important; }
-    .cat-notices  { background: #6b7280 !important; color: #fff !important; }
-    /* 安全裝備 */
-    .cat-equipment     { background: #e67e22 !important; color: #fff !important; }
-    .cat-ppe           { background: #d35400 !important; color: #fff !important; }
-    .cat-assistive-tech{ background: #f39c12 !important; color: #fff !important; }
-    .cat-media         { background: #8e44ad !important; color: #fff !important; }
-    /* 環境設施 */
-    .cat-environment   { background: #27ae60 !important; color: #fff !important; }
-    .cat-greenhouse    { background: #2ecc71 !important; color: #fff !important; }
-    /* 研究出版 */
-    .cat-research      { background: #1565c0 !important; color: #fff !important; }
-    .cat-annual-reports{ background: #1976d2 !important; color: #fff !important; }
-    .cat-policy-papers { background: #7c3aed !important; color: #fff !important; }
-    .cat-data-viz      { background: #0891b2 !important; color: #fff !important; }
-    /* 影音 */
-    .cat-podcast       { background: #c62828 !important; color: #fff !important; }
-    .cat-youtube       { background: #ff0000 !important; color: #fff !important; }
-    /* 下載中心 */
-    .cat-downloads     { background: #0d9488 !important; color: #fff !important; }
-    .cat-infographic   { background: #059669 !important; color: #fff !important; }
-    .cat-video         { background: #7c3aed !important; color: #fff !important; }
-    /* 職業健康 */
-    .cat-health             { background: #e74c3c !important; color: #fff !important; }
-    .cat-heat-stress        { background: #dc2626 !important; color: #fff !important; }
-    .cat-chemical-safety    { background: #ea580c !important; color: #fff !important; }
-    .cat-musculoskeletal    { background: #b45309 !important; color: #fff !important; }
-    /* 經濟保險 */
-    .cat-insurance               { background: #5C8607 !important; color: #fff !important; }
-    .cat-occupation-ins          { background: #4a6b05 !important; color: #fff !important; }
-    .cat-ins-subsidy-insurance   { background: #16a34a !important; color: #fff !important; }
-    .cat-crop-ins                { background: #15803d !important; color: #fff !important; }
-    /* 農學堂 */
-    .cat-agri-school       { background: #92400e !important; color: #fff !important; }
-    .cat-education-farmer  { background: #a16207 !important; color: #fff !important; }
+    /* ===== 分類配色已移至 global.css 統一管理 ===== */
     .ni-title { font-size: 1.05rem; font-weight: 500; color: #222; line-height: 1.5; transition: 0.2s; }
-    .ni-title:hover { color: #2c5e2e; }
-    .news-item-side.active .ni-title { color: #2c5e2e; font-weight: 700; }
+    .ni-title:hover { color: var(--brand); }
+    .news-item-side.active .ni-title { color: var(--brand); font-weight: 700; }
     .ni-desc-mobile { display: none; }
     @media (max-width: 768px) {
         .news-container-v2 { flex-direction: column; gap: 0; padding: 0; overflow: hidden; }
@@ -320,7 +274,7 @@ add_shortcode('news_magazine_layout', function($atts) {
         .nf-content { padding: 0 20px 20px 20px; }
         .news-list-side { border-left: none; padding: 0 20px 20px 20px; border-top: 5px solid #eee; }
         .news-item-side { padding: 15px 0; border-radius: 0; border-left: none; }
-        .news-item-side.active { background: transparent; color: #2c5e2e; }
+        .news-item-side.active { background: transparent; color: var(--brand); }
     }
     </style>';
 

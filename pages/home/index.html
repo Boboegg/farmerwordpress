@@ -114,7 +114,7 @@
     margin-bottom: 10px;
 }
 .topic-header .highlight {
-    color: #2c5e2e; /* 尊嚴綠 */
+    color: var(--brand); /* 尊嚴綠 */
     position: relative;
     display: inline-block;
 }
@@ -147,7 +147,7 @@
     flex: 1;
     min-width: 280px; /* 卡片最小寬度 */
     background: #fff;
-    border-radius: 16px;
+    border-radius: var(--radius-card);
     padding: 30px 25px;
     text-decoration: none;
     color: #333;
@@ -172,7 +172,7 @@
 }
 .card-health::before { background: #e74c3c; }    /* 健康-紅色 */
 .card-equip::before { background: #f39c12; }     /* 裝備-橘色 */
-.card-insurance::before { background: #2c5e2e; } /* 保險-綠色 */
+.card-insurance::before { background: var(--brand); } /* 保險-綠色 */
 
 /* --- 卡片內容區 --- */
 .card-content {
@@ -195,7 +195,7 @@
 }
 .card-health .topic-icon { color: #e74c3c; background: #fdedec; }
 .card-equip .topic-icon { color: #f39c12; background: #fef5e7; }
-.card-insurance .topic-icon { color: #2c5e2e; background: #eafaf1; }
+.card-insurance .topic-icon { color: var(--brand); background: var(--brand-light); }
 
 /* 文字內容 */
 .topic-text h3 {

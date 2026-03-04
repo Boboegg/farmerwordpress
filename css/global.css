@@ -1,4 +1,38 @@
 /* ===================================================
+   0. 全站設計 Token（CSS 變數）
+   品牌主色：#5C8607（尊嚴綠，依 architecture.md 定義）
+   =================================================== */
+:root {
+    /* 品牌色 */
+    --brand: #5C8607;
+    --brand-dark: #4a6b05;
+    --brand-light: #eef5ea;
+    --brand-hover: #3d5a04;
+
+    /* 強調色 */
+    --accent: #d4a017;
+
+    /* 文字色 */
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+
+    /* 中性色 */
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    --border-light: #e2e8f0;
+    --border-lighter: #f0f0f0;
+
+    /* 元件 Token */
+    --radius-card: 16px;
+    --radius-badge: 20px;
+    --radius-btn: 50px;
+    --shadow-card: 0 4px 16px rgba(0,0,0,0.05);
+    --shadow-card-hover: 0 15px 30px rgba(0,0,0,0.08);
+    --transition-card: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ===================================================
    1. 全站基礎優化 (不干擾 Astra 背景色)
    =================================================== */
 html { scroll-behavior: smooth; }
@@ -8,53 +42,53 @@ body { background-image: none !important; }
 
 /* 自訂文字選取顏色 */
 ::selection {
-     background: rgba(93, 109, 61, 0.3);
-     color: #5d6d3d;
+     background: rgba(92, 134, 7, 0.3);
+     color: var(--brand);
  }
 
 /* 捲動條美化 */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
 ::-webkit-scrollbar-thumb {
-     background: #5d6d3d;
+     background: var(--brand);
      border-radius: 10px;
  }
-::-webkit-scrollbar-thumb:hover { background: #4a5a31; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-dark); }
 
 /* ===================================================
    2. 內容卡片與內文互動 (包括計畫說明、場域等)
    =================================================== */
 .content-card {
-    background: #ffffff;
+    background: var(--bg-white);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
     margin-bottom: 35px;
-    border-top: 6px solid #5d6d3d;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-top: 6px solid var(--brand);
+    transition: var(--transition-card);
 }
 
 .content-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: var(--shadow-card-hover);
 }
 
 /* 內文連結美化：滑動底線 */
 .content-body a {
-    color: #5d6d3d;
+    color: var(--brand);
     text-decoration: none;
     position: relative;
     font-weight: 600;
 }
 .content-body a::after {
     content: ''; position: absolute; width: 100%; transform: scaleX(0);
-    height: 2px; bottom: 0; left: 0; background-color: #5d6d3d;
+    height: 2px; bottom: 0; left: 0; background-color: var(--brand);
     transform-origin: bottom right; transition: transform 0.3s ease-out;
 }
 .content-body a:hover::after { transform: scaleX(1); transform-origin: bottom left; }
 
 /* 圖片互動效果 */
-.content-card img { transition: all 0.4s ease-in-out !important; }
+.content-card img { transition: transform 0.5s ease !important; }
 .content-card img:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
@@ -64,16 +98,11 @@ body { background-image: none !important; }
    3. 研究團隊：徹底透明版 (完全移除白底框)
    =================================================== */
 .my-team-card {
-    /* 💡 強制背景透明，確保任何時候都不會出現白框 */
     background: transparent !important;
     padding: 20px !important;
-    border-radius: 20px !important;
-
-    /* 移除邊框與陰影，讓它完美融合在米色背景中 */
+    border-radius: var(--radius-card) !important;
     border: none !important;
     box-shadow: none !important;
-
-    /* 保持滑順的動畫感 */
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
     text-align: center !important;
     display: flex !important;
@@ -81,34 +110,29 @@ body { background-image: none !important; }
     margin-bottom: 20px !important;
 }
 
-/* 懸停效果：滑動時依然保持透明，只有向上浮動的位移感 */
 .my-team-card:hover {
-    background: transparent !important; /* 💡 確保滑動時絕對不顯示白底 */
+    background: transparent !important;
     transform: translateY(-12px) !important;
-    box-shadow: none !important; /* 💡 移除陰影，避免產生顏色塊 */
+    box-shadow: none !important;
 }
 
-/* 照片美化：保留圓角與縮放 */
 .my-team-card img {
     border-radius: 15px !important;
     transition: transform 0.5s ease !important;
 }
 
-/* 💡 滑鼠移上去時，只有照片會優雅地放大 8% */
 .my-team-card:hover img {
     transform: scale(1.08) !important;
 }
 
-/* 姓名與職稱文字變色 (尊嚴綠) */
 .my-team-card h2, .my-team-card h3 {
     transition: color 0.3s !important;
     margin-top: 15px !important;
     font-weight: 800 !important;
 }
 
-/* 💡 滑鼠移上去時，老師的名字會變成您的品牌綠色 */
 .my-team-card:hover h2, .my-team-card:hover h3 {
-    color: #5d6d3d !important;
+    color: var(--brand) !important;
 }
 
 /* ===================================================
@@ -122,30 +146,30 @@ body { background-image: none !important; }
     z-index: 999;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
     .sidebar-wrapper { position: relative !important; top: 0 !important; }
 }
 
 .sidebar-section {
-    background: #ffffff;
-    border-radius: 16px;
+    background: var(--bg-white);
+    border-radius: var(--radius-card);
     padding: 24px;
     margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow-card);
     border: 1px solid rgba(0,0,0,0.03);
 }
 
 .sidebar-title {
-    font-size: 19px; color: #5d6d3d; margin: 0 0 20px 0; font-weight: 800;
+    font-size: 1.1rem; color: var(--brand); margin: 0 0 20px 0; font-weight: 800;
     display: flex; align-items: center;
 }
 .sidebar-title::after {
-    content: ''; flex-grow: 1; height: 2px; background: #5d6d3d; margin-left: 15px; opacity: 0.2;
+    content: ''; flex-grow: 1; height: 2px; background: var(--brand); margin-left: 15px; opacity: 0.2;
 }
 
 .sidebar-links li a { transition: all 0.3s ease; text-decoration: none; color: #555; }
 .sidebar-links li a:hover {
-    color: #5d6d3d;
+    color: var(--brand);
     transform: translateX(8px);
 }
 
@@ -163,31 +187,31 @@ body { background-image: none !important; }
    5. 行動設計清單 (Action Items)
    =================================================== */
 .action-item {
-    display: flex; gap: 20px; padding: 25px; background: #ffffff;
-    border-radius: 12px; border: 1px solid #f0f0f0; transition: all 0.3s ease;
+    display: flex; gap: 20px; padding: 25px; background: var(--bg-white);
+    border-radius: var(--radius-card); border: 1px solid var(--border-lighter); transition: all 0.3s ease;
 }
 .action-item:hover {
-    background: #f9fbf7; border-color: #5d6d3d; transform: translateX(10px);
+    background: var(--brand-light); border-color: var(--brand); transform: translateX(10px);
 }
 .action-icon {
-    font-size: 24px; min-width: 45px; height: 45px; background: rgba(93, 109, 61, 0.1);
+    font-size: 24px; min-width: 45px; height: 45px; background: rgba(92, 134, 7, 0.1);
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
 }
 
 /* ===================================================
    6. 頁尾修飾 (Footer)
    =================================================== */
-footer, .elementor-location-footer { border-top: 4px solid #5d6d3d; }
+footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
 
-/* ========================
-   側邊欄小工具樣式 (全站通用)
-   ======================== */
+/* ===================================================
+   7. 側邊欄小工具樣式 (全站通用)
+   =================================================== */
 
 /* 核心：粘性固定容器 */
 .sticky-sidebar-container {
     position: -webkit-sticky;
     position: sticky;
-    top: 100px; /* 距離頂部 100px 時停住 */
+    top: 120px;
     z-index: 9;
     align-self: flex-start;
     width: 100%;
@@ -203,34 +227,34 @@ footer, .elementor-location-footer { border-top: 4px solid #5d6d3d; }
 
 /* 小工具外框通用樣式 */
 .side-widget {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 25px;
+    background: var(--bg-white);
+    border-radius: var(--radius-card);
+    padding: 24px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border: 1px solid #f0f0f0;
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-lighter);
+    transition: var(--transition-card);
 }
 
 .side-widget:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: var(--shadow-card-hover);
 }
 
 /* 標題樣式 */
 .side-title {
     font-size: 1.1rem;
     font-weight: 800;
-    color: #2c5e2e; /* 尊嚴綠 */
+    color: var(--brand);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #eef2eb;
+    border-bottom: 2px solid var(--brand-light);
 }
 
-.side-title i { color: #d4a017; }
+.side-title i { color: var(--accent); }
 
 /* 工具箱清單 */
 .tool-list { list-style: none; padding: 0; margin: 0; }
@@ -239,7 +263,7 @@ footer, .elementor-location-footer { border-top: 4px solid #5d6d3d; }
 .tool-link {
     display: flex; align-items: center; gap: 12px;
     padding: 12px 15px;
-    background: #f8f9fa;
+    background: var(--bg-light);
     border-radius: 10px;
     text-decoration: none;
     color: #444; font-weight: 600; font-size: 0.95rem;
@@ -248,32 +272,32 @@ footer, .elementor-location-footer { border-top: 4px solid #5d6d3d; }
 }
 
 .tool-link:hover {
-    background: #e8f5e9; color: #2c5e2e;
-    border-color: #a5d6a7; transform: translateX(5px);
+    background: var(--brand-light); color: var(--brand);
+    border-color: rgba(92, 134, 7, 0.3); transform: translateX(5px);
 }
 
 .tool-icon {
     width: 32px; height: 32px; background: #fff;
     border-radius: 50%; display: flex; align-items: center;
-    justify-content: center; color: #2c5e2e;
+    justify-content: center; color: var(--brand);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.download-icon { margin-left: auto; font-size: 0.8rem; color: #999; }
+.download-icon { margin-left: auto; font-size: 0.8rem; color: var(--text-muted); }
 
 /* 關鍵字雲 */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
 
 .tag-btn {
     background: #fff; border: 1px solid #e0e0e0;
-    padding: 6px 14px; border-radius: 20px;
+    padding: 6px 14px; border-radius: var(--radius-badge);
     font-size: 0.85rem; color: #666; text-decoration: none;
     transition: all 0.2s ease;
 }
 
 .tag-btn:hover {
-    background: #2c5e2e; color: #fff;
-    border-color: #2c5e2e; box-shadow: 0 4px 10px rgba(44, 94, 46, 0.2);
+    background: var(--brand); color: #fff;
+    border-color: var(--brand); box-shadow: 0 4px 10px rgba(92, 134, 7, 0.2);
 }
 
 /* 友善連結 */
@@ -287,5 +311,63 @@ footer, .elementor-location-footer { border-top: 4px solid #5d6d3d; }
 }
 
 .link-item:hover {
-    border-color: #2c5e2e; color: #2c5e2e; background: #fdfdfd;
+    border-color: var(--brand); color: var(--brand); background: #fdfdfd;
 }
+
+/* ===================================================
+   8. 共用區塊標題樣式 (供多個短碼共用)
+   =================================================== */
+.section-head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;
+}
+.head-title {
+    font-size: 1.4rem; font-weight: 800; color: var(--brand-dark);
+    border-left: 5px solid var(--accent); padding-left: 15px; margin: 0;
+}
+.head-link { font-size: 0.9rem; color: #555; font-weight: 600; display: flex; align-items: center; gap: 5px; text-decoration: none; }
+.head-link:hover { color: var(--brand); }
+
+/* ===================================================
+   9. 全站分類配色 (.cat-* 統一定義)
+   =================================================== */
+/* 最新消息系列 */
+.cat-news     { background: #2c5e2e !important; color: #fff !important; }
+.cat-press    { background: #0d7377 !important; color: #fff !important; }
+.cat-event    { background: #d4a017 !important; color: #fff !important; }
+.cat-notices  { background: #6b7280 !important; color: #fff !important; }
+/* 安全裝備 */
+.cat-equipment     { background: #e67e22 !important; color: #fff !important; }
+.cat-ppe           { background: #d35400 !important; color: #fff !important; }
+.cat-assistive-tech{ background: #f39c12 !important; color: #fff !important; }
+.cat-media         { background: #8e44ad !important; color: #fff !important; }
+/* 環境設施 */
+.cat-environment   { background: #27ae60 !important; color: #fff !important; }
+.cat-greenhouse    { background: #2ecc71 !important; color: #fff !important; }
+/* 研究出版 */
+.cat-research      { background: #1565c0 !important; color: #fff !important; }
+.cat-annual-reports{ background: #1976d2 !important; color: #fff !important; }
+.cat-policy-papers { background: #7c3aed !important; color: #fff !important; }
+.cat-data-viz      { background: #0891b2 !important; color: #fff !important; }
+/* 影音 */
+.cat-podcast       { background: #c62828 !important; color: #fff !important; }
+.cat-youtube       { background: #ff0000 !important; color: #fff !important; }
+/* 下載中心 */
+.cat-downloads     { background: #0d9488 !important; color: #fff !important; }
+.cat-infographic   { background: #059669 !important; color: #fff !important; }
+.cat-video         { background: #7c3aed !important; color: #fff !important; }
+/* 職業健康 */
+.cat-health             { background: #e74c3c !important; color: #fff !important; }
+.cat-heat-stress        { background: #dc2626 !important; color: #fff !important; }
+.cat-chemical-safety    { background: #ea580c !important; color: #fff !important; }
+.cat-musculoskeletal    { background: #b45309 !important; color: #fff !important; }
+/* 經濟保險 */
+.cat-insurance               { background: #5C8607 !important; color: #fff !important; }
+.cat-occupation-ins          { background: #4a6b05 !important; color: #fff !important; }
+.cat-ins-subsidy-insurance   { background: #16a34a !important; color: #fff !important; }
+.cat-crop-ins                { background: #15803d !important; color: #fff !important; }
+/* 農學堂 */
+.cat-agri-school       { background: #92400e !important; color: #fff !important; }
+.cat-education-farmer  { background: #a16207 !important; color: #fff !important; }
+/* 預設 */
+.cat-general           { background: #6b7280 !important; color: #fff !important; }
