@@ -179,8 +179,8 @@
 .res-hero-inner{flex:1.3;}
 .res-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;letter-spacing:.5px;}
 .res-hero-title{font-size:2.4rem;font-weight:900;color:var(--brand-dark);margin:0 0 10px;line-height:1.2;}
-.res-hero-subtitle{font-size:1.05rem;color:var(--text-secondary);font-weight:500;margin:0 0 20px;line-height:1.7;}
-.res-hero-note{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.7);border-radius:12px;padding:16px 20px;border:1px solid rgba(92,134,7,.1);font-size:.9rem;line-height:1.6;color:var(--text-secondary);}
+.res-hero-subtitle{font-size:1.1rem;color:#555;font-weight:500;margin:0 0 20px;line-height:1.8;}
+.res-hero-note{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.7);border-radius:12px;padding:16px 20px;border:1px solid rgba(92,134,7,.1);font-size:.95rem;line-height:1.7;color:#555;}
 .res-hero-note i{color:var(--brand);margin-top:3px;flex-shrink:0;}
 .res-hero-deco{flex:.7;display:flex;flex-direction:column;gap:14px;position:sticky;top:20px;}
 .res-hero-stat{background:#fff;padding:18px 24px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:baseline;gap:12px;}
@@ -193,8 +193,8 @@
 .res-sec-slim{padding:28px 36px;}
 .res-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-light);}
 .res-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
-.res-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;}
-.res-sec-header p{font-size:.95rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+.res-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--text-primary);margin:0 0 4px;}
+.res-sec-header p{font-size:1rem;color:#555;margin:0;line-height:1.6;}
 
 /* === 五大分類卡 === */
 .res-cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
@@ -202,7 +202,7 @@
 .res-cat-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1);border-color:var(--brand);}
 .res-cat-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px;}
 .res-cat-card h3{font-size:1rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
-.res-cat-card p{font-size:.82rem;color:var(--text-secondary);line-height:1.4;margin:0 0 10px;}
+.res-cat-card p{font-size:.88rem;color:#555;line-height:1.5;margin:0 0 10px;}
 .res-cat-count{font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:12px;background:var(--brand-light);color:var(--brand);}
 
 /* === 精選成果列表 === */
@@ -218,7 +218,7 @@
 .res-feat-content{flex-grow:1;}
 .res-feat-content h3{font-size:1rem;font-weight:600;color:var(--text-primary);margin:0 0 8px;line-height:1.6;font-family:"Lora","Noto Sans TC",serif;}
 .res-feat-content h3 em{font-style:italic;}
-.res-feat-abstract{font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin:0 0 10px;}
+.res-feat-abstract{font-size:.95rem;color:#555;line-height:1.7;margin:0 0 10px;}
 .res-feat-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .res-feat-tag{font-size:.75rem;padding:2px 10px;border-radius:10px;background:#e2e8f0;color:var(--text-secondary);}
 .res-feat-actions{flex-shrink:0;align-self:center;display:flex;flex-direction:column;gap:8px;}
@@ -259,10 +259,10 @@
 /* === 子頁共用：媒體嵌入區 === */
 .res-embed-card{background:#f8fafc;border-radius:14px;padding:24px;border:1px solid #e2e8f0;margin-bottom:16px;}
 .res-embed-card h3{font-size:1.05rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
-.res-embed-meta{font-size:.85rem;color:var(--text-secondary);margin-bottom:14px;}
+.res-embed-meta{font-size:.9rem;color:#555;margin-bottom:14px;}
 .res-embed-player{width:100%;border-radius:10px;overflow:hidden;margin-bottom:10px;}
 .res-embed-player iframe{width:100%;border:none;}
-.res-embed-desc{font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0;}
+.res-embed-desc{font-size:.95rem;color:#555;line-height:1.7;margin:0;}
 
 /* === 子頁共用：圖表畫廊 === */
 .res-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
@@ -273,7 +273,7 @@
 .res-gallery-card:hover .res-gallery-thumb img{transform:scale(1.05);}
 .res-gallery-info{padding:18px;}
 .res-gallery-info h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--brand-dark);}
-.res-gallery-info p{font-size:.85rem;color:var(--text-secondary);margin:0 0 10px;line-height:1.5;}
+.res-gallery-info p{font-size:.9rem;color:#555;margin:0 0 10px;line-height:1.6;}
 .res-gallery-dl{font-size:.85rem;font-weight:700;color:var(--brand);display:flex;align-items:center;gap:4px;}
 
 /* === 子頁導覽列 === */

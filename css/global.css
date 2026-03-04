@@ -14,8 +14,8 @@
 
     /* 文字色 */
     --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-muted: #9ca3af;
+    --text-secondary: #555555;
+    --text-muted: #888888;
 
     /* 中性色 */
     --bg-white: #ffffff;
@@ -315,7 +315,17 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
 }
 
 /* ===================================================
-   8. 共用區塊標題樣式 (供多個短碼共用)
+   8. WordPress 頁面標題可讀性修正
+   （避免深綠標題在綠色背景上被吃掉）
+   =================================================== */
+.entry-title,
+.page-title,
+.ast-archive-title {
+    color: var(--text-primary) !important;
+}
+
+/* ===================================================
+   9. 共用區塊標題樣式 (供多個短碼共用)
    =================================================== */
 .section-head {
     display: flex; justify-content: space-between; align-items: center;
