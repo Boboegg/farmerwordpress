@@ -307,9 +307,9 @@ function home_highlight_slider_shortcode() {
     .home-highlight-outer { position: relative; }
     .home-highlight-slider { position: relative; min-height: 100px; }
     .home-highlight-slider .season-alert-bar {
-        background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
-        border-left: 6px solid #66bb6a;
-        border-radius: 16px;
+        background: linear-gradient(135deg, var(--brand-light) 0%, #ffffff 100%);
+        border-left: 6px solid var(--brand);
+        border-radius: var(--radius-card);
         padding: 20px 30px;
         display: flex;
         align-items: center;
@@ -340,7 +340,7 @@ function home_highlight_slider_shortcode() {
         align-items: center;
         justify-content: center;
         font-size: 1.8rem;
-        color: #66bb6a;
+        color: var(--brand);
         box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         flex-shrink: 0;
         animation: pulse 3s infinite;
@@ -355,8 +355,8 @@ function home_highlight_slider_shortcode() {
         display: inline-block;
         font-size: 0.85rem;
         font-weight: 800;
-        color: #2e7d32;
-        background: rgba(46,125,50,0.1);
+        color: var(--brand-dark);
+        background: rgba(92,134,7,0.1);
         padding: 4px 12px;
         border-radius: 20px;
         margin-bottom: 8px;
@@ -365,9 +365,9 @@ function home_highlight_slider_shortcode() {
     .alert-text { color: #444; font-size: 1.05rem; line-height: 1.5; }
     .alert-btn {
         text-decoration: none;
-        color: #2e7d32;
+        color: var(--brand-dark);
         background: white;
-        border: 1px solid #a5d6a7;
+        border: 1px solid rgba(92,134,7,0.3);
         padding: 10px 24px;
         border-radius: 50px;
         font-weight: 700;
@@ -381,11 +381,11 @@ function home_highlight_slider_shortcode() {
         flex-shrink: 0;
     }
     .alert-btn:hover {
-        background: #2e7d32;
+        background: var(--brand);
         color: white;
-        border-color: #2e7d32;
+        border-color: var(--brand);
         transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(46,125,50,0.2);
+        box-shadow: 0 8px 20px rgba(92,134,7,0.2);
     }
     .alert-btn i { transition: transform 0.3s; }
     .alert-btn:hover i { transform: translateX(5px); }
@@ -415,13 +415,13 @@ function home_highlight_slider_shortcode() {
         width: 8px;
         height: 8px;
         border-radius: 999px;
-        background: #c8e6c9;
+        background: var(--brand-light);
         cursor: pointer;
         transition: all 0.3s ease;
     }
     .home-highlight-dots .dot.is-active {
         width: 20px;
-        background: #2e7d32;
+        background: var(--brand);
     }
     @media (max-width: 768px) {
         .home-highlight-slider .season-alert-bar {

@@ -163,8 +163,8 @@ add_shortcode('my_newss_loop', function($atts) {
     <style>
     .news-loop-wrapper { margin-bottom: 40px; }
     .news-section-title {
-        font-size: 1.4rem; font-weight: 800; color: #2c5e2e; margin: 0 0 25px 0;
-        border-left: 5px solid #d4a017; padding-left: 15px;
+        font-size: 1.4rem; font-weight: 800; color: var(--brand-dark); margin: 0 0 25px 0;
+        border-left: 5px solid var(--accent); padding-left: 15px;
     }
     .news-grid-container {
         display: grid;
@@ -214,55 +214,16 @@ add_shortcode('my_newss_loop', function($atts) {
         top: 15px;
         left: 15px;
         background: rgba(255,255,255,0.9);
-        color: #2c5e2e;
+        color: var(--brand);
         padding: 6px 12px;
-        border-radius: 20px;
+        border-radius: var(--radius-badge);
         font-size: 0.8rem;
         font-weight: 700;
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         backdrop-filter: blur(10px);
         white-space: nowrap;
     }
-    /* ===== 分類配色：依 slug 套用 ===== */
-    /* 保險相關 */
-    .cat-insurance { background:#2563eb !important; color:#fff !important; }
-    .cat-occupation-ins { background:#1d4ed8 !important; color:#fff !important; }
-    .cat-ins-subsidy-insurance { background:#38bdf8 !important; color:#fff !important; }
-    .cat-crop-ins { background:#0ea5e9 !important; color:#fff !important; }
-    /* 健康與危害 */
-    .cat-health { background:#16a34a !important; color:#fff !important; }
-    .cat-heat-stress { background:#f97316 !important; color:#fff !important; }
-    .cat-chemical-safety { background:#dc2626 !important; color:#fff !important; }
-    .cat-musculoskeletal { background:#7c3aed !important; color:#fff !important; }
-    /* 教育與資源 */
-    .cat-agri-school { background:#22c55e !important; color:#fff !important; }
-    .cat-education-farmer { background:#15803d !important; color:#fff !important; }
-    /* 新聞與公告 */
-    .cat-news { background:#166534 !important; color:#fff !important; }
-    .cat-press { background:#0f766e !important; color:#fff !important; }
-    .cat-event { background:#d97706 !important; color:#fff !important; }
-    .cat-notices { background:#4b5563 !important; color:#fff !important; }
-    /* 環境與研究 */
-    .cat-environment { background:#22c55e !important; color:#fff !important; }
-    .cat-greenhouse { background:#22c55e !important; color:#fff !important; }
-    .cat-research { background:#1d4ed8 !important; color:#fff !important; }
-    .cat-annual-reports { background:#0f766e !important; color:#fff !important; }
-    .cat-policy-papers { background:#7c2d12 !important; color:#fff !important; }
-    .cat-data-viz { background:#0891b2 !important; color:#fff !important; }
-    /* 設備與個人防護 */
-    .cat-equipment { background:#4b5563 !important; color:#fff !important; }
-    .cat-ppe { background:#f97316 !important; color:#fff !important; }
-    .cat-assistive-tech { background:#0f766e !important; color:#fff !important; }
-    /* 媒體與教材 */
-    .cat-media { background:#0ea5e9 !important; color:#fff !important; }
-    .cat-podcast { background:#6366f1 !important; color:#fff !important; }
-    .cat-youtube { background:#ef4444 !important; color:#fff !important; }
-    .cat-video { background:#16a34a !important; color:#fff !important; }
-    .cat-infographic { background:#db2777 !important; color:#fff !important; }
-    /* 下載相關 */
-    .cat-downloads { background:#6b21a8 !important; color:#fff !important; }
-    /* 其他未特別定義的分類：灰色 */
-    .cat-general { background:#6b7280 !important; color:#fff !important; }
+    /* ===== 分類配色已移至 global.css 統一管理 ===== */
     .card-grid-body {
         padding: 20px;
         display: flex;
@@ -286,26 +247,26 @@ add_shortcode('my_newss_loop', function($atts) {
         color: inherit;
         text-decoration: none;
     }
-    .card-grid-title a:hover { color: #5d6d3d; }
+    .card-grid-title a:hover { color: var(--brand); }
     .card-grid-more {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        color: #5d6d3d;
+        color: var(--brand);
         font-weight: 700;
         font-size: 0.9rem;
         padding: 8px 18px;
-        border: 1.5px solid #5d6d3d;
-        border-radius: 25px;
+        border: 1.5px solid var(--brand);
+        border-radius: var(--radius-btn);
         transition: all 0.3s ease;
         text-decoration: none;
         align-self: flex-start;
         margin-top: auto;
     }
     .card-grid-more:hover {
-        background: #5d6d3d;
+        background: var(--brand);
         color: white;
-        transform: translateY(-1px);
+        transform: translateY(-2px);
     }
     .no-posts {
         grid-column: 1/-1;

@@ -162,12 +162,12 @@ add_shortcode('podcast_full_archive', function ($atts) {
         align-items: center;
         margin-bottom: 28px;
         padding-bottom: 16px;
-        border-bottom: 2px solid #eef5ea;
+        border-bottom: 2px solid var(--brand-light);
     }
     .pfa-section-title {
         font-size: 1.4rem;
         font-weight: 800;
-        color: #4a6b05;
+        color: var(--brand-dark);
         margin: 0;
         display: flex;
         align-items: center;
@@ -176,8 +176,8 @@ add_shortcode('podcast_full_archive', function ($atts) {
     .pfa-total-badge {
         font-size: .85rem;
         font-weight: 700;
-        color: #5C8607;
-        background: #eef5ea;
+        color: var(--brand);
+        background: var(--brand-light);
         padding: 6px 16px;
         border-radius: 50px;
         display: flex;
@@ -206,7 +206,7 @@ add_shortcode('podcast_full_archive', function ($atts) {
     .pfa-card:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 40px rgba(92,134,7,.12);
-        border-color: #5C8607;
+        border-color: var(--brand);
     }
 
     /* ── Thumbnail ── */
@@ -312,7 +312,7 @@ add_shortcode('podcast_full_archive', function ($atts) {
         color: #1f2937;
         transition: color .3s;
     }
-    .pfa-title a:hover { color: #5C8607; }
+    .pfa-title a:hover { color: var(--brand); }
     .pfa-excerpt {
         font-size: .88rem;
         color: #6b7280;
@@ -333,16 +333,16 @@ add_shortcode('podcast_full_archive', function ($atts) {
         font-weight: 700;
         font-size: .88rem;
         text-decoration: none;
-        background: #eef5ea;
-        color: #5C8607;
+        background: var(--brand-light);
+        color: var(--brand);
         border: 1px solid rgba(92,134,7,.15);
         transition: all .3s;
         align-self: flex-start;
     }
     .pfa-cta:hover {
-        background: #5C8607;
+        background: var(--brand);
         color: #fff;
-        border-color: #5C8607;
+        border-color: var(--brand);
         transform: translateY(-2px);
         box-shadow: 0 6px 16px rgba(92,134,7,.25);
     }

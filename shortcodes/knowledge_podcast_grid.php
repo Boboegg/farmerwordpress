@@ -163,25 +163,14 @@ add_shortcode('knowledge_podcast_grid', function($atts) {
     .knowledge-podcast-wrapper {
         font-family: "Noto Sans TC", sans-serif; color: #333; width: 100%; margin-bottom: 40px; position: relative;
     }
-    .section-head {
-        display: flex; justify-content: space-between; align-items: center;
-        margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 10px;
-    }
-    .head-title {
-        font-size: 1.5rem; font-weight: 800; color: #2c5e2e;
-        border-left: 5px solid #d4a017; padding-left: 15px; margin: 0;
-    }
+    /* .section-head 和 .head-title 已移至 global.css */
     .head-controls { display: flex; align-items: center; gap: 15px; }
-    .head-link {
-        font-size: 0.9rem; color: #555; font-weight: 600;
-        display: flex; align-items: center; gap: 5px; text-decoration: none;
-    }
-    .head-link:hover { color: #2c5e2e; }
+    /* .head-link 已移至 global.css */
     .nav-arrow {
         background: #fff; border: 1px solid #ddd; width: 32px; height: 32px; border-radius: 50%;
         display: flex; align-items: center; justify-content: center; cursor: pointer; color: #555; transition: 0.3s;
     }
-    .nav-arrow:hover { background: #2c5e2e; color: #fff; border-color: #2c5e2e; }
+    .nav-arrow:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
     .carousel-viewport { overflow: hidden; width: 100%; padding: 10px 5px 20px 5px; }
     .carousel-track { display: flex; transition: transform 0.5s ease-in-out; gap: 20px; }
     .carousel-item {
@@ -195,7 +184,7 @@ add_shortcode('knowledge_podcast_grid', function($atts) {
     }
     .k-card:hover {
         transform: translateY(-8px);
-        box-shadow: 0 15px 30px rgba(44, 94, 46, 0.15); border-color: #2c5e2e;
+        box-shadow: 0 15px 30px rgba(92, 134, 7, 0.15); border-color: var(--brand);
     }
     .k-thumb { height: 180px; position: relative; overflow: hidden; background: #000; }
     .k-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; opacity: 0.9; }
@@ -216,7 +205,7 @@ add_shortcode('knowledge_podcast_grid', function($atts) {
     .k-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
     .k-title { font-size: 1.1rem; font-weight: 700; margin: 0 0 10px 0; line-height: 1.4; height: 3em; overflow: hidden; }
     .k-title a { text-decoration: none; color: #222; transition: 0.2s; }
-    .k-title a:hover { color: #2c5e2e; }
+    .k-title a:hover { color: var(--brand); }
     .k-desc { font-size: 0.9rem; color: #666; margin: 0 0 15px 0; line-height: 1.5; flex-grow: 1; }
     .k-stats {
         margin-top: auto; padding-top: 10px; border-top: 1px solid #f0f0f0;
@@ -224,16 +213,16 @@ add_shortcode('knowledge_podcast_grid', function($atts) {
         font-size: 0.85rem; color: #888;
     }
     .k-listen-btn {
-        background: #5d6d3d; color: #ffffff !important;
+        background: var(--brand); color: #ffffff !important;
         font-weight: 700; text-decoration: none;
         display: flex; align-items: center; justify-content: center; gap: 8px;
-        padding: 8px 15px; border-radius: 50px;
+        padding: 8px 15px; border-radius: var(--radius-btn);
         transition: all 0.3s ease;
-        box-shadow: 0 4px 10px rgba(93, 109, 61, 0.2);
+        box-shadow: 0 4px 10px rgba(92, 134, 7, 0.2);
     }
     .k-listen-btn:hover {
-        background: #4a5a31; transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(93, 109, 61, 0.3);
+        background: var(--brand-dark); transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(92, 134, 7, 0.3);
     }
     /* 燈箱樣式 */
     .lightbox-overlay {
