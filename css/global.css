@@ -48,7 +48,7 @@ body { background-image: none !important; }
 
 /* 捲動條美化 */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-track { background: var(--border-lighter); }
 ::-webkit-scrollbar-thumb {
      background: var(--brand);
      border-radius: 10px;
@@ -167,7 +167,7 @@ body { background-image: none !important; }
     content: ''; flex-grow: 1; height: 2px; background: var(--brand); margin-left: 15px; opacity: 0.2;
 }
 
-.sidebar-links li a { transition: all 0.3s ease; text-decoration: none; color: #555; }
+.sidebar-links li a { transition: all 0.3s ease; text-decoration: none; color: var(--text-secondary); }
 .sidebar-links li a:hover {
     color: var(--brand);
     transform: translateX(8px);
@@ -207,7 +207,7 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
    7. 側邊欄小工具樣式 (全站通用)
    =================================================== */
 
-/* 核心：粘性固定容器 */
+/* 核心：粘性固定容器（與 .sidebar-wrapper 共用 sticky 行為） */
 .sticky-sidebar-container {
     position: -webkit-sticky;
     position: sticky;
@@ -217,7 +217,7 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
     width: 100%;
 }
 
-/* 手機版取消固定 */
+/* 手機版：sidebar-wrapper 和 sticky-sidebar-container 都取消固定 */
 @media (max-width: 992px) {
     .sticky-sidebar-container {
         position: relative;
@@ -266,7 +266,7 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
     background: var(--bg-light);
     border-radius: 10px;
     text-decoration: none;
-    color: #444; font-weight: 600; font-size: 0.95rem;
+    color: var(--text-primary); font-weight: 600; font-size: 0.95rem;
     transition: all 0.2s ease;
     border: 1px solid transparent;
 }
@@ -306,7 +306,7 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
 .link-item {
     background: #fff; border: 1px solid #eee;
     padding: 10px; border-radius: 8px; text-align: center;
-    font-size: 0.9rem; color: #555; text-decoration: none;
+    font-size: 0.9rem; color: var(--text-secondary); text-decoration: none;
     transition: all 0.2s ease; font-weight: 500;
 }
 
@@ -335,7 +335,7 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
     font-size: 1.4rem; font-weight: 800; color: var(--brand-dark);
     border-left: 5px solid var(--accent); padding-left: 15px; margin: 0;
 }
-.head-link { font-size: 0.9rem; color: #555; font-weight: 600; display: flex; align-items: center; gap: 5px; text-decoration: none; }
+.head-link { font-size: 0.9rem; color: var(--text-secondary); font-weight: 600; display: flex; align-items: center; gap: 5px; text-decoration: none; }
 .head-link:hover { color: var(--brand); }
 
 /* ===================================================

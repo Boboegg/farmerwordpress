@@ -122,7 +122,7 @@
 
 ---
 
-### 02 職業安全（Occupational Safety）— `/prevention`
+### 02 職業安全（Occupational Safety）— `/occupational-safety`
 
 - **介面類型**：網格卡片（Grid Cards）數位型錄 + 互動式工具
 
@@ -153,7 +153,7 @@
 
 ---
 
-### 04 經濟與保險（Economic Security）— `/money`
+### 04 經濟與保險（Economic Security）— `/economic-insurance`
 
 - **介面類型**：資訊圖解（Infographics）+ 互動試算工具（Web Form）
 - **核心工具**：農民輸入年齡、年資、傷病類型後，系統輸出可申請的補助或理賠估算
@@ -162,7 +162,7 @@
 
 ---
 
-### 05 培力與實踐（Empowerment）— `/農學堂`
+### 05 培力與實踐（Empowerment）— `/farmer-study`
 
 - **介面類型**：輕量級 LMS + 活動行事曆
 - **農學堂**：影片網格（Video Grid），每支微學習影片標示時長與難易度
@@ -170,7 +170,7 @@
 
 ---
 
-### 06 尊嚴農業倡議（Advocacy）— `/尊嚴農業倡議`
+### 06 尊嚴農業倡議（Advocacy）— `/dignity-farming-initiative`
 
 - **介面類型**：單頁式（One-page）深度專題報導
 - **版型核心**：垂直時間軸（Vertical Timeline）串接倡議行動與焦點團體會議紀錄
@@ -178,7 +178,7 @@
 
 ---
 
-### 07 研究成果（Research）— `/研究成果`
+### 07 研究成果（Research）— `/research-result`
 
 - **介面類型**：學術資料庫 + 文獻列表介面
 - **APA 規範**：所有條目嚴格以 APA 第 7 版格式排版，**禁止引用任何中國大陸文獻與數據**
@@ -237,29 +237,44 @@
 以下為各 Widget 已採用的 CSS 變數，全站保持一致，新頁面應優先使用這些變數而非直接寫死色碼。
 
 ```css
+/* === global.css 中已定義的品牌 Token === */
 :root {
-    /* === 品牌色 === */
-    --astra-brand:       #5C8607;
-    --astra-brand-hover: #4a6b05;
-    --astra-text:        #343F1E;
-    --astra-surface:     #FDFAF1;   /* 頁面內容區底色 */
-    --astra-border:      rgba(53, 64, 31, 0.15);
-    --astra-shadow:      0 15px 40px rgba(52, 63, 30, 0.05);
+    --brand: #5C8607;
+    --brand-dark: #4a6b05;
+    --brand-light: #eef5ea;
+    --brand-hover: #3d5a04;
+    --accent: #d4a017;
+    --text-primary: #1f2937;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    --border-light: #e2e8f0;
+    --border-lighter: #f0f0f0;
+    --radius-card: 16px;
+    --radius-badge: 20px;
+    --radius-btn: 50px;
+    --shadow-card: 0 4px 16px rgba(0,0,0,0.05);
+    --shadow-card-hover: 0 15px 30px rgba(0,0,0,0.08);
+    --transition-card: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 
-    /* === 職業安全 Widget 專用 === */
-    --text-brand:        #047857;   /* Widget 1 強調綠 */
-    --bg-glass:          rgba(255, 255, 255, 0.65);
-    --border-glass:      rgba(255, 255, 255, 0.9);
-    --shadow-glass:      0 8px 32px 0 rgba(31, 38, 135, 0.05);
-    --shadow-float:      0 10px 25px -5px rgba(0,0,0,0.1);
+/* === 各頁面 inline style 中額外使用的 Token === */
+:root {
+    /* 職業安全 Widget 專用 */
+    --text-brand:    #047857;
+    --bg-glass:      rgba(255, 255, 255, 0.65);
+    --border-glass:  rgba(255, 255, 255, 0.9);
+    --shadow-glass:  0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    --shadow-float:  0 10px 25px -5px rgba(0,0,0,0.1);
 
-    /* === 危害分類色 === */
-    --phys-bg:   #FFF3E0; --phys-text:  #E65100;  /* 物理性 */
-    --chem-bg:   #F3E5F5; --chem-text:  #7B1FA2;  /* 化學性 */
-    --bio-bg:    #E8F5E9; --bio-text:   #2E7D32;  /* 生物性 */
-    --ergo-bg:   #E3F2FD; --ergo-text:  #1565C0;  /* 人因性 */
+    /* 危害分類色 */
+    --phys-bg: #FFF3E0; --phys-text: #E65100;  /* 物理性 */
+    --chem-bg: #F3E5F5; --chem-text: #7B1FA2;  /* 化學性 */
+    --bio-bg:  #E8F5E9; --bio-text:  #2E7D32;  /* 生物性 */
+    --ergo-bg: #E3F2FD; --ergo-text: #1565C0;  /* 人因性 */
 
-    /* === 風險評估紅綠燈 === */
+    /* 風險評估紅綠燈 */
     --risk-green:  #81C784;
     --risk-orange: #FFB74D;
     --risk-red:    #EF5350;
@@ -346,12 +361,12 @@ Font Awesome 與 Google Fonts 每個頁面**只載入一次**，放在所有 wid
 | 頁面 | 路徑 |
 |------|------|
 | 首頁 | `/pages/home/index.html` |
-| 職業安全 | `/pages/prevention/index.html` |
-| 健康促進 | `/pages/healthgood/` |
-| 經濟保險 | `/pages/money/` |
-| 農學堂 | `/pages/農學堂/` |
-| 尊嚴農業倡議 | `/pages/尊嚴農業倡議/` |
-| 研究成果 | `/pages/研究成果/` |
+| 職業安全 | `/pages/occupational-safety/` (區塊 01–07) |
+| 健康促進 | `/pages/healthgood/` (區塊 01–06) |
+| 經濟保險 | `/pages/economic-insurance/` (區塊 01–05) |
+| 農學堂 | `/pages/farmer-study/農學堂` |
+| 尊嚴農業倡議 | `/pages/dignity-farming-initiative/尊嚴農業倡議` |
+| 研究成果 | `/pages/research-result/研究成果` |
 
 ---
 
@@ -362,11 +377,11 @@ Phase 1（已完成）
   ✅ 首頁：身分導航 + 三大核心主題
 
 Phase 2（進行中）
-  🔲 /prevention：重建完整頁面結構（Hero → Tabs → Grid Cards → 工具）
+  🔲 /occupational-safety：重建完整頁面結構（Hero → Tabs → Grid Cards → 工具）
 
 Phase 3（待啟動）
   🔲 /healthgood：互動式人體圖 + 職醫地圖
-  🔲 /money：試算器（需確認法規數值）
+  🔲 /economic-insurance：試算器（需確認法規數值）
 
 Phase 4
   🔲 各分眾入口頁面（Start / Pro / Senior / Public）
@@ -376,4 +391,4 @@ Phase 4
 
 ---
 
-*最後更新：2026-02-19*
+*最後更新：2026-03-04*

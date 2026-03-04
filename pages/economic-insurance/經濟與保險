@@ -1,0 +1,20 @@
+<!-- =====================================================
+     說明檔：經濟與保險（Economic Insurance）
+
+     此頁面由以下區塊組成，依序貼入 WordPress Gutenberg 編輯器：
+
+     01 — Hero 區塊
+     02 — 三大主題導覽卡片
+     03 — 保險制度速覽比較
+     04 — 線上試算工具
+     05 — 免責聲明 + 查詢窗口 + 站內連結
+
+     子頁面：
+     - agricultural-subsidy-resources/       — 農業補助資源
+     - crop-insurance/                       — 農業保險
+     - farmer-worker-retirement-calculator/  — 農民退休金試算表
+     - occupational-accident-insurance/      — 職業災害保險
+     - worker-occupational-accident-calculator/ — 農民職業災害試算表
+
+     WordPress 頁面 slug: /economic-insurance/
+     ===================================================== -->

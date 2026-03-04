@@ -113,7 +113,7 @@ add_shortcode('my_newss_loop', function($atts) {
 
     // 標題區塊（可選）
     $title_html = !empty($atts['title'])
-        ? "<h3 class='news-section-title'>{$atts['title']}</h3>"
+        ? "<h3 class='news-section-title'>" . esc_html($atts['title']) . "</h3>"
         : '';
 
     $output  = "<div class='news-loop-wrapper {$layout_class}'>";
@@ -136,17 +136,24 @@ add_shortcode('my_newss_loop', function($atts) {
             $image     = ($thumb_url) ? $thumb_url[0]
                                       : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400';
 
+            $safe_link  = esc_url($link);
+            $safe_image = esc_url($image);
+            $safe_title = esc_html($title);
+            $safe_date  = esc_html($date);
+            $safe_cat   = esc_html($cat_name);
+            $safe_slug  = esc_attr($cat_slug);
+
             $output .= "
             <div class='news-grid-card'>
-                <a href='{$link}' class='card-image-link'>
-                    <div class='card-image' style='background-image: url({$image});'>
-                        <span class='card-grid-label cat-{$cat_slug}'>{$cat_name}</span>
+                <a href='{$safe_link}' class='card-image-link'>
+                    <div class='card-image' style='background-image: url({$safe_image});'>
+                        <span class='card-grid-label cat-{$safe_slug}'>{$safe_cat}</span>
                     </div>
                 </a>
                 <div class='card-grid-body'>
-                    <span class='card-grid-date'>{$date}</span>
-                    <h3 class='card-grid-title'><a href='{$link}'>{$title}</a></h3>
-                    <a href='{$link}' class='card-grid-more'>閱讀全文 →</a>
+                    <span class='card-grid-date'>{$safe_date}</span>
+                    <h3 class='card-grid-title'><a href='{$safe_link}'>{$safe_title}</a></h3>
+                    <a href='{$safe_link}' class='card-grid-more'>閱讀全文 →</a>
                 </div>
             </div>";
         }

@@ -1,0 +1,16 @@
+<!-- =====================================================
+     說明檔：Shortcodes 短代碼總覽
+
+     本目錄包含以下 WordPress 短代碼，需貼入 Code Snippets 外掛：
+
+     1. my_news_loop.php           — [my_news_loop] 新聞列表（緊湊版）
+     2. my_newss_loop.php          — [my_newss_loop] 新聞網格（含圖片、響應式）
+     3. fb_feed_widget.php         — [fb_feed_widget] Facebook 動態牆
+     4. home_highlight_slider.php  — [home_highlight_slider] 首頁輪播
+     5. knowledge_podcast_grid.php — [knowledge_podcast_grid] Podcast 網格
+     6. news_magazine_layout.php   — [news_magazine_layout] 新聞雜誌排版
+     7. podcast_full_archive.php   — [podcast_full_archive] Podcast 完整列表
+
+     其他檔案：
+     - weather_widget_standalone.html — 天氣警示小工具（非 shortcode，直接嵌入頁面用）
+     ===================================================== -->

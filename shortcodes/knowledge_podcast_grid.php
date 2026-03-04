@@ -113,10 +113,12 @@ add_shortcode('knowledge_podcast_grid', function($atts) {
                 $thumb_link_class = 'k-thumb-link';
             }
 
+            $safe_link = esc_url($link);
+
             $output .= '
             <div class="carousel-item">
                 <div class="k-card">
-                    <a href="'.$link.'" class="'.$thumb_link_class.'" '.$lightbox_attr.'>
+                    <a href="'.$safe_link.'" class="'.$thumb_link_class.'" '.$lightbox_attr.'>
                         <div class="k-thumb">
                             <span class="k-label" style="background: '.$label_color.';">'. esc_html($cat_name) .'</span>
                             <img src="'. esc_url($img) .'" alt="'. esc_attr($title) .'">
@@ -124,11 +126,11 @@ add_shortcode('knowledge_podcast_grid', function($atts) {
                         </div>
                     </a>
                     <div class="k-info">
-                        <h3 class="k-title"><a href="'.$link.'">'. $title .'</a></h3>
-                        <p class="k-desc">'. $desc .'</p>
+                        <h3 class="k-title"><a href="'.$safe_link.'">'. esc_html($title) .'</a></h3>
+                        <p class="k-desc">'. esc_html($desc) .'</p>
                         <div class="k-stats">
-                            <span class="k-date"><i class="far fa-calendar-alt"></i> '. $date .'</span>
-                            <a href="'.$link.'" class="k-listen-btn">
+                            <span class="k-date"><i class="far fa-calendar-alt"></i> '. esc_html($date) .'</span>
+                            <a href="'.$safe_link.'" class="k-listen-btn">
                                 <i class="'.$btn_icon.'"></i> '.$btn_text.'
                             </a>
                         </div>
