@@ -168,7 +168,7 @@
 /* === 變數 === */
 .res-hero,.res-sections{
   --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;--brand-hover:#3d5a04;
-  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#555;
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -224,7 +224,7 @@
 .res-feat-actions{flex-shrink:0;align-self:center;display:flex;flex-direction:column;gap:8px;}
 .res-dl-btn,.res-play-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .3s;white-space:nowrap;}
 .res-dl-btn{background:#fff;color:#c62828;border:1px solid #fca5a5;}.res-dl-btn:hover{background:#c62828;color:#fff;border-color:#c62828;transform:translateY(-2px);}
-.res-dl-size{font-size:.72rem;font-weight:500;color:#999;margin-left:4px;}
+.res-dl-size{font-size:.72rem;font-weight:500;color:#888;margin-left:4px;}
 .res-dl-btn:hover .res-dl-size{color:rgba(255,255,255,.7);}
 .res-play-btn{background:var(--brand-light);color:var(--brand);border:1px solid rgba(92,134,7,.2);}.res-play-btn:hover{background:var(--brand);color:#fff;transform:translateY(-2px);}
 

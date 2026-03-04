@@ -285,7 +285,7 @@
 <style>
 .heat-hero,.heat-sections,.heat-crosslinks,.heat-references{
   --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#c62828;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .heat-hero *,.heat-sections *,.heat-crosslinks *,.heat-references *{box-sizing:border-box;}

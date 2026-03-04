@@ -105,8 +105,8 @@
 <style>
 /* === 01-hero 專用樣式 === */
 .prev-hero{
-  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#4a6b05;
+  --text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   display:flex;gap:40px;align-items:flex-start;padding:40px;
   background:linear-gradient(135deg,#f0f5e8 0%,#fff 60%,#e8f0da 100%);
@@ -144,7 +144,7 @@
 .prev-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .prev-stat-number{font-size:1.5rem;font-weight:900;display:block;line-height:1;}
 .prev-stat-label{font-size:.85rem;color:var(--text-secondary);}
-.prev-stat-source{font-size:.72rem;color:#9ca3af;display:block;margin-top:2px;font-weight:400;}
+.prev-stat-source{font-size:.72rem;color:#888;display:block;margin-top:2px;font-weight:400;}
 
 /* 平滑捲動 */
 @media(max-width:768px){

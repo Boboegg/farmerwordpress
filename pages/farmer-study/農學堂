@@ -275,7 +275,7 @@
 /* === 全域變數 === */
 .edu-hero,.edu-sections{
   --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;--brand-hover:#3d5a04;
-  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#555;
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -348,7 +348,7 @@
 .edu-ws-open{background:#dcfce7;color:#15803d;}
 .edu-ws-open i{font-size:6px;animation:pulse-dot 1.5s infinite;}
 @keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:.3;}}
-.edu-ws-closed{background:#f3f4f6;color:#9ca3af;}
+.edu-ws-closed{background:#f3f4f6;color:#888;}
 .edu-ws-full{background:#fef3c7;color:#92400e;}
 .edu-ws-category{font-size:.8rem;font-weight:600;color:var(--text-secondary);padding:3px 10px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;}
 .edu-ws-title{font-size:1.15rem;font-weight:800;margin:0 0 10px;color:var(--brand-dark);}
@@ -359,7 +359,7 @@
 .edu-ws-action{flex-shrink:0;align-self:center;}
 .edu-ws-register{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;background:var(--brand);color:#fff;font-weight:700;font-size:.93rem;text-decoration:none;transition:all .3s;box-shadow:0 4px 12px rgba(92,134,7,.25);}
 .edu-ws-register:hover{background:var(--brand-hover);transform:translateY(-2px);}
-.edu-ws-ended{font-size:.88rem;color:#9ca3af;font-weight:600;}
+.edu-ws-ended{font-size:.88rem;color:#888;font-weight:600;}
 
 /* === 下載資源 === */
 .edu-dl-grid{display:flex;flex-direction:column;gap:12px;}

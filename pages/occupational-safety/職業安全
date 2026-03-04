@@ -108,8 +108,8 @@
 <style>
 /* === 01-hero 專用樣式 === */
 .prev-hero{
-  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#4a6b05;
+  --text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   display:flex;gap:40px;align-items:flex-start;padding:40px;
   background:linear-gradient(135deg,#f0f5e8 0%,#fff 60%,#e8f0da 100%);
@@ -147,7 +147,7 @@
 .prev-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .prev-stat-number{font-size:1.5rem;font-weight:900;display:block;line-height:1;}
 .prev-stat-label{font-size:.85rem;color:var(--text-secondary);}
-.prev-stat-source{font-size:.72rem;color:#9ca3af;display:block;margin-top:2px;font-weight:400;}
+.prev-stat-source{font-size:.72rem;color:#888;display:block;margin-top:2px;font-weight:400;}
 
 /* 平滑捲動 */
 @media(max-width:768px){
@@ -339,8 +339,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 02-tabs 共用樣式 === */
 .prev-tabs-section{
-  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#4a6b05;
+  --text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .prev-section-header{margin-bottom:24px;}
 .prev-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
 .prev-section-desc{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 8px;max-width:800px;}
-.prev-section-source{font-size:.78rem;color:#9ca3af;margin:0;font-style:italic;}
+.prev-section-source{font-size:.78rem;color:#888;margin:0;font-style:italic;}
 
 /* Tab Buttons */
 .prev-tab-btns{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;}
@@ -692,8 +692,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 04-tool-quiz 專用樣式（prevQ 前綴避免衝突） === */
 .prev-risk-section{
-  --brand:#5C8607;--brand-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;
+  --text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .prevQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 10px;max-width:800px;}
 .prevQ-data-note{background:rgba(59,130,246,.05);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.12);}
 .prevQ-data-note i{color:#3b82f6;margin-top:3px;flex-shrink:0;}
-.prevQ-source{display:block;width:100%;font-size:.78rem;color:#9ca3af;font-style:italic;margin-top:4px;}
+.prevQ-source{display:block;width:100%;font-size:.78rem;color:#888;font-style:italic;margin-top:4px;}
 
 .prevQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;margin-bottom:24px;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
 .prevQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
@@ -852,19 +852,19 @@ document.addEventListener('DOMContentLoaded',function(){
       displayEl.classList.add('prevQ-border-green');
       textEl.innerHTML='<strong style="color:#2E7D32;">🟢 低度風險（'+n+' 項）</strong><br>'
         +'您目前的風險在可控範圍內。維持現有防護習慣即可。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:#555;font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }else if(n<=5){
       circle.classList.add('prevQ-risk-orange');
       displayEl.classList.add('prevQ-border-orange');
       textEl.innerHTML='<strong style="color:#E65100;">🟠 中度風險（'+n+' 項）</strong><br>'
         +'有一定風險，建議往上查看「防護裝備型錄」，確認您有沒有穿戴對的防護具。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:#555;font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }else{
       circle.classList.add('prevQ-risk-red');
       displayEl.classList.add('prevQ-border-red');
       textEl.innerHTML='<strong style="color:#C62828;">🔴 高度風險（'+n+' 項）</strong><br>'
         +'風險偏高，光靠防護具效果有限。建議優先考慮導入省力農機，從根本改善作業方式。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:#555;font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }
   }
 });
@@ -984,7 +984,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 05-tool-niosh 專用樣式 === */
 .prev-tool-card-n{
-  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;--text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   background:#fff;border-radius:var(--radius);padding:30px;margin:0 0 24px;
   box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;box-sizing:border-box;
@@ -1000,7 +1000,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .prev-niosh-explain p:last-child{margin-bottom:0;}
 .prev-niosh-data{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.1);}
 .prev-niosh-data i{margin-top:3px;flex-shrink:0;}
-.prev-niosh-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
+.prev-niosh-source-inline{display:block;width:100%;font-size:.75rem;color:#888;font-style:italic;margin-top:6px;}
 
 .prev-hierarchy-body{display:flex;flex-direction:column;gap:8px;}
 .prev-h-level{border-radius:10px;overflow:hidden;}
@@ -1126,7 +1126,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 06-tool-hazards 專用樣式 === */
 .prev-tool-card-h{
-  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;--text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   background:#fff;border-radius:var(--radius);padding:30px;margin:0 0 24px;
   box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;box-sizing:border-box;
@@ -1142,7 +1142,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .prev-hazard-explain p:last-child{margin-bottom:0;}
 .prev-hazard-explain p i{margin-top:3px;flex-shrink:0;}
 .prev-hazard-data-note{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;border:1px solid rgba(59,130,246,.1);flex-wrap:wrap;}
-.prev-hazard-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
+.prev-hazard-source-inline{display:block;width:100%;font-size:.75rem;color:#888;font-style:italic;margin-top:6px;}
 
 .prev-hazard-grid-h{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:16px;}
 .prev-hazard-card-h{border-radius:12px;padding:24px;border-left:5px solid currentColor;}
@@ -1302,7 +1302,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 07-subpages-refs 專用樣式（prevS 前綴） === */
 .prevS-subpage-section,.prevS-articles-section,.prevS-references{
-  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;--text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .prevS-subpage-section *,.prevS-references *{box-sizing:border-box;}
@@ -1334,7 +1334,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .prevS-stat-num small{font-size:.5em;font-weight:700;opacity:.7;}
 .prevS-stat-card h4{font-size:1.05rem;font-weight:800;color:var(--brand-dark);margin:0 0 8px;}
 .prevS-stat-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
-.prevS-stat-source{font-size:.78rem;color:#9ca3af;font-style:italic;display:block;}
+.prevS-stat-source{font-size:.78rem;color:#888;font-style:italic;display:block;}
 
 /* References */
 .prevS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}

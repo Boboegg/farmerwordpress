@@ -315,7 +315,7 @@
 <!-- ========== CSS ========== -->
 <style>
 .mach-hero,.mach-categories,.mach-subsidy-section,.mach-safety-section,.mach-references{
-  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;--text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .mach-hero *,.mach-categories *,.mach-subsidy-section *,.mach-safety-section *,.mach-references *{box-sizing:border-box;}

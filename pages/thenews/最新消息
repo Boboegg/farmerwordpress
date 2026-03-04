@@ -167,7 +167,7 @@
 /* === 變數 === */
 .tnews-hero,.tnews-wrapper,.tnews-explore {
   --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;--brand-hover:#3d5a04;
-  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#555;
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -284,7 +284,7 @@
 .tnews-tab[data-tab="news"] i      { color:#2c5e2e; }
 .tnews-tab[data-tab="event"] i     { color:#d4a017; }
 .tnews-tab[data-tab="press"] i     { color:#0d7377; }
-.tnews-tab[data-tab="notices"] i   { color:#6b7280; }
+.tnews-tab[data-tab="notices"] i   { color:#555; }
 .tnews-tab[data-tab="podcast"] i   { color:#c62828; }
 .tnews-tab[data-tab="youtube"] i   { color:#ff0000; }
 .tnews-tab[data-tab="agri-school"] i { color:#92400e; }
@@ -298,7 +298,7 @@
 .tnews-tab.is-active[data-tab="news"]      { background:#2c5e2e;border-color:#2c5e2e; }
 .tnews-tab.is-active[data-tab="event"]     { background:#b8860b;border-color:#b8860b; }
 .tnews-tab.is-active[data-tab="press"]     { background:#0d7377;border-color:#0d7377; }
-.tnews-tab.is-active[data-tab="notices"]   { background:#6b7280;border-color:#6b7280; }
+.tnews-tab.is-active[data-tab="notices"]   { background:#888;border-color:#555; }
 .tnews-tab.is-active[data-tab="podcast"]   { background:#c62828;border-color:#c62828; }
 .tnews-tab.is-active[data-tab="youtube"]   { background:#cc0000;border-color:#cc0000; }
 .tnews-tab.is-active[data-tab="agri-school"]{ background:#92400e;border-color:#92400e; }

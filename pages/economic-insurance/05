@@ -71,7 +71,7 @@
 /* === 05-disclaimer-refs 樣式 === */
 .money-footer-section{
   --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
-  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --text-primary:#1f2937;--text-secondary:#555;
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;background:#fff;border-radius:16px;padding:36px;
   box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
@@ -93,7 +93,7 @@
 .money-contact-icon{width:40px;height:40px;border-radius:10px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
 .money-contact-card strong{display:block;margin-bottom:4px;color:var(--brand-dark);font-size:.9rem;}
 .money-contact-card span{font-size:.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:4px;}
-.money-contact-card p{font-size:.78rem;color:#aaa;margin:4px 0 0;}
+.money-contact-card p{font-size:.78rem;color:#888;margin:4px 0 0;}
 
 /* 站內連結 */
 .money-cross h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}

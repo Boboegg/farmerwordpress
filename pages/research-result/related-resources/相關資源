@@ -197,7 +197,7 @@
 <!-- ========== 免責 ========== -->
 <div class="res-sections">
   <div style="padding:16px 20px;background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;font-size:.85rem;line-height:1.6;color:var(--text-secondary);display:flex;align-items:flex-start;gap:10px;">
-    <i class="fas fa-circle-info" style="margin-top:3px;flex-shrink:0;color:#9ca3af;"></i>
+    <i class="fas fa-circle-info" style="margin-top:3px;flex-shrink:0;color:#888;"></i>
     <span>本頁所列外部連結僅供參考，各網站內容由其管理單位負責。若發現連結失效，歡迎透過<a href="/about/contact/" style="color:var(--brand);font-weight:600;text-decoration:none;">聯絡我們</a>回報。</span>
   </div>
 </div>
@@ -206,7 +206,7 @@
 <style>
 .res-hero,.res-sections{
   --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;
-  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --text-primary:#1f2937;--text-secondary:#555;
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }

@@ -96,7 +96,7 @@
 <style>
 /* === 06-tool-hazards 專用樣式 === */
 .prev-tool-card-h{
-  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;--text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   background:#fff;border-radius:var(--radius);padding:30px;margin:0 0 24px;
   box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;box-sizing:border-box;
@@ -112,7 +112,7 @@
 .prev-hazard-explain p:last-child{margin-bottom:0;}
 .prev-hazard-explain p i{margin-top:3px;flex-shrink:0;}
 .prev-hazard-data-note{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;border:1px solid rgba(59,130,246,.1);flex-wrap:wrap;}
-.prev-hazard-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
+.prev-hazard-source-inline{display:block;width:100%;font-size:.75rem;color:#888;font-style:italic;margin-top:6px;}
 
 .prev-hazard-grid-h{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:16px;}
 .prev-hazard-card-h{border-radius:12px;padding:24px;border-left:5px solid currentColor;}

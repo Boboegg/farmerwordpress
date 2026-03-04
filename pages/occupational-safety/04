@@ -106,8 +106,8 @@
 <style>
 /* === 04-tool-quiz 專用樣式（prevQ 前綴避免衝突） === */
 .prev-risk-section{
-  --brand:#5C8607;--brand-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;
+  --text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
@@ -117,7 +117,7 @@
 .prevQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 10px;max-width:800px;}
 .prevQ-data-note{background:rgba(59,130,246,.05);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.12);}
 .prevQ-data-note i{color:#3b82f6;margin-top:3px;flex-shrink:0;}
-.prevQ-source{display:block;width:100%;font-size:.78rem;color:#9ca3af;font-style:italic;margin-top:4px;}
+.prevQ-source{display:block;width:100%;font-size:.78rem;color:#888;font-style:italic;margin-top:4px;}
 
 .prevQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;margin-bottom:24px;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
 .prevQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
@@ -266,19 +266,19 @@ document.addEventListener('DOMContentLoaded',function(){
       displayEl.classList.add('prevQ-border-green');
       textEl.innerHTML='<strong style="color:#2E7D32;">🟢 低度風險（'+n+' 項）</strong><br>'
         +'您目前的風險在可控範圍內。維持現有防護習慣即可。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:#555;font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }else if(n<=5){
       circle.classList.add('prevQ-risk-orange');
       displayEl.classList.add('prevQ-border-orange');
       textEl.innerHTML='<strong style="color:#E65100;">🟠 中度風險（'+n+' 項）</strong><br>'
         +'有一定風險，建議往上查看「防護裝備型錄」，確認您有沒有穿戴對的防護具。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:#555;font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }else{
       circle.classList.add('prevQ-risk-red');
       displayEl.classList.add('prevQ-border-red');
       textEl.innerHTML='<strong style="color:#C62828;">🔴 高度風險（'+n+' 項）</strong><br>'
         +'風險偏高，光靠防護具效果有限。建議優先考慮導入省力農機，從根本改善作業方式。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:#555;font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }
   }
 });

@@ -150,7 +150,7 @@
 /* === 新手務農（Start）=== */
 .start-page-wrapper{
   --brand:#87AE73;--brand-dark:#5a7d48;--brand-bg:#EEF5EA;
-  --text-primary:#343F1E;--text-secondary:#6b7280;--radius:16px;
+  --text-primary:#343F1E;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
 }
@@ -172,7 +172,7 @@
 .start-stat-number{font-size:2rem;font-weight:900;color:var(--brand-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
 .start-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
 .start-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
-.start-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
+.start-stat-source{font-size:.72rem;color:#888;margin:0;font-style:italic;}
 .start-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(135,174,115,.08);border-radius:10px;border-left:4px solid var(--brand);}
 
 /* 情境卡 */

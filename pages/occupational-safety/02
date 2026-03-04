@@ -169,8 +169,8 @@
 <style>
 /* === 02-tabs 共用樣式 === */
 .prev-tabs-section{
-  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#4a6b05;
+  --text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
@@ -180,7 +180,7 @@
 .prev-section-header{margin-bottom:24px;}
 .prev-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
 .prev-section-desc{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 8px;max-width:800px;}
-.prev-section-source{font-size:.78rem;color:#9ca3af;margin:0;font-style:italic;}
+.prev-section-source{font-size:.78rem;color:#888;margin:0;font-style:italic;}
 
 /* Tab Buttons */
 .prev-tab-btns{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;}

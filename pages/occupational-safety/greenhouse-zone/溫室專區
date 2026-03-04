@@ -29,7 +29,7 @@
       <strong>數據佐證：</strong>美國 OSHA 將「高溫」、「農藥」、「呼吸系統危害」列為農業重要危害類別，
       而溫室環境同時具備以上三者。CDC/NIOSH（2024）統計顯示農業致死率為全產業平均的 <strong>5 倍</strong>（每 10 萬 FTE 18.6 人），
       其中密閉空間作業的風險尤需重視。
-      <span style="display:block;font-size:.78rem;color:#9ca3af;font-style:italic;margin-top:4px;">資料來源：OSHA Agricultural Operations; CDC/NIOSH (2024) Agriculture Worker Safety and Health.</span>
+      <span style="display:block;font-size:.78rem;color:#888;font-style:italic;margin-top:4px;">資料來源：OSHA Agricultural Operations; CDC/NIOSH (2024) Agriculture Worker Safety and Health.</span>
     </p>
   </div>
   <a href="/occupational-safety/" class="gh-back-link"><i class="fas fa-arrow-left"></i> 回到職業安全總覽</a>
@@ -254,7 +254,7 @@
 <!-- ========== CSS ========== -->
 <style>
 .gh-hero,.gh-hazards-section,.gh-controls-section,.gh-sop-section,.gh-emergency-section,.gh-references{
-  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;--text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .gh-hero *,.gh-hazards-section *,.gh-controls-section *,.gh-sop-section *,.gh-emergency-section *,.gh-references *{box-sizing:border-box;}

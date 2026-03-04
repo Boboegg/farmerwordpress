@@ -136,7 +136,7 @@
 <style>
 /* === 07-subpages-refs 專用樣式（prevS 前綴） === */
 .prevS-subpage-section,.prevS-articles-section,.prevS-references{
-  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand:#5C8607;--brand-dark:#4a6b05;--text-primary:#1f2937;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .prevS-subpage-section *,.prevS-references *{box-sizing:border-box;}
@@ -168,7 +168,7 @@
 .prevS-stat-num small{font-size:.5em;font-weight:700;opacity:.7;}
 .prevS-stat-card h4{font-size:1.05rem;font-weight:800;color:var(--brand-dark);margin:0 0 8px;}
 .prevS-stat-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
-.prevS-stat-source{font-size:.78rem;color:#9ca3af;font-style:italic;display:block;}
+.prevS-stat-source{font-size:.78rem;color:#888;font-style:italic;display:block;}
 
 /* References */
 .prevS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}

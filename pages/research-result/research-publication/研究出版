@@ -59,7 +59,7 @@
           <div class="res-bib-num">1.</div>
           <div class="res-bib-body">
             <p class="res-bib-ref">⚠️ Author(s). (Year). <em>Title of report</em> (Report No. xxx). Publisher. URL</p>
-            <p class="res-feat-abstract" style="font-size:.88rem;color:#6b7280;line-height:1.6;margin:8px 0 0;">⚠️ 報告摘要，3-4 行。說明報告涵蓋範圍、核心發現與政策建議方向。</p>
+            <p class="res-feat-abstract" style="font-size:.88rem;color:#555;line-height:1.6;margin:8px 0 0;">⚠️ 報告摘要，3-4 行。說明報告涵蓋範圍、核心發現與政策建議方向。</p>
             <div class="res-bib-meta" style="margin-top:10px;">
               <span class="res-feat-tag">⚠️ 關鍵字</span>
               <span class="res-feat-tag">⚠️ 頁數：XX 頁</span>
@@ -75,7 +75,7 @@
           <div class="res-bib-num">2.</div>
           <div class="res-bib-body">
             <p class="res-bib-ref">⚠️ APA 引用。</p>
-            <p class="res-feat-abstract" style="font-size:.88rem;color:#6b7280;line-height:1.6;margin:8px 0 0;">⚠️ 摘要。</p>
+            <p class="res-feat-abstract" style="font-size:.88rem;color:#555;line-height:1.6;margin:8px 0 0;">⚠️ 摘要。</p>
           </div>
           <div class="res-bib-actions"><a href="#" class="res-dl-btn"><i class="fas fa-file-pdf"></i> PDF<span class="res-dl-size">⚠️ MB</span></a></div>
         </div>
@@ -84,7 +84,7 @@
           <div class="res-bib-num">3.</div>
           <div class="res-bib-body">
             <p class="res-bib-ref">⚠️ APA 引用。</p>
-            <p class="res-feat-abstract" style="font-size:.88rem;color:#6b7280;line-height:1.6;margin:8px 0 0;">⚠️ 摘要。</p>
+            <p class="res-feat-abstract" style="font-size:.88rem;color:#555;line-height:1.6;margin:8px 0 0;">⚠️ 摘要。</p>
           </div>
           <div class="res-bib-actions"><a href="#" class="res-dl-btn"><i class="fas fa-file-pdf"></i> PDF<span class="res-dl-size">⚠️ MB</span></a></div>
         </div>
@@ -99,7 +99,7 @@
 <style>
 .res-hero,.res-sections{
   --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;
-  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --text-primary:#1f2937;--text-secondary:#555;
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -135,7 +135,7 @@
 .res-bib-actions{flex-shrink:0;align-self:center;}
 .res-feat-tag{font-size:.75rem;padding:2px 10px;border-radius:10px;background:#e2e8f0;color:var(--text-secondary);}
 .res-dl-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .3s;white-space:nowrap;background:#fff;color:#c62828;border:1px solid #fca5a5;}.res-dl-btn:hover{background:#c62828;color:#fff;border-color:#c62828;transform:translateY(-2px);}
-.res-dl-size{font-size:.72rem;font-weight:500;color:#999;margin-left:4px;}
+.res-dl-size{font-size:.72rem;font-weight:500;color:#888;margin-left:4px;}
 .res-dl-btn:hover .res-dl-size{color:rgba(255,255,255,.7);}
 @media(max-width:768px){
   .res-hero{flex-direction:column;padding:28px 20px;gap:24px;}

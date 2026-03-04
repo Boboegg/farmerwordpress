@@ -92,7 +92,7 @@
   --brand-dark: #4a6b05;
   --brand-light: #eef5ea;
   --text-primary: #1f2937;
-  --text-secondary: #6b7280;
+  --text-secondary: #555;
   --radius: 16px;
   --shadow: 0 4px 16px rgba(0,0,0,.06);
   font-family: "Noto Sans TC", "Lato", sans-serif;

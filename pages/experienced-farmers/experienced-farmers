@@ -150,7 +150,7 @@
 /* === 資深農友（Senior）=== */
 .senior-page-wrapper{
   --brand:#C17F5E;--brand-dark:#9e5f3e;--brand-bg:#F9EDE7;
-  --text-primary:#3d2b1f;--text-secondary:#6b7280;--radius:16px;
+  --text-primary:#3d2b1f;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
 }
@@ -172,7 +172,7 @@
 .senior-stat-number{font-size:2rem;font-weight:900;color:var(--brand-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
 .senior-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
 .senior-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
-.senior-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
+.senior-stat-source{font-size:.72rem;color:#888;margin:0;font-style:italic;}
 .senior-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(193,127,94,.08);border-radius:10px;border-left:4px solid var(--brand);}
 
 /* 情境卡 */

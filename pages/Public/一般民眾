@@ -156,7 +156,7 @@
 /* === 一般民眾（Public）=== */
 .public-page-wrapper{
   --brand:#D4A017;--brand-dark:#a67c0b;--brand-bg:#FDF4DC;
-  --text-primary:#3d3117;--text-secondary:#6b7280;--radius:16px;
+  --text-primary:#3d3117;--text-secondary:#555;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
 }
@@ -178,7 +178,7 @@
 .public-stat-number{font-size:2rem;font-weight:900;color:var(--brand-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
 .public-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
 .public-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
-.public-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
+.public-stat-source{font-size:.72rem;color:#888;margin:0;font-style:italic;}
 
 /* 引言卡 */
 .public-quote-card{background:linear-gradient(135deg,#fffdf5,#fff8e1);border-radius:14px;padding:22px 20px;border:1px solid rgba(212,160,23,.15);border-left:5px solid var(--brand);}
