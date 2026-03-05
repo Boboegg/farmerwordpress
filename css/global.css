@@ -315,6 +315,151 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
 }
 
 /* ===================================================
+   7b. 分眾入口 Widget 樣式
+   =================================================== */
+.service-portal-wrapper {
+    font-family: "Noto Sans TC", sans-serif;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.service-portal {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+.portal-header {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #2c5e2e;
+    border-bottom: 2px solid #2c5e2e;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.portal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.role-btn {
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #444;
+    position: relative;
+    overflow: hidden;
+}
+.role-icon-box {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #5d6d3d;
+    transition: transform 0.3s ease;
+}
+.role-btn span {
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    line-height: 1.2;
+}
+.role-desc {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 4px;
+    transition: color 0.3s ease;
+}
+.role-btn:hover {
+    background: #2c5e2e;
+    border-color: #2c5e2e;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(44, 94, 46, 0.2);
+}
+.role-btn:hover .role-icon-box,
+.role-btn:hover span,
+.role-btn:hover .role-desc {
+    color: #fff !important;
+}
+.role-btn:hover .role-icon-box {
+    transform: scale(1.1);
+}
+.portal-footer {
+    margin-top: auto;
+}
+.report-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #d4a017, #f57f17);
+    color: white !important;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(212, 160, 23, 0.3);
+    font-size: 0.95rem;
+}
+.report-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(212, 160, 23, 0.4);
+}
+
+/* ===================================================
+   7c. 側邊欄社群按鈕 (新版統一樣式)
+   =================================================== */
+.sidebar-social-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sidebar-social-btn {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.25s ease;
+    gap: 10px;
+}
+.sidebar-social-btn i {
+    color: white !important;
+    font-size: 16px;
+}
+.sidebar-fb {
+    background: linear-gradient(135deg, #1877F2, #0d59bf);
+}
+.sidebar-ig {
+    background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.sidebar-social-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    color: white;
+}
+
+/* ===================================================
    8. 共用區塊標題樣式 (供多個短碼共用)
    =================================================== */
 .section-head {
