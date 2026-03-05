@@ -1,0 +1,26 @@
+name: 部署到 Hostinger WordPress
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:  # 允許在 GitHub 後台手動觸發
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 程式碼
+        uses: actions/checkout@v4
+
+      - name: SSH 進入 Hostinger 並部署
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOSTINGER_HOST }}
+          username: ${{ secrets.HOSTINGER_USER }}
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: 65002  # Hostinger 固定使用 65002，非標準的 22
+          script: |
+            cd ${{ secrets.REPO_PATH }}
+            git pull origin master
+            WP_PATH=${{ secrets.WP_PATH }} bash scripts/deploy.sh
