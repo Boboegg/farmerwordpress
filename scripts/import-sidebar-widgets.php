@@ -1,0 +1,223 @@
+<?php
+/**
+ * 側邊欄 Widget 一鍵匯入腳本
+ *
+ * 使用方式（在伺服器上執行）：
+ * wp --path=/home/u886115453/domains/fwdignity.com/public_html eval-file import-sidebar-widgets.php
+ *
+ * 功能：清除 sidebar-1 現有小工具，重新匯入 5 個自訂 HTML widget
+ * 順序：身分入口 → 快速連結 → 實用工具箱 → 熱門關鍵字 → 友善連結
+ */
+
+// ====== 定義每個 Widget 的 HTML 內容 ======
+
+$widgets = array(
+
+    // 1. 身分入口
+    array(
+        'title' => '身分入口',
+        'content' => '<div class="service-portal-wrapper">
+    <div class="service-portal">
+        <div class="portal-header">
+            <i class="fas fa-users-viewfinder"></i> 請選擇您的身分與需求
+        </div>
+        <div class="portal-grid">
+            <a href="/beginner-farmers/" class="role-btn">
+                <div class="role-icon-box"><i class="fas fa-hat-cowboy-side"></i></div>
+                <span>想務農與新手農友</span>
+                <small class="role-desc">入門資源、風險介紹</small>
+            </a>
+            <a href="/young-farmers/" class="role-btn">
+                <div class="role-icon-box"><i class="fas fa-tractor"></i></div>
+                <span>青農與創業</span>
+                <small class="role-desc">技術與保險</small>
+            </a>
+            <a href="/experienced-farmers/" class="role-btn">
+                <div class="role-icon-box"><i class="fas fa-seedling"></i></div>
+                <span>資深農友</span>
+                <small class="role-desc">慢性病、自身權益</small>
+            </a>
+            <a href="/Public/" class="role-btn">
+                <div class="role-icon-box"><i class="fas fa-handshake"></i></div>
+                <span>一般民眾</span>
+                <small class="role-desc">尊農倡議與支持</small>
+            </a>
+        </div>
+        <div class="portal-footer">
+            <a href="#" class="report-btn">
+                <i class="fas fa-file-pdf"></i> 研究成果分享
+            </a>
+        </div>
+    </div>
+</div>',
+    ),
+
+    // 2. 快速連結
+    array(
+        'title' => '快速連結',
+        'content' => '<div class="side-widget">
+    <div class="side-title">
+        <i class="fas fa-compass"></i> 快速連結
+    </div>
+    <ul class="tool-list">
+        <li>
+            <a href="/" class="tool-link">
+                <div class="tool-icon"><i class="fas fa-home"></i></div>
+                <span>回到首頁</span>
+                <i class="fas fa-arrow-right download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <a href="/news/" class="tool-link">
+                <div class="tool-icon"><i class="fas fa-calendar-alt"></i></div>
+                <span>掌握最新動態</span>
+                <i class="fas fa-arrow-right download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <a href="/team/" class="tool-link">
+                <div class="tool-icon"><i class="fas fa-users"></i></div>
+                <span>認識研究團隊</span>
+                <i class="fas fa-arrow-right download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <a href="/contact/" class="tool-link">
+                <div class="tool-icon"><i class="fas fa-envelope"></i></div>
+                <span>與我們聯繫</span>
+                <i class="fas fa-arrow-right download-icon"></i>
+            </a>
+        </li>
+    </ul>
+</div>',
+    ),
+
+    // 3. 實用工具箱
+    array(
+        'title' => '實用工具箱',
+        'content' => '<div class="side-widget">
+    <div class="side-title">
+        <i class="fas fa-toolbox"></i> 實用工具箱
+    </div>
+    <ul class="tool-list">
+        <li>
+            <a href="https://www.osha.gov.tw/48110/48363/133456/48395/nodelist" class="tool-link" target="_blank">
+                <div class="tool-icon"><i class="fas fa-file-medical-alt"></i></div>
+                <span>職業病認定標準</span>
+                <i class="fas fa-download download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <a href="/downloads/checklist.pdf" class="tool-link" target="_blank">
+                <div class="tool-icon"><i class="fas fa-heartbeat"></i></div>
+                <span>自我健康檢核表</span>
+                <i class="fas fa-download download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.hpa.gov.tw/Video/RecommendVideo.aspx?nodeid=851&amp;vid=627" class="tool-link" target="_blank">
+                <div class="tool-icon"><i class="fas fa-running"></i></div>
+                <span>我家也是健身房(故事篇)</span>
+                <i class="fas fa-download download-icon"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://agrstat.moa.gov.tw/sdweb/public/maintenance/Announce.aspx" class="tool-link">
+                <div class="tool-icon"><i class="fas fa-chart-pie"></i></div>
+                <span>農業統計數據庫</span>
+                <i class="fas fa-arrow-right download-icon"></i>
+            </a>
+        </li>
+    </ul>
+</div>',
+    ),
+
+    // 4. 熱門關鍵字
+    array(
+        'title' => '熱門關鍵字',
+        'content' => '<div class="side-widget">
+    <div class="side-title">
+        <i class="fas fa-tags"></i> 熱門關鍵字
+    </div>
+    <div class="tag-cloud">
+        <a href="/healthgood/subpage-heat/" class="tag-btn">#熱傷害</a>
+        <a href="/healthgood/subpage-msd/" class="tag-btn">#肌肉骨骼</a>
+        <a href="/healthgood/subpage-pesticide/" class="tag-btn">#農藥安全</a>
+        <a href="/dignity-farming-initiative/" class="tag-btn">#民雄</a>
+        <a href="/economic-insurance/crop-insurance/" class="tag-btn">#職災保險</a>
+        <a href="/young-farmers/" class="tag-btn">#青農</a>
+        <a href="/farmer-study/" class="tag-btn">#食農教育</a>
+        <a href="/experienced-farmers/" class="tag-btn">#高齡農民</a>
+        <a href="/occupational-safety/" class="tag-btn">#職業安全</a>
+        <a href="/healthgood/subpage-mental/" class="tag-btn">#心理健康</a>
+        <a href="/occupational-safety/labor-saving-machinery/" class="tag-btn">#省工農機</a>
+        <a href="/research-result/podcast/" class="tag-btn">#Podcast</a>
+    </div>
+</div>',
+    ),
+
+    // 5. 友善連結
+    array(
+        'title' => '友善連結',
+        'content' => '<div class="side-widget">
+    <div class="side-title">
+        <i class="fas fa-link"></i> 友善連結
+    </div>
+    <div class="link-grid">
+        <a href="https://www.moa.gov.tw/" target="_blank" class="link-item">農業部</a>
+        <a href="https://www.osha.gov.tw/" target="_blank" class="link-item">職安署</a>
+        <a href="https://www.ccu.edu.tw/" target="_blank" class="link-item">中正大學</a>
+        <a href="https://www.ylh.gov.tw/" target="_blank" class="link-item">臺大雲林分院</a>
+        <a href="https://www.hisp.ntu.edu.tw/" target="_blank" class="link-item">新作坊</a>
+        <a href="https://www.bli.gov.tw/" target="_blank" class="link-item">勞保局</a>
+        <a href="https://www.ilosh.gov.tw/" target="_blank" class="link-item">勞動研究所</a>
+    </div>
+</div>',
+    ),
+
+);
+
+// ====== 執行匯入 ======
+
+// 取得現有的 custom_html widget 資料
+$custom_html_widgets = get_option('widget_custom_html', array());
+
+// 清除 sidebar-1 現有的 widget
+$sidebars = get_option('sidebars_widgets', array());
+$sidebars['sidebar-1'] = array();
+
+// 找到下一個可用的 widget ID
+$max_id = 0;
+if (is_array($custom_html_widgets)) {
+    foreach (array_keys($custom_html_widgets) as $key) {
+        if (is_numeric($key) && $key > $max_id) {
+            $max_id = $key;
+        }
+    }
+}
+
+// 逐一加入 widget
+$new_sidebar = array();
+foreach ($widgets as $index => $widget) {
+    $widget_id = $max_id + $index + 1;
+
+    // 寫入 widget 內容（不設 title，讓 HTML 自帶標題樣式）
+    $custom_html_widgets[$widget_id] = array(
+        'title'   => '',
+        'content' => $widget['content'],
+    );
+
+    // 加入 sidebar-1
+    $new_sidebar[] = 'custom_html-' . $widget_id;
+
+    echo "✓ 已加入：{$widget['title']} (custom_html-{$widget_id})\n";
+}
+
+$sidebars['sidebar-1'] = $new_sidebar;
+
+// 儲存
+update_option('widget_custom_html', $custom_html_widgets);
+update_option('sidebars_widgets', $sidebars);
+
+echo "\n===== 完成！sidebar-1 已匯入 " . count($widgets) . " 個小工具 =====\n";
+echo "順序：身分入口 → 快速連結 → 實用工具箱 → 熱門關鍵字 → 友善連結\n";
