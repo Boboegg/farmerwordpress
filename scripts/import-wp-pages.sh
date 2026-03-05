@@ -81,6 +81,19 @@ rm -f "$TMPMAP"
 echo ""
 echo "  共更新 $SUCCESS_COUNT 頁，失敗 $FAIL_COUNT 頁"
 
+# =====================================================
+# 確保首頁（ID 1420）使用右側邊欄佈局
+# Astra 主題透過 post meta 控制側邊欄顯示
+# site-sidebar-layout: right-sidebar 表示右側邊欄
+# =====================================================
+echo ""
+echo "→ 設定首頁側邊欄佈局..."
+if wp --path="$WP_PATH" post meta update 1420 site-sidebar-layout right-sidebar --quiet 2>/dev/null; then
+    echo "  ✓ 首頁已設定為右側邊欄佈局"
+else
+    echo "  ⚠️  無法設定首頁側邊欄佈局（非致命錯誤）"
+fi
+
 if [ "$FAIL_COUNT" -gt 0 ]; then
     exit 1
 fi
