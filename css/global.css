@@ -315,6 +315,28 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
 }
 
 /* ===================================================
+   7a. 關於我們頁面：兩欄佈局
+   =================================================== */
+.about-sidebar {
+    flex: 0 0 320px;
+    max-width: 320px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+    z-index: 9;
+}
+
+@media (max-width: 992px) {
+    .about-sidebar {
+        flex: 1 1 100%;
+        max-width: 100%;
+        position: relative;
+        top: 0;
+    }
+}
+
+/* ===================================================
    7b. 分眾入口 Widget 樣式
    =================================================== */
 .service-portal-wrapper {
