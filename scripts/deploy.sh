@@ -49,17 +49,19 @@ if [ -f "$THEME_PATH/functions.php" ]; then
     fi
 fi
 
-# 2. 部署 PHP Shortcodes（只複製 .php 檔，排除 .html 和子資料夾）
-echo "→ [2/3] 部署 PHP shortcodes..."
-SHORTCODE_COUNT=0
+# 2. PHP Shortcodes
+# 注意：shortcodes 目前由 WordPress「Code Snippets」外掛管理，
+# 不需要複製到 mu-plugins（否則會造成函數重複宣告，導致 500 錯誤）。
+# 如果日後要改用 mu-plugins 部署，請先停用 Code Snippets 中對應的程式碼片段。
+echo "→ [2/3] PHP shortcodes..."
+echo "   ⏭️  跳過（由 Code Snippets 外掛管理，避免重複載入）"
+# 清理先前誤部署到 mu-plugins 的 shortcode 檔案
 for f in shortcodes/*.php; do
-    if [ -f "$f" ]; then
-        cp "$f" "$MU_PLUGINS/"
-        echo "   ✓ $(basename "$f")"
-        SHORTCODE_COUNT=$((SHORTCODE_COUNT + 1))
+    if [ -f "$f" ] && [ -f "$MU_PLUGINS/$(basename "$f")" ]; then
+        rm "$MU_PLUGINS/$(basename "$f")"
+        echo "   🗑️  已移除 $MU_PLUGINS/$(basename "$f")"
     fi
 done
-echo "   共部署 $SHORTCODE_COUNT 個 shortcode 檔案"
 
 # 3. 匯入 HTML 頁面（需要 page-map.json 和 WP-CLI）
 echo "→ [3/3] 匯入 HTML 頁面..."
