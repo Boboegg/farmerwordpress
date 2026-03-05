@@ -145,36 +145,35 @@ for module_file in "${SIDEBAR_MODULES[@]}"; do
 
     # 使用 PHP eval 匯入 Widget，避免 shell 特殊字元問題
     module_name=$(basename "$module_file")
-    IMPORT_PHP=$(mktemp)
-    cat > "$IMPORT_PHP" <<'PHPEOF'
+    IMPORT_PHP=$(mktemp --suffix=.php)
+    cat > "$IMPORT_PHP" <<PHPEOF
 <?php
-$sidebar_id = $argv[1];
-$content_file = $argv[2];
-$content = file_get_contents($content_file);
-if (empty($content)) { exit(1); }
+\$sidebar_id = '$SIDEBAR_ID';
+\$content = file_get_contents('$TMP_WIDGET');
+if (empty(\$content)) { exit(1); }
 
 // 取得現有的 custom_html widget 資料
-$widgets = get_option('widget_custom_html', array());
+\$widgets = get_option('widget_custom_html', array());
 
 // 找到下一個可用的 widget index
-$max_idx = 0;
-foreach ($widgets as $k => $v) {
-    if (is_numeric($k) && $k > $max_idx) $max_idx = $k;
+\$max_idx = 0;
+foreach (\$widgets as \$k => \$v) {
+    if (is_numeric(\$k) && \$k > \$max_idx) \$max_idx = \$k;
 }
-$new_idx = $max_idx + 1;
+\$new_idx = \$max_idx + 1;
 
 // 新增 widget
-$widgets[$new_idx] = array('title' => '', 'content' => $content);
-update_option('widget_custom_html', $widgets);
+\$widgets[\$new_idx] = array('title' => '', 'content' => \$content);
+update_option('widget_custom_html', \$widgets);
 
 // 將 widget 加入側邊欄
-$sidebars = get_option('sidebars_widgets', array());
-if (!isset($sidebars[$sidebar_id])) $sidebars[$sidebar_id] = array();
-$sidebars[$sidebar_id][] = 'custom_html-' . $new_idx;
-update_option('sidebars_widgets', $sidebars);
+\$sidebars = get_option('sidebars_widgets', array());
+if (!isset(\$sidebars[\$sidebar_id])) \$sidebars[\$sidebar_id] = array();
+\$sidebars[\$sidebar_id][] = 'custom_html-' . \$new_idx;
+update_option('sidebars_widgets', \$sidebars);
 PHPEOF
 
-    if wp --path="$WP_PATH" eval-file "$IMPORT_PHP" "$SIDEBAR_ID" "$TMP_WIDGET" 2>/dev/null; then
+    if wp --path="$WP_PATH" eval-file "$IMPORT_PHP" 2>/dev/null; then
         echo "  ✓ Widget：$module_name"
         WIDGET_COUNT=$((WIDGET_COUNT + 1))
     else
