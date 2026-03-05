@@ -57,9 +57,10 @@ echo "→ [2/3] PHP shortcodes..."
 echo "   ⏭️  跳過（由 Code Snippets 外掛管理，避免重複載入）"
 # 清理先前誤部署到 mu-plugins 的 shortcode 檔案
 for f in shortcodes/*.php; do
-    if [ -f "$f" ] && [ -f "$MU_PLUGINS/$(basename "$f")" ]; then
-        rm "$MU_PLUGINS/$(basename "$f")"
-        echo "   🗑️  已移除 $MU_PLUGINS/$(basename "$f")"
+    base="$(basename "$f")"
+    if [ -f "$f" ] && [ -f "$MU_PLUGINS/$base" ]; then
+        rm -f -- "$MU_PLUGINS/$base"
+        echo "   🗑️  已移除 $MU_PLUGINS/$base"
     fi
 done
 
