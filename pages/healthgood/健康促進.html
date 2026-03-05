@@ -1,0 +1,1784 @@
+
+<!-- =====================================================
+     區塊 01：Hero
+     檔案：01-hero.html
+     說明：健康促進主頁面的第一個區塊
+     前綴：hp-（health promotion）避免與 /prevention 的 prev- 衝突
+     貼入方式：WordPress 頁面 → 程式碼編輯器 → 依序貼入
+     ===================================================== -->
+
+<!-- 字型與圖示（整頁只需載入一次，放在第一塊即可） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&#038;family=Lato:wght@400;700;900&#038;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="hp-hero">
+  <div class="hp-hero-content">
+    <div class="hp-hero-badge"><i class="fas fa-heart-pulse"></i> 健康促進專區</div>
+    <h1 class="hp-hero-title">農民健康促進</h1>
+    <p class="hp-hero-subtitle">保護身體、管理風險、照顧心理——從田間到生活的全方位健康指南</p>
+
+    <div class="hp-hero-intro">
+      <p>
+        務農是高體力、高暴露的工作。台灣農民平均年齡超過 62 歲，超過半數已逾 65 歲。在這個年紀還要面對烈日、農藥、重複搬運和不確定的收入，身體和心理都承受很大的壓力。
+      </p>
+      <p>
+        健康促進不是「生病了才看醫生」，而是在還沒出問題之前就開始保護自己。這個專區整理了跟農民最直接相關的四大健康主題：
+      </p>
+      <ul class="hp-hero-list">
+        <li><i class="fas fa-check-circle"></i> <strong>熱危害預防</strong>——了解熱中暑怎麼辨識、怎麼急救、怎麼安排作息</li>
+        <li><i class="fas fa-check-circle"></i> <strong>農藥安全</strong>——掌握正確的防護方法和中毒急救步驟</li>
+        <li><i class="fas fa-check-circle"></i> <strong>骨骼肌肉保健</strong>——學會暖身伸展，知道什麼時候該就醫</li>
+        <li><i class="fas fa-check-circle"></i> <strong>心靈紓壓</strong>——壓力調適方法和求助管道，照顧心理也是照顧健康</li>
+      </ul>
+      <p class="hp-hero-note">
+        <i class="fas fa-lightbulb"></i>
+        <strong>不知道從哪裡開始？</strong>
+        建議先做下方的「健康風險速篩」，勾選幾個選項就能了解目前最需要注意哪些面向。
+      </p>
+    </div>
+
+    <div class="hp-hero-actions">
+      <a href="#hp-risk-tools" class="hp-btn-primary">
+        <i class="fas fa-clipboard-check"></i> 健康風險速篩
+      </a>
+      <a href="#hp-tabs-section" class="hp-btn-secondary">
+        <i class="fas fa-layer-group"></i> 四大健康主題
+      </a>
+    </div>
+  </div>
+
+  <div class="hp-hero-visual">
+    <div class="hp-hero-stats">
+      <div class="hp-stat-item">
+        <div class="hp-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-user-clock"></i>
+        </div>
+        <div class="hp-stat-text">
+          <span class="hp-stat-number">62+歲</span>
+          <span class="hp-stat-label">台灣農民平均年齡</span>
+          <span class="hp-stat-source">農業部農業統計年報</span>
+        </div>
+      </div>
+      <div class="hp-stat-item">
+        <div class="hp-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-bone"></i>
+        </div>
+        <div class="hp-stat-text">
+          <span class="hp-stat-number">91%</span>
+          <span class="hp-stat-label">農民曾有肌肉骨骼不適</span>
+          <span class="hp-stat-source">Osborne et al., 2012</span>
+        </div>
+      </div>
+      <div class="hp-stat-item">
+        <div class="hp-stat-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+          <i class="fas fa-temperature-arrow-up"></i>
+        </div>
+        <div class="hp-stat-text">
+          <span class="hp-stat-number">71.3%</span>
+          <span class="hp-stat-label">農漁民感知高溫風險</span>
+          <span class="hp-stat-source">國衛院農民健康世代研究, 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 01-hero 專用樣式（hp- 前綴） === */
+.hp-hero{
+  --brand:#2e7d32;--brand-hover:#1b5e20;--brand-dark:#1a3a1a;
+  --accent:#c62828;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  display:flex;gap:40px;align-items:flex-start;padding:40px;
+  background:linear-gradient(135deg,#e8f5e9 0%,#fff 60%,#e3f2fd 100%);
+  border-radius:var(--radius);margin-bottom:0;
+  border:1px solid rgba(46,125,50,.1);box-sizing:border-box;
+}
+.hp-hero *{box-sizing:border-box;}
+.hp-hero-content{flex:1.2;}
+.hp-hero-visual{flex:.8;position:sticky;top:20px;}
+.hp-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,125,50,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.hp-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-dark);margin:0 0 8px;line-height:1.2;}
+.hp-hero-subtitle{font-size:1.05rem;color:var(--brand);font-weight:600;margin:0 0 20px;line-height:1.6;}
+
+/* 導讀段落 */
+.hp-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(46,125,50,.08);}
+.hp-hero-intro p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 12px;}
+.hp-hero-intro p:last-child{margin-bottom:0;}
+.hp-hero-list{list-style:none;padding:0;margin:0 0 16px;}
+.hp-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;line-height:1.7;padding:4px 0;color:var(--text-primary);}
+.hp-hero-list li i{color:var(--brand);margin-top:4px;flex-shrink:0;}
+.hp-hero-note{background:rgba(245,158,11,.08);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
+.hp-hero-note i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+
+/* CTA */
+.hp-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.hp-btn-primary,.hp-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
+.hp-btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(46,125,50,.3);}
+.hp-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.hp-btn-secondary{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+.hp-btn-secondary:hover{background:var(--brand);color:#fff;}
+
+/* Stats */
+.hp-hero-stats{display:flex;flex-direction:column;gap:16px;}
+.hp-stat-item{display:flex;align-items:center;gap:16px;background:#fff;padding:16px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hp-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.hp-stat-number{font-size:1.4rem;font-weight:900;display:block;line-height:1;}
+.hp-stat-label{font-size:.85rem;color:var(--text-secondary);}
+.hp-stat-source{font-size:.72rem;color:#aaa;font-style:italic;display:block;margin-top:3px;}
+
+/* 平滑捲動 */
+@media(max-width:768px){
+  .hp-hero{flex-direction:column;padding:24px;gap:24px;}
+  .hp-hero-title{font-size:1.6rem;}
+  .hp-hero-visual{position:static;}
+  .hp-hero-stats{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .hp-stat-item{flex:1;min-width:140px;padding:12px;}
+}
+</style>
+
+<script>
+/* 平滑捲動（放在第一塊，全頁共用） */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href^="#hp-"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+});
+</script>
+
+
+
+<!-- =====================================================
+     四大健康主題：完整 Tabs 整合版
+     包含：Tab 1 熱危害、Tab 2 農藥安全、Tab 3 骨骼肌肉、Tab 4 心靈紓壓
+     ===================================================== -->
+
+<div class="hp-tabs-section" id="hp-tabs-section">
+
+  <!-- 區塊導讀 -->
+  <div class="hp-section-header">
+    <h2><i class="fas fa-layer-group"></i> 四大健康主題</h2>
+    <p class="hp-section-desc">
+      農民最常面對的四種健康風險，每一種都有對應的預防方法。
+      點選下方標籤快速瀏覽重點，想看完整內容請點進各主題的深度專區。
+    </p>
+  </div>
+
+  <!-- Tab 按鈕（四個） -->
+  <div class="hp-tab-btns">
+    <button class="hp-tab-btn is-active" data-tab="hp-tab-heat" style="--tab-color:#c62828;">
+      <i class="fas fa-temperature-arrow-up"></i><span>熱危害預防</span>
+    </button>
+    <button class="hp-tab-btn" data-tab="hp-tab-pesticide" style="--tab-color:#7b1fa2;">
+      <i class="fas fa-flask-vial"></i><span>農藥安全</span>
+    </button>
+    <button class="hp-tab-btn" data-tab="hp-tab-msd" style="--tab-color:#1565c0;">
+      <i class="fas fa-bone"></i><span>骨骼肌肉</span>
+    </button>
+    <button class="hp-tab-btn" data-tab="hp-tab-mental" style="--tab-color:#2e7d32;">
+      <i class="fas fa-brain"></i><span>心靈紓壓</span>
+    </button>
+  </div>
+
+  <!-- ===== Tab 1：熱危害預防 ===== -->
+  <div class="hp-tab-panel is-active" id="hp-tab-heat">
+    <div class="hp-tab-intro" style="border-left:4px solid #c62828;">
+      <div class="hp-tab-intro-text">
+        <p>
+          雲嘉地區夏季高溫經常超過 35°C，溫室內部更可能突破 40°C。農民長時間在烈日下作業，是熱中暑和熱衰竭的高風險族群。更值得注意的是，長期熱暴露與慢性腎臟病風險顯著相關——氣溫每升高 1°C，慢性腎臟病風險增加 8%。
+        </p>
+      </div>
+      <a href="/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/" class="hp-tab-link" style="color:#c62828;border-color:#c62828;">
+        查看完整指南 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hp-icon-grid">
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-head-side-virus"></i>
+        </div>
+        <h4>熱中暑 vs 熱衰竭</h4>
+        <p>體溫 ≥40°C 且意識改變 = 中暑，是急診狀況，死亡率超過 30%</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-droplet"></i>
+        </div>
+        <h4>喝水規則</h4>
+        <p>每 15-20 分鐘喝 150-200 mL，不要等到渴了才喝</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-clock"></i>
+        </div>
+        <h4>避開高溫時段</h4>
+        <p>建議：清晨 5:00-10:00 作業 → 中午休息 → 下午 15:00-18:00 作業</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-heart-pulse"></i>
+        </div>
+        <h4>心跳監測法</h4>
+        <p>心跳超過（180 − 年齡）就要立刻休息。65 歲農友 → 超過 115 下就要停</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-disease"></i>
+        </div>
+        <h4>熱與腎臟的關係</h4>
+        <p>長期熱暴露會傷腎，中暑患者日後的慢性腎臟病風險比一般人高出數倍</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-kit-medical"></i>
+        </div>
+        <h4>中暑急救</h4>
+        <p>移到陰涼處 → 冰敷脖子腋下鼠蹊部 → 意識不清立刻打 119</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Tab 2：農藥安全 ===== -->
+  <div class="hp-tab-panel" id="hp-tab-pesticide">
+    <div class="hp-tab-intro" style="border-left:4px solid #7b1fa2;">
+      <div class="hp-tab-intro-text">
+        <p>
+          農藥是農業的必要工具，但使用不當就是毒物。台灣每年仍有約 390 人因非自殺性農藥中毒住院。最大的風險不是吸入，而是皮膚接觸——超過 95% 的職業性農藥暴露發生在皮膚，尤其是手部。很多農友噴藥時戴了口罩，卻沒戴手套，等於最大的破口完全沒有防護。
+        </p>
+      </div>
+      <a href="/healthgood/%e8%be%b2%e8%97%a5%e5%ae%89%e5%85%a8/" class="hp-tab-link" style="color:#7b1fa2;border-color:#7b1fa2;">
+        查看完整指南 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hp-icon-grid">
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-hand"></i>
+        </div>
+        <h4>皮膚是最大破口</h4>
+        <p>超過 95% 的農藥暴露經由皮膚吸收，手部和前臂是最常接觸的部位</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-triangle-exclamation"></i>
+        </div>
+        <h4>急性中毒症狀</h4>
+        <p>流口水、瞳孔縮小、肌肉抽搐、呼吸困難 → 立刻打 119</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-clock-rotate-left"></i>
+        </div>
+        <h4>安全採收期</h4>
+        <p>最後一次噴藥到採收的最短天數，標示在農藥瓶標籤上，務必遵守</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-wind"></i>
+        </div>
+        <h4>再進入間隔（REI）</h4>
+        <p>溫室施藥後至少通風 2-4 小時才能重新進入作業區域</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-phone-volume"></i>
+        </div>
+        <h4>中毒急救電話</h4>
+        <p>毒藥物防治諮詢中心 24 小時專線：<strong>02-2871-7121</strong></p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+          <i class="fas fa-ban"></i>
+        </div>
+        <h4>巴拉刈已禁用</h4>
+        <p>2020 年全面禁用，農藥中毒自殺率下降 37%，證實管制有效</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Tab 3：骨骼肌肉保健 ===== -->
+  <div class="hp-tab-panel" id="hp-tab-msd">
+    <div class="hp-tab-intro" style="border-left:4px solid #1565c0;">
+      <div class="hp-tab-intro-text">
+        <p>
+          國際研究顯示，超過 90% 的農民一生中會經歷肌肉骨骼疼痛（Osborne et al., 2012）。最常見的部位是腰部、膝蓋和肩膀，跟農務中的蹲姿、搬運和仰頭動作直接相關。國衛院的台灣農民健康世代研究也發現，農民的髖關節退化、膝關節退化和膝蓋滑囊炎風險顯著高於一般人（國衛院, 2024）。
+        </p>
+      </div>
+      <a href="/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/" class="hp-tab-link" style="color:#1565c0;border-color:#1565c0;">
+        查看完整指南 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hp-icon-grid">
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-person-walking-arrow-loop-left"></i>
+        </div>
+        <h4>腰痛</h4>
+        <p>農民下背痛盛行率 63-87%，長時間彎腰和搬重物是主因</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-person-falling"></i>
+        </div>
+        <h4>膝蓋問題</h4>
+        <p>稻農膝關節疼痛盛行率 54-80%，長時間蹲姿是最大元兇</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-hand-holding-medical"></i>
+        </div>
+        <h4>肩膀傷害</h4>
+        <p>果農旋轉肌撕裂盛行率 60%，長時間仰頭採摘修剪造成</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-dumbbell"></i>
+        </div>
+        <h4>工前暖身</h4>
+        <p>5-10 分鐘暖身可顯著降低傷害風險，深蹲、手臂伸展、軀幹旋轉</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+        <h4>什麼時候該看醫生</h4>
+        <p>疼痛持續超過 2 週、愈來愈嚴重、出現麻木感 → 盡早就醫</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-hospital"></i>
+        </div>
+        <h4>雲嘉復健資源</h4>
+        <p>台大雲林分院、雲林長庚、嘉義長庚、嘉基、大林慈濟均設有復健科</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Tab 4：心靈紓壓 ===== -->
+  <div class="hp-tab-panel" id="hp-tab-mental">
+    <div class="hp-tab-intro" style="border-left:4px solid #2e7d32;">
+      <div class="hp-tab-intro-text">
+        <p>
+          農民面對的壓力是多重的：天候不確定、收入不穩定、身體疼痛、人口外移後的孤獨感。研究指出，因工受傷的農民罹患憂鬱症的機率顯著更高（Kang et al., 2020）。但超過半數台灣民眾認為精神疾病有汙名，65% 不知道有哪些心理健康服務（Liu et al., 2008）——這意味著很多需要幫助的農友從來沒有尋求過幫助。
+        </p>
+      </div>
+      <a href="/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/" class="hp-tab-link" style="color:#2e7d32;border-color:#2e7d32;">
+        查看完整指南 <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="hp-icon-grid">
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-cloud-rain"></i>
+        </div>
+        <h4>農民特有壓力源</h4>
+        <p>看天吃飯、收入波動、獨居孤立、身體慢性疼痛</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-lungs"></i>
+        </div>
+        <h4>腹式呼吸</h4>
+        <p>最簡單的紓壓法：吸氣 4 秒、吐氣 8 秒，每天 10 分鐘，田邊就能做</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-phone"></i>
+        </div>
+        <h4>安心專線 1925</h4>
+        <p>24 小時免費，衛福部設置的心理諮詢專線，有人聽你說</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-people-group"></i>
+        </div>
+        <h4>社群連結很重要</h4>
+        <p>參加農會活動、廟口聚會、鄰里互動，人際連結是最好的心理疫苗</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-moon"></i>
+        </div>
+        <h4>睡眠品質</h4>
+        <p>固定作息、睡前避免咖啡和酒精、中午可短睡 15-20 分鐘</p>
+      </div>
+      <div class="hp-icon-card">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h4>求助是勇敢</h4>
+        <p>尋求幫助不是軟弱，是對自己和家人負責任的表現</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.hp-tabs-section 結束 -->
+
+<!-- =====================================================
+     CSS 樣式表 (已整合並優化動畫與排版)
+     ===================================================== -->
+<style>
+/* === 基礎變數與容器 === */
+.hp-tabs-section {
+  --brand: #2e7d32;
+  --brand-hover: #1b5e20;
+  --brand-dark: #1a3a1a;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --radius: 16px;
+  font-family: "Noto Sans TC", "Lato", sans-serif;
+  color: var(--text-primary);
+  margin: 40px 0 0;
+  box-sizing: border-box;
+}
+.hp-tabs-section * {
+  box-sizing: border-box;
+}
+
+/* 標題區塊 */
+.hp-section-header { margin-bottom: 24px; }
+.hp-section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+.hp-section-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin: 0;
+  max-width: 800px;
+}
+
+/* Tabs 切換按鈕 */
+.hp-tab-btns {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.hp-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all .3s;
+  font-family: inherit;
+}
+.hp-tab-btn.is-active, .hp-tab-btn:hover {
+  background: var(--tab-color, var(--brand));
+  color: #fff;
+  border-color: var(--tab-color, var(--brand));
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Tab 面板 */
+.hp-tab-panel {
+  display: none;
+  animation: fadeIn 0.4s ease-out;
+}
+.hp-tab-panel.is-active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tab 引言區 */
+.hp-tab-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.hp-tab-intro-text {
+  flex: 1;
+  min-width: 240px;
+}
+.hp-tab-intro-text p {
+  margin: 0 0 8px;
+  line-height: 1.8;
+  font-size: .95rem;
+  color: var(--text-primary);
+  text-align: justify;
+}
+.hp-tab-intro-text p:last-child {
+  margin-bottom: 0;
+}
+.hp-tab-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1.5px solid;
+  border-radius: 8px;
+  transition: all .3s;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+.hp-tab-link:hover {
+  opacity: .8;
+  transform: translateX(4px);
+}
+
+/* 網格區塊 */
+.hp-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.hp-icon-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0,0,0,.04);
+  transition: all .3s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.hp-icon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+  border-color: #e2e8f0;
+}
+.hp-icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+.hp-icon-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #222;
+}
+.hp-icon-card p {
+  font-size: .9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* RWD 響應式設定 */
+@media(max-width: 768px) {
+  .hp-icon-grid { grid-template-columns: 1fr; }
+  .hp-tab-btns { flex-direction: column; }
+  .hp-tab-btn { width: 100%; justify-content: center; }
+  .hp-tab-intro { flex-direction: column; padding: 20px; }
+  .hp-tab-link { width: 100%; justify-content: center; }
+}
+</style>
+
+<!-- =====================================================
+     JavaScript 切換邏輯
+     ===================================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var btns = document.querySelectorAll('.hp-tab-btn');
+  var panels = document.querySelectorAll('.hp-tab-panel');
+  
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      // 取得目標 Tab ID
+      var target = this.getAttribute('data-tab');
+      
+      // 移除所有按鈕與面板的 active 狀態
+      btns.forEach(function(b) { b.classList.remove('is-active'); });
+      panels.forEach(function(p) { p.classList.remove('is-active'); });
+      
+      // 為當前點擊的按鈕與目標面板加上 active 狀態
+      this.classList.add('is-active');
+      var panel = document.getElementById(target);
+      if(panel) panel.classList.add('is-active');
+    });
+  });
+});
+</script>
+
+
+
+<!-- =====================================================
+     區塊 03：健康風險速篩
+     檔案：03-tool-health-check.html
+     說明：互動式健康風險評估，含年齡加權和主題連結推薦
+     ===================================================== -->
+
+<div class="hp-risk-section" id="hp-risk-tools">
+  <div class="hpQ-section-header">
+    <h2><i class="fas fa-clipboard-check"></i> 健康風險速篩</h2>
+    <p>
+      不需要任何專業知識，兩個步驟就能了解自己目前的健康風險在哪裡。
+      結果會告訴你最需要注意的面向，並直接連結到對應的健康主題。
+    </p>
+  </div>
+
+  <div class="hpQ-tool-card" id="health-quiz">
+    <div class="hpQ-tool-header">
+      <div class="hpQ-tool-icon"><i class="fas fa-user-shield"></i></div>
+      <div>
+        <h3>農友健康風險速篩</h3>
+        <p>選擇年齡 + 勾選作業狀況，馬上看結果。</p>
+      </div>
+    </div>
+
+    <div class="hpQ-disclaimer">
+      <i class="fas fa-info-circle"></i>
+      <div>
+        <strong>關於這個工具</strong>
+        <p>
+          本速篩根據台灣職安署《高氣溫作業熱危害預防指引》、農委會農藥安全使用規範、以及國際農民肌肉骨骼疾病流行病學文獻（Osborne et al., 2012）中確認的主要暴露風險因子編製。年齡加權依據台灣農民健康世代研究中 65 歲以上農民顯著更高的職業傷病風險。本工具為<strong>自我覺察用途</strong>，非臨床診斷工具，結果不代表醫療建議。如有健康疑慮，請諮詢醫療專業人員。
+        </p>
+      </div>
+    </div>
+
+    <div class="hpQ-quiz-body">
+
+      <!-- Step 1：年齡 -->
+      <div class="hpQ-quiz-step">
+        <label class="hpQ-quiz-label">
+          <span class="hpQ-step-num">1</span>
+          您的年齡區間是？
+        </label>
+        <div class="hpQ-age-options" id="hpq-ages">
+          <button class="hpQ-age-btn" data-age="0">50 歲以下</button>
+          <button class="hpQ-age-btn" data-age="1">50-64 歲</button>
+          <button class="hpQ-age-btn" data-age="2">65 歲以上</button>
+        </div>
+      </div>
+
+      <!-- Step 2：勾選 -->
+      <div class="hpQ-quiz-step">
+        <label class="hpQ-quiz-label">
+          <span class="hpQ-step-num">2</span>
+          以下哪些狀況符合您目前的情形？（可複選）
+        </label>
+        <div class="hpQ-check-list" id="hpq-checks">
+          <label class="hpQ-check-item" data-topic="heat">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>每天在戶外作業超過 4 小時</span>
+            <span class="hpQ-topic-tag heat-tag">熱危害</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="heat">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>夏天幾乎不避開中午高溫時段（10:00-15:00）</span>
+            <span class="hpQ-topic-tag heat-tag">熱危害</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="heat">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>作業中很少主動喝水（通常等到渴了才喝）</span>
+            <span class="hpQ-topic-tag heat-tag">熱危害</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="pesticide">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>噴灑農藥時沒有戴耐化學手套</span>
+            <span class="hpQ-topic-tag pest-tag">農藥</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="pesticide">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>噴灑農藥時只戴一般口罩（非防毒面具）</span>
+            <span class="hpQ-topic-tag pest-tag">農藥</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="msd">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>每天需搬運超過 15 公斤重物</span>
+            <span class="hpQ-topic-tag msd-tag">骨骼肌肉</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="msd">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>經常需要蹲著或彎腰超過 1 小時</span>
+            <span class="hpQ-topic-tag msd-tag">骨骼肌肉</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="msd">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>最近經常覺得腰痠背痛或膝蓋痛</span>
+            <span class="hpQ-topic-tag msd-tag">骨骼肌肉</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="pesticide">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>操作農機時沒有戴耳塞或耳罩</span>
+            <span class="hpQ-topic-tag pest-tag">安全</span>
+          </label>
+          <label class="hpQ-check-item" data-topic="mental">
+            <input type="checkbox" value="1"><span class="hpQ-check-mark"></span>
+            <span>最近心情低落、睡不好、或對事情失去興趣</span>
+            <span class="hpQ-topic-tag mental-tag">心靈</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 送出按鈕 -->
+      <button class="hpQ-submit-btn" id="hpq-submit">
+        <i class="fas fa-magnifying-glass-chart"></i> 查看結果
+      </button>
+
+      <!-- 結果區塊 -->
+      <div class="hpQ-result" id="hpq-result" style="display:none;">
+        <div class="hpQ-result-header" id="hpq-result-header">
+          <div class="hpQ-result-icon" id="hpq-result-icon"></div>
+          <div>
+            <h4 id="hpq-result-level"></h4>
+            <p id="hpq-result-msg"></p>
+          </div>
+        </div>
+        <div class="hpQ-result-topics" id="hpq-result-topics"></div>
+        <div class="hpQ-result-mental" id="hpq-result-mental" style="display:none;">
+          <div class="hpQ-mental-card">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>安心專線 1925</strong>
+              <p>24 小時免費心理諮詢。感覺撐不住的時候，打一通電話就好。</p>
+            </div>
+          </div>
+        </div>
+        <button class="hpQ-reset-btn" id="hpq-reset">
+          <i class="fas fa-rotate-left"></i> 重新評估
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 04-health-check 專用樣式（hpQ 前綴） === */
+.hp-risk-section{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.hp-risk-section *{box-sizing:border-box;}
+
+.hpQ-section-header{margin-bottom:24px;}
+.hpQ-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+
+.hpQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #f0f0f0;}
+.hpQ-tool-icon{width:56px;height:56px;border-radius:14px;background:rgba(46,125,50,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.hpQ-tool-header h3{font-size:1.15rem;font-weight:800;margin:0 0 4px;color:var(--brand-dark);}
+.hpQ-tool-header p{font-size:.9rem;color:var(--text-secondary);margin:0;}
+
+/* Disclaimer */
+.hpQ-disclaimer{display:flex;gap:12px;padding:16px 20px;background:rgba(21,101,192,.04);border:1px solid rgba(21,101,192,.12);border-radius:12px;margin-bottom:20px;}
+.hpQ-disclaimer i{color:#1565c0;margin-top:2px;flex-shrink:0;font-size:16px;}
+.hpQ-disclaimer strong{display:block;font-size:.9rem;color:#1565c0;margin-bottom:4px;}
+.hpQ-disclaimer p{font-size:.82rem;line-height:1.6;color:var(--text-secondary);margin:0;}
+
+/* Steps */
+.hpQ-quiz-step{margin-bottom:24px;}
+.hpQ-quiz-label{display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:14px;}
+.hpQ-step-num{width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;flex-shrink:0;}
+
+/* Age buttons */
+.hpQ-age-options{display:flex;gap:12px;flex-wrap:wrap;}
+.hpQ-age-btn{padding:12px 24px;border-radius:10px;border:2px solid #e0e0e0;background:#fff;font-size:.95rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
+.hpQ-age-btn.is-selected{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+/* Checkboxes */
+.hpQ-check-list{display:flex;flex-direction:column;gap:8px;}
+.hpQ-check-item{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;border:1px solid #eee;cursor:pointer;transition:all .2s;position:relative;}
+.hpQ-check-item:hover{background:#f9fafb;}
+.hpQ-check-item input{display:none;}
+.hpQ-check-mark{width:22px;height:22px;border-radius:6px;border:2px solid #d0d0d0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
+.hpQ-check-item input:checked ~ .hpQ-check-mark{background:var(--brand);border-color:var(--brand);}
+.hpQ-check-item input:checked ~ .hpQ-check-mark::after{content:'\f00c';font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:12px;}
+.hpQ-check-item input:checked ~ span{color:var(--text-primary);font-weight:600;}
+.hpQ-topic-tag{margin-left:auto;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:12px;flex-shrink:0;}
+.heat-tag{background:rgba(198,40,40,.1);color:#c62828;}
+.pest-tag{background:rgba(123,31,162,.1);color:#7b1fa2;}
+.msd-tag{background:rgba(21,101,192,.1);color:#1565c0;}
+.mental-tag{background:rgba(46,125,50,.1);color:#2e7d32;}
+
+/* Submit */
+.hpQ-submit-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;background:var(--brand);color:#fff;font-size:1rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:8px;}
+.hpQ-submit-btn:hover{background:#1b5e20;transform:translateY(-2px);}
+
+/* Result */
+.hpQ-result{margin-top:24px;padding:24px;border-radius:var(--radius);border:2px solid #eee;}
+.hpQ-result-header{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+.hpQ-result-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.hpQ-result-header h4{font-size:1.1rem;font-weight:800;margin:0 0 4px;}
+.hpQ-result-header p{font-size:.93rem;line-height:1.7;color:var(--text-secondary);margin:0;}
+
+.hpQ-result-topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+.hpQ-topic-link{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .3s;border:1.5px solid;}
+.hpQ-topic-link:hover{transform:translateY(-2px);opacity:.85;}
+.hpQ-topic-link.heat-link{color:#c62828;border-color:#c62828;background:rgba(198,40,40,.05);}
+.hpQ-topic-link.pest-link{color:#7b1fa2;border-color:#7b1fa2;background:rgba(123,31,162,.05);}
+.hpQ-topic-link.msd-link{color:#1565c0;border-color:#1565c0;background:rgba(21,101,192,.05);}
+.hpQ-topic-link.mental-link{color:#2e7d32;border-color:#2e7d32;background:rgba(46,125,50,.05);}
+
+.hpQ-mental-card{display:flex;align-items:center;gap:14px;background:rgba(46,125,50,.06);border:1px solid rgba(46,125,50,.15);border-radius:12px;padding:16px 20px;margin-top:16px;}
+.hpQ-mental-card i{font-size:24px;color:#2e7d32;flex-shrink:0;}
+.hpQ-mental-card strong{color:#2e7d32;font-size:1rem;}
+.hpQ-mental-card p{font-size:.88rem;color:var(--text-secondary);margin:4px 0 0;}
+
+.hpQ-reset-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;background:#f5f5f5;color:var(--text-secondary);font-size:.9rem;font-weight:600;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:16px;}
+.hpQ-reset-btn:hover{background:#e0e0e0;}
+
+@media(max-width:768px){
+  .hpQ-age-options{flex-direction:column;}
+  .hpQ-age-btn{width:100%;text-align:center;}
+}
+</style>
+
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    var ageScore=0,ageSelected=false;
+    var ageBtns=document.querySelectorAll('.hpQ-age-btn');
+    var checks=document.querySelectorAll('#hpq-checks input[type="checkbox"]');
+    var submitBtn=document.getElementById('hpq-submit');
+    var resultDiv=document.getElementById('hpq-result');
+    var resetBtn=document.getElementById('hpq-reset');
+
+    /* Age selection */
+    ageBtns.forEach(function(btn){
+      btn.addEventListener('click',function(){
+        ageBtns.forEach(function(b){b.classList.remove('is-selected');});
+        this.classList.add('is-selected');
+        ageScore=parseInt(this.getAttribute('data-age'));
+        ageSelected=true;
+      });
+    });
+
+    /* Submit */
+    submitBtn.addEventListener('click',function(){
+      if(!ageSelected){alert('請先選擇年齡區間');return;}
+
+      var checkCount=0;
+      var topics={heat:0,pesticide:0,msd:0,mental:0};
+
+      checks.forEach(function(cb){
+        if(cb.checked){
+          checkCount++;
+          var topic=cb.closest('.hpQ-check-item').getAttribute('data-topic');
+          if(topics[topic]!==undefined) topics[topic]++;
+        }
+      });
+
+      var total=checkCount+ageScore;
+
+      /* Determine level */
+      var level,msg,color,icon;
+      if(total<=3){
+        level='低度風險';color='#81C784';icon='fa-circle-check';
+        msg='你目前的健康管理還不錯。建議維持好習慣，定期做免費成人健檢。';
+      }else if(total<=6){
+        level='中度風險';color='#FFB74D';icon='fa-circle-exclamation';
+        msg='你有一些需要注意的風險因子。建議針對下方標示的主題，查看對應的預防建議。';
+      }else if(total<=9){
+        level='高度風險';color='#EF5350';icon='fa-triangle-exclamation';
+        msg='你的健康風險較高，建議盡快改善作業習慣。特別留意下方標示的重點主題。';
+      }else{
+        level='極高風險';color='#c62828';icon='fa-circle-xmark';
+        msg='你同時面臨多項風險因子，建議儘早安排健康檢查，並逐步改善每一個勾選項目。';
+      }
+
+      /* Render result */
+      var resIcon=document.getElementById('hpq-result-icon');
+      resIcon.innerHTML='<i class="fas '+icon+'"></i>';
+      resIcon.style.background=color+'20';resIcon.style.color=color;
+
+      var resHeader=document.getElementById('hpq-result-header');
+      document.getElementById('hpq-result-level').textContent=level+'（'+total+' 分）';
+      document.getElementById('hpq-result-level').style.color=color;
+      document.getElementById('hpq-result-msg').textContent=msg;
+
+      resultDiv.style.borderColor=color;
+
+      /* Topic links */
+      var topicDiv=document.getElementById('hpq-result-topics');
+      topicDiv.innerHTML='';
+      var topicMap={
+        heat:{name:'熱危害預防',cls:'heat-link',icon:'fa-temperature-arrow-up',url:'/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/'},
+        pesticide:{name:'農藥安全',cls:'pest-link',icon:'fa-flask-vial',url:'/healthgood/%e8%be%b2%e8%97%a5%e5%ae%89%e5%85%a8/'},
+        msd:{name:'骨骼肌肉保健',cls:'msd-link',icon:'fa-bone',url:'/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/'},
+        mental:{name:'心靈紓壓',cls:'mental-link',icon:'fa-brain',url:'/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/'}
+      };
+
+      Object.keys(topics).forEach(function(k){
+        if(topics[k]>0){
+          var a=document.createElement('a');
+          a.href=topicMap[k].url;
+          a.className='hpQ-topic-link '+topicMap[k].cls;
+          a.innerHTML='<i class="fas '+topicMap[k].icon+'"></i> '+topicMap[k].name+'（'+topics[k]+' 項）';
+          topicDiv.appendChild(a);
+        }
+      });
+
+      /* Mental health special card */
+      var mentalCard=document.getElementById('hpq-result-mental');
+      mentalCard.style.display=topics.mental>0?'block':'none';
+
+      resultDiv.style.display='block';
+      resultDiv.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+
+    /* Reset */
+    resetBtn.addEventListener('click',function(){
+      ageBtns.forEach(function(b){b.classList.remove('is-selected');});
+      checks.forEach(function(cb){cb.checked=false;});
+      ageScore=0;ageSelected=false;
+      resultDiv.style.display='none';
+    });
+  });
+})();
+</script>
+
+
+
+<!-- =====================================================
+     區塊 04：熱指數對照表 + 心跳計算小工具
+     檔案：04-tool-heat-index.html
+     說明：勞動部四級制熱指數對照 + 心跳警戒計算器
+     ===================================================== -->
+
+<div class="hpH-heat-section">
+  <div class="hpH-section-header">
+    <h2><i class="fas fa-sun"></i> 今天能下田嗎？</h2>
+    <p>對照當日天氣預報的氣溫和濕度，查看你的農作建議和補水頻率。</p>
+  </div>
+
+  <div class="hpH-content-row">
+
+    <!-- 左欄：熱指數對照表 -->
+    <div class="hpH-table-card">
+      <h3><i class="fas fa-temperature-half"></i> 熱指數風險對照表</h3>
+      <p class="hpH-table-note">
+        熱指數 = 結合氣溫和相對濕度的體感溫度。
+        可用中央氣象署「生活氣象」APP 查詢。
+        <strong>直射陽光下或穿不透氣防護衣時，風險等級要再往上升一級。</strong>
+      </p>
+
+      <div class="hpH-table-wrap">
+        <table class="hpH-table">
+          <thead>
+            <tr>
+              <th>熱指數</th>
+              <th>風險等級</th>
+              <th>農作建議</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hpH-row-green">
+              <td><strong>&lt; 27°C</strong></td>
+              <td><span class="hpH-badge" style="background:#81C784;color:#fff;">正常</span></td>
+              <td>可正常作業，注意補水</td>
+            </tr>
+            <tr class="hpH-row-yellow">
+              <td><strong>27-32°C</strong></td>
+              <td><span class="hpH-badge" style="background:#FFD54F;color:#333;">第一級</span></td>
+              <td>重體力活增加休息頻率，每 30 分鐘補水</td>
+            </tr>
+            <tr class="hpH-row-orange">
+              <td><strong>32-41°C</strong></td>
+              <td><span class="hpH-badge" style="background:#FFB74D;color:#fff;">第二級</span></td>
+              <td>減少戶外作業時間，避開 10:00-15:00，每 15-20 分鐘補水</td>
+            </tr>
+            <tr class="hpH-row-red">
+              <td><strong>41-54°C</strong></td>
+              <td><span class="hpH-badge" style="background:#EF5350;color:#fff;">第三級</span></td>
+              <td>避免戶外作業，改清晨或傍晚，穿防護衣再升一級防護</td>
+            </tr>
+            <tr class="hpH-row-black">
+              <td><strong>≥ 54°C</strong></td>
+              <td><span class="hpH-badge" style="background:#424242;color:#fff;">第四級</span></td>
+              <td>停止所有非緊急戶外作業</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="hpH-source">
+        <i class="fas fa-info-circle"></i>
+        依據勞動部《高氣溫作業熱危害預防指引》第三版（2025）。
+        查詢熱指數：<a href="https://hiosha.osha.gov.tw" target="_blank" rel="noopener">hiosha.osha.gov.tw</a>
+      </div>
+    </div>
+
+    <!-- 右欄：心跳警戒值計算 -->
+    <div class="hpH-hr-card">
+      <h3><i class="fas fa-heart-pulse"></i> 心跳警戒值計算</h3>
+      <p class="hpH-hr-desc">
+        在高溫下作業時，心跳是最簡單的身體警報器。<br>
+        輸入你的年齡，馬上知道你的心跳上限。
+      </p>
+
+      <div class="hpH-hr-input-group">
+        <label for="hpH-age-input">你的年齡</label>
+        <div class="hpH-hr-input-row">
+          <input type="number" id="hpH-age-input" min="20" max="90" placeholder="例如 65" class="hpH-hr-input">
+          <button class="hpH-hr-calc-btn" id="hpH-calc-btn">計算</button>
+        </div>
+      </div>
+
+      <div class="hpH-hr-result" id="hpH-hr-result" style="display:none;">
+        <div class="hpH-hr-result-main">
+          <div class="hpH-hr-bpm" id="hpH-hr-bpm"></div>
+          <div class="hpH-hr-unit">下/分鐘</div>
+        </div>
+        <p class="hpH-hr-result-msg">
+          工作中心跳一旦超過這個數字，就要<strong>立刻停下來到陰涼處休息</strong>，
+          補充水分，等心跳恢復正常再繼續。
+        </p>
+        <div class="hpH-hr-how">
+          <strong><i class="fas fa-hand"></i> 怎麼量心跳？</strong>
+          <p>
+            把食指和中指輕壓在手腕內側（靠近拇指那一側），數 15 秒的跳動次數，再乘以 4。
+          </p>
+        </div>
+      </div>
+
+      <div class="hpH-hr-examples">
+        <p class="hpH-hr-examples-title"><strong>常見年齡對照：</strong></p>
+        <div class="hpH-hr-example-tags">
+          <span class="hpH-ex-tag">50 歲 → <strong>130</strong> 下</span>
+          <span class="hpH-ex-tag">55 歲 → <strong>125</strong> 下</span>
+          <span class="hpH-ex-tag">60 歲 → <strong>120</strong> 下</span>
+          <span class="hpH-ex-tag">65 歲 → <strong>115</strong> 下</span>
+          <span class="hpH-ex-tag">70 歲 → <strong>110</strong> 下</span>
+          <span class="hpH-ex-tag">75 歲 → <strong>105</strong> 下</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* === 05-heat-index 專用樣式（hpH 前綴） === */
+.hpH-heat-section{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#c62828;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.hpH-heat-section *{box-sizing:border-box;}
+
+.hpH-section-header{margin-bottom:24px;}
+.hpH-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpH-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;}
+
+.hpH-content-row{display:flex;gap:24px;align-items:flex-start;}
+
+/* Left: Table */
+.hpH-table-card{flex:1.2;background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpH-table-card h3{font-size:1.1rem;font-weight:800;color:var(--accent);display:flex;align-items:center;gap:8px;margin:0 0 12px;}
+.hpH-table-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 16px;}
+
+.hpH-table-wrap{overflow-x:auto;margin-bottom:16px;}
+.hpH-table{width:100%;border-collapse:collapse;font-size:.9rem;}
+.hpH-table th{background:#f5f5f5;padding:12px 16px;text-align:left;font-weight:700;font-size:.85rem;color:var(--text-secondary);border-bottom:2px solid #eee;}
+.hpH-table td{padding:12px 16px;border-bottom:1px solid #f0f0f0;line-height:1.6;}
+.hpH-badge{padding:4px 12px;border-radius:6px;font-size:.8rem;font-weight:800;display:inline-block;}
+
+.hpH-row-green td:first-child{border-left:4px solid #81C784;}
+.hpH-row-yellow td:first-child{border-left:4px solid #FFD54F;}
+.hpH-row-orange td:first-child{border-left:4px solid #FFB74D;}
+.hpH-row-red td:first-child{border-left:4px solid #EF5350;}
+.hpH-row-black td:first-child{border-left:4px solid #424242;}
+
+.hpH-source{font-size:.82rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:6px;line-height:1.6;}
+.hpH-source a{color:var(--brand);}
+
+/* Right: Heart Rate */
+.hpH-hr-card{flex:.8;background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpH-hr-card h3{font-size:1.1rem;font-weight:800;color:var(--accent);display:flex;align-items:center;gap:8px;margin:0 0 12px;}
+.hpH-hr-desc{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 20px;}
+
+.hpH-hr-input-group label{font-size:.9rem;font-weight:700;color:var(--text-primary);display:block;margin-bottom:8px;}
+.hpH-hr-input-row{display:flex;gap:10px;}
+.hpH-hr-input{flex:1;padding:12px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:1.1rem;font-weight:700;font-family:inherit;outline:none;transition:border-color .3s;}
+.hpH-hr-input:focus{border-color:var(--accent);}
+.hpH-hr-calc-btn{padding:12px 24px;border-radius:10px;background:var(--accent);color:#fff;font-size:.95rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;white-space:nowrap;}
+.hpH-hr-calc-btn:hover{background:#b71c1c;}
+
+.hpH-hr-result{margin-top:20px;padding:20px;background:rgba(198,40,40,.04);border-radius:12px;border:1px solid rgba(198,40,40,.12);}
+.hpH-hr-result-main{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;}
+.hpH-hr-bpm{font-size:2.8rem;font-weight:900;color:var(--accent);line-height:1;}
+.hpH-hr-unit{font-size:1rem;font-weight:600;color:var(--accent);}
+.hpH-hr-result-msg{font-size:.9rem;line-height:1.7;color:var(--text-primary);margin:0 0 16px;}
+.hpH-hr-how{background:#fff;padding:14px 16px;border-radius:10px;font-size:.88rem;line-height:1.7;color:var(--text-secondary);}
+.hpH-hr-how strong{display:flex;align-items:center;gap:6px;color:var(--text-primary);margin-bottom:4px;font-size:.9rem;}
+.hpH-hr-how p{margin:0;}
+
+.hpH-hr-examples{margin-top:20px;padding-top:16px;border-top:1px solid #eee;}
+.hpH-hr-examples-title{font-size:.9rem;margin:0 0 10px;}
+.hpH-hr-example-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.hpH-ex-tag{padding:6px 14px;background:#f5f5f5;border-radius:8px;font-size:.85rem;color:var(--text-secondary);}
+.hpH-ex-tag strong{color:var(--accent);}
+
+@media(max-width:768px){
+  .hpH-content-row{flex-direction:column;}
+}
+</style>
+
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    var calcBtn=document.getElementById('hpH-calc-btn');
+    var ageInput=document.getElementById('hpH-age-input');
+    var resultDiv=document.getElementById('hpH-hr-result');
+    var bpmEl=document.getElementById('hpH-hr-bpm');
+
+    calcBtn.addEventListener('click',function(){
+      var age=parseInt(ageInput.value);
+      if(isNaN(age)||age<15||age>100){alert('請輸入合理的年齡（15-100 歲）');return;}
+      var hr=180-age;
+      bpmEl.textContent=hr;
+      resultDiv.style.display='block';
+    });
+
+    ageInput.addEventListener('keypress',function(e){
+      if(e.key==='Enter') calcBtn.click();
+    });
+  });
+})();
+</script>
+
+
+
+<!-- =====================================================
+     區塊 05：制度資源區
+     檔案：05-insurance-resources.html
+     說明：農職保 + 雲嘉就醫資源 + 急救電話
+     ===================================================== -->
+
+<div class="hpR-resource-section">
+  <div class="hpR-section-header">
+    <h2><i class="fas fa-hand-holding-heart"></i> 保障你的權益</h2>
+    <p>保險怎麼保？生病去哪裡看？緊急電話是什麼？一次整理清楚。</p>
+  </div>
+
+  <div class="hpR-three-col">
+
+    <!-- 欄 1：農職保 -->
+    <div class="hpR-col-card">
+      <div class="hpR-col-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <i class="fas fa-shield-halved"></i>
+      </div>
+      <h3>農民職業災害保險</h3>
+      <p class="hpR-col-desc">務農受傷也有保障。自願加保，農會辦理。</p>
+
+      <div class="hpR-info-list">
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">月繳保費</span>
+          <span class="hpR-info-value"><strong>NT$25</strong><br><small>雲林縣政府全額補助，農友免繳</small></span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">傷病給付</span>
+          <span class="hpR-info-value">第 1-2 月：NT$680/日<br>第 3 月起：NT$476/日<br>最長給付 2 年</span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">就醫津貼</span>
+          <span class="hpR-info-value">門診 NT$50/日<br>住院 NT$900/日</span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">身心障礙</span>
+          <span class="hpR-info-value">依等級最高 NT$612,000</span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">加保方式</span>
+          <span class="hpR-info-value">攜帶身分證到<strong>戶籍所在地農會</strong>辦理</span>
+        </div>
+        <div class="hpR-info-row">
+          <span class="hpR-info-label">涵蓋範圍</span>
+          <span class="hpR-info-value">農機傷害、農藥中毒、蛇咬、中暑、墜落等</span>
+        </div>
+      </div>
+
+      <div class="hpR-stat-highlight">
+        <i class="fas fa-chart-line"></i>
+        <span>雲林縣投保率 <strong>50.42%</strong>（全國最高）</span>
+      </div>
+
+      <div class="hpR-disclaimer">
+        <i class="fas fa-exclamation-triangle"></i>
+        <div>
+          <strong>資料僅供參考</strong>
+          <p>以上農職保資訊依據勞動部勞工保險局公開資料整理（2024 年版本）。保費、給付金額與補助政策可能隨法規調整而變動。<strong>最新資訊請洽戶籍所在地農會，或撥打勞保局服務專線 02-2396-1266。</strong></p>
+          <p class="hpR-disclaimer-links">
+            <a href="https://www.bli.gov.tw/0100395.html" target="_blank" rel="noopener">勞保局・農職保專區</a>
+            <a href="https://www.yunlin.gov.tw/" target="_blank" rel="noopener">雲林縣政府</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 欄 2：就醫資源 -->
+    <div class="hpR-col-card">
+      <div class="hpR-col-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <i class="fas fa-hospital"></i>
+      </div>
+      <h3>雲嘉地區就醫資源</h3>
+      <p class="hpR-col-desc">以下醫院距離雲嘉農業區較近，設有相關科別。</p>
+
+      <div class="hpR-hospital-list">
+        <div class="hpR-hospital">
+          <h4>台大醫院雲林分院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">職業醫學科</span>
+            <span class="hpR-htag">復健科</span>
+            <span class="hpR-htag">農業健康中心</span>
+          </div>
+          <p class="hpR-hospital-note">台灣首座農業環境與職業健康中心所在地</p>
+        </div>
+        <div class="hpR-hospital">
+          <h4>雲林長庚醫院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">復健科</span>
+            <span class="hpR-htag">骨科</span>
+            <span class="hpR-htag">慢性病管理</span>
+          </div>
+        </div>
+        <div class="hpR-hospital">
+          <h4>嘉義長庚醫院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">復健科 8 位醫師</span>
+            <span class="hpR-htag">精神科</span>
+          </div>
+          <p class="hpR-hospital-note">69 床復健病房，雲嘉地區規模最大</p>
+        </div>
+        <div class="hpR-hospital">
+          <h4>嘉義基督教醫院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">復健科</span>
+            <span class="hpR-htag">職業病評估</span>
+          </div>
+        </div>
+        <div class="hpR-hospital">
+          <h4>大林慈濟醫院</h4>
+          <div class="hpR-hospital-tags">
+            <span class="hpR-htag">復健科</span>
+            <span class="hpR-htag">腎臟內科</span>
+            <span class="hpR-htag">社區照護</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 欄 3：緊急聯絡 -->
+    <div class="hpR-col-card">
+      <div class="hpR-col-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <i class="fas fa-phone-flip"></i>
+      </div>
+      <h3>緊急聯絡資訊</h3>
+      <p class="hpR-col-desc">存在手機裡，需要的時候不用找。</p>
+
+      <div class="hpR-phone-list">
+        <a href="tel:119" class="hpR-phone-item hpR-phone-emergency">
+          <div class="hpR-phone-number">119</div>
+          <div class="hpR-phone-desc">火災、急救、緊急醫療</div>
+        </a>
+        <a href="tel:1925" class="hpR-phone-item hpR-phone-mental">
+          <div class="hpR-phone-number">1925</div>
+          <div class="hpR-phone-desc">安心專線（24hr 心理諮詢）</div>
+        </a>
+        <a href="tel:1995" class="hpR-phone-item">
+          <div class="hpR-phone-number">1995</div>
+          <div class="hpR-phone-desc">生命線</div>
+        </a>
+        <a href="tel:1980" class="hpR-phone-item">
+          <div class="hpR-phone-number">1980</div>
+          <div class="hpR-phone-desc">張老師專線</div>
+        </a>
+        <a href="tel:0228717121" class="hpR-phone-item hpR-phone-poison">
+          <div class="hpR-phone-number">02-2871-7121</div>
+          <div class="hpR-phone-desc">毒藥物防治諮詢中心（24hr）</div>
+        </a>
+        <a href="tel:0800022228" class="hpR-phone-item">
+          <div class="hpR-phone-number">0800-022-228</div>
+          <div class="hpR-phone-desc">植物病蟲害諮詢（免費）</div>
+        </a>
+      </div>
+
+      <div class="hpR-local-contacts">
+        <h4><i class="fas fa-map-marker-alt"></i> 地方心理衛生中心</h4>
+        <p>雲林縣：05-5523338</p>
+        <p>嘉義縣：05-2949193</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* === 06-resources 專用樣式（hpR 前綴） === */
+.hpR-resource-section{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  margin:40px 0 0;box-sizing:border-box;
+}
+.hpR-resource-section *{box-sizing:border-box;}
+
+.hpR-section-header{margin-bottom:24px;}
+.hpR-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpR-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;}
+
+.hpR-three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
+
+.hpR-col-card{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpR-col-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.hpR-col-card h3{font-size:1.1rem;font-weight:800;color:#222;margin:0 0 6px;}
+.hpR-col-desc{font-size:.88rem;color:var(--text-secondary);margin:0 0 16px;line-height:1.6;}
+
+/* Insurance info */
+.hpR-info-list{display:flex;flex-direction:column;gap:0;}
+.hpR-info-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f5f5f5;}
+.hpR-info-row:last-child{border-bottom:none;}
+.hpR-info-label{flex-shrink:0;width:80px;font-size:.82rem;font-weight:700;color:var(--brand);padding-top:2px;}
+.hpR-info-value{font-size:.88rem;line-height:1.6;color:var(--text-primary);}
+.hpR-info-value small{color:var(--text-secondary);font-size:.8rem;}
+
+.hpR-stat-highlight{display:flex;align-items:center;gap:8px;background:rgba(46,125,50,.06);padding:12px 16px;border-radius:10px;margin-top:14px;font-size:.88rem;color:var(--brand);}
+.hpR-stat-highlight strong{color:#1b5e20;}
+
+/* Disclaimer */
+.hpR-disclaimer{display:flex;gap:10px;padding:14px 16px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:10px;margin-top:14px;}
+.hpR-disclaimer i{color:#f59e0b;margin-top:2px;flex-shrink:0;font-size:14px;}
+.hpR-disclaimer strong{display:block;font-size:.82rem;color:#e65100;margin-bottom:2px;}
+.hpR-disclaimer p{font-size:.78rem;line-height:1.5;color:var(--text-secondary);margin:0 0 4px;}
+.hpR-disclaimer p:last-child{margin-bottom:0;}
+.hpR-disclaimer-links{display:flex;gap:12px;margin-top:4px;}
+.hpR-disclaimer-links a{color:var(--brand);font-weight:600;font-size:.78rem;text-decoration:none;}
+.hpR-disclaimer-links a:hover{text-decoration:underline;}
+
+/* Hospital list */
+.hpR-hospital-list{display:flex;flex-direction:column;gap:12px;}
+.hpR-hospital{padding:12px 0;border-bottom:1px solid #f5f5f5;}
+.hpR-hospital:last-child{border-bottom:none;}
+.hpR-hospital h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:#222;}
+.hpR-hospital-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.hpR-htag{padding:3px 10px;background:#f0f7ff;color:#1565c0;border-radius:6px;font-size:.75rem;font-weight:600;}
+.hpR-hospital-note{font-size:.8rem;color:var(--text-secondary);margin:6px 0 0;font-style:italic;}
+
+/* Phone list */
+.hpR-phone-list{display:flex;flex-direction:column;gap:8px;}
+.hpR-phone-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:#f9fafb;text-decoration:none;color:inherit;transition:all .2s;border:1px solid transparent;}
+.hpR-phone-item:hover{background:#f0f0f0;border-color:#ddd;}
+.hpR-phone-number{font-size:1.05rem;font-weight:800;color:var(--text-primary);white-space:nowrap;min-width:120px;}
+.hpR-phone-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.4;}
+.hpR-phone-emergency .hpR-phone-number{color:#c62828;}
+.hpR-phone-mental .hpR-phone-number{color:#2e7d32;}
+.hpR-phone-poison .hpR-phone-number{color:#7b1fa2;}
+
+.hpR-local-contacts{margin-top:16px;padding:14px;background:rgba(46,125,50,.04);border-radius:10px;}
+.hpR-local-contacts h4{font-size:.88rem;font-weight:700;color:var(--brand);margin:0 0 8px;display:flex;align-items:center;gap:6px;}
+.hpR-local-contacts p{font-size:.85rem;color:var(--text-primary);margin:0 0 4px;line-height:1.6;}
+
+@media(max-width:900px){
+  .hpR-three-col{grid-template-columns:1fr;}
+}
+</style>
+
+
+
+<!-- =====================================================
+     區塊 06：子頁面入口 + 文章列表 + 參考資料
+     檔案：06-subpages-refs.html
+     說明：四張子頁面卡片 + WordPress 文章 shortcode + 學術引用
+     ===================================================== -->
+
+<!-- 子頁面入口 -->
+<div class="hpS-subpage-section">
+  <div class="hpS-section-header">
+    <h2><i class="fas fa-folder-open"></i> 深度專區</h2>
+    <p>
+      每個健康主題都有獨立的完整頁面，提供更詳細的預防知識、操作步驟和就醫建議。
+    </p>
+  </div>
+
+  <div class="hpS-subpage-grid">
+    <a href="/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/" class="hpS-subpage-card">
+      <div class="hpS-subpage-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <i class="fas fa-temperature-arrow-up"></i>
+      </div>
+      <h3>熱危害預防</h3>
+      <p>熱中暑辨識、急救步驟、作息安排、水分補充指南</p>
+      <span class="hpS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/healthgood/%e8%be%b2%e8%97%a5%e5%ae%89%e5%85%a8/" class="hpS-subpage-card">
+      <div class="hpS-subpage-icon" style="background:rgba(123,31,162,.1);color:#7b1fa2;">
+        <i class="fas fa-flask-vial"></i>
+      </div>
+      <h3>農藥安全</h3>
+      <p>防護裝備、中毒急救、安全用藥流程、法規須知</p>
+      <span class="hpS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/" class="hpS-subpage-card">
+      <div class="hpS-subpage-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <i class="fas fa-bone"></i>
+      </div>
+      <h3>骨骼肌肉保健</h3>
+      <p>作物別風險分析、暖身伸展、何時就醫、復健資源</p>
+      <span class="hpS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+
+    <a href="/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/" class="hpS-subpage-card">
+      <div class="hpS-subpage-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <i class="fas fa-brain"></i>
+      </div>
+      <h3>心靈紓壓</h3>
+      <p>壓力來源、腹式呼吸、社群連結、求助管道</p>
+      <span class="hpS-subpage-arrow"><i class="fas fa-arrow-right"></i></span>
+    </a>
+  </div>
+
+  <!-- 交叉連結提示 -->
+  <div class="hpS-crosslink">
+    <i class="fas fa-link"></i>
+    <span>也推薦你看：<a href="/prevention/">職業安全專區</a>——了解個人防護具穿戴、省力農機補助、溫室作業安全。</span>
+  </div>
+</div>
+
+<!-- 相關文章 -->
+<div class="hpS-articles-section">
+  <div class="hpS-section-header">
+    <h2><i class="fas fa-newspaper"></i> 相關文章</h2>
+  </div>
+
+  <!-- ★ Shortcode 說明 ★
+       目前不指定分類，會顯示最新 4 篇文章。
+       如果你想只顯示特定分類，改成：
+       [my_newss_loop cat="healthgood" count="4"]
+       
+       前提：
+       1. 佈景主題或外掛有註冊 my_newss_loop 這個 shortcode
+       2. 在 WordPress「文章→分類」裡有建立對應分類
+       3. 用「程式碼編輯器」而非「視覺編輯器」貼入
+  -->
+  <div class='news-loop-wrapper layout-multi'><div class='news-grid-container'>
+            <div class='news-grid-card'>
+                <a href='https://fwdignity.com/%e5%b0%8a%e5%9a%b4%e8%be%b2%e6%a5%ad%e5%9c%98%e9%9a%8a%e4%b8%8b%e7%94%b0%e5%8e%bb%ef%bc%81/' class='card-image-link'>
+                    <div class='card-image' style='background-image: url(https://fwdignity.com/wp-content/uploads/2026/02/578445542_122139254096947721_7752381496067937621_n-240x300.jpg);'>
+                        <span class='card-grid-label cat-greenhouse'>溫室</span>
+                    </div>
+                </a>
+                <div class='card-grid-body'>
+                    <span class='card-grid-date'>2026.02.19</span>
+                    <h3 class='card-grid-title'><a href='https://fwdignity.com/%e5%b0%8a%e5%9a%b4%e8%be%b2%e6%a5%ad%e5%9c%98%e9%9a%8a%e4%b8%8b%e7%94%b0%e5%8e%bb%ef%bc%81/'>尊嚴農業團隊下田去！</a></h3>
+                    <a href='https://fwdignity.com/%e5%b0%8a%e5%9a%b4%e8%be%b2%e6%a5%ad%e5%9c%98%e9%9a%8a%e4%b8%8b%e7%94%b0%e5%8e%bb%ef%bc%81/' class='card-grid-more'>閱讀全文 →</a>
+                </div>
+            </div>
+            <div class='news-grid-card'>
+                <a href='https://fwdignity.com/%e5%a4%a9%e7%84%b6%e7%9a%84%e5%a9%9a%e7%a6%ae%e8%8a%b1%e6%9d%9f/' class='card-image-link'>
+                    <div class='card-image' style='background-image: url(https://fwdignity.com/wp-content/uploads/2026/02/606679514_122150925584947721_5682210065345015111_n-300x300.webp);'>
+                        <span class='card-grid-label cat-news'>最新消息</span>
+                    </div>
+                </a>
+                <div class='card-grid-body'>
+                    <span class='card-grid-date'>2026.02.19</span>
+                    <h3 class='card-grid-title'><a href='https://fwdignity.com/%e5%a4%a9%e7%84%b6%e7%9a%84%e5%a9%9a%e7%a6%ae%e8%8a%b1%e6%9d%9f/'>天然的婚禮花束 ?!</a></h3>
+                    <a href='https://fwdignity.com/%e5%a4%a9%e7%84%b6%e7%9a%84%e5%a9%9a%e7%a6%ae%e8%8a%b1%e6%9d%9f/' class='card-grid-more'>閱讀全文 →</a>
+                </div>
+            </div>
+            <div class='news-grid-card'>
+                <a href='https://fwdignity.com/%e6%b0%91%e9%9b%84%e5%a5%b3%e8%be%b2%e7%9a%84%e5%a4%9a%e9%87%8d%e5%ae%87%e5%ae%99-part-two/' class='card-image-link'>
+                    <div class='card-image' style='background-image: url(https://fwdignity.com/wp-content/uploads/2026/02/615432718_1400498808530987_7719053383629042736_n-300x300.webp);'>
+                        <span class='card-grid-label cat-podcast'>Podcast</span>
+                    </div>
+                </a>
+                <div class='card-grid-body'>
+                    <span class='card-grid-date'>2026.02.19</span>
+                    <h3 class='card-grid-title'><a href='https://fwdignity.com/%e6%b0%91%e9%9b%84%e5%a5%b3%e8%be%b2%e7%9a%84%e5%a4%9a%e9%87%8d%e5%ae%87%e5%ae%99-part-two/'>民雄女農的多重宇宙 Part Two</a></h3>
+                    <a href='https://fwdignity.com/%e6%b0%91%e9%9b%84%e5%a5%b3%e8%be%b2%e7%9a%84%e5%a4%9a%e9%87%8d%e5%ae%87%e5%ae%99-part-two/' class='card-grid-more'>閱讀全文 →</a>
+                </div>
+            </div>
+            <div class='news-grid-card'>
+                <a href='https://fwdignity.com/%e8%be%b2%e5%ad%b8%e5%a0%82%e7%ac%ac%e4%ba%8c%e5%9b%9e%ef%bc%81%e8%be%b2%e5%8f%8b%e9%86%ab%e5%b8%ab%e5%8b%95%e8%8c%b2%e5%8b%95/' class='card-image-link'>
+                    <div class='card-image' style='background-image: url(https://fwdignity.com/wp-content/uploads/2026/02/616841954_122156071436947721_7020250260369865619_n-300x225.webp);'>
+                        <span class='card-grid-label cat-agri-school'>農學堂</span>
+                    </div>
+                </a>
+                <div class='card-grid-body'>
+                    <span class='card-grid-date'>2026.02.19</span>
+                    <h3 class='card-grid-title'><a href='https://fwdignity.com/%e8%be%b2%e5%ad%b8%e5%a0%82%e7%ac%ac%e4%ba%8c%e5%9b%9e%ef%bc%81%e8%be%b2%e5%8f%8b%e9%86%ab%e5%b8%ab%e5%8b%95%e8%8c%b2%e5%8b%95/'>農學堂第二回！農友醫師動茲動</a></h3>
+                    <a href='https://fwdignity.com/%e8%be%b2%e5%ad%b8%e5%a0%82%e7%ac%ac%e4%ba%8c%e5%9b%9e%ef%bc%81%e8%be%b2%e5%8f%8b%e9%86%ab%e5%b8%ab%e5%8b%95%e8%8c%b2%e5%8b%95/' class='card-grid-more'>閱讀全文 →</a>
+                </div>
+            </div></div></div>
+    <style>
+    .news-loop-wrapper { margin-bottom: 40px; }
+    .news-section-title {
+        font-size: 1.4rem; font-weight: 800; color: #2c5e2e; margin: 0 0 25px 0;
+        border-left: 5px solid #d4a017; padding-left: 15px;
+    }
+    .news-grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+        padding: 0;
+    }
+
+    /* 篇數自適應：1 篇時不要太寬、居中顯示 */
+    .layout-single .news-grid-container {
+        display: flex;
+        justify-content: center;
+    }
+    .layout-single .news-grid-card {
+        max-width: 700px;
+        width: 100%;
+    }
+
+    /* 2 篇時固定兩欄 */
+    .layout-two .news-grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .news-grid-card {
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+    }
+    .news-grid-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    .card-image-link {
+        display: block;
+        position: relative;
+        height: 220px;
+    }
+    .card-image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .card-grid-label {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: rgba(255,255,255,0.9);
+        color: #2c5e2e;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        backdrop-filter: blur(10px);
+        white-space: nowrap;
+    }
+
+    /* ===== 分類配色：依 slug 套用 ===== */
+
+    /* 保險相關 */
+    .cat-insurance { background:#2563eb !important; color:#fff !important; }
+    .cat-occupation-ins { background:#1d4ed8 !important; color:#fff !important; }
+    .cat-ins-subsidy-insurance { background:#38bdf8 !important; color:#fff !important; }
+    .cat-crop-ins { background:#0ea5e9 !important; color:#fff !important; }
+
+    /* 健康與危害 */
+    .cat-health { background:#16a34a !important; color:#fff !important; }
+    .cat-heat-stress { background:#f97316 !important; color:#fff !important; }
+    .cat-chemical-safety { background:#dc2626 !important; color:#fff !important; }
+    .cat-musculoskeletal { background:#7c3aed !important; color:#fff !important; }
+
+    /* 教育與資源 */
+    .cat-agri-school { background:#22c55e !important; color:#fff !important; }
+    .cat-education-farmer { background:#15803d !important; color:#fff !important; }
+
+    /* 新聞與公告 */
+    .cat-news { background:#166534 !important; color:#fff !important; }
+    .cat-press { background:#0f766e !important; color:#fff !important; }
+    .cat-event { background:#d97706 !important; color:#fff !important; }
+    .cat-notices { background:#4b5563 !important; color:#fff !important; }
+
+    /* 環境與研究 */
+    .cat-environment { background:#22c55e !important; color:#fff !important; }
+    .cat-greenhouse { background:#22c55e !important; color:#fff !important; }
+    .cat-research { background:#1d4ed8 !important; color:#fff !important; }
+    .cat-annual-reports { background:#0f766e !important; color:#fff !important; }
+    .cat-policy-papers { background:#7c2d12 !important; color:#fff !important; }
+    .cat-data-viz { background:#0891b2 !important; color:#fff !important; }
+
+    /* 設備與個人防護 */
+    .cat-equipment { background:#4b5563 !important; color:#fff !important; }
+    .cat-ppe { background:#f97316 !important; color:#fff !important; }
+    .cat-assistive-tech { background:#0f766e !important; color:#fff !important; }
+
+    /* 媒體與教材 */
+    .cat-media { background:#0ea5e9 !important; color:#fff !important; }
+    .cat-podcast { background:#6366f1 !important; color:#fff !important; }
+    .cat-youtube { background:#ef4444 !important; color:#fff !important; }
+    .cat-video { background:#16a34a !important; color:#fff !important; }
+    .cat-infographic { background:#db2777 !important; color:#fff !important; }
+
+    /* 下載相關 */
+    .cat-downloads { background:#6b21a8 !important; color:#fff !important; }
+
+    /* 其他未特別定義的分類：灰色 */
+    .cat-general { background:#6b7280 !important; color:#fff !important; }
+
+    .card-grid-body {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .card-grid-date {
+        font-size: 0.85rem;
+        color: #6b7280;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+    .card-grid-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin: 0 0 12px 0;
+        line-height: 1.4;
+        flex-grow: 1;
+    }
+    .card-grid-title a {
+        color: inherit;
+        text-decoration: none;
+    }
+    .card-grid-title a:hover { color: #5d6d3d; }
+    .card-grid-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: #5d6d3d;
+        font-weight: 700;
+        font-size: 0.9rem;
+        padding: 8px 18px;
+        border: 1.5px solid #5d6d3d;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        align-self: flex-start;
+        margin-top: auto;
+    }
+    .card-grid-more:hover {
+        background: #5d6d3d;
+        color: white;
+        transform: translateY(-1px);
+    }
+    .no-posts {
+        grid-column: 1/-1;
+        text-align: center;
+        padding: 40px;
+        color: #6b7280;
+        font-size: 1rem;
+    }
+    @media (max-width: 768px) {
+        .news-grid-container {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .card-image-link { height: 200px; }
+        .layout-single .news-grid-card { max-width: 100%; }
+    }
+    </style>
+    
+</div>
+
+<!-- 參考資料 -->
+<div class="hpS-references">
+  <div class="hpS-section-header">
+    <h2><i class="fas fa-book-open"></i> 參考資料</h2>
+    <p>本頁內容參考以下台灣政府機關與國際職業健康研究的公開資料。</p>
+  </div>
+  <div class="hpS-ref-list">
+    <p class="hpS-ref-item">農業部農業統計年報。<a href="https://agrstat.moa.gov.tw/" target="_blank" rel="noopener">https://agrstat.moa.gov.tw/</a></p>
+    <p class="hpS-ref-item">勞動部（2024）。農職保傷病給付基準提高，農民務農保障再升級。<a href="https://www.mol.gov.tw/1607/1632/1633/76199/" target="_blank" rel="noopener">https://www.mol.gov.tw/1607/1632/1633/76199/</a></p>
+    <p class="hpS-ref-item">勞動部職業安全衛生署（2025）。高氣溫作業熱危害預防指引（第三版）。<a href="https://www.osha.gov.tw/48110/48713/48735/60221/" target="_blank" rel="noopener">https://www.osha.gov.tw/48110/48713/48735/60221/</a></p>
+    <p class="hpS-ref-item">衛福部國民健康署。預防熱傷害衛教專區。<a href="https://www.hpa.gov.tw/Pages/List.aspx?nodeid=440" target="_blank" rel="noopener">https://www.hpa.gov.tw/Pages/List.aspx?nodeid=440</a></p>
+    <p class="hpS-ref-item">國衛院（2024）。揭開農業環境健康之謎：透過全國農民和全民健康保險研究資料庫探索台灣農民健康。<a href="https://enews.nhri.edu.tw/research/9879/" target="_blank" rel="noopener">https://enews.nhri.edu.tw/research/9879/</a></p>
+    <p class="hpS-ref-item">Osborne, A. et al. (2012). Prevalence of musculoskeletal disorders among farmers: A systematic review. <em>American Journal of Industrial Medicine, 55</em>(2), 143–158. <a href="https://pubmed.ncbi.nlm.nih.gov/22069159/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/22069159/</a></p>
+    <p class="hpS-ref-item">Chang, S.-S. et al. (2021). The early impact of paraquat ban on suicide in Taiwan. <em>Clinical Toxicology, 60</em>(1), 67–73. <a href="https://doi.org/10.1080/15563650.2021.1937642" target="_blank" rel="noopener">https://doi.org/10.1080/15563650.2021.1937642</a></p>
+    <p class="hpS-ref-item">Huang, C.-H. et al. (2023). Heat exposure and chronic kidney disease: a temporal link in a Taiwanese agricultural county. <em>International Journal of Environmental Health Research, 34</em>(3). <a href="https://doi.org/10.1080/09603123.2023.2223514" target="_blank" rel="noopener">https://doi.org/10.1080/09603123.2023.2223514</a></p>
+    <p class="hpS-ref-item">毒藥物防治諮詢中心。<a href="https://www.pcc-vghtpe.tw/" target="_blank" rel="noopener">https://www.pcc-vghtpe.tw/</a></p>
+    <p class="hpS-ref-item">NIOSH. (2001). <em>Simple solutions: Ergonomics for farm workers</em>. CDC. <a href="https://www.cdc.gov/niosh/docs/2001-111/default.html" target="_blank" rel="noopener">https://www.cdc.gov/niosh/docs/2001-111/default.html</a></p>
+  </div>
+</div>
+
+<style>
+/* === 07-subpages-refs 專用樣式（hpS 前綴） === */
+.hpS-subpage-section,.hpS-articles-section,.hpS-references{
+  --brand:#2e7d32;--brand-dark:#1a3a1a;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.hpS-subpage-section *,.hpS-references *{box-sizing:border-box;}
+
+.hpS-section-header{margin-bottom:20px;}
+.hpS-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 10px;}
+.hpS-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
+
+/* Sub-page Cards（4 欄） */
+.hpS-subpage-section{margin:40px 0 0;}
+.hpS-subpage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;}
+.hpS-subpage-card{display:flex;flex-direction:column;align-items:flex-start;background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;text-decoration:none;color:inherit;transition:all .3s;position:relative;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.hpS-subpage-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);border-color:var(--brand);}
+.hpS-subpage-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;}
+.hpS-subpage-card h3{font-size:1.1rem;font-weight:800;margin:0 0 8px;color:var(--brand-dark);}
+.hpS-subpage-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;flex:1;}
+.hpS-subpage-arrow{position:absolute;top:28px;right:28px;color:var(--brand);font-size:1rem;transition:transform .3s;}
+.hpS-subpage-card:hover .hpS-subpage-arrow{transform:translateX(4px);}
+
+/* Crosslink */
+.hpS-crosslink{display:flex;align-items:center;gap:8px;margin-top:20px;padding:14px 20px;background:rgba(92,134,7,.06);border-radius:10px;font-size:.9rem;color:var(--text-primary);}
+.hpS-crosslink i{color:#5C8607;flex-shrink:0;}
+.hpS-crosslink a{color:#5C8607;font-weight:700;text-decoration:none;}
+.hpS-crosslink a:hover{text-decoration:underline;}
+
+/* Articles */
+.hpS-articles-section{margin:40px 0 0;}
+
+/* References */
+.hpS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}
+.hpS-ref-list{display:flex;flex-direction:column;gap:10px;}
+.hpS-ref-item{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding-left:24px;text-indent:-24px;}
+.hpS-ref-item a{color:var(--brand);word-break:break-all;}
+
+@media(max-width:768px){
+  .hpS-subpage-grid{grid-template-columns:1fr;}
+}
+</style>
+
