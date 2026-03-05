@@ -24,6 +24,14 @@ jobs:
             cd ${{ secrets.REPO_PATH }}
             git fetch origin
             git reset --hard origin/main
+            # 自動安裝 WP-CLI（如果尚未安裝）
+            if ! command -v wp &>/dev/null && [ ! -f "$HOME/bin/wp" ]; then
+              mkdir -p "$HOME/bin"
+              curl -sO https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+              chmod +x wp-cli.phar
+              mv wp-cli.phar "$HOME/bin/wp"
+            fi
+            export PATH="$HOME/bin:$PATH"
             # 清理先前誤部署到 mu-plugins 的 shortcode 檔案（避免 500 錯誤）
             MU_DIR="${{ secrets.WP_PATH }}/wp-content/mu-plugins"
             for f in shortcodes/*.php; do
