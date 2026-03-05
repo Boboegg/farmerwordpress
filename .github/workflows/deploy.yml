@@ -22,8 +22,9 @@ jobs:
           port: 65002  # Hostinger 固定使用 65002，非標準的 22
           script: |
             cd ${{ secrets.REPO_PATH }}
-            git pull origin main
-            # 緊急清理：移除先前誤部署到 mu-plugins 的 shortcode 檔案（避免 500 錯誤）
+            git fetch origin
+            git reset --hard origin/main
+            # 清理先前誤部署到 mu-plugins 的 shortcode 檔案（避免 500 錯誤）
             MU_DIR="${{ secrets.WP_PATH }}/wp-content/mu-plugins"
             for f in shortcodes/*.php; do
               [ -f "$f" ] && rm -f -- "$MU_DIR/$(basename "$f")" 2>/dev/null
