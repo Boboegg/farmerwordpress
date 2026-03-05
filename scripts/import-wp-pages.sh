@@ -87,12 +87,18 @@ echo "  共更新 $SUCCESS_COUNT 頁，失敗 $FAIL_COUNT 頁"
 # site-sidebar-layout: right-sidebar 表示右側邊欄
 # =====================================================
 echo ""
-echo "→ 設定首頁側邊欄佈局..."
-if wp --path="$WP_PATH" post meta update 1420 site-sidebar-layout right-sidebar --quiet 2>/dev/null; then
-    echo "  ✓ 首頁已設定為右側邊欄佈局"
-else
-    echo "  ⚠️  無法設定首頁側邊欄佈局（非致命錯誤）"
-fi
+echo "→ 設定頁面側邊欄佈局..."
+
+# 需要右側邊欄的頁面 ID 列表
+SIDEBAR_PAGES=(1420 1476)  # 首頁、關於我們
+
+for page_id in "${SIDEBAR_PAGES[@]}"; do
+    if wp --path="$WP_PATH" post meta update "$page_id" site-sidebar-layout right-sidebar --quiet 2>/dev/null; then
+        echo "  ✓ 頁面 ID $page_id 已設定為右側邊欄佈局"
+    else
+        echo "  ⚠️  無法設定頁面 ID $page_id 側邊欄佈局（非致命錯誤）"
+    fi
+done
 
 # =====================================================
 # 匯入側邊欄模組到 WordPress Widget 區域
@@ -107,6 +113,8 @@ SIDEBAR_ID="sidebar-1"
 # 側邊欄模組檔案（按顯示順序排列）
 SIDEBAR_MODULES=(
     "pages/home/分眾入口"
+    "pages/home/快速連結"
+    "pages/home/社群媒體"
     "pages/home/側邊欄工具箱"
     "pages/home/熱門關鍵字"
     "pages/home/友善連結"

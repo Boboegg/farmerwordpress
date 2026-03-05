@@ -1,0 +1,9 @@
+<div class="side-widget">
+    <div class="side-title">
+        <i class="fas fa-share-alt"></i> 社群媒體
+    </div>
+    <div class="sidebar-social-box">
+        <a href="https://www.facebook.com/profile.php?id=61575048498498" target="_blank" class="sidebar-social-btn sidebar-fb"><i class="fab fa-facebook-f"></i><span>Facebook 粉絲專頁</span></a>
+        <a href="https://www.instagram.com/" target="_blank" class="sidebar-social-btn sidebar-ig"><i class="fab fa-instagram"></i><span>Instagram 帳號</span></a>
+    </div>
+</div>
