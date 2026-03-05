@@ -1,12 +1,11 @@
 <!-- wp:html -->
-
 <!-- =======================================================
-     首頁內容：身分導航 + 三大核心主題
-     維護說明：此檔為首頁 WordPress 頁面的 HTML 區塊內容
-     依賴項目：Font Awesome 6、global.css
+     首頁內容：身分導航 + 輪播 + 三大主題 + 新聞 + 影音
+     維護說明：此檔為首頁 WordPress 頁面的完整內容
+     依賴項目：Font Awesome 6、global.css、Code Snippets 短代碼
      ======================================================= -->
 
-<!-- Font Awesome 圖示庫（僅載入一次） -->
+<!-- Font Awesome 圖示庫 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- =====================================================
@@ -22,7 +21,6 @@
 
         <!-- 身分按鈕網格 -->
         <div class="portal-grid">
-
             <!-- (1) 想務農與新手農友 -->
             <a href="https://fwdignity.com/%e8%b3%87%e6%b7%b1%e8%be%b2%e5%8f%8b/" class="role-btn">
                 <div class="role-icon-box"><i class="fas fa-hat-cowboy-side"></i></div>
@@ -60,20 +58,23 @@
         </div>
     </div>
 </div>
+<!-- /wp:html -->
 
+<!-- wp:shortcode -->
+[home_highlight_slider]
+<!-- /wp:shortcode -->
+
+<!-- wp:html -->
 <!-- =====================================================
      區塊 2：三大核心主題導航
      ===================================================== -->
 <div class="topic-nav-wrapper">
-
-    <!-- 區塊標題 -->
     <div class="topic-header">
         <h2><span class="highlight">守護</span> 您的農業生活</h2>
         <p>從健康到經濟，我們提供全方位的支持</p>
     </div>
 
     <div class="topic-container">
-
         <!-- 卡片 1：健康促進 -->
         <a href="/healthgood" class="topic-card card-health">
             <div class="card-content">
@@ -135,7 +136,17 @@
         </a>
     </div>
 </div>
+<!-- /wp:html -->
 
+<!-- wp:shortcode -->
+[news_magazine_layout title="最新動態" count="5"]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[knowledge_podcast_grid title="影音專區" count="6"]
+<!-- /wp:shortcode -->
+
+<!-- wp:html -->
 <!-- =====================================================
      CSS 樣式表（身分導航 + 三大主題，合併版）
      ===================================================== -->
@@ -383,5 +394,4 @@
     .topic-container { flex-direction: column; }
 }
 </style>
-
 <!-- /wp:html -->
