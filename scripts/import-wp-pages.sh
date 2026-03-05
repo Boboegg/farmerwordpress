@@ -94,6 +94,58 @@ else
     echo "  ⚠️  無法設定首頁側邊欄佈局（非致命錯誤）"
 fi
 
+# =====================================================
+# 匯入側邊欄模組到 WordPress Widget 區域
+# 將 pages/home/ 下的側邊欄模組組合成 Custom HTML Widget
+# =====================================================
+echo ""
+echo "→ 匯入側邊欄 Widget..."
+
+# Astra 主題的主要側邊欄 ID（通常是 sidebar-1）
+SIDEBAR_ID="sidebar-1"
+
+# 側邊欄模組檔案（按顯示順序排列）
+SIDEBAR_MODULES=(
+    "pages/home/分眾入口"
+    "pages/home/側邊欄工具箱"
+    "pages/home/熱門關鍵字"
+    "pages/home/友善連結"
+)
+
+# 先清除既有的 custom_html widgets（避免重複）
+echo "  清除既有側邊欄 Widget..."
+EXISTING_WIDGETS=$(wp --path="$WP_PATH" widget list "$SIDEBAR_ID" --format=ids 2>/dev/null || echo "")
+if [ -n "$EXISTING_WIDGETS" ]; then
+    for widget_id in $EXISTING_WIDGETS; do
+        wp --path="$WP_PATH" widget delete "$widget_id" --quiet 2>/dev/null || true
+    done
+    echo "  ✓ 已清除舊 Widget"
+fi
+
+# 逐一匯入每個模組為獨立的 Custom HTML Widget
+WIDGET_COUNT=0
+for module_file in "${SIDEBAR_MODULES[@]}"; do
+    if [ ! -f "$module_file" ]; then
+        echo "  ⚠️  找不到模組：$module_file，跳過"
+        continue
+    fi
+
+    TMP_WIDGET=$(mktemp)
+    cat "$module_file" > "$TMP_WIDGET"
+    WIDGET_CONTENT=$(cat "$TMP_WIDGET")
+    rm -f "$TMP_WIDGET"
+
+    module_name=$(basename "$module_file")
+    if wp --path="$WP_PATH" widget add custom_html "$SIDEBAR_ID" --content="$WIDGET_CONTENT" --title="" --quiet 2>/dev/null; then
+        echo "  ✓ Widget：$module_name"
+        WIDGET_COUNT=$((WIDGET_COUNT + 1))
+    else
+        echo "  ❌ Widget 匯入失敗：$module_name"
+    fi
+done
+
+echo "  共匯入 $WIDGET_COUNT 個側邊欄 Widget"
+
 if [ "$FAIL_COUNT" -gt 0 ]; then
     exit 1
 fi
