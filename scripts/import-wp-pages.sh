@@ -9,7 +9,7 @@
 # page-map.json 格式：
 #   {
 #     "pages/home/index.html": 123,
-#     "pages/About/關於計畫.html": 456
+#     "pages/About/關於我們.html": 456
 #   }
 
 set -eo pipefail
