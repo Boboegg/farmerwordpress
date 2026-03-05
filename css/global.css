@@ -317,9 +317,15 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
 /* ===================================================
    7a. 關於我們頁面：兩欄佈局
    =================================================== */
-.about-sidebar {
-    flex: 0 0 320px;
-    max-width: 320px;
+.about-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.about-layout > .about-sidebar {
+    flex: 0 0 300px;
+    max-width: 300px;
     position: -webkit-sticky;
     position: sticky;
     top: 100px;
@@ -327,8 +333,17 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand); }
     z-index: 9;
 }
 
+/* 內容區域自動佔滿剩餘空間 */
+.about-layout > .about-content {
+    flex: 1;
+    min-width: 0;
+}
+
 @media (max-width: 992px) {
-    .about-sidebar {
+    .about-layout {
+        flex-direction: column;
+    }
+    .about-layout > .about-sidebar {
         flex: 1 1 100%;
         max-width: 100%;
         position: relative;
