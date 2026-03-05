@@ -1,0 +1,642 @@
+
+<!-- =====================================================
+     /economic-insurance/ 主頁面・區塊 01：Hero
+     檔案：01-hero.html
+     CSS 前綴：money-
+     主色系：#1565c0（藍色系）
+     貼入方式：WordPress 頁面 → 程式碼編輯器 → 依序貼入
+     ===================================================== -->
+
+<!-- 字型與圖示（整頁只需載入一次，放在第一塊） -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&#038;family=Lato:wght@400;700;900&#038;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="money-hero">
+  <div class="money-hero-content">
+    <div class="money-hero-badge"><i class="fas fa-shield-halved"></i> 經濟與保險專區</div>
+    <h1 class="money-hero-title">經濟與保險</h1>
+    <p class="money-hero-subtitle">務農受傷有給付、天災有理賠、資源有管道——搞懂你的經濟安全網</p>
+
+    <div class="money-hero-intro">
+      <p>
+        農民面對的經濟風險跟一般上班族完全不同：沒有固定薪水、沒有雇主幫你投保勞保、收入看天吃飯。一場颱風、一次農機意外，就足以讓整季的收入歸零。
+      </p>
+      <p>
+        好消息是，台灣已經建立了一套針對農民的經濟安全制度，但很多農友不知道自己有哪些權益可以主張。這個專區把最實用的三大主題整理在一起：
+      </p>
+      <ul class="money-hero-list">
+        <li><i class="fas fa-check-circle"></i> <strong>職業災害保險</strong>——務農受傷的收入補償與醫療津貼</li>
+        <li><i class="fas fa-check-circle"></i> <strong>農作物保險</strong>——天災造成農損的理賠機制</li>
+        <li><i class="fas fa-check-circle"></i> <strong>補助資源</strong>——農機補助、天災救助、政策貸款一次看</li>
+      </ul>
+      <p class="money-hero-note">
+        <i class="fas fa-lightbulb"></i>
+        <strong>不確定自己的權益？</strong>
+        建議從下方三張主題卡片開始，點進去看詳細說明，或直接使用勞保局的線上試算工具。
+      </p>
+    </div>
+
+    <div class="money-hero-actions">
+      <a href="#money-topics" class="money-btn-primary">
+        <i class="fas fa-layer-group"></i> 三大主題總覽
+      </a>
+      <a href="#money-tools" class="money-btn-secondary">
+        <i class="fas fa-calculator"></i> 線上試算工具
+      </a>
+    </div>
+  </div>
+
+  <div class="money-hero-visual">
+    <div class="money-hero-stats">
+      <div class="money-stat-item">
+        <div class="money-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-coins"></i>
+        </div>
+        <div class="money-stat-text">
+          <span class="money-stat-number">15 元/月</span>
+          <span class="money-stat-label">農職保農民實繳保費</span>
+          <span class="money-stat-source">勞保局，112/2/10 起</span>
+        </div>
+      </div>
+      <div class="money-stat-item">
+        <div class="money-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-bed-pulse"></i>
+        </div>
+        <div class="money-stat-text">
+          <span class="money-stat-number">680 元/日</span>
+          <span class="money-stat-label">農職保傷病給付最高日額</span>
+          <span class="money-stat-source">勞保局，113/9/1 起</span>
+        </div>
+      </div>
+      <div class="money-stat-item">
+        <div class="money-stat-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <div class="money-stat-text">
+          <span class="money-stat-number">27 品項</span>
+          <span class="money-stat-label">農作物保險可投保品項</span>
+          <span class="money-stat-source">農業部農業金融署</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* === 01-hero 專用樣式（money- 前綴） === */
+.money-hero{
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;--brand-hover:#0b4a8a;
+  --accent:#f59e0b;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
+  display:flex;gap:40px;align-items:flex-start;padding:40px;
+  background:linear-gradient(135deg,#e3f2fd 0%,#fff 60%,#e8eaf6 100%);
+  border-radius:var(--radius);margin-bottom:0;
+  border:1px solid rgba(21,101,192,.1);box-sizing:border-box;
+}
+.money-hero *{box-sizing:border-box;}
+.money-hero-content{flex:1.2;}
+.money-hero-visual{flex:.8;position:sticky;top:20px;}
+.money-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(21,101,192,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.money-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-dark);margin:0 0 8px;line-height:1.2;}
+.money-hero-subtitle{font-size:1.05rem;color:var(--brand);font-weight:600;margin:0 0 20px;line-height:1.6;}
+
+.money-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(21,101,192,.08);}
+.money-hero-intro p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 12px;}
+.money-hero-intro p:last-child{margin-bottom:0;}
+.money-hero-list{list-style:none;padding:0;margin:0 0 16px;}
+.money-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;line-height:1.7;padding:4px 0;color:var(--text-primary);}
+.money-hero-list li i{color:var(--brand);margin-top:4px;flex-shrink:0;}
+.money-hero-note{background:rgba(245,158,11,.08);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
+.money-hero-note i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+
+.money-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.money-btn-primary,.money-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
+.money-btn-primary{background:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(21,101,192,.3);}
+.money-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.money-btn-secondary{background:#fff;color:var(--brand);border:2px solid var(--brand);}
+.money-btn-secondary:hover{background:var(--brand);color:#fff;}
+
+.money-hero-stats{display:flex;flex-direction:column;gap:16px;}
+.money-stat-item{display:flex;align-items:center;gap:16px;background:#fff;padding:16px 20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.04);}
+.money-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.money-stat-number{font-size:1.4rem;font-weight:900;display:block;line-height:1;}
+.money-stat-label{font-size:.85rem;color:var(--text-secondary);}
+.money-stat-source{font-size:.72rem;color:#aaa;font-style:italic;display:block;margin-top:3px;}
+
+@media(max-width:768px){
+  .money-hero{flex-direction:column;padding:24px;gap:24px;}
+  .money-hero-title{font-size:1.6rem;}
+  .money-hero-visual{position:static;}
+  .money-hero-stats{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .money-stat-item{flex:1;min-width:140px;padding:12px;}
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href^="#money-"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
+  });
+});
+</script>
+
+
+
+<!-- =====================================================
+     /economic-insurance/ 主頁面・區塊 02：三大主題導覽卡片
+     檔案：02-topic-cards.html
+     ===================================================== -->
+
+<div class="money-topics" id="money-topics">
+  <div class="money-section-head">
+    <h2><i class="fas fa-compass"></i> 三大主題</h2>
+    <p>點擊進入各主題子頁面，查看完整說明與申請流程。</p>
+  </div>
+
+  <div class="money-topic-grid">
+
+    <!-- 卡片 1：職業災害保險（已上線） -->
+    <a href="/economic-insurance/occupational-accident-insurance/" class="money-topic-card money-topic-blue">
+      <div class="money-topic-status money-status-live"><i class="fas fa-check-circle"></i> 已上線</div>
+      <div class="money-topic-icon"><i class="fas fa-shield-halved"></i></div>
+      <h3>農民職業災害保險</h3>
+      <p class="money-topic-desc">
+        務農受傷的收入補償。每月只要 15 元，最高可領每日 680 元傷病給付，還有就醫津貼、身心障礙給付和喪葬津貼。
+      </p>
+      <ul class="money-topic-highlights">
+        <li><i class="fas fa-arrow-right"></i> 農保 vs 農職保差異比較</li>
+        <li><i class="fas fa-arrow-right"></i> 四大給付金額與計算方式</li>
+        <li><i class="fas fa-arrow-right"></i> 加保資格、申請流程、常見問題</li>
+      </ul>
+      <div class="money-topic-cta">
+        查看完整說明 <i class="fas fa-chevron-right"></i>
+      </div>
+    </a>
+
+    <!-- 卡片 2：農作物保險（建置中） -->
+    <div class="money-topic-card money-topic-green money-topic-upcoming">
+      <div class="money-topic-status money-status-wip"><i class="fas fa-hammer"></i> 建置中</div>
+      <div class="money-topic-icon"><i class="fas fa-cloud-showers-heavy"></i></div>
+      <h3>農作物保險</h3>
+      <p class="money-topic-desc">
+        天然災害造成的農損理賠。目前已開辦 27 項品項，政府補助保費 50% 以上，涵蓋水稻、芒果、香蕉、文旦柚等主要作物。
+      </p>
+      <ul class="money-topic-highlights">
+        <li><i class="fas fa-arrow-right"></i> 可投保品項與保費補助比例</li>
+        <li><i class="fas fa-arrow-right"></i> 實損實賠 vs 區域收穫型差異</li>
+        <li><i class="fas fa-arrow-right"></i> 投保流程與理賠申請</li>
+      </ul>
+      <div class="money-topic-coming">
+        即將上線
+      </div>
+    </div>
+
+    <!-- 卡片 3：補助資源（建置中） -->
+    <div class="money-topic-card money-topic-amber money-topic-upcoming">
+      <div class="money-topic-status money-status-wip"><i class="fas fa-hammer"></i> 建置中</div>
+      <div class="money-topic-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+      <h3>補助資源懶人包</h3>
+      <p class="money-topic-desc">
+        農機購置補助、天然災害現金救助、青農專案貸款、農民退休儲金等，依需求情境整理成一頁式查詢。
+      </p>
+      <ul class="money-topic-highlights">
+        <li><i class="fas fa-arrow-right"></i> 農機補助申請時程與品項</li>
+        <li><i class="fas fa-arrow-right"></i> 天災救助的申報流程</li>
+        <li><i class="fas fa-arrow-right"></i> 農民退休儲金提繳試算</li>
+      </ul>
+      <div class="money-topic-coming">
+        即將上線
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* === 02-topic-cards 樣式 === */
+.money-topics{
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
+  font-family:"Noto Sans TC","Lato",sans-serif;
+  margin-top:24px;box-sizing:border-box;
+}
+.money-topics *{box-sizing:border-box;}
+
+.money-section-head{margin-bottom:24px;}
+.money-section-head h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.money-section-head h2 i{color:var(--brand);}
+.money-section-head p{font-size:.95rem;color:var(--text-secondary);margin:0;}
+
+.money-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+
+.money-topic-card{
+  position:relative;
+  background:#fff;border-radius:16px;padding:28px;
+  border:2px solid #e2e8f0;
+  box-shadow:0 4px 16px rgba(0,0,0,.04);
+  transition:all .35s ease;
+  display:flex;flex-direction:column;
+  text-decoration:none;color:var(--text-primary);
+  overflow:hidden;
+}
+.money-topic-card::before{
+  content:'';position:absolute;top:0;left:0;width:100%;height:5px;transition:height .3s;
+}
+.money-topic-blue::before{background:#1565c0;}
+.money-topic-green::before{background:#15803d;}
+.money-topic-amber::before{background:#d97706;}
+
+a.money-topic-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 16px 36px rgba(21,101,192,.12);
+  border-color:var(--brand);
+}
+a.money-topic-card:hover::before{height:100%;opacity:.04;}
+
+/* 狀態標籤 */
+.money-topic-status{
+  position:absolute;top:14px;right:14px;
+  padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:700;
+  display:flex;align-items:center;gap:4px;
+}
+.money-status-live{background:#dcfce7;color:#15803d;}
+.money-status-wip{background:#fef3c7;color:#92400e;}
+
+/* 圖示 */
+.money-topic-icon{
+  width:56px;height:56px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;margin-bottom:16px;
+}
+.money-topic-blue .money-topic-icon{background:rgba(21,101,192,.1);color:#1565c0;}
+.money-topic-green .money-topic-icon{background:rgba(21,128,61,.1);color:#15803d;}
+.money-topic-amber .money-topic-icon{background:rgba(217,119,6,.1);color:#d97706;}
+
+.money-topic-card h3{font-size:1.2rem;font-weight:800;margin:0 0 10px;color:var(--brand-dark);}
+.money-topic-desc{font-size:.9rem;color:var(--text-secondary);line-height:1.7;margin:0 0 16px;flex-grow:1;}
+
+.money-topic-highlights{list-style:none;padding:0;margin:0 0 16px;}
+.money-topic-highlights li{
+  font-size:.85rem;color:var(--text-primary);
+  padding:4px 0;display:flex;align-items:center;gap:8px;
+}
+.money-topic-highlights li i{font-size:.7rem;color:var(--brand);flex-shrink:0;}
+
+.money-topic-cta{
+  margin-top:auto;padding:10px 0;
+  font-weight:700;font-size:.93rem;color:var(--brand);
+  display:flex;align-items:center;gap:6px;
+  border-top:1px solid #eef2f7;
+  transition:gap .3s;
+}
+a.money-topic-card:hover .money-topic-cta{gap:12px;}
+
+.money-topic-coming{
+  margin-top:auto;padding:10px 0;
+  font-weight:700;font-size:.88rem;color:#92400e;
+  border-top:1px solid #eef2f7;
+}
+
+/* 建置中卡片半透明 */
+.money-topic-upcoming{opacity:.7;}
+.money-topic-upcoming:hover{opacity:.85;}
+
+@media(max-width:992px){
+  .money-topic-grid{grid-template-columns:1fr;}
+}
+</style>
+
+
+
+<!-- =====================================================
+     /economic-insurance/ 主頁面・區塊 03：保險制度速覽比較
+     檔案：03-insurance-snapshot.html
+     ===================================================== -->
+
+<div class="money-snapshot" id="money-snapshot">
+  <div class="money-snap-header">
+    <h2><i class="fas fa-table-columns"></i> 農民保險制度速覽</h2>
+    <p>台灣農民可使用的保險制度一覽，快速掌握「誰保什麼」。</p>
+  </div>
+
+  <div class="money-snap-table-wrap">
+    <table class="money-snap-table">
+      <thead>
+        <tr>
+          <th>保險類型</th>
+          <th>保障對象</th>
+          <th>保障範圍</th>
+          <th>農民每月繳</th>
+          <th>詳細</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="money-snap-tag money-snap-tag-blue">農民健康保險（農保）</span></td>
+          <td>農民本人</td>
+          <td>生育、身心障礙、喪葬</td>
+          <td>78 元</td>
+          <td><span class="money-snap-note">基礎保障，<strong>無</strong>傷病給付</span></td>
+        </tr>
+        <tr class="money-snap-highlight">
+          <td><span class="money-snap-tag money-snap-tag-primary">農民職業災害保險（農職保）</span></td>
+          <td>農民本人</td>
+          <td>傷病、就醫津貼、身心障礙、喪葬</td>
+          <td><strong>15 元</strong></td>
+          <td><a href="/economic-insurance/occupational-accident-insurance/" class="money-snap-link">查看詳情 →</a></td>
+        </tr>
+        <tr>
+          <td><span class="money-snap-tag money-snap-tag-green">農作物保險</span></td>
+          <td>農作物</td>
+          <td>天災、病蟲害造成的農損</td>
+          <td>依品項不同</td>
+          <td><span class="money-snap-wip">建置中</span></td>
+        </tr>
+        <tr>
+          <td><span class="money-snap-tag money-snap-tag-teal">全民健康保險（健保）</span></td>
+          <td>農民本人</td>
+          <td>就醫費用</td>
+          <td>依投保金額</td>
+          <td><span class="money-snap-note">另行投保，非本專區範圍</span></td>
+        </tr>
+        <tr>
+          <td><span class="money-snap-tag money-snap-tag-amber">農民退休儲金</span></td>
+          <td>農民退休</td>
+          <td>退休年金</td>
+          <td>自選提繳</td>
+          <td><a href="https://www.bli.gov.tw/0105231.html" target="_blank" rel="noopener" class="money-snap-link">試算工具 →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="money-snap-footnote">
+    <i class="fas fa-info-circle"></i>
+    以上為制度概要，各項詳細資格與金額請參閱子頁面或官方網站。農保與農職保僅得擇一請領，不可重複。
+  </div>
+</div>
+
+<style>
+/* === 03-insurance-snapshot 樣式 === */
+.money-snapshot{
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
+  font-family:"Noto Sans TC","Lato",sans-serif;
+  margin-top:24px;background:#fff;border-radius:16px;padding:36px;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-sizing:border-box;
+}
+.money-snapshot *{box-sizing:border-box;}
+
+.money-snap-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--brand-light);}
+.money-snap-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.money-snap-header h2 i{color:var(--brand);}
+.money-snap-header p{font-size:.93rem;color:var(--text-secondary);margin:0;}
+
+.money-snap-table-wrap{overflow-x:auto;margin-bottom:16px;}
+.money-snap-table{width:100%;border-collapse:collapse;font-size:.9rem;}
+.money-snap-table th,.money-snap-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #eef2f7;vertical-align:middle;}
+.money-snap-table th{background:#f8fafc;font-weight:700;color:var(--text-primary);font-size:.85rem;text-transform:uppercase;letter-spacing:.3px;}
+.money-snap-table tbody tr:hover{background:#fafbfc;}
+.money-snap-highlight{background:#eff6ff !important;}
+.money-snap-highlight:hover{background:#e0ecff !important;}
+
+.money-snap-tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.8rem;font-weight:700;white-space:nowrap;}
+.money-snap-tag-primary{background:var(--brand);color:#fff;}
+.money-snap-tag-blue{background:#dbeafe;color:#1e40af;}
+.money-snap-tag-green{background:#dcfce7;color:#166534;}
+.money-snap-tag-teal{background:#ccfbf1;color:#115e59;}
+.money-snap-tag-amber{background:#fef3c7;color:#92400e;}
+
+.money-snap-link{color:var(--brand);font-weight:700;text-decoration:none;font-size:.88rem;transition:color .2s;}
+.money-snap-link:hover{color:var(--brand-dark);text-decoration:underline;}
+.money-snap-wip{font-size:.82rem;color:#92400e;font-weight:600;}
+.money-snap-note{font-size:.82rem;color:var(--text-secondary);}
+
+.money-snap-footnote{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:#f8fafc;border-radius:10px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);border:1px solid #eef2f7;}
+.money-snap-footnote i{color:var(--brand);margin-top:3px;flex-shrink:0;}
+
+@media(max-width:768px){
+  .money-snapshot{padding:20px;}
+  .money-snap-table{font-size:.82rem;}
+  .money-snap-table th,.money-snap-table td{padding:10px 8px;}
+}
+</style>
+
+
+
+<!-- =====================================================
+     /economic-insurance/ 主頁面・區塊 04：線上試算工具
+     檔案：04-tools.html
+     ===================================================== -->
+
+<div class="money-tools" id="money-tools">
+  <div class="money-tools-header">
+    <h2><i class="fas fa-calculator"></i> 線上試算工具</h2>
+    <p>直接連結勞保局官方試算系統，免登入即可使用。</p>
+  </div>
+
+  <div class="money-tools-grid">
+    <a href="https://www.bli.gov.tw/0100128.html" target="_blank" rel="noopener" class="money-tool-card">
+      <div class="money-tool-icon money-tool-icon-blue"><i class="fas fa-bed-pulse"></i></div>
+      <div class="money-tool-info">
+        <h3>農職保・傷病給付試算</h3>
+        <p>輸入不能工作天數，系統自動算出傷病給付 + 就醫津貼金額。</p>
+        <span class="money-tool-link">前往勞保局 <i class="fas fa-external-link-alt"></i></span>
+      </div>
+    </a>
+
+    <a href="https://www.bli.gov.tw/0105231.html" target="_blank" rel="noopener" class="money-tool-card">
+      <div class="money-tool-icon money-tool-icon-green"><i class="fas fa-piggy-bank"></i></div>
+      <div class="money-tool-info">
+        <h3>農民退休儲金試算</h3>
+        <p>輸入年齡和提繳比例，試算未來每月可領取的退休年金。</p>
+        <span class="money-tool-link">前往勞保局 <i class="fas fa-external-link-alt"></i></span>
+      </div>
+    </a>
+
+    <a href="https://www.afa.gov.tw/cht/index.php?code=list&#038;ids=353" target="_blank" rel="noopener" class="money-tool-card">
+      <div class="money-tool-icon money-tool-icon-amber"><i class="fas fa-wheat-awn"></i></div>
+      <div class="money-tool-info">
+        <h3>農作物保險・品項查詢</h3>
+        <p>查看目前可投保的農作物品項、承保公司及保費補助比例。</p>
+        <span class="money-tool-link">前往農業金融署 <i class="fas fa-external-link-alt"></i></span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<style>
+/* === 04-tools 樣式 === */
+.money-tools{
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
+  font-family:"Noto Sans TC","Lato",sans-serif;
+  margin-top:24px;background:#fff;border-radius:16px;padding:36px;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-sizing:border-box;
+}
+.money-tools *{box-sizing:border-box;}
+
+.money-tools-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--brand-light);}
+.money-tools-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.money-tools-header h2 i{color:var(--brand);}
+.money-tools-header p{font-size:.93rem;color:var(--text-secondary);margin:0;}
+
+.money-tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+.money-tool-card{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:24px;background:#f8fafc;border-radius:14px;
+  border:2px solid #e2e8f0;text-decoration:none;color:var(--text-primary);
+  transition:all .3s ease;
+}
+.money-tool-card:hover{
+  border-color:var(--brand);
+  transform:translateY(-4px);
+  box-shadow:0 10px 24px rgba(21,101,192,.1);
+}
+
+.money-tool-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;
+}
+.money-tool-icon-blue{background:rgba(21,101,192,.1);color:#1565c0;}
+.money-tool-icon-green{background:rgba(21,128,61,.1);color:#15803d;}
+.money-tool-icon-amber{background:rgba(217,119,6,.1);color:#d97706;}
+
+.money-tool-info h3{font-size:1rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
+.money-tool-info p{font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin:0 0 10px;}
+.money-tool-link{font-size:.88rem;font-weight:700;color:var(--brand);display:flex;align-items:center;gap:4px;}
+
+@media(max-width:992px){
+  .money-tools-grid{grid-template-columns:1fr;}
+}
+</style>
+
+
+
+<!-- =====================================================
+     /economic-insurance/ 主頁面・區塊 05：免責聲明 + 查詢窗口 + 站內連結
+     檔案：05-disclaimer-refs.html
+     ===================================================== -->
+
+<div class="money-footer-section" id="money-footer">
+
+  <!-- 免責聲明 -->
+  <div class="money-disclaimer">
+    <h3><i class="fas fa-shield-halved"></i> 資料說明與免責聲明</h3>
+    <p>
+      本專區依據農業部、勞動部勞工保險局及農業金融署公開資料整理（資料查詢日期：2025 年 2 月），僅供參考，不構成法律、保險或財務諮詢。各項金額、費率及申請資格可能因法規修正而調整，最新資訊請以官方公告為準。
+    </p>
+  </div>
+
+  <!-- 查詢窗口 -->
+  <div class="money-contacts">
+    <h3><i class="fas fa-phone-volume"></i> 查詢窗口</h3>
+    <div class="money-contact-grid">
+      <div class="money-contact-card">
+        <div class="money-contact-icon"><i class="fas fa-building-columns"></i></div>
+        <div>
+          <strong>勞保局（農職保）</strong>
+          <span><i class="fas fa-phone"></i> 02-2396-1266</span>
+          <p>職災保險加保、給付申請</p>
+        </div>
+      </div>
+      <div class="money-contact-card">
+        <div class="money-contact-icon"><i class="fas fa-wheat-awn"></i></div>
+        <div>
+          <strong>農業金融署（農作物保險）</strong>
+          <span><i class="fas fa-phone"></i> 02-3393-5835</span>
+          <p>農業保險品項、保費查詢</p>
+        </div>
+      </div>
+      <div class="money-contact-card">
+        <div class="money-contact-icon"><i class="fas fa-landmark"></i></div>
+        <div>
+          <strong>戶籍所在地農會</strong>
+          <span>各地不同</span>
+          <p>加保與申請的第一線窗口</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 站內交叉連結 -->
+  <div class="money-cross">
+    <h3><i class="fas fa-link"></i> 相關專區</h3>
+    <div class="money-cross-grid">
+      <a href="/healthgood/" class="money-cross-card">
+        <div class="money-cross-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;"><i class="fas fa-heart-pulse"></i></div>
+        <div>
+          <strong>健康促進</strong>
+          <small>中暑、農藥中毒屬農職保涵蓋的職業傷病——先學會預防</small>
+        </div>
+      </a>
+      <a href="/occupational-safety/" class="money-cross-card">
+        <div class="money-cross-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-helmet-safety"></i></div>
+        <div>
+          <strong>職業安全</strong>
+          <small>農機事故是最常見的職災類型——了解安全操作與防護具</small>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<style>
+/* === 05-disclaimer-refs 樣式 === */
+.money-footer-section{
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
+  font-family:"Noto Sans TC","Lato",sans-serif;
+  margin-top:24px;background:#fff;border-radius:16px;padding:36px;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-sizing:border-box;
+}
+.money-footer-section *{box-sizing:border-box;}
+
+/* 免責聲明 */
+.money-disclaimer{background:#fef3c7;border-radius:12px;padding:20px 24px;margin-bottom:28px;border:1px solid #fde68a;}
+.money-disclaimer h3{font-size:1rem;font-weight:800;color:#92400e;margin:0 0 8px;display:flex;align-items:center;gap:8px;}
+.money-disclaimer p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+
+/* 查詢窗口 */
+.money-contacts{margin-bottom:28px;}
+.money-contacts h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.money-contacts h3 i{color:var(--brand);}
+.money-contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.money-contact-card{display:flex;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;font-size:.9rem;}
+.money-contact-icon{width:40px;height:40px;border-radius:10px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.money-contact-card strong{display:block;margin-bottom:4px;color:var(--brand-dark);font-size:.9rem;}
+.money-contact-card span{font-size:.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:4px;}
+.money-contact-card p{font-size:.78rem;color:#aaa;margin:4px 0 0;}
+
+/* 站內連結 */
+.money-cross h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.money-cross h3 i{color:var(--brand);}
+.money-cross-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.money-cross-card{display:flex;align-items:center;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.money-cross-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.money-cross-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.money-cross-card strong{font-size:.95rem;display:block;margin-bottom:2px;}
+.money-cross-card small{font-size:.8rem;color:var(--text-secondary);display:block;}
+
+@media(max-width:768px){
+  .money-footer-section{padding:20px;}
+  .money-contact-grid{grid-template-columns:1fr;}
+  .money-cross-grid{grid-template-columns:1fr;}
+}
+</style>
+
+
+
+<p></p>
+
