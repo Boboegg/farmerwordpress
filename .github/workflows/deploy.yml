@@ -22,5 +22,5 @@ jobs:
           port: 65002  # Hostinger 固定使用 65002，非標準的 22
           script: |
             cd ${{ secrets.REPO_PATH }}
-            git pull origin master
+            git pull origin main
             WP_PATH=${{ secrets.WP_PATH }} bash scripts/deploy.sh
