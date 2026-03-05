@@ -32,14 +32,15 @@ fi
 SUCCESS_COUNT=0
 FAIL_COUNT=0
 
-# 用 process substitution 避免 subshell（計數器才能正確累加）
+# 將匹配結果寫入暫存檔，避免 pipe subshell 和 process substitution（Hostinger 不支援 /dev/fd）
+TMPMAP=$(mktemp)
+grep -E '"[^"]+": *[0-9]+' scripts/page-map.json > "$TMPMAP" || true
+
 while IFS= read -r line; do
     # 提取 key（檔案路徑）和頁面 ID
     key=$(echo "$line" | sed -E 's/^[[:space:]]*"([^"]+)".*/\1/')
     # 跳過以 "_" 開頭的說明欄位
-    if [[ "$key" == _* ]]; then
-        continue
-    fi
+    case "$key" in _*) continue ;; esac
     html_file="$key"
     page_id=$(echo "$line" | sed -E 's/.*: *([0-9]+).*/\1/')
 
@@ -71,7 +72,8 @@ while IFS= read -r line; do
         rm -f "$ERR_FILE"
         FAIL_COUNT=$((FAIL_COUNT + 1))
     fi
-done < <(grep -E '"[^"]+": *[0-9]+' scripts/page-map.json)
+done < "$TMPMAP"
+rm -f "$TMPMAP"
 
 echo ""
 echo "  共更新 $SUCCESS_COUNT 頁，失敗 $FAIL_COUNT 頁"
