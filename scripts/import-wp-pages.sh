@@ -14,7 +14,7 @@
 
 set -e
 
-WP_PATH="${WP_PATH:-$HOME/public_html}"
+WP_PATH="${WP_PATH:-$HOME/domains/fwdignity.com/public_html}"
 
 echo "→ 開始匯入 HTML 頁面到 WordPress..."
 echo "  WP 路徑：$WP_PATH"

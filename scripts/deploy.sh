@@ -11,7 +11,7 @@
 
 set -e  # 任何步驟失敗就立即停止
 
-WP_PATH="${WP_PATH:-$HOME/public_html}"
+WP_PATH="${WP_PATH:-$HOME/domains/fwdignity.com/public_html}"
 THEME="${THEME:-astra-child}"
 THEME_PATH="$WP_PATH/wp-content/themes/$THEME"
 MU_PLUGINS="$WP_PATH/wp-content/mu-plugins"
