@@ -12,7 +12,7 @@
 #     "pages/About/關於計畫.html": 456
 #   }
 
-set -e
+set -eo pipefail
 
 WP_PATH="${WP_PATH:-$HOME/domains/fwdignity.com/public_html}"
 
@@ -24,14 +24,24 @@ if ! command -v wp &>/dev/null; then
     exit 0
 fi
 
+if [ ! -f "scripts/page-map.json" ]; then
+    echo "  ⚠️  找不到 scripts/page-map.json，跳過頁面匯入"
+    exit 0
+fi
+
 SUCCESS_COUNT=0
 FAIL_COUNT=0
 
-# 用 grep 從 page-map.json 解析 "file": id 格式的行（純 bash，不需要 python）
-grep -E '"pages/.*":' scripts/page-map.json | while IFS= read -r line; do
-    # 提取檔案路徑和頁面 ID
-    html_file=$(echo "$line" | sed 's/.*"\(pages\/[^"]*\)".*/\1/')
-    page_id=$(echo "$line" | sed 's/.*: *\([0-9]*\).*/\1/')
+# 用 process substitution 避免 subshell（計數器才能正確累加）
+while IFS= read -r line; do
+    # 提取 key（檔案路徑）和頁面 ID
+    key=$(echo "$line" | sed -E 's/^[[:space:]]*"([^"]+)".*/\1/')
+    # 跳過以 "_" 開頭的說明欄位
+    if [[ "$key" == _* ]]; then
+        continue
+    fi
+    html_file="$key"
+    page_id=$(echo "$line" | sed -E 's/.*: *([0-9]+).*/\1/')
 
     # 跳過 ID 為 0 的項目（尚未設定）
     if [ "$page_id" = "0" ]; then
@@ -47,14 +57,25 @@ grep -E '"pages/.*":' scripts/page-map.json | while IFS= read -r line; do
 
     # 使用 WP-CLI 更新頁面內容
     CONTENT=$(cat "$html_file")
-    if wp --path="$WP_PATH" post update "$page_id" --post_content="$CONTENT" --quiet 2>/dev/null; then
+    ERR_FILE=$(mktemp)
+    if wp --path="$WP_PATH" post update "$page_id" --post_content="$CONTENT" --quiet 2>"$ERR_FILE"; then
         echo "  ✓ 頁面 ID $page_id：$html_file"
         SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
+        rm -f "$ERR_FILE"
     else
         echo "  ❌ 頁面 ID $page_id 更新失敗：$html_file"
+        if [ -s "$ERR_FILE" ]; then
+            echo "     WP-CLI 錯誤訊息："
+            cat "$ERR_FILE"
+        fi
+        rm -f "$ERR_FILE"
         FAIL_COUNT=$((FAIL_COUNT + 1))
     fi
-done
+done < <(grep -E '"[^"]+": *[0-9]+' scripts/page-map.json)
 
 echo ""
-echo "  頁面匯入完成"
+echo "  共更新 $SUCCESS_COUNT 頁，失敗 $FAIL_COUNT 頁"
+
+if [ "$FAIL_COUNT" -gt 0 ]; then
+    exit 1
+fi
