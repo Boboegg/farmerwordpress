@@ -1,14 +1,14 @@
 {
-  "_說明": "此檔案對應 HTML 檔案路徑 → WordPress 頁面 ID。請填入你網站上的實際頁面 ID。",
+  "_說明": "此檔案對應 HTML 檔案路徑 → WordPress 頁面 ID。ID 為 0 表示尚未設定，部署時會跳過。",
   "_如何找頁面ID": "在 WordPress 後台編輯任一頁面，網址列會顯示 ?post=123，其中 123 就是頁面 ID",
 
-  "pages/home/index.html": 0,
-  "pages/About/關於計畫.html": 0,
-  "pages/occupational-safety/職業安全.html": 0,
-  "pages/healthgood/健康促進.html": 0,
-  "pages/economic-insurance/經濟與保險.html": 0,
-  "pages/farmer-study/農學堂.html": 0,
-  "pages/dignity-farming-initiative/倡議.html": 0,
+  "pages/home/index.html": 1420,
+  "pages/About/關於計畫.html": 1476,
+  "pages/occupational-safety/職業安全.html": 1329,
+  "pages/healthgood/健康促進.html": 1328,
+  "pages/economic-insurance/經濟與保險.html": 1330,
+  "pages/farmer-study/農學堂.html": 1489,
+  "pages/dignity-farming-initiative/倡議.html": 1380,
   "pages/research-result/研究成果.html": 0,
-  "pages/thenews/最新消息.html": 0
+  "pages/thenews/最新消息.html": 1156
 }
