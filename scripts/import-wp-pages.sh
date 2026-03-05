@@ -14,6 +14,7 @@
 
 set -eo pipefail
 
+export PATH="$HOME/bin:$PATH"
 WP_PATH="${WP_PATH:-$HOME/domains/fwdignity.com/public_html}"
 
 echo "→ 開始匯入 HTML 頁面到 WordPress..."
