@@ -123,6 +123,7 @@ if [ -n "$EXISTING_WIDGETS" ]; then
 fi
 
 # 逐一匯入每個模組為獨立的 Custom HTML Widget
+# 注意：CSS 樣式已統一放在 css/global.css，Widget 只匯入 HTML 部分
 WIDGET_COUNT=0
 for module_file in "${SIDEBAR_MODULES[@]}"; do
     if [ ! -f "$module_file" ]; then
@@ -130,18 +131,48 @@ for module_file in "${SIDEBAR_MODULES[@]}"; do
         continue
     fi
 
+    # 剝掉 <style>...</style> 區塊和 HTML 註解，只保留乾淨的 HTML
     TMP_WIDGET=$(mktemp)
-    cat "$module_file" > "$TMP_WIDGET"
-    WIDGET_CONTENT=$(cat "$TMP_WIDGET")
-    rm -f "$TMP_WIDGET"
+    sed '/<style>/,/<\/style>/d; /^<!--/,/-->$/d; /^[[:space:]]*$/d' "$module_file" > "$TMP_WIDGET"
 
+    # 使用 PHP eval 匯入 Widget，避免 shell 特殊字元問題
     module_name=$(basename "$module_file")
-    if wp --path="$WP_PATH" widget add custom_html "$SIDEBAR_ID" --content="$WIDGET_CONTENT" --title="" --quiet 2>/dev/null; then
+    IMPORT_PHP=$(mktemp)
+    cat > "$IMPORT_PHP" <<'PHPEOF'
+<?php
+$sidebar_id = $argv[1];
+$content_file = $argv[2];
+$content = file_get_contents($content_file);
+if (empty($content)) { exit(1); }
+
+// 取得現有的 custom_html widget 資料
+$widgets = get_option('widget_custom_html', array());
+
+// 找到下一個可用的 widget index
+$max_idx = 0;
+foreach ($widgets as $k => $v) {
+    if (is_numeric($k) && $k > $max_idx) $max_idx = $k;
+}
+$new_idx = $max_idx + 1;
+
+// 新增 widget
+$widgets[$new_idx] = array('title' => '', 'content' => $content);
+update_option('widget_custom_html', $widgets);
+
+// 將 widget 加入側邊欄
+$sidebars = get_option('sidebars_widgets', array());
+if (!isset($sidebars[$sidebar_id])) $sidebars[$sidebar_id] = array();
+$sidebars[$sidebar_id][] = 'custom_html-' . $new_idx;
+update_option('sidebars_widgets', $sidebars);
+PHPEOF
+
+    if wp --path="$WP_PATH" eval-file "$IMPORT_PHP" "$SIDEBAR_ID" "$TMP_WIDGET" 2>/dev/null; then
         echo "  ✓ Widget：$module_name"
         WIDGET_COUNT=$((WIDGET_COUNT + 1))
     else
         echo "  ❌ Widget 匯入失敗：$module_name"
     fi
+    rm -f "$TMP_WIDGET" "$IMPORT_PHP"
 done
 
 echo "  共匯入 $WIDGET_COUNT 個側邊欄 Widget"
