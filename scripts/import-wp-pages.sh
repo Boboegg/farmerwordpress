@@ -57,10 +57,11 @@ while IFS= read -r line; do
         continue
     fi
 
-    # 使用 WP-CLI 更新頁面內容
-    CONTENT=$(cat "$html_file")
+    # 使用 WP-CLI 更新頁面內容（透過暫存檔傳遞，避免 shell 處理大型 HTML 出問題）
+    TMP_CONTENT=$(mktemp)
+    cat "$html_file" > "$TMP_CONTENT"
     ERR_FILE=$(mktemp)
-    if wp --path="$WP_PATH" post update "$page_id" --post_content="$CONTENT" --quiet 2>"$ERR_FILE"; then
+    if wp --path="$WP_PATH" post update "$page_id" "$TMP_CONTENT" --quiet 2>"$ERR_FILE"; then
         echo "  ✓ 頁面 ID $page_id：$html_file"
         SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
         rm -f "$ERR_FILE"
@@ -73,6 +74,7 @@ while IFS= read -r line; do
         rm -f "$ERR_FILE"
         FAIL_COUNT=$((FAIL_COUNT + 1))
     fi
+    rm -f "$TMP_CONTENT"
 done < "$TMPMAP"
 rm -f "$TMPMAP"
 
