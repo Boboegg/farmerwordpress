@@ -20,6 +20,8 @@ jobs:
           username: ${{ secrets.HOSTINGER_USER }}
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           port: 65002  # Hostinger 固定使用 65002，非標準的 22
+          timeout: 60s
+          command_timeout: 30m
           script: |
             cd ${{ secrets.REPO_PATH }}
             git fetch origin
