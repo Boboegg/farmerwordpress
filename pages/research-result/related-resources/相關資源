@@ -1,9 +1,11 @@
+<!-- wp:html -->
+
 <!-- =====================================================
      子頁：研究成果 / 相關資源
      URL：/research-result/related-resources/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：res-（與主頁共用）
-     
+
      【維護指南】
      - 資源連結卡：複製 .res-link-card 區塊新增
      - 每個分類區塊可獨立增減
@@ -46,45 +48,60 @@
     <div class="res-sec-body">
       <div class="res-link-grid">
 
-        <!-- ===== 資源連結卡模板（複製此區塊新增）===== -->
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.moa.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon"><i class="fas fa-building-columns"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ 農業部</h4>
-            <p>⚠️ 簡述，例如：農業政策、補助資訊、統計資料等。</p>
+            <h4>農業部</h4>
+            <p>農業政策、農民福利、補助資訊、農業統計資料。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
-        <!-- ===== 模板結束 ===== -->
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.osha.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon"><i class="fas fa-shield-halved"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ 勞動部職業安全衛生署</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>勞動部職業安全衛生署</h4>
+            <p>職業安全法規、職災預防、安全衛生教育訓練資源。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.hpa.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon"><i class="fas fa-hospital"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ 衛生福利部國民健康署</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>衛生福利部國民健康署</h4>
+            <p>健康促進政策、慢性病防治、高溫健康警示等公衛資源。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.bli.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="res-link-body">
+            <h4>勞動部勞工保險局</h4>
+            <p>農民健康保險、農民職業災害保險相關業務與給付查詢。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://agrstat.moa.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon"><i class="fas fa-chart-line"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ 農業統計資料查詢</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>農業統計資料查詢</h4>
+            <p>農業部統計資料庫，含農戶數、耕地面積、產值等數據。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <!-- ⚠️ 繼續複製 .res-link-card 新增 -->
+        <a href="https://www.afa.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon"><i class="fas fa-coins"></i></div>
+          <div class="res-link-body">
+            <h4>農業金融署</h4>
+            <p>農業保險、農業貸款、農業信用保證等金融服務資訊。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
       </div>
     </div>
   </div>
@@ -100,43 +117,42 @@
     <div class="res-sec-body">
       <div class="res-link-grid">
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://ndltd.ncl.edu.tw/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-book-bookmark"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ 臺灣博碩士論文知識加值系統</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>臺灣博碩士論文知識加值系統</h4>
+            <p>國家圖書館管理，收錄全國博碩士學位論文。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.airitilibrary.com/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-database"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ 華藝線上圖書館</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>華藝線上圖書館</h4>
+            <p>收錄台灣與華文地區期刊論文、學位論文等學術資源。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-magnifying-glass"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ PubMed</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>PubMed</h4>
+            <p>美國國家醫學圖書館生物醫學文獻資料庫，含農業職業健康研究。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-microscope"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ Google Scholar</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>Google Scholar</h4>
+            <p>跨領域學術搜尋引擎，搜尋期刊、論文、書籍、摘要等學術文獻。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <!-- ⚠️ 繼續複製 .res-link-card 新增 -->
       </div>
     </div>
   </div>
@@ -152,43 +168,75 @@
     <div class="res-sec-body">
       <div class="res-link-grid">
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.ilo.org/safety-and-health-agriculture" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-globe"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ ILO 國際勞工組織 — 農業安全</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>ILO 國際勞工組織 — 農業安全</h4>
+            <p>農業部門勞動安全衛生公約、指引與技術合作計畫。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.who.int/health-topics/occupational-health" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-stethoscope"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ WHO 世界衛生組織 — 職業健康</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>WHO 世界衛生組織 — 職業健康</h4>
+            <p>職業健康政策指引、全球工作者健康行動計畫。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.fao.org/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-tractor"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ FAO 聯合國糧農組織</h4>
-            <p>⚠️ 簡述。</p>
+            <h4>FAO 聯合國糧農組織</h4>
+            <p>全球農業發展、糧食安全與農村發展政策資源。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <a href="⚠️ 網址" target="_blank" rel="noopener" class="res-link-card">
+        <a href="https://www.cdc.gov/niosh/agriculture/" target="_blank" rel="noopener" class="res-link-card">
           <div class="res-link-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-flask-vial"></i></div>
           <div class="res-link-body">
-            <h4>⚠️ NIOSH — 農業安全與健康</h4>
-            <p>⚠️ 簡述，美國國家職業安全衛生研究所。</p>
+            <h4>NIOSH — 農業安全與健康</h4>
+            <p>美國國家職業安全衛生研究所農業安全與健康中心。</p>
           </div>
           <i class="fas fa-arrow-right res-link-arrow"></i>
         </a>
 
-        <!-- ⚠️ 繼續複製 .res-link-card 新增 -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HISP 相關計畫 ========== -->
+<div class="res-sections">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon" style="background:rgba(92,134,7,.1);color:#5C8607;"><i class="fas fa-seedling"></i></div>
+      <div><h2>HISP 與相關計畫</h2><p>人文創新與社會實踐計畫及國內相關研究團隊。</p></div>
+    </div>
+    <div class="res-sec-body">
+      <div class="res-link-grid">
+
+        <a href="https://www.hisp.ntu.edu.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(92,134,7,.1);color:#5C8607;"><i class="fas fa-university"></i></div>
+          <div class="res-link-body">
+            <h4>HISP 人文創新與社會實踐計畫</h4>
+            <p>科技部（國科會）推動，連結大學與在地社會的人文社會實踐平台。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.hisp.ntu.edu.tw/teams/ccu" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(92,134,7,.1);color:#5C8607;"><i class="fas fa-users"></i></div>
+          <div class="res-link-body">
+            <h4>HISP 新作坊 — 中正大學團隊</h4>
+            <p>本計畫於 HISP 新作坊平台的團隊頁面與研究成果。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
       </div>
     </div>
   </div>
@@ -244,3 +292,5 @@
   .res-link-grid{grid-template-columns:1fr;}
 }
 </style>
+
+<!-- /wp:html -->

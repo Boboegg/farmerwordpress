@@ -1,3 +1,5 @@
+<!-- wp:html -->
+
 <!-- =====================================================
      子頁：研究成果 / 研究出版
      URL：/research-result/research-publication/
@@ -120,6 +122,19 @@
   </div>
 </div>
 
+<!-- 底部交叉連結 -->
+<div class="res-sections">
+  <div class="res-sec-card res-sec-slim">
+    <h3 class="res-cross-title"><i class="fas fa-compass"></i> 更多研究成果</h3>
+    <div class="res-cross-grid">
+      <a href="/research-result/podcast/" class="res-cross-card"><i class="fas fa-podcast"></i><span>影音 Podcast</span></a>
+      <a href="/research-result/infographic/" class="res-cross-card"><i class="fas fa-chart-pie"></i><span>圖文資訊</span></a>
+      <a href="/research-result/download-zone/" class="res-cross-card"><i class="fas fa-download"></i><span>下載專區</span></a>
+      <a href="/research-result/related-resources/" class="res-cross-card"><i class="fas fa-link"></i><span>相關資源</span></a>
+    </div>
+  </div>
+</div>
+
 <!-- ========== CSS ========== -->
 <style>
 .res-hero,.res-sections{
@@ -163,6 +178,14 @@
 .res-ext-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;white-space:nowrap;background:var(--brand-light);color:var(--brand);border:1px solid rgba(92,134,7,.2);transition:all .3s;}
 .res-pub-card:hover .res-ext-btn{background:var(--brand);color:#fff;transform:translateY(-2px);}
 
+/* === 交叉連結 === */
+.res-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.res-cross-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.res-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.res-cross-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.res-cross-card i{font-size:24px;color:var(--brand);}
+.res-cross-card span{font-weight:700;font-size:.95rem;}
+
 @media(max-width:768px){
   .res-hero{flex-direction:column;padding:28px 20px;gap:24px;}
   .res-hero-title{font-size:1.8rem;}
@@ -170,5 +193,8 @@
   .res-sub-nav{gap:6px;}.res-sub-nav-item{padding:6px 14px;font-size:.82rem;}
   .res-pub-card{flex-direction:column;gap:10px;}
   .res-pub-action{align-self:flex-start;}
+  .res-cross-grid{grid-template-columns:1fr 1fr;}
 }
 </style>
+
+<!-- /wp:html -->
