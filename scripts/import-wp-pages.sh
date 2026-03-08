@@ -90,7 +90,7 @@ echo ""
 echo "→ 設定頁面側邊欄佈局..."
 
 # 需要右側邊欄的頁面 ID 列表
-SIDEBAR_PAGES=(1420 1476)  # 首頁、關於我們
+SIDEBAR_PAGES=(1420)  # 首頁
 
 for page_id in "${SIDEBAR_PAGES[@]}"; do
     if wp --path="$WP_PATH" post meta update "$page_id" site-sidebar-layout right-sidebar --quiet 2>/dev/null; then
@@ -134,7 +134,6 @@ echo "  使用側邊欄 ID：$SIDEBAR_ID"
 SIDEBAR_MODULES=(
     "pages/home/分眾入口"
     "pages/home/快速連結"
-    "pages/home/社群媒體"
     "pages/home/側邊欄工具箱"
     "pages/home/熱門關鍵字"
     "pages/home/友善連結"

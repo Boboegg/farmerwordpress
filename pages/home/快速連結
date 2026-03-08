@@ -4,8 +4,7 @@
     </div>
     <ul class="tool-list">
         <li><a href="/" class="tool-link"><div class="tool-icon"><i class="fas fa-home"></i></div><span>回到首頁</span><i class="fas fa-arrow-right download-icon"></i></a></li>
-        <li><a href="/news/" class="tool-link"><div class="tool-icon"><i class="fas fa-calendar-alt"></i></div><span>掌握最新動態</span><i class="fas fa-arrow-right download-icon"></i></a></li>
-        <li><a href="/team/" class="tool-link"><div class="tool-icon"><i class="fas fa-users"></i></div><span>認識研究團隊</span><i class="fas fa-arrow-right download-icon"></i></a></li>
-        <li><a href="/contact/" class="tool-link"><div class="tool-icon"><i class="fas fa-envelope"></i></div><span>與我們聯繫</span><i class="fas fa-arrow-right download-icon"></i></a></li>
+        <li><a href="/thenews/" class="tool-link"><div class="tool-icon"><i class="fas fa-calendar-alt"></i></div><span>掌握最新動態</span><i class="fas fa-arrow-right download-icon"></i></a></li>
+        <li><a href="/about/" class="tool-link"><div class="tool-icon"><i class="fas fa-users"></i></div><span>關於我們</span><i class="fas fa-arrow-right download-icon"></i></a></li>
     </ul>
 </div>
