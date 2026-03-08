@@ -139,9 +139,9 @@ for module_file in "${SIDEBAR_MODULES[@]}"; do
         continue
     fi
 
-    # 剝掉 <style>...</style> 區塊和 HTML 註解，只保留乾淨的 HTML
+    # 剝掉 <style>...</style> 區塊（CSS 已統一放在 css/global.css），保留 HTML 註解
     TMP_WIDGET=$(mktemp)
-    sed '/<style>/,/<\/style>/d; /^<!--/,/-->$/d; /^[[:space:]]*$/d' "$module_file" > "$TMP_WIDGET"
+    sed '/<style>/,/<\/style>/d' "$module_file" > "$TMP_WIDGET"
 
     # 使用 PHP eval 匯入 Widget，避免 shell 特殊字元問題
     module_name=$(basename "$module_file")
@@ -174,13 +174,18 @@ $sidebars[$sidebar_id][] = 'custom_html-' . $new_idx;
 update_option('sidebars_widgets', $sidebars);
 PHPEOF
 
-    if wp --path="$WP_PATH" eval-file "$IMPORT_PHP" "$SIDEBAR_ID" "$TMP_WIDGET" 2>/dev/null; then
+    ERR_LOG=$(mktemp)
+    if wp --path="$WP_PATH" eval-file "$IMPORT_PHP" "$SIDEBAR_ID" "$TMP_WIDGET" 2>"$ERR_LOG"; then
         echo "  ✓ Widget：$module_name"
         WIDGET_COUNT=$((WIDGET_COUNT + 1))
     else
         echo "  ❌ Widget 匯入失敗：$module_name"
+        if [ -s "$ERR_LOG" ]; then
+            echo "     錯誤訊息："
+            cat "$ERR_LOG"
+        fi
     fi
-    rm -f "$TMP_WIDGET" "$IMPORT_PHP"
+    rm -f "$TMP_WIDGET" "$IMPORT_PHP" "$ERR_LOG"
 done
 
 echo "  共匯入 $WIDGET_COUNT 個側邊欄 Widget"
