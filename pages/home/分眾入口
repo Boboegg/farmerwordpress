@@ -50,10 +50,8 @@
         <!-- 4. 底部下載按鈕 (請在 href 填入 PDF 檔案連結) -->
         <div class="portal-footer">
             
-            <!-- [修改指引] 請將 href="#" 換成您上傳後的 PDF 檔案網址 -->
-            <a href="#" class="report-btn">
-                <i class="fas fa-file-pdf"></i> 研究成果分享
-            </a>
+            <!-- 導向尊嚴農業倡議頁面 -->
+            <a href="/dignity-farming-initiative/" class="report-btn"><i class="fas fa-bullhorn"></i> 尊嚴農業倡議</a>
             
         </div>
     </div>
