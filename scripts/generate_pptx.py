@@ -650,14 +650,14 @@ def build_presentation():
             "",
             "06 尊嚴農業倡議：",
             (1, "垂直時間軸（Vertical Timeline）— 串接倡議行動歷程"),
-            (1, "焦點團體會議紀錄"),
-            (1, "頁面底部：政策連署 + 社群分享按鈕"),
+            (1, "焦點團體會議紀錄 + 核心倡議主張"),
+            (1, "四大結構性問題卡片：職災隱形化、高齡化、安全網不足、健康識能落差"),
             "",
-            "07 研究成果：",
-            (1, "嚴格 APA 第 7 版格式排版"),
-            (1, "每筆文獻附 [PDF 下載, X.X MB] 按鈕"),
-            (1, "整合 Spotify / Apple Podcast 嵌入代碼"),
-            (1, "子頁面：下載專區｜圖文資訊｜Podcast｜相關資源｜研究出版"),
+            "07 研究成果（已重新設計）：",
+            (1, "Hero 含介紹文字、3 組統計、行動按鈕"),
+            (1, "成果分類五宮格 + HISP 季會發表精選"),
+            (1, "研究取徑四宮格：田野調查 / 量化分析 / 醫學專業 / 社會倡議"),
+            (1, "子頁面：研究出版｜影音 Podcast｜圖文資訊｜下載專區｜相關資源"),
         ]
     )
 
@@ -786,12 +786,12 @@ def build_presentation():
         [
             "平台基礎：",
             (1, "WordPress CMS + Astra 主題"),
-            (1, "HTML 區塊直貼 WordPress 程式碼編輯器（無需額外部署）"),
+            (1, "所有 HTML 必須用 <!-- wp:html --> 包裹（關鍵！否則 CSS 會失效）"),
             "",
             "前端技術：",
             (1, "純 HTML/CSS — 無需 build 工具"),
             (1, "CSS Custom Properties（設計 Token）統一管理全站樣式"),
-            (1, "CSS 前綴隔離策略（如 gh- / mach- / ppe-）防止跨頁衝突"),
+            (1, "CSS 前綴隔離策略（13 組前綴）防止跨頁衝突"),
             (1, "Google Fonts CDN + Font Awesome 6.4.x CDN"),
             "",
             "後端功能：",
@@ -799,7 +799,10 @@ def build_presentation():
             (1, "WordPress 文章分類系統（階層式 slug）"),
             (1, "WP_Query 依分類動態撈取內容"),
             "",
-            "WordPress 嵌入規範：禁止 body/html/全域重置等覆蓋主題樣式的寫法",
+            "部署流程：",
+            (1, "scripts/deploy.sh 三階段自動部署（CSS → Shortcodes → HTML）"),
+            (1, "scripts/page-map.json 對應 HTML 檔案 → WordPress 頁面 ID"),
+            (1, "禁止 body{} / html{} / *{} 等全域選擇器覆蓋主題樣式"),
         ]
     )
 
@@ -811,23 +814,20 @@ def build_presentation():
         "程式碼倉庫結構",
         [
             "farmerwordpress/",
-            (1, "docs/          — 架構藍圖、設計規格文件"),
-            (1, "css/           — global.css 全站設計 Token"),
-            (1, "pages/         — 各頁面 HTML 區塊"),
-            (1, "  ├── About/            — 01 關於計畫"),
-            (1, "  ├── occupational-safety/ — 02 職業安全（含子頁）"),
-            (1, "  ├── beginner-farmers/  — 新手務農"),
-            (1, "  ├── young-farmers/     — 青農"),
-            (1, "  ├── Public/            — 一般民眾"),
-            (1, "  └── shared/            — 共用元件（sidebar）"),
-            (1, "shortcodes/    — WordPress PHP 短代碼"),
-            (1, "scripts/       — 部署與匯入腳本"),
-            (1, "imports/       — 批次匯入 HTML 暫存區"),
+            (1, "docs/           — 架構藍圖、設計規格（architecture.md 必讀）"),
+            (1, "css/            — global.css 全站設計 Token"),
+            (1, "pages/          — 各頁面 HTML 區塊"),
+            (1, "  home/ About/ occupational-safety/ healthgood/"),
+            (1, "  economic-insurance/ farmer-study/ dignity-farming-initiative/"),
+            (1, "  research-result/（含 5 子頁）thenews/"),
+            (1, "  beginner-farmers/ young-farmers/ experienced-farmers/ Public/"),
+            (1, "shortcodes/     — WordPress PHP 短代碼（由 Code Snippets 插件管理）"),
+            (1, "scripts/        — deploy.sh、page-map.json、generate_pptx.py"),
             "",
-            "PHP Shortcodes：",
-            (1, "新聞迴圈（my_news_loop）｜Podcast 網格（knowledge_podcast_grid）"),
-            (1, "天氣小工具（weather_widget）｜FB 動態牆（fb_feed_widget）"),
-            (1, "首頁亮點輪播（home_highlight_slider）｜雜誌式新聞版面（news_magazine_layout）"),
+            "CSS 前綴隔離（13 組）：",
+            (1, "prev- 職安 ｜ hp- 健康 ｜ money- 經濟 ｜ adv- 倡議 ｜ res- 研究"),
+            (1, "gh- 溫室 ｜ mach- 農機 ｜ ppe- 防護 ｜ pod- Podcast"),
+            (1, "start- 新手 ｜ young- 青農 ｜ senior- 資深 ｜ public- 公眾"),
         ]
     )
 
@@ -878,10 +878,10 @@ def build_presentation():
 
     # Phase 色塊
     phases = [
-        ("Phase 1", "已完成", "首頁：身分導航 + 三大核心主題", RGBColor(0x10, 0xB9, 0x81), "DONE"),
-        ("Phase 2", "進行中", "職業安全頁面重建\n（主頁 + 溫室 + 省工農機 + PPE）", RGBColor(0x3B, 0x82, 0xF6), "WIP"),
-        ("Phase 3", "待啟動", "健康促進\n（人體圖 + 職醫地圖）\n經濟試算器", RGBColor(0xF5, 0x9E, 0x0B), "NEXT"),
-        ("Phase 4", "規劃中", "分眾入口頁面\n農學堂 LMS\n研究成果資料庫", RGBColor(0x6B, 0x72, 0x80), "PLAN"),
+        ("Phase 1-2", "✅ 已完成", "首頁 + 側邊欄\n職業安全主頁\n+ 3 子頁 + 國際數據", RGBColor(0x10, 0xB9, 0x81), "DONE"),
+        ("Phase 3-4", "✅ 已完成", "健康促進 + 4 子頁\n經濟與保險 + 5 子頁\n含互動試算器", RGBColor(0x10, 0xB9, 0x81), "DONE"),
+        ("Phase 5-7", "✅ 已完成", "尊嚴農業倡議\n研究成果 + 5 子頁\n四大分眾入口", RGBColor(0x10, 0xB9, 0x81), "DONE"),
+        ("Phase 8", "🔄 進行中", "農學堂 LMS\n部署自動化\n持續優化", RGBColor(0x3B, 0x82, 0xF6), "WIP"),
     ]
 
     for i, (phase, status, desc, color, badge) in enumerate(phases):
