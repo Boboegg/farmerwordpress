@@ -51,14 +51,24 @@ if [ -f "$THEME_PATH/functions.php" ]; then
 fi
 
 # 2. PHP Shortcodes
-# 注意：shortcodes 目前由 WordPress「Code Snippets」外掛管理，
-# 不需要複製到 mu-plugins（否則會造成函數重複宣告，導致 500 錯誤）。
-# 如果日後要改用 mu-plugins 部署，請先停用 Code Snippets 中對應的程式碼片段。
+# 大部分 shortcodes 由 WordPress「Code Snippets」外掛管理，不需複製到 mu-plugins。
+# 但以下自動抓取 shortcodes 透過 mu-plugins 部署（不在 Code Snippets 中，不會衝突）。
 echo "→ [2/3] PHP shortcodes..."
-echo "   ⏭️  跳過（由 Code Snippets 外掛管理，避免重複載入）"
-# 清理先前誤部署到 mu-plugins 的 shortcode 檔案
+
+# 需要部署到 mu-plugins 的 shortcode 清單（RSS 自動抓取類）
+MU_SHORTCODES="farmer_courses.php farmer_videos.php"
+for sc in $MU_SHORTCODES; do
+    if [ -f "shortcodes/$sc" ]; then
+        cp "shortcodes/$sc" "$MU_PLUGINS/$sc"
+        echo "   ✓ 部署 $sc → mu-plugins"
+    fi
+done
+
+# 清理先前誤部署到 mu-plugins 的舊 shortcode 檔案（Code Snippets 管理的那些）
 for f in shortcodes/*.php; do
     base="$(basename "$f")"
+    # 跳過本次需要部署的檔案
+    case " $MU_SHORTCODES " in *" $base "*) continue ;; esac
     if [ -f "$f" ] && [ -f "$MU_PLUGINS/$base" ]; then
         rm -f -- "$MU_PLUGINS/$base"
         echo "   🗑️  已移除 $MU_PLUGINS/$base"
