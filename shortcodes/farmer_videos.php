@@ -11,10 +11,11 @@
  * 【範例】
  *   [farmer_videos]
  *   [farmer_videos count="4"]
- *   [farmer_videos channels="UCRgk3ryTcY8Wcvvv_ulZgmA,UC_OTHER_ID" count="8"]
+ *   [farmer_videos channels="UCeKTvLl4kG6lw1jfbBZZRLA" count="8"]
  *
  * 【預設頻道】
- *   - UCRgk3ryTcY8Wcvvv_ulZgmA : NIOSH U.S. Agricultural Safety and Health Centers
+ *   - UCeKTvLl4kG6lw1jfbBZZRLA : 農業部影音頻道（@moataiwan）
+ *   - UCaereJVO0kr0nJv1HiR11Iw : 農業部虛擬博物館（@moa.videos）
  *
  * 【資料來源】
  *   YouTube RSS：https://www.youtube.com/feeds/videos.xml?channel_id=XXX
@@ -23,7 +24,7 @@
 add_shortcode('farmer_videos', function ($atts) {
 
     $atts = shortcode_atts([
-        'channels' => 'UCRgk3ryTcY8Wcvvv_ulZgmA',
+        'channels' => 'UCeKTvLl4kG6lw1jfbBZZRLA,UCaereJVO0kr0nJv1HiR11Iw',
         'count'    => 6,
         'cache_hr' => 12,
     ], $atts);
@@ -130,11 +131,11 @@ CARD;
 </script>
 JS;
 
-    // NIOSH 頻道提示
+    // 頻道提示
     $html .= '<div class="edu-video-more">';
     $html .= '<i class="fas fa-circle-info"></i>';
-    $html .= '<span>以上影片自動抓取自 NIOSH 美國農業安全中心 YouTube 頻道，涵蓋農藥、感染、農機、穀倉、心理健康等主題。</span>';
-    $html .= '<a href="https://www.youtube.com/@USagCenters" target="_blank" rel="noopener">前往頻道 <i class="fas fa-arrow-right"></i></a>';
+    $html .= '<span>以上影片自動抓取自農業部官方 YouTube 頻道，涵蓋農業技術、食農教育、綠色照顧等主題，每 12 小時更新。</span>';
+    $html .= '<a href="https://www.youtube.com/@moataiwan" target="_blank" rel="noopener">前往頻道 <i class="fas fa-arrow-right"></i></a>';
     $html .= '</div>';
 
     // ── 存入快取 ──
