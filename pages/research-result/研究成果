@@ -1,3 +1,5 @@
+<!-- wp:html -->
+
 <!-- =====================================================
      頁面：研究成果（主頁）
      URL：/research-result/
@@ -22,19 +24,61 @@
     <div class="res-hero-badge"><i class="fas fa-flask"></i> Research</div>
     <h1 class="res-hero-title">研究成果</h1>
     <p class="res-hero-subtitle">以台灣本土實證數據為基石，系統性建構雲嘉農業工作者職業健康與社會安全網知識體系。</p>
-    <div class="res-hero-note">
-      <i class="fas fa-bookmark"></i>
-      <span>本計畫研究成果持續更新中，內容涵蓋 HISP 季會發表、學術研討及政策倡議等多元產出。</span>
+
+    <div class="res-hero-intro">
+      <p>
+        本計畫立基於國立中正大學與臺大醫院雲林分院的跨領域合作，透過人文創新與社會實踐（HISP）計畫的支持，以嘉義縣民雄鄉為核心場域，深入探究農業工作者的職業健康困境。
+      </p>
+      <p>
+        研究成果涵蓋：
+      </p>
+      <ul class="res-hero-list">
+        <li><i class="fas fa-check-circle"></i> <strong>HISP 季會發表</strong>——計畫階段性研究成果與學術發表</li>
+        <li><i class="fas fa-check-circle"></i> <strong>影音 Podcast</strong>——以聲音記錄農業職業健康的真實故事</li>
+        <li><i class="fas fa-check-circle"></i> <strong>圖文資訊</strong>——將複雜數據轉化為易懂的視覺化資訊</li>
+        <li><i class="fas fa-check-circle"></i> <strong>相關資源</strong>——國內外政府、學術、國際組織資源彙整</li>
+      </ul>
+    </div>
+
+    <div class="res-hero-actions">
+      <a href="#res-featured" class="res-btn-primary">
+        <i class="fas fa-star"></i> 最新成果
+      </a>
+      <a href="#res-categories" class="res-btn-secondary">
+        <i class="fas fa-folder-tree"></i> 成果分類
+      </a>
     </div>
   </div>
-  <div class="res-hero-deco">
-    <div class="res-hero-stat">
-      <span class="res-hero-stat-num">3</span>
-      <span class="res-hero-stat-label">篇研究發表</span>
-    </div>
-    <div class="res-hero-stat">
-      <span class="res-hero-stat-num">3</span>
-      <span class="res-hero-stat-label">場 HISP 季會</span>
+
+  <div class="res-hero-visual">
+    <div class="res-hero-stats">
+      <div class="res-stat-item">
+        <div class="res-stat-icon" style="background:rgba(13,148,136,.1);color:#0d9488;">
+          <i class="fas fa-person-chalkboard"></i>
+        </div>
+        <div class="res-stat-text">
+          <span class="res-stat-number">3</span>
+          <span class="res-stat-label">篇 HISP 季會研究發表</span>
+        </div>
+      </div>
+      <div class="res-stat-item">
+        <div class="res-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+          <i class="fas fa-university"></i>
+        </div>
+        <div class="res-stat-text">
+          <span class="res-stat-number">2</span>
+          <span class="res-stat-label">跨領域合作單位</span>
+        </div>
+      </div>
+      <div class="res-stat-item">
+        <div class="res-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+          <i class="fas fa-calendar-check"></i>
+        </div>
+        <div class="res-stat-text">
+          <span class="res-stat-number">2025–</span>
+          <span class="res-stat-label">持續研究中</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -60,7 +104,7 @@
           <div class="res-cat-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-podcast"></i></div>
           <h3>影音 Podcast</h3>
           <p>訪談錄音、知識轉譯影片</p>
-          <span class="res-cat-count">即將推出</span>
+          <span class="res-cat-count">持續更新</span>
         </a>
 
         <a href="/research-result/infographic/" class="res-cat-card">
@@ -81,7 +125,7 @@
           <div class="res-cat-icon" style="background:rgba(124,58,237,.1);color:#7c3aed;"><i class="fas fa-link"></i></div>
           <h3>相關資源</h3>
           <p>政府資料庫、相關計畫</p>
-          <span class="res-cat-count">即將推出</span>
+          <span class="res-cat-count">12+ 筆</span>
         </a>
 
       </div>
@@ -155,7 +199,62 @@
   </div>
 </div>
 
-<!-- ========== 區塊 4：交叉連結 ========== -->
+<!-- ========== 區塊 4：研究方法與合作 ========== -->
+<div class="res-sections" id="res-approach">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon"><i class="fas fa-microscope"></i></div>
+      <div><h2>研究取徑</h2><p>跨領域合作，從田間到政策的知識建構路徑。</p></div>
+    </div>
+    <div class="res-sec-body">
+      <div class="res-approach-grid">
+
+        <div class="res-approach-card">
+          <div class="res-approach-icon" style="background:rgba(92,134,7,.1);color:#5C8607;"><i class="fas fa-users-rectangle"></i></div>
+          <h3>田野調查與質性研究</h3>
+          <p>深入雲嘉地區農村社區，透過參與觀察、深度訪談與焦點團體，理解農業工作者的日常勞動經驗與健康困境。</p>
+        </div>
+
+        <div class="res-approach-card">
+          <div class="res-approach-icon" style="background:rgba(21,101,192,.1);color:#1565c0;"><i class="fas fa-chart-column"></i></div>
+          <h3>量化數據與實證分析</h3>
+          <p>結合農保資料、職災統計與健康調查數據，進行系統性的量化分析，為政策建議提供實證基礎。</p>
+        </div>
+
+        <div class="res-approach-card">
+          <div class="res-approach-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-stethoscope"></i></div>
+          <h3>醫學專業與職業健康</h3>
+          <p>聯合臺大醫院雲林分院職業醫學科，針對農業勞動的特殊職業暴露與健康風險進行專業評估。</p>
+        </div>
+
+        <div class="res-approach-card">
+          <div class="res-approach-icon" style="background:rgba(124,58,237,.1);color:#7c3aed;"><i class="fas fa-bullhorn"></i></div>
+          <h3>社會倡議與政策轉譯</h3>
+          <p>將學術研究成果轉化為可操作的政策建議與社會倡議行動，推動農業工作者職業健康制度的改善。</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 5：合作夥伴 ========== -->
+<div class="res-sections">
+  <div class="res-sec-card res-sec-slim">
+    <div class="res-partner-row">
+      <span class="res-partner-label"><i class="fas fa-handshake"></i> 合作單位</span>
+      <div class="res-partner-list">
+        <span class="res-partner-item">國立中正大學</span>
+        <span class="res-partner-divider"></span>
+        <span class="res-partner-item">臺大醫院雲林分院</span>
+        <span class="res-partner-divider"></span>
+        <span class="res-partner-item">HISP 人文創新與社會實踐計畫</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 6：交叉連結 ========== -->
 <div class="res-sections">
   <div class="res-sec-card res-sec-slim">
     <h3 class="res-cross-title"><i class="fas fa-compass"></i> 延伸探索</h3>
@@ -180,17 +279,34 @@
 .res-hero *,.res-sections *{box-sizing:border-box;}
 
 /* === Hero === */
-.res-hero{display:flex;gap:40px;align-items:flex-start;padding:48px 40px;background:linear-gradient(135deg,var(--brand-light) 0%,#fff 60%,#f0f4e8 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(92,134,7,.12);}
-.res-hero-inner{flex:1.3;}
+.res-hero{display:flex;gap:40px;align-items:flex-start;padding:40px;background:linear-gradient(135deg,var(--brand-light) 0%,#fff 60%,#f0f4e8 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(92,134,7,.12);}
+.res-hero-inner{flex:1.2;}
 .res-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;letter-spacing:.5px;}
 .res-hero-title{font-size:2.4rem;font-weight:900;color:var(--brand-dark);margin:0 0 10px;line-height:1.2;}
 .res-hero-subtitle{font-size:1.05rem;color:var(--text-secondary);font-weight:500;margin:0 0 20px;line-height:1.7;}
-.res-hero-note{display:flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.7);border-radius:12px;padding:16px 20px;border:1px solid rgba(92,134,7,.1);font-size:.9rem;line-height:1.6;color:var(--text-secondary);}
-.res-hero-note i{color:var(--brand);margin-top:3px;flex-shrink:0;}
-.res-hero-deco{flex:.7;display:flex;flex-direction:column;gap:14px;position:sticky;top:20px;}
-.res-hero-stat{background:#fff;padding:18px 24px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:baseline;gap:12px;}
-.res-hero-stat-num{font-size:1.6rem;font-weight:900;color:var(--brand);font-family:"Lato",sans-serif;}
-.res-hero-stat-label{font-size:.9rem;color:var(--text-secondary);}
+
+/* Hero intro */
+.res-hero-intro{margin-bottom:24px;}
+.res-hero-intro p{font-size:.95rem;color:var(--text-secondary);line-height:1.7;margin:0 0 12px;}
+.res-hero-list{list-style:none;padding:0;margin:0 0 12px;}
+.res-hero-list li{display:flex;align-items:flex-start;gap:8px;font-size:.92rem;color:var(--text-secondary);line-height:1.6;margin-bottom:8px;}
+.res-hero-list li i{color:var(--brand);margin-top:4px;flex-shrink:0;font-size:.82rem;}
+
+/* Hero buttons */
+.res-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.res-btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;background:var(--brand);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s;box-shadow:0 4px 14px rgba(92,134,7,.25);}
+.res-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(92,134,7,.35);color:#fff;}
+.res-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;background:#fff;color:var(--brand);font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid var(--brand);transition:all .3s;}
+.res-btn-secondary:hover{background:var(--brand-light);transform:translateY(-2px);color:var(--brand);}
+
+/* Hero visual / stats */
+.res-hero-visual{flex:.8;position:sticky;top:20px;}
+.res-hero-stats{display:flex;flex-direction:column;gap:14px;}
+.res-stat-item{background:#fff;padding:18px 22px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:14px;border:1px solid rgba(0,0,0,.04);}
+.res-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.res-stat-text{display:flex;flex-direction:column;}
+.res-stat-number{font-size:1.5rem;font-weight:900;color:var(--brand);font-family:"Lato",sans-serif;line-height:1.2;}
+.res-stat-label{font-size:.85rem;color:var(--text-secondary);line-height:1.4;}
 
 /* === 通用區塊 === */
 .res-sections{margin-top:24px;}
@@ -229,6 +345,22 @@
 .res-ext-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;white-space:nowrap;background:var(--brand-light);color:var(--brand);border:1px solid rgba(92,134,7,.2);transition:all .3s;}
 .res-feat-link:hover .res-ext-btn{background:var(--brand);color:#fff;transform:translateY(-2px);}
 
+/* === 研究取徑 === */
+.res-approach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.res-approach-card{padding:28px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;}
+.res-approach-card:hover{border-color:var(--brand);background:var(--brand-light);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.06);}
+.res-approach-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;}
+.res-approach-card h3{font-size:1.05rem;font-weight:800;color:var(--brand-dark);margin:0 0 8px;}
+.res-approach-card p{font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin:0;}
+
+/* === 合作夥伴 === */
+.res-partner-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.res-partner-label{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--brand-dark);font-size:.95rem;white-space:nowrap;}
+.res-partner-label i{color:var(--brand);font-size:18px;}
+.res-partner-list{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.res-partner-item{font-size:.9rem;color:var(--text-secondary);font-weight:600;padding:6px 16px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;}
+.res-partner-divider{width:4px;height:4px;border-radius:50%;background:#d1d5db;}
+
 /* === 交叉連結 === */
 .res-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .res-cross-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
@@ -240,12 +372,20 @@
 /* === RWD === */
 @media(max-width:768px){
   .res-hero{flex-direction:column;padding:28px 20px;gap:24px;}
-  .res-hero-title{font-size:1.8rem;}.res-hero-deco{flex-direction:row;flex-wrap:wrap;gap:10px;position:static;}
-  .res-hero-stat{flex:1;min-width:130px;padding:14px 16px;}
+  .res-hero-title{font-size:1.8rem;}
+  .res-hero-visual{position:static;}
+  .res-hero-stats{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .res-stat-item{flex:1;min-width:140px;padding:14px 16px;}
+  .res-hero-actions{flex-direction:column;gap:10px;}
+  .res-btn-primary,.res-btn-secondary{justify-content:center;}
   .res-sec-card{padding:20px;}.res-sec-header{flex-direction:column;gap:10px;}
   .res-cat-grid{grid-template-columns:repeat(2,1fr);}
   .res-feat-card{flex-direction:column;}.res-feat-type{writing-mode:horizontal-tb;text-orientation:initial;}
   .res-feat-actions{align-self:flex-start;flex-direction:row;}
+  .res-approach-grid{grid-template-columns:1fr;}
   .res-cross-grid{grid-template-columns:1fr 1fr;}
+  .res-partner-row{flex-direction:column;align-items:flex-start;gap:12px;}
 }
 </style>
+
+<!-- /wp:html -->
