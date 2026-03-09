@@ -1,6 +1,8 @@
 # 尊嚴農業網站：系統與介面建置藍圖
 
 > **計畫全名**：農業尊嚴：共建雲嘉農業工作者職業健康社會安全網
+> **執行團隊**：國立中正大學 × 臺大醫院雲林分院
+> **實踐場域**：嘉義縣民雄鄉
 > **本文件用途**：作為所有前端開發與介面設計的唯一參考依據，AI 協作工具（如 Claude）應在開始任何頁面建置前先閱讀本文件。
 
 ---
@@ -15,22 +17,7 @@
 
 ---
 
-## 品牌設計規格
-
-| 項目 | 數值 |
-|------|------|
-| 品牌主色 | `#5C8607` |
-| 網站背景色 | `#E3E9D8` |
-| 字型（中文） | Noto Sans TC |
-| 字型（英數） | Lato |
-| 字型（內文） | Lora（部分頁面） |
-| 圖示庫 | Font Awesome 6.4.x |
-| 視覺風格 | 功能性柔和色系（Functional Pastels） |
-| APA 規範 | 第 7 版，禁止引用中國大陸來源 |
-
----
-
-## 整體架構：矩陣式 (橫軸 × 縱軸)
+## 一、整體架構：矩陣式 (橫軸 × 縱軸)
 
 ```
                     ┌──────────────────────────────────────────────┐
@@ -47,333 +34,421 @@
 
 ---
 
-## 一、首頁：分流大廳（The Lobby）
+## 二、首頁：分流大廳（The Lobby）
 
 首頁設計原則：訪客不會看到傳統「最新消息」文字牆或無意義輪播圖，而是直接面對**四大分眾入口卡片**，第一時間降低認知負荷。
 
 - **頂部**：全域導覽列（Global Navigation，含七大資料庫選單）
 - **中央**：四個帶有專屬功能性柔和色系的大型點擊區塊
+- **動態內容**：透過 Shortcode 呈現亮點輪播、雜誌式新聞版面、Podcast 網格
 
 ---
 
-### 橫軸 1：新手務農（Start）— 防禦包
+## 三、橫軸：四大分眾入口
 
-| 規格 | 說明 |
-|------|------|
-| 主色調 | 鼠尾草綠（Sage Green） |
-| 介面模式 | 檢核清單（Checklist）+ 進度條 |
-| 版型 | 左側固定導覽步驟，右側動態表單 |
+| 分眾 | 定位 | 主色調 | 介面模式 | 核心功能 |
+|------|------|--------|----------|----------|
+| **新手務農** | 防禦包 | 鼠尾草綠 `#87AE73` | 檢核清單 + 進度條 | 務農風險快篩表 → PPE 型錄 |
+| **青農創業** | 升級包 | 板岩藍 `#5B7FA6` | 儀表板 + 比較圖表 | 投資報酬率 + 退休金試算 |
+| **資深農友** | 樂活包 | 陶土橘 `#C17F5E` | Mobile-First + App | 找醫師・算津貼・看影片 |
+| **一般公眾** | 認同包 | 麥穗黃 `#D4A017` | 敘事性滾動 | 攝影紀實 + Podcast + 倡議 |
 
-**功能亮點**：首屏強制顯示「務農風險快篩表」。使用者勾選預計種植的作物與操作機具後，畫面下方即時吐出對應的農藥防護標準與基礎防護具（PPE）網格型錄。
+### 共用六段結構
 
----
+所有 4 頁共享以下骨架，但每段的內容、數據、語氣完全依受眾客製：
 
-### 橫軸 2：青農創業（Pro）— 升級包
+| # | 區段 | 功能 |
+|---|------|------|
+| ① | Hero | 情境開場白 + 計畫簡介 |
+| ② | 數據震撼區 | 3 張統計卡（含來源標註） |
+| ③ | 場景導航 | 4 張情境卡 + 行動連結 |
+| ④ | 計畫簡介 | 4 行動支柱（基礎調查 / 制度研究 / 健康教育 / 社會倡議） |
+| ⑤ | 快速行動 | 2 顆 CTA 按鈕 |
+| ⑥ | 緊急 + 探索 | 119 / 1925 / 113 + 底部固定導覽 |
 
-| 規格 | 說明 |
-|------|------|
-| 主色調 | 板岩藍（Slate Blue） |
-| 介面模式 | 儀表板（Dashboard）+ 比較圖表 |
-| 版型 | 左側省工農機投資報酬率圖表，右側保險試算器 |
-
-**功能亮點**：左側展示「省工農機」投資報酬率與降低勞動損耗的量化圖表；右側直接內嵌「農民退休儲金 vs. 勞保」高階比較試算器。訴求財務與產能的精準計算。
-
----
-
-### 橫軸 3：資深農友（Senior）— 樂活包
-
-| 規格 | 說明 |
-|------|------|
-| 主色調 | 陶土橘（Terracotta） |
-| 介面模式 | Mobile-First + App-like Interface |
-| 最小字體 | 18px 以上 |
-| 最小按鈕高度 | 48px 觸控熱區 |
-
-**功能亮點**：網頁兩側留白（模擬手機螢幕寬度）。螢幕最下方鎖定固定式導航列（Bottom Navigation），三個核心大圖示：
-- 找醫師（地圖）
-- 算津貼（計算機）
-- 看影片（微學習）
+> 詳細的四頁差異化設計（開場語、數據、CTA）請見 `/docs/audience-landing-pages.md`。
 
 ---
 
-### 橫軸 4：一般公眾（Public）— 認同包
-
-| 規格 | 說明 |
-|------|------|
-| 主色調 | 麥穗黃（Harvest Gold） |
-| 介面模式 | 敘事性滾動（Scrollytelling） |
-| 視覺素材 | 滿版高畫質雲嘉農鄉紀實攝影 |
-
-**功能亮點**：隨滑鼠向下滾動，浮現雲嘉農業職災熱力圖、高齡化數據資訊圖表（Infographics），並交錯嵌入 Podcast 播放器，直接播放農民訪談錄音，建立公眾倡議共感。
-
----
-
-## 二、七大主選單：核心資料庫（縱軸）
-
-學術研究者、政策制定者可不透過分流入口，直接從頂部導覽列進入七大結構化資料庫。
-
----
+## 四、縱軸：七大主選單核心資料庫
 
 ### 01 關於計畫（About）
 
 - **介面類型**：靜態資訊頁面 + 多媒體展示
-- **CSS 樣式**：使用全站 `.my-team-card` 展示中正大學跨域研究團隊（透明懸浮卡片）
-- **地圖模組**：嵌入互動式地圖，標示民雄等重點實踐場域之農業人口數據
+- **CSS 樣式**：使用全站 `.my-team-card` 展示中正大學跨域研究團隊
+- **子頁面**：研究團隊 / 聯絡我們
+- **檔案**：`pages/About/關於我們.html`
 
----
+### 02 職業安全（Occupational Safety）
 
-### 02 職業安全（Occupational Safety）— `/prevention`
+- **介面類型**：網格卡片數位型錄 + 互動式工具
+- **CSS 前綴**：`prev-`
+- **頁面結構**：Hero → Tabs 切換（省工農機 / PPE）→ Grid Cards → 風險評估工具 → 危害辨識輪盤 → 全球與台灣概況
+- **子頁面**：溫室專區（`gh-`）/ 省工農機具（`mach-`）/ 個人防護具（`ppe-`）
+- **檔案**：`pages/occupational-safety/職業安全.html`
 
-- **介面類型**：網格卡片（Grid Cards）數位型錄 + 互動式工具
-
-**頁面結構（建置優先順序）**：
-
-```
-1. Hero 區塊（頁面標題 + 一句話說明）
-2. Tabs 切換：
-   ├── [主動降載・省工農機]
-   └── [被動防禦・個人防護具 PPE]
-3. Grid Cards 型錄（每卡含 PDF 一頁圖卡下載）
-4. 風險評估工具區：
-   ├── 紅綠燈快篩系統（Web Form）
-   ├── 安全控制層級動態圖（Hierarchy of Controls，NIOSH 5 層）
-   └── 四大危害深度檢核（生物・物理・化學・人因）
-```
-
-> **注意**：型錄 Grid Cards 為頁面主體，風險評估工具為頁面下半部的延伸學習區，不可反客為主。
-
----
-
-### 03 健康促進（Health Promotion）— `/healthgood`
+### 03 健康促進（Health Promotion）
 
 - **介面類型**：地理資訊整合 + 影音資料庫
-- **首屏核心**：互動式人體圖（游標點擊腰/膝/肩 → Modal 播放復健運動處方 GIF 或短影音，1-3 分鐘）
-- **職醫地圖**：串接 Google Maps API，標示勞動部認可「職業傷病診治網絡醫院」及在地合作診所，提供一鍵導航
-- **其他模組**：整合即時氣象資料顯示高溫警報；提供可下載列印的急救紅卡
+- **CSS 前綴**：`hp-`
+- **頁面結構**：Hero（含統計）→ Tab 切換（熱傷害 / 農藥 / 肌骨 / 心理）→ 健康風險速篩工具
+- **子頁面**：熱傷害 / 農藥安全 / 肌肉骨骼 / 心理健康
+- **檔案**：`pages/healthgood/健康促進.html`
 
----
+### 04 經濟與保險（Economic Security）
 
-### 04 經濟與保險（Economic Security）— `/money`
+- **介面類型**：資訊圖解 + 互動試算工具
+- **CSS 前綴**：`money-`
+- **頁面結構**：Hero（含統計）→ 三大主題卡片（職災保險 / 農作物保險 / 補助資源）→ 線上試算工具
+- **子頁面**：農業補助資源 / 農業保險 / 農民退休金試算表 / 職業災害保險 / 農民職業災害試算表
+- **檔案**：`pages/economic-insurance/經濟與保險.html`
 
-- **介面類型**：資訊圖解（Infographics）+ 互動試算工具（Web Form）
-- **核心工具**：農民輸入年齡、年資、傷病類型後，系統輸出可申請的補助或理賠估算
-- **涵蓋險種**：職災保險、農保、老農津貼、農業保險
-- **法規呈現**：複雜條文轉化為步驟懶人包（Step-by-step guide），以流程圖折疊於試算器下方
-
----
-
-### 05 培力與實踐（Empowerment）— `/農學堂`
+### 05 培力與實踐（Empowerment / 農學堂）
 
 - **介面類型**：輕量級 LMS + 活動行事曆
-- **農學堂**：影片網格（Video Grid），每支微學習影片標示時長與難易度
-- **工作坊**：清單式（List View）呈現雲嘉近期線下課程，附帶內建報名表單
+- **頁面結構**：影片網格 + 工作坊清單 + 報名表單
+- **檔案**：`pages/farmer-study/農學堂.html`
+
+### 06 尊嚴農業倡議（Advocacy）
+
+- **介面類型**：單頁式深度專題報導
+- **CSS 前綴**：`adv-`
+- **頁面結構**：Hero → 為什麼需要倡議 → 核心主張 → 垂直時間軸 → 焦點團體 → 政策連署
+- **檔案**：`pages/dignity-farming-initiative/倡議.html`
+
+### 07 研究成果（Research）
+
+- **介面類型**：學術資料庫 + 文獻列表
+- **CSS 前綴**：`res-`（主頁與子頁共用）
+- **頁面結構**：Hero（含介紹文字、統計、行動按鈕）→ 成果分類五宮格 → 最新成果精選 → 研究取徑 → 合作夥伴 → 交叉連結
+- **子頁面**：研究出版 / 影音 Podcast（`pod-`）/ 圖文資訊 / 下載專區 / 相關資源
+- **檔案**：`pages/research-result/研究成果`
 
 ---
 
-### 06 尊嚴農業倡議（Advocacy）— `/尊嚴農業倡議`
+## 五、品牌設計規格
 
-- **介面類型**：單頁式（One-page）深度專題報導
-- **版型核心**：垂直時間軸（Vertical Timeline）串接倡議行動與焦點團體會議紀錄
-- **Call to Action**：頁面底部設置政策連署或社群分享按鈕
-
----
-
-### 07 研究成果（Research）— `/研究成果`
-
-- **介面類型**：學術資料庫 + 文獻列表介面
-- **APA 規範**：所有條目嚴格以 APA 第 7 版格式排版，**禁止引用任何中國大陸文獻與數據**
-- **下載按鈕**：每筆文獻附 `[PDF 下載, X.X MB]` 按鈕，標示檔案大小
-- **影音成果**：整合 Spotify / Apple Podcast 嵌入代碼，支援網頁內直接收聽
-
----
-
-## 三、技術規範
-
-### 3-1 色彩系統（Color System）
+### 5-1 色彩系統
 
 #### 全站品牌色
 
 | 名稱 | HEX | 用途 |
 |------|-----|------|
 | 品牌主色・尊嚴綠 | `#5C8607` | 全站主按鈕、連結、強調色 |
-| 品牌主色・深尊嚴綠（hover） | `#4a6b05` | 按鈕 hover 狀態 |
-| 尊嚴綠（深版） | `#2c5e2e` | 側邊欄標題、tag 按鈕 hover |
+| 深尊嚴綠（hover） | `#4A6B05` | 按鈕 hover 狀態 |
+| 深尊嚴綠（側邊欄） | `#2C5E2E` | 側邊欄標題、tag 按鈕 hover |
 | 全站背景 | `#E3E9D8` | 整體頁面底色 |
-| 全站輔色・稻金黃 | `#D4A017` | 圖示點綴、裝飾線、強調 highlight |
+| 輔色・稻金黃 | `#D4A017` | 圖示點綴、裝飾線 |
 
-#### 四大分眾入口色（Functional Pastels）
+#### 分眾入口色（Functional Pastels）
 
-> 以下 HEX 為建議值，部署前請與設計師確認。
+| 分眾 | 色彩名稱 | HEX | 背景 HEX |
+|------|---------|------|----------|
+| 新手務農 | 鼠尾草綠 | `#87AE73` | `#EEF5EA` |
+| 青農創業 | 板岩藍 | `#5B7FA6` | `#E8EFF7` |
+| 資深農友 | 陶土橘 | `#C17F5E` | `#F9EDE7` |
+| 一般公眾 | 麥穗黃 | `#D4A017` | `#FDF4DC` |
 
-| 分眾 | 色彩名稱 | 建議 HEX | 色彩背景 HEX | 說明 |
-|------|---------|----------|------------|------|
-| 新手務農（Start） | 鼠尾草綠 Sage Green | `#87AE73` | `#EEF5EA` | 穩健、安全感 |
-| 青農創業（Pro） | 板岩藍 Slate Blue | `#5B7FA6` | `#E8EFF7` | 科技、數據感 |
-| 資深農友（Senior） | 陶土橘 Terracotta | `#C17F5E` | `#F9EDE7` | 溫暖、高對比 |
-| 一般公眾（Public） | 麥穗黃 Harvest Gold | `#D4A017` | `#FDF4DC` | 農鄉、共感 |
-
-#### 職業安全頁面（02）危害控制層級色
+#### 職業安全頁面危害控制層級色
 
 | 層級 | 名稱 | 漸層色 |
 |------|------|--------|
-| Level 1 消除 | Emerald | `#10b981 → #34d399` |
-| Level 2 取代 | Sky Blue | `#0ea5e9 → #38bdf8` |
-| Level 3 工程 | Blue | `#3b82f6 → #60a5fa` |
-| Level 4 行政 | Amber | `#f59e0b → #fbbf24` |
-| Level 5 PPE | Rose | `#f43f5e → #fb7185` |
+| L1 消除 | Emerald | `#10B981 → #34D399` |
+| L2 取代 | Sky Blue | `#0EA5E9 → #38BDF8` |
+| L3 工程 | Blue | `#3B82F6 → #60A5FA` |
+| L4 行政 | Amber | `#F59E0B → #FBBF24` |
+| L5 PPE | Rose | `#F43F5E → #FB7185` |
 
 #### 風險評估紅綠燈色
 
-| 風險等級 | 顏色 | HEX |
-|---------|------|-----|
-| 高度風險（分數 ≥ 8） | 紅 | `#EF5350` |
-| 中度風險（分數 3–7） | 橘 | `#FFB74D` |
-| 低度風險（分數 ≤ 2） | 綠 | `#81C784` |
+| 風險等級 | HEX |
+|---------|-----|
+| 高度風險（≥ 8 分） | `#EF5350` |
+| 中度風險（3–7 分） | `#FFB74D` |
+| 低度風險（≤ 2 分） | `#81C784` |
+
+### 5-2 字型
+
+| 用途 | 字型 |
+|------|------|
+| 中文 | Noto Sans TC |
+| 英數 | Lato |
+| 內文裝飾 | Lora |
+| 圖示 | Font Awesome 6.4.x |
+
+### 5-3 APA 規範
+
+- 所有文獻嚴格遵守 **APA 第 7 版**格式
+- **系統性排除中國大陸來源**數據
+- 以台灣本土實證 + 日韓澳相似高齡農業背景研究為學術基石
 
 ---
 
-### 3-2 CSS 設計 Token（`:root` 變數）
+## 六、技術規範
 
-以下為各 Widget 已採用的 CSS 變數，全站保持一致，新頁面應優先使用這些變數而非直接寫死色碼。
+### 6-1 技術堆疊
 
-```css
-:root {
-    /* === 品牌色 === */
-    --astra-brand:       #5C8607;
-    --astra-brand-hover: #4a6b05;
-    --astra-text:        #343F1E;
-    --astra-surface:     #FDFAF1;   /* 頁面內容區底色 */
-    --astra-border:      rgba(53, 64, 31, 0.15);
-    --astra-shadow:      0 15px 40px rgba(52, 63, 30, 0.05);
+| 項目 | 技術 |
+|------|------|
+| CMS | WordPress + Astra Child Theme |
+| 前端 | 純 HTML/CSS（無 build 工具） |
+| CSS | Custom Properties（設計 Token）+ 前綴隔離 |
+| 動態功能 | PHP Shortcodes（透過 Code Snippets 插件管理） |
+| 部署 | `scripts/deploy.sh` → WP-CLI 自動匯入 |
 
-    /* === 職業安全 Widget 專用 === */
-    --text-brand:        #047857;   /* Widget 1 強調綠 */
-    --bg-glass:          rgba(255, 255, 255, 0.65);
-    --border-glass:      rgba(255, 255, 255, 0.9);
-    --shadow-glass:      0 8px 32px 0 rgba(31, 38, 135, 0.05);
-    --shadow-float:      0 10px 25px -5px rgba(0,0,0,0.1);
+### 6-2 WordPress 嵌入規範（關鍵！）
 
-    /* === 危害分類色 === */
-    --phys-bg:   #FFF3E0; --phys-text:  #E65100;  /* 物理性 */
-    --chem-bg:   #F3E5F5; --chem-text:  #7B1FA2;  /* 化學性 */
-    --bio-bg:    #E8F5E9; --bio-text:   #2E7D32;  /* 生物性 */
-    --ergo-bg:   #E3F2FD; --ergo-text:  #1565C0;  /* 人因性 */
+#### `<!-- wp:html -->` 標籤要求
 
-    /* === 風險評估紅綠燈 === */
-    --risk-green:  #81C784;
-    --risk-orange: #FFB74D;
-    --risk-red:    #EF5350;
-}
+**每個 HTML 頁面都必須用 `<!-- wp:html -->` 和 `<!-- /wp:html -->` 包裹**，否則 WordPress 會將 `<style>` 視為一般文字處理，導致 CSS 完全跑掉。
+
+```html
+<!-- wp:html -->
+
+<!-- 你的 HTML + CSS 內容 -->
+
+<!-- /wp:html -->
 ```
 
----
-
-### 3-3 全站 CSS（`/css/global.css`）已定義的 Class
-
-> 建置新頁面前，請先確認使用或避開以下已定義的 class，以免產生樣式衝突。
-
-| Class | 用途 |
-|-------|------|
-| `.content-card` | 一般內容卡片（含 hover 上浮效果，border-top 尊嚴綠） |
-| `.my-team-card` | 研究團隊透明懸浮卡片（背景強制透明） |
-| `.sidebar-wrapper` | Sticky 側邊欄容器（top: 120px） |
-| `.sidebar-section` | 側邊欄區塊 |
-| `.sidebar-title` | 側邊欄標題（含右側延伸線） |
-| `.side-widget` | 側邊欄小工具外框 |
-| `.side-title` | 側邊欄標題（帶 border-bottom） |
-| `.tool-list` / `.tool-link` / `.tool-icon` | 側邊欄工具連結組 |
-| `.tag-cloud` / `.tag-btn` | 關鍵字雲（hover 變尊嚴綠底色） |
-| `.action-item` / `.action-icon` | 行動設計清單項目 |
-| `.social-btn` （`.fb` / `.line`） | FB / LINE 社群按鈕（漸層色） |
-| `.link-grid` / `.link-item` | 友善連結格狀排版 |
-| `.sticky-sidebar-container` | 黏性側邊欄外容器（top: 100px） |
-| `.download-icon` | 下載圖示（側邊欄用） |
-
----
-
-### 3-4 已部署頁面的 CSS Class 清單
-
-以下 Class 已在 `pages/home/index.html` 部署，**新頁面避免重複命名**。
-
-#### 首頁・身分導航（`service-portal-*`）
-
-`.service-portal-wrapper` / `.service-portal` / `.portal-header` / `.portal-grid` /
-`.role-btn` / `.role-icon-box` / `.role-desc` / `.portal-footer` / `.report-btn`
-
-#### 首頁・三大核心主題（`topic-*`）
-
-`.topic-nav-wrapper` / `.topic-header` / `.topic-container` / `.topic-card` /
-`.card-health` / `.card-equip` / `.card-insurance` / `.card-content` /
-`.topic-icon` / `.topic-text` / `.card-arrow`
-
----
-
-### 3-5 WordPress 嵌入規範（違反項目）
-
-當 HTML 區塊嵌入 WordPress 頁面時，**禁止**在 `<style>` 中出現：
+#### 禁止項目
 
 | 禁止項目 | 原因 |
 |---------|------|
-| `body { ... }` | 覆蓋 Astra 主題全站樣式（包含 `display:flex` 會毀版型） |
-| `* { margin:0; padding:0; }` | 全域重置破壞 WordPress 所有元件間距 |
+| `body { ... }` | 覆蓋 Astra 主題全站樣式 |
+| `* { margin:0; padding:0; }` | 全域重置破壞 WordPress 元件間距 |
 | `.container { ... }` | 與 Astra / Bootstrap 保留 class 衝突 |
-| `html { ... }` | 影響全域 scroll behavior 等設定 |
+| `html { ... }` | 影響全域 scroll behavior |
 
-**解法**：
-- `body` 的 `padding` → 移到頁面最外層 wrapper
-- `body` 的 `display:flex` 居中 → 改用 `margin: 0 auto` 在 wrapper 上
-- `.container` → 改為 `.risk-assessment-wrapper`、`.hazard-check-wrapper` 等專屬命名
+**解法**：所有全域選擇器改為頁面專屬 wrapper（如 `.res-hero`、`.hp-hero`）。
 
----
+### 6-3 CSS 前綴隔離制度
 
-### 3-6 字型載入規則
+每個頁面/模組使用獨立 CSS 前綴，避免跨頁衝突：
 
-Font Awesome 與 Google Fonts 每個頁面**只載入一次**，放在所有 widget HTML 的最頂端。
+| 頁面 | CSS 前綴 | 說明 |
+|------|----------|------|
+| 職業安全 | `prev-` | prevention |
+| 健康促進 | `hp-` | health promotion |
+| 經濟與保險 | `money-` | economic |
+| 尊嚴農業倡議 | `adv-` | advocacy |
+| 研究成果 | `res-` | research |
+| 影音 Podcast | `pod-` | podcast |
+| 溫室專區 | `gh-` | greenhouse |
+| 省工農機具 | `mach-` | machinery |
+| 個人防護具 | `ppe-` | PPE |
+| 新手務農 | `start-` | beginner |
+| 青農 | `young-` | young farmer |
+| 資深農友 | `senior-` | senior |
+| 一般民眾 | `public-` | public |
+
+### 6-4 CSS 設計 Token（`:root` 變數）
+
+```css
+:root {
+    /* 品牌色 */
+    --brand: #5C8607;
+    --brand-dark: #4a6b05;
+    --brand-light: #eef5ea;
+    --brand-hover: #3d5a04;
+
+    /* 強調色 */
+    --accent: #d4a017;
+
+    /* 文字色 */
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-muted: #9ca3af;
+
+    /* 中性色 */
+    --bg-white: #ffffff;
+    --bg-light: #f8fafc;
+    --border-light: #e2e8f0;
+
+    /* 元件 Token */
+    --radius-card: 16px;
+    --radius-badge: 20px;
+    --radius-btn: 50px;
+    --shadow-card: 0 4px 16px rgba(0,0,0,0.05);
+    --shadow-card-hover: 0 15px 30px rgba(0,0,0,0.08);
+    --transition-card: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+```
+
+### 6-5 字型載入規則
+
+Font Awesome 與 Google Fonts 每個頁面**只載入一次**，放在所有 HTML 的最頂端：
 
 ```html
-<!-- 字型（每頁僅此一處） -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-<!-- 圖示庫（每頁僅此一處） -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 ```
 
+### 6-6 全站 CSS（`/css/global.css`）已定義 Class
+
+| Class | 用途 |
+|-------|------|
+| `.content-card` | 一般內容卡片（hover 上浮，border-top 尊嚴綠） |
+| `.my-team-card` | 研究團隊透明懸浮卡片 |
+| `.sidebar-wrapper` | Sticky 側邊欄容器（top: 120px） |
+| `.side-widget` / `.side-title` | 側邊欄小工具 |
+| `.tool-list` / `.tool-link` | 側邊欄工具連結 |
+| `.tag-cloud` / `.tag-btn` | 關鍵字雲 |
+| `.action-item` / `.action-icon` | 行動設計清單 |
+| `.social-btn` | 社群按鈕 |
+| `.service-portal-*` | 首頁身分導航 |
+| `.cat-*` | 全站分類配色系統 |
+
 ---
 
-### 頁面檔案位置
+## 七、部署系統
 
-| 頁面 | 路徑 |
-|------|------|
-| 首頁 | `/pages/home/index.html` |
-| 職業安全 | `/pages/prevention/index.html` |
-| 健康促進 | `/pages/healthgood/` |
-| 經濟保險 | `/pages/money/` |
-| 農學堂 | `/pages/農學堂/` |
-| 尊嚴農業倡議 | `/pages/尊嚴農業倡議/` |
-| 研究成果 | `/pages/研究成果/` |
+### 7-1 部署流程
 
----
-
-## 四、開發優先順序建議
-
-```
-Phase 1（已完成）
-  ✅ 首頁：身分導航 + 三大核心主題
-
-Phase 2（進行中）
-  🔲 /prevention：重建完整頁面結構（Hero → Tabs → Grid Cards → 工具）
-
-Phase 3（待啟動）
-  🔲 /healthgood：互動式人體圖 + 職醫地圖
-  🔲 /money：試算器（需確認法規數值）
-
-Phase 4
-  🔲 各分眾入口頁面（Start / Pro / Senior / Public）
-  🔲 農學堂 LMS
-  🔲 研究成果資料庫
+```bash
+bash scripts/deploy.sh
 ```
 
+三階段自動化部署：
+1. **CSS 部署** — `css/global.css` → Astra Child Theme
+2. **Shortcodes** — 由 Code Snippets 插件管理（不部署至 mu-plugins）
+3. **HTML 頁面匯入** — 讀取 `scripts/page-map.json`，透過 WP-CLI 更新頁面
+
+### 7-2 頁面對照表（page-map.json）
+
+| HTML 檔案路徑 | WordPress 頁面 ID |
+|---|---|
+| `pages/home/index.html` | 1420 |
+| `pages/About/關於我們.html` | 1476 |
+| `pages/occupational-safety/職業安全.html` | 1329 |
+| `pages/healthgood/健康促進.html` | 1328 |
+| `pages/economic-insurance/經濟與保險.html` | 1330 |
+| `pages/farmer-study/農學堂.html` | 1489 |
+| `pages/dignity-farming-initiative/倡議.html` | 1380 |
+| `pages/research-result/研究成果` | 1331 |
+| `pages/research-result/research-publication/研究出版` | 1392 |
+| `pages/research-result/related-resources/相關資源` | 1332 |
+| `pages/thenews/最新消息` | 1156 |
+
+> ID 為 0 表示尚未設定，部署時跳過。新頁面需先在 WordPress 建立後，將 ID 填入此檔案。
+
+### 7-3 PHP Shortcodes
+
+| Shortcode | 功能 | 管理方式 |
+|-----------|------|----------|
+| `home_highlight_slider` | 首頁亮點輪播 | Code Snippets |
+| `news_magazine_layout` | 雜誌式新聞版面 | Code Snippets |
+| `knowledge_podcast_grid` | Podcast 網格 | Code Snippets |
+| `podcast_full_archive` | Podcast 完整存檔 | Code Snippets |
+| `my_news_loop` | 新聞迴圈 | Code Snippets |
+| `weather_widget` | 天氣小工具 | Code Snippets |
+| `fb_feed_widget` | Facebook 動態牆 | Code Snippets |
+
 ---
 
-*最後更新：2026-02-19*
+## 八、程式碼結構
+
+```
+farmerwordpress/
+├── docs/                          ← 架構藍圖、設計規格
+│   ├── architecture.md            ← 本文件（必讀）
+│   ├── website-architecture-presentation.md  ← 簡報版
+│   ├── audience-landing-pages.md  ← 分眾入口設計說明
+│   ├── article-category-slugs.md  ← WordPress 文章分類對照
+│   ├── import-map.md              ← 外部匯入檔案對照
+│   └── occupational-safety-data-enhancement.md  ← 職安數據增補紀錄
+│
+├── css/
+│   └── global.css                 ← 全站設計 Token + 共用樣式
+│
+├── pages/
+│   ├── home/                      ← 首頁 + 側邊欄 Widget
+│   │   ├── index.html             ← 首頁主體
+│   │   ├── 分眾入口                ← 側邊欄 Widget
+│   │   ├── 快速連結 / 側邊欄工具箱 / 熱門關鍵字 / 友善連結
+│   │   └── 社群媒體
+│   │
+│   ├── About/                     ← 01 關於計畫
+│   ├── occupational-safety/       ← 02 職業安全（7 區塊 + 3 子頁）
+│   ├── healthgood/                ← 03 健康促進（6 區塊 + 4 子頁）
+│   ├── economic-insurance/        ← 04 經濟與保險（5 區塊 + 5 子頁）
+│   ├── farmer-study/              ← 05 培力與實踐（農學堂）
+│   ├── dignity-farming-initiative/ ← 06 尊嚴農業倡議
+│   ├── research-result/           ← 07 研究成果（5 子頁）
+│   │
+│   ├── beginner-farmers/          ← 橫軸：新手務農
+│   ├── young-farmers/             ← 橫軸：青農
+│   ├── experienced-farmers/       ← 橫軸：資深農友
+│   ├── Public/                    ← 橫軸：一般民眾
+│   │
+│   ├── thenews/                   ← 最新消息
+│   └── shared/sidebar.html        ← 共用側邊欄模板
+│
+├── shortcodes/                    ← PHP Shortcodes（參考用，實際由 Code Snippets 管理）
+└── scripts/                       ← 部署與匯入腳本
+    ├── deploy.sh                  ← 主部署腳本
+    ├── import-wp-pages.sh         ← WP-CLI 頁面匯入
+    ├── page-map.json              ← 頁面 → WordPress ID 對照
+    └── generate_pptx.py           ← 簡報產生器
+```
+
+---
+
+## 九、頁面設計共同模式
+
+### 9-1 Hero 區塊（所有主頁面共用模式）
+
+- Badge 英文標籤 + 大標題 + 副標語
+- 2-3 段介紹文字 + 重點列表（`<ul>` + check icon）
+- 主要 / 次要行動按鈕
+- 右側統計卡片（3 張，各帶圖標 + 數字 + 說明 + 來源）
+
+### 9-2 內容區塊
+
+- 白色卡片 + 圓角 16px + 陰影
+- Section Header：圖標 + 標題 + 說明 + 底部分隔線
+- 24px 區塊間距
+
+### 9-3 交叉連結
+
+- 底部四宮格導覽到其他主題頁
+- 子頁面「回到總覽」返回連結
+- 子頁間 pill-style 導覽列
+
+### 9-4 RWD 響應式
+
+- 桌面優先設計
+- 768px 斷點：單欄化、縮小標題、移除 sticky
+- 992px 斷點：側邊欄取消固定
+
+---
+
+## 十、開發進度路線圖
+
+| 階段 | 狀態 | 內容 |
+|------|------|------|
+| **Phase 1** | ✅ 完成 | 首頁：身分導航 + 三大核心主題 + 側邊欄 Widget |
+| **Phase 2** | ✅ 完成 | 職業安全：主頁 7 區塊 + 溫室 + 省工農機 + PPE（含國際數據增補） |
+| **Phase 3** | ✅ 完成 | 健康促進：主頁 6 區塊 + 熱傷害 + 農藥安全 + 肌骨 + 心理健康 |
+| **Phase 4** | ✅ 完成 | 經濟與保險：主頁 + 補助資源 + 農業保險 + 職災保險 + 試算表 ×2 |
+| **Phase 5** | ✅ 完成 | 尊嚴農業倡議：時間軸 + 焦點團體 + 核心主張 |
+| **Phase 6** | ✅ 完成 | 研究成果：主頁重新設計 + 研究出版 + Podcast + 圖文 + 下載 + 相關資源 |
+| **Phase 7** | ✅ 完成 | 分眾入口：新手務農 / 青農 / 資深農友 / 一般民眾（四頁差異化設計） |
+| **Phase 8** | 🔄 進行中 | 農學堂 LMS 完善、全站部署自動化、內容持續更新 |
+
+---
+
+## 十一、國際引用數據來源
+
+| 機構 | 引用文件 |
+|------|----------|
+| **CDC/NIOSH** | Agricultural Safety (2024)、Hierarchy of Controls、Revised Lifting Equation |
+| **OSHA** | Agricultural Operations: Hazards & Controls、Heat Illness Prevention、PPE Standards |
+| **BLS** | Census of Fatal Occupational Injuries (CFOI) |
+| **WHO** | Pesticide Safety (2022) |
+| **ILO** | Safety and Health in Agriculture (2023) |
+
+---
+
+*最後更新：2026-03-09*
