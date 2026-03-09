@@ -93,147 +93,18 @@
   </div>
 </div>
 
-<!-- ========== 區塊 3：微學習影片網格 ========== -->
+<!-- ========== 區塊 3：微學習影片（自動抓取 YouTube 頻道） ========== -->
 <div class="edu-sections" id="edu-videos">
   <div class="edu-sec-card">
     <div class="edu-sec-header">
       <div class="edu-sec-icon"><i class="fas fa-film"></i></div>
       <div>
-        <h2>微學習影片</h2>
-        <p>精選國內外農業安全教學影片，每支 1–10 分鐘，務農空檔就能學。</p>
+        <h2>農業安全影片</h2>
+        <p>自動抓取 NIOSH 美國農業安全中心 YouTube 頻道最新影片，點擊可直接播放。</p>
       </div>
     </div>
-
-    <!-- 篩選列 -->
-    <div class="edu-filter-bar">
-      <button class="edu-filter-btn is-active" data-filter="all">全部</button>
-      <button class="edu-filter-btn" data-filter="heat">熱危害</button>
-      <button class="edu-filter-btn" data-filter="ppe">防護具</button>
-      <button class="edu-filter-btn" data-filter="chemical">農藥安全</button>
-      <button class="edu-filter-btn" data-filter="ergonomic">人因工程</button>
-      <button class="edu-filter-btn" data-filter="machine">農機安全</button>
-      <button class="edu-filter-btn" data-filter="insurance">保險權益</button>
-    </div>
-
     <div class="edu-sec-body">
-      <div class="edu-video-grid">
-
-        <!-- 影片 1：熱危害 -->
-        <div class="edu-video-card" data-topic="heat">
-          <div class="edu-video-thumb">
-            <img src="https://images.unsplash.com/photo-1625246333195-5519a49d75f0?w=400&q=80" alt="高氣溫戶外作業熱危害預防">
-            <div class="edu-video-play"><i class="fas fa-play"></i></div>
-            <span class="edu-video-duration"><i class="fas fa-clock"></i> 5:30</span>
-          </div>
-          <div class="edu-video-info">
-            <div class="edu-video-tags">
-              <span class="edu-tag-topic">熱危害</span>
-              <span class="edu-tag-diff edu-diff-beginner">入門</span>
-            </div>
-            <h3 class="edu-video-title">高氣溫戶外作業——熱危害預防三要訣</h3>
-            <p class="edu-video-desc">依據勞動部職安署「高氣溫戶外作業勞工熱危害預防指引」第三版，說明多喝水、適時休息、散熱三大要點。</p>
-            <a href="https://www.osha.gov.tw/" class="edu-video-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 職安署專區</a>
-          </div>
-        </div>
-
-        <!-- 影片 2：農藥安全 -->
-        <div class="edu-video-card" data-topic="chemical">
-          <div class="edu-video-thumb">
-            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&q=80" alt="農藥安全使用">
-            <div class="edu-video-play"><i class="fas fa-play"></i></div>
-            <span class="edu-video-duration"><i class="fas fa-clock"></i> 8:15</span>
-          </div>
-          <div class="edu-video-info">
-            <div class="edu-video-tags">
-              <span class="edu-tag-topic">農藥安全</span>
-              <span class="edu-tag-diff edu-diff-beginner">入門</span>
-            </div>
-            <h3 class="edu-video-title">作物病害非農藥防治方法介紹</h3>
-            <p class="edu-video-desc">農業部農業試驗所製作，介紹亞磷酸、乳化葵花油、重碳酸鹽三種非農藥防治新方法，減少農藥使用保障農民健康。</p>
-            <a href="https://www.tari.gov.tw/video/index-1.asp?Parser=17,9,48,,,,81" class="edu-video-link" target="_blank" rel="noopener"><i class="fas fa-play-circle"></i> 觀看影片</a>
-          </div>
-        </div>
-
-        <!-- 影片 3：人因工程 -->
-        <div class="edu-video-card" data-topic="ergonomic">
-          <div class="edu-video-thumb">
-            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=80" alt="農業人因工程">
-            <div class="edu-video-play"><i class="fas fa-play"></i></div>
-            <span class="edu-video-duration"><i class="fas fa-clock"></i> 6:40</span>
-          </div>
-          <div class="edu-video-info">
-            <div class="edu-video-tags">
-              <span class="edu-tag-topic">人因工程</span>
-              <span class="edu-tag-diff edu-diff-intermediate">進階</span>
-            </div>
-            <h3 class="edu-video-title">農業工作者肌骨傷害預防——正確搬運與彎腰姿勢</h3>
-            <p class="edu-video-desc">參考 NIOSH「Simple Solutions: Ergonomics for Farmworkers」，示範田間正確搬運姿勢、減輕腰背負擔的實用技巧。</p>
-            <a href="https://www.cdc.gov/niosh/agriculture/about/index.html" class="edu-video-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> NIOSH 農業安全</a>
-          </div>
-        </div>
-
-        <!-- 影片 4：防護具 -->
-        <div class="edu-video-card" data-topic="ppe">
-          <div class="edu-video-thumb">
-            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80" alt="農藥噴灑防護具穿戴">
-            <div class="edu-video-play"><i class="fas fa-play"></i></div>
-            <span class="edu-video-duration"><i class="fas fa-clock"></i> 4:20</span>
-          </div>
-          <div class="edu-video-info">
-            <div class="edu-video-tags">
-              <span class="edu-tag-topic">防護具</span>
-              <span class="edu-tag-diff edu-diff-beginner">入門</span>
-            </div>
-            <h3 class="edu-video-title">噴藥時的正確穿戴方式——從頭到腳全防護</h3>
-            <p class="edu-video-desc">依 OSHA 農業危害與控制指引，說明噴灑農藥時應穿戴的手套、護目鏡、防護衣、呼吸器等個人防護裝備。</p>
-            <a href="https://www.osha.gov/agricultural-operations/hazards" class="edu-video-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> OSHA 農業危害</a>
-          </div>
-        </div>
-
-        <!-- 影片 5：農機安全 -->
-        <div class="edu-video-card" data-topic="machine">
-          <div class="edu-video-thumb">
-            <img src="https://images.unsplash.com/photo-1530267981375-f0de937f5f13?w=400&q=80" alt="農機安全操作">
-            <div class="edu-video-play"><i class="fas fa-play"></i></div>
-            <span class="edu-video-duration"><i class="fas fa-clock"></i> 7:50</span>
-          </div>
-          <div class="edu-video-info">
-            <div class="edu-video-tags">
-              <span class="edu-tag-topic">農機安全</span>
-              <span class="edu-tag-diff edu-diff-intermediate">進階</span>
-            </div>
-            <h3 class="edu-video-title">農機翻覆預防與 ROPS 安全結構</h3>
-            <p class="edu-video-desc">翻覆是農機致命事故首因。介紹 ROPS（翻覆保護結構）的重要性、斜坡行駛注意事項及日常檢查要點。</p>
-            <a href="https://www.necasag.org/safetytraining/" class="edu-video-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> NECAS 安全訓練</a>
-          </div>
-        </div>
-
-        <!-- 影片 6：保險權益 -->
-        <div class="edu-video-card" data-topic="insurance">
-          <div class="edu-video-thumb">
-            <img src="https://images.unsplash.com/photo-1450101499163-c8848e968290?w=400&q=80" alt="農民保險權益">
-            <div class="edu-video-play"><i class="fas fa-play"></i></div>
-            <span class="edu-video-duration"><i class="fas fa-clock"></i> 5:00</span>
-          </div>
-          <div class="edu-video-info">
-            <div class="edu-video-tags">
-              <span class="edu-tag-topic">保險權益</span>
-              <span class="edu-tag-diff edu-diff-beginner">入門</span>
-            </div>
-            <h3 class="edu-video-title">農民職災保險你該知道的事</h3>
-            <p class="edu-video-desc">解說農民職業災害保險的投保資格、給付項目、申請流程，以及與農保的差異比較。</p>
-            <a href="https://www.bli.gov.tw/" class="edu-video-link" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 勞保局官網</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- NIOSH 影片資源提示 -->
-      <div class="edu-video-more">
-        <i class="fas fa-circle-info"></i>
-        <span>更多農業安全影片：NIOSH 美國農業安全中心 YouTube 頻道收錄超過 170 支多語教學影片，涵蓋農藥、感染、農機、穀倉、心理健康等主題。</span>
-        <a href="https://www.youtube.com/@USagCenters" target="_blank" rel="noopener">前往頻道 <i class="fas fa-arrow-right"></i></a>
-      </div>
+      [farmer_videos count="6"]
     </div>
   </div>
 </div>
@@ -383,122 +254,18 @@
   </div>
 </div>
 
-<!-- ========== 區塊 5：工作坊 / 線下課程 ========== -->
+<!-- ========== 區塊 5：訓練課程（自動抓取農民學院 RSS） ========== -->
 <div class="edu-sections" id="edu-workshops">
   <div class="edu-sec-card">
     <div class="edu-sec-header">
       <div class="edu-sec-icon"><i class="fas fa-chalkboard-user"></i></div>
       <div>
-        <h2>工作坊與線下課程</h2>
-        <p>雲嘉地區近期實體課程，結合 HISP 計畫田間實作教學，歡迎農友免費參加。</p>
+        <h2>農民學院近期課程</h2>
+        <p>自動抓取農民學院最新訓練課程，資料每 12 小時更新。點擊可前往官網查看詳情與報名。</p>
       </div>
     </div>
     <div class="edu-sec-body">
-      <div class="edu-ws-list">
-
-        <!-- 工作坊 1：農機安全 -->
-        <div class="edu-ws-item">
-          <div class="edu-ws-date-box">
-            <span class="edu-ws-month">4月</span>
-            <span class="edu-ws-day">12</span>
-            <span class="edu-ws-weekday">六</span>
-          </div>
-          <div class="edu-ws-content">
-            <div class="edu-ws-meta">
-              <span class="edu-ws-status edu-ws-open"><i class="fas fa-circle"></i> 報名中</span>
-              <span class="edu-ws-category">農機安全</span>
-            </div>
-            <h3 class="edu-ws-title">農機安全操作實務演練——割草機與搬運車</h3>
-            <div class="edu-ws-details">
-              <span><i class="fas fa-clock"></i> 09:00–12:00</span>
-              <span><i class="fas fa-location-dot"></i> 民雄鄉農會二樓會議室</span>
-              <span><i class="fas fa-users"></i> 名額 30 人</span>
-              <span><i class="fas fa-coins"></i> 免費</span>
-            </div>
-            <p class="edu-ws-desc">與農民學院合作辦理，邀請農業改良場技師現場示範割草機與搬運車安全操作、日常保養檢查要點，並進行實機操作演練。適合有使用農機需求的農友。</p>
-          </div>
-          <div class="edu-ws-action">
-            <a href="https://academy.moa.gov.tw/" class="edu-ws-register" target="_blank" rel="noopener"><i class="fas fa-pen-to-square"></i> 立即報名</a>
-          </div>
-        </div>
-
-        <!-- 工作坊 2：噴藥安全 -->
-        <div class="edu-ws-item">
-          <div class="edu-ws-date-box">
-            <span class="edu-ws-month">4月</span>
-            <span class="edu-ws-day">26</span>
-            <span class="edu-ws-weekday">六</span>
-          </div>
-          <div class="edu-ws-content">
-            <div class="edu-ws-meta">
-              <span class="edu-ws-status edu-ws-open"><i class="fas fa-circle"></i> 報名中</span>
-              <span class="edu-ws-category">農藥安全</span>
-            </div>
-            <h3 class="edu-ws-title">農藥安全使用與防護具正確穿戴</h3>
-            <div class="edu-ws-details">
-              <span><i class="fas fa-clock"></i> 14:00–17:00</span>
-              <span><i class="fas fa-location-dot"></i> 大林鎮社區活動中心</span>
-              <span><i class="fas fa-users"></i> 名額 25 人</span>
-              <span><i class="fas fa-coins"></i> 免費</span>
-            </div>
-            <p class="edu-ws-desc">WHO 農藥安全指引實作版。包含安全用藥觀念、防護衣/手套/護目鏡正確穿脫、農藥中毒急救步驟示範。現場提供防護具試穿體驗。</p>
-          </div>
-          <div class="edu-ws-action">
-            <a href="https://academy.moa.gov.tw/" class="edu-ws-register" target="_blank" rel="noopener"><i class="fas fa-pen-to-square"></i> 立即報名</a>
-          </div>
-        </div>
-
-        <!-- 工作坊 3：肌骨保健（已結束示範） -->
-        <div class="edu-ws-item">
-          <div class="edu-ws-date-box" style="background:var(--text-secondary);">
-            <span class="edu-ws-month">3月</span>
-            <span class="edu-ws-day">8</span>
-            <span class="edu-ws-weekday">六</span>
-          </div>
-          <div class="edu-ws-content">
-            <div class="edu-ws-meta">
-              <span class="edu-ws-status edu-ws-closed"><i class="fas fa-circle"></i> 已結束</span>
-              <span class="edu-ws-category">健康促進</span>
-            </div>
-            <h3 class="edu-ws-title">農友肌骨保健操教學——腰背膝蓋自我照護</h3>
-            <div class="edu-ws-details">
-              <span><i class="fas fa-clock"></i> 14:00–16:00</span>
-              <span><i class="fas fa-location-dot"></i> 民雄鄉衛生所</span>
-              <span><i class="fas fa-users"></i> 參與 28 人</span>
-            </div>
-            <p class="edu-ws-desc">由職業醫學科醫師帶領，針對農業工作者常見的腰背痛、膝蓋退化等問題，教導日常保健操與正確工作姿勢。參考勞動部人因性危害預防計畫指引設計。</p>
-          </div>
-          <div class="edu-ws-action">
-            <span class="edu-ws-ended">活動已結束</span>
-          </div>
-        </div>
-
-        <!-- 工作坊 4：熱危害（已結束示範） -->
-        <div class="edu-ws-item">
-          <div class="edu-ws-date-box" style="background:var(--text-secondary);">
-            <span class="edu-ws-month">2月</span>
-            <span class="edu-ws-day">22</span>
-            <span class="edu-ws-weekday">六</span>
-          </div>
-          <div class="edu-ws-content">
-            <div class="edu-ws-meta">
-              <span class="edu-ws-status edu-ws-closed"><i class="fas fa-circle"></i> 已結束</span>
-              <span class="edu-ws-category">熱危害預防</span>
-            </div>
-            <h3 class="edu-ws-title">夏季將至！田間中暑預防與急救實作</h3>
-            <div class="edu-ws-details">
-              <span><i class="fas fa-clock"></i> 09:30–11:30</span>
-              <span><i class="fas fa-location-dot"></i> 溪口鄉活動中心</span>
-              <span><i class="fas fa-users"></i> 參與 22 人</span>
-            </div>
-            <p class="edu-ws-desc">認識熱指數（WBGT）、中暑四大徵兆辨識、緊急降溫急救步驟實作。每位參加者獲得「田間急救紅卡」一張。</p>
-          </div>
-          <div class="edu-ws-action">
-            <span class="edu-ws-ended">活動已結束</span>
-          </div>
-        </div>
-
-      </div>
+      [farmer_courses count="6"]
     </div>
   </div>
 </div>
@@ -811,34 +578,6 @@
 <!-- ========== JavaScript ========== -->
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  /* 影片篩選 */
-  var filterBtns=document.querySelectorAll('.edu-filter-btn');
-  var cards=document.querySelectorAll('.edu-video-card');
-  filterBtns.forEach(function(btn){
-    btn.addEventListener('click',function(){
-      filterBtns.forEach(function(b){b.classList.remove('is-active');});
-      btn.classList.add('is-active');
-      var filter=btn.getAttribute('data-filter');
-      cards.forEach(function(card){
-        if(filter==='all'||card.getAttribute('data-topic')===filter){
-          card.classList.remove('is-hidden');
-        }else{
-          card.classList.add('is-hidden');
-        }
-      });
-    });
-  });
-  /* 學習路徑卡片連動篩選 */
-  document.querySelectorAll('.edu-path-card').forEach(function(pc){
-    pc.addEventListener('click',function(){
-      var path=pc.getAttribute('data-path');
-      var target=document.querySelector('.edu-filter-btn[data-filter="'+path+'"]');
-      if(target){
-        target.click();
-        document.getElementById('edu-videos').scrollIntoView({behavior:'smooth',block:'start'});
-      }
-    });
-  });
   /* 平滑捲動 */
   document.querySelectorAll('a[href^="#edu-"]').forEach(function(a){
     a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
