@@ -578,6 +578,13 @@
 <!-- ========== JavaScript ========== -->
 <script>
 document.addEventListener('DOMContentLoaded',function(){
+  /* 學習路徑卡片點擊 → 捲動到影片區 */
+  document.querySelectorAll('.edu-path-card').forEach(function(pc){
+    pc.addEventListener('click',function(){
+      var target=document.getElementById('edu-videos');
+      if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
   /* 平滑捲動 */
   document.querySelectorAll('a[href^="#edu-"]').forEach(function(a){
     a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
