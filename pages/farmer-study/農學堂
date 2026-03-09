@@ -99,8 +99,8 @@
     <div class="edu-sec-header">
       <div class="edu-sec-icon"><i class="fas fa-film"></i></div>
       <div>
-        <h2>農業安全影片</h2>
-        <p>自動抓取 NIOSH 美國農業安全中心 YouTube 頻道最新影片，點擊可直接播放。</p>
+        <h2>農業影音專區</h2>
+        <p>自動抓取農業部官方 YouTube 頻道最新影片，涵蓋農業技術、食農教育、綠色照顧等主題，點擊可直接播放。</p>
       </div>
     </div>
     <div class="edu-sec-body">
@@ -578,6 +578,13 @@
 <!-- ========== JavaScript ========== -->
 <script>
 document.addEventListener('DOMContentLoaded',function(){
+  /* 學習路徑卡片點擊 → 捲動到影片區 */
+  document.querySelectorAll('.edu-path-card').forEach(function(pc){
+    pc.addEventListener('click',function(){
+      var target=document.getElementById('edu-videos');
+      if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
   /* 平滑捲動 */
   document.querySelectorAll('a[href^="#edu-"]').forEach(function(a){
     a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
