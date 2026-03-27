@@ -5,7 +5,7 @@
      URL：/research-result/download-zone/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：res-（與主頁共用）
-     
+
      【維護指南】
      - 下載項目：複製 .res-dl-item 區塊新增
      - 檔案圖示 class：
@@ -62,54 +62,15 @@
     <div class="res-sec-body">
       <div class="res-dl-list">
 
-        <!-- ===== 下載項目模板（複製此區塊新增）===== -->
-        <div class="res-dl-item" data-category="report">
-          <div class="res-dl-icon res-dl-icon-pdf"><i class="fas fa-file-pdf"></i></div>
-          <div class="res-dl-item-body">
-            <h4 class="res-dl-item-title">⚠️ 檔案標題，例如：114 年度尊嚴農業計畫期中報告</h4>
-            <p class="res-dl-item-desc">⚠️ 簡述：報告涵蓋範圍與主要內容。⚠️ 頁數・⚠️ MB</p>
-          </div>
-          <div class="res-bib-actions">
-            <!-- ⚠️ 替換 href 為檔案下載 URL -->
-            <a href="#" class="res-dl-btn"><i class="fas fa-download"></i> 下載<span class="res-dl-size">⚠️ PDF・MB</span></a>
-          </div>
-        </div>
-        <!-- ===== 模板結束 ===== -->
-
-        <div class="res-dl-item" data-category="slide">
-          <div class="res-dl-icon res-dl-icon-ppt"><i class="fas fa-file-powerpoint"></i></div>
-          <div class="res-dl-item-body">
-            <h4 class="res-dl-item-title">⚠️ 簡報標題，例如：農民職業健康風險因子分析（研討會發表）</h4>
-            <p class="res-dl-item-desc">⚠️ 簡述。⚠️ 張投影片</p>
-          </div>
-          <div class="res-bib-actions">
-            <a href="#" class="res-dl-btn"><i class="fas fa-download"></i> 下載<span class="res-dl-size">⚠️ PPTX・MB</span></a>
+        <!-- 資料準備中提示 -->
+        <div class="res-pending-notice">
+          <div class="res-pending-icon"><i class="fas fa-folder-open"></i></div>
+          <div class="res-pending-text">
+            <h4>資料準備中</h4>
+            <p>計畫相關檔案正在整理與審核中，將陸續上架研究報告、簡報投影片、手冊教材及海報文宣等下載項目。敬請期待。</p>
           </div>
         </div>
 
-        <div class="res-dl-item" data-category="manual">
-          <div class="res-dl-icon res-dl-icon-doc"><i class="fas fa-file-lines"></i></div>
-          <div class="res-dl-item-body">
-            <h4 class="res-dl-item-title">⚠️ 手冊標題，例如：農民熱傷害預防手冊</h4>
-            <p class="res-dl-item-desc">⚠️ 簡述。⚠️ 頁數</p>
-          </div>
-          <div class="res-bib-actions">
-            <a href="#" class="res-dl-btn"><i class="fas fa-download"></i> 下載<span class="res-dl-size">⚠️ PDF・MB</span></a>
-          </div>
-        </div>
-
-        <div class="res-dl-item" data-category="poster">
-          <div class="res-dl-icon res-dl-icon-zip"><i class="fas fa-file-image"></i></div>
-          <div class="res-dl-item-body">
-            <h4 class="res-dl-item-title">⚠️ 海報標題，例如：職業安全宣導海報套組</h4>
-            <p class="res-dl-item-desc">⚠️ 簡述。⚠️ 張</p>
-          </div>
-          <div class="res-bib-actions">
-            <a href="#" class="res-dl-btn"><i class="fas fa-download"></i> 下載<span class="res-dl-size">⚠️ ZIP・MB</span></a>
-          </div>
-        </div>
-
-        <!-- ⚠️ 繼續複製 .res-dl-item 新增更多下載項目 -->
       </div>
     </div>
 
@@ -164,12 +125,18 @@
 .res-dl-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .3s;white-space:nowrap;background:#fff;color:#c62828;border:1px solid #fca5a5;}.res-dl-btn:hover{background:#c62828;color:#fff;border-color:#c62828;transform:translateY(-2px);}
 .res-dl-size{font-size:.72rem;font-weight:500;color:#999;margin-left:4px;}
 .res-dl-btn:hover .res-dl-size{color:rgba(255,255,255,.7);}
+/* === 待更新提示 === */
+.res-pending-notice{display:flex;gap:20px;padding:32px;background:linear-gradient(135deg,#f8fafc 0%,var(--brand-light) 100%);border-radius:14px;border:1px dashed rgba(92,134,7,.3);align-items:center;}
+.res-pending-icon{width:60px;height:60px;border-radius:50%;background:rgba(92,134,7,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.res-pending-text h4{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
+.res-pending-text p{font-size:.92rem;color:var(--text-secondary);margin:0;line-height:1.6;}
 @media(max-width:768px){
   .res-hero{flex-direction:column;padding:28px 20px;gap:24px;}
   .res-hero-title{font-size:1.8rem;}
   .res-sec-card{padding:20px;}.res-sec-header{flex-direction:column;gap:10px;}
   .res-sub-nav{gap:6px;}.res-sub-nav-item{padding:6px 14px;font-size:.82rem;}
   .res-dl-item{flex-direction:column;align-items:flex-start;gap:10px;}
+  .res-pending-notice{flex-direction:column;text-align:center;padding:24px;}
 }
 </style>
 <script>

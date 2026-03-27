@@ -34,11 +34,13 @@
 
 /* ===================================================
    1. 全站基礎優化 (不干擾 Astra 背景色)
+   NOTE: scroll-behavior 和 background-image 改為 page-specific，
+         避免影響 WordPress 後台與其他非本站頁面。
    =================================================== */
-html { scroll-behavior: smooth; }
-
-/* 💡 移除 body 背景設定，確保 Astra 原始背景顯現 */
-body { background-image: none !important; }
+/* html { scroll-behavior: smooth; } — 已移至 .fw-page 範圍 */
+/* body { background-image: none !important; } — 已移至 .fw-page 範圍 */
+.fw-page { scroll-behavior: smooth; }
+.fw-page body { background-image: none !important; }
 
 /* 自訂文字選取顏色 */
 ::selection {
