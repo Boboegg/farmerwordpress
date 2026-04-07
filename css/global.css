@@ -973,6 +973,35 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page.ch-advocacy { border-top: 4px solid var(--ch-advocacy); }
 .fw-page.ch-research { border-top: 4px solid var(--ch-research); }
 
+/* 分眾入口頁色帶（首頁與 4 分眾頁） */
+.fw-page.aud-home   { border-top: 4px solid var(--brand); }
+.fw-page.aud-start  { border-top: 4px solid var(--aud-start-deep); }
+.fw-page.aud-young  { border-top: 4px solid var(--aud-young-deep); }
+.fw-page.aud-senior { border-top: 4px solid var(--aud-senior-deep); }
+.fw-page.aud-public { border-top: 4px solid var(--aud-public-deep); }
+
+/* ===================================================
+   === 資深農友頁專屬無障礙加強 ===
+   嘉義在地審核員 + 學術倫理審核員雙路推薦
+   1. Atkinson Hyperlegible 字體（英數專用，中文用 Noto Sans TC）
+   2. 強制 18px 基底字級
+   3. 老花眼睛友好的行距與字距
+   =================================================== */
+.fw-page.aud-senior {
+    font-family: var(--font-body-a11y), var(--font-sans-tc);
+    font-size: var(--text-lg);              /* 18px 基底 */
+    line-height: var(--leading-relaxed);    /* 1.75 行距 */
+}
+.fw-page.aud-senior p {
+    font-size: var(--text-lg);              /* 確保段落也是 18px */
+    letter-spacing: 0.02em;
+}
+.fw-page.aud-senior a,
+.fw-page.aud-senior button {
+    /* 確保按鈕點擊區足夠大 */
+    min-height: 44px;                       /* WCAG 2.5.5 觸控目標尺寸 */
+}
+
 /* 麵包屑章節色塊 */
 .fw-page .breadcrumb-chip {
     display: inline-block;
