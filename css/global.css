@@ -986,23 +986,23 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
    讓視覺真的有電影感，不是只改 token
    =================================================== */
 
-/* ----- 1. Hero 區段大改：100svh + 巨型襯線標題 ----- */
+/* ----- 1. Hero 區段大改：響應式 + 巨型襯線標題 ----- */
 .fw-page .start-hero,
 .fw-page .young-hero,
 .fw-page .senior-hero,
 .fw-page .public-hero {
-    min-height: 75svh;
+    min-height: clamp(420px, 60svh, 720px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: var(--space-4xl) var(--space-xl) var(--space-3xl) !important;
+    padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 2.5rem) !important;
     background: linear-gradient(180deg, var(--bg) 0%, var(--surface-muted) 100%) !important;
     border-radius: 0 !important;
     border: none !important;
     margin-bottom: var(--space-2xl) !important;
     position: relative;
     overflow: hidden;
-    animation: heroFadeIn 1.2s var(--ease-out) both;
+    animation: heroFadeIn 0.6s var(--ease-out) both;
 }
 .fw-page .start-hero::before,
 .fw-page .young-hero::before,
@@ -1013,8 +1013,8 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     top: 0; left: 0; right: 0;
     height: 6px;
     background: var(--brand);
-    transform: translateY(-100%);
-    animation: heroBarSlide 1s var(--ease-out) 0.4s forwards;
+    transform-origin: left;
+    animation: heroBarSlide 0.6s var(--ease-out) 0.1s both;
 }
 
 /* Hero 徽章 — 加大 + 字距 */
@@ -1028,31 +1028,31 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     background: var(--brand) !important;
     color: var(--bg) !important;
     font-family: var(--font-mono) !important;
-    font-size: var(--text-sm) !important;
+    font-size: clamp(0.7rem, 1.4vw, 0.85rem) !important;
     font-weight: 700 !important;
     text-transform: uppercase;
     letter-spacing: var(--tracking-widest);
     padding: var(--space-xs) var(--space-md) !important;
     border-radius: 0 !important;
-    margin-bottom: var(--space-xl) !important;
+    margin-bottom: var(--space-lg) !important;
     align-self: flex-start;
-    animation: heroFadeUp 0.8s var(--ease-out) 0.5s both;
+    animation: heroFadeUp 0.5s var(--ease-out) 0.1s both;
 }
 
-/* Hero 標題 — 巨型襯線（從 1.9rem → clamp 3-6rem） */
+/* Hero 標題 — 巨型襯線（從 1.9rem → clamp 2-5rem） */
 .fw-page .start-hero-title,
 .fw-page .young-hero-title,
 .fw-page .senior-hero-title,
 .fw-page .public-hero-title {
     font-family: var(--font-serif-tc) !important;
-    font-size: clamp(2.5rem, 6vw, 5.5rem) !important;
+    font-size: clamp(2rem, 5.5vw, 5rem) !important;
     font-weight: 900 !important;
-    line-height: 1.05 !important;
+    line-height: 1.1 !important;
     letter-spacing: -0.02em;
     color: var(--fg) !important;
-    margin: 0 0 var(--space-lg) 0 !important;
+    margin: 0 0 var(--space-md) 0 !important;
     max-width: 18ch;
-    animation: heroFadeUp 1s var(--ease-out) 0.7s both;
+    animation: heroFadeUp 0.5s var(--ease-out) 0.2s both;
 }
 
 /* Hero tagline — 升級為大字 italic */
@@ -1061,14 +1061,14 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page .senior-hero-tagline,
 .fw-page .public-hero-tagline {
     font-family: var(--font-serif-tc) !important;
-    font-size: clamp(1.25rem, 2vw, 1.75rem) !important;
+    font-size: clamp(1.05rem, 2vw, 1.5rem) !important;
     font-weight: 400 !important;
-    line-height: 1.4 !important;
+    line-height: 1.5 !important;
     color: var(--fg-muted) !important;
     font-style: italic !important;
-    margin: 0 0 var(--space-xl) 0 !important;
+    margin: 0 0 var(--space-lg) 0 !important;
     max-width: 32ch;
-    animation: heroFadeUp 1s var(--ease-out) 0.9s both;
+    animation: heroFadeUp 0.5s var(--ease-out) 0.3s both;
 }
 
 /* Hero intro — 編輯感的無框設計 */
@@ -1079,9 +1079,9 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     background: transparent !important;
     border: none !important;
     border-left: 4px solid var(--brand-accent) !important;
-    padding: var(--space-md) 0 var(--space-md) var(--space-lg) !important;
+    padding: var(--space-sm) 0 var(--space-sm) var(--space-md) !important;
     max-width: 60ch;
-    animation: heroFadeUp 1s var(--ease-out) 1.1s both;
+    animation: heroFadeUp 0.5s var(--ease-out) 0.4s both;
 }
 .fw-page .start-hero-intro p,
 .fw-page .young-hero-intro p,
@@ -1129,18 +1129,18 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     background: var(--brand);
 }
 
-/* Stats Grid — 改成 3 欄等寬 + 大間距 */
+/* Stats Grid — auto-fit minmax 自適應（手機 1 欄、平板 2 欄、桌機 3 欄） */
 .fw-page .start-stats-grid,
 .fw-page .young-stats-grid,
 .fw-page .senior-stats-grid,
 .fw-page .public-stats-grid {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: var(--space-2xl) !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: clamp(1.5rem, 3vw, 3rem) !important;
     margin-bottom: var(--space-xl) !important;
 }
 
-/* Stat Card — 透明、極簡、巨型數字主導 */
+/* Stat Card — 透明、極簡、巨型數字主導，垂直 layout 強制 */
 .fw-page .start-stat-card,
 .fw-page .young-stat-card,
 .fw-page .senior-stat-card,
@@ -1148,47 +1148,52 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    padding: 0 !important;
+    padding: 0 0 0 var(--space-lg) !important;
     text-align: left !important;
     border-left: 4px solid var(--brand) !important;
-    padding-left: var(--space-lg) !important;
+    display: block !important;
     transition: all var(--duration-slow) var(--ease-out);
-    animation: statFadeIn 0.8s var(--ease-out) both;
+    animation: statFadeIn 0.5s var(--ease-out) both;
+    min-width: 0;
 }
 .fw-page .start-stat-card:nth-child(1),
 .fw-page .young-stat-card:nth-child(1),
 .fw-page .senior-stat-card:nth-child(1),
-.fw-page .public-stat-card:nth-child(1) { animation-delay: 0.1s; }
+.fw-page .public-stat-card:nth-child(1) { animation-delay: 0.05s; }
 .fw-page .start-stat-card:nth-child(2),
 .fw-page .young-stat-card:nth-child(2),
 .fw-page .senior-stat-card:nth-child(2),
-.fw-page .public-stat-card:nth-child(2) { animation-delay: 0.3s; }
+.fw-page .public-stat-card:nth-child(2) { animation-delay: 0.15s; }
 .fw-page .start-stat-card:nth-child(3),
 .fw-page .young-stat-card:nth-child(3),
 .fw-page .senior-stat-card:nth-child(3),
-.fw-page .public-stat-card:nth-child(3) { animation-delay: 0.5s; }
+.fw-page .public-stat-card:nth-child(3) { animation-delay: 0.25s; }
 
-.fw-page .start-stat-card:hover,
-.fw-page .young-stat-card:hover,
-.fw-page .senior-stat-card:hover,
-.fw-page .public-stat-card:hover {
-    transform: translateX(8px);
-    border-left-color: var(--brand-warning);
+/* hover 效果只在有滑鼠的裝置 */
+@media (hover: hover) {
+    .fw-page .start-stat-card:hover,
+    .fw-page .young-stat-card:hover,
+    .fw-page .senior-stat-card:hover,
+    .fw-page .public-stat-card:hover {
+        transform: translateX(8px);
+        border-left-color: var(--brand-warning);
+    }
 }
 
-/* MEGA stat number — 從 2rem 暴增到 clamp 5-9rem */
+/* MEGA stat number — clamp 從手機友善到桌機巨型 */
 .fw-page .start-stat-number,
 .fw-page .young-stat-number,
 .fw-page .senior-stat-number,
 .fw-page .public-stat-number {
     font-family: var(--font-display) !important;
-    font-size: clamp(4.5rem, 9vw, 8rem) !important;
+    font-size: clamp(3rem, 7vw, 6.5rem) !important;
     font-weight: 800 !important;
     line-height: 0.85 !important;
     letter-spacing: -0.04em !important;
     color: var(--brand) !important;
     margin: 0 0 var(--space-md) 0 !important;
     display: block !important;
+    word-break: keep-all;
 }
 
 .fw-page .start-stat-unit,
@@ -1237,19 +1242,21 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     background: var(--surface) !important;
     border: 1px solid var(--border) !important;
     border-left: 6px solid var(--accent, var(--brand-accent)) !important;
-    padding: var(--space-xl) !important;
+    padding: clamp(1rem, 3vw, 2rem) !important;
     margin-bottom: var(--space-lg) !important;
     border-radius: 0 !important;
     transition: all var(--duration-normal) var(--ease-out);
     box-shadow: var(--shadow-sm);
 }
-.fw-page .start-scenario-card:hover,
-.fw-page .young-scenario-card:hover,
-.fw-page .senior-scenario-card:hover,
-.fw-page .public-scenario-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-xl);
-    border-left-width: 12px;
+@media (hover: hover) {
+    .fw-page .start-scenario-card:hover,
+    .fw-page .young-scenario-card:hover,
+    .fw-page .senior-scenario-card:hover,
+    .fw-page .public-scenario-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-xl);
+        border-left-width: 12px;
+    }
 }
 
 .fw-page .start-scenario-card h3,
@@ -1290,13 +1297,15 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     padding-bottom: 2px;
     transition: all var(--duration-fast) var(--ease-out);
 }
-.fw-page .start-scenario-link:hover,
-.fw-page .young-scenario-link:hover,
-.fw-page .senior-scenario-link:hover,
-.fw-page .public-scenario-link:hover {
-    color: var(--brand-warning) !important;
-    border-bottom-color: var(--brand-warning);
-    letter-spacing: 0.15em;
+@media (hover: hover) {
+    .fw-page .start-scenario-link:hover,
+    .fw-page .young-scenario-link:hover,
+    .fw-page .senior-scenario-link:hover,
+    .fw-page .public-scenario-link:hover {
+        color: var(--brand-warning) !important;
+        border-bottom-color: var(--brand-warning);
+        letter-spacing: 0.15em;
+    }
 }
 
 /* ----- 4. Stats Note — 編輯式引言 ----- */
@@ -1336,21 +1345,87 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     100% { opacity: 1; transform: translateX(0); }
 }
 
-/* RWD：手機版調整 */
-@media (max-width: 768px) {
+/* ===================================================
+   === RWD 響應式調整（手機 / 平板 / 桌機）===
+   =================================================== */
+
+/* 手機版（≤ 640px）— 強制覆蓋舊頁面的 mobile flex layout */
+@media (max-width: 640px) {
     .fw-page .start-hero,
     .fw-page .young-hero,
     .fw-page .senior-hero,
     .fw-page .public-hero {
-        min-height: 60svh;
-        padding: var(--space-3xl) var(--space-md) var(--space-2xl) !important;
+        min-height: 50svh;
+        padding: var(--space-2xl) var(--space-md) var(--space-xl) !important;
     }
-    .fw-page .start-stats-grid,
-    .fw-page .young-stats-grid,
-    .fw-page .senior-stats-grid,
-    .fw-page .public-stats-grid {
-        grid-template-columns: 1fr !important;
-        gap: var(--space-xl) !important;
+    /* 強制統計卡垂直 layout，蓋掉舊頁面的 display:flex */
+    .fw-page .start-stat-card,
+    .fw-page .young-stat-card,
+    .fw-page .senior-stat-card,
+    .fw-page .public-stat-card {
+        display: block !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        padding: 0 0 0 var(--space-md) !important;
+        gap: 0 !important;
+    }
+    /* 統計數字手機縮小 */
+    .fw-page .start-stat-number,
+    .fw-page .young-stat-number,
+    .fw-page .senior-stat-number,
+    .fw-page .public-stat-number {
+        font-size: clamp(2.5rem, 13vw, 4rem) !important;
+        margin-bottom: var(--space-sm) !important;
+        white-space: normal !important;
+    }
+    /* 統計卡 stats note 縮小字級 */
+    .fw-page .start-stats-note,
+    .fw-page .young-stats-note,
+    .fw-page .senior-stats-note,
+    .fw-page .public-stats-note {
+        font-size: var(--text-base) !important;
+        padding: var(--space-sm) 0 var(--space-sm) var(--space-md) !important;
+    }
+    /* 場景卡片內 padding 縮小 */
+    .fw-page .start-scenario-card,
+    .fw-page .young-scenario-card,
+    .fw-page .senior-scenario-card,
+    .fw-page .public-scenario-card {
+        padding: var(--space-md) !important;
+    }
+    .fw-page .start-scenario-card h3,
+    .fw-page .young-scenario-card h3,
+    .fw-page .senior-scenario-card h3,
+    .fw-page .public-scenario-card h3 {
+        font-size: var(--text-xl) !important;
+    }
+}
+
+/* 平板版（641px - 1024px）— 中間區段，數字適中 */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .fw-page .start-hero,
+    .fw-page .young-hero,
+    .fw-page .senior-hero,
+    .fw-page .public-hero,
+    .fw-page .prev-hero,
+    .fw-page .hp-hero,
+    .fw-page .money-hero,
+    .fw-page .adv-hero,
+    .fw-page .res-hero {
+        min-height: 55svh;
+        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem) !important;
+    }
+    /* 平板統計數字適中 */
+    .fw-page .start-stat-number,
+    .fw-page .young-stat-number,
+    .fw-page .senior-stat-number,
+    .fw-page .public-stat-number {
+        font-size: clamp(3.5rem, 8vw, 5.5rem) !important;
+    }
+    /* 平板首頁 topic-card 改 2 欄 */
+    .fw-page.aud-home .topic-container {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
@@ -1419,13 +1494,15 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page.aud-home .card-equip::before     { background: var(--ch-safety) !important; }
 .fw-page.aud-home .card-insurance::before { background: var(--ch-economic) !important; }
 
-.fw-page.aud-home .topic-card:hover {
-    transform: translateY(-12px) !important;
-    box-shadow: var(--shadow-2xl, 0 25px 60px rgba(15, 23, 42, 0.18)) !important;
-    border-color: var(--brand) !important;
-}
-.fw-page.aud-home .topic-card:hover::before {
-    height: 16px !important;
+@media (hover: hover) {
+    .fw-page.aud-home .topic-card:hover {
+        transform: translateY(-12px) !important;
+        box-shadow: var(--shadow-2xl, 0 25px 60px rgba(15, 23, 42, 0.18)) !important;
+        border-color: var(--brand) !important;
+    }
+    .fw-page.aud-home .topic-card:hover::before {
+        height: 16px !important;
+    }
 }
 
 .fw-page.aud-home .topic-icon {
@@ -1436,8 +1513,10 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     margin-bottom: var(--space-lg) !important;
     transition: all var(--duration-normal) var(--ease-out) !important;
 }
-.fw-page.aud-home .topic-card:hover .topic-icon {
-    transform: scale(1.1) rotate(-3deg);
+@media (hover: hover) {
+    .fw-page.aud-home .topic-card:hover .topic-icon {
+        transform: scale(1.1) rotate(-3deg);
+    }
 }
 
 .fw-page.aud-home .card-health .topic-icon    { background: var(--ch-health-bg) !important; color: var(--ch-health) !important; }
@@ -1461,9 +1540,11 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     color: var(--brand) !important;
     transition: all var(--duration-normal) var(--ease-out) !important;
 }
-.fw-page.aud-home .topic-card:hover .card-arrow {
-    transform: translateX(12px);
-    color: var(--brand-warning) !important;
+@media (hover: hover) {
+    .fw-page.aud-home .topic-card:hover .card-arrow {
+        transform: translateX(12px);
+        color: var(--brand-warning) !important;
+    }
 }
 
 /* ===================================================
@@ -1585,27 +1666,45 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page .content-card {
     transition: all var(--duration-slow) var(--ease-out) !important;
 }
-.fw-page .prev-card:hover,
-.fw-page .hp-card:hover,
-.fw-page .money-card:hover,
-.fw-page .adv-card:hover,
-.fw-page .res-card:hover {
-    transform: translateY(-12px) !important;
-    box-shadow: var(--shadow-2xl, 0 25px 60px rgba(15, 23, 42, 0.18)) !important;
+@media (hover: hover) {
+    .fw-page .prev-card:hover,
+    .fw-page .hp-card:hover,
+    .fw-page .money-card:hover,
+    .fw-page .adv-card:hover,
+    .fw-page .res-card:hover {
+        transform: translateY(-12px) !important;
+        box-shadow: var(--shadow-2xl, 0 25px 60px rgba(15, 23, 42, 0.18)) !important;
+    }
 }
 
-/* RWD 手機調整 */
-@media (max-width: 768px) {
+/* RWD 手機調整：首頁與 7 主頁 */
+@media (max-width: 640px) {
     .fw-page.aud-home .topic-container {
         grid-template-columns: 1fr !important;
+        gap: var(--space-md) !important;
+    }
+    .fw-page.aud-home .topic-card {
+        padding: var(--space-lg) var(--space-md) !important;
     }
     .fw-page .prev-hero,
     .fw-page .hp-hero,
     .fw-page .money-hero,
     .fw-page .adv-hero,
     .fw-page .res-hero {
-        min-height: 55svh;
-        padding: var(--space-3xl) var(--space-md) var(--space-2xl) !important;
+        min-height: 50svh;
+        padding: var(--space-2xl) var(--space-md) var(--space-xl) !important;
+    }
+    /* 7 主頁的統計數字 */
+    .fw-page .prev-hero-stats .stat-num,
+    .fw-page .hp-hero-stats .stat-num,
+    .fw-page .money-hero-stats .stat-num,
+    .fw-page .adv-stat-num,
+    .fw-page .res-hero-stats .stat-num,
+    .fw-page .prev-stat-number,
+    .fw-page .hp-stat-number,
+    .fw-page .money-stat-number,
+    .fw-page .res-stat-number {
+        font-size: clamp(2.5rem, 13vw, 4rem) !important;
     }
 }
 
