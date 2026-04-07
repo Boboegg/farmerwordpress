@@ -1355,6 +1355,261 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 }
 
 /* ===================================================
+   === 首頁視覺爆改：topic-card 編輯式重設計 ===
+   =================================================== */
+.fw-page.aud-home .topic-header {
+    text-align: left !important;
+    margin-bottom: var(--space-3xl) !important;
+    padding: var(--space-2xl) 0 !important;
+    animation: heroFadeUp 1s var(--ease-out) both;
+}
+.fw-page.aud-home .topic-header h2 {
+    font-family: var(--font-serif-tc) !important;
+    font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--fg) !important;
+    margin-bottom: var(--space-md) !important;
+}
+.fw-page.aud-home .topic-header .highlight {
+    color: var(--brand) !important;
+}
+.fw-page.aud-home .topic-header .highlight::after {
+    background: var(--brand-accent) !important;
+    height: 12px !important;
+    bottom: 4px !important;
+    opacity: 0.4;
+}
+.fw-page.aud-home .topic-header p {
+    font-family: var(--font-serif-tc) !important;
+    font-size: var(--text-xl) !important;
+    font-style: italic !important;
+    color: var(--fg-muted) !important;
+    max-width: 50ch;
+}
+
+.fw-page.aud-home .topic-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: var(--space-xl) !important;
+    margin-top: var(--space-2xl);
+}
+
+.fw-page.aud-home .topic-card {
+    background: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    padding: var(--space-2xl) var(--space-xl) !important;
+    box-shadow: var(--shadow-sm) !important;
+    transition: all var(--duration-slow) var(--ease-out) !important;
+    position: relative;
+    overflow: hidden;
+    animation: statFadeIn 0.8s var(--ease-out) both;
+}
+.fw-page.aud-home .topic-card:nth-child(1) { animation-delay: 0.2s; }
+.fw-page.aud-home .topic-card:nth-child(2) { animation-delay: 0.4s; }
+.fw-page.aud-home .topic-card:nth-child(3) { animation-delay: 0.6s; }
+
+.fw-page.aud-home .topic-card::before {
+    height: 8px !important;
+    transition: height var(--duration-normal) var(--ease-out) !important;
+}
+.fw-page.aud-home .card-health::before    { background: var(--ch-health) !important; }
+.fw-page.aud-home .card-equip::before     { background: var(--ch-safety) !important; }
+.fw-page.aud-home .card-insurance::before { background: var(--ch-economic) !important; }
+
+.fw-page.aud-home .topic-card:hover {
+    transform: translateY(-12px) !important;
+    box-shadow: var(--shadow-2xl, 0 25px 60px rgba(15, 23, 42, 0.18)) !important;
+    border-color: var(--brand) !important;
+}
+.fw-page.aud-home .topic-card:hover::before {
+    height: 16px !important;
+}
+
+.fw-page.aud-home .topic-icon {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 0 !important;
+    font-size: 36px !important;
+    margin-bottom: var(--space-lg) !important;
+    transition: all var(--duration-normal) var(--ease-out) !important;
+}
+.fw-page.aud-home .topic-card:hover .topic-icon {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+.fw-page.aud-home .card-health .topic-icon    { background: var(--ch-health-bg) !important; color: var(--ch-health) !important; }
+.fw-page.aud-home .card-equip .topic-icon     { background: var(--ch-safety-bg) !important; color: var(--ch-safety) !important; }
+.fw-page.aud-home .card-insurance .topic-icon { background: var(--ch-economic-bg) !important; color: var(--ch-economic) !important; }
+
+.fw-page.aud-home .topic-text h3 {
+    font-family: var(--font-serif-tc) !important;
+    font-size: var(--text-2xl) !important;
+    font-weight: 700 !important;
+    color: var(--fg) !important;
+    margin: 0 0 var(--space-md) 0 !important;
+}
+.fw-page.aud-home .topic-text ul li {
+    font-family: var(--font-serif-tc) !important;
+    font-size: var(--text-base) !important;
+    color: var(--fg-muted) !important;
+    line-height: var(--leading-relaxed) !important;
+}
+.fw-page.aud-home .card-arrow {
+    color: var(--brand) !important;
+    transition: all var(--duration-normal) var(--ease-out) !important;
+}
+.fw-page.aud-home .topic-card:hover .card-arrow {
+    transform: translateX(12px);
+    color: var(--brand-warning) !important;
+}
+
+/* ===================================================
+   === 7 主頁視覺爆改：prev- / hp- / money- / adv- / res- ===
+   套用同一套巨型字 + 動畫 + Editorial 風格
+   =================================================== */
+
+/* Hero 統一升級 */
+.fw-page .prev-hero,
+.fw-page .hp-hero,
+.fw-page .money-hero,
+.fw-page .adv-hero,
+.fw-page .res-hero {
+    min-height: 70svh;
+    padding: var(--space-4xl) var(--space-xl) var(--space-3xl) !important;
+    background: linear-gradient(180deg, var(--bg) 0%, var(--surface-muted) 100%) !important;
+    border-radius: 0 !important;
+    border: none !important;
+    margin-bottom: var(--space-2xl) !important;
+    position: relative;
+    animation: heroFadeIn 1.2s var(--ease-out) both;
+}
+
+.fw-page .prev-hero-title,
+.fw-page .hp-hero-title,
+.fw-page .money-hero-title,
+.fw-page .adv-hero-title,
+.fw-page .res-hero-title {
+    font-family: var(--font-serif-tc) !important;
+    font-size: clamp(2.5rem, 6vw, 5.5rem) !important;
+    font-weight: 900 !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.02em;
+    color: var(--fg) !important;
+    margin: 0 0 var(--space-lg) 0 !important;
+    max-width: 18ch;
+    animation: heroFadeUp 1s var(--ease-out) 0.7s both;
+}
+
+.fw-page .prev-hero-subtitle,
+.fw-page .hp-hero-subtitle,
+.fw-page .money-hero-subtitle,
+.fw-page .adv-hero-subtitle,
+.fw-page .res-hero-subtitle {
+    font-family: var(--font-serif-tc) !important;
+    font-size: clamp(1.25rem, 2vw, 1.75rem) !important;
+    font-weight: 400 !important;
+    color: var(--fg-muted) !important;
+    font-style: italic !important;
+    line-height: 1.4 !important;
+    margin: 0 0 var(--space-xl) 0 !important;
+    max-width: 32ch;
+    animation: heroFadeUp 1s var(--ease-out) 0.9s both;
+}
+
+.fw-page .prev-hero-badge,
+.fw-page .hp-hero-badge,
+.fw-page .money-hero-badge,
+.fw-page .adv-hero-badge,
+.fw-page .res-hero-badge {
+    display: inline-flex !important;
+    align-items: center;
+    gap: var(--space-xs) !important;
+    background: var(--brand) !important;
+    color: var(--bg) !important;
+    font-family: var(--font-mono) !important;
+    font-size: var(--text-sm) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    padding: var(--space-xs) var(--space-md) !important;
+    border-radius: 0 !important;
+    margin-bottom: var(--space-xl) !important;
+    animation: heroFadeUp 0.8s var(--ease-out) 0.5s both;
+}
+
+/* 各章節徽章用各自章節色 */
+.fw-page.ch-safety   .prev-hero-badge { background: var(--ch-safety) !important; }
+.fw-page.ch-health   .hp-hero-badge   { background: var(--ch-health) !important; }
+.fw-page.ch-economic .money-hero-badge { background: var(--ch-economic) !important; }
+.fw-page.ch-advocacy .adv-hero-badge  { background: var(--ch-advocacy) !important; }
+.fw-page.ch-research .res-hero-badge  { background: var(--ch-research) !important; }
+
+/* 7 主頁巨型統計數字 */
+.fw-page .prev-hero-stats .stat-num,
+.fw-page .hp-hero-stats .stat-num,
+.fw-page .money-hero-stats .stat-num,
+.fw-page .adv-stat-num,
+.fw-page .res-hero-stats .stat-num,
+.fw-page .prev-stat-number,
+.fw-page .hp-stat-number,
+.fw-page .money-stat-number,
+.fw-page .res-stat-number {
+    font-family: var(--font-display) !important;
+    font-size: clamp(4rem, 8vw, 7rem) !important;
+    font-weight: 800 !important;
+    line-height: 0.85 !important;
+    letter-spacing: -0.04em !important;
+    color: var(--brand) !important;
+}
+
+/* 各章節數字用章節色 */
+.fw-page.ch-safety   .prev-stat-number,
+.fw-page.ch-safety   .prev-hero-stats .stat-num { color: var(--ch-safety) !important; }
+.fw-page.ch-health   .hp-stat-number,
+.fw-page.ch-health   .hp-hero-stats .stat-num { color: var(--ch-health) !important; }
+.fw-page.ch-economic .money-stat-number,
+.fw-page.ch-economic .money-hero-stats .stat-num { color: var(--ch-economic) !important; }
+.fw-page.ch-advocacy .adv-stat-num { color: var(--ch-advocacy) !important; }
+.fw-page.ch-research .res-stat-number,
+.fw-page.ch-research .res-hero-stats .stat-num { color: var(--ch-research) !important; }
+
+/* 7 主頁卡片 hover 加強 */
+.fw-page .prev-card,
+.fw-page .hp-card,
+.fw-page .money-card,
+.fw-page .adv-card,
+.fw-page .res-card,
+.fw-page .content-card {
+    transition: all var(--duration-slow) var(--ease-out) !important;
+}
+.fw-page .prev-card:hover,
+.fw-page .hp-card:hover,
+.fw-page .money-card:hover,
+.fw-page .adv-card:hover,
+.fw-page .res-card:hover {
+    transform: translateY(-12px) !important;
+    box-shadow: var(--shadow-2xl, 0 25px 60px rgba(15, 23, 42, 0.18)) !important;
+}
+
+/* RWD 手機調整 */
+@media (max-width: 768px) {
+    .fw-page.aud-home .topic-container {
+        grid-template-columns: 1fr !important;
+    }
+    .fw-page .prev-hero,
+    .fw-page .hp-hero,
+    .fw-page .money-hero,
+    .fw-page .adv-hero,
+    .fw-page .res-hero {
+        min-height: 55svh;
+        padding: var(--space-3xl) var(--space-md) var(--space-2xl) !important;
+    }
+}
+
+/* ===================================================
    === 資深農友頁專屬無障礙加強 ===
    嘉義在地審核員 + 學術倫理審核員雙路推薦
    1. Atkinson Hyperlegible 字體（英數專用，中文用 Noto Sans TC）
