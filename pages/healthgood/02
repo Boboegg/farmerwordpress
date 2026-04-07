@@ -274,9 +274,9 @@
 <style>
 /* === 基礎變數與容器 === */
 .hp-tabs-section {
-  --brand: #2e7d32;
-  --brand-hover: #1b5e20;
-  --brand-dark: #1a3a1a;
+  --brand-legacy: #2e7d32;
+  --brand-legacy-hover: #1b5e20;
+  --brand-legacy-dark: #1a3a1a;
   --text-primary: #1f2937;
   --text-secondary: #6b7280;
   --radius: 16px;
@@ -294,7 +294,7 @@
 .hp-section-header h2 {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--brand-dark);
+  color: var(--brand-legacy-dark);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -331,9 +331,9 @@
   font-family: inherit;
 }
 .hp-tab-btn.is-active, .hp-tab-btn:hover {
-  background: var(--tab-color, var(--brand));
+  background: var(--tab-color, var(--brand-legacy));
   color: #fff;
-  border-color: var(--tab-color, var(--brand));
+  border-color: var(--tab-color, var(--brand-legacy));
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 

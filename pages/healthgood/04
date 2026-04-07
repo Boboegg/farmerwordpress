@@ -119,7 +119,7 @@
 <style>
 /* === 05-heat-index 專用樣式（hpH 前綴） === */
 .hpH-heat-section{
-  --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#c62828;
+  --brand-legacy:#2e7d32;--brand-legacy-dark:#1a3a1a;--accent:#c62828;
   --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
@@ -127,7 +127,7 @@
 .hpH-heat-section *{box-sizing:border-box;}
 
 .hpH-section-header{margin-bottom:24px;}
-.hpH-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpH-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
 .hpH-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;}
 
 .hpH-content-row{display:flex;gap:24px;align-items:flex-start;}
@@ -150,7 +150,7 @@
 .hpH-row-black td:first-child{border-left:4px solid #424242;}
 
 .hpH-source{font-size:.82rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:6px;line-height:1.6;}
-.hpH-source a{color:var(--brand);}
+.hpH-source a{color:var(--brand-legacy);}
 
 /* Right: Heart Rate */
 .hpH-hr-card{flex:.8;background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}

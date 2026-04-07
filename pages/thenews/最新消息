@@ -14,7 +14,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- ========== 區塊 1：Hero ========== -->
@@ -166,7 +166,7 @@
 <style>
 /* === 變數 === */
 .tnews-hero,.tnews-wrapper,.tnews-explore {
-  --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;--brand-hover:#3d5a04;
+  --brand-legacy:#5C8607;--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
   --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
@@ -177,7 +177,7 @@
 .tnews-hero {
   display:flex;gap:40px;align-items:center;
   padding:48px 40px;
-  background:linear-gradient(135deg,var(--brand-light) 0%,#fff 50%,#f8faf5 100%);
+  background:linear-gradient(135deg,var(--brand-legacy-light) 0%,#fff 50%,#f8faf5 100%);
   border-radius:var(--radius);margin-bottom:0;
   border:1px solid rgba(92,134,7,.12);
   position:relative;overflow:hidden;
@@ -190,12 +190,12 @@
 .tnews-hero-inner{flex:1;}
 .tnews-hero-badge {
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(92,134,7,.1);color:var(--brand);
+  background:rgba(92,134,7,.1);color:var(--brand-legacy);
   padding:6px 16px;border-radius:20px;
   font-size:.85rem;font-weight:700;margin-bottom:16px;letter-spacing:.5px;
 }
 .tnews-hero-title {
-  font-size:2.4rem;font-weight:900;color:var(--brand-dark);
+  font-size:2.4rem;font-weight:900;color:var(--brand-legacy-dark);
   margin:0 0 10px;line-height:1.2;
 }
 .tnews-hero-subtitle {
@@ -209,7 +209,7 @@
   width:64px;height:64px;border-radius:16px;
   background:#fff;box-shadow:var(--shadow);
   display:flex;align-items:center;justify-content:center;
-  font-size:24px;color:var(--brand);
+  font-size:24px;color:var(--brand-legacy);
   transition:transform .3s;
 }
 .tnews-hero-icon:hover{transform:translateY(-4px);}
@@ -233,9 +233,9 @@
   display:inline-flex;align-items:center;gap:6px;
   white-space:nowrap;
 }
-.tnews-tab:hover{border-color:var(--brand);color:var(--brand);}
+.tnews-tab:hover{border-color:var(--brand-legacy);color:var(--brand-legacy);}
 .tnews-tab.is-active {
-  background:var(--brand);color:#fff;border-color:var(--brand);
+  background:var(--brand-legacy);color:#fff;border-color:var(--brand-legacy);
   box-shadow:0 4px 12px rgba(92,134,7,.25);
 }
 .tnews-tab.is-active i{color:#fff;}
@@ -261,7 +261,7 @@
   padding:28px 36px;box-shadow:var(--shadow);border:1px solid #eef2f7;
 }
 .tnews-explore-title {
-  font-size:1.1rem;font-weight:800;color:var(--brand-dark);
+  font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);
   margin:0 0 16px;display:flex;align-items:center;gap:8px;
 }
 .tnews-explore-grid {
@@ -274,10 +274,10 @@
   transition:all .3s;
 }
 .tnews-explore-card:hover {
-  border-color:var(--brand);transform:translateY(-3px);
+  border-color:var(--brand-legacy);transform:translateY(-3px);
   box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
-.tnews-explore-card i{font-size:22px;color:var(--brand);}
+.tnews-explore-card i{font-size:22px;color:var(--brand-legacy);}
 .tnews-explore-card span{font-weight:700;font-size:.9rem;}
 
 /* === Tab 分類專屬色標 === */

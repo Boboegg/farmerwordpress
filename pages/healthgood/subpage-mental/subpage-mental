@@ -6,7 +6,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- ========== Hero ========== -->
@@ -317,7 +317,7 @@
 <!-- ========== CSS ========== -->
 <style>
 .mind-hero,.mind-sections,.mind-crosslinks,.mind-references{
-  --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#2e7d32;
+  --brand-legacy:#2e7d32;--brand-legacy-dark:#1a3a1a;--accent:#2e7d32;
   --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -330,7 +330,7 @@
 .mind-hero-subtitle{font-size:1.05rem;color:#388e3c;font-weight:600;margin:0 0 18px;line-height:1.6;}
 .mind-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(46,125,50,.06);}
 .mind-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.mind-hero-intro p:last-child{margin-bottom:0;}
-.mind-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
+.mind-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand-legacy);font-weight:700;text-decoration:none;font-size:.9rem;}
 
 /* Section Cards */
 .mind-sections{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}
@@ -399,20 +399,20 @@
 
 /* Crosslinks */
 .mind-crosslinks{margin-bottom:36px;}
-.mind-crosslinks h3{font-size:1.2rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:8px;margin:0 0 16px;}
+.mind-crosslinks h3{font-size:1.2rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:8px;margin:0 0 16px;}
 .mind-crosslink-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 .mind-crosslink-card{display:flex;flex-direction:column;gap:4px;padding:20px;background:#fff;border-radius:12px;border:1px solid #eee;text-decoration:none;color:inherit;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.03);}
-.mind-crosslink-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.07);border-color:var(--brand);}
-.mind-crosslink-card i{font-size:1.2rem;color:var(--brand);}
-.mind-crosslink-card span{font-weight:700;font-size:.95rem;color:var(--brand-dark);}
+.mind-crosslink-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.07);border-color:var(--brand-legacy);}
+.mind-crosslink-card i{font-size:1.2rem;color:var(--brand-legacy);}
+.mind-crosslink-card span{font-weight:700;font-size:.95rem;color:var(--brand-legacy-dark);}
 .mind-crosslink-card small{font-size:.82rem;color:var(--text-secondary);line-height:1.5;}
 
 /* References */
 .mind-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
-.mind-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.mind-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
 .mind-ref-list{display:flex;flex-direction:column;gap:8px;}
 .mind-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
-.mind-ref-list a{color:var(--brand);word-break:break-all;}
+.mind-ref-list a{color:var(--brand-legacy);word-break:break-all;}
 
 @media(max-width:768px){
   .mind-hero{padding:24px;}.mind-hero-title{font-size:1.5rem;}

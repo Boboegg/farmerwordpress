@@ -42,7 +42,7 @@
 <style>
 /* === 04-tools 樣式 === */
 .money-tools{
-  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
   --text-primary:#1f2937;--text-secondary:#6b7280;
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;background:#fff;border-radius:16px;padding:36px;
@@ -51,9 +51,9 @@
 }
 .money-tools *{box-sizing:border-box;}
 
-.money-tools-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--brand-light);}
-.money-tools-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
-.money-tools-header h2 i{color:var(--brand);}
+.money-tools-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--brand-legacy-light);}
+.money-tools-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.money-tools-header h2 i{color:var(--brand-legacy);}
 .money-tools-header p{font-size:.93rem;color:var(--text-secondary);margin:0;}
 
 .money-tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
@@ -65,7 +65,7 @@
   transition:all .3s ease;
 }
 .money-tool-card:hover{
-  border-color:var(--brand);
+  border-color:var(--brand-legacy);
   transform:translateY(-4px);
   box-shadow:0 10px 24px rgba(21,101,192,.1);
 }
@@ -79,9 +79,9 @@
 .money-tool-icon-green{background:rgba(21,128,61,.1);color:#15803d;}
 .money-tool-icon-amber{background:rgba(217,119,6,.1);color:#d97706;}
 
-.money-tool-info h3{font-size:1rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
+.money-tool-info h3{font-size:1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 6px;}
 .money-tool-info p{font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin:0 0 10px;}
-.money-tool-link{font-size:.88rem;font-weight:700;color:var(--brand);display:flex;align-items:center;gap:4px;}
+.money-tool-link{font-size:.88rem;font-weight:700;color:var(--brand-legacy);display:flex;align-items:center;gap:4px;}
 
 @media(max-width:992px){
   .money-tools-grid{grid-template-columns:1fr;}

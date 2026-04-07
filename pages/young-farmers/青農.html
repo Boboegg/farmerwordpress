@@ -1,4 +1,5 @@
 <!-- wp:html -->
+<div class="fw-page aud-young">
 <!-- =====================================================
      分眾入口：青農（Pro）— 升級包
      URL：/young-farmers/
@@ -9,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <div class="young-page-wrapper">
@@ -150,7 +151,7 @@
 <style>
 /* === 青農（Pro）=== */
 .young-page-wrapper{
-  --brand:#5B7FA6;--brand-dark:#3a5d82;--brand-bg:#E8EFF7;
+  --brand-legacy:#5B7FA6;--brand-legacy-dark:#3a5d82;--brand-bg:#E8EFF7;
   --text-primary:#1f3348;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
@@ -161,20 +162,20 @@
 .young-hero{background:linear-gradient(135deg,var(--brand-bg) 0%,#fff 50%,#c9daf0 100%);border-radius:var(--radius);padding:36px 24px;margin-bottom:20px;border:1px solid rgba(91,127,166,.2);}
 .young-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,127,166,.18);color:#38587d;font-size:.85rem;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:14px;}
 .young-hero-title{font-size:1.9rem;font-weight:900;color:#2f4a69;margin:0 0 12px;line-height:1.25;}
-.young-hero-tagline{font-size:1.05rem;font-weight:600;color:var(--brand-dark);margin:0 0 16px;line-height:1.6;font-family:"Lora","Noto Sans TC",serif;font-style:italic;}
+.young-hero-tagline{font-size:1.05rem;font-weight:600;color:var(--brand-legacy-dark);margin:0 0 16px;line-height:1.6;font-family:"Lora","Noto Sans TC",serif;font-style:italic;}
 .young-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:18px;border:1px solid rgba(91,127,166,.1);}
 .young-hero-intro p{margin:0;line-height:1.8;font-size:.95rem;color:var(--text-secondary);}
 
 /* 數據區 */
-.young-section-title{font-size:1.25rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.young-section-title{font-size:1.25rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
 .young-stats{margin-bottom:24px;}
 .young-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px;}
 .young-stat-card{background:#fff;border-radius:14px;padding:18px 14px;text-align:center;border:1px solid #ececec;box-shadow:0 2px 8px rgba(0,0,0,.03);}
-.young-stat-number{font-size:2rem;font-weight:900;color:var(--brand-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
+.young-stat-number{font-size:2rem;font-weight:900;color:var(--brand-legacy-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
 .young-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
 .young-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
 .young-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
-.young-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(91,127,166,.08);border-radius:10px;border-left:4px solid var(--brand);}
+.young-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(91,127,166,.08);border-radius:10px;border-left:4px solid var(--brand-legacy);}
 
 /* 情境卡 */
 .young-scenarios{margin-bottom:24px;}
@@ -184,24 +185,24 @@
 .young-scenario-body{flex:1;min-width:0;}
 .young-scenario-body h3{font-size:1.05rem;font-weight:800;margin:0 0 8px;color:var(--text-primary);}
 .young-scenario-body p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
-.young-scenario-link{font-size:.9rem;font-weight:700;color:var(--brand-dark);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.young-scenario-link{font-size:.9rem;font-weight:700;color:var(--brand-legacy-dark);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
 .young-scenario-link:hover{text-decoration:underline;}
 
 /* 計畫簡介 */
 .young-about{background:#fff;border-radius:var(--radius);padding:24px;margin-bottom:20px;border:1px solid #ececec;}
 .young-about-desc{font-size:.93rem;line-height:1.8;color:var(--text-secondary);margin:0 0 16px;}
 .young-about-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
-.young-pillar{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--brand-bg);border-radius:12px;font-size:.82rem;font-weight:700;color:var(--brand-dark);}
-.young-pillar i{font-size:1.3rem;color:var(--brand);}
-.young-about-link{font-size:.9rem;font-weight:700;color:var(--brand-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}.young-about-link:hover{text-decoration:underline;}
+.young-pillar{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--brand-bg);border-radius:12px;font-size:.82rem;font-weight:700;color:var(--brand-legacy-dark);}
+.young-pillar i{font-size:1.3rem;color:var(--brand-legacy);}
+.young-about-link{font-size:.9rem;font-weight:700;color:var(--brand-legacy-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}.young-about-link:hover{text-decoration:underline;}
 
 /* CTA */
 .young-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
 .young-cta-btn{min-height:52px;border-radius:14px;text-decoration:none;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;}
-.young-cta-primary{background:var(--brand);color:#fff;border:2px solid var(--brand);box-shadow:0 4px 12px rgba(91,127,166,.3);}
-.young-cta-primary:hover{background:var(--brand-dark);border-color:var(--brand-dark);transform:translateY(-2px);}
-.young-cta-secondary{background:#fff;color:var(--brand-dark);border:2px solid rgba(91,127,166,.3);}
-.young-cta-secondary:hover{border-color:var(--brand);background:var(--brand-bg);}
+.young-cta-primary{background:var(--brand-legacy);color:#fff;border:2px solid var(--brand-legacy);box-shadow:0 4px 12px rgba(91,127,166,.3);}
+.young-cta-primary:hover{background:var(--brand-legacy-dark);border-color:var(--brand-legacy-dark);transform:translateY(-2px);}
+.young-cta-secondary{background:#fff;color:var(--brand-legacy-dark);border:2px solid rgba(91,127,166,.3);}
+.young-cta-secondary:hover{border-color:var(--brand-legacy);background:var(--brand-bg);}
 
 /* 緊急資源 */
 .young-emergency{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:20px;border:1px solid #ececec;}
@@ -216,8 +217,8 @@
 .young-explore{margin-bottom:20px;}
 .young-explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .young-explore-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;background:#fff;border-radius:12px;border:1px solid #ececec;text-decoration:none;color:var(--text-primary);font-size:.85rem;font-weight:700;transition:all .3s;}
-.young-explore-card i{font-size:1.3rem;color:var(--brand);}
-.young-explore-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
+.young-explore-card i{font-size:1.3rem;color:var(--brand-legacy);}
+.young-explore-card:hover{border-color:var(--brand-legacy);transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
 
 /* 底部導覽 */
 .young-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -2px 12px rgba(0,0,0,.06);}
@@ -235,4 +236,5 @@
   .young-emergency-grid{grid-template-columns:1fr;}
 }
 </style>
+</div>
 <!-- /wp:html -->

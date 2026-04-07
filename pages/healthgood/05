@@ -165,7 +165,7 @@
 <style>
 /* === 06-resources 專用樣式（hpR 前綴） === */
 .hpR-resource-section{
-  --brand:#2e7d32;--brand-dark:#1a3a1a;
+  --brand-legacy:#2e7d32;--brand-legacy-dark:#1a3a1a;
   --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
@@ -173,7 +173,7 @@
 .hpR-resource-section *{box-sizing:border-box;}
 
 .hpR-section-header{margin-bottom:24px;}
-.hpR-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpR-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
 .hpR-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;}
 
 .hpR-three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
@@ -187,11 +187,11 @@
 .hpR-info-list{display:flex;flex-direction:column;gap:0;}
 .hpR-info-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f5f5f5;}
 .hpR-info-row:last-child{border-bottom:none;}
-.hpR-info-label{flex-shrink:0;width:80px;font-size:.82rem;font-weight:700;color:var(--brand);padding-top:2px;}
+.hpR-info-label{flex-shrink:0;width:80px;font-size:.82rem;font-weight:700;color:var(--brand-legacy);padding-top:2px;}
 .hpR-info-value{font-size:.88rem;line-height:1.6;color:var(--text-primary);}
 .hpR-info-value small{color:var(--text-secondary);font-size:.8rem;}
 
-.hpR-stat-highlight{display:flex;align-items:center;gap:8px;background:rgba(46,125,50,.06);padding:12px 16px;border-radius:10px;margin-top:14px;font-size:.88rem;color:var(--brand);}
+.hpR-stat-highlight{display:flex;align-items:center;gap:8px;background:rgba(46,125,50,.06);padding:12px 16px;border-radius:10px;margin-top:14px;font-size:.88rem;color:var(--brand-legacy);}
 .hpR-stat-highlight strong{color:#1b5e20;}
 
 /* Disclaimer */
@@ -201,7 +201,7 @@
 .hpR-disclaimer p{font-size:.78rem;line-height:1.5;color:var(--text-secondary);margin:0 0 4px;}
 .hpR-disclaimer p:last-child{margin-bottom:0;}
 .hpR-disclaimer-links{display:flex;gap:12px;margin-top:4px;}
-.hpR-disclaimer-links a{color:var(--brand);font-weight:600;font-size:.78rem;text-decoration:none;}
+.hpR-disclaimer-links a{color:var(--brand-legacy);font-weight:600;font-size:.78rem;text-decoration:none;}
 .hpR-disclaimer-links a:hover{text-decoration:underline;}
 
 /* Hospital list */
@@ -224,7 +224,7 @@
 .hpR-phone-poison .hpR-phone-number{color:#7b1fa2;}
 
 .hpR-local-contacts{margin-top:16px;padding:14px;background:rgba(46,125,50,.04);border-radius:10px;}
-.hpR-local-contacts h4{font-size:.88rem;font-weight:700;color:var(--brand);margin:0 0 8px;display:flex;align-items:center;gap:6px;}
+.hpR-local-contacts h4{font-size:.88rem;font-weight:700;color:var(--brand-legacy);margin:0 0 8px;display:flex;align-items:center;gap:6px;}
 .hpR-local-contacts p{font-size:.85rem;color:var(--text-primary);margin:0 0 4px;line-height:1.6;}
 
 @media(max-width:900px){

@@ -18,7 +18,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- ========== Hero ========== -->
@@ -90,9 +90,9 @@
 <style>
 /* === 變數與基底 === */
 .pod-hero, .pod-how-it-works, .pod-archive-section, .pod-footer-links {
-  --brand: #5C8607;
-  --brand-dark: #4a6b05;
-  --brand-light: #eef5ea;
+  --brand-legacy: #5C8607;
+  --brand-legacy-dark: #4a6b05;
+  --brand-legacy-light: #eef5ea;
   --text-primary: #1f2937;
   --text-secondary: #6b7280;
   --radius: 16px;
@@ -258,8 +258,8 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--brand-light);
-  color: var(--brand);
+  background: var(--brand-legacy-light);
+  color: var(--brand-legacy);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +269,7 @@
 .pod-how-card h3 {
   font-size: 1.05rem;
   font-weight: 800;
-  color: var(--brand-dark);
+  color: var(--brand-legacy-dark);
   margin: 0 0 4px;
 }
 .pod-how-card p {
@@ -301,7 +301,7 @@
 .pod-footer-title {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--brand-dark);
+  color: var(--brand-legacy-dark);
   margin: 0 0 18px;
   display: flex;
   align-items: center;
@@ -327,13 +327,13 @@
   transition: all .3s;
 }
 .pod-footer-card:hover {
-  border-color: var(--brand);
+  border-color: var(--brand-legacy);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,.06);
 }
 .pod-footer-card i {
   font-size: 22px;
-  color: var(--brand);
+  color: var(--brand-legacy);
 }
 .pod-footer-card span {
   font-weight: 700;

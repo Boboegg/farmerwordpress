@@ -71,7 +71,7 @@
 <style>
 /* === 02-topic-cards 樣式 === */
 .money-topics{
-  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
   --text-primary:#1f2937;--text-secondary:#6b7280;
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;box-sizing:border-box;
@@ -79,8 +79,8 @@
 .money-topics *{box-sizing:border-box;}
 
 .money-section-head{margin-bottom:24px;}
-.money-section-head h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
-.money-section-head h2 i{color:var(--brand);}
+.money-section-head h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.money-section-head h2 i{color:var(--brand-legacy);}
 .money-section-head p{font-size:.95rem;color:var(--text-secondary);margin:0;}
 
 .money-topic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
@@ -105,7 +105,7 @@
 a.money-topic-card:hover{
   transform:translateY(-8px);
   box-shadow:0 16px 36px rgba(21,101,192,.12);
-  border-color:var(--brand);
+  border-color:var(--brand-legacy);
 }
 a.money-topic-card:hover::before{height:100%;opacity:.04;}
 
@@ -128,7 +128,7 @@ a.money-topic-card:hover::before{height:100%;opacity:.04;}
 .money-topic-green .money-topic-icon{background:rgba(21,128,61,.1);color:#15803d;}
 .money-topic-amber .money-topic-icon{background:rgba(217,119,6,.1);color:#d97706;}
 
-.money-topic-card h3{font-size:1.2rem;font-weight:800;margin:0 0 10px;color:var(--brand-dark);}
+.money-topic-card h3{font-size:1.2rem;font-weight:800;margin:0 0 10px;color:var(--brand-legacy-dark);}
 .money-topic-desc{font-size:.9rem;color:var(--text-secondary);line-height:1.7;margin:0 0 16px;flex-grow:1;}
 
 .money-topic-highlights{list-style:none;padding:0;margin:0 0 16px;}
@@ -136,11 +136,11 @@ a.money-topic-card:hover::before{height:100%;opacity:.04;}
   font-size:.85rem;color:var(--text-primary);
   padding:4px 0;display:flex;align-items:center;gap:8px;
 }
-.money-topic-highlights li i{font-size:.7rem;color:var(--brand);flex-shrink:0;}
+.money-topic-highlights li i{font-size:.7rem;color:var(--brand-legacy);flex-shrink:0;}
 
 .money-topic-cta{
   margin-top:auto;padding:10px 0;
-  font-weight:700;font-size:.93rem;color:var(--brand);
+  font-weight:700;font-size:.93rem;color:var(--brand-legacy);
   display:flex;align-items:center;gap:6px;
   border-top:1px solid #eef2f7;
   transition:gap .3s;

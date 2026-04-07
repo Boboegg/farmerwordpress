@@ -1,4 +1,5 @@
 <!-- wp:html -->
+<div class="fw-page aud-start">
 <!-- =====================================================
      分眾入口：新手務農（Start）— 防禦包
      URL：/beginner-farmers/
@@ -9,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <div class="start-page-wrapper">
@@ -150,7 +151,7 @@
 <style>
 /* === 新手務農（Start）=== */
 .start-page-wrapper{
-  --brand:#87AE73;--brand-dark:#5a7d48;--brand-bg:#EEF5EA;
+  --brand-legacy:#87AE73;--brand-legacy-dark:#5a7d48;--brand-bg:#EEF5EA;
   --text-primary:#343F1E;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
@@ -161,20 +162,20 @@
 .start-hero{background:linear-gradient(135deg,var(--brand-bg) 0%,#fff 50%,#d5e8c5 100%);border-radius:var(--radius);padding:36px 24px;margin-bottom:20px;border:1px solid rgba(135,174,115,.2);}
 .start-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(135,174,115,.18);color:#3d5d2f;font-size:.85rem;font-weight:700;padding:6px 16px;border-radius:20px;margin-bottom:14px;}
 .start-hero-title{font-size:1.9rem;font-weight:900;color:#2e4a26;margin:0 0 12px;line-height:1.25;}
-.start-hero-tagline{font-size:1.05rem;font-weight:600;color:var(--brand-dark);margin:0 0 16px;line-height:1.6;font-family:"Lora","Noto Sans TC",serif;font-style:italic;}
+.start-hero-tagline{font-size:1.05rem;font-weight:600;color:var(--brand-legacy-dark);margin:0 0 16px;line-height:1.6;font-family:"Lora","Noto Sans TC",serif;font-style:italic;}
 .start-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:18px;border:1px solid rgba(135,174,115,.1);}
 .start-hero-intro p{margin:0;line-height:1.8;font-size:.95rem;color:var(--text-secondary);}
 
 /* 數據區 */
-.start-section-title{font-size:1.25rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.start-section-title{font-size:1.25rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
 .start-stats{margin-bottom:24px;}
 .start-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px;}
 .start-stat-card{background:#fff;border-radius:14px;padding:18px 14px;text-align:center;border:1px solid #ececec;box-shadow:0 2px 8px rgba(0,0,0,.03);}
-.start-stat-number{font-size:2rem;font-weight:900;color:var(--brand-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
+.start-stat-number{font-size:2rem;font-weight:900;color:var(--brand-legacy-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
 .start-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
 .start-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
 .start-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
-.start-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(135,174,115,.08);border-radius:10px;border-left:4px solid var(--brand);}
+.start-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(135,174,115,.08);border-radius:10px;border-left:4px solid var(--brand-legacy);}
 
 /* 情境卡 */
 .start-scenarios{margin-bottom:24px;}
@@ -184,24 +185,24 @@
 .start-scenario-body{flex:1;min-width:0;}
 .start-scenario-body h3{font-size:1.05rem;font-weight:800;margin:0 0 8px;color:var(--text-primary);}
 .start-scenario-body p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
-.start-scenario-link{font-size:.9rem;font-weight:700;color:var(--brand-dark);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+.start-scenario-link{font-size:.9rem;font-weight:700;color:var(--brand-legacy-dark);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
 .start-scenario-link:hover{text-decoration:underline;}
 
 /* 計畫簡介 */
 .start-about{background:#fff;border-radius:var(--radius);padding:24px;margin-bottom:20px;border:1px solid #ececec;}
 .start-about-desc{font-size:.93rem;line-height:1.8;color:var(--text-secondary);margin:0 0 16px;}
 .start-about-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;}
-.start-pillar{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--brand-bg);border-radius:12px;font-size:.82rem;font-weight:700;color:var(--brand-dark);}
-.start-pillar i{font-size:1.3rem;color:var(--brand);}
-.start-about-link{font-size:.9rem;font-weight:700;color:var(--brand-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}.start-about-link:hover{text-decoration:underline;}
+.start-pillar{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 8px;background:var(--brand-bg);border-radius:12px;font-size:.82rem;font-weight:700;color:var(--brand-legacy-dark);}
+.start-pillar i{font-size:1.3rem;color:var(--brand-legacy);}
+.start-about-link{font-size:.9rem;font-weight:700;color:var(--brand-legacy-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}.start-about-link:hover{text-decoration:underline;}
 
 /* CTA */
 .start-cta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
 .start-cta-btn{min-height:52px;border-radius:14px;text-decoration:none;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all .3s;}
-.start-cta-primary{background:var(--brand);color:#fff;border:2px solid var(--brand);box-shadow:0 4px 12px rgba(135,174,115,.3);}
-.start-cta-primary:hover{background:var(--brand-dark);border-color:var(--brand-dark);transform:translateY(-2px);}
-.start-cta-secondary{background:#fff;color:var(--brand-dark);border:2px solid rgba(135,174,115,.3);}
-.start-cta-secondary:hover{border-color:var(--brand);background:var(--brand-bg);}
+.start-cta-primary{background:var(--brand-legacy);color:#fff;border:2px solid var(--brand-legacy);box-shadow:0 4px 12px rgba(135,174,115,.3);}
+.start-cta-primary:hover{background:var(--brand-legacy-dark);border-color:var(--brand-legacy-dark);transform:translateY(-2px);}
+.start-cta-secondary{background:#fff;color:var(--brand-legacy-dark);border:2px solid rgba(135,174,115,.3);}
+.start-cta-secondary:hover{border-color:var(--brand-legacy);background:var(--brand-bg);}
 
 /* 緊急資源 */
 .start-emergency{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:20px;border:1px solid #ececec;}
@@ -216,8 +217,8 @@
 .start-explore{margin-bottom:20px;}
 .start-explore-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .start-explore-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;background:#fff;border-radius:12px;border:1px solid #ececec;text-decoration:none;color:var(--text-primary);font-size:.85rem;font-weight:700;transition:all .3s;}
-.start-explore-card i{font-size:1.3rem;color:var(--brand);}
-.start-explore-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
+.start-explore-card i{font-size:1.3rem;color:var(--brand-legacy);}
+.start-explore-card:hover{border-color:var(--brand-legacy);transform:translateY(-3px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
 
 /* 底部導覽 */
 .start-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -2px 12px rgba(0,0,0,.06);}
@@ -235,4 +236,5 @@
   .start-emergency-grid{grid-template-columns:1fr;}
 }
 </style>
+</div>
 <!-- /wp:html -->

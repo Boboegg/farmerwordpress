@@ -6,7 +6,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- ========== Hero ========== -->
@@ -315,7 +315,7 @@
 <!-- ========== CSS ========== -->
 <style>
 .mach-hero,.mach-categories,.mach-subsidy-section,.mach-safety-section,.mach-references{
-  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:#5C8607;--brand-legacy-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .mach-hero *,.mach-categories *,.mach-subsidy-section *,.mach-safety-section *,.mach-references *{box-sizing:border-box;}
@@ -327,7 +327,7 @@
 .mach-hero-subtitle{font-size:1.1rem;color:#0ea5e9;font-weight:600;margin:0 0 18px;}
 .mach-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(21,101,192,.06);}
 .mach-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.mach-hero-intro p:last-child{margin-bottom:0;}
-.mach-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
+.mach-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand-legacy);font-weight:700;text-decoration:none;font-size:.9rem;}
 .mach-back-link:hover{text-decoration:underline;}
 .mach-hero-data{background:rgba(21,101,192,.06);border-left:4px solid #1565c0;border-radius:8px;padding:16px 20px;margin-top:16px;font-size:.93rem;line-height:1.8;}
 .mach-hero-data p{margin:0 0 8px;font-weight:700;color:#1565c0;}
@@ -355,7 +355,7 @@
 /* Subsidy Section */
 .mach-subsidy-section{margin-bottom:36px;}
 .mach-subsidy-header{margin-bottom:20px;}
-.mach-subsidy-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.mach-subsidy-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
 .mach-subsidy-header p{color:var(--text-secondary);margin:0;font-size:.95rem;line-height:1.7;}
 .mach-subsidy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin-bottom:28px;}
 .mach-info-card{background:#fff;border-radius:12px;padding:20px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.03);}
@@ -365,34 +365,34 @@
 
 /* Apply Steps */
 .mach-apply-steps{background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:20px;}
-.mach-apply-steps h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 20px;}
+.mach-apply-steps h3{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 20px;}
 .mach-steps-row{display:flex;align-items:flex-start;gap:8px;flex-wrap:wrap;justify-content:center;}
 .mach-step{flex:1;min-width:160px;text-align:center;padding:16px;}
-.mach-step-num{width:36px;height:36px;border-radius:50%;background:var(--brand);color:#fff;font-weight:900;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px;}
+.mach-step-num{width:36px;height:36px;border-radius:50%;background:var(--brand-legacy);color:#fff;font-weight:900;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px;}
 .mach-step h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
 .mach-step p{font-size:.85rem;line-height:1.5;color:var(--text-secondary);margin:0;}
 .mach-step-arrow{display:flex;align-items:center;color:#d0d0d0;font-size:1.2rem;padding-top:20px;}
 
 .mach-subsidy-cta{text-align:center;}
-.mach-cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--brand);color:#fff;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(92,134,7,.3);transition:all .3s;}
+.mach-cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:var(--brand-legacy);color:#fff;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;box-shadow:0 4px 12px rgba(92,134,7,.3);transition:all .3s;}
 .mach-cta-btn:hover{background:#4a6b05;transform:translateY(-2px);}
 
 /* Safety */
 .mach-safety-section{margin-bottom:36px;}
-.mach-safety-section h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.mach-safety-section h2{font-size:1.4rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
 .mach-safety-section>p{color:var(--text-secondary);margin:0 0 16px;font-size:.95rem;line-height:1.7;}
 .mach-safety-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 .mach-safety-item{background:#fff;border-radius:12px;padding:20px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.03);}
-.mach-safety-item>i{font-size:1.4rem;color:var(--brand);margin-bottom:10px;display:block;}
+.mach-safety-item>i{font-size:1.4rem;color:var(--brand-legacy);margin-bottom:10px;display:block;}
 .mach-safety-item h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
 .mach-safety-item p{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0;}
 
 /* References */
 .mach-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
-.mach-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.mach-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
 .mach-ref-list{display:flex;flex-direction:column;gap:8px;}
 .mach-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
-.mach-ref-list a{color:var(--brand);word-break:break-all;}
+.mach-ref-list a{color:var(--brand-legacy);word-break:break-all;}
 
 @media(max-width:768px){
   .mach-hero{padding:24px;}.mach-hero-title{font-size:1.5rem;}
