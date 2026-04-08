@@ -2027,7 +2027,319 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     }
 }
 
-/* ----- 12. 砍舊動畫進場 keyframes（定義成 no-op） ----- */
+/* ===================================================
+   === 13. Astra 主題層覆蓋（稻穗熟成統一） ===
+   解決：兩個背景（Astra #FDFAF1 vs .fw-page #FBFAF7）
+   解決：body 繼承 Astra 的 Lora 16px
+   解決：sidebar widgets、首頁 shortcode 不一致
+   =================================================== */
+
+/* 統一背景 — html / body / Astra 主容器 */
+html,
+body,
+body.home,
+body[class*="page-id"],
+.site,
+.site-content,
+#page,
+#content,
+#primary,
+#main,
+.ast-container,
+.ast-container-main,
+.ast-row,
+.ast-article-single,
+.ast-article-inner,
+.ast-separate-container .ast-article-single,
+.ast-no-sidebar .entry-content,
+.ast-single-post .entry-content,
+article.post,
+article.page {
+    background: var(--bg) !important;
+    background-color: var(--bg) !important;
+    background-image: none !important;
+}
+
+/* 統一字體 */
+body,
+body.home,
+body[class*="page-id"],
+.site,
+#content,
+.entry-content,
+.entry-content p,
+.entry-content li {
+    font-family: var(--font-sans-tc) !important;
+    color: var(--fg) !important;
+    font-size: var(--text-lg) !important;
+    line-height: var(--leading-relaxed) !important;
+}
+
+/* Astra header — 扁平 + 稻穗熟成 */
+.site-header,
+.ast-main-header-wrap,
+.main-header-bar,
+.ast-above-header,
+.ast-below-header {
+    background: var(--bg) !important;
+    background-image: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    box-shadow: none !important;
+}
+.site-title,
+.site-title a,
+.ast-site-title-wrap,
+.site-description {
+    font-family: var(--font-serif-tc) !important;
+    color: var(--brand-deep) !important;
+    letter-spacing: 0.04em;
+}
+.main-header-menu a,
+.main-navigation a,
+.main-header-menu .menu-item a,
+#ast-desktop-header a {
+    font-family: var(--font-sans-tc) !important;
+    color: var(--fg) !important;
+    letter-spacing: 0.04em;
+    text-transform: none;
+}
+@media (hover: hover) {
+    .main-header-menu a:hover,
+    .main-navigation a:hover,
+    .main-header-menu .menu-item a:hover {
+        color: var(--brand) !important;
+    }
+}
+/* Header 右側 LINE@ 等 CTA 按鈕 */
+.ast-custom-button,
+.ast-custom-button-link,
+.ast-builder-button-wrap .ast-custom-button,
+.ast-builder-button-wrap a.button {
+    background: var(--brand) !important;
+    color: var(--bg) !important;
+    border: 1px solid var(--brand) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--font-sans-tc) !important;
+    letter-spacing: 0.04em !important;
+    padding: var(--space-sm) var(--space-lg) !important;
+}
+
+/* Astra footer — 扁平米灰 */
+#colophon,
+.site-footer,
+.ast-small-footer,
+.footer-sml-layout-1,
+.footer-sml-layout-2,
+[data-section="section-footer-builder"] {
+    background: var(--bg-light) !important;
+    background-image: none !important;
+    border-top: 1px solid var(--border) !important;
+    box-shadow: none !important;
+    color: var(--fg) !important;
+    font-family: var(--font-sans-tc) !important;
+}
+#colophon *,
+.site-footer * {
+    font-family: var(--font-sans-tc) !important;
+}
+#colophon h1,
+#colophon h2,
+#colophon h3,
+#colophon h4,
+.site-footer h1,
+.site-footer h2,
+.site-footer h3,
+.site-footer h4 {
+    font-family: var(--font-serif-tc) !important;
+    color: var(--brand-deep) !important;
+    letter-spacing: 0.04em !important;
+}
+#colophon a,
+.site-footer a {
+    color: var(--brand) !important;
+}
+
+/* Sidebar widgets — 扁平化 + 稻穗熟成 */
+#secondary,
+.widget-area,
+.sidebar-main {
+    background: transparent !important;
+}
+#secondary .widget,
+#secondary .wp-block-group,
+.side-widget,
+.widget_custom_html,
+.widget_text {
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: var(--space-lg) !important;
+    margin-bottom: var(--space-lg) !important;
+}
+#secondary .widget h1,
+#secondary .widget h2,
+#secondary .widget h3,
+#secondary .widget h4,
+#secondary .widget-title,
+.side-widget h1,
+.side-widget h2,
+.side-widget h3,
+.side-widget h4,
+.side-widget .widget-title {
+    font-family: var(--font-serif-tc) !important;
+    font-size: var(--text-xl) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    color: var(--brand-deep) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding-bottom: var(--space-sm) !important;
+    margin: 0 0 var(--space-md) 0 !important;
+    background: transparent !important;
+}
+#secondary .widget a,
+.side-widget a {
+    background: transparent !important;
+    color: var(--fg) !important;
+    font-family: var(--font-sans-tc) !important;
+    text-decoration: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-size: var(--text-base) !important;
+}
+@media (hover: hover) {
+    #secondary .widget a:hover,
+    .side-widget a:hover {
+        color: var(--brand) !important;
+    }
+}
+/* sidebar 內的 tag cloud / keyword pills */
+#secondary .tagcloud a,
+#secondary .wp-block-tag-cloud a,
+.side-widget .tagcloud a,
+.side-widget [class*="tag"] a,
+.side-widget [class*="keyword"] a {
+    display: inline-block !important;
+    background: var(--bg-light) !important;
+    color: var(--brand) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    padding: 4px 10px !important;
+    font-size: var(--text-xs) !important;
+    font-family: var(--font-sans-tc) !important;
+    letter-spacing: 0.04em;
+    margin: 2px;
+}
+
+/* 首頁 shortcode 扁平化 — home highlight / news / video / podcast */
+.home-highlight-outer,
+.home-highlight-slider,
+.home-highlight-inner,
+.home-highlight-wrap,
+.home-highlight-item,
+.news-magazine-wrap,
+.news-magazine-outer,
+.news-magazine-inner,
+.news-magazine-item,
+.news-magazine-list,
+.farmer-videos,
+.farmer-videos-wrap,
+.farmer-videos-item,
+.farmer-courses,
+.farmer-courses-wrap,
+.farmer-courses-item,
+.farmer-podcasts,
+.farmer-podcast-item {
+    background: var(--bg) !important;
+    background-image: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+.home-highlight-item,
+.news-magazine-item,
+.farmer-videos-item,
+.farmer-courses-item,
+.farmer-podcast-item {
+    border: 1px solid var(--border) !important;
+    padding: var(--space-md) !important;
+}
+.home-highlight-item img,
+.news-magazine-item img,
+.farmer-videos-item img,
+.farmer-courses-item img {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+/* shortcode 內的 tag / category label */
+.home-highlight-item .tag,
+.home-highlight-item .category,
+.news-magazine-item .tag,
+.news-magazine-item .category,
+.farmer-videos-item .tag,
+[class*="badge"],
+[class*="label-"],
+[class*="tag-yt"],
+[class*="tag-podcast"] {
+    background: var(--brand-warning) !important;
+    color: var(--bg) !important;
+    border-radius: 0 !important;
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-xs) !important;
+    letter-spacing: 0.04em !important;
+    padding: 2px 8px !important;
+    border: none !important;
+    text-transform: uppercase;
+}
+.home-highlight-item h3,
+.news-magazine-item h3,
+.farmer-videos-item h3,
+.farmer-courses-item h3 {
+    font-family: var(--font-serif-tc) !important;
+    font-size: var(--text-lg) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    color: var(--fg) !important;
+}
+.home-highlight-dots {
+    gap: 6px;
+}
+.home-highlight-dots button,
+.home-highlight-dots span {
+    background: var(--border) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    width: 16px !important;
+    height: 3px !important;
+}
+.home-highlight-dots button.active,
+.home-highlight-dots span.active,
+.home-highlight-dots .active {
+    background: var(--brand) !important;
+}
+
+/* Astra 通用按鈕扁平化 */
+.wp-block-button__link,
+.entry-content a.button,
+.entry-content button,
+.wp-element-button {
+    background: var(--brand) !important;
+    color: var(--bg) !important;
+    border: 1px solid var(--brand) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--font-sans-tc) !important;
+    letter-spacing: 0.04em !important;
+    padding: var(--space-sm) var(--space-lg) !important;
+}
+.wp-block-button.is-style-outline .wp-block-button__link,
+.entry-content a.button.outline {
+    background: transparent !important;
+    color: var(--brand) !important;
+}
+
+/* ----- 14. 砍舊動畫進場 keyframes（定義成 no-op） ----- */
 @keyframes heroFadeIn { from, to { opacity: 1; } }
 @keyframes heroBarSlide { from, to { transform: none; } }
 @keyframes heroFadeUp { from, to { opacity: 1; transform: none; } }
