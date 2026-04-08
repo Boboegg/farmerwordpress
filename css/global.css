@@ -1,102 +1,88 @@
 /* ===================================================
-   0. 全站設計 Token（CSS 變數）
-   v1.0 品牌主色：#5C8607（尊嚴綠）— 已退役為 legacy
-   v2.1 品牌主色：#854D0E（老茶米黃）— 配方「燒土稻紙」
-   v2.1 主方案：vault/Projects/P8-尊嚴農業/design-2.1-master-plan.md
+   0. 全站設計 Token — 稻穗熟成 (Rice Ripening)
+   主方案：vault/Projects/P8-尊嚴農業/2026-04-07-討論全紀錄.md
+   配方：綠 #3D5A2C · 金 #A8740B · 紅 #8B2D14 · 米紙白 #FBFAF7
+   用量：55 米白 / 30 綠 / 10 金 / 5 紅
+   字體：只用 2 家族（Noto Serif TC + Noto Sans TC）
+   字級：8 階全整數（12/14/16/18/22/28/36/48）
+   Hero h1 上限：48px。行高 ≥ 1.75。內文寬度 ≤ 680px。
    =================================================== */
 :root {
-    /* === Legacy（保護既有 13 個 CSS 前綴頁面） === */
+    /* === Legacy（保護舊 13 CSS 前綴頁面，勿動） === */
     --brand-legacy: #5C8607;
     --brand-legacy-dark: #4a6b05;
     --brand-legacy-light: #eef5ea;
     --brand-legacy-hover: #3d5a04;
 
-    /* 強調色（保留） */
-    --accent: #d4a017;
+    /* === 稻穗熟成主色（變數名沿用下游相容） === */
+    --brand: #3D5A2C;              /* 苔蘚墨綠 / 主色 30% 對比 8.9:1 ★AAA on #FBFAF7 */
+    --brand-deep: #2A3F1E;         /* 深墨綠 / hover 加深 */
+    --brand-accent: #A8740B;       /* 古銅稻穗金 / 佐色 10% 對比 5.4:1 ★AA */
+    --brand-warning: #8B2D14;      /* 燒土紅 / 警示色 5% 對比 9.6:1 ★AAA */
+    --brand-relief: #3D5A2C;       /* 舊 --brand-relief 喘息綠 → 改走主色同源 */
 
-    /* 文字色（保留，新頁面優先用 v2.1 --fg） */
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --text-muted: #9ca3af;
+    /* 相容別名（別的舊 rule 會抓到） */
+    --accent: #A8740B;
 
-    /* 中性色（保留） */
-    --bg-white: #ffffff;
-    --bg-light: #f8fafc;
-    --border-light: #e2e8f0;
-    --border-lighter: #f0f0f0;
+    /* === 稻穗熟成中性色 === */
+    --bg: #FBFAF7;                 /* 米紙白 / 唯一底色（禁用純白） */
+    --bg-white: #FBFAF7;           /* 相容舊 var */
+    --bg-light: #F4F0E6;           /* 章節輪替 */
+    --surface: #FBFAF7;            /* 卡片用同底色，靠 1px border 分 */
+    --surface-muted: #F4F0E6;      /* 引言 / 章節輪替 */
 
-    /* 元件 Token（保留，新頁面優先用 v2.1 --radius-* / --shadow-*） */
-    --radius-card: 16px;
-    --radius-badge: 20px;
-    --radius-btn: 50px;
-    --shadow-card: 0 4px 16px rgba(0,0,0,0.05);
-    --shadow-card-hover: 0 15px 30px rgba(0,0,0,0.08);
-    --transition-card: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --fg: #1F1A14;                 /* 墨褐內文字 — 不是純黑 */
+    --fg-strong: #0F0B06;
+    --fg-muted: #5C5448;           /* 淡墨 metadata */
+    --fg-subtle: #8A8274;
 
-    /* ============================================
-       === v2.1 主色系（配方「燒土稻紙」） ===
-       所有顏色 on #FFFBEB 對比已驗算，全部通過 WCAG AA 以上
-       ============================================ */
-    --brand: #854D0E;              /* 老茶米黃 / 主品牌色 8.18:1 ★AAA */
-    --brand-warning: #B91C1C;      /* 深警示紅 / 死亡數據 6.04:1 ★AA+ */
-    --brand-accent: #B45309;       /* 收穫琥珀深 / 連結強調 4.69:1 ★AA */
-    --brand-deep: #7F1D1D;         /* 暗紅 / hover 加深 10.97:1 ★AAA */
-    --brand-relief: #047857;       /* 翠綠喘息深 / 內頁點綴 4.51:1 ★AA */
+    --text-primary: #1F1A14;       /* 相容舊 var */
+    --text-secondary: #5C5448;
+    --text-muted: #8A8274;
 
-    /* === v2.1 中性色 === */
-    --bg: #FFFBEB;                 /* 米白稻紙 / 全站底色（禁用純白） */
-    --surface: #FFFFFF;            /* 卡片浮層 */
-    --surface-muted: #F8F2F0;      /* 淺燒土 / 引言區 */
+    --border: #D8CFB8;             /* 米邊 1px 線 */
+    --border-strong: #B8AE97;
+    --border-subtle: #E5DFCC;
+    --border-light: #D8CFB8;
+    --border-lighter: #E5DFCC;
 
-    --fg: #0F172A;                 /* 近黑墨 17.65:1 ★AAA */
-    --fg-strong: #000000;
-    --fg-muted: #4B5563;           /* 深灰 6.08:1 ★AA */
-    --fg-subtle: #9CA3AF;
+    /* === 章節色（稻穗熟成重新分配 — 對比全數 AAA） ===
+       策略：只用「綠/金/紅」三色家族 + 深淺階
+       避免 v2.1 的「章節色彩虹」問題 */
+    --ch-about: #3D5A2C;           /* 01 關於：主綠 */
+    --ch-safety: #8B2D14;          /* 02 職安：燒土紅 */
+    --ch-health: #2A3F1E;           /* 03 健康：深墨綠 */
+    --ch-economic: #78350F;        /* 04 經濟：深焦糖褐 */
+    --ch-empower: #A8740B;         /* 05 培力：古銅稻穗金 */
+    --ch-advocacy: #6B1F0F;        /* 06 倡議：深燒土紅 */
+    --ch-research: #2A3F1E;        /* 07 研究：深墨綠 */
 
-    --border: #E7E0D8;
-    --border-strong: #C8BFB3;
-    --border-subtle: #F0EBE3;
+    --ch-about-bg: #F4F0E6;
+    --ch-safety-bg: #F4F0E6;
+    --ch-health-bg: #F4F0E6;
+    --ch-economic-bg: #F4F0E6;
+    --ch-empower-bg: #F4F0E6;
+    --ch-advocacy-bg: #F4F0E6;
+    --ch-research-bg: #F4F0E6;
 
-    /* ============================================
-       === v2.1 七大主頁章節色（同源協調） ===
-       警告：章節 Hero 標題不可用章節色當前景，必須用 var(--fg)
-       原因：5/7 章節色在自家淡 bg 上對比 < 4.5
-       ============================================ */
-    --ch-about: #5B6B2F;           /* 01 關於：深苔綠 6.74:1 ★AA */
-    --ch-safety: #9A3412;          /* 02 職安：燒土紅 8.43:1 ★AAA */
-    --ch-health: #0E7490;          /* 03 健康：醫療藍綠 5.40:1 ★AA */
-    --ch-economic: #78350F;        /* 04 經濟：深焦糖褐 ~9.5:1 ★AAA */
-    --ch-empower: #B45309;         /* 05 培力：收穫琥珀深 4.69:1 ★AA */
-    --ch-advocacy: #B91C1C;        /* 06 倡議：深警示紅 6.04:1 ★AA+ */
-    --ch-research: #064E3B;        /* 07 研究：深森林綠 11.91:1 ★AAA */
+    /* === 分眾入口色（稻穗熟成統一為三色家族，不再彩虹） === */
+    --aud-start: #3D5A2C;          /* 新手：主綠（希望/生長） */
+    --aud-start-deep: #2A3F1E;
+    --aud-start-bg: #F4F0E6;
 
-    /* 章節淡背景（用於章節 hero 區段底） */
-    --ch-about-bg: #F0F4E5;
-    --ch-safety-bg: #FDF4E8;
-    --ch-health-bg: #E8F4F8;
-    --ch-economic-bg: #FAF3E0;
-    --ch-empower-bg: #FEF3C7;
-    --ch-advocacy-bg: #FEE2E2;
-    --ch-research-bg: #DCFCE7;
+    --aud-young: #2A3F1E;          /* 青農：深墨綠（穩定/深入） */
+    --aud-young-deep: #1F2F15;
+    --aud-young-bg: #F4F0E6;
 
-    /* === v2.1 分眾入口色（保留 v2.0） === */
-    --aud-start: #87AE73;
-    --aud-start-deep: #5F8C4A;
-    --aud-start-bg: #EEF5EA;
+    --aud-senior: #8B2D14;         /* 資深：燒土紅（歲月/職傷） */
+    --aud-senior-deep: #6B1F0F;
+    --aud-senior-bg: #F4F0E6;
 
-    --aud-young: #5B7FA6;
-    --aud-young-deep: #3D5F87;
-    --aud-young-bg: #E8EFF7;
+    --aud-public: #A8740B;         /* 民眾：古銅金（成熟/豐收） */
+    --aud-public-deep: #7A5508;
+    --aud-public-bg: #F4F0E6;
 
-    --aud-senior: #C17F5E;
-    --aud-senior-deep: #9A5E3D;
-    --aud-senior-bg: #F9EDE7;
-
-    --aud-public: #D4A017;
-    --aud-public-deep: #A87C0E;
-    --aud-public-bg: #FDF4DC;
-
-    /* === v2.1 間距尺度（8pt grid） === */
+    /* === 間距尺度（8pt grid 保留相容） === */
     --space-xs: 8px;
     --space-sm: 12px;
     --space-md: 16px;
@@ -107,71 +93,80 @@
     --space-4xl: 96px;
     --space-5xl: 128px;
 
-    /* === v2.1 字體系統 === */
+    /* === 字體 — 只有 2 個家族 ===
+       把舊 --font-display / --font-body / --font-body-a11y / --font-mono
+       全部 remap 到這 2 個，下游規則 zero-edit 就會自動減字體 */
     --font-serif-tc: "Noto Serif TC", "PMingLiU", serif;
-    --font-sans-tc: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-    --font-display: "Inter Tight", "Helvetica Neue", sans-serif;
-    --font-body: "Inter", "Helvetica Neue", sans-serif;
-    --font-body-a11y: "Atkinson Hyperlegible", "Inter", "Helvetica Neue", sans-serif;
-    --font-mono: "JetBrains Mono", Menlo, Consolas, monospace;
+    --font-sans-tc: "Noto Sans TC", "Hiragino Sans CNS", "PingFang TC", sans-serif;
+    --font-display: var(--font-serif-tc);   /* ← 舊 Inter Tight 砍 */
+    --font-body: var(--font-sans-tc);       /* ← 舊 Inter 砍 */
+    --font-body-a11y: var(--font-sans-tc);  /* ← 舊 Atkinson 砍（中文無意義） */
+    --font-mono: var(--font-sans-tc);       /* ← 舊 JetBrains 砍，用 letter-spacing + uppercase 仿 mono */
 
-    /* 字級尺度 */
-    --text-xs: 0.75rem;
-    --text-sm: 0.875rem;
-    --text-base: 1rem;
-    --text-lg: 1.125rem;
-    --text-xl: 1.25rem;
-    --text-2xl: 1.5rem;
-    --text-3xl: 1.875rem;
-    --text-4xl: 2.25rem;
-    --text-5xl: 3rem;
-    --text-6xl: 3.75rem;
-    --text-display-tc: clamp(2.5rem, 5vw + 1rem, 6rem);
-    --text-display-en: clamp(3rem, 8vw, 7.5rem);
-    --text-mega: clamp(5rem, 15vw, 12rem);
+    /* === 字級尺度 — 8 階全整數（px） === */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 22px;
+    --text-2xl: 28px;
+    --text-3xl: 36px;
+    --text-4xl: 48px;    /* hero h1 上限 — 不准超過 */
+    --text-5xl: 48px;    /* 相容舊 var，一律封頂 48 */
+    --text-6xl: 48px;    /* 相容舊 var，一律封頂 48 */
+    --text-display-tc: clamp(36px, 5.5vw, 48px);
+    --text-display-en: clamp(36px, 5.5vw, 48px);
+    --text-mega: clamp(36px, 5vw, 48px);
 
-    /* 行高與字距 */
-    --leading-tight: 1.1;
-    --leading-snug: 1.25;
-    --leading-normal: 1.5;
-    --leading-relaxed: 1.75;
-    --tracking-tighter: -0.05em;
-    --tracking-tight: -0.025em;
+    /* === 行高與字距 === */
+    --leading-tight: 1.3;
+    --leading-snug: 1.4;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.85;       /* 東亞內文行高 */
+    --tracking-tighter: 0;
+    --tracking-tight: 0;
     --tracking-normal: 0;
-    --tracking-wide: 0.025em;
-    --tracking-wider: 0.05em;
-    --tracking-widest: 0.1em;
+    --tracking-wide: 0.04em;       /* 中文大字抗擠 */
+    --tracking-wider: 0.08em;
+    --tracking-widest: 0.2em;
 
-    /* === v2.1 陰影層次 === */
-    --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
-    --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.05);
-    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
-    --shadow-lg: 0 10px 24px rgba(15, 23, 42, 0.08);
-    --shadow-xl: 0 20px 40px rgba(15, 23, 42, 0.12);
-    --shadow-brand: 0 20px 60px rgba(133, 77, 14, 0.25);
+    /* === 陰影 — 稻穗熟成不准 shadow（卡片靠 1px border）=== */
+    --shadow-xs: none;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-xl: none;
+    --shadow-2xl: none;
+    --shadow-brand: none;
+    --shadow-card: none;
+    --shadow-card-hover: none;
 
-    /* === v2.1 圓角尺度 === */
-    --radius-xs: 4px;
-    --radius-sm: 8px;
-    --radius-md: 12px;
-    --radius-lg: 16px;
-    --radius-xl: 24px;
-    --radius-2xl: 32px;
+    /* === 圓角 — 全扁平，最大 4px === */
+    --radius-xs: 0;
+    --radius-sm: 0;
+    --radius-md: 4px;
+    --radius-lg: 4px;
+    --radius-xl: 4px;
+    --radius-2xl: 4px;
     --radius-full: 9999px;
+    --radius-card: 0;
+    --radius-badge: 0;
+    --radius-btn: 4px;
 
-    /* === v2.1 動畫變數 === */
+    /* === 動畫 — 縮短 duration，避免首屏空白 === */
     --ease-linear: linear;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --ease-soft: cubic-bezier(0.25, 0.8, 0.25, 1);
-    --duration-instant: 75ms;
-    --duration-fast: 150ms;
-    --duration-normal: 300ms;
-    --duration-slow: 500ms;
-    --duration-slower: 750ms;
+    --duration-instant: 60ms;
+    --duration-fast: 120ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --duration-slower: 400ms;
+    --transition-card: border-color 120ms ease, transform 120ms ease;
 
-    /* === v2.1 Z-index === */
+    /* === Z-index（保留） === */
     --z-base: 0;
     --z-dropdown: 100;
     --z-sticky: 200;
@@ -182,18 +177,21 @@
     --z-toast: 700;
     --z-tooltip: 800;
 
-    /* === v2.1 容器寬度 === */
-    --container-narrow: 680px;
+    /* === 容器寬度 === */
+    --container-narrow: 640px;     /* 中文 longform 最適寬度 */
     --container-medium: 820px;
     --container-wide: 1080px;
-    --container-full: 1440px;
+    --container-full: 1200px;
 
-    /* === v2.1 無障礙基礎建設 === */
-    --focus-ring: 0 0 0 3px rgba(133, 77, 14, 0.5);
+    /* === 無障礙 === */
+    --focus-ring: 0 0 0 3px rgba(61, 90, 44, 0.5);
     --focus-ring-offset: 2px;
     --skip-link-bg: var(--brand);
     --skip-link-fg: var(--bg);
-    --skip-link-radius: var(--radius-sm);
+    --skip-link-radius: 0;
+
+    /* === 稻穗熟成新增：用量比例節奏 === */
+    --rh-measure: 640px;
 }
 
 /* ===================================================
@@ -974,132 +972,185 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page.ch-research { border-top: 4px solid var(--ch-research); }
 
 /* 分眾入口頁色帶（首頁與 4 分眾頁）— 8px 加粗 */
-.fw-page.aud-home   { border-top: 8px solid var(--brand); }
-.fw-page.aud-start  { border-top: 8px solid var(--aud-start-deep); }
-.fw-page.aud-young  { border-top: 8px solid var(--aud-young-deep); }
-.fw-page.aud-senior { border-top: 8px solid var(--aud-senior-deep); }
-.fw-page.aud-public { border-top: 8px solid var(--aud-public-deep); }
+.fw-page.aud-home   { border-top: 4px solid var(--brand); }
+.fw-page.aud-start  { border-top: 4px solid var(--aud-start); }
+.fw-page.aud-young  { border-top: 4px solid var(--aud-young); }
+.fw-page.aud-senior { border-top: 4px solid var(--aud-senior); }
+.fw-page.aud-public { border-top: 4px solid var(--aud-public); }
 
 /* ===================================================
-   === v2.1 視覺爆改層（DRAMATIC VISUAL OVERRIDES）===
-   覆蓋既有 .start-hero / .young-hero / .senior-hero / .public-hero
-   讓視覺真的有電影感，不是只改 token
+   === 稻穗熟成（Rice Ripening）全站視覺層 ===
+   取代舊 v2.1 視覺爆改層（2026-04-08）
+   原則：
+   - 字體 2 家族（serif + sans）
+   - 字級 ≤ 48px
+   - 行高 ≥ 1.75
+   - 單底色 #FBFAF7，章節輪替用 --bg-light
+   - 卡片扁平 1px border 零 shadow
+   - Section 節奏 96px 空白
+   - 動畫 delay ≤ 0.2s
+   - 大字中文 letter-spacing 0.04em
+   - hover 包進 @media (hover: hover)
    =================================================== */
 
-/* ----- 1. Hero 區段大改：響應式 + 巨型襯線標題 ----- */
+/* ----- 1. fw-page 容器基礎（所有稻穗頁共用） ----- */
+.fw-page {
+    background: var(--bg) !important;
+    color: var(--fg);
+    font-family: var(--font-sans-tc);
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+}
+
+/* ----- 2. Hero（4 分眾 + 7 主頁 共用樣板） ----- */
 .fw-page .start-hero,
 .fw-page .young-hero,
 .fw-page .senior-hero,
-.fw-page .public-hero {
-    min-height: clamp(420px, 60svh, 720px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: clamp(2rem, 5vw, 5rem) clamp(1rem, 4vw, 2.5rem) !important;
-    background: linear-gradient(180deg, var(--bg) 0%, var(--surface-muted) 100%) !important;
-    border-radius: 0 !important;
+.fw-page .public-hero,
+.fw-page .prev-hero,
+.fw-page .hp-hero,
+.fw-page .money-hero,
+.fw-page .adv-hero,
+.fw-page .res-hero {
+    min-height: auto !important;
+    padding: var(--space-4xl) var(--space-xl) !important;
+    background: var(--bg) !important;
     border: none !important;
-    margin-bottom: var(--space-2xl) !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    margin: 0 0 var(--space-4xl) 0 !important;
     position: relative;
-    overflow: hidden;
-    animation: heroFadeIn 0.6s var(--ease-out) both;
+    overflow: visible;
+    animation: none !important;
 }
 .fw-page .start-hero::before,
 .fw-page .young-hero::before,
 .fw-page .senior-hero::before,
-.fw-page .public-hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 6px;
-    background: var(--brand);
-    transform-origin: left;
-    animation: heroBarSlide 0.6s var(--ease-out) 0.1s both;
+.fw-page .public-hero::before,
+.fw-page .prev-hero::before,
+.fw-page .hp-hero::before,
+.fw-page .money-hero::before,
+.fw-page .adv-hero::before,
+.fw-page .res-hero::before {
+    content: none !important;
 }
 
-/* Hero 徽章 — 加大 + 字距 */
+/* Hero 徽章 — kicker 風格：金色小字 + 紅色底線 */
 .fw-page .start-hero-badge,
 .fw-page .young-hero-badge,
 .fw-page .senior-hero-badge,
-.fw-page .public-hero-badge {
-    display: inline-flex !important;
-    align-items: center;
-    gap: var(--space-xs) !important;
-    background: var(--brand) !important;
-    color: var(--bg) !important;
-    font-family: var(--font-mono) !important;
-    font-size: clamp(0.7rem, 1.4vw, 0.85rem) !important;
-    font-weight: 700 !important;
+.fw-page .public-hero-badge,
+.fw-page .prev-hero-badge,
+.fw-page .hp-hero-badge,
+.fw-page .money-hero-badge,
+.fw-page .adv-hero-badge,
+.fw-page .res-hero-badge {
+    display: inline-block !important;
+    background: transparent !important;
+    color: var(--brand-accent) !important;
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-xs) !important;
+    font-weight: 500 !important;
     text-transform: uppercase;
     letter-spacing: var(--tracking-widest);
-    padding: var(--space-xs) var(--space-md) !important;
+    padding: 0 0 var(--space-xs) 0 !important;
+    border: none !important;
+    border-bottom: 2px solid var(--brand-warning) !important;
     border-radius: 0 !important;
-    margin-bottom: var(--space-lg) !important;
-    align-self: flex-start;
-    animation: heroFadeUp 0.5s var(--ease-out) 0.1s both;
+    margin: 0 0 var(--space-xl) 0 !important;
+    animation: none !important;
 }
 
-/* Hero 標題 — 巨型襯線（從 1.9rem → clamp 2-5rem） */
+/* Hero 標題 — Noto Serif TC 48px 上限 */
 .fw-page .start-hero-title,
 .fw-page .young-hero-title,
 .fw-page .senior-hero-title,
-.fw-page .public-hero-title {
+.fw-page .public-hero-title,
+.fw-page .prev-hero-title,
+.fw-page .hp-hero-title,
+.fw-page .money-hero-title,
+.fw-page .adv-hero-title,
+.fw-page .res-hero-title {
     font-family: var(--font-serif-tc) !important;
-    font-size: clamp(2rem, 5.5vw, 5rem) !important;
-    font-weight: 900 !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.02em;
-    color: var(--fg) !important;
-    margin: 0 0 var(--space-md) 0 !important;
-    max-width: 18ch;
-    animation: heroFadeUp 0.5s var(--ease-out) 0.2s both;
+    font-size: clamp(32px, 5.5vw, 48px) !important;
+    font-weight: 700 !important;
+    line-height: var(--leading-tight) !important;
+    letter-spacing: 0.04em !important;
+    color: var(--brand-deep) !important;
+    margin: 0 0 var(--space-xl) 0 !important;
+    max-width: 20ch;
+    animation: none !important;
+}
+.fw-page .start-hero-title em,
+.fw-page .young-hero-title em,
+.fw-page .senior-hero-title em,
+.fw-page .public-hero-title em,
+.fw-page .prev-hero-title em,
+.fw-page .hp-hero-title em,
+.fw-page .money-hero-title em,
+.fw-page .adv-hero-title em,
+.fw-page .res-hero-title em {
+    font-style: normal;
+    color: var(--brand-warning);
 }
 
-/* Hero tagline — 升級為大字 italic */
+/* Hero lede / tagline — 22px 引言 */
 .fw-page .start-hero-tagline,
 .fw-page .young-hero-tagline,
 .fw-page .senior-hero-tagline,
-.fw-page .public-hero-tagline {
-    font-family: var(--font-serif-tc) !important;
-    font-size: clamp(1.05rem, 2vw, 1.5rem) !important;
+.fw-page .public-hero-tagline,
+.fw-page .prev-hero-subtitle,
+.fw-page .hp-hero-subtitle,
+.fw-page .money-hero-subtitle,
+.fw-page .adv-hero-subtitle,
+.fw-page .res-hero-subtitle {
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-xl) !important;
     font-weight: 400 !important;
-    line-height: 1.5 !important;
+    font-style: normal !important;
+    line-height: var(--leading-relaxed) !important;
     color: var(--fg-muted) !important;
-    font-style: italic !important;
-    margin: 0 0 var(--space-lg) 0 !important;
-    max-width: 32ch;
-    animation: heroFadeUp 0.5s var(--ease-out) 0.3s both;
+    margin: 0 0 var(--space-2xl) 0 !important;
+    max-width: var(--rh-measure);
+    animation: none !important;
 }
 
-/* Hero intro — 編輯感的無框設計 */
+/* Hero intro 長段 */
 .fw-page .start-hero-intro,
 .fw-page .young-hero-intro,
 .fw-page .senior-hero-intro,
 .fw-page .public-hero-intro {
     background: transparent !important;
     border: none !important;
-    border-left: 4px solid var(--brand-accent) !important;
-    padding: var(--space-sm) 0 var(--space-sm) var(--space-md) !important;
-    max-width: 60ch;
-    animation: heroFadeUp 0.5s var(--ease-out) 0.4s both;
+    padding: 0 !important;
+    max-width: var(--rh-measure);
+    animation: none !important;
 }
 .fw-page .start-hero-intro p,
 .fw-page .young-hero-intro p,
 .fw-page .senior-hero-intro p,
 .fw-page .public-hero-intro p {
-    font-family: var(--font-serif-tc) !important;
+    font-family: var(--font-sans-tc) !important;
     font-size: var(--text-lg) !important;
     line-height: var(--leading-relaxed) !important;
     color: var(--fg) !important;
+    margin: 0 0 var(--space-md) 0 !important;
 }
 
-/* ----- 2. 數據震撼區大改：MEGA 巨型數字 ----- */
+/* ----- 3. 數據區（stats） ----- */
 .fw-page .start-stats,
 .fw-page .young-stats,
 .fw-page .senior-stats,
-.fw-page .public-stats {
-    margin: var(--space-4xl) 0 !important;
-    padding: var(--space-3xl) 0 !important;
+.fw-page .public-stats,
+.fw-page .prev-stats,
+.fw-page .hp-stats,
+.fw-page .money-stats,
+.fw-page .adv-stats,
+.fw-page .res-stats {
+    margin: 0 !important;
+    padding: var(--space-4xl) 0 !important;
+    background: var(--bg) !important;
+    border: none !important;
     border-top: 1px solid var(--border) !important;
     border-bottom: 1px solid var(--border) !important;
 }
@@ -1108,103 +1159,118 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page .young-section-title,
 .fw-page .senior-section-title,
 .fw-page .public-section-title {
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-sans-tc) !important;
     font-size: var(--text-sm) !important;
-    font-weight: 700 !important;
-    color: var(--fg-muted) !important;
+    font-weight: 500 !important;
+    color: var(--brand-accent) !important;
     text-transform: uppercase !important;
     letter-spacing: var(--tracking-widest) !important;
-    margin: 0 0 var(--space-2xl) 0 !important;
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
+    margin: 0 0 var(--space-lg) 0 !important;
+    display: block;
 }
 .fw-page .start-section-title::before,
 .fw-page .young-section-title::before,
 .fw-page .senior-section-title::before,
 .fw-page .public-section-title::before {
-    content: '';
-    width: 32px;
-    height: 2px;
-    background: var(--brand);
+    content: none !important;
 }
 
-/* Stats Grid — auto-fit minmax 自適應（手機 1 欄、平板 2 欄、桌機 3 欄） */
 .fw-page .start-stats-grid,
 .fw-page .young-stats-grid,
 .fw-page .senior-stats-grid,
-.fw-page .public-stats-grid {
+.fw-page .public-stats-grid,
+.fw-page .prev-stats-grid,
+.fw-page .hp-stats-grid,
+.fw-page .money-stats-grid,
+.fw-page .adv-stats-grid,
+.fw-page .res-stats-grid {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-    gap: clamp(1.5rem, 3vw, 3rem) !important;
-    margin-bottom: var(--space-xl) !important;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+    gap: var(--space-2xl) !important;
+    margin: 0 !important;
 }
 
-/* Stat Card — 透明、極簡、巨型數字主導，垂直 layout 強制 */
 .fw-page .start-stat-card,
 .fw-page .young-stat-card,
 .fw-page .senior-stat-card,
-.fw-page .public-stat-card {
+.fw-page .public-stat-card,
+.fw-page .prev-stat-card,
+.fw-page .hp-stat-card,
+.fw-page .money-stat-card,
+.fw-page .adv-stat-card,
+.fw-page .res-stat-card {
     background: transparent !important;
     border: none !important;
+    border-left: 4px solid var(--brand) !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
     padding: 0 0 0 var(--space-lg) !important;
-    text-align: left !important;
-    border-left: 4px solid var(--brand) !important;
+    margin: 0 !important;
     display: block !important;
-    transition: all var(--duration-slow) var(--ease-out);
-    animation: statFadeIn 0.5s var(--ease-out) both;
+    text-align: left !important;
+    animation: none !important;
+    transition: none !important;
     min-width: 0;
 }
-.fw-page .start-stat-card:nth-child(1),
-.fw-page .young-stat-card:nth-child(1),
-.fw-page .senior-stat-card:nth-child(1),
-.fw-page .public-stat-card:nth-child(1) { animation-delay: 0.05s; }
 .fw-page .start-stat-card:nth-child(2),
 .fw-page .young-stat-card:nth-child(2),
 .fw-page .senior-stat-card:nth-child(2),
-.fw-page .public-stat-card:nth-child(2) { animation-delay: 0.15s; }
+.fw-page .public-stat-card:nth-child(2) { border-left-color: var(--brand-accent) !important; }
 .fw-page .start-stat-card:nth-child(3),
 .fw-page .young-stat-card:nth-child(3),
 .fw-page .senior-stat-card:nth-child(3),
-.fw-page .public-stat-card:nth-child(3) { animation-delay: 0.25s; }
+.fw-page .public-stat-card:nth-child(3) { border-left-color: var(--brand-warning) !important; }
 
-/* hover 效果只在有滑鼠的裝置 */
-@media (hover: hover) {
-    .fw-page .start-stat-card:hover,
-    .fw-page .young-stat-card:hover,
-    .fw-page .senior-stat-card:hover,
-    .fw-page .public-stat-card:hover {
-        transform: translateX(8px);
-        border-left-color: var(--brand-warning);
-    }
-}
-
-/* MEGA stat number — clamp 從手機友善到桌機巨型 */
 .fw-page .start-stat-number,
 .fw-page .young-stat-number,
 .fw-page .senior-stat-number,
-.fw-page .public-stat-number {
-    font-family: var(--font-display) !important;
-    font-size: clamp(3rem, 7vw, 6.5rem) !important;
-    font-weight: 800 !important;
-    line-height: 0.85 !important;
-    letter-spacing: -0.04em !important;
-    color: var(--brand) !important;
-    margin: 0 0 var(--space-md) 0 !important;
+.fw-page .public-stat-number,
+.fw-page .prev-stat-number,
+.fw-page .hp-stat-number,
+.fw-page .money-stat-number,
+.fw-page .res-stat-number,
+.fw-page .prev-hero-stats .stat-num,
+.fw-page .hp-hero-stats .stat-num,
+.fw-page .money-hero-stats .stat-num,
+.fw-page .res-hero-stats .stat-num,
+.fw-page .adv-stat-num {
+    font-family: var(--font-serif-tc) !important;
+    font-size: clamp(36px, 5vw, 48px) !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.02em !important;
+    color: var(--brand-deep) !important;
+    margin: 0 0 var(--space-xs) 0 !important;
     display: block !important;
-    word-break: keep-all;
 }
+.fw-page .start-stat-card:nth-child(2) .start-stat-number,
+.fw-page .young-stat-card:nth-child(2) .young-stat-number,
+.fw-page .senior-stat-card:nth-child(2) .senior-stat-number,
+.fw-page .public-stat-card:nth-child(2) .public-stat-number { color: var(--brand-accent) !important; }
+.fw-page .start-stat-card:nth-child(3) .start-stat-number,
+.fw-page .young-stat-card:nth-child(3) .young-stat-number,
+.fw-page .senior-stat-card:nth-child(3) .senior-stat-number,
+.fw-page .public-stat-card:nth-child(3) .public-stat-number { color: var(--brand-warning) !important; }
+
+.fw-page.ch-safety   .prev-stat-number,
+.fw-page.ch-safety   .prev-hero-stats .stat-num { color: var(--ch-safety) !important; }
+.fw-page.ch-health   .hp-stat-number,
+.fw-page.ch-health   .hp-hero-stats .stat-num { color: var(--brand-deep) !important; }
+.fw-page.ch-economic .money-stat-number,
+.fw-page.ch-economic .money-hero-stats .stat-num { color: var(--ch-economic) !important; }
+.fw-page.ch-advocacy .adv-stat-num { color: var(--ch-advocacy) !important; }
+.fw-page.ch-research .res-stat-number,
+.fw-page.ch-research .res-hero-stats .stat-num { color: var(--brand-deep) !important; }
 
 .fw-page .start-stat-unit,
 .fw-page .young-stat-unit,
 .fw-page .senior-stat-unit,
 .fw-page .public-stat-unit {
     font-family: var(--font-serif-tc) !important;
-    font-size: 0.35em !important;
+    font-size: 0.5em !important;
     font-weight: 700 !important;
     color: var(--brand-warning) !important;
-    margin-left: var(--space-xs) !important;
+    margin-left: 2px !important;
     vertical-align: super;
 }
 
@@ -1212,90 +1278,104 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page .young-stat-label,
 .fw-page .senior-stat-label,
 .fw-page .public-stat-label {
-    font-family: var(--font-serif-tc) !important;
-    font-size: var(--text-base) !important;
-    line-height: var(--leading-snug) !important;
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-sm) !important;
+    line-height: 1.5 !important;
     color: var(--fg) !important;
-    margin: 0 0 var(--space-sm) 0 !important;
+    margin: 0 0 var(--space-xs) 0 !important;
     font-weight: 500 !important;
-    max-width: 22ch;
+    max-width: 24ch;
 }
-
 .fw-page .start-stat-source,
 .fw-page .young-stat-source,
 .fw-page .senior-stat-source,
 .fw-page .public-stat-source {
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-sans-tc) !important;
     font-size: var(--text-xs) !important;
-    text-transform: uppercase !important;
-    letter-spacing: var(--tracking-wider) !important;
-    color: var(--fg-subtle) !important;
+    text-transform: none !important;
+    letter-spacing: 0.04em !important;
+    color: var(--fg-muted) !important;
     font-style: normal !important;
     margin: 0 !important;
 }
 
-/* ----- 3. 場景卡片：Editorial 風格 ----- */
+.fw-page .start-stats-note,
+.fw-page .young-stats-note,
+.fw-page .senior-stats-note,
+.fw-page .public-stats-note {
+    font-family: var(--font-serif-tc) !important;
+    font-size: var(--text-xl) !important;
+    font-style: normal !important;
+    line-height: 1.6 !important;
+    color: var(--brand-deep) !important;
+    background: transparent !important;
+    border: none !important;
+    border-left: 4px solid var(--brand-warning) !important;
+    padding: var(--space-sm) 0 var(--space-sm) var(--space-lg) !important;
+    border-radius: 0 !important;
+    margin: var(--space-4xl) 0 0 0 !important;
+    max-width: var(--rh-measure);
+}
+
+/* ----- 4. 場景卡片 ----- */
 .fw-page .start-scenario-card,
 .fw-page .young-scenario-card,
 .fw-page .senior-scenario-card,
 .fw-page .public-scenario-card {
-    background: var(--surface) !important;
+    background: var(--bg) !important;
     border: 1px solid var(--border) !important;
-    border-left: 6px solid var(--accent, var(--brand-accent)) !important;
-    padding: clamp(1rem, 3vw, 2rem) !important;
-    margin-bottom: var(--space-lg) !important;
+    border-left: 4px solid var(--brand) !important;
     border-radius: 0 !important;
-    transition: all var(--duration-normal) var(--ease-out);
-    box-shadow: var(--shadow-sm);
+    box-shadow: none !important;
+    padding: var(--space-xl) !important;
+    margin-bottom: var(--space-lg) !important;
+    transition: var(--transition-card);
 }
 @media (hover: hover) {
     .fw-page .start-scenario-card:hover,
     .fw-page .young-scenario-card:hover,
     .fw-page .senior-scenario-card:hover,
     .fw-page .public-scenario-card:hover {
-        transform: translateY(-6px);
-        box-shadow: var(--shadow-xl);
-        border-left-width: 12px;
+        border-left-color: var(--brand-warning) !important;
+        transform: translateY(-2px);
     }
 }
-
 .fw-page .start-scenario-card h3,
 .fw-page .young-scenario-card h3,
 .fw-page .senior-scenario-card h3,
 .fw-page .public-scenario-card h3 {
     font-family: var(--font-serif-tc) !important;
-    font-size: var(--text-2xl) !important;
+    font-size: var(--text-xl) !important;
     font-weight: 700 !important;
-    line-height: 1.2 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.02em !important;
     color: var(--fg) !important;
     margin: 0 0 var(--space-md) 0 !important;
 }
-
 .fw-page .start-scenario-card p,
 .fw-page .young-scenario-card p,
 .fw-page .senior-scenario-card p,
 .fw-page .public-scenario-card p {
-    font-family: var(--font-serif-tc) !important;
+    font-family: var(--font-sans-tc) !important;
     font-size: var(--text-base) !important;
     line-height: var(--leading-relaxed) !important;
     color: var(--fg-muted) !important;
     margin: 0 0 var(--space-md) 0 !important;
 }
-
 .fw-page .start-scenario-link,
 .fw-page .young-scenario-link,
 .fw-page .senior-scenario-link,
 .fw-page .public-scenario-link {
-    font-family: var(--font-mono) !important;
+    font-family: var(--font-sans-tc) !important;
     font-size: var(--text-xs) !important;
     font-weight: 700 !important;
     text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
+    letter-spacing: var(--tracking-wider);
     color: var(--brand) !important;
     text-decoration: none !important;
-    border-bottom: 2px solid var(--brand);
+    border-bottom: 1px solid var(--brand);
     padding-bottom: 2px;
-    transition: all var(--duration-fast) var(--ease-out);
+    transition: var(--transition-card);
 }
 @media (hover: hover) {
     .fw-page .start-scenario-link:hover,
@@ -1304,61 +1384,287 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     .fw-page .public-scenario-link:hover {
         color: var(--brand-warning) !important;
         border-bottom-color: var(--brand-warning);
-        letter-spacing: 0.15em;
     }
 }
 
-/* ----- 4. Stats Note — 編輯式引言 ----- */
-.fw-page .start-stats-note,
-.fw-page .young-stats-note,
-.fw-page .senior-stats-note,
-.fw-page .public-stats-note {
+/* ----- 5. 首頁 topic-card（aud-home） ----- */
+.fw-page.aud-home .topic-header {
+    text-align: left !important;
+    margin: 0 0 var(--space-2xl) 0 !important;
+    padding: 0 !important;
+    animation: none !important;
+}
+.fw-page.aud-home .topic-header h2 {
+    font-family: var(--font-serif-tc) !important;
+    font-size: clamp(32px, 5vw, 48px) !important;
+    font-weight: 700 !important;
+    line-height: var(--leading-tight) !important;
+    letter-spacing: 0.04em !important;
+    color: var(--brand-deep) !important;
+    margin: 0 0 var(--space-lg) 0 !important;
+}
+.fw-page.aud-home .topic-header .highlight {
+    color: var(--brand-warning) !important;
+}
+.fw-page.aud-home .topic-header .highlight::after {
+    content: none !important;
+}
+.fw-page.aud-home .topic-header p {
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-xl) !important;
+    font-style: normal !important;
+    line-height: var(--leading-relaxed) !important;
+    color: var(--fg-muted) !important;
+    max-width: var(--rh-measure);
+}
+.fw-page.aud-home .topic-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: var(--space-md) !important;
+    margin: var(--space-2xl) 0 !important;
+}
+.fw-page.aud-home .topic-card {
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    padding: var(--space-2xl) !important;
+    box-shadow: none !important;
+    transition: var(--transition-card);
+    animation: none !important;
+    position: relative;
+    overflow: visible;
+}
+.fw-page.aud-home .topic-card::before {
+    height: 4px !important;
+    transition: none !important;
+}
+.fw-page.aud-home .card-health::before    { background: var(--brand) !important; }
+.fw-page.aud-home .card-equip::before     { background: var(--brand-warning) !important; }
+.fw-page.aud-home .card-insurance::before { background: var(--brand-accent) !important; }
+@media (hover: hover) {
+    .fw-page.aud-home .topic-card:hover {
+        border-color: var(--brand) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: none !important;
+    }
+    .fw-page.aud-home .topic-card:hover::before {
+        height: 4px !important;
+    }
+    .fw-page.aud-home .topic-card:hover .topic-icon {
+        transform: none !important;
+    }
+}
+.fw-page.aud-home .topic-icon {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 0 !important;
+    font-size: 24px !important;
+    margin-bottom: var(--space-md) !important;
+    transition: none !important;
+    background: transparent !important;
+    border: 1px solid var(--border) !important;
+    color: var(--brand) !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+.fw-page.aud-home .card-health .topic-icon    { color: var(--brand) !important; background: transparent !important; }
+.fw-page.aud-home .card-equip .topic-icon     { color: var(--brand-warning) !important; background: transparent !important; }
+.fw-page.aud-home .card-insurance .topic-icon { color: var(--brand-accent) !important; background: transparent !important; }
+.fw-page.aud-home .topic-text h3 {
     font-family: var(--font-serif-tc) !important;
     font-size: var(--text-xl) !important;
-    font-style: italic !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0.02em !important;
+    color: var(--fg) !important;
+    margin: 0 0 var(--space-sm) 0 !important;
+}
+.fw-page.aud-home .topic-text ul {
+    padding-left: var(--space-md) !important;
+    margin: 0 0 var(--space-md) 0 !important;
+}
+.fw-page.aud-home .topic-text ul li {
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-base) !important;
+    color: var(--fg-muted) !important;
+    line-height: var(--leading-relaxed) !important;
+}
+.fw-page.aud-home .card-arrow {
+    color: var(--brand-accent) !important;
+    transition: var(--transition-card);
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-sm) !important;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+}
+@media (hover: hover) {
+    .fw-page.aud-home .topic-card:hover .card-arrow {
+        color: var(--brand) !important;
+        transform: none !important;
+    }
+}
+
+/* ----- 6. 7 主頁下半 4 區段（about / cta / emergency / explore） ----- */
+.fw-page .prev-about,
+.fw-page .hp-about,
+.fw-page .money-about,
+.fw-page .adv-about,
+.fw-page .res-about,
+.fw-page .prev-cta,
+.fw-page .hp-cta,
+.fw-page .money-cta,
+.fw-page .adv-cta,
+.fw-page .res-cta,
+.fw-page .prev-emergency,
+.fw-page .hp-emergency,
+.fw-page .money-emergency,
+.fw-page .adv-emergency,
+.fw-page .res-emergency,
+.fw-page .prev-explore,
+.fw-page .hp-explore,
+.fw-page .money-explore,
+.fw-page .adv-explore,
+.fw-page .res-explore {
+    background: var(--bg) !important;
+    padding: var(--space-4xl) var(--space-xl) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+.fw-page .prev-cta,
+.fw-page .hp-cta,
+.fw-page .money-cta,
+.fw-page .adv-cta,
+.fw-page .res-cta,
+.fw-page .prev-explore,
+.fw-page .hp-explore,
+.fw-page .money-explore,
+.fw-page .adv-explore,
+.fw-page .res-explore {
+    background: var(--bg-light) !important;
+}
+.fw-page .prev-about h2,
+.fw-page .hp-about h2,
+.fw-page .money-about h2,
+.fw-page .adv-about h2,
+.fw-page .res-about h2,
+.fw-page .prev-cta h2,
+.fw-page .hp-cta h2,
+.fw-page .money-cta h2,
+.fw-page .adv-cta h2,
+.fw-page .res-cta h2,
+.fw-page .prev-emergency h2,
+.fw-page .hp-emergency h2,
+.fw-page .money-emergency h2,
+.fw-page .adv-emergency h2,
+.fw-page .res-emergency h2,
+.fw-page .prev-explore h2,
+.fw-page .hp-explore h2,
+.fw-page .money-explore h2,
+.fw-page .adv-explore h2,
+.fw-page .res-explore h2 {
+    font-family: var(--font-serif-tc) !important;
+    font-size: var(--text-3xl) !important;
+    font-weight: 700 !important;
+    line-height: var(--leading-tight) !important;
+    letter-spacing: 0.04em !important;
+    color: var(--brand-deep) !important;
+    margin: 0 0 var(--space-lg) 0 !important;
+    max-width: 24ch;
+}
+.fw-page .prev-about p,
+.fw-page .hp-about p,
+.fw-page .money-about p,
+.fw-page .adv-about p,
+.fw-page .res-about p,
+.fw-page .prev-cta p,
+.fw-page .hp-cta p,
+.fw-page .money-cta p,
+.fw-page .adv-cta p,
+.fw-page .res-cta p,
+.fw-page .prev-emergency p,
+.fw-page .hp-emergency p,
+.fw-page .money-emergency p,
+.fw-page .adv-emergency p,
+.fw-page .res-emergency p {
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-lg) !important;
     line-height: var(--leading-relaxed) !important;
     color: var(--fg) !important;
-    background: transparent !important;
-    border: none !important;
-    border-left: 4px solid var(--brand-accent) !important;
-    padding: var(--space-md) 0 var(--space-md) var(--space-lg) !important;
+    max-width: var(--rh-measure);
+    margin: 0 0 var(--space-md) 0 !important;
+}
+
+/* ----- 7. 7 主頁卡片統一扁平 ----- */
+.fw-page .prev-card,
+.fw-page .hp-card,
+.fw-page .money-card,
+.fw-page .adv-card,
+.fw-page .res-card,
+.fw-page .content-card {
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
     border-radius: 0 !important;
-    margin: var(--space-2xl) 0 0 0 !important;
-    max-width: 60ch;
+    box-shadow: none !important;
+    padding: var(--space-xl) !important;
+    transition: var(--transition-card);
+}
+@media (hover: hover) {
+    .fw-page .prev-card:hover,
+    .fw-page .hp-card:hover,
+    .fw-page .money-card:hover,
+    .fw-page .adv-card:hover,
+    .fw-page .res-card:hover,
+    .fw-page .content-card:hover {
+        border-color: var(--brand) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: none !important;
+    }
 }
 
-/* ----- 5. 動畫關鍵影格 ----- */
-@keyframes heroFadeIn {
-    0%   { opacity: 0; }
-    100% { opacity: 1; }
-}
-@keyframes heroBarSlide {
-    0%   { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
-}
-@keyframes heroFadeUp {
-    0%   { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-@keyframes statFadeIn {
-    0%   { opacity: 0; transform: translateX(-20px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
-
-/* ===================================================
-   === RWD 響應式調整（手機 / 平板 / 桌機）===
-   =================================================== */
-
-/* 手機版（≤ 640px）— 強制覆蓋舊頁面的 mobile flex layout */
+/* ----- 8. RWD — 手機（≤ 640px） ----- */
 @media (max-width: 640px) {
+    .fw-page {
+        font-size: var(--text-base);
+    }
     .fw-page .start-hero,
     .fw-page .young-hero,
     .fw-page .senior-hero,
-    .fw-page .public-hero {
-        min-height: 50svh;
-        padding: var(--space-2xl) var(--space-md) var(--space-xl) !important;
+    .fw-page .public-hero,
+    .fw-page .prev-hero,
+    .fw-page .hp-hero,
+    .fw-page .money-hero,
+    .fw-page .adv-hero,
+    .fw-page .res-hero {
+        padding: var(--space-3xl) var(--space-md) !important;
+        margin-bottom: var(--space-3xl) !important;
     }
-    /* 強制統計卡垂直 layout，蓋掉舊頁面的 display:flex */
+    .fw-page .start-hero-title,
+    .fw-page .young-hero-title,
+    .fw-page .senior-hero-title,
+    .fw-page .public-hero-title,
+    .fw-page .prev-hero-title,
+    .fw-page .hp-hero-title,
+    .fw-page .money-hero-title,
+    .fw-page .adv-hero-title,
+    .fw-page .res-hero-title,
+    .fw-page.aud-home .topic-header h2 {
+        font-size: 28px !important;
+    }
+    .fw-page .start-hero-tagline,
+    .fw-page .young-hero-tagline,
+    .fw-page .senior-hero-tagline,
+    .fw-page .public-hero-tagline,
+    .fw-page .prev-hero-subtitle,
+    .fw-page .hp-hero-subtitle,
+    .fw-page .money-hero-subtitle,
+    .fw-page .adv-hero-subtitle,
+    .fw-page .res-hero-subtitle {
+        font-size: var(--text-lg) !important;
+    }
     .fw-page .start-stat-card,
     .fw-page .young-stat-card,
     .fw-page .senior-stat-card,
@@ -1370,343 +1676,362 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
         padding: 0 0 0 var(--space-md) !important;
         gap: 0 !important;
     }
-    /* 統計數字手機縮小 */
     .fw-page .start-stat-number,
     .fw-page .young-stat-number,
     .fw-page .senior-stat-number,
-    .fw-page .public-stat-number {
-        font-size: clamp(2.5rem, 13vw, 4rem) !important;
-        margin-bottom: var(--space-sm) !important;
-        white-space: normal !important;
+    .fw-page .public-stat-number,
+    .fw-page .prev-stat-number,
+    .fw-page .hp-stat-number,
+    .fw-page .money-stat-number,
+    .fw-page .res-stat-number,
+    .fw-page .prev-hero-stats .stat-num,
+    .fw-page .hp-hero-stats .stat-num,
+    .fw-page .money-hero-stats .stat-num,
+    .fw-page .res-hero-stats .stat-num,
+    .fw-page .adv-stat-num {
+        font-size: 36px !important;
     }
-    /* 統計卡 stats note 縮小字級 */
-    .fw-page .start-stats-note,
-    .fw-page .young-stats-note,
-    .fw-page .senior-stats-note,
-    .fw-page .public-stats-note {
-        font-size: var(--text-base) !important;
-        padding: var(--space-sm) 0 var(--space-sm) var(--space-md) !important;
+    .fw-page.aud-home .topic-container {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-md) !important;
     }
-    /* 場景卡片內 padding 縮小 */
-    .fw-page .start-scenario-card,
-    .fw-page .young-scenario-card,
-    .fw-page .senior-scenario-card,
-    .fw-page .public-scenario-card {
-        padding: var(--space-md) !important;
-    }
-    .fw-page .start-scenario-card h3,
-    .fw-page .young-scenario-card h3,
-    .fw-page .senior-scenario-card h3,
-    .fw-page .public-scenario-card h3 {
-        font-size: var(--text-xl) !important;
+    .fw-page .prev-about h2,
+    .fw-page .hp-about h2,
+    .fw-page .money-about h2,
+    .fw-page .adv-about h2,
+    .fw-page .res-about h2,
+    .fw-page .prev-cta h2,
+    .fw-page .hp-cta h2,
+    .fw-page .money-cta h2,
+    .fw-page .adv-cta h2,
+    .fw-page .res-cta h2 {
+        font-size: var(--text-2xl) !important;
     }
 }
 
-/* 平板版（641px - 1024px）— 中間區段，數字適中 */
+/* ----- 9. RWD — 平板（641-1024） ----- */
 @media (min-width: 641px) and (max-width: 1024px) {
-    .fw-page .start-hero,
-    .fw-page .young-hero,
-    .fw-page .senior-hero,
-    .fw-page .public-hero,
-    .fw-page .prev-hero,
-    .fw-page .hp-hero,
-    .fw-page .money-hero,
-    .fw-page .adv-hero,
-    .fw-page .res-hero {
-        min-height: 55svh;
-        padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem) !important;
-    }
-    /* 平板統計數字適中 */
-    .fw-page .start-stat-number,
-    .fw-page .young-stat-number,
-    .fw-page .senior-stat-number,
-    .fw-page .public-stat-number {
-        font-size: clamp(3.5rem, 8vw, 5.5rem) !important;
-    }
-    /* 平板首頁 topic-card 改 2 欄 */
     .fw-page.aud-home .topic-container {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
-/* ===================================================
-   === 首頁視覺爆改：topic-card 編輯式重設計 ===
-   =================================================== */
-.fw-page.aud-home .topic-header {
-    text-align: left !important;
-    margin-bottom: var(--space-3xl) !important;
-    padding: var(--space-2xl) 0 !important;
-    animation: heroFadeUp 1s var(--ease-out) both;
-}
-.fw-page.aud-home .topic-header h2 {
-    font-family: var(--font-serif-tc) !important;
-    font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
-    font-weight: 900 !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.02em !important;
+/* ----- 10. 4 分眾頁下半區段 — about / cta / emergency / explore ----- */
+/* 區段容器 — 全扁平 + 章節輪替 */
+.fw-page .start-about,
+.fw-page .young-about,
+.fw-page .senior-about,
+.fw-page .public-about,
+.fw-page .start-cta,
+.fw-page .young-cta,
+.fw-page .senior-cta,
+.fw-page .public-cta,
+.fw-page .start-emergency,
+.fw-page .young-emergency,
+.fw-page .senior-emergency,
+.fw-page .public-emergency,
+.fw-page .start-explore,
+.fw-page .young-explore,
+.fw-page .senior-explore,
+.fw-page .public-explore {
+    background: var(--bg) !important;
+    padding: var(--space-4xl) var(--space-xl) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
     color: var(--fg) !important;
-    margin-bottom: var(--space-md) !important;
 }
-.fw-page.aud-home .topic-header .highlight {
-    color: var(--brand) !important;
-}
-.fw-page.aud-home .topic-header .highlight::after {
-    background: var(--brand-accent) !important;
-    height: 12px !important;
-    bottom: 4px !important;
-    opacity: 0.4;
-}
-.fw-page.aud-home .topic-header p {
-    font-family: var(--font-serif-tc) !important;
-    font-size: var(--text-xl) !important;
-    font-style: italic !important;
-    color: var(--fg-muted) !important;
-    max-width: 50ch;
+/* 章節輪替 — cta + explore 用 bg-light */
+.fw-page .start-cta,
+.fw-page .young-cta,
+.fw-page .senior-cta,
+.fw-page .public-cta,
+.fw-page .start-explore,
+.fw-page .young-explore,
+.fw-page .senior-explore,
+.fw-page .public-explore {
+    background: var(--bg-light) !important;
 }
 
-.fw-page.aud-home .topic-container {
+/* about 區段標題 + 段落 + 四支柱 icon */
+.fw-page .start-about-desc,
+.fw-page .young-about-desc,
+.fw-page .senior-about-desc,
+.fw-page .public-about-desc {
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-lg) !important;
+    line-height: var(--leading-relaxed) !important;
+    color: var(--fg) !important;
+    max-width: var(--rh-measure);
+    margin: 0 0 var(--space-2xl) 0 !important;
+}
+.fw-page .start-about-pillars,
+.fw-page .young-about-pillars,
+.fw-page .senior-about-pillars,
+.fw-page .public-about-pillars {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: var(--space-xl) !important;
-    margin-top: var(--space-2xl);
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+    gap: var(--space-md) !important;
+    margin: 0 0 var(--space-2xl) 0 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
 }
-
-.fw-page.aud-home .topic-card {
-    background: var(--surface) !important;
+.fw-page .start-pillar,
+.fw-page .young-pillar,
+.fw-page .senior-pillar,
+.fw-page .public-pillar {
+    background: var(--bg) !important;
     border: 1px solid var(--border) !important;
     border-radius: 0 !important;
-    padding: var(--space-2xl) var(--space-xl) !important;
-    box-shadow: var(--shadow-sm) !important;
-    transition: all var(--duration-slow) var(--ease-out) !important;
-    position: relative;
-    overflow: hidden;
-    animation: statFadeIn 0.8s var(--ease-out) both;
+    box-shadow: none !important;
+    padding: var(--space-lg) var(--space-md) !important;
+    color: var(--fg) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: var(--space-xs) !important;
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-sm) !important;
+    font-weight: 500 !important;
 }
-.fw-page.aud-home .topic-card:nth-child(1) { animation-delay: 0.2s; }
-.fw-page.aud-home .topic-card:nth-child(2) { animation-delay: 0.4s; }
-.fw-page.aud-home .topic-card:nth-child(3) { animation-delay: 0.6s; }
-
-.fw-page.aud-home .topic-card::before {
-    height: 8px !important;
-    transition: height var(--duration-normal) var(--ease-out) !important;
+.fw-page .start-pillar i,
+.fw-page .young-pillar i,
+.fw-page .senior-pillar i,
+.fw-page .public-pillar i {
+    color: var(--brand-accent) !important;
+    font-size: var(--text-xl) !important;
 }
-.fw-page.aud-home .card-health::before    { background: var(--ch-health) !important; }
-.fw-page.aud-home .card-equip::before     { background: var(--ch-safety) !important; }
-.fw-page.aud-home .card-insurance::before { background: var(--ch-economic) !important; }
-
-@media (hover: hover) {
-    .fw-page.aud-home .topic-card:hover {
-        transform: translateY(-12px) !important;
-        box-shadow: var(--shadow-2xl, 0 25px 60px rgba(15, 23, 42, 0.18)) !important;
-        border-color: var(--brand) !important;
-    }
-    .fw-page.aud-home .topic-card:hover::before {
-        height: 16px !important;
-    }
-}
-
-.fw-page.aud-home .topic-icon {
-    width: 80px !important;
-    height: 80px !important;
+.fw-page .start-about-link,
+.fw-page .young-about-link,
+.fw-page .senior-about-link,
+.fw-page .public-about-link {
+    display: inline-block !important;
+    background: transparent !important;
+    color: var(--brand) !important;
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-sm) !important;
+    font-weight: 700 !important;
+    letter-spacing: var(--tracking-wider) !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    border: none !important;
+    border-bottom: 1px solid var(--brand) !important;
     border-radius: 0 !important;
-    font-size: 36px !important;
-    margin-bottom: var(--space-lg) !important;
-    transition: all var(--duration-normal) var(--ease-out) !important;
+    padding: 0 0 2px 0 !important;
+    box-shadow: none !important;
+}
+
+/* cta 區段 — 強制扁平按鈕 */
+.fw-page .start-cta a,
+.fw-page .young-cta a,
+.fw-page .senior-cta a,
+.fw-page .public-cta a,
+.fw-page .start-cta-primary,
+.fw-page .start-cta-secondary,
+.fw-page .young-cta-primary,
+.fw-page .young-cta-secondary,
+.fw-page .senior-cta-primary,
+.fw-page .senior-cta-secondary,
+.fw-page .public-cta-primary,
+.fw-page .public-cta-secondary {
+    display: inline-block !important;
+    background: var(--brand) !important;
+    color: var(--bg) !important;
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-base) !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    text-decoration: none !important;
+    padding: var(--space-md) var(--space-xl) !important;
+    border: 1px solid var(--brand) !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-right: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    transition: var(--transition-card);
+}
+.fw-page .start-cta a:nth-child(2),
+.fw-page .young-cta a:nth-child(2),
+.fw-page .senior-cta a:nth-child(2),
+.fw-page .public-cta a:nth-child(2),
+.fw-page .start-cta-secondary,
+.fw-page .young-cta-secondary,
+.fw-page .senior-cta-secondary,
+.fw-page .public-cta-secondary {
+    background: transparent !important;
+    color: var(--brand) !important;
+    border-color: var(--brand) !important;
 }
 @media (hover: hover) {
-    .fw-page.aud-home .topic-card:hover .topic-icon {
-        transform: scale(1.1) rotate(-3deg);
+    .fw-page .start-cta a:hover,
+    .fw-page .young-cta a:hover,
+    .fw-page .senior-cta a:hover,
+    .fw-page .public-cta a:hover {
+        background: var(--brand-deep) !important;
+        color: var(--bg) !important;
+        border-color: var(--brand-deep) !important;
     }
 }
 
-.fw-page.aud-home .card-health .topic-icon    { background: var(--ch-health-bg) !important; color: var(--ch-health) !important; }
-.fw-page.aud-home .card-equip .topic-icon     { background: var(--ch-safety-bg) !important; color: var(--ch-safety) !important; }
-.fw-page.aud-home .card-insurance .topic-icon { background: var(--ch-economic-bg) !important; color: var(--ch-economic) !important; }
-
-.fw-page.aud-home .topic-text h3 {
+/* emergency 區段 — 燒土紅警示 */
+.fw-page .start-emergency,
+.fw-page .young-emergency,
+.fw-page .senior-emergency,
+.fw-page .public-emergency {
+    border-left: 4px solid var(--brand-warning) !important;
+    background: var(--bg) !important;
+}
+.fw-page .start-emergency-grid,
+.fw-page .young-emergency-grid,
+.fw-page .senior-emergency-grid,
+.fw-page .public-emergency-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: var(--space-md) !important;
+    margin: 0 0 var(--space-lg) 0 !important;
+}
+.fw-page .start-emergency-item,
+.fw-page .young-emergency-item,
+.fw-page .senior-emergency-item,
+.fw-page .public-emergency-item {
+    background: var(--bg) !important;
+    border: 1px solid var(--border) !important;
+    border-left: 4px solid var(--brand-warning) !important;
+    border-radius: 0 !important;
+    padding: var(--space-md) var(--space-lg) !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: var(--space-xs) !important;
+}
+.fw-page .start-emergency-item strong,
+.fw-page .young-emergency-item strong,
+.fw-page .senior-emergency-item strong,
+.fw-page .public-emergency-item strong {
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-xs) !important;
+    font-weight: 500 !important;
+    letter-spacing: var(--tracking-wider) !important;
+    text-transform: uppercase !important;
+    color: var(--fg-muted) !important;
+}
+.fw-page .start-emergency-item a,
+.fw-page .young-emergency-item a,
+.fw-page .senior-emergency-item a,
+.fw-page .public-emergency-item a {
     font-family: var(--font-serif-tc) !important;
     font-size: var(--text-2xl) !important;
     font-weight: 700 !important;
-    color: var(--fg) !important;
-    margin: 0 0 var(--space-md) 0 !important;
+    color: var(--brand-warning) !important;
+    text-decoration: none !important;
+    letter-spacing: 0.04em !important;
+    line-height: 1.2 !important;
 }
-.fw-page.aud-home .topic-text ul li {
-    font-family: var(--font-serif-tc) !important;
-    font-size: var(--text-base) !important;
+.fw-page .start-emergency-note,
+.fw-page .young-emergency-note,
+.fw-page .senior-emergency-note,
+.fw-page .public-emergency-note {
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-sm) !important;
     color: var(--fg-muted) !important;
     line-height: var(--leading-relaxed) !important;
-}
-.fw-page.aud-home .card-arrow {
-    color: var(--brand) !important;
-    transition: all var(--duration-normal) var(--ease-out) !important;
-}
-@media (hover: hover) {
-    .fw-page.aud-home .topic-card:hover .card-arrow {
-        transform: translateX(12px);
-        color: var(--brand-warning) !important;
-    }
+    max-width: var(--rh-measure);
 }
 
-/* ===================================================
-   === 7 主頁視覺爆改：prev- / hp- / money- / adv- / res- ===
-   套用同一套巨型字 + 動畫 + Editorial 風格
-   =================================================== */
-
-/* Hero 統一升級 */
-.fw-page .prev-hero,
-.fw-page .hp-hero,
-.fw-page .money-hero,
-.fw-page .adv-hero,
-.fw-page .res-hero {
-    min-height: 70svh;
-    padding: var(--space-4xl) var(--space-xl) var(--space-3xl) !important;
-    background: linear-gradient(180deg, var(--bg) 0%, var(--surface-muted) 100%) !important;
-    border-radius: 0 !important;
-    border: none !important;
-    margin-bottom: var(--space-2xl) !important;
-    position: relative;
-    animation: heroFadeIn 1.2s var(--ease-out) both;
+/* explore 區段 — 方格選單 */
+.fw-page .start-explore-grid,
+.fw-page .young-explore-grid,
+.fw-page .senior-explore-grid,
+.fw-page .public-explore-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: var(--space-md) !important;
+    margin: 0 !important;
 }
-
-.fw-page .prev-hero-title,
-.fw-page .hp-hero-title,
-.fw-page .money-hero-title,
-.fw-page .adv-hero-title,
-.fw-page .res-hero-title {
-    font-family: var(--font-serif-tc) !important;
-    font-size: clamp(2.5rem, 6vw, 5.5rem) !important;
-    font-weight: 900 !important;
-    line-height: 1.05 !important;
-    letter-spacing: -0.02em;
+.fw-page .start-explore-card,
+.fw-page .young-explore-card,
+.fw-page .senior-explore-card,
+.fw-page .public-explore-card {
+    background: var(--bg) !important;
     color: var(--fg) !important;
-    margin: 0 0 var(--space-lg) 0 !important;
-    max-width: 18ch;
-    animation: heroFadeUp 1s var(--ease-out) 0.7s both;
-}
-
-.fw-page .prev-hero-subtitle,
-.fw-page .hp-hero-subtitle,
-.fw-page .money-hero-subtitle,
-.fw-page .adv-hero-subtitle,
-.fw-page .res-hero-subtitle {
-    font-family: var(--font-serif-tc) !important;
-    font-size: clamp(1.25rem, 2vw, 1.75rem) !important;
-    font-weight: 400 !important;
-    color: var(--fg-muted) !important;
-    font-style: italic !important;
-    line-height: 1.4 !important;
-    margin: 0 0 var(--space-xl) 0 !important;
-    max-width: 32ch;
-    animation: heroFadeUp 1s var(--ease-out) 0.9s both;
-}
-
-.fw-page .prev-hero-badge,
-.fw-page .hp-hero-badge,
-.fw-page .money-hero-badge,
-.fw-page .adv-hero-badge,
-.fw-page .res-hero-badge {
-    display: inline-flex !important;
-    align-items: center;
-    gap: var(--space-xs) !important;
-    background: var(--brand) !important;
-    color: var(--bg) !important;
-    font-family: var(--font-mono) !important;
-    font-size: var(--text-sm) !important;
-    font-weight: 700 !important;
-    text-transform: uppercase;
-    letter-spacing: var(--tracking-widest);
-    padding: var(--space-xs) var(--space-md) !important;
+    border: 1px solid var(--border) !important;
     border-radius: 0 !important;
-    margin-bottom: var(--space-xl) !important;
-    animation: heroFadeUp 0.8s var(--ease-out) 0.5s both;
+    padding: var(--space-lg) var(--space-md) !important;
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: var(--space-sm) !important;
+    font-family: var(--font-sans-tc) !important;
+    font-size: var(--text-base) !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    box-shadow: none !important;
+    transition: var(--transition-card);
 }
-
-/* 各章節徽章用各自章節色 */
-.fw-page.ch-safety   .prev-hero-badge { background: var(--ch-safety) !important; }
-.fw-page.ch-health   .hp-hero-badge   { background: var(--ch-health) !important; }
-.fw-page.ch-economic .money-hero-badge { background: var(--ch-economic) !important; }
-.fw-page.ch-advocacy .adv-hero-badge  { background: var(--ch-advocacy) !important; }
-.fw-page.ch-research .res-hero-badge  { background: var(--ch-research) !important; }
-
-/* 7 主頁巨型統計數字 */
-.fw-page .prev-hero-stats .stat-num,
-.fw-page .hp-hero-stats .stat-num,
-.fw-page .money-hero-stats .stat-num,
-.fw-page .adv-stat-num,
-.fw-page .res-hero-stats .stat-num,
-.fw-page .prev-stat-number,
-.fw-page .hp-stat-number,
-.fw-page .money-stat-number,
-.fw-page .res-stat-number {
-    font-family: var(--font-display) !important;
-    font-size: clamp(4rem, 8vw, 7rem) !important;
-    font-weight: 800 !important;
-    line-height: 0.85 !important;
-    letter-spacing: -0.04em !important;
+.fw-page .start-explore-card i,
+.fw-page .young-explore-card i,
+.fw-page .senior-explore-card i,
+.fw-page .public-explore-card i {
     color: var(--brand) !important;
-}
-
-/* 各章節數字用章節色 */
-.fw-page.ch-safety   .prev-stat-number,
-.fw-page.ch-safety   .prev-hero-stats .stat-num { color: var(--ch-safety) !important; }
-.fw-page.ch-health   .hp-stat-number,
-.fw-page.ch-health   .hp-hero-stats .stat-num { color: var(--ch-health) !important; }
-.fw-page.ch-economic .money-stat-number,
-.fw-page.ch-economic .money-hero-stats .stat-num { color: var(--ch-economic) !important; }
-.fw-page.ch-advocacy .adv-stat-num { color: var(--ch-advocacy) !important; }
-.fw-page.ch-research .res-stat-number,
-.fw-page.ch-research .res-hero-stats .stat-num { color: var(--ch-research) !important; }
-
-/* 7 主頁卡片 hover 加強 */
-.fw-page .prev-card,
-.fw-page .hp-card,
-.fw-page .money-card,
-.fw-page .adv-card,
-.fw-page .res-card,
-.fw-page .content-card {
-    transition: all var(--duration-slow) var(--ease-out) !important;
+    font-size: var(--text-xl) !important;
 }
 @media (hover: hover) {
-    .fw-page .prev-card:hover,
-    .fw-page .hp-card:hover,
-    .fw-page .money-card:hover,
-    .fw-page .adv-card:hover,
-    .fw-page .res-card:hover {
-        transform: translateY(-12px) !important;
-        box-shadow: var(--shadow-2xl, 0 25px 60px rgba(15, 23, 42, 0.18)) !important;
+    .fw-page .start-explore-card:hover,
+    .fw-page .young-explore-card:hover,
+    .fw-page .senior-explore-card:hover,
+    .fw-page .public-explore-card:hover {
+        border-color: var(--brand) !important;
+        transform: translateY(-2px);
     }
 }
 
-/* RWD 手機調整：首頁與 7 主頁 */
-@media (max-width: 640px) {
-    .fw-page.aud-home .topic-container {
-        grid-template-columns: 1fr !important;
-        gap: var(--space-md) !important;
-    }
-    .fw-page.aud-home .topic-card {
-        padding: var(--space-lg) var(--space-md) !important;
-    }
-    .fw-page .prev-hero,
-    .fw-page .hp-hero,
-    .fw-page .money-hero,
-    .fw-page .adv-hero,
-    .fw-page .res-hero {
-        min-height: 50svh;
-        padding: var(--space-2xl) var(--space-md) var(--space-xl) !important;
-    }
-    /* 7 主頁的統計數字 */
-    .fw-page .prev-hero-stats .stat-num,
-    .fw-page .hp-hero-stats .stat-num,
-    .fw-page .money-hero-stats .stat-num,
-    .fw-page .adv-stat-num,
-    .fw-page .res-hero-stats .stat-num,
-    .fw-page .prev-stat-number,
-    .fw-page .hp-stat-number,
-    .fw-page .money-stat-number,
-    .fw-page .res-stat-number {
-        font-size: clamp(2.5rem, 13vw, 4rem) !important;
+/* ----- 11. 4 分眾頁底部手機快捷導覽（bottom-nav） ----- */
+.fw-page .start-bottom-nav,
+.fw-page .young-bottom-nav,
+.fw-page .senior-bottom-nav,
+.fw-page .public-bottom-nav {
+    background: var(--bg) !important;
+    border-top: 1px solid var(--border) !important;
+    box-shadow: 0 -1px 0 var(--border) !important;
+}
+.fw-page .start-bottom-wrap,
+.fw-page .young-bottom-wrap,
+.fw-page .senior-bottom-wrap,
+.fw-page .public-bottom-wrap {
+    background: transparent !important;
+}
+.fw-page .start-bottom-link,
+.fw-page .young-bottom-link,
+.fw-page .senior-bottom-link,
+.fw-page .public-bottom-link {
+    background: var(--bg) !important;
+    color: var(--brand) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    font-family: var(--font-sans-tc) !important;
+    font-weight: 500 !important;
+}
+@media (hover: hover) {
+    .fw-page .start-bottom-link:hover,
+    .fw-page .young-bottom-link:hover,
+    .fw-page .senior-bottom-link:hover,
+    .fw-page .public-bottom-link:hover {
+        background: var(--bg-light) !important;
+        border-color: var(--brand) !important;
     }
 }
+
+/* ----- 12. 砍舊動畫進場 keyframes（定義成 no-op） ----- */
+@keyframes heroFadeIn { from, to { opacity: 1; } }
+@keyframes heroBarSlide { from, to { transform: none; } }
+@keyframes heroFadeUp { from, to { opacity: 1; transform: none; } }
+@keyframes statFadeIn { from, to { opacity: 1; transform: none; } }
 
 /* ===================================================
    === 資深農友頁專屬無障礙加強 ===
