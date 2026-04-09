@@ -2,3 +2,10 @@
 css/global.css.*.bak
 design-samples/.playwright-mcp/
 design-samples/*.png
+
+# Gemini AI workflow（GitHub Actions）
+.gemini/
+gha-creds-*.json
+*.api-key
+.env
+.env.local
