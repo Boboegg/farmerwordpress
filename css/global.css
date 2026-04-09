@@ -1,4 +1,26 @@
 /* ===================================================
+   COMPAT LAYER — design system v2.0 token alias
+   建立日期：2026-04-09
+   原因：scripts/migrate-colors.sh 把硬寫色碼遷移成 var(--color-xxx)
+        但這些變數的權威定義在 css/global.new.css
+        在 global.new.css 真正取代本檔之前，先在這裡提供 alias
+        確保線上頁面引用 var(--color-xxx) 時不會 fallback 到無色
+   注意：所有色值對齊 farmerwordpress AGENTS.md 規範
+   =================================================== */
+:root {
+    --color-bg: #E3E9D8;
+    --color-bg-elevated: #FFFFFF;
+    --color-text: #1F1A14;
+    --color-muted: #5C5448;
+    --color-line: #D8CFB8;
+    --color-brand: #5C8607;
+    --color-brand-deep: #3D5A2C;
+    --color-accent: #D4A017;
+    --color-warn: #8B2D14;
+    --color-info: #1565C0;
+}
+
+/* ===================================================
    0. 全站設計 Token — 稻穗熟成 (Rice Ripening)
    主方案：vault/Projects/P8-尊嚴農業/2026-04-07-討論全紀錄.md
    配方：綠 #3D5A2C · 金 #A8740B · 紅 #8B2D14 · 米紙白 #FBFAF7
