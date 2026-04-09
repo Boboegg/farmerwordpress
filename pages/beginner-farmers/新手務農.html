@@ -32,10 +32,10 @@
       <div class="dc-beam" aria-hidden="true"></div>
 
       <div class="start-hero">
-        <div class="start-hero-badge dc-reveal"><i class="fas fa-seedling"></i> 新手務農入口</div>
-        <h1 class="start-hero-title dc-reveal">先把風險看清楚，<br>再安心下田</h1>
-        <p class="start-hero-tagline dc-reveal">農業是全行業致死率最高的產業之一。<br>但只要做對幾件事，你就能安全地開始。</p>
-        <div class="start-hero-intro dc-reveal">
+        <div class="start-hero-badge"><i class="fas fa-seedling"></i> 新手務農入口</div>
+        <h1 class="start-hero-title">先把風險看清楚，<br>再安心下田</h1>
+        <p class="start-hero-tagline">農業是全行業致死率最高的產業之一。<br>但只要做對幾件事，你就能安全地開始。</p>
+        <div class="start-hero-intro">
           <p>你可能正在考慮務農，或剛踏入這個行業。農業是一份與土地緊密連結的工作，但它的職業風險遠超過多數人的想像——高溫、農藥、重複性勞動、搬運重物，每一項都在悄悄傷害你的身體。這一頁從「保護自己」出發，幫你用最短時間建立正確觀念，帶著安全意識下田。</p>
         </div>
       </div>
@@ -268,9 +268,12 @@
   opacity:0;
 }
 
-/* Reveal animation */
-.dc-reveal{opacity:0;transform:translateY(20px)}
-.dc-reveal.dc-in{
+/* Reveal animation — default VISIBLE. Only hide when .has-gsap class
+   is set by JS after GSAP successfully loads. This guarantees content
+   remains visible if JS fails or blocks. */
+.dc-reveal{opacity:1;transform:none}
+.fw-page.dc-v3.has-gsap .dc-reveal{opacity:0;transform:translateY(20px)}
+.fw-page.dc-v3.has-gsap .dc-reveal.dc-in{
   opacity:1;transform:none;
   transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);
 }
@@ -371,8 +374,10 @@
 .start-about{background:#fff;border-radius:var(--radius);padding:28px;margin-bottom:24px;border:1px solid #ececec;}
 .start-about-desc{font-size:1rem;line-height:1.9;color:var(--text-secondary);margin:0 0 20px;}
 .start-about-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;}
-.start-pillar{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 10px;background:var(--brand-bg);border-radius:12px;font-size:.9rem;font-weight:700;color:var(--brand-legacy-dark);opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
-.start-pillar.dc-in{opacity:1;transform:none;}
+.start-pillar{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 10px;background:var(--brand-bg);border-radius:12px;font-size:.9rem;font-weight:700;color:var(--brand-legacy-dark);}
+/* Pillar stagger only activates with GSAP loaded */
+.fw-page.dc-v3.has-gsap .start-pillar{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
+.fw-page.dc-v3.has-gsap .start-pillar.dc-in{opacity:1;transform:none;}
 .start-pillar i{font-size:1.5rem;color:var(--brand-legacy);}
 .start-about-link{font-size:1rem;font-weight:700;color:var(--brand-legacy-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;will-change:transform;}
 .start-about-link:hover{text-decoration:underline;}
@@ -441,177 +446,6 @@
 <!-- ========== L3 Director Cut: GSAP + 互動（本地 bundle，非 CDN）========== -->
 <script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
 <script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
-<script>
-(function(){
-  function init(){
-    var root = document.querySelector('.fw-page.dc-v3.aud-start');
-    if(!root) return;
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // 1) Scroll progress bar
-    var progress = root.querySelector('.dc-progress');
-    function updateProgress(){
-      var h = document.documentElement;
-      var max = h.scrollHeight - h.clientHeight;
-      if(progress) progress.style.width = (max>0 ? h.scrollTop/max*100 : 0) + '%';
-    }
-    window.addEventListener('scroll', updateProgress, {passive:true});
-    updateProgress();
-
-    if(reduce){
-      root.querySelectorAll('.dc-reveal').forEach(function(el){el.classList.add('dc-in');});
-      root.querySelectorAll('.start-pillar').forEach(function(el){el.classList.add('dc-in');});
-      return;
-    }
-
-    // 2) Noise canvas
-    var canvas = root.querySelector('.dc-noise');
-    if(canvas){
-      var ctx = canvas.getContext('2d');
-      function fit(){ canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight; }
-      fit(); window.addEventListener('resize', fit);
-      (function drawNoise(){
-        var w = canvas.width, h = canvas.height;
-        if(!w || !h){ requestAnimationFrame(drawNoise); return; }
-        var img = ctx.createImageData(w, h);
-        var d = img.data;
-        for(var i=0; i<d.length; i+=4){
-          var v = (Math.random()*255)|0;
-          d[i]=d[i+1]=d[i+2]=v; d[i+3]=18;
-        }
-        ctx.putImageData(img, 0, 0);
-        requestAnimationFrame(drawNoise);
-      })();
-    }
-
-    // 3) Magnetic CTA
-    root.querySelectorAll('.dc-magnetic').forEach(function(btn){
-      btn.addEventListener('pointermove', function(e){
-        var r = btn.getBoundingClientRect();
-        var dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
-        var dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
-        btn.style.transform = 'translate(' + (dx*6).toFixed(1) + 'px,' + (dy*4).toFixed(1) + 'px)';
-      });
-      btn.addEventListener('pointerleave', function(){ btn.style.transform = ''; });
-    });
-
-    // 4) 3D Tilt cards
-    root.querySelectorAll('.dc-tilt').forEach(function(card){
-      card.addEventListener('pointermove', function(e){
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left)/r.width - .5;
-        var y = (e.clientY - r.top)/r.height - .5;
-        card.style.transform = 'perspective(900px) rotateX(' + (-y*6).toFixed(2) + 'deg) rotateY(' + (x*8).toFixed(2) + 'deg) translateY(-3px)';
-      });
-      card.addEventListener('pointerleave', function(){ card.style.transform = ''; });
-    });
-
-    // 5) GSAP timeline (if loaded)
-    if(window.gsap && window.ScrollTrigger){
-      gsap.registerPlugin(ScrollTrigger);
-
-      var heroWrap = root.querySelector('.start-hero-wrap');
-      if(heroWrap){
-        var tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: heroWrap,
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: 1.1
-          }
-        });
-
-        tl.fromTo('.start-hero-badge', {opacity:0, y:18}, {opacity:1, y:0, duration:.6}, 0)
-          .fromTo('.start-hero-title', {opacity:0, y:30, filter:'blur(8px)'}, {opacity:1, y:0, filter:'blur(0px)', duration:1.2}, 0.1)
-          .fromTo('.start-hero-tagline', {opacity:0, y:20}, {opacity:1, y:0, duration:.8}, 0.35)
-          .fromTo('.start-hero-intro', {opacity:0, y:16}, {opacity:1, y:0, duration:.7}, 0.5)
-          .to('.start-hero-wrap .dc-bg1', {scale:1.08, yPercent:-6, duration:2.5}, 0)
-          .to('.start-hero-wrap .dc-bg2', {xPercent:6, yPercent:-3, opacity:.7, duration:2.5}, 0)
-          .to('.start-hero-wrap .dc-fog', {xPercent:-8, yPercent:5, opacity:.55, duration:2.5}, 0)
-          .to('.start-hero-wrap .dc-beam', {xPercent:120, duration:2.2, ease:'none'}, 0.2);
-      }
-
-      // Scene cut flash between sections
-      ScrollTrigger.create({
-        trigger: '.start-stats',
-        start: 'top 80%',
-        onEnter: function(){
-          gsap.fromTo('.dc-scene-cut', {opacity:0}, {opacity:.35, duration:.12, yoyo:true, repeat:1});
-        }
-      });
-
-      // Reveal stagger for sections
-      root.querySelectorAll('.dc-reveal').forEach(function(el){
-        ScrollTrigger.create({
-          trigger: el,
-          start: 'top 85%',
-          once: true,
-          onEnter: function(){ el.classList.add('dc-in'); }
-        });
-      });
-
-      // Pillar stagger
-      ScrollTrigger.create({
-        trigger: '.start-about-pillars',
-        start: 'top 85%',
-        once: true,
-        onEnter: function(){
-          root.querySelectorAll('.start-pillar').forEach(function(el, i){
-            setTimeout(function(){ el.classList.add('dc-in'); }, i*100);
-          });
-        }
-      });
-
-      // Counter animation for stats
-      root.querySelectorAll('.dc-count').forEach(function(el){
-        ScrollTrigger.create({
-          trigger: el,
-          start: 'top 85%',
-          once: true,
-          onEnter: function(){
-            var target = parseFloat(el.dataset.count);
-            var decimals = parseInt(el.dataset.decimals || '0');
-            gsap.fromTo(el,
-              {textContent: 0},
-              {
-                textContent: target,
-                duration: 1.2,
-                ease: 'power2.out',
-                snap: decimals === 0 ? {textContent: 1} : {textContent: 0.1},
-                onUpdate: function(){
-                  el.textContent = parseFloat(el.textContent).toFixed(decimals);
-                }
-              }
-            );
-          }
-        });
-      });
-    } else {
-      // Fallback: plain IntersectionObserver reveal
-      if('IntersectionObserver' in window){
-        var io = new IntersectionObserver(function(entries){
-          entries.forEach(function(e){
-            if(e.isIntersecting){
-              e.target.classList.add('dc-in');
-              io.unobserve(e.target);
-            }
-          });
-        }, {threshold:.14});
-        root.querySelectorAll('.dc-reveal').forEach(function(el){io.observe(el);});
-        root.querySelectorAll('.start-pillar').forEach(function(el){io.observe(el);});
-      } else {
-        root.querySelectorAll('.dc-reveal').forEach(function(el){el.classList.add('dc-in');});
-        root.querySelectorAll('.start-pillar').forEach(function(el){el.classList.add('dc-in');});
-      }
-    }
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
-})();
-</script>
+<script src="/wp-content/themes/astra-child/assets/js/dc-v3-start.js" defer></script>
 </div>
 <!-- /wp:html -->
