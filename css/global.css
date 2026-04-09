@@ -1,4 +1,15 @@
 /* ===================================================
+   @layer skeleton — P0.5 (2026-04-09 晚間)
+   目的：為 L3 Director Cut 互動層提供 opt-in 命名空間
+   原則：宣告所有 layer 順序，但不強制 wrap 現有規則
+        - dc-v3 層由 P1 之後的新樣式 opt-in
+        - 未 wrap 的 legacy 規則保留在 unlayered scope（優先級最高）
+        - Astra 父主題仍在 unlayered scope，天然勝出
+   參考：2026-04-09 architect 審核紀錄 + reference_farmerwordpress_design_index.md
+   =================================================== */
+@layer base, tokens, legacy, ripening, pages, dc-v3;
+
+/* ===================================================
    COMPAT LAYER — design system v2.0 token alias
    建立日期：2026-04-09
    原因：scripts/migrate-colors.sh 把硬寫色碼遷移成 var(--color-xxx)
@@ -6,6 +17,9 @@
         在 global.new.css 真正取代本檔之前，先在這裡提供 alias
         確保線上頁面引用 var(--color-xxx) 時不會 fallback 到無色
    注意：所有色值對齊 farmerwordpress AGENTS.md 規範
+   TODO（P6）：compat layer 色值跟稻穗熟成對不上，需對齊
+        #E3E9D8 → #FBFAF7、#5C8607 → #3D5A2C、#D4A017 → #A8740B
+        但現在改會影響既有頁面視覺，留到 P6 統一收斂
    =================================================== */
 :root {
     --color-bg: #E3E9D8;
@@ -223,8 +237,9 @@
    =================================================== */
 /* html { scroll-behavior: smooth; } — 已移至 .fw-page 範圍 */
 /* body { background-image: none !important; } — 已移至 .fw-page 範圍 */
-.fw-page { scroll-behavior: smooth; }
-.fw-page body { background-image: none !important; }
+.fw-page { scroll-behavior: smooth; background-image: none !important; }
+/* Note: `.fw-page body` was invalid (body is never inside .fw-page).
+   Background-image override moved to .fw-page itself. Fixed 2026-04-09. */
 
 /* 自訂文字選取顏色 */
 ::selection {
@@ -969,16 +984,32 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     box-shadow: var(--focus-ring);
 }
 
-/* 全域 focus ring（替代 outline:none）*/
+/* ===========================================================
+   Global focus-visible system (upgraded 2026-04-09)
+   Previously used box-shadow only — was clipped by any
+   overflow:hidden parent (all cards). Now uses outline as
+   primary so it's always visible, with box-shadow fallback.
+   =========================================================== */
 .fw-page a:focus-visible,
 .fw-page button:focus-visible,
+.fw-page [role="button"]:focus-visible,
 .fw-page input:focus-visible,
 .fw-page select:focus-visible,
 .fw-page textarea:focus-visible,
-.fw-page [tabindex]:focus-visible {
-    outline: none;
+.fw-page [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 3px solid rgba(61, 90, 44, 0.6);
+    outline-offset: var(--focus-ring-offset, 2px);
     box-shadow: var(--focus-ring);
-    outline-offset: var(--focus-ring-offset);
+    border-radius: 4px;
+    transition: outline-color 120ms ease;
+}
+.fw-page *:focus:not(:focus-visible) { outline: none; }
+@media (forced-colors: active) {
+    .fw-page a:focus-visible,
+    .fw-page button:focus-visible,
+    .fw-page [role="button"]:focus-visible {
+        outline: 3px solid CanvasText;
+    }
 }
 
 /* ===================================================

@@ -13,3 +13,7 @@ gha-creds-*.json
 *.api-key
 .env
 .env.local
+
+# P0.5 added 2026-04-09
+node_modules/
+package-lock.json

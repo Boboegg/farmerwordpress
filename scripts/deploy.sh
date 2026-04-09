@@ -38,7 +38,7 @@ if [ ! -d "$MU_PLUGINS" ]; then
 fi
 
 # 1. 部署 CSS
-echo "→ [1/3] 部署 global.css..."
+echo "→ [1/4] 部署 global.css..."
 cp css/global.css "$THEME_PATH/global.css"
 echo "   ✓ 複製到 $THEME_PATH/global.css"
 
@@ -47,6 +47,15 @@ echo "   ✓ 複製到 $THEME_PATH/global.css"
 if [ -f "css/global.new.css" ]; then
     cp css/global.new.css "$THEME_PATH/global.new.css"
     echo "   ✓ 複製到 $THEME_PATH/global.new.css (design system v2.0)"
+fi
+
+# 1b. 部署 JS 資產（GSAP 本地 bundle，避免 CDN 依賴）
+echo "→ [2/4] 部署 assets/js/..."
+if [ -d "assets/js" ]; then
+    mkdir -p "$THEME_PATH/assets/js"
+    cp assets/js/*.js "$THEME_PATH/assets/js/" 2>/dev/null || true
+    [ -f "assets/js/README.md" ] && cp assets/js/README.md "$THEME_PATH/assets/js/"
+    echo "   ✓ 複製 $(ls assets/js/*.js 2>/dev/null | wc -l | tr -d ' ') 個 JS 檔到 $THEME_PATH/assets/js/"
 fi
 
 # 確認 child theme functions.php 有載入 CSS
@@ -60,7 +69,7 @@ fi
 # 2. PHP Shortcodes
 # 大部分 shortcodes 由 WordPress「Code Snippets」外掛管理，不需複製到 mu-plugins。
 # 但以下自動抓取 shortcodes 透過 mu-plugins 部署（不在 Code Snippets 中，不會衝突）。
-echo "→ [2/3] PHP shortcodes..."
+echo "→ [3/4] PHP shortcodes..."
 
 # 需要部署到 mu-plugins 的 shortcode 清單（RSS 自動抓取類）
 MU_SHORTCODES="farmer_courses.php farmer_videos.php"
@@ -83,7 +92,7 @@ for f in shortcodes/*.php; do
 done
 
 # 3. 匯入 HTML 頁面（需要 page-map.json 和 WP-CLI）
-echo "→ [3/3] 匯入 HTML 頁面..."
+echo "→ [4/4] 匯入 HTML 頁面..."
 if [ ! -f "scripts/page-map.json" ]; then
     echo "   ⚠️  找不到 scripts/page-map.json，跳過頁面匯入"
     echo "   請建立 page-map.json 並填入頁面 ID 後再重新部署"
