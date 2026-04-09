@@ -52,7 +52,7 @@
   <section class="senior-scenarios">
     <h2 class="senior-section-title"><i class="fas fa-hand-holding-medical"></i> 你可能正需要的</h2>
 
-    <div class="senior-scenario-card" style="--accent:#c62828;">
+    <div class="senior-scenario-card" style="--accent:var(--color-warn);">
       <div class="senior-scenario-icon"><i class="fas fa-bone"></i></div>
       <div class="senior-scenario-body">
         <h3>這些痛你有嗎？它們比你想的更嚴重</h3>
@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <div class="senior-scenario-card" style="--accent:#2e7d32;">
+    <div class="senior-scenario-card" style="--accent:var(--color-brand);">
       <div class="senior-scenario-icon"><i class="fas fa-coins"></i></div>
       <div class="senior-scenario-body">
         <h3>你可能少領了！退休金方案比一比</h3>
@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <div class="senior-scenario-card" style="--accent:#1565c0;">
+    <div class="senior-scenario-card" style="--accent:var(--color-info);">
       <div class="senior-scenario-icon"><i class="fas fa-mask-face"></i></div>
       <div class="senior-scenario-body">
         <h3>噴藥時你有戴對嗎？防護具不只是口罩</h3>
@@ -152,7 +152,7 @@
 /* === 資深農友（Senior）=== */
 .senior-page-wrapper{
   --brand-legacy:#C17F5E;--brand-legacy-dark:#9e5f3e;--brand-bg:#F9EDE7;
-  --text-primary:#3d2b1f;--text-secondary:#6b7280;--radius:16px;
+  --text-primary:#3d2b1f;--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
 }
@@ -174,7 +174,7 @@
 .senior-stat-number{font-size:2rem;font-weight:900;color:var(--brand-legacy-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
 .senior-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
 .senior-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
-.senior-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
+.senior-stat-source{font-size:.72rem;color:var(--color-muted);margin:0;font-style:italic;}
 .senior-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(193,127,94,.08);border-radius:10px;border-left:4px solid var(--brand-legacy);}
 
 /* 情境卡 */
@@ -206,11 +206,11 @@
 
 /* 緊急資源 */
 .senior-emergency{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:20px;border:1px solid #ececec;}
-.senior-emergency h2{font-size:1.1rem;font-weight:800;color:#c62828;margin:0 0 12px;display:flex;align-items:center;gap:8px;}
+.senior-emergency h2{font-size:1.1rem;font-weight:800;color:var(--color-warn);margin:0 0 12px;display:flex;align-items:center;gap:8px;}
 .senior-emergency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
 .senior-emergency-item{text-align:center;padding:14px 8px;background:#fef2f2;border-radius:10px;}
 .senior-emergency-item strong{display:block;font-size:.82rem;color:#991b1b;margin-bottom:4px;}
-.senior-emergency-item a{font-size:1.4rem;font-weight:900;color:#c62828;text-decoration:none;}
+.senior-emergency-item a{font-size:1.4rem;font-weight:900;color:var(--color-warn);text-decoration:none;}
 .senior-emergency-note{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;}
 
 /* 探索更多 */

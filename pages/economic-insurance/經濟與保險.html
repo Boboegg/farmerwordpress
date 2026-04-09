@@ -5,7 +5,7 @@
      /economic-insurance/ 主頁面・區塊 01：Hero
      檔案：01-hero.html
      CSS 前綴：money-
-     主色系：#1565c0（藍色系）
+     主色系：var(--color-info)（藍色系）
      貼入方式：WordPress 頁面 → 程式碼編輯器 → 依序貼入
      ===================================================== -->
 
@@ -53,7 +53,7 @@
   <div class="money-hero-visual">
     <div class="money-hero-stats">
       <div class="money-stat-item">
-        <div class="money-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <div class="money-stat-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);">
           <i class="fas fa-coins"></i>
         </div>
         <div class="money-stat-text">
@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="money-stat-item">
-        <div class="money-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <div class="money-stat-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
           <i class="fas fa-bed-pulse"></i>
         </div>
         <div class="money-stat-text">
@@ -73,7 +73,7 @@
         </div>
       </div>
       <div class="money-stat-item">
-        <div class="money-stat-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <div class="money-stat-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
           <i class="fas fa-seedling"></i>
         </div>
         <div class="money-stat-text">
@@ -89,8 +89,8 @@
 <style>
 /* === 01-hero 專用樣式（money- 前綴） === */
 .money-hero{
-  --brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;--brand-legacy-hover:#0b4a8a;
-  --accent:#f59e0b;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;--brand-legacy-hover:#0b4a8a;
+  --accent:var(--color-accent);--text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   display:flex;gap:40px;align-items:flex-start;padding:40px;
   background:linear-gradient(135deg,#e3f2fd 0%,#fff 60%,#e8eaf6 100%);
@@ -111,7 +111,7 @@
 .money-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;line-height:1.7;padding:4px 0;color:var(--text-primary);}
 .money-hero-list li i{color:var(--brand-legacy);margin-top:4px;flex-shrink:0;}
 .money-hero-note{background:rgba(245,158,11,.08);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
-.money-hero-note i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+.money-hero-note i{color:var(--color-accent);margin-top:3px;flex-shrink:0;}
 
 .money-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
 .money-btn-primary,.money-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
@@ -222,8 +222,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 02-topic-cards 樣式 === */
 .money-topics{
-  --brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
-  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;box-sizing:border-box;
 }
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .money-topic-card{
   position:relative;
   background:#fff;border-radius:16px;padding:28px;
-  border:2px solid #e2e8f0;
+  border:2px solid var(--color-line);
   box-shadow:0 4px 16px rgba(0,0,0,.04);
   transition:all .35s ease;
   display:flex;flex-direction:column;
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .money-topic-card::before{
   content:'';position:absolute;top:0;left:0;width:100%;height:5px;transition:height .3s;
 }
-.money-topic-blue::before{background:#1565c0;}
+.money-topic-blue::before{background:var(--color-info);}
 .money-topic-green::before{background:#15803d;}
 .money-topic-amber::before{background:#d97706;}
 
@@ -275,7 +275,7 @@ a.money-topic-card:hover::before{height:100%;opacity:.04;}
   display:flex;align-items:center;justify-content:center;
   font-size:24px;margin-bottom:16px;
 }
-.money-topic-blue .money-topic-icon{background:rgba(21,101,192,.1);color:#1565c0;}
+.money-topic-blue .money-topic-icon{background:rgba(21,101,192,.1);color:var(--color-info);}
 .money-topic-green .money-topic-icon{background:rgba(21,128,61,.1);color:#15803d;}
 .money-topic-amber .money-topic-icon{background:rgba(217,119,6,.1);color:#d97706;}
 
@@ -293,7 +293,7 @@ a.money-topic-card:hover::before{height:100%;opacity:.04;}
   margin-top:auto;padding:10px 0;
   font-weight:700;font-size:.93rem;color:var(--brand-legacy);
   display:flex;align-items:center;gap:6px;
-  border-top:1px solid #eef2f7;
+  border-top:1px solid var(--color-line);
   transition:gap .3s;
 }
 a.money-topic-card:hover .money-topic-cta{gap:12px;}
@@ -301,7 +301,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 .money-topic-coming{
   margin-top:auto;padding:10px 0;
   font-weight:700;font-size:.88rem;color:#92400e;
-  border-top:1px solid #eef2f7;
+  border-top:1px solid var(--color-line);
 }
 
 /* 建置中卡片半透明 */
@@ -386,11 +386,11 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 <style>
 /* === 03-insurance-snapshot 樣式 === */
 .money-snapshot{
-  --brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
-  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;background:#fff;border-radius:16px;padding:36px;
-  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid var(--color-line);
   box-sizing:border-box;
 }
 .money-snapshot *{box-sizing:border-box;}
@@ -402,8 +402,8 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 
 .money-snap-table-wrap{overflow-x:auto;margin-bottom:16px;}
 .money-snap-table{width:100%;border-collapse:collapse;font-size:.9rem;}
-.money-snap-table th,.money-snap-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #eef2f7;vertical-align:middle;}
-.money-snap-table th{background:#f8fafc;font-weight:700;color:var(--text-primary);font-size:.85rem;text-transform:uppercase;letter-spacing:.3px;}
+.money-snap-table th,.money-snap-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--color-line);vertical-align:middle;}
+.money-snap-table th{background:var(--color-bg-elevated);font-weight:700;color:var(--text-primary);font-size:.85rem;text-transform:uppercase;letter-spacing:.3px;}
 .money-snap-table tbody tr:hover{background:#fafbfc;}
 .money-snap-highlight{background:#eff6ff !important;}
 .money-snap-highlight:hover{background:#e0ecff !important;}
@@ -420,7 +420,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 .money-snap-wip{font-size:.82rem;color:#92400e;font-weight:600;}
 .money-snap-note{font-size:.82rem;color:var(--text-secondary);}
 
-.money-snap-footnote{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:#f8fafc;border-radius:10px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);border:1px solid #eef2f7;}
+.money-snap-footnote{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:var(--color-bg-elevated);border-radius:10px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);border:1px solid var(--color-line);}
 .money-snap-footnote i{color:var(--brand-legacy);margin-top:3px;flex-shrink:0;}
 
 @media(max-width:768px){
@@ -476,11 +476,11 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 <style>
 /* === 04-tools 樣式 === */
 .money-tools{
-  --brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
-  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;background:#fff;border-radius:16px;padding:36px;
-  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid var(--color-line);
   box-sizing:border-box;
 }
 .money-tools *{box-sizing:border-box;}
@@ -494,8 +494,8 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 
 .money-tool-card{
   display:flex;align-items:flex-start;gap:16px;
-  padding:24px;background:#f8fafc;border-radius:14px;
-  border:2px solid #e2e8f0;text-decoration:none;color:var(--text-primary);
+  padding:24px;background:var(--color-bg-elevated);border-radius:14px;
+  border:2px solid var(--color-line);text-decoration:none;color:var(--text-primary);
   transition:all .3s ease;
 }
 .money-tool-card:hover{
@@ -509,7 +509,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
   display:flex;align-items:center;justify-content:center;
   font-size:22px;flex-shrink:0;
 }
-.money-tool-icon-blue{background:rgba(21,101,192,.1);color:#1565c0;}
+.money-tool-icon-blue{background:rgba(21,101,192,.1);color:var(--color-info);}
 .money-tool-icon-green{background:rgba(21,128,61,.1);color:#15803d;}
 .money-tool-icon-amber{background:rgba(217,119,6,.1);color:#d97706;}
 
@@ -575,7 +575,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
     <h3><i class="fas fa-link"></i> 相關專區</h3>
     <div class="money-cross-grid">
       <a href="/healthgood/" class="money-cross-card">
-        <div class="money-cross-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;"><i class="fas fa-heart-pulse"></i></div>
+        <div class="money-cross-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);"><i class="fas fa-heart-pulse"></i></div>
         <div>
           <strong>健康促進</strong>
           <small>中暑、農藥中毒屬農職保涵蓋的職業傷病——先學會預防</small>
@@ -596,11 +596,11 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 <style>
 /* === 05-disclaimer-refs 樣式 === */
 .money-footer-section{
-  --brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
-  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;background:#fff;border-radius:16px;padding:36px;
-  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid var(--color-line);
   box-sizing:border-box;
 }
 .money-footer-section *{box-sizing:border-box;}
@@ -615,7 +615,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 .money-contacts h3{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .money-contacts h3 i{color:var(--brand-legacy);}
 .money-contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.money-contact-card{display:flex;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;font-size:.9rem;}
+.money-contact-card{display:flex;gap:14px;padding:18px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);font-size:.9rem;}
 .money-contact-icon{width:40px;height:40px;border-radius:10px;background:var(--brand-legacy-light);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
 .money-contact-card strong{display:block;margin-bottom:4px;color:var(--brand-legacy-dark);font-size:.9rem;}
 .money-contact-card span{font-size:.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:4px;}
@@ -625,7 +625,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 .money-cross h3{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .money-cross h3 i{color:var(--brand-legacy);}
 .money-cross-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.money-cross-card{display:flex;align-items:center;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.money-cross-card{display:flex;align-items:center;gap:14px;padding:18px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
 .money-cross-card:hover{border-color:var(--brand-legacy);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
 .money-cross-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .money-cross-card strong{font-size:.95rem;display:block;margin-bottom:2px;}

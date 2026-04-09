@@ -4,7 +4,7 @@
      URL：/研究成果/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：res-
-     主色系：#5C8607（品牌尊嚴綠）
+     主色系：var(--color-brand)（品牌尊嚴綠）
 
      【維護指南】
      - 精選成果卡片：複製 .res-feat-card 區塊新增
@@ -54,7 +54,7 @@
       <div class="res-cat-grid">
 
         <a href="/研究成果/學術發表/" class="res-cat-card">
-          <div class="res-cat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;"><i class="fas fa-book-open"></i></div>
+          <div class="res-cat-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);"><i class="fas fa-book-open"></i></div>
           <h3>學術發表</h3>
           <p>期刊論文、學位論文</p>
           <span class="res-cat-count">持續更新中</span>
@@ -75,7 +75,7 @@
         </a>
 
         <a href="/研究成果/影音與podcast/" class="res-cat-card">
-          <div class="res-cat-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-podcast"></i></div>
+          <div class="res-cat-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);"><i class="fas fa-podcast"></i></div>
           <h3>影音與 Podcast</h3>
           <p>訪談錄音、知識轉譯影片</p>
           <span class="res-cat-count">持續更新中</span>
@@ -134,8 +134,8 @@
 <style>
 /* === 變數 === */
 .res-hero,.res-sections{
-  --brand-legacy:#5C8607;--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
-  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
+  --accent:#D4A017;--text-primary:var(--color-text);--text-secondary:var(--color-muted);
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -155,14 +155,14 @@
 .res-hero-stat-label{font-size:.9rem;color:var(--text-secondary);}
 
 /* === 待更新提示 === */
-.res-pending-notice{display:flex;gap:20px;padding:32px;background:linear-gradient(135deg,#f8fafc 0%,var(--brand-legacy-light) 100%);border-radius:14px;border:1px dashed rgba(92,134,7,.3);align-items:center;}
+.res-pending-notice{display:flex;gap:20px;padding:32px;background:linear-gradient(135deg,var(--color-bg-elevated) 0%,var(--brand-legacy-light) 100%);border-radius:14px;border:1px dashed rgba(92,134,7,.3);align-items:center;}
 .res-pending-icon{width:60px;height:60px;border-radius:50%;background:rgba(92,134,7,.1);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
 .res-pending-text h4{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 6px;}
 .res-pending-text p{font-size:.92rem;color:var(--text-secondary);margin:0;line-height:1.6;}
 
 /* === 通用區塊 === */
 .res-sections{margin-top:24px;}
-.res-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
+.res-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid var(--color-line);}
 .res-sec-slim{padding:28px 36px;}
 .res-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-legacy-light);}
 .res-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-legacy-light);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
@@ -171,7 +171,7 @@
 
 /* === 五大分類卡 === */
 .res-cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
-.res-cat-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 16px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;position:relative;}
+.res-cat-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 16px;background:var(--color-bg-elevated);border-radius:14px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;position:relative;}
 .res-cat-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1);border-color:var(--brand-legacy);}
 .res-cat-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px;}
 .res-cat-card h3{font-size:1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 6px;}
@@ -180,23 +180,23 @@
 
 /* === 精選成果列表 === */
 .res-feat-list{display:flex;flex-direction:column;gap:16px;}
-.res-feat-card{display:flex;gap:20px;padding:24px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;align-items:flex-start;transition:all .3s;}
+.res-feat-card{display:flex;gap:20px;padding:24px;background:var(--color-bg-elevated);border-radius:14px;border:1px solid var(--color-line);align-items:flex-start;transition:all .3s;}
 .res-feat-card:hover{border-color:var(--brand-legacy);box-shadow:0 6px 18px rgba(0,0,0,.06);}
 .res-feat-type{writing-mode:vertical-rl;text-orientation:mixed;font-size:.78rem;font-weight:800;padding:8px 6px;border-radius:8px;display:flex;align-items:center;gap:6px;flex-shrink:0;letter-spacing:1px;}
-.res-type-journal{background:rgba(21,101,192,.1);color:#1565c0;}
+.res-type-journal{background:rgba(21,101,192,.1);color:var(--color-info);}
 .res-type-report{background:rgba(124,58,237,.1);color:#7c3aed;}
 .res-type-conf{background:rgba(13,148,136,.1);color:#0d9488;}
-.res-type-podcast{background:rgba(198,40,40,.1);color:#c62828;}
+.res-type-podcast{background:rgba(198,40,40,.1);color:var(--color-warn);}
 .res-type-infographic{background:rgba(245,158,11,.1);color:#d97706;}
 .res-feat-content{flex-grow:1;}
 .res-feat-content h3{font-size:1rem;font-weight:600;color:var(--text-primary);margin:0 0 8px;line-height:1.6;font-family:"Lora","Noto Sans TC",serif;}
 .res-feat-content h3 em{font-style:italic;}
 .res-feat-abstract{font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin:0 0 10px;}
 .res-feat-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.res-feat-tag{font-size:.75rem;padding:2px 10px;border-radius:10px;background:#e2e8f0;color:var(--text-secondary);}
+.res-feat-tag{font-size:.75rem;padding:2px 10px;border-radius:10px;background:var(--color-line);color:var(--text-secondary);}
 .res-feat-actions{flex-shrink:0;align-self:center;display:flex;flex-direction:column;gap:8px;}
 .res-dl-btn,.res-play-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;text-decoration:none;transition:all .3s;white-space:nowrap;}
-.res-dl-btn{background:#fff;color:#c62828;border:1px solid #fca5a5;}.res-dl-btn:hover{background:#c62828;color:#fff;border-color:#c62828;transform:translateY(-2px);}
+.res-dl-btn{background:#fff;color:var(--color-warn);border:1px solid #fca5a5;}.res-dl-btn:hover{background:var(--color-warn);color:#fff;border-color:var(--color-warn);transform:translateY(-2px);}
 .res-dl-size{font-size:.72rem;font-weight:500;color:#999;margin-left:4px;}
 .res-dl-btn:hover .res-dl-size{color:rgba(255,255,255,.7);}
 .res-play-btn{background:var(--brand-legacy-light);color:var(--brand-legacy);border:1px solid rgba(92,134,7,.2);}.res-play-btn:hover{background:var(--brand-legacy);color:#fff;transform:translateY(-2px);}
@@ -204,7 +204,7 @@
 /* === 交叉連結 === */
 .res-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .res-cross-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.res-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.res-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
 .res-cross-card:hover{border-color:var(--brand-legacy);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
 .res-cross-card i{font-size:24px;color:var(--brand-legacy);}
 .res-cross-card span{font-weight:700;font-size:.95rem;}
@@ -213,14 +213,14 @@
 .res-back-link{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;color:var(--text-secondary);text-decoration:none;transition:.2s;margin-top:16px;}.res-back-link:hover{color:var(--brand-legacy);}
 
 /* === 子頁共用：篩選列 === */
-.res-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #f0f0f0;}
-.res-filter-btn{padding:8px 18px;border-radius:50px;border:1px solid #e2e8f0;background:#f8fafc;font-size:.88rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
+.res-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--color-bg-elevated);}
+.res-filter-btn{padding:8px 18px;border-radius:50px;border:1px solid var(--color-line);background:var(--color-bg-elevated);font-size:.88rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
 .res-filter-btn:hover{border-color:var(--brand-legacy);color:var(--brand-legacy);}
 .res-filter-btn.is-active{background:var(--brand-legacy);color:#fff;border-color:var(--brand-legacy);}
 
 /* === 子頁共用：APA 文獻清單 === */
 .res-bib-list{display:flex;flex-direction:column;gap:14px;}
-.res-bib-item{display:flex;gap:16px;padding:20px 24px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;align-items:flex-start;transition:all .3s;}
+.res-bib-item{display:flex;gap:16px;padding:20px 24px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);align-items:flex-start;transition:all .3s;}
 .res-bib-item:hover{border-color:var(--brand-legacy);box-shadow:0 4px 14px rgba(0,0,0,.05);}
 .res-bib-num{font-size:.82rem;font-weight:800;color:var(--brand-legacy);min-width:28px;flex-shrink:0;padding-top:2px;font-family:"Lato",sans-serif;}
 .res-bib-body{flex-grow:1;}
@@ -230,7 +230,7 @@
 .res-bib-actions{flex-shrink:0;align-self:center;}
 
 /* === 子頁共用：媒體嵌入區 === */
-.res-embed-card{background:#f8fafc;border-radius:14px;padding:24px;border:1px solid #e2e8f0;margin-bottom:16px;}
+.res-embed-card{background:var(--color-bg-elevated);border-radius:14px;padding:24px;border:1px solid var(--color-line);margin-bottom:16px;}
 .res-embed-card h3{font-size:1.05rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 6px;}
 .res-embed-meta{font-size:.85rem;color:var(--text-secondary);margin-bottom:14px;}
 .res-embed-player{width:100%;border-radius:10px;overflow:hidden;margin-bottom:10px;}
@@ -239,9 +239,9 @@
 
 /* === 子頁共用：圖表畫廊 === */
 .res-gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.res-gallery-card{border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;transition:all .3s;text-decoration:none;color:var(--text-primary);}
+.res-gallery-card{border-radius:14px;overflow:hidden;border:1px solid var(--color-line);transition:all .3s;text-decoration:none;color:var(--text-primary);}
 .res-gallery-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1);}
-.res-gallery-thumb{height:200px;overflow:hidden;background:#f0f0f0;}
+.res-gallery-thumb{height:200px;overflow:hidden;background:var(--color-bg-elevated);}
 .res-gallery-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
 .res-gallery-card:hover .res-gallery-thumb img{transform:scale(1.05);}
 .res-gallery-info{padding:18px;}
@@ -251,7 +251,7 @@
 
 /* === 子頁導覽列 === */
 .res-sub-nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
-.res-sub-nav-item{padding:8px 18px;border-radius:50px;font-size:.88rem;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;color:var(--text-secondary);transition:all .3s;}
+.res-sub-nav-item{padding:8px 18px;border-radius:50px;font-size:.88rem;font-weight:600;text-decoration:none;border:1px solid var(--color-line);color:var(--text-secondary);transition:all .3s;}
 .res-sub-nav-item:hover{border-color:var(--brand-legacy);color:var(--brand-legacy);}
 .res-sub-nav-item.is-current{background:var(--brand-legacy);color:#fff;border-color:var(--brand-legacy);}
 

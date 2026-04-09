@@ -5,7 +5,7 @@
      URL：/農學堂/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：edu-
-     主色系：#5C8607（品牌尊嚴綠）
+     主色系：var(--color-brand)（品牌尊嚴綠）
 
      【維護指南】
      - 影片卡片：複製 .edu-video-card 區塊即可新增
@@ -294,7 +294,7 @@
         </a>
 
         <a href="https://www.coapre.org.tw/" class="edu-dl-card" target="_blank" rel="noopener">
-          <div class="edu-dl-icon" style="color:#f59e0b;"><i class="fas fa-file-pdf"></i></div>
+          <div class="edu-dl-icon" style="color:var(--color-accent);"><i class="fas fa-file-pdf"></i></div>
           <div class="edu-dl-info">
             <h4>職場人因性危害預防</h4>
             <span class="edu-dl-meta">PDF・職業災害預防及重建中心・教育訓練教材</span>
@@ -404,8 +404,8 @@
 <style>
 /* === 全域變數 === */
 .edu-hero,.edu-sections{
-  --brand-legacy:#5C8607;--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
-  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
+  --accent:#D4A017;--text-primary:var(--color-text);--text-secondary:var(--color-muted);
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -428,7 +428,7 @@
 
 /* === 通用區塊 === */
 .edu-sections{margin-top:24px;}
-.edu-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
+.edu-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid var(--color-line);}
 .edu-sec-slim{padding:28px 36px;}
 .edu-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-legacy-light);}
 .edu-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-legacy-light);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
@@ -437,21 +437,21 @@
 
 /* === 學習路徑六宮格 === */
 .edu-path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.edu-path-card{padding:24px;border-radius:14px;border:1px solid #e2e8f0;background:#fafbfc;text-align:center;transition:all .3s;cursor:pointer;}
+.edu-path-card{padding:24px;border-radius:14px;border:1px solid var(--color-line);background:#fafbfc;text-align:center;transition:all .3s;cursor:pointer;}
 .edu-path-card:hover{border-color:var(--brand-legacy);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
 .edu-path-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 14px;}
 .edu-path-card h4{font-size:1.05rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 6px;}
 .edu-path-card p{font-size:.85rem;color:var(--text-secondary);margin:0;line-height:1.5;}
 
 /* === 篩選列 === */
-.edu-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #f0f0f0;}
-.edu-filter-btn{padding:8px 18px;border-radius:50px;border:1px solid #e2e8f0;background:#f8fafc;font-size:.88rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
+.edu-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--color-bg-elevated);}
+.edu-filter-btn{padding:8px 18px;border-radius:50px;border:1px solid var(--color-line);background:var(--color-bg-elevated);font-size:.88rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
 .edu-filter-btn:hover{border-color:var(--brand-legacy);color:var(--brand-legacy);}
 .edu-filter-btn.is-active{background:var(--brand-legacy);color:#fff;border-color:var(--brand-legacy);}
 
 /* === 影片網格 === */
 .edu-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.edu-video-card{border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;transition:all .3s;display:flex;flex-direction:column;}
+.edu-video-card{border-radius:14px;overflow:hidden;border:1px solid var(--color-line);transition:all .3s;display:flex;flex-direction:column;}
 .edu-video-card.is-hidden{display:none;}
 .edu-video-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1);}
 .edu-video-thumb{position:relative;height:180px;overflow:hidden;background:#111;}
@@ -481,7 +481,7 @@
 .edu-platform-group-title{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;padding-top:8px;}
 .edu-platform-group-title + .edu-platform-grid{margin-bottom:32px;}
 .edu-platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-.edu-platform-card{position:relative;display:flex;flex-direction:column;padding:24px;border-radius:14px;border:1px solid #e2e8f0;background:#fafbfc;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.edu-platform-card{position:relative;display:flex;flex-direction:column;padding:24px;border-radius:14px;border:1px solid var(--color-line);background:#fafbfc;text-decoration:none;color:var(--text-primary);transition:all .3s;}
 .edu-platform-card:hover{border-color:var(--brand-legacy);transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.08);}
 .edu-platform-badge{position:absolute;top:14px;right:14px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:10px;}
 .edu-platform-badge.tw{background:#dcfce7;color:#15803d;}
@@ -496,7 +496,7 @@
 
 /* === 工作坊清單 === */
 .edu-ws-list{display:flex;flex-direction:column;gap:16px;}
-.edu-ws-item{display:flex;gap:20px;padding:24px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;align-items:flex-start;}
+.edu-ws-item{display:flex;gap:20px;padding:24px;background:var(--color-bg-elevated);border-radius:14px;border:1px solid var(--color-line);transition:all .3s;align-items:flex-start;}
 .edu-ws-item:hover{border-color:var(--brand-legacy);box-shadow:0 6px 18px rgba(0,0,0,.06);}
 .edu-ws-date-box{min-width:72px;text-align:center;background:var(--brand-legacy);color:#fff;border-radius:12px;padding:12px 8px;flex-shrink:0;display:flex;flex-direction:column;line-height:1;}
 .edu-ws-month{font-size:.75rem;font-weight:600;opacity:.8;}
@@ -508,9 +508,9 @@
 .edu-ws-open{background:#dcfce7;color:#15803d;}
 .edu-ws-open i{font-size:6px;animation:pulse-dot 1.5s infinite;}
 @keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:.3;}}
-.edu-ws-closed{background:#f3f4f6;color:#9ca3af;}
+.edu-ws-closed{background:#f3f4f6;color:var(--color-muted);}
 .edu-ws-full{background:#fef3c7;color:#92400e;}
-.edu-ws-category{font-size:.8rem;font-weight:600;color:var(--text-secondary);padding:3px 10px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;}
+.edu-ws-category{font-size:.8rem;font-weight:600;color:var(--text-secondary);padding:3px 10px;background:#fff;border-radius:12px;border:1px solid var(--color-line);}
 .edu-ws-title{font-size:1.15rem;font-weight:800;margin:0 0 10px;color:var(--brand-legacy-dark);}
 .edu-ws-details{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--text-secondary);margin-bottom:10px;}
 .edu-ws-details span{display:flex;align-items:center;gap:4px;}
@@ -519,13 +519,13 @@
 .edu-ws-action{flex-shrink:0;align-self:center;}
 .edu-ws-register{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;background:var(--brand-legacy);color:#fff;font-weight:700;font-size:.93rem;text-decoration:none;transition:all .3s;box-shadow:0 4px 12px rgba(92,134,7,.25);}
 .edu-ws-register:hover{background:var(--brand-legacy-hover);transform:translateY(-2px);}
-.edu-ws-ended{font-size:.88rem;color:#9ca3af;font-weight:600;}
+.edu-ws-ended{font-size:.88rem;color:var(--color-muted);font-weight:600;}
 
 /* === 下載資源 === */
 .edu-dl-grid{display:flex;flex-direction:column;gap:12px;}
-.edu-dl-card{display:flex;align-items:center;gap:16px;padding:18px 24px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.edu-dl-card{display:flex;align-items:center;gap:16px;padding:18px 24px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
 .edu-dl-card:hover{border-color:var(--brand-legacy);transform:translateX(5px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
-.edu-dl-icon{width:44px;height:44px;border-radius:10px;background:rgba(198,40,40,.08);color:#c62828;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.edu-dl-icon{width:44px;height:44px;border-radius:10px;background:rgba(198,40,40,.08);color:var(--color-warn);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .edu-dl-info{flex-grow:1;}
 .edu-dl-info h4{font-size:1rem;font-weight:700;margin:0 0 2px;color:var(--brand-legacy-dark);}
 .edu-dl-meta{font-size:.82rem;color:var(--text-secondary);}
@@ -540,16 +540,16 @@
 .edu-concept-step h4{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 8px;}
 .edu-concept-step p{font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin:0;}
 .edu-concept-arrow{display:flex;align-items:center;padding-top:52px;color:var(--accent);font-size:24px;flex-shrink:0;margin:0 8px;}
-.edu-concept-partners{background:#f8fafc;border-radius:14px;padding:24px 28px;border:1px solid #e2e8f0;}
+.edu-concept-partners{background:var(--color-bg-elevated);border-radius:14px;padding:24px 28px;border:1px solid var(--color-line);}
 .edu-concept-partners h4{font-size:1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 14px;display:flex;align-items:center;gap:8px;}
 .edu-partner-tags{display:flex;flex-wrap:wrap;gap:8px;}
-.edu-partner-tags span{font-size:.82rem;font-weight:600;padding:6px 14px;border-radius:50px;background:#fff;color:var(--text-secondary);border:1px solid #e2e8f0;transition:all .2s;}
+.edu-partner-tags span{font-size:.82rem;font-weight:600;padding:6px 14px;border-radius:50px;background:#fff;color:var(--text-secondary);border:1px solid var(--color-line);transition:all .2s;}
 .edu-partner-tags span:hover{border-color:var(--brand-legacy);color:var(--brand-legacy);}
 
 /* === 交叉連結 === */
 .edu-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .edu-cross-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.edu-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.edu-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
 .edu-cross-card:hover{border-color:var(--brand-legacy);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
 .edu-cross-card i{font-size:24px;color:var(--brand-legacy);}
 .edu-cross-card span{font-weight:700;font-size:.95rem;}

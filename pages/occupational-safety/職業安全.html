@@ -67,7 +67,7 @@
         </div>
       </div>
       <div class="prev-stat-item">
-        <div class="prev-stat-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+        <div class="prev-stat-icon" style="background:rgba(245,158,11,.1);color:var(--color-accent);">
           <i class="fas fa-person-cane"></i>
         </div>
         <div class="prev-stat-text">
@@ -96,7 +96,7 @@
         </div>
       </div>
       <div class="prev-stat-item">
-        <div class="prev-stat-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+        <div class="prev-stat-icon" style="background:rgba(245,158,11,.1);color:var(--color-accent);">
           <i class="fas fa-tractor"></i>
         </div>
         <div class="prev-stat-text">
@@ -111,8 +111,8 @@
 <style>
 /* === 01-hero 專用樣式 === */
 .prev-hero{
-  --brand-legacy:#5C8607;--brand-legacy-hover:#4a6b05;--brand-legacy-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-brand);--brand-legacy-hover:#4a6b05;--brand-legacy-dark:var(--color-brand-deep);
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   display:flex;gap:40px;align-items:flex-start;padding:40px;
   background:linear-gradient(135deg,#f0f5e8 0%,#fff 60%,#e8f0da 100%);
@@ -150,7 +150,7 @@
 .prev-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .prev-stat-number{font-size:1.5rem;font-weight:900;display:block;line-height:1;}
 .prev-stat-label{font-size:.85rem;color:var(--text-secondary);}
-.prev-stat-source{font-size:.72rem;color:#9ca3af;display:block;margin-top:2px;font-weight:400;}
+.prev-stat-source{font-size:.72rem;color:var(--color-muted);display:block;margin-top:2px;font-weight:400;}
 
 /* 平滑捲動 */
 @media(max-width:768px){
@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
 
       <div class="prev-card">
-        <div class="prev-card-icon-area" style="--icon-bg:#fce4ec;--icon-color:#c62828;">
+        <div class="prev-card-icon-area" style="--icon-bg:#fce4ec;--icon-color:var(--color-warn);">
           <i class="fas fa-train-tram"></i>
           <span class="prev-card-badge badge-eliminate">消除風險</span>
         </div>
@@ -334,8 +334,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 02-tabs 共用樣式 === */
 .prev-tabs-section{
-  --brand-legacy:#5C8607;--brand-legacy-hover:#4a6b05;--brand-legacy-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-brand);--brand-legacy-hover:#4a6b05;--brand-legacy-dark:var(--color-brand-deep);
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .prev-section-header{margin-bottom:24px;}
 .prev-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
 .prev-section-desc{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 8px;max-width:800px;}
-.prev-section-source{font-size:.78rem;color:#9ca3af;margin:0;font-style:italic;}
+.prev-section-source{font-size:.78rem;color:var(--color-muted);margin:0;font-style:italic;}
 
 /* Tab Buttons */
 .prev-tab-btns{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;}
@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .prev-tab-panel.is-active{display:block;}
 
 /* Tab Intro */
-.prev-tab-intro{display:flex;justify-content:space-between;align-items:flex-start;background:#fff;padding:24px;border-radius:12px;margin-bottom:24px;border:1px solid #f0f0f0;flex-wrap:wrap;gap:16px;}
+.prev-tab-intro{display:flex;justify-content:space-between;align-items:flex-start;background:#fff;padding:24px;border-radius:12px;margin-bottom:24px;border:1px solid var(--color-bg-elevated);flex-wrap:wrap;gap:16px;}
 .prev-tab-intro-text{flex:1;min-width:240px;}
 .prev-tab-intro-text p{margin:0 0 8px;line-height:1.8;font-size:.95rem;color:var(--text-primary);}
 .prev-tab-intro-text p:last-child{margin-bottom:0;}
@@ -366,11 +366,11 @@ document.addEventListener('DOMContentLoaded',function(){
 .prev-grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
 .prev-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);transition:all .3s ease;}
 .prev-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);}
-.prev-card-img{height:180px;position:relative;overflow:hidden;background:#f5f5f5;}
+.prev-card-img{height:180px;position:relative;overflow:hidden;background:var(--color-bg-elevated);}
 .prev-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
 .prev-card:hover .prev-card-img img{transform:scale(1.06);}
-.prev-card-icon-area{height:160px;position:relative;display:flex;align-items:center;justify-content:center;background:var(--icon-bg,#f5f5f5);border-radius:16px 16px 0 0;transition:all .3s;}
-.prev-card-icon-area i{font-size:3.5rem;color:var(--icon-color,#5C8607);transition:transform .3s;}
+.prev-card-icon-area{height:160px;position:relative;display:flex;align-items:center;justify-content:center;background:var(--icon-bg,var(--color-bg-elevated));border-radius:16px 16px 0 0;transition:all .3s;}
+.prev-card-icon-area i{font-size:3.5rem;color:var(--icon-color,var(--color-brand));transition:transform .3s;}
 .prev-card:hover .prev-card-icon-area i{transform:scale(1.15);}
 .prev-card-badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:800;color:#fff;}
 .badge-eliminate{background:#10b981;}.badge-substitute{background:#0ea5e9;}.badge-engineering{background:#3b82f6;}.badge-ppe{background:#f43f5e;}
@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <!-- 呼吸防護：防毒面具 -->
       <div class="prev-card">
         <div class="prev-card-icon-area" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">
-          <i class="fas fa-head-side-mask" style="color:#c62828;"></i>
+          <i class="fas fa-head-side-mask" style="color:var(--color-warn);"></i>
           <span class="prev-card-badge badge-ppe">呼吸防護</span>
         </div>
         <div class="prev-card-body">
@@ -448,7 +448,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <!-- 呼吸防護：N95 -->
       <div class="prev-card">
         <div class="prev-card-icon-area" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">
-          <i class="fas fa-mask-face" style="color:#c62828;"></i>
+          <i class="fas fa-mask-face" style="color:var(--color-warn);"></i>
           <span class="prev-card-badge badge-ppe">呼吸防護</span>
         </div>
         <div class="prev-card-body">
@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <!-- 下肢防護：護膝 -->
       <div class="prev-card">
         <div class="prev-card-icon-area" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
-          <i class="fas fa-shield-halved" style="color:#1565c0;"></i>
+          <i class="fas fa-shield-halved" style="color:var(--color-info);"></i>
           <span class="prev-card-badge badge-ppe">下肢防護</span>
         </div>
         <div class="prev-card-body">
@@ -513,7 +513,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <!-- 下肢防護：安全鞋 -->
       <div class="prev-card">
         <div class="prev-card-icon-area" style="background:linear-gradient(135deg,#e3f2fd,#bbdefb);">
-          <i class="fas fa-shoe-prints" style="color:#1565c0;"></i>
+          <i class="fas fa-shoe-prints" style="color:var(--color-info);"></i>
           <span class="prev-card-badge badge-ppe">下肢防護</span>
         </div>
         <div class="prev-card-body">
@@ -526,7 +526,7 @@ document.addEventListener('DOMContentLoaded',function(){
       <!-- 軀幹防護 -->
       <div class="prev-card">
         <div class="prev-card-icon-area" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">
-          <i class="fas fa-shirt" style="color:#2e7d32;"></i>
+          <i class="fas fa-shirt" style="color:var(--color-brand);"></i>
           <span class="prev-card-badge badge-ppe">軀幹防護</span>
         </div>
         <div class="prev-card-body">
@@ -690,8 +690,8 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 04-tool-quiz 專用樣式（prevQ 前綴避免衝突） === */
 .prev-risk-section{
-  --brand-legacy:#5C8607;--brand-legacy-dark:#2c5e2e;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:var(--color-brand-deep);
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
@@ -701,7 +701,7 @@ document.addEventListener('DOMContentLoaded',function(){
 .prevQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 10px;max-width:800px;}
 .prevQ-data-note{background:rgba(59,130,246,.05);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.12);}
 .prevQ-data-note i{color:#3b82f6;margin-top:3px;flex-shrink:0;}
-.prevQ-source{display:block;width:100%;font-size:.78rem;color:#9ca3af;font-style:italic;margin-top:4px;}
+.prevQ-source{display:block;width:100%;font-size:.78rem;color:var(--color-muted);font-style:italic;margin-top:4px;}
 
 .prevQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;margin-bottom:24px;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
 .prevQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
@@ -722,12 +722,12 @@ document.addEventListener('DOMContentLoaded',function(){
 .prevQ-type-hint i{margin-top:3px;color:var(--brand-legacy);flex-shrink:0;}
 
 .prevQ-quiz-checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;}
-.prevQ-check-item{display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:10px;background:#f9fafb;cursor:pointer;transition:all .2s;font-size:.95rem;line-height:1.5;}
+.prevQ-check-item{display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:10px;background:var(--color-bg-elevated);cursor:pointer;transition:all .2s;font-size:.95rem;line-height:1.5;}
 .prevQ-check-item:hover{background:#f0f5e8;}
 .prevQ-check-item.is-highlighted{background:#fef9e7;border:1px solid rgba(212,160,23,.3);}
 .prevQ-check-item input{width:20px;height:20px;accent-color:var(--brand-legacy);flex-shrink:0;}
 
-.prevQ-result-display{display:flex;align-items:center;gap:20px;padding:24px;border-radius:12px;background:#f9fafb;border:2px solid #e0e0e0;transition:all .4s;}
+.prevQ-result-display{display:flex;align-items:center;gap:20px;padding:24px;border-radius:12px;background:var(--color-bg-elevated);border:2px solid #e0e0e0;transition:all .4s;}
 .prevQ-result-circle{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:900;color:#fff;background:#d1d5db;transition:background .4s;flex-shrink:0;}
 .prevQ-result-text{font-size:1rem;line-height:1.7;}
 
@@ -848,21 +848,21 @@ document.addEventListener('DOMContentLoaded',function(){
     if(n<=2){
       circle.classList.add('prevQ-risk-green');
       displayEl.classList.add('prevQ-border-green');
-      textEl.innerHTML='<strong style="color:#2E7D32;">🟢 低度風險（'+n+' 項）</strong><br>'
+      textEl.innerHTML='<strong style="color:var(--color-brand);">🟢 低度風險（'+n+' 項）</strong><br>'
         +'您目前的風險在可控範圍內。維持現有防護習慣即可。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:var(--color-muted);font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }else if(n<=5){
       circle.classList.add('prevQ-risk-orange');
       displayEl.classList.add('prevQ-border-orange');
       textEl.innerHTML='<strong style="color:#E65100;">🟠 中度風險（'+n+' 項）</strong><br>'
         +'有一定風險，建議往上查看「防護裝備型錄」，確認您有沒有穿戴對的防護具。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:var(--color-muted);font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }else{
       circle.classList.add('prevQ-risk-red');
       displayEl.classList.add('prevQ-border-red');
-      textEl.innerHTML='<strong style="color:#C62828;">🔴 高度風險（'+n+' 項）</strong><br>'
+      textEl.innerHTML='<strong style="color:var(--color-warn);">🔴 高度風險（'+n+' 項）</strong><br>'
         +'風險偏高，光靠防護具效果有限。建議優先考慮導入省力農機，從根本改善作業方式。<br>'
-        +'<span style="color:#6b7280;font-size:.9rem;">針對您的農事：'+advice+'</span>';
+        +'<span style="color:var(--color-muted);font-size:.9rem;">針對您的農事：'+advice+'</span>';
     }
   }
 });
@@ -939,7 +939,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
     </div>
 
-    <div class="prev-h-level" data-level="4" style="--level-color:#f59e0b;">
+    <div class="prev-h-level" data-level="4" style="--level-color:var(--color-accent);">
       <div class="prev-h-bar">
         <span class="prev-h-label"><span class="prev-h-num">❹</span> 行政管理 — 調整工作方式和時間</span>
         <i class="fas fa-chevron-down prev-h-arrow"></i>
@@ -982,7 +982,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 05-tool-niosh 專用樣式 === */
 .prev-tool-card-n{
-  --brand-legacy:#5C8607;--brand-legacy-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:var(--color-brand-deep);--text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   background:#fff;border-radius:var(--radius);padding:30px;margin:0 0 24px;
   box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;box-sizing:border-box;
@@ -993,12 +993,12 @@ document.addEventListener('DOMContentLoaded',function(){
 .prev-tool-header-n h3{font-size:1.15rem;font-weight:800;margin:0;color:var(--brand-legacy-dark);}
 .prev-tool-header-n p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
 
-.prev-niosh-explain{background:#f9fafb;border-radius:10px;padding:16px 20px;margin-bottom:20px;border:1px solid #f0f0f0;}
+.prev-niosh-explain{background:var(--color-bg-elevated);border-radius:10px;padding:16px 20px;margin-bottom:20px;border:1px solid var(--color-bg-elevated);}
 .prev-niosh-explain p{margin:0 0 12px;font-size:.95rem;line-height:1.7;color:var(--text-primary);}
 .prev-niosh-explain p:last-child{margin-bottom:0;}
 .prev-niosh-data{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.1);}
 .prev-niosh-data i{margin-top:3px;flex-shrink:0;}
-.prev-niosh-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
+.prev-niosh-source-inline{display:block;width:100%;font-size:.75rem;color:var(--color-muted);font-style:italic;margin-top:6px;}
 
 .prev-hierarchy-body{display:flex;flex-direction:column;gap:8px;}
 .prev-h-level{border-radius:10px;overflow:hidden;}
@@ -1124,7 +1124,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 06-tool-hazards 專用樣式 === */
 .prev-tool-card-h{
-  --brand-legacy:#5C8607;--brand-legacy-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:var(--color-brand-deep);--text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   background:#fff;border-radius:var(--radius);padding:30px;margin:0 0 24px;
   box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;box-sizing:border-box;
@@ -1135,19 +1135,19 @@ document.addEventListener('DOMContentLoaded',function(){
 .prev-tool-header-h h3{font-size:1.15rem;font-weight:800;margin:0;color:var(--brand-legacy-dark);}
 .prev-tool-header-h p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
 
-.prev-hazard-explain{background:#f9fafb;border-radius:10px;padding:14px 18px;margin-bottom:20px;border:1px solid #f0f0f0;}
+.prev-hazard-explain{background:var(--color-bg-elevated);border-radius:10px;padding:14px 18px;margin-bottom:20px;border:1px solid var(--color-bg-elevated);}
 .prev-hazard-explain p{margin:0 0 12px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:8px;}
 .prev-hazard-explain p:last-child{margin-bottom:0;}
 .prev-hazard-explain p i{margin-top:3px;flex-shrink:0;}
 .prev-hazard-data-note{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;border:1px solid rgba(59,130,246,.1);flex-wrap:wrap;}
-.prev-hazard-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
+.prev-hazard-source-inline{display:block;width:100%;font-size:.75rem;color:var(--color-muted);font-style:italic;margin-top:6px;}
 
 .prev-hazard-grid-h{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:16px;}
 .prev-hazard-card-h{border-radius:12px;padding:24px;border-left:5px solid currentColor;}
 .hz-physical-h{background:#FFF3E0;color:#E65100;border-left-color:#E65100;}
 .hz-chemical-h{background:#F3E5F5;color:#7B1FA2;border-left-color:#7B1FA2;}
-.hz-biological-h{background:#E8F5E9;color:#2E7D32;border-left-color:#2E7D32;}
-.hz-ergonomic-h{background:#E3F2FD;color:#1565C0;border-left-color:#1565C0;}
+.hz-biological-h{background:#E8F5E9;color:var(--color-brand);border-left-color:var(--color-brand);}
+.hz-ergonomic-h{background:#E3F2FD;color:var(--color-info);border-left-color:var(--color-info);}
 
 .prev-hazard-icon-h{font-size:1.8rem;margin-bottom:12px;}
 .prev-hazard-card-h h4{font-size:1.1rem;font-weight:800;margin:0 0 4px;}
@@ -1182,8 +1182,8 @@ document.addEventListener('DOMContentLoaded',function(){
       <p>2022 年農業致死率為每 10 萬 FTE 18.6 人，是全產業平均 3.7 的 <strong>5 倍</strong>。交通運輸事故為首要死因。</p>
       <span class="prevS-stat-source">CDC/NIOSH (2024). Agriculture Worker Safety and Health.</span>
     </div>
-    <div class="prevS-stat-card" style="border-top:4px solid #f59e0b;">
-      <div class="prevS-stat-num" style="color:#f59e0b;">8.79<small>億人</small></div>
+    <div class="prevS-stat-card" style="border-top:4px solid var(--color-accent);">
+      <div class="prevS-stat-num" style="color:var(--color-accent);">8.79<small>億人</small></div>
       <h4>全球農業就業人口</h4>
       <p>2023 年全球約 8.79 億人從事農業，占就業人口 28%。亞太地區最多（5.51 億），農業工作者普遍面臨缺乏勞動與社會保護的困境。</p>
       <span class="prevS-stat-source">ILO (2023). Employment in Agriculture Sector.</span>
@@ -1245,7 +1245,7 @@ document.addEventListener('DOMContentLoaded',function(){
     </a>
 
     <a href="/occupational-safety/greenhouse-zone/" class="prevS-subpage-card">
-      <div class="prevS-subpage-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+      <div class="prevS-subpage-icon" style="background:rgba(245,158,11,.1);color:var(--color-accent);">
         <i class="fas fa-warehouse"></i>
       </div>
       <h3>溫室作業安全</h3>
@@ -1350,7 +1350,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <style>
 /* === 07-subpages-refs 專用樣式（prevS 前綴） === */
 .prevS-subpage-section,.prevS-articles-section,.prevS-references{
-  --brand-legacy:#5C8607;--brand-legacy-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:var(--color-brand-deep);--text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .prevS-subpage-section *,.prevS-references *{box-sizing:border-box;}
@@ -1382,10 +1382,10 @@ document.addEventListener('DOMContentLoaded',function(){
 .prevS-stat-num small{font-size:.5em;font-weight:700;opacity:.7;}
 .prevS-stat-card h4{font-size:1.05rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 8px;}
 .prevS-stat-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
-.prevS-stat-source{font-size:.78rem;color:#9ca3af;font-style:italic;display:block;}
+.prevS-stat-source{font-size:.78rem;color:var(--color-muted);font-style:italic;display:block;}
 
 /* References */
-.prevS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}
+.prevS-references{margin:40px 0 0;background:var(--color-bg-elevated);border-radius:var(--radius);padding:30px;border:1px solid #eee;}
 .prevS-ref-list{display:flex;flex-direction:column;gap:10px;}
 .prevS-ref-item{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding-left:24px;text-indent:-24px;}
 .prevS-ref-item a{color:var(--brand-legacy);word-break:break-all;}

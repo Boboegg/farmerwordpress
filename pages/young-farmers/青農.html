@@ -52,7 +52,7 @@
   <section class="young-scenarios">
     <h2 class="young-section-title"><i class="fas fa-rocket"></i> 青農的四個策略支點</h2>
 
-    <div class="young-scenario-card" style="--accent:#1565c0;">
+    <div class="young-scenario-card" style="--accent:var(--color-info);">
       <div class="young-scenario-icon"><i class="fas fa-gears"></i></div>
       <div class="young-scenario-body">
         <h3>機器 vs. 人力：為你的身體多爭取 20 年</h3>
@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <div class="young-scenario-card" style="--accent:#2e7d32;">
+    <div class="young-scenario-card" style="--accent:var(--color-brand);">
       <div class="young-scenario-icon"><i class="fas fa-calculator"></i></div>
       <div class="young-scenario-body">
         <h3>你的退休金夠嗎？現在就算清楚</h3>
@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <div class="young-scenario-card" style="--accent:#c62828;">
+    <div class="young-scenario-card" style="--accent:var(--color-warn);">
       <div class="young-scenario-icon"><i class="fas fa-shield-halved"></i></div>
       <div class="young-scenario-body">
         <h3>受傷了怎麼辦？CDC/NIOSH 告訴你風險有多高</h3>
@@ -152,7 +152,7 @@
 /* === 青農（Pro）=== */
 .young-page-wrapper{
   --brand-legacy:#5B7FA6;--brand-legacy-dark:#3a5d82;--brand-bg:#E8EFF7;
-  --text-primary:#1f3348;--text-secondary:#6b7280;--radius:16px;
+  --text-primary:#1f3348;--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   max-width:820px;margin:0 auto;padding:20px 16px 100px;box-sizing:border-box;
 }
@@ -174,7 +174,7 @@
 .young-stat-number{font-size:2rem;font-weight:900;color:var(--brand-legacy-dark);line-height:1;margin-bottom:6px;font-family:"Lato","Noto Sans TC",sans-serif;}
 .young-stat-unit{font-size:1rem;font-weight:700;margin-left:2px;}
 .young-stat-label{font-size:.82rem;line-height:1.5;color:var(--text-primary);margin:0 0 4px;font-weight:500;}
-.young-stat-source{font-size:.72rem;color:#9ca3af;margin:0;font-style:italic;}
+.young-stat-source{font-size:.72rem;color:var(--color-muted);margin:0;font-style:italic;}
 .young-stats-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding:12px 16px;background:rgba(91,127,166,.08);border-radius:10px;border-left:4px solid var(--brand-legacy);}
 
 /* 情境卡 */
@@ -206,11 +206,11 @@
 
 /* 緊急資源 */
 .young-emergency{background:#fff;border-radius:var(--radius);padding:20px;margin-bottom:20px;border:1px solid #ececec;}
-.young-emergency h2{font-size:1.1rem;font-weight:800;color:#c62828;margin:0 0 12px;display:flex;align-items:center;gap:8px;}
+.young-emergency h2{font-size:1.1rem;font-weight:800;color:var(--color-warn);margin:0 0 12px;display:flex;align-items:center;gap:8px;}
 .young-emergency-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
 .young-emergency-item{text-align:center;padding:12px 8px;background:#fef2f2;border-radius:10px;}
 .young-emergency-item strong{display:block;font-size:.78rem;color:#991b1b;margin-bottom:4px;}
-.young-emergency-item a{font-size:1.3rem;font-weight:900;color:#c62828;text-decoration:none;}
+.young-emergency-item a{font-size:1.3rem;font-weight:900;color:var(--color-warn);text-decoration:none;}
 .young-emergency-note{font-size:.85rem;line-height:1.6;color:var(--text-secondary);margin:0;}
 
 /* 探索更多 */
