@@ -2136,7 +2136,16 @@ body[class*="page-id"],
 .ast-custom-button,
 .ast-custom-button-link,
 .ast-builder-button-wrap .ast-custom-button,
-.ast-builder-button-wrap a.button {
+.ast-builder-button-wrap a.button,
+/* 提高 specificity 以擊敗 Astra 的 #ast-desktop-header a { color:var(--fg)!important } */
+#ast-desktop-header .ast-custom-button,
+#ast-desktop-header .ast-custom-button-link,
+#ast-desktop-header .ast-builder-button-wrap .ast-custom-button,
+#ast-desktop-header .ast-builder-button-wrap a.button,
+#ast-mobile-header .ast-custom-button,
+#ast-mobile-header .ast-custom-button-link,
+#ast-mobile-header .ast-builder-button-wrap .ast-custom-button,
+#ast-mobile-header .ast-builder-button-wrap a.button {
     background: var(--brand) !important;
     color: var(--bg) !important;
     border: 1px solid var(--brand) !important;
