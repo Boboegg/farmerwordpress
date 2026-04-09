@@ -6,25 +6,28 @@
 
 ---
 
-## 🎯 當前最關鍵的待決事項（接手第一件事）
+## 🎯 2026-04-09 晚間更新：方向已定（L3 Director Cut）
 
-Bobo 在我寫的 `pages/home/index.new.html` 視覺版本後說：
+Bobo 在晚間對話後：
+1. 看完 ChatGPT 給的完整 14 份設計文件
+2. 拿 ChatGPT 最終的「Director Cut 導演版原型」當基準
+3. 全套採用 A+B+C 混合配方 + L3 互動等級
 
-> 「但是這種視覺跟我們一開始討論的 差少很多」
+**決策固化成 skill**：`~/.claude/skills/director-cut-dignity/SKILL.md`
+**完整方案**：`~/vault/Projects/P8-尊嚴農業/design-inventory.md`
+**L3 範本**：`~/.claude/skills/director-cut-dignity/references/director-cut-template.md`
 
-意思是這版**內容保留正確**但**視覺不夠爆改**——他要 v2 Director Cut / v4 Apex Vision demo 等級的氣場，不是「溫和升級」。
+### 新方向關鍵決策（所有派任必遵）
+- ✅ 米白底（延用稻穗熟成 `#FBFAF7`，不改深色）
+- ✅ Hero h1 封頂 48px、內文 ≥ 18px（中高齡 override）
+- ✅ 互動必達 L3 Director Cut 8 元素（GSAP pinned hero + parallax + 熱區地圖 + tilt cards + magnetic CTA）
+- ✅ Theme scope 在 `.fw-page` wrapper，不在 `body`（WordPress 技術修正）
+- ✅ 分眾 4 頁刪包名
+- ✅ **Cinematic = 紀錄片電影感**，不是 sci-fi（禁 matrix/cyberpunk/HUD/scanner beam 軍事感）
+- ✅ 鐵律：既有頁面文字一字不改
 
-我已經提了 4 個選項給他選但他**還沒回答**就要交接：
-
-| 選項 | 內容 |
-|---|---|
-| **A** | 純視覺爆改不加任何文字（Hero 100vh、字 100px、4 層 plane parallax、letter-by-letter、scene cut、cursor spotlight、manifesto pinned scroll 重複利用副標） |
-| **B** | 允許用「英文/數字/裝飾元素」當 deco（例如 watermark "001"、"DIGNITY"、"2026"） |
-| **C** | Bobo 提供新文字段落（manifesto / 計畫宣言）才能塞滿大版面 |
-| **D** | 接受版面高度，但狂塞動畫密度 |
-| **A+D** | （我推薦）只重用既有文字 + 拉滿動畫和高度，達 v2 demo 80% 氣場 |
-
-**接手第一件事：問 Bobo 選哪個 A/B/C/D，然後動。**
+### `pages/home/index.new.html`（732 行手寫版）
+**狀態**：棄用。要用 L3 Director Cut 範本重寫，所有文字從原始 `index.html` 複製。
 
 ---
 
