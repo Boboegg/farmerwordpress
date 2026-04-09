@@ -1,109 +1,86 @@
 # 交接文件 — farmerwordpress
 
-**最後更新**：2026-04-09 晚間
-**上次 session**：2026-04-09 長對話（P0 → P0.5 → P1 pilot 三次翻車才成功）
+最後更新：2026-04-09
+目前分支：main
+目前最新 commit：696ee36a80b4b6f91aad914ca9b95ac4f18031dd
 
 ---
 
-## 🎯 當前狀態（下次接手必讀）
+## 本輪已完成（可直接視為桌機版第一輪完成）
 
-### P0 ✅ 完成（CSS bug 修正）
-- `.fw-page body` 無效 selector 修為 `.fw-page` 本體（commit `dcf41f3`）
-- `:focus-visible` 從 box-shadow-only 升級為 outline + box-shadow + forced-colors
+### 1) 設計系統整合
+- `css/global.css`：設計 token 與相容層收斂，舊 alias 保留，對齊現行稻穗熟成配色。
+- `docs/design-system.md`：新增設計系統說明文件。
+- `README.md`：品牌快查與設計系統入口同步更新。
+- `docs/architecture.md`：補上 IA 與 design token 的權威來源分工。
 
-### P0.5 ✅ 完成（L3 地基）
-- `@layer` skeleton：`base, tokens, legacy, ripening, pages, dc-v3`
-- GSAP 3.12.5 本地 bundle（`assets/js/gsap.min.js` + `ScrollTrigger.min.js`）
-- deploy.sh 新增 `assets/js/` 部署步驟 `[1/4]~[4/4]`
-- `pages/home/index.new.html` → rename 為 `.deprecated`
-- `.gitignore` 加 `node_modules/`
+### 2) 視覺與互動（桌機優先）
+- 首頁 L3 互動層已上線（不改文案）。
+- 三個分眾頁已接上共用互動：青農、資深農友、一般民眾。
+- 七個主章節頁已接上共用互動：關於我們、職業安全、健康促進、經濟與保險、尊嚴農業倡議、研究成果、農學堂。
 
-### P1 ✅ 完成（新手務農 pilot，連打 3 次才 OK）
-- commit `f7f76f7`：初版 L3 Director Cut（7/8 元素）
-- commit `85720e1`：修 hero 空白（把 JS 移到外部檔 `assets/js/dc-v3-start.js`）
-- commit `327fa93`：刪 dc-reveal 概念 + 縮 hero-wrap 120vh（終於所有內容可見）
-- **線上驗證**：hero 可見、stats/scenarios/about/cta/emergency/explore 全部可見
-- **計數器**：目前顯示 0，可能 ScrollTrigger 觸發問題，待 Bobo 認可後再優化
+### 3) 新增/更新的互動資產
+- `assets/js/dc-v3-audience.js`：分眾頁共用互動。
+- `assets/js/dc-v3-sections.js`：主章節頁共用互動。
+- `assets/js/dc-v3-start.js`：首頁互動腳本（既有檔，持續使用）。
 
----
-
-## ⏭️ 下一步（按 v2 順序）
-
-| Phase | 範圍 | 做法 |
-|---|---|---|
-| **P3** | 其他 3 分眾頁（青農 / 資深農友 / 一般民眾） | 套 P1 新手務農模板，只改色 token |
-| **P2** | 首頁 L3 Director Cut 重寫 | 用 `director-cut-dignity` skill 的 L3 範本 |
-| **P4** | 主題 3 頁（健康 / 職安 / 經保） | S3 Interactive Story / S5 Warm Tech |
-| **P5** | 倡議頁 | S1 Cinematic + S8 Bold |
-| **P6** | 研究 6 頁 + 最新消息 + 關於我們 + 農學堂 | S2 Editorial Prestige |
-
-**P1 驗收到 100% 前不要開 P3**。Bobo 還要 live 驗收 counter、hover、手機版。
+### 4) Git 狀態
+- 本地工作樹乾淨（無未提交變更）。
+- 已成功 push 到遠端 `origin/main`。
 
 ---
 
-## 🚨 鐵律（絕對不能違反）
+## 本輪核心原則（已落地）
 
-### 1. 文字一字不改
-派 Codex/Gemini 前必須列 VERBATIM 字串清單。部署前跑 content diff 驗證。
-教訓檔：`~/.claude/projects/-Users-boboegg/memory/feedback_content_preservation.md`
-
-### 2. 內容預設可見
-不可用 `.dc-reveal { opacity: 0 }` + ScrollTrigger 這種設計。
-教訓檔：`~/.claude/projects/-Users-boboegg/memory/feedback_content_default_visible.md`
-
-### 3. JS 必須外部檔案
-WordPress wp:html block 會破壞 inline `<script>`（`Invalid or unexpected token`）。
-正確做法：寫 `assets/js/xxx.js`，頁面用 `<script src="/wp-content/themes/astra-child/assets/js/xxx.js" defer></script>`。
-
-### 4. Hero 文字絕不 scrub opacity
-GSAP scrub 只能動背景 parallax、光束、noise canvas。文字永遠立即可見。
-
-### 5. Hero-wrap 高度 ≤ 120vh desktop / ≤ 100vh mobile
-180vh 會讓使用者覺得「只有 hero 沒內容」就離開。
-
-### 6. 不改 global.css（P1–P6 freeze mode）
-新樣式進頁面內嵌 `<style>` + scoped namespace，或未來的 `dc-v3.css`。
+- 文案保持原樣，不做內容改寫。
+- 先完成桌機視覺與互動，再做行動端精修。
+- 互動採漸進增強，保留 `prefers-reduced-motion` 降級。
+- 主要互動以本地 GSAP/ScrollTrigger 檔案載入。
 
 ---
 
-## 📦 今日 commits（已全部 push）
+## 下一步（你重開 VS 後可直接接）
 
-```
-327fa93 fix(p1-pilot): 刪 dc-reveal + 縮 hero-wrap 120vh
-85720e1 fix(p1-pilot): 修 hero 空白與 JS 語法錯誤
-f7f76f7 feat(p1-pilot): 新手務農 L3 Director Cut 升級
-c070c1a docs(handoff): 2026-04-09 晚間 L3 Director Cut 方向固化
-dcf41f3 feat(foundation): P0+P0.5 地基修正與 L3 前置作業
-```
+1. 行動端優化（最高優先）
+- 針對首頁、三分眾頁、七章節頁做手機與平板版面調整。
+- 針對觸控裝置隔離 hover 行為，避免殘留。
 
----
+2. 驗收清單
+- 手機 Safari/Chrome 檢查：首屏高度、按鈕可點擊區、文字可讀性。
+- 動畫負載檢查：低階裝置與 reduced-motion 是否正常降級。
+- WordPress 貼上後檢查：程式碼模式與前台顯示一致。
 
-## 🎨 設計基線
-
-- **skill**：`~/.claude/skills/director-cut-dignity/SKILL.md`
-- **完整指南**：`~/vault/Projects/P8-尊嚴農業/design-guide.md`（15 章，必讀第 13 章「P1 Pilot 實戰教訓」）
-- **L3 範本**：`~/.claude/skills/director-cut-dignity/references/director-cut-template.md`
-- **Memory 入口**：`~/.claude/projects/-Users-boboegg/memory/reference_farmerwordpress_design_index.md`
-- **規範 v2**：`~/.claude/projects/-Users-boboegg/memory/reference_dignity_farming_design_spec.md`
+3. 若要上線
+- 走既有部署流程：`bash scripts/deploy.sh`。
 
 ---
 
-## 🔧 技術環境
+## 本輪重點檔案
 
-- **Repo**：`github.com/Boboegg/farmerwordpress`
-- **Domain**：https://fwdignity.com
-- **WordPress 路徑**：`/home/u886115453/domains/fwdignity.com/public_html`
-- **部署**：push main → GitHub Actions → SSH Hostinger → `bash scripts/deploy.sh` → 1-2 min live
-- **維修模式**：2026-04-09 Bobo 手動關掉，live 公開可見
-- **GSAP**：本地 bundle `assets/js/gsap.min.js` + `ScrollTrigger.min.js`（版本 3.12.5）
-- **JS 管理**：`npm install gsap --save-dev`
+- `css/global.css`
+- `docs/design-system.md`
+- `docs/architecture.md`
+- `README.md`
+- `assets/js/dc-v3-start.js`
+- `assets/js/dc-v3-audience.js`
+- `assets/js/dc-v3-sections.js`
+- `pages/home/index.html`
+- `pages/young-farmers/青農.html`
+- `pages/experienced-farmers/資深農友.html`
+- `pages/Public/一般民眾.html`
+- `pages/About/關於我們.html`
+- `pages/occupational-safety/職業安全.html`
+- `pages/healthgood/健康促進.html`
+- `pages/economic-insurance/經濟與保險.html`
+- `pages/dignity-farming-initiative/倡議.html`
+- `pages/research-result/研究成果.html`
+- `pages/farmer-study/農學堂.html`
 
 ---
 
-## 💡 下次接手開場白建議
+## 快速開工提示
 
-```
-我是下一個 Claude，讀完 HANDOFF.md + memory 了。
+重開 VS 後先做兩件事：
 
-今天繼續 P1 驗收（counter / hover / 手機版）還是直接開 P3 三個分眾頁？
-```
+1. `git pull origin main`
+2. 直接開始「行動端優化」批次（首頁 -> 分眾 -> 主章節）
