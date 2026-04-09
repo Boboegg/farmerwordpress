@@ -1,5 +1,5 @@
 <!-- wp:html -->
-<div class="fw-page ch-empower">
+<div class="fw-page dc-v3 ch-empower">
 <!-- =====================================================
      頁面：農學堂（培力與實踐）— 學習園區
      URL：/農學堂/
@@ -19,6 +19,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="dc-progress" aria-hidden="true"></div>
+<div class="dc-scene-cut" aria-hidden="true"></div>
 
 <!-- ========== 區塊 1：Hero — 學習園區概念 ========== -->
 <div class="edu-hero">
@@ -525,7 +528,7 @@
 .edu-dl-grid{display:flex;flex-direction:column;gap:12px;}
 .edu-dl-card{display:flex;align-items:center;gap:16px;padding:18px 24px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
 .edu-dl-card:hover{border-color:var(--brand-legacy);transform:translateX(5px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
-.edu-dl-icon{width:44px;height:44px;border-radius:10px;background:rgba(198,40,40,.08);color:var(--color-warn);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.edu-dl-icon{width:44px;height:44px;border-radius:10px;background:color-mix(in srgb, var(--color-warn) 8%, transparent);color:var(--color-warn);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .edu-dl-info{flex-grow:1;}
 .edu-dl-info h4{font-size:1rem;font-weight:700;margin:0 0 2px;color:var(--brand-legacy-dark);}
 .edu-dl-meta{font-size:.82rem;color:var(--text-secondary);}
@@ -592,5 +595,8 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
+<script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/dc-v3-sections.js" defer></script>
 </div>
 <!-- /wp:html -->

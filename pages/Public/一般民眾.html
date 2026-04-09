@@ -1,5 +1,5 @@
 <!-- wp:html -->
-<div class="fw-page aud-public">
+<div class="fw-page dc-v3 aud-public">
 <!-- =====================================================
      分眾入口：一般民眾（Public）— 認同包
      URL：/public/
@@ -13,10 +13,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+<div class="dc-progress" aria-hidden="true"></div>
+<div class="dc-scene-cut" aria-hidden="true"></div>
+
 <div class="public-page-wrapper">
 
   <!-- ========== ① Hero ========== -->
-  <section class="public-hero">
+  <section class="public-hero dc-reveal">
     <div class="public-hero-badge"><i class="fas fa-seedling"></i> 一般民眾</div>
     <h1 class="public-hero-title">你在超市拿起的平價蔬果，<br>種它的人正忍著腰痛。</h1>
     <p class="public-hero-tagline">每一口食物背後，都有一雙受傷的手。了解農民的真實處境，是改變的第一步。</p>
@@ -26,20 +29,20 @@
   </section>
 
   <!-- ========== ② 數據震撼區 ========== -->
-  <section class="public-stats">
+  <section class="public-stats dc-reveal">
     <h2 class="public-section-title"><i class="fas fa-chart-bar"></i> 你可能不知道的數字</h2>
     <div class="public-stats-grid">
-      <div class="public-stat-card">
+      <div class="public-stat-card dc-tilt-lite">
         <div class="public-stat-number">5<span class="public-stat-unit">×</span></div>
         <p class="public-stat-label">農業致死率是全行業平均的 5 倍</p>
         <p class="public-stat-source">CDC NIOSH, 2024</p>
       </div>
-      <div class="public-stat-card">
+      <div class="public-stat-card dc-tilt-lite">
         <div class="public-stat-number">38.5<span class="public-stat-unit">萬</span></div>
         <p class="public-stat-label">全球每年因農藥急性中毒死亡（估計值）</p>
         <p class="public-stat-source">WHO 2022 / Boedeker et al. 2020, BMC Public Health</p>
       </div>
-      <div class="public-stat-card">
+      <div class="public-stat-card dc-tilt-lite">
         <div class="public-stat-number">30<span class="public-stat-unit">%</span></div>
         <p class="public-stat-label">台灣農民職災保險投保率——七成無保障</p>
         <p class="public-stat-source">勞保局統計</p>
@@ -55,10 +58,10 @@
   </section>
 
   <!-- ========== ③ 場景化導航 ========== -->
-  <section class="public-scenarios">
+  <section class="public-scenarios dc-reveal">
     <h2 class="public-section-title"><i class="fas fa-eye"></i> 看見、聽見、了解、行動</h2>
 
-    <div class="public-scenario-card" style="--accent:#e65100;">
+    <div class="public-scenario-card dc-tilt" style="--accent:#e65100;">
       <div class="public-scenario-icon"><i class="fas fa-images"></i></div>
       <div class="public-scenario-body">
         <h3>看見農民的一天</h3>
@@ -67,7 +70,7 @@
       </div>
     </div>
 
-    <div class="public-scenario-card" style="--accent:#6a1b9a;">
+    <div class="public-scenario-card dc-tilt" style="--accent:#6a1b9a;">
       <div class="public-scenario-icon"><i class="fas fa-podcast"></i></div>
       <div class="public-scenario-body">
         <h3>聽見田裡的聲音</h3>
@@ -76,7 +79,7 @@
       </div>
     </div>
 
-    <div class="public-scenario-card" style="--accent:var(--color-info);">
+    <div class="public-scenario-card dc-tilt" style="--accent:var(--color-info);">
       <div class="public-scenario-icon"><i class="fas fa-bullhorn"></i></div>
       <div class="public-scenario-body">
         <h3>了解倡議行動：從研究到政策</h3>
@@ -85,7 +88,7 @@
       </div>
     </div>
 
-    <div class="public-scenario-card" style="--accent:var(--color-brand);">
+    <div class="public-scenario-card dc-tilt" style="--accent:var(--color-brand);">
       <div class="public-scenario-icon"><i class="fas fa-hand-holding-heart"></i></div>
       <div class="public-scenario-body">
         <h3>你可以做的事</h3>
@@ -96,32 +99,32 @@
   </section>
 
   <!-- ========== ④ 認識尊嚴農業 ========== -->
-  <section class="public-about">
+  <section class="public-about dc-reveal">
     <h2 class="public-section-title"><i class="fas fa-hand-holding-heart"></i> 認識尊嚴農業計畫</h2>
     <p class="public-about-desc">
       「尊嚴農業：共構雲嘉農業工作者職業健康社會安全網」由<strong>國立中正大學</strong>與<strong>臺大醫院雲林分院</strong>共同推動，以嘉義縣<strong>民雄鄉</strong>為實踐場域。計畫的核心理念是：農業不只撐起糧食安全，更應該撐起農民的生活尊嚴。我們透過社會倡議和多方利害關係人對話，讓農民的聲音被更多人聽見。
     </p>
     <div class="public-about-pillars">
-      <div class="public-pillar"><i class="fas fa-microscope"></i><span>基礎調查</span></div>
-      <div class="public-pillar"><i class="fas fa-scale-balanced"></i><span>制度研究</span></div>
-      <div class="public-pillar"><i class="fas fa-chalkboard-user"></i><span>健康教育</span></div>
-      <div class="public-pillar"><i class="fas fa-bullhorn"></i><span>社會倡議</span></div>
+      <div class="public-pillar dc-pillar-stagger"><i class="fas fa-microscope"></i><span>基礎調查</span></div>
+      <div class="public-pillar dc-pillar-stagger"><i class="fas fa-scale-balanced"></i><span>制度研究</span></div>
+      <div class="public-pillar dc-pillar-stagger"><i class="fas fa-chalkboard-user"></i><span>健康教育</span></div>
+      <div class="public-pillar dc-pillar-stagger"><i class="fas fa-bullhorn"></i><span>社會倡議</span></div>
     </div>
-    <a href="/dignity-farming-initiative/" class="public-about-link"><i class="fas fa-arrow-right"></i> 了解更多倡議內容</a>
+    <a href="/dignity-farming-initiative/" class="public-about-link dc-magnetic"><i class="fas fa-arrow-right"></i> 了解更多倡議內容</a>
   </section>
 
   <!-- ========== ⑤ 快速行動 ========== -->
-  <section class="public-cta">
-    <a class="public-cta-btn public-cta-primary" href="/research-result/infographic/">
+  <section class="public-cta dc-reveal">
+    <a class="public-cta-btn public-cta-primary dc-magnetic" href="/research-result/infographic/">
       <i class="fas fa-images"></i> 看見農民的世界
     </a>
-    <a class="public-cta-btn public-cta-secondary" href="/research-result/podcast/">
+    <a class="public-cta-btn public-cta-secondary dc-magnetic" href="/research-result/podcast/">
       <i class="fas fa-headphones"></i> 聽 Podcast
     </a>
   </section>
 
   <!-- ========== ⑥ 緊急資源 ========== -->
-  <section class="public-emergency">
+  <section class="public-emergency dc-reveal">
     <h2><i class="fas fa-phone-volume"></i> 你身邊有農友需要幫忙嗎？</h2>
     <div class="public-emergency-grid">
       <div class="public-emergency-item"><strong>緊急救護</strong><a href="tel:119">119</a></div>
@@ -132,13 +135,13 @@
   </section>
 
   <!-- ========== 更多探索 ========== -->
-  <section class="public-explore">
+  <section class="public-explore dc-reveal">
     <h2 class="public-section-title"><i class="fas fa-link"></i> 探索更多</h2>
     <div class="public-explore-grid">
-      <a href="/healthgood/" class="public-explore-card"><i class="fas fa-heart-pulse"></i><span>健康促進</span></a>
-      <a href="/occupational-safety/" class="public-explore-card"><i class="fas fa-helmet-safety"></i><span>職業安全</span></a>
-      <a href="/economic-insurance/" class="public-explore-card"><i class="fas fa-shield-cat"></i><span>經濟保險</span></a>
-      <a href="/thenews/" class="public-explore-card"><i class="fas fa-newspaper"></i><span>最新消息</span></a>
+      <a href="/healthgood/" class="public-explore-card dc-tilt-lite"><i class="fas fa-heart-pulse"></i><span>健康促進</span></a>
+      <a href="/occupational-safety/" class="public-explore-card dc-tilt-lite"><i class="fas fa-helmet-safety"></i><span>職業安全</span></a>
+      <a href="/economic-insurance/" class="public-explore-card dc-tilt-lite"><i class="fas fa-shield-cat"></i><span>經濟保險</span></a>
+      <a href="/thenews/" class="public-explore-card dc-tilt-lite"><i class="fas fa-newspaper"></i><span>最新消息</span></a>
     </div>
   </section>
 
@@ -245,6 +248,15 @@
   .public-explore-grid{grid-template-columns:repeat(2,1fr);}
   .public-emergency-grid{grid-template-columns:1fr;}
 }
+
+@media (prefers-reduced-motion:reduce){
+  .public-pillar{opacity:1 !important;transform:none !important;transition:none !important;}
+  .dc-progress{display:none;}
+}
 </style>
+
+<script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/dc-v3-audience.js" defer></script>
 </div>
 <!-- /wp:html -->

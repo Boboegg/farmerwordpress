@@ -142,7 +142,7 @@
   align-items: center;
   gap: 8px;
   background: rgba(255,255,255,.12);
-  color: #D4A017;
+  color: var(--color-accent);
   padding: 6px 18px;
   border-radius: 24px;
   font-size: .85rem;
@@ -205,7 +205,7 @@
 .pod-visual-ring {
   position: absolute;
   border-radius: 50%;
-  border: 2px solid rgba(212,160,23,.2);
+  border: 2px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 .pod-ring-1 {
   width: 200px; height: 200px;
@@ -213,12 +213,12 @@
 }
 .pod-ring-2 {
   width: 150px; height: 150px;
-  border-color: rgba(212,160,23,.3);
+  border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
   animation: pod-pulse 3s ease-in-out .5s infinite;
 }
 .pod-ring-3 {
   width: 100px; height: 100px;
-  border-color: rgba(212,160,23,.4);
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
   animation: pod-pulse 3s ease-in-out 1s infinite;
 }
 @keyframes pod-pulse {
@@ -228,14 +228,14 @@
 .pod-visual-icon {
   width: 72px;
   height: 72px;
-  background: linear-gradient(135deg, #D4A017, #b8860b);
+  background: linear-gradient(135deg, var(--color-accent), #7a5508);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 30px;
   color: #fff;
-  box-shadow: 0 8px 28px rgba(212,160,23,.35);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-accent) 35%, transparent);
   z-index: 2;
 }
 

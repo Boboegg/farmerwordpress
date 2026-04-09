@@ -1,5 +1,5 @@
 <!-- wp:html -->
-<div class="fw-page ch-health">
+<div class="fw-page dc-v3 ch-health">
 
 <!-- =====================================================
      區塊 01：Hero
@@ -14,6 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="dc-progress" aria-hidden="true"></div>
+<div class="dc-scene-cut" aria-hidden="true"></div>
 
 <div class="hp-hero">
   <div class="hp-hero-content">
@@ -54,7 +57,7 @@
   <div class="hp-hero-visual">
     <div class="hp-hero-stats">
       <div class="hp-stat-item">
-        <div class="hp-stat-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="hp-stat-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-user-clock"></i>
         </div>
         <div class="hp-stat-text">
@@ -64,7 +67,7 @@
         </div>
       </div>
       <div class="hp-stat-item">
-        <div class="hp-stat-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="hp-stat-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-bone"></i>
         </div>
         <div class="hp-stat-text">
@@ -96,17 +99,17 @@
   display:flex;gap:40px;align-items:flex-start;padding:40px;
   background:linear-gradient(135deg,#e8f5e9 0%,#fff 60%,#e3f2fd 100%);
   border-radius:var(--radius);margin-bottom:0;
-  border:1px solid rgba(46,125,50,.1);box-sizing:border-box;
+  border:1px solid color-mix(in srgb, var(--color-brand) 10%, transparent);box-sizing:border-box;
 }
 .hp-hero *{box-sizing:border-box;}
 .hp-hero-content{flex:1.2;}
 .hp-hero-visual{flex:.8;position:sticky;top:20px;}
-.hp-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,125,50,.1);color:var(--brand-legacy);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.hp-hero-badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--brand-legacy);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
 .hp-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-legacy-dark);margin:0 0 8px;line-height:1.2;}
 .hp-hero-subtitle{font-size:1.05rem;color:var(--brand-legacy);font-weight:600;margin:0 0 20px;line-height:1.6;}
 
 /* 導讀段落 */
-.hp-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(46,125,50,.08);}
+.hp-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid color-mix(in srgb, var(--color-brand) 8%, transparent);}
 .hp-hero-intro p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 12px;}
 .hp-hero-intro p:last-child{margin-bottom:0;}
 .hp-hero-list{list-style:none;padding:0;margin:0 0 16px;}
@@ -118,7 +121,7 @@
 /* CTA */
 .hp-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
 .hp-btn-primary,.hp-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
-.hp-btn-primary{background:var(--brand-legacy);color:#fff;box-shadow:0 4px 12px rgba(46,125,50,.3);}
+.hp-btn-primary{background:var(--brand-legacy);color:#fff;box-shadow:0 4px 12px color-mix(in srgb, var(--color-brand) 30%, transparent);}
 .hp-btn-primary:hover{background:var(--brand-legacy-hover);transform:translateY(-2px);}
 .hp-btn-secondary{background:#fff;color:var(--brand-legacy);border:2px solid var(--brand-legacy);}
 .hp-btn-secondary:hover{background:var(--brand-legacy);color:#fff;}
@@ -202,42 +205,42 @@ document.addEventListener('DOMContentLoaded',function(){
 
     <div class="hp-icon-grid">
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-head-side-virus"></i>
         </div>
         <h4>熱中暑 vs 熱衰竭</h4>
         <p>體溫 ≥40°C 且意識改變 = 中暑，是急診狀況，死亡率超過 30%</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-droplet"></i>
         </div>
         <h4>喝水規則</h4>
         <p>每 15-20 分鐘喝 150-200 mL，不要等到渴了才喝</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-clock"></i>
         </div>
         <h4>避開高溫時段</h4>
         <p>建議：清晨 5:00-10:00 作業 → 中午休息 → 下午 15:00-18:00 作業</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-heart-pulse"></i>
         </div>
         <h4>心跳監測法</h4>
         <p>心跳超過（180 − 年齡）就要立刻休息。65 歲農友 → 超過 115 下就要停</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-disease"></i>
         </div>
         <h4>熱與腎臟的關係</h4>
         <p>長期熱暴露會傷腎，中暑患者日後的慢性腎臟病風險比一般人高出數倍</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-kit-medical"></i>
         </div>
         <h4>中暑急救</h4>
@@ -320,42 +323,42 @@ document.addEventListener('DOMContentLoaded',function(){
 
     <div class="hp-icon-grid">
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-person-walking-arrow-loop-left"></i>
         </div>
         <h4>腰痛</h4>
         <p>農民下背痛盛行率 63-87%，長時間彎腰和搬重物是主因</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-person-falling"></i>
         </div>
         <h4>膝蓋問題</h4>
         <p>稻農膝關節疼痛盛行率 54-80%，長時間蹲姿是最大元兇</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-hand-holding-medical"></i>
         </div>
         <h4>肩膀傷害</h4>
         <p>果農旋轉肌撕裂盛行率 60%，長時間仰頭採摘修剪造成</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-dumbbell"></i>
         </div>
         <h4>工前暖身</h4>
         <p>5-10 分鐘暖身可顯著降低傷害風險，深蹲、手臂伸展、軀幹旋轉</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-stethoscope"></i>
         </div>
         <h4>什麼時候該看醫生</h4>
         <p>疼痛持續超過 2 週、愈來愈嚴重、出現麻木感 → 盡早就醫</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-hospital"></i>
         </div>
         <h4>雲嘉復健資源</h4>
@@ -379,42 +382,42 @@ document.addEventListener('DOMContentLoaded',function(){
 
     <div class="hp-icon-grid">
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
           <i class="fas fa-cloud-rain"></i>
         </div>
         <h4>農民特有壓力源</h4>
         <p>看天吃飯、收入波動、獨居孤立、身體慢性疼痛</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
           <i class="fas fa-lungs"></i>
         </div>
         <h4>腹式呼吸</h4>
         <p>最簡單的紓壓法：吸氣 4 秒、吐氣 8 秒，每天 10 分鐘，田邊就能做</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
           <i class="fas fa-phone"></i>
         </div>
         <h4>安心專線 1925</h4>
         <p>24 小時免費，衛福部設置的心理諮詢專線，有人聽你說</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
           <i class="fas fa-people-group"></i>
         </div>
         <h4>社群連結很重要</h4>
         <p>參加農會活動、廟口聚會、鄰里互動，人際連結是最好的心理疫苗</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
           <i class="fas fa-moon"></i>
         </div>
         <h4>睡眠品質</h4>
         <p>固定作息、睡前避免咖啡和酒精、中午可短睡 15-20 分鐘</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+        <div class="hp-icon-circle" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
           <i class="fas fa-heart"></i>
         </div>
         <h4>求助是勇敢</h4>
@@ -795,12 +798,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .hpQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
 .hpQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--color-bg-elevated);}
-.hpQ-tool-icon{width:56px;height:56px;border-radius:14px;background:rgba(46,125,50,.1);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.hpQ-tool-icon{width:56px;height:56px;border-radius:14px;background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
 .hpQ-tool-header h3{font-size:1.15rem;font-weight:800;margin:0 0 4px;color:var(--brand-legacy-dark);}
 .hpQ-tool-header p{font-size:.9rem;color:var(--text-secondary);margin:0;}
 
 /* Disclaimer */
-.hpQ-disclaimer{display:flex;gap:12px;padding:16px 20px;background:rgba(21,101,192,.04);border:1px solid rgba(21,101,192,.12);border-radius:12px;margin-bottom:20px;}
+.hpQ-disclaimer{display:flex;gap:12px;padding:16px 20px;background:color-mix(in srgb, var(--color-info) 4%, transparent);border:1px solid color-mix(in srgb, var(--color-info) 12%, transparent);border-radius:12px;margin-bottom:20px;}
 .hpQ-disclaimer i{color:var(--color-info);margin-top:2px;flex-shrink:0;font-size:16px;}
 .hpQ-disclaimer strong{display:block;font-size:.9rem;color:var(--color-info);margin-bottom:4px;}
 .hpQ-disclaimer p{font-size:.82rem;line-height:1.6;color:var(--text-secondary);margin:0;}
@@ -825,10 +828,10 @@ document.addEventListener('DOMContentLoaded', function() {
 .hpQ-check-item input:checked ~ .hpQ-check-mark::after{content:'\f00c';font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:12px;}
 .hpQ-check-item input:checked ~ span{color:var(--text-primary);font-weight:600;}
 .hpQ-topic-tag{margin-left:auto;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:12px;flex-shrink:0;}
-.heat-tag{background:rgba(198,40,40,.1);color:var(--color-warn);}
+.heat-tag{background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);}
 .pest-tag{background:rgba(123,31,162,.1);color:#7b1fa2;}
-.msd-tag{background:rgba(21,101,192,.1);color:var(--color-info);}
-.mental-tag{background:rgba(46,125,50,.1);color:var(--color-brand);}
+.msd-tag{background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);}
+.mental-tag{background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);}
 
 /* Submit */
 .hpQ-submit-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;background:var(--brand-legacy);color:#fff;font-size:1rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:8px;}
@@ -844,12 +847,12 @@ document.addEventListener('DOMContentLoaded', function() {
 .hpQ-result-topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
 .hpQ-topic-link{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .3s;border:1.5px solid;}
 .hpQ-topic-link:hover{transform:translateY(-2px);opacity:.85;}
-.hpQ-topic-link.heat-link{color:var(--color-warn);border-color:var(--color-warn);background:rgba(198,40,40,.05);}
+.hpQ-topic-link.heat-link{color:var(--color-warn);border-color:var(--color-warn);background:color-mix(in srgb, var(--color-warn) 5%, transparent);}
 .hpQ-topic-link.pest-link{color:#7b1fa2;border-color:#7b1fa2;background:rgba(123,31,162,.05);}
-.hpQ-topic-link.msd-link{color:var(--color-info);border-color:var(--color-info);background:rgba(21,101,192,.05);}
-.hpQ-topic-link.mental-link{color:var(--color-brand);border-color:var(--color-brand);background:rgba(46,125,50,.05);}
+.hpQ-topic-link.msd-link{color:var(--color-info);border-color:var(--color-info);background:color-mix(in srgb, var(--color-info) 5%, transparent);}
+.hpQ-topic-link.mental-link{color:var(--color-brand);border-color:var(--color-brand);background:color-mix(in srgb, var(--color-brand) 5%, transparent);}
 
-.hpQ-mental-card{display:flex;align-items:center;gap:14px;background:rgba(46,125,50,.06);border:1px solid rgba(46,125,50,.15);border-radius:12px;padding:16px 20px;margin-top:16px;}
+.hpQ-mental-card{display:flex;align-items:center;gap:14px;background:color-mix(in srgb, var(--color-brand) 6%, transparent);border:1px solid color-mix(in srgb, var(--color-brand) 15%, transparent);border-radius:12px;padding:16px 20px;margin-top:16px;}
 .hpQ-mental-card i{font-size:24px;color:var(--color-brand);flex-shrink:0;}
 .hpQ-mental-card strong{color:var(--color-brand);font-size:1rem;}
 .hpQ-mental-card p{font-size:.88rem;color:var(--text-secondary);margin:4px 0 0;}
@@ -1135,7 +1138,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .hpH-hr-calc-btn{padding:12px 24px;border-radius:10px;background:var(--accent);color:#fff;font-size:.95rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;white-space:nowrap;}
 .hpH-hr-calc-btn:hover{background:var(--color-warn);}
 
-.hpH-hr-result{margin-top:20px;padding:20px;background:rgba(198,40,40,.04);border-radius:12px;border:1px solid rgba(198,40,40,.12);}
+.hpH-hr-result{margin-top:20px;padding:20px;background:color-mix(in srgb, var(--color-warn) 4%, transparent);border-radius:12px;border:1px solid color-mix(in srgb, var(--color-warn) 12%, transparent);}
 .hpH-hr-result-main{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;}
 .hpH-hr-bpm{font-size:2.8rem;font-weight:900;color:var(--accent);line-height:1;}
 .hpH-hr-unit{font-size:1rem;font-weight:600;color:var(--accent);}
@@ -1196,7 +1199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- 欄 1：農職保 -->
     <div class="hpR-col-card">
-      <div class="hpR-col-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+      <div class="hpR-col-icon" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
         <i class="fas fa-shield-halved"></i>
       </div>
       <h3>農民職業災害保險</h3>
@@ -1249,7 +1252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- 欄 2：就醫資源 -->
     <div class="hpR-col-card">
-      <div class="hpR-col-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+      <div class="hpR-col-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
         <i class="fas fa-hospital"></i>
       </div>
       <h3>雲嘉地區就醫資源</h3>
@@ -1301,7 +1304,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <!-- 欄 3：緊急聯絡 -->
     <div class="hpR-col-card">
-      <div class="hpR-col-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+      <div class="hpR-col-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
         <i class="fas fa-phone-flip"></i>
       </div>
       <h3>緊急聯絡資訊</h3>
@@ -1373,7 +1376,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .hpR-info-value{font-size:.88rem;line-height:1.6;color:var(--text-primary);}
 .hpR-info-value small{color:var(--text-secondary);font-size:.8rem;}
 
-.hpR-stat-highlight{display:flex;align-items:center;gap:8px;background:rgba(46,125,50,.06);padding:12px 16px;border-radius:10px;margin-top:14px;font-size:.88rem;color:var(--brand-legacy);}
+.hpR-stat-highlight{display:flex;align-items:center;gap:8px;background:color-mix(in srgb, var(--color-brand) 6%, transparent);padding:12px 16px;border-radius:10px;margin-top:14px;font-size:.88rem;color:var(--brand-legacy);}
 .hpR-stat-highlight strong{color:#1b5e20;}
 
 /* Disclaimer */
@@ -1405,7 +1408,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .hpR-phone-mental .hpR-phone-number{color:var(--color-brand);}
 .hpR-phone-poison .hpR-phone-number{color:#7b1fa2;}
 
-.hpR-local-contacts{margin-top:16px;padding:14px;background:rgba(46,125,50,.04);border-radius:10px;}
+.hpR-local-contacts{margin-top:16px;padding:14px;background:color-mix(in srgb, var(--color-brand) 4%, transparent);border-radius:10px;}
 .hpR-local-contacts h4{font-size:.88rem;font-weight:700;color:var(--brand-legacy);margin:0 0 8px;display:flex;align-items:center;gap:6px;}
 .hpR-local-contacts p{font-size:.85rem;color:var(--text-primary);margin:0 0 4px;line-height:1.6;}
 
@@ -1433,7 +1436,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <div class="hpS-subpage-grid">
     <a href="/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/" class="hpS-subpage-card">
-      <div class="hpS-subpage-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+      <div class="hpS-subpage-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
         <i class="fas fa-temperature-arrow-up"></i>
       </div>
       <h3>熱危害預防</h3>
@@ -1451,7 +1454,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
 
     <a href="/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/" class="hpS-subpage-card">
-      <div class="hpS-subpage-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+      <div class="hpS-subpage-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
         <i class="fas fa-bone"></i>
       </div>
       <h3>骨骼肌肉保健</h3>
@@ -1460,7 +1463,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
 
     <a href="/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/" class="hpS-subpage-card">
-      <div class="hpS-subpage-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+      <div class="hpS-subpage-icon" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
         <i class="fas fa-brain"></i>
       </div>
       <h3>心靈紓壓</h3>
@@ -1607,5 +1610,8 @@ document.addEventListener('DOMContentLoaded', function() {
   .hpS-subpage-grid{grid-template-columns:1fr;}
 }
 </style>
+<script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/dc-v3-sections.js" defer></script>
 </div>
 <!-- /wp:html -->

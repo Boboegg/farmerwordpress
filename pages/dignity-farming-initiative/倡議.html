@@ -1,5 +1,5 @@
 <!-- wp:html -->
-<div class="fw-page ch-advocacy">
+<div class="fw-page dc-v3 ch-advocacy">
 
 <!-- =====================================================
      頁面：尊嚴農業倡議
@@ -19,6 +19,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="dc-progress" aria-hidden="true"></div>
+<div class="dc-scene-cut" aria-hidden="true"></div>
 
 <!-- ========== 區塊 1：Hero — 全幅敘事開場 ========== -->
 <div class="adv-hero">
@@ -50,14 +53,14 @@
 
         <!-- ===== 問題卡片模板（複製此區塊新增問題）===== -->
         <div class="adv-problem-card">
-          <div class="adv-problem-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);"><i class="fas fa-person-falling-burst"></i></div>
+          <div class="adv-problem-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);"><i class="fas fa-person-falling-burst"></i></div>
           <h3>職災隱形化</h3>
           <p>農民非勞基法適用對象，職業災害缺乏通報機制。2024 年 7 月，一名 39 歲農民在 35°C 極端高溫下田間猝死，卻因缺乏到院前醫學檢驗數據，職災認定困難重重，遺屬權益無法獲得保障。</p>
         </div>
         <!-- ===== 問題卡片模板結束 ===== -->
 
         <div class="adv-problem-card">
-          <div class="adv-problem-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);"><i class="fas fa-person-cane"></i></div>
+          <div class="adv-problem-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);"><i class="fas fa-person-cane"></i></div>
           <h3>高齡化危機</h3>
           <p>農保平均年齡高達 67.3 歲，65 歲以上占比近六成。長年高強度反覆勞動導致嚴重的肌肉骨骼疾病，農民卻普遍將病痛視為勞動的「宿命」，延誤就醫，錯失早期治療黃金期。</p>
         </div>
@@ -460,6 +463,8 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+<script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/dc-v3-sections.js" defer></script>
 </div>
 <!-- /wp:html -->
-

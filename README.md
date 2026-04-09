@@ -64,17 +64,18 @@ farmerwordpress/
 
 ---
 
-## 品牌快速參考
+## 品牌快速參考（現行）
 
 | 項目 | 值 |
 |------|----|
-| 主色（尊嚴綠） | `#5C8607` |
-| 背景 | `#E3E9D8` |
-| 輔色（稻金黃） | `#D4A017` |
-| 字型 | Noto Sans TC / Lato / Lora |
+| 主色（苔蘚墨綠） | `#3D5A2C` |
+| 背景（米紙白） | `#FBFAF7` |
+| 輔色（古銅稻穗金） | `#A8740B` |
+| 警示色（燒土紅） | `#8B2D14` |
+| 字型 | Noto Serif TC / Noto Sans TC |
 | 圖示 | Font Awesome 6.4.x |
 
-詳細設計規格請見 [`/docs/architecture.md`](./docs/architecture.md)。
+詳細設計規格請見 [`/docs/design-system.md`](./docs/design-system.md) 與 [`/docs/architecture.md`](./docs/architecture.md)。
 
 ---
 
@@ -151,6 +152,7 @@ bash scripts/deploy.sh
 | 文件 | 說明 |
 |------|------|
 | [`docs/architecture.md`](./docs/architecture.md) | 完整架構藍圖（必讀） |
+| [`docs/design-system.md`](./docs/design-system.md) | 設計系統整合版（token/字體/動效/相容） |
 | [`docs/website-architecture-presentation.md`](./docs/website-architecture-presentation.md) | 簡報版說明 |
 | [`docs/audience-landing-pages.md`](./docs/audience-landing-pages.md) | 分眾入口設計 |
 | [`docs/article-category-slugs.md`](./docs/article-category-slugs.md) | 文章分類對照 |

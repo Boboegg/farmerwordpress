@@ -373,7 +373,7 @@
 /* === 變數 === */
 .tnews-hero,.tnews-wrapper,.tnews-explore {
   --brand-legacy:var(--color-brand);--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
-  --accent:#D4A017;--text-primary:var(--color-text);--text-secondary:var(--color-muted);
+  --accent:var(--color-accent);--text-primary:var(--color-text);--text-secondary:var(--color-muted);
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -488,7 +488,7 @@
 
 /* === Tab 分類專屬色標 === */
 .tnews-tab[data-tab="news"] i      { color:var(--color-brand-deep); }
-.tnews-tab[data-tab="event"] i     { color:#d4a017; }
+.tnews-tab[data-tab="event"] i     { color:var(--color-accent); }
 .tnews-tab[data-tab="press"] i     { color:#0d7377; }
 .tnews-tab[data-tab="notices"] i   { color:var(--color-muted); }
 .tnews-tab[data-tab="podcast"] i   { color:var(--color-warn); }
@@ -502,7 +502,7 @@
 
 /* Active tab 底色跟隨分類 */
 .tnews-tab.is-active[data-tab="news"]      { background:var(--color-brand-deep);border-color:var(--color-brand-deep); }
-.tnews-tab.is-active[data-tab="event"]     { background:#b8860b;border-color:#b8860b; }
+.tnews-tab.is-active[data-tab="event"]     { background:#7a5508;border-color:#7a5508; }
 .tnews-tab.is-active[data-tab="press"]     { background:#0d7377;border-color:#0d7377; }
 .tnews-tab.is-active[data-tab="notices"]   { background:var(--color-muted);border-color:var(--color-muted); }
 .tnews-tab.is-active[data-tab="podcast"]   { background:var(--color-warn);border-color:var(--color-warn); }

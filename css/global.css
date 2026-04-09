@@ -10,26 +10,21 @@
 @layer base, tokens, legacy, ripening, pages, dc-v3;
 
 /* ===================================================
-   COMPAT LAYER — design system v2.0 token alias
+   COMPAT LAYER — design system token alias
    建立日期：2026-04-09
-   原因：scripts/migrate-colors.sh 把硬寫色碼遷移成 var(--color-xxx)
-        但這些變數的權威定義在 css/global.new.css
-        在 global.new.css 真正取代本檔之前，先在這裡提供 alias
-        確保線上頁面引用 var(--color-xxx) 時不會 fallback 到無色
-   注意：所有色值對齊 farmerwordpress AGENTS.md 規範
-   TODO（P6）：compat layer 色值跟稻穗熟成對不上，需對齊
-        #E3E9D8 → #FBFAF7、#5C8607 → #3D5A2C、#D4A017 → #A8740B
-        但現在改會影響既有頁面視覺，留到 P6 統一收斂
+   用途：提供 var(--color-xxx) 與舊版 var(--radius)/var(--shadow)
+       的相容映射，避免頁面與 shortcode 斷樣。
+   v2 更新：色值已對齊稻穗熟成主方案（#FBFAF7 / #3D5A2C / #A8740B）
    =================================================== */
 :root {
-    --color-bg: #E3E9D8;
+    --color-bg: #FBFAF7;
     --color-bg-elevated: #FFFFFF;
     --color-text: #1F1A14;
     --color-muted: #5C5448;
     --color-line: #D8CFB8;
-    --color-brand: #5C8607;
+    --color-brand: #3D5A2C;
     --color-brand-deep: #3D5A2C;
-    --color-accent: #D4A017;
+    --color-accent: #A8740B;
     --color-warn: #8B2D14;
     --color-info: #1565C0;
 }
@@ -59,6 +54,9 @@
 
     /* 相容別名（別的舊 rule 會抓到） */
     --accent: #A8740B;
+    --brand-dark: #2A3F1E;
+    --brand-hover: #2A3F1E;
+    --brand-bg: #F4F0E6;
 
     /* === 稻穗熟成中性色 === */
     --bg: #FBFAF7;                 /* 米紙白 / 唯一底色（禁用純白） */
@@ -176,6 +174,7 @@
     --shadow-brand: none;
     --shadow-card: none;
     --shadow-card-hover: none;
+    --shadow: none;
 
     /* === 圓角 — 全扁平，最大 4px === */
     --radius-xs: 0;
@@ -188,6 +187,7 @@
     --radius-card: 0;
     --radius-badge: 0;
     --radius-btn: 4px;
+    --radius: 4px;
 
     /* === 動畫 — 縮短 duration，避免首屏空白 === */
     --ease-linear: linear;
@@ -2591,4 +2591,172 @@ body[class*="page-id"],
     padding: var(--space-3xl) var(--space-lg);
     background: var(--bg);
     color: var(--fg);
+}
+
+/* ===================================================
+   dc-v3 Audience Shared Layer (young/senior/public)
+   範圍：.fw-page.dc-v3:not(.aud-start)
+   =================================================== */
+.fw-page.dc-v3:not(.aud-start) .dc-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    z-index: 9999;
+    background: linear-gradient(90deg, var(--brand, #3D5A2C), var(--brand-accent, #A8740B));
+    box-shadow: 0 0 14px color-mix(in srgb, var(--brand, #3D5A2C) 45%, transparent);
+}
+
+.fw-page.dc-v3:not(.aud-start) .dc-scene-cut {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9990;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,.42), transparent);
+}
+
+.fw-page.dc-v3:not(.aud-start) .dc-reveal {
+    opacity: 1;
+    transform: none;
+}
+
+.fw-page.dc-v3:not(.aud-start).has-gsap .dc-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .55s ease, transform .55s ease;
+}
+
+.fw-page.dc-v3:not(.aud-start).has-gsap .dc-reveal.dc-in {
+    opacity: 1;
+    transform: none;
+}
+
+.fw-page.dc-v3:not(.aud-start) .dc-pillar-stagger {
+    opacity: 1;
+    transform: none;
+}
+
+.fw-page.dc-v3:not(.aud-start).has-gsap .dc-pillar-stagger {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .45s ease, transform .45s ease;
+}
+
+.fw-page.dc-v3:not(.aud-start).has-gsap .dc-pillar-stagger.dc-in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (hover: hover) {
+    .fw-page.dc-v3:not(.aud-start) .dc-tilt,
+    .fw-page.dc-v3:not(.aud-start) .dc-tilt-lite,
+    .fw-page.dc-v3:not(.aud-start) .dc-magnetic {
+        will-change: transform;
+    }
+
+    .fw-page.dc-v3:not(.aud-start) .young-stat-card,
+    .fw-page.dc-v3:not(.aud-start) .senior-stat-card,
+    .fw-page.dc-v3:not(.aud-start) .public-stat-card,
+    .fw-page.dc-v3:not(.aud-start) .young-scenario-card,
+    .fw-page.dc-v3:not(.aud-start) .senior-scenario-card,
+    .fw-page.dc-v3:not(.aud-start) .public-scenario-card,
+    .fw-page.dc-v3:not(.aud-start) .young-explore-card,
+    .fw-page.dc-v3:not(.aud-start) .senior-explore-card,
+    .fw-page.dc-v3:not(.aud-start) .public-explore-card {
+        transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+    }
+
+    .fw-page.dc-v3:not(.aud-start) .young-stat-card:hover,
+    .fw-page.dc-v3:not(.aud-start) .senior-stat-card:hover,
+    .fw-page.dc-v3:not(.aud-start) .public-stat-card:hover,
+    .fw-page.dc-v3:not(.aud-start) .young-scenario-card:hover,
+    .fw-page.dc-v3:not(.aud-start) .senior-scenario-card:hover,
+    .fw-page.dc-v3:not(.aud-start) .public-scenario-card:hover,
+    .fw-page.dc-v3:not(.aud-start) .young-explore-card:hover,
+    .fw-page.dc-v3:not(.aud-start) .senior-explore-card:hover,
+    .fw-page.dc-v3:not(.aud-start) .public-explore-card:hover {
+        box-shadow: 0 14px 28px color-mix(in srgb, var(--brand, #3D5A2C) 12%, transparent);
+        border-color: color-mix(in srgb, var(--brand, #3D5A2C) 30%, var(--border, #D8CFB8));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fw-page.dc-v3:not(.aud-start) .dc-progress,
+    .fw-page.dc-v3:not(.aud-start) .dc-scene-cut {
+        display: none;
+    }
+}
+
+/* ===================================================
+   dc-v3 Section Pages Shared Layer (7 主章節頁)
+   範圍：.fw-page.dc-v3.ch-*
+   目標：桌機優先互動一致化，行動端後續再微調
+   =================================================== */
+.fw-page.dc-v3[class*="ch-"] {
+    --dc-glow-color: color-mix(in srgb, var(--brand, #3D5A2C) 16%, transparent);
+}
+
+.fw-page.dc-v3[class*="ch-"] .dc-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    z-index: 9999;
+    background: linear-gradient(90deg, var(--brand, #3D5A2C), var(--brand-accent, #A8740B));
+    box-shadow: 0 0 14px color-mix(in srgb, var(--brand, #3D5A2C) 45%, transparent);
+}
+
+.fw-page.dc-v3[class*="ch-"] .dc-scene-cut {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9990;
+    background: linear-gradient(180deg, transparent, rgba(255,255,255,.38), transparent);
+}
+
+.fw-page.dc-v3[class*="ch-"] .dc-s-reveal {
+    opacity: 1;
+    transform: none;
+}
+
+.fw-page.dc-v3[class*="ch-"].has-gsap .dc-s-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .55s ease, transform .55s ease;
+}
+
+.fw-page.dc-v3[class*="ch-"].has-gsap .dc-s-reveal.dc-in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (hover: hover) {
+    .fw-page.dc-v3[class*="ch-"] .dc-tilt,
+    .fw-page.dc-v3[class*="ch-"] .dc-tilt-lite,
+    .fw-page.dc-v3[class*="ch-"] .dc-magnetic {
+        will-change: transform;
+    }
+
+    .fw-page.dc-v3[class*="ch-"] .dc-hover-card,
+    .fw-page.dc-v3[class*="ch-"] .dc-hover-panel {
+        transition: border-color .24s ease, box-shadow .24s ease, transform .24s ease;
+    }
+
+    .fw-page.dc-v3[class*="ch-"] .dc-hover-card:hover,
+    .fw-page.dc-v3[class*="ch-"] .dc-hover-panel:hover {
+        transform: translateY(-3px);
+        border-color: color-mix(in srgb, var(--brand, #3D5A2C) 30%, var(--border, #D8CFB8));
+        box-shadow: 0 14px 28px var(--dc-glow-color);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fw-page.dc-v3[class*="ch-"] .dc-progress,
+    .fw-page.dc-v3[class*="ch-"] .dc-scene-cut {
+        display: none;
+    }
 }

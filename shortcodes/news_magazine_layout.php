@@ -229,7 +229,7 @@ add_shortcode('news_magazine_layout', function($atts) {
     .news-featured-slide:hover .nf-image img { transform: scale(1.05); }
     .nf-content { padding-top: 5px; }
     .nf-tag {
-        background: #d4a017; color: white; font-size: 0.8rem; font-weight: 700;
+        background: var(--color-accent, #A8740B); color: white; font-size: 0.8rem; font-weight: 700;
         padding: 4px 10px; border-radius: 4px; display: inline-block; margin-bottom: 10px;
     }
     .nf-title { font-size: 1.3rem; font-weight: 800; color: #222; margin: 0 0 10px 0; line-height: 1.4; }

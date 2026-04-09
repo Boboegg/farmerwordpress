@@ -1,5 +1,5 @@
 <!-- wp:html -->
-<div class="fw-page ch-economic">
+<div class="fw-page dc-v3 ch-economic">
 
 <!-- =====================================================
      /economic-insurance/ 主頁面・區塊 01：Hero
@@ -14,6 +14,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="dc-progress" aria-hidden="true"></div>
+<div class="dc-scene-cut" aria-hidden="true"></div>
 
 <div class="money-hero">
   <div class="money-hero-content">
@@ -53,7 +56,7 @@
   <div class="money-hero-visual">
     <div class="money-hero-stats">
       <div class="money-stat-item">
-        <div class="money-stat-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="money-stat-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-coins"></i>
         </div>
         <div class="money-stat-text">
@@ -63,7 +66,7 @@
         </div>
       </div>
       <div class="money-stat-item">
-        <div class="money-stat-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="money-stat-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-bed-pulse"></i>
         </div>
         <div class="money-stat-text">
@@ -73,7 +76,7 @@
         </div>
       </div>
       <div class="money-stat-item">
-        <div class="money-stat-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
+        <div class="money-stat-icon" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);">
           <i class="fas fa-seedling"></i>
         </div>
         <div class="money-stat-text">
@@ -95,16 +98,16 @@
   display:flex;gap:40px;align-items:flex-start;padding:40px;
   background:linear-gradient(135deg,#e3f2fd 0%,#fff 60%,#e8eaf6 100%);
   border-radius:var(--radius);margin-bottom:0;
-  border:1px solid rgba(21,101,192,.1);box-sizing:border-box;
+  border:1px solid color-mix(in srgb, var(--color-info) 10%, transparent);box-sizing:border-box;
 }
 .money-hero *{box-sizing:border-box;}
 .money-hero-content{flex:1.2;}
 .money-hero-visual{flex:.8;position:sticky;top:20px;}
-.money-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(21,101,192,.1);color:var(--brand-legacy);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.money-hero-badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--brand-legacy);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
 .money-hero-title{font-size:2.2rem;font-weight:900;color:var(--brand-legacy-dark);margin:0 0 8px;line-height:1.2;}
 .money-hero-subtitle{font-size:1.05rem;color:var(--brand-legacy);font-weight:600;margin:0 0 20px;line-height:1.6;}
 
-.money-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid rgba(21,101,192,.08);}
+.money-hero-intro{background:rgba(255,255,255,.7);border-radius:12px;padding:24px;margin-bottom:24px;border:1px solid color-mix(in srgb, var(--color-info) 8%, transparent);}
 .money-hero-intro p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 12px;}
 .money-hero-intro p:last-child{margin-bottom:0;}
 .money-hero-list{list-style:none;padding:0;margin:0 0 16px;}
@@ -115,7 +118,7 @@
 
 .money-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
 .money-btn-primary,.money-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s ease;}
-.money-btn-primary{background:var(--brand-legacy);color:#fff;box-shadow:0 4px 12px rgba(21,101,192,.3);}
+.money-btn-primary{background:var(--brand-legacy);color:#fff;box-shadow:0 4px 12px color-mix(in srgb, var(--color-info) 30%, transparent);}
 .money-btn-primary:hover{background:var(--brand-legacy-hover);transform:translateY(-2px);}
 .money-btn-secondary{background:#fff;color:var(--brand-legacy);border:2px solid var(--brand-legacy);}
 .money-btn-secondary:hover{background:var(--brand-legacy);color:#fff;}
@@ -255,7 +258,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
 a.money-topic-card:hover{
   transform:translateY(-8px);
-  box-shadow:0 16px 36px rgba(21,101,192,.12);
+  box-shadow:0 16px 36px color-mix(in srgb, var(--color-info) 12%, transparent);
   border-color:var(--brand-legacy);
 }
 a.money-topic-card:hover::before{height:100%;opacity:.04;}
@@ -275,7 +278,7 @@ a.money-topic-card:hover::before{height:100%;opacity:.04;}
   display:flex;align-items:center;justify-content:center;
   font-size:24px;margin-bottom:16px;
 }
-.money-topic-blue .money-topic-icon{background:rgba(21,101,192,.1);color:var(--color-info);}
+.money-topic-blue .money-topic-icon{background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);}
 .money-topic-green .money-topic-icon{background:rgba(21,128,61,.1);color:#15803d;}
 .money-topic-amber .money-topic-icon{background:rgba(217,119,6,.1);color:#d97706;}
 
@@ -501,7 +504,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
 .money-tool-card:hover{
   border-color:var(--brand-legacy);
   transform:translateY(-4px);
-  box-shadow:0 10px 24px rgba(21,101,192,.1);
+  box-shadow:0 10px 24px color-mix(in srgb, var(--color-info) 10%, transparent);
 }
 
 .money-tool-icon{
@@ -509,7 +512,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
   display:flex;align-items:center;justify-content:center;
   font-size:22px;flex-shrink:0;
 }
-.money-tool-icon-blue{background:rgba(21,101,192,.1);color:var(--color-info);}
+.money-tool-icon-blue{background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);}
 .money-tool-icon-green{background:rgba(21,128,61,.1);color:#15803d;}
 .money-tool-icon-amber{background:rgba(217,119,6,.1);color:#d97706;}
 
@@ -575,7 +578,7 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
     <h3><i class="fas fa-link"></i> 相關專區</h3>
     <div class="money-cross-grid">
       <a href="/healthgood/" class="money-cross-card">
-        <div class="money-cross-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);"><i class="fas fa-heart-pulse"></i></div>
+        <div class="money-cross-icon" style="background:color-mix(in srgb, var(--color-brand) 10%, transparent);color:var(--color-brand);"><i class="fas fa-heart-pulse"></i></div>
         <div>
           <strong>健康促進</strong>
           <small>中暑、農藥中毒屬農職保涵蓋的職業傷病——先學會預防</small>
@@ -637,5 +640,8 @@ a.money-topic-card:hover .money-topic-cta{gap:12px;}
   .money-cross-grid{grid-template-columns:1fr;}
 }
 </style>
+<script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/dc-v3-sections.js" defer></script>
 </div>
 <!-- /wp:html -->

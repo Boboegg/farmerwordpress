@@ -1,5 +1,5 @@
 <!-- wp:html -->
-<div class="fw-page ch-safety">
+<div class="fw-page dc-v3 ch-safety">
 
 <!-- =====================================================
      職業安全主頁（完整組裝版）
@@ -16,6 +16,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="dc-progress" aria-hidden="true"></div>
+<div class="dc-scene-cut" aria-hidden="true"></div>
 
 <div class="prev-hero">
   <div class="prev-hero-content">
@@ -133,8 +136,8 @@
 .prev-hero-list{list-style:none;padding:0;margin:0 0 16px;}
 .prev-hero-list li{display:flex;align-items:flex-start;gap:10px;font-size:.95rem;line-height:1.7;padding:4px 0;color:var(--text-primary);}
 .prev-hero-list li i{color:var(--brand-legacy);margin-top:4px;flex-shrink:0;}
-.prev-hero-note{background:rgba(212,160,23,.08);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
-.prev-hero-note i{color:#D4A017;margin-top:3px;flex-shrink:0;}
+.prev-hero-note{background:color-mix(in srgb, var(--color-accent) 8%, transparent);border-radius:10px;padding:14px 18px;font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;margin-top:4px;}
+.prev-hero-note i{color:var(--color-accent);margin-top:3px;flex-shrink:0;}
 
 /* CTA */
 .prev-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
@@ -1394,5 +1397,8 @@ document.addEventListener('DOMContentLoaded',function(){
   .prevS-subpage-grid{grid-template-columns:1fr;}
 }
 </style>
+<script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/dc-v3-sections.js" defer></script>
 </div>
 <!-- /wp:html -->

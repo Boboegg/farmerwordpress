@@ -1,5 +1,5 @@
 <!-- wp:html -->
-<div class="fw-page ch-research">
+<div class="fw-page dc-v3 ch-research">
 
 <!-- =====================================================
      頁面：研究成果（主頁）
@@ -18,6 +18,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="dc-progress" aria-hidden="true"></div>
+<div class="dc-scene-cut" aria-hidden="true"></div>
 
 <!-- ========== 區塊 1：Hero ========== -->
 <div class="res-hero">
@@ -63,7 +66,7 @@
         </div>
       </div>
       <div class="res-stat-item">
-        <div class="res-stat-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);">
+        <div class="res-stat-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
           <i class="fas fa-university"></i>
         </div>
         <div class="res-stat-text">
@@ -72,7 +75,7 @@
         </div>
       </div>
       <div class="res-stat-item">
-        <div class="res-stat-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
+        <div class="res-stat-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
           <i class="fas fa-calendar-check"></i>
         </div>
         <div class="res-stat-text">
@@ -95,14 +98,14 @@
       <div class="res-cat-grid">
 
         <a href="/research-result/research-publication/" class="res-cat-card res-cat-active">
-          <div class="res-cat-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);"><i class="fas fa-book-open"></i></div>
+          <div class="res-cat-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);"><i class="fas fa-book-open"></i></div>
           <h3>研究出版</h3>
           <p>HISP 季會發表、計畫報告</p>
           <span class="res-cat-count">3 篇</span>
         </a>
 
         <a href="/research-result/podcast/" class="res-cat-card">
-          <div class="res-cat-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);"><i class="fas fa-podcast"></i></div>
+          <div class="res-cat-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);"><i class="fas fa-podcast"></i></div>
           <h3>影音 Podcast</h3>
           <p>訪談錄音、知識轉譯影片</p>
           <span class="res-cat-count">持續更新</span>
@@ -217,13 +220,13 @@
         </div>
 
         <div class="res-approach-card">
-          <div class="res-approach-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);"><i class="fas fa-chart-column"></i></div>
+          <div class="res-approach-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);"><i class="fas fa-chart-column"></i></div>
           <h3>量化數據與實證分析</h3>
           <p>結合農保資料、職災統計與健康調查數據，進行系統性的量化分析，為政策建議提供實證基礎。</p>
         </div>
 
         <div class="res-approach-card">
-          <div class="res-approach-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);"><i class="fas fa-stethoscope"></i></div>
+          <div class="res-approach-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);"><i class="fas fa-stethoscope"></i></div>
           <h3>醫學專業與職業健康</h3>
           <p>聯合臺大醫院雲林分院職業醫學科，針對農業勞動的特殊職業暴露與健康風險進行專業評估。</p>
         </div>
@@ -389,5 +392,8 @@
 }
 </style>
 
+<script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
+<script src="/wp-content/themes/astra-child/assets/js/dc-v3-sections.js" defer></script>
 </div>
 <!-- /wp:html -->
