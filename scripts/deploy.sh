@@ -42,6 +42,13 @@ echo "→ [1/3] 部署 global.css..."
 cp css/global.css "$THEME_PATH/global.css"
 echo "   ✓ 複製到 $THEME_PATH/global.css"
 
+# 同時部署 design system v2.0 (global.new.css)
+# 新首頁 (pages/home/index.html) 跟其他用 design system v2.0 的頁面會引用這個檔
+if [ -f "css/global.new.css" ]; then
+    cp css/global.new.css "$THEME_PATH/global.new.css"
+    echo "   ✓ 複製到 $THEME_PATH/global.new.css (design system v2.0)"
+fi
+
 # 確認 child theme functions.php 有載入 CSS
 if [ -f "$THEME_PATH/functions.php" ]; then
     if ! grep -q "global-css" "$THEME_PATH/functions.php"; then
