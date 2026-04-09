@@ -43,7 +43,7 @@
   </section>
 
   <!-- ========== ② 數據震撼區 ========== -->
-  <section class="start-stats dc-reveal">
+  <section class="start-stats">
     <h2 class="start-section-title"><i class="fas fa-chart-bar"></i> 你需要知道的數字</h2>
     <div class="start-stats-grid">
       <div class="start-stat-card dc-tilt">
@@ -75,7 +75,7 @@
   </section>
 
   <!-- ========== ③ 我們能幫你什麼 ========== -->
-  <section class="start-scenarios dc-reveal">
+  <section class="start-scenarios">
     <h2 class="start-section-title"><i class="fas fa-compass"></i> 新手最需要的四件事</h2>
 
     <div class="start-scenario-card dc-tilt" style="--accent:#e65100;">
@@ -128,7 +128,7 @@
   </section>
 
   <!-- ========== ④ 認識尊嚴農業 ========== -->
-  <section class="start-about dc-reveal">
+  <section class="start-about">
     <h2 class="start-section-title"><i class="fas fa-hand-holding-heart"></i> 認識尊嚴農業計畫</h2>
     <p class="start-about-desc">
       「尊嚴農業」由<strong>國立中正大學</strong>與<strong>臺大醫院雲林分院</strong>共同推動，以嘉義縣民雄鄉為實踐場域，致力建構農業工作者的職業健康社會安全網。我們相信：每一位農民都應該在安全與尊嚴中勞動。
@@ -143,7 +143,7 @@
   </section>
 
   <!-- ========== ⑤ 快速行動 ========== -->
-  <section class="start-cta dc-reveal">
+  <section class="start-cta">
     <a class="start-cta-btn start-cta-primary dc-magnetic" href="/occupational-safety/">
       <i class="fas fa-helmet-safety"></i> 進入職業安全總覽
     </a>
@@ -153,7 +153,7 @@
   </section>
 
   <!-- ========== ⑥ 緊急資源 ========== -->
-  <section class="start-emergency dc-reveal">
+  <section class="start-emergency">
     <h2><i class="fas fa-phone-volume"></i> 緊急時刻</h2>
     <div class="start-emergency-grid">
       <div class="start-emergency-item"><strong>緊急救護</strong><a href="tel:119">119</a></div>
@@ -164,7 +164,7 @@
   </section>
 
   <!-- ========== 更多探索 ========== -->
-  <section class="start-explore dc-reveal">
+  <section class="start-explore">
     <h2 class="start-section-title"><i class="fas fa-link"></i> 探索更多</h2>
     <div class="start-explore-grid">
       <a href="/healthgood/" class="start-explore-card dc-tilt-lite"><i class="fas fa-heart-pulse"></i><span>健康促進</span></a>
@@ -205,7 +205,7 @@
 /* === Hero Pinned Cinematic Wrap (L3 dc-v3) === */
 .start-hero-wrap{
   position:relative;
-  height:180vh;
+  height:120vh;
   margin-bottom:32px;
 }
 .start-hero-pin{
@@ -268,15 +268,9 @@
   opacity:0;
 }
 
-/* Reveal animation — default VISIBLE. Only hide when .has-gsap class
-   is set by JS after GSAP successfully loads. This guarantees content
-   remains visible if JS fails or blocks. */
-.dc-reveal{opacity:1;transform:none}
-.fw-page.dc-v3.has-gsap .dc-reveal{opacity:0;transform:translateY(20px)}
-.fw-page.dc-v3.has-gsap .dc-reveal.dc-in{
-  opacity:1;transform:none;
-  transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1);
-}
+/* Reveal removed — was causing section content to stay invisible.
+   Content now always visible by default. Animation polish comes from
+   per-element GSAP (tilt, magnetic, counters, parallax, scene cut). */
 
 /* Hero 內容 (原 .start-hero 樣式，現在嵌入 pin 內) */
 .start-hero{
@@ -375,9 +369,6 @@
 .start-about-desc{font-size:1rem;line-height:1.9;color:var(--text-secondary);margin:0 0 20px;}
 .start-about-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px;}
 .start-pillar{display:flex;flex-direction:column;align-items:center;gap:8px;padding:18px 10px;background:var(--brand-bg);border-radius:12px;font-size:.9rem;font-weight:700;color:var(--brand-legacy-dark);}
-/* Pillar stagger only activates with GSAP loaded */
-.fw-page.dc-v3.has-gsap .start-pillar{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease;}
-.fw-page.dc-v3.has-gsap .start-pillar.dc-in{opacity:1;transform:none;}
 .start-pillar i{font-size:1.5rem;color:var(--brand-legacy);}
 .start-about-link{font-size:1rem;font-weight:700;color:var(--brand-legacy-dark);text-decoration:none;display:inline-flex;align-items:center;gap:6px;will-change:transform;}
 .start-about-link:hover{text-decoration:underline;}
@@ -414,7 +405,7 @@
 
 /* Mobile responsive */
 @media(max-width:640px){
-  .start-hero-wrap{height:150vh;}
+  .start-hero-wrap{height:100vh;}
   .start-hero-pin{margin:0 -8px;}
   .start-hero{padding:28px 22px;}
   .start-hero-title{font-size:1.7rem;}
@@ -435,7 +426,7 @@
 
 /* Reduced motion — disable all L3 animations */
 @media (prefers-reduced-motion:reduce){
-  .dc-reveal,.start-pillar{opacity:1 !important;transform:none !important;transition:none !important;}
+  .start-pillar{opacity:1 !important;transform:none !important;transition:none !important;}
   .dc-plane,.dc-beam,.dc-noise{display:none;}
   .start-hero-wrap{height:auto;}
   .start-hero-pin{position:relative;height:auto;}
