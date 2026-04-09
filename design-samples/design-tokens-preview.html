@@ -1,0 +1,1157 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>farmerwordpress Design Tokens Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/global.new.css">
+  <style>
+    .preview-shell {
+      position: relative;
+      isolation: isolate;
+      min-height: 100vh;
+    }
+
+    .preview-particles,
+    .preview-noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    .preview-noise {
+      z-index: -1;
+      opacity: 0.14;
+      background-image: radial-gradient(rgba(31, 26, 20, 0.16) 0.7px, transparent 0.7px);
+      background-size: 6px 6px;
+      mix-blend-mode: soft-light;
+    }
+
+    .preview-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--color-line) 80%, transparent);
+    }
+
+    .preview-topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .preview-topbar-copy {
+      display: grid;
+      gap: 4px;
+    }
+
+    .preview-topbar-copy p,
+    .preview-card-note,
+    .preview-token-code,
+    .preview-type-sample small,
+    .preview-hotspot-copy small,
+    .preview-footer {
+      margin: 0;
+      color: var(--color-muted);
+    }
+
+    .preview-switches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .preview-toolbar {
+      display: inline-flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .preview-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: var(--radius-full);
+      border: 1px solid color-mix(in srgb, var(--color-brand) 18%, var(--color-line));
+      background: color-mix(in srgb, var(--color-bg-elevated) 70%, transparent);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-bold);
+    }
+
+    .preview-switch {
+      position: relative;
+      width: 56px;
+      height: 32px;
+      border-radius: 999px;
+      border: 0;
+      background: color-mix(in srgb, var(--color-line) 72%, var(--color-bg-elevated));
+      cursor: pointer;
+    }
+
+    .preview-switch::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-bg-elevated), color-mix(in srgb, var(--color-accent) 22%, white 78%));
+      box-shadow: var(--shadow-sm);
+      transition: transform 280ms var(--ease-out-back);
+    }
+
+    .preview-switch.is-on {
+      background: linear-gradient(90deg, var(--color-brand), var(--color-accent));
+    }
+
+    .preview-switch.is-on::after {
+      transform: translateX(24px);
+    }
+
+    .preview-hero-copy {
+      display: grid;
+      gap: var(--space-5);
+      max-width: 46rem;
+    }
+
+    .preview-hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .preview-hero-points {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .preview-hero-points li {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: color-mix(in srgb, var(--color-bg-elevated) 74%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-brand) 14%, var(--color-line));
+    }
+
+    .preview-mark {
+      display: inline-grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--color-brand), var(--color-accent));
+      color: #fff;
+      font-weight: var(--fw-black);
+      font-size: var(--fs-sm);
+    }
+
+    .preview-hero-panel-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .preview-panel-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .preview-panel-card {
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1px solid color-mix(in srgb, var(--color-brand) 12%, var(--color-line));
+      background: color-mix(in srgb, var(--color-bg-elevated) 82%, transparent);
+    }
+
+    .preview-panel-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: var(--fs-lg);
+      font-family: var(--font-title);
+    }
+
+    .preview-section-head {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+      max-width: 56rem;
+    }
+
+    .preview-token-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .preview-token-card {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: var(--border-soft);
+      background: color-mix(in srgb, var(--color-bg-elevated) 90%, transparent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .preview-token-swatch {
+      height: 92px;
+      border-radius: var(--radius-md);
+      border: 1px solid color-mix(in srgb, var(--color-line) 86%, white 14%);
+      background: var(--swatch-color);
+    }
+
+    .preview-token-label {
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-bold);
+    }
+
+    .preview-type-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .preview-type-sample {
+      display: grid;
+      gap: 8px;
+      padding: 18px 20px;
+      border-radius: var(--radius-lg);
+      border: var(--border-soft);
+      background: color-mix(in srgb, var(--color-bg-elevated) 84%, transparent);
+    }
+
+    .preview-type-sample span {
+      font-family: var(--font-title);
+      font-size: var(--preview-size);
+      line-height: 1.2;
+      font-weight: var(--fw-black);
+    }
+
+    .preview-card-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .preview-card-stack strong {
+      font-size: var(--fs-lg);
+    }
+
+    .preview-card-note {
+      line-height: 1.75;
+    }
+
+    .preview-tab-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 20px;
+    }
+
+    .preview-pillars {
+      display: grid;
+      gap: 14px;
+    }
+
+    .preview-pillars article {
+      padding: 18px 20px;
+      border-radius: var(--radius-md);
+      background: color-mix(in srgb, var(--color-bg-elevated) 84%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-brand) 16%, var(--color-line));
+    }
+
+    .preview-pillars article strong {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--color-brand);
+    }
+
+    .preview-hotspot-art {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.9;
+    }
+
+    .preview-hotspot-field,
+    .preview-hotspot-ridge,
+    .preview-hotspot-pond,
+    .preview-hotspot-gridline {
+      position: absolute;
+      border-radius: 999px;
+    }
+
+    .preview-hotspot-field {
+      left: 6%;
+      right: 14%;
+      bottom: -14%;
+      height: 56%;
+      background:
+        repeating-linear-gradient(
+          100deg,
+          color-mix(in srgb, var(--color-brand) 26%, transparent) 0 16px,
+          transparent 16px 32px
+        ),
+        linear-gradient(180deg, color-mix(in srgb, var(--color-brand) 10%, transparent), transparent);
+      transform: rotate(-7deg);
+    }
+
+    .preview-hotspot-ridge {
+      left: -8%;
+      top: 12%;
+      width: 46%;
+      height: 34%;
+      background: radial-gradient(circle, color-mix(in srgb, var(--color-brand-deep) 24%, transparent), transparent 64%);
+    }
+
+    .preview-hotspot-pond {
+      right: 10%;
+      top: 18%;
+      width: 30%;
+      height: 18%;
+      background: radial-gradient(circle, color-mix(in srgb, var(--color-info) 38%, transparent), transparent 72%);
+    }
+
+    .preview-hotspot-gridline {
+      inset: 14% 18% auto auto;
+      width: 34%;
+      height: 38%;
+      border: 1px dashed color-mix(in srgb, var(--color-accent) 42%, transparent);
+      opacity: 0.65;
+    }
+
+    .preview-hotspot-copy {
+      display: grid;
+      gap: 14px;
+    }
+
+    .preview-hotspot-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .preview-hotspot-meta article {
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: color-mix(in srgb, var(--color-bg-elevated) 74%, transparent);
+      border: 1px solid color-mix(in srgb, var(--color-brand) 16%, var(--color-line));
+    }
+
+    .preview-hotspot-meta strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--color-brand);
+    }
+
+    .preview-counter-note {
+      display: grid;
+      gap: 10px;
+    }
+
+    .preview-footer {
+      padding: 0 0 48px;
+      text-align: center;
+      font-size: var(--fs-sm);
+    }
+
+    .preview-reduced-motion *,
+    .preview-reduced-motion *::before,
+    .preview-reduced-motion *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    @media (max-width: 960px) {
+      .preview-token-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .preview-tab-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .preview-topbar-inner,
+      .preview-panel-row,
+      .preview-hotspot-meta {
+        grid-template-columns: 1fr;
+        display: grid;
+      }
+
+      .preview-topbar-inner {
+        justify-content: initial;
+      }
+
+      .preview-switches,
+      .preview-toolbar {
+        justify-content: flex-start;
+      }
+
+      .preview-token-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
+<body class="ds-body theme-light" id="preview-root">
+  <div class="preview-shell ds-reset">
+    <canvas class="preview-particles" id="preview-particles" aria-hidden="true"></canvas>
+    <div class="preview-noise" aria-hidden="true"></div>
+
+    <div class="preview-topbar">
+      <div class="ds-container preview-topbar-inner">
+        <div class="preview-topbar-copy">
+          <span class="ds-kicker">farmerwordpress design system v2</span>
+          <p>以尊嚴綠、稻金黃與田野層次，重建七大主選單與四大分眾入口的共同視覺語言。</p>
+        </div>
+
+        <div class="preview-switches">
+          <div class="preview-toolbar" aria-label="主題切換">
+            <button class="ds-btn ds-btn-outline js-theme-button" data-theme="light" type="button">明亮主題</button>
+            <button class="ds-btn ds-btn-ghost js-theme-button" data-theme="dark" type="button">暗色主題</button>
+          </div>
+          <div class="preview-toggle">
+            <span>Reduced Motion</span>
+            <button class="preview-switch" id="motion-toggle" type="button" aria-pressed="false" aria-label="切換低動態模式"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="ds-hero">
+      <div class="ds-container ds-hero-content">
+        <div class="preview-hero-copy ds-reveal">
+          <span class="ds-kicker">農業尊嚴：共建雲嘉農業工作者職業健康社會安全網</span>
+          <h1 class="ds-display">學術嚴謹，不必長得像公文。</h1>
+          <p class="ds-lead">
+            這套 design system 以「稻穗熟成」為底，讓職業安全、健康促進、經濟保險、倡議研究能在同一套 token 下延伸，同時保留中高齡友善的閱讀尺度與觸控尺寸。
+          </p>
+
+          <div class="preview-hero-actions">
+            <a class="ds-btn ds-btn-primary" href="#token-board">查看色票與字級</a>
+            <a class="ds-btn ds-btn-ghost" href="#interaction-lab">檢查互動元件</a>
+            <a class="ds-btn ds-btn-outline" href="#hotspot-lab">體驗四大主題熱區</a>
+          </div>
+
+          <ul class="preview-hero-points">
+            <li>
+              <span class="preview-mark">01</span>
+              <div>
+                <strong>矩陣式資訊架構</strong>
+                <p class="ds-copy">七大資料庫主選單與四大分眾入口共存，不再各頁各自長一套皮。</p>
+              </div>
+            </li>
+            <li>
+              <span class="preview-mark">02</span>
+              <div>
+                <strong>高齡友善閱讀</strong>
+                <p class="ds-copy">內文基準 18px 起跳，行距 1.8，按鈕最小觸控區 44px。</p>
+              </div>
+            </li>
+            <li>
+              <span class="preview-mark">03</span>
+              <div>
+                <strong>零第三方動畫依賴</strong>
+                <p class="ds-copy">用原生 JavaScript 完成 reveal、counter、tabs、accordion、hotspot 與粒子背景。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="ds-hero-panel ds-glass-card ds-reveal">
+          <div class="preview-hero-panel-stack">
+            <div class="preview-panel-card">
+              <span class="ds-badge">核心研究場域</span>
+              <strong>嘉義縣民雄鄉</strong>
+              <p class="ds-copy">由國立中正大學與臺大醫院雲林分院共同推動，從地方田野回應制度設計。</p>
+            </div>
+
+            <div class="preview-panel-row">
+              <div class="preview-panel-card">
+                <small class="preview-token-code">主要研究者</small>
+                <strong>曾柏儒</strong>
+                <p class="ds-copy">成人及繼續教育學系博士生</p>
+              </div>
+              <div class="preview-panel-card">
+                <small class="preview-token-code">指導教授</small>
+                <strong>陳毓璟</strong>
+                <p class="ds-copy">以倡議、教育與制度研究串接現場經驗</p>
+              </div>
+            </div>
+
+            <div class="preview-panel-card">
+              <small class="preview-token-code">系統導向</small>
+              <div class="ds-progress-bar" aria-label="設計系統覆蓋度">
+                <div class="ds-progress-fill" style="width: 82%;"></div>
+              </div>
+              <p class="ds-copy">本版先完成 token、容器、互動元件與預覽頁，供後續七大頁面逐步遷移。</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="ds-section ds-section-alt" id="token-board">
+      <div class="ds-container">
+        <div class="preview-section-head ds-reveal">
+          <span class="ds-kicker">Color Tokens</span>
+          <h2 class="ds-title">色票色板</h2>
+          <p class="ds-lead">每個 token 都能在 light / dark 間即時切換，避免把顏色寫死在單一頁面模組內。</p>
+        </div>
+
+        <div class="preview-token-grid ds-reveal">
+          <article class="preview-token-card" data-token="--color-bg">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-bg</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-bg-elevated">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-bg-elevated</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-text">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-text</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-muted">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-muted</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-line">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-line</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-brand">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-brand</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-brand-deep">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-brand-deep</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-accent">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-accent</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-warn">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-warn</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+          <article class="preview-token-card" data-token="--color-info">
+            <div class="preview-token-swatch"></div>
+            <div>
+              <div class="preview-token-label">--color-info</div>
+              <p class="preview-token-code"></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section">
+      <div class="ds-container ds-grid ds-grid-2">
+        <div class="ds-reveal">
+          <div class="preview-section-head">
+            <span class="ds-kicker">Fluid Type</span>
+            <h2 class="ds-title">字級展示</h2>
+            <p class="ds-lead">所有文字以 clamp() 管理，桌機能拉開 editorial 層次，手機仍維持可讀性。</p>
+          </div>
+
+          <div class="preview-type-list">
+            <div class="preview-type-sample" style="--preview-size:var(--fs-xs);">
+              <small>--fs-xs</small>
+              <span>民雄女農的多重宇宙，從細節開始讀。</span>
+            </div>
+            <div class="preview-type-sample" style="--preview-size:var(--fs-sm);">
+              <small>--fs-sm</small>
+              <span>用數據與故事一起說明農業工作者的日常風險。</span>
+            </div>
+            <div class="preview-type-sample" style="--preview-size:var(--fs-base);">
+              <small>--fs-base</small>
+              <span>18px 起跳，讓研究摘要、行動指引與表單說明不再逼使用者瞇眼閱讀。</span>
+            </div>
+            <div class="preview-type-sample" style="--preview-size:var(--fs-lg);">
+              <small>--fs-lg</small>
+              <span>農民健康促進不是等生病才處理，而是把保護前移到田間每一次操作。</span>
+            </div>
+            <div class="preview-type-sample" style="--preview-size:var(--fs-xl);">
+              <small>--fs-xl</small>
+              <span>以田野經驗重新整理高溫、農藥、肌肉骨骼與心理壓力。</span>
+            </div>
+            <div class="preview-type-sample" style="--preview-size:var(--fs-2xl);">
+              <small>--fs-2xl</small>
+              <span>制度設計，應該讀得懂也用得到。</span>
+            </div>
+            <div class="preview-type-sample" style="--preview-size:var(--fs-3xl);">
+              <small>--fs-3xl</small>
+              <span>尊嚴農業，不只是口號。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-reveal">
+          <div class="preview-section-head">
+            <span class="ds-kicker">Buttons & Cards</span>
+            <h2 class="ds-title">按鈕與卡片變體</h2>
+            <p class="ds-lead">同一套元件可支援首頁導流、研究摘要、保險工具與倡議專題頁。</p>
+          </div>
+
+          <div class="ds-inline" style="margin-bottom: 18px;">
+            <button class="ds-btn ds-btn-primary" type="button">Primary CTA</button>
+            <button class="ds-btn ds-btn-ghost" type="button">Ghost CTA</button>
+            <button class="ds-btn ds-btn-outline" type="button">Outline CTA</button>
+          </div>
+
+          <div class="ds-grid ds-grid-3">
+            <article class="ds-card preview-card-stack">
+              <span class="ds-badge">標準卡片</span>
+              <strong>研究成果導覽</strong>
+              <p class="preview-card-note">適合研究出版、Podcast、下載專區等高資訊密度模組。</p>
+            </article>
+            <article class="ds-card ds-card-tilt preview-card-stack js-tilt-card">
+              <span class="ds-badge">Tilt Card</span>
+              <strong>職安工具型錄</strong>
+              <p class="preview-card-note">保留立體感，但角度收斂，避免 v1 那種過度炫技的暈眩感。</p>
+            </article>
+            <article class="ds-card ds-glass-card preview-card-stack">
+              <span class="ds-badge">Glass Card</span>
+              <strong>首頁資訊前景</strong>
+              <p class="preview-card-note">在粒子、漸層與田野圖層上保持資訊清晰，不會變成黑底 SaaS 面板。</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section ds-section-alt" id="interaction-lab">
+      <div class="ds-container">
+        <div class="preview-section-head ds-reveal">
+          <span class="ds-kicker">Interaction Lab</span>
+          <h2 class="ds-title">Tabs、Accordion 與 Timeline</h2>
+          <p class="ds-lead">把頁面原本散落的內容骨架抽成可重用元件，支援主題切換與低動態模式。</p>
+        </div>
+
+        <div class="preview-tab-layout ds-reveal">
+          <div class="ds-card">
+            <div class="ds-tabs" role="tablist" aria-label="主題切換示範">
+              <button class="ds-tab is-active" data-panel="panel-health" role="tab" type="button">健康促進</button>
+              <button class="ds-tab" data-panel="panel-safety" role="tab" type="button">職業安全</button>
+              <button class="ds-tab" data-panel="panel-money" role="tab" type="button">經濟保險</button>
+            </div>
+
+            <div class="ds-tab-panel is-active" id="panel-health">
+              <div class="preview-pillars">
+                <article>
+                  <strong>熱危害預防</strong>
+                  <p class="ds-copy">雲嘉夏季高溫疊加高齡農務現場，先把水分補給、休息節奏與急救辨識講清楚。</p>
+                </article>
+                <article>
+                  <strong>骨骼肌肉保健</strong>
+                  <p class="ds-copy">把重複搬運、姿勢負荷與復健轉介路徑用圖文化方式整理，降低延誤就醫。</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="ds-tab-panel" id="panel-safety">
+              <div class="preview-pillars">
+                <article>
+                  <strong>省工農機具</strong>
+                  <p class="ds-copy">把「用機器代替傷身動作」作為首要策略，而不是只靠最後一道 PPE 防線。</p>
+                </article>
+                <article>
+                  <strong>風險快篩工具</strong>
+                  <p class="ds-copy">從跌倒、熱傷害、化學暴露與人因負荷四面向，快速給出改善方向。</p>
+                </article>
+              </div>
+            </div>
+
+            <div class="ds-tab-panel" id="panel-money">
+              <div class="preview-pillars">
+                <article>
+                  <strong>農民職業災害保險</strong>
+                  <p class="ds-copy">把資格、給付、申請流程做成一看就懂的導覽，讓制度不再停留在條文層。</p>
+                </article>
+                <article>
+                  <strong>補助與保險</strong>
+                  <p class="ds-copy">用情境分類取代機關分類，從「受傷了」「颱風來了」「退休前準備」進入內容。</p>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-stack">
+            <div class="ds-accord">
+              <article class="ds-acc is-open">
+                <button class="ds-acc-trigger" type="button" aria-expanded="true">基礎調查與健康教育</button>
+                <div class="ds-acc-panel">
+                  <div class="ds-acc-inner">
+                    <p class="ds-copy">從問卷、訪談、農務流程圖到大字版教材，把研究方法直接轉成在地可使用的工具。</p>
+                  </div>
+                </div>
+              </article>
+              <article class="ds-acc">
+                <button class="ds-acc-trigger" type="button" aria-expanded="false">省工機具與勞動環境重塑</button>
+                <div class="ds-acc-panel">
+                  <div class="ds-acc-inner">
+                    <p class="ds-copy">優先導入搬運、施藥、剪枝與高負荷作業的輔助工具，從源頭降低暴露與姿勢傷害。</p>
+                  </div>
+                </div>
+              </article>
+              <article class="ds-acc">
+                <button class="ds-acc-trigger" type="button" aria-expanded="false">跨國制度比較與倡議</button>
+                <div class="ds-acc-panel">
+                  <div class="ds-acc-inner">
+                    <p class="ds-copy">以日本、韓國與台灣經驗比較社會安全網，主張預防、納保與復工重建並進。</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="ds-card">
+              <span class="ds-kicker">Timeline</span>
+              <div class="ds-timeline">
+                <article class="ds-timeline-item">
+                  <strong>2023 年 10 月</strong>
+                  <p class="ds-copy">農業環境與職業健康中心成立，正式把醫療與研究帶進雲嘉農業現場。</p>
+                </article>
+                <article class="ds-timeline-item">
+                  <strong>2024 年</strong>
+                  <p class="ds-copy">持續進行世代研究、健康識能調查與田野觀察，累積現場資料。</p>
+                </article>
+                <article class="ds-timeline-item">
+                  <strong>2024 年 9–11 月</strong>
+                  <p class="ds-copy">焦點團體與農田診間座談，討論女農處境、勞動剝削與結構壓力。</p>
+                </article>
+                <article class="ds-timeline-item">
+                  <strong>2025 年 5–6 月</strong>
+                  <p class="ds-copy">Podcast 與媒體成果發表，把倡議語言帶出學術圈與地方社群。</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section" id="hotspot-lab">
+      <div class="ds-container">
+        <div class="preview-section-head ds-reveal">
+          <span class="ds-kicker">Hotspot Navigator</span>
+          <h2 class="ds-title">四大主題熱區</h2>
+          <p class="ds-lead">延續 v2 最有價值的結構，但改寫成農業語境。每個熱區都同時給 KPI 與下一步行動。</p>
+        </div>
+
+        <div class="ds-hotspot ds-reveal">
+          <div class="ds-hotspot-grid" aria-hidden="true"></div>
+          <div class="preview-hotspot-art" aria-hidden="true">
+            <div class="preview-hotspot-field"></div>
+            <div class="preview-hotspot-ridge"></div>
+            <div class="preview-hotspot-pond"></div>
+            <div class="preview-hotspot-gridline"></div>
+          </div>
+
+          <button class="ds-hotspot-node ds-hotspot-pulse is-active" type="button" style="top: 18%; left: 16%;"
+            data-title="健康促進"
+            data-kpi="71.3% 農漁民感知高溫風險"
+            data-action="先進入熱危害與骨骼肌肉兩條導覽，把最急迫的身體訊號處理掉。"
+            data-note="適合首頁導流、健康主頁與分眾入口的快速行動卡。">1</button>
+
+          <button class="ds-hotspot-node ds-hotspot-pulse" type="button" style="top: 28%; left: 56%;"
+            data-title="職業安全"
+            data-kpi="5 層安全控制策略"
+            data-action="先用快篩工具找出高風險工作，再往省工農機與 PPE 型錄前進。"
+            data-note="保留裝備與制度兩種入口，不再只有產品展示。">2</button>
+
+          <button class="ds-hotspot-node ds-hotspot-pulse" type="button" style="top: 58%; left: 34%;"
+            data-title="經濟保險"
+            data-kpi="15 元 / 月農職保實繳保費"
+            data-action="把受傷給付、天災理賠、補助資源改成情境式查找，而不是行政分類。"
+            data-note="暗色主題下仍保留農業感，不走監控儀表板語氣。">3</button>
+
+          <button class="ds-hotspot-node ds-hotspot-pulse" type="button" style="top: 60%; left: 72%;"
+            data-title="倡議研究"
+            data-kpi="2023–2025 年持續累積田野、座談與媒體成果"
+            data-action="以時間軸、焦點團體與研究摘要串出政策討論脈絡，讓學術可信度可被閱讀。"
+            data-note="把倡議、研究成果與公共敘事收斂在同一套視覺母語。">4</button>
+
+          <aside class="ds-hotspot-panel">
+            <div class="ds-card ds-glass-card preview-hotspot-copy">
+              <span class="ds-badge" id="hotspot-title">健康促進</span>
+              <h3 class="ds-title" id="hotspot-kpi">71.3% 農漁民感知高溫風險</h3>
+              <p class="ds-copy" id="hotspot-action">先進入熱危害與骨骼肌肉兩條導覽，把最急迫的身體訊號處理掉。</p>
+              <div class="preview-hotspot-meta">
+                <article>
+                  <strong>KPI</strong>
+                  <small id="hotspot-note">適合首頁導流、健康主頁與分眾入口的快速行動卡。</small>
+                </article>
+                <article>
+                  <strong>Action</strong>
+                  <small>把「看資料」改成「先做什麼」，減少第一次進站的認知負擔。</small>
+                </article>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section ds-section-alt">
+      <div class="ds-container">
+        <div class="preview-section-head ds-reveal">
+          <span class="ds-kicker">Stats Counter</span>
+          <h2 class="ds-title">關鍵數據卡</h2>
+          <p class="ds-lead">取自現有頁面內容，作為首頁、研究頁與分眾入口都可複用的統計模組。</p>
+        </div>
+
+        <div class="ds-stat ds-reveal">
+          <article class="ds-stat-card">
+            <span class="ds-badge">高齡化</span>
+            <p class="ds-stat-value js-counter" data-target="62" data-suffix="+歲">0</p>
+            <div class="preview-counter-note">
+              <strong>台灣農民平均年齡</strong>
+              <p class="ds-copy">高齡友善不是加大字而已，還包括更清楚的流程與更穩定的互動節奏。</p>
+            </div>
+          </article>
+          <article class="ds-stat-card">
+            <span class="ds-badge">熱危害</span>
+            <p class="ds-stat-value js-counter" data-target="71.3" data-suffix="%">0</p>
+            <div class="preview-counter-note">
+              <strong>農漁民感知高溫風險</strong>
+              <p class="ds-copy">健康與職安頁面應該共享同一套資訊警示與 CTA 規則。</p>
+            </div>
+          </article>
+          <article class="ds-stat-card">
+            <span class="ds-badge">保險制度</span>
+            <p class="ds-stat-value js-counter" data-target="15" data-prefix="" data-suffix=" 元/月">0</p>
+            <div class="preview-counter-note">
+              <strong>農職保農民實繳保費</strong>
+              <p class="ds-copy">經濟保險頁要把制度可近性放在第一位，而不是只寫法條摘要。</p>
+            </div>
+          </article>
+          <article class="ds-stat-card">
+            <span class="ds-badge">作物保險</span>
+            <p class="ds-stat-value js-counter" data-target="27" data-suffix=" 品項">0</p>
+            <div class="preview-counter-note">
+              <strong>可投保作物範圍</strong>
+              <p class="ds-copy">數據卡下方可直接接情境式導覽，讓使用者從關心的問題出發。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <p class="preview-footer ds-container">Preview only. 這份頁面供 design token、互動元件與 light/dark 主題切換驗證使用，不直接部署到 WordPress。</p>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.getElementById("preview-root");
+      var themeButtons = document.querySelectorAll(".js-theme-button");
+      var motionToggle = document.getElementById("motion-toggle");
+      var tokenCards = document.querySelectorAll(".preview-token-card");
+      var tabs = document.querySelectorAll(".ds-tab");
+      var panels = document.querySelectorAll(".ds-tab-panel");
+      var accordions = document.querySelectorAll(".ds-acc");
+      var counters = document.querySelectorAll(".js-counter");
+      var revealItems = document.querySelectorAll(".ds-reveal");
+      var tiltCards = document.querySelectorAll(".js-tilt-card");
+      var hotspotButtons = document.querySelectorAll(".ds-hotspot-node");
+      var hotspotTitle = document.getElementById("hotspot-title");
+      var hotspotKpi = document.getElementById("hotspot-kpi");
+      var hotspotAction = document.getElementById("hotspot-action");
+      var hotspotNote = document.getElementById("hotspot-note");
+      var canvas = document.getElementById("preview-particles");
+      var ctx = canvas.getContext("2d");
+      var particles = [];
+      var particleCount = 62;
+      var reducedMotion = false;
+
+      function updateThemeButtons(activeTheme) {
+        themeButtons.forEach(function (button) {
+          var isActive = button.getAttribute("data-theme") === activeTheme;
+          button.classList.toggle("ds-btn-primary", isActive);
+          button.classList.toggle("ds-btn-ghost", !isActive);
+          button.classList.toggle("ds-btn-outline", false);
+        });
+      }
+
+      function setTheme(themeName) {
+        root.classList.remove("theme-light", "theme-dark");
+        root.classList.add(themeName === "dark" ? "theme-dark" : "theme-light");
+        updateThemeButtons(themeName === "dark" ? "dark" : "light");
+        updateTokens();
+        resizeCanvas();
+      }
+
+      function updateTokens() {
+        var styles = getComputedStyle(root);
+        tokenCards.forEach(function (card) {
+          var tokenName = card.getAttribute("data-token");
+          var value = styles.getPropertyValue(tokenName).trim();
+          card.style.setProperty("--swatch-color", value);
+          var code = card.querySelector(".preview-token-code");
+          if (code) {
+            code.textContent = value;
+          }
+        });
+      }
+
+      themeButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          setTheme(button.getAttribute("data-theme"));
+        });
+      });
+
+      motionToggle.addEventListener("click", function () {
+        reducedMotion = !reducedMotion;
+        root.classList.toggle("preview-reduced-motion", reducedMotion);
+        motionToggle.classList.toggle("is-on", reducedMotion);
+        motionToggle.setAttribute("aria-pressed", String(reducedMotion));
+      });
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          var panelId = tab.getAttribute("data-panel");
+          tabs.forEach(function (item) {
+            item.classList.remove("is-active");
+          });
+          panels.forEach(function (panel) {
+            panel.classList.remove("is-active");
+          });
+          tab.classList.add("is-active");
+          document.getElementById(panelId).classList.add("is-active");
+        });
+      });
+
+      accordions.forEach(function (acc) {
+        var trigger = acc.querySelector(".ds-acc-trigger");
+        trigger.addEventListener("click", function () {
+          var open = acc.classList.contains("is-open");
+          acc.classList.toggle("is-open", !open);
+          trigger.setAttribute("aria-expanded", String(!open));
+        });
+      });
+
+      hotspotButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          hotspotButtons.forEach(function (node) {
+            node.classList.remove("is-active");
+          });
+          button.classList.add("is-active");
+          hotspotTitle.textContent = button.getAttribute("data-title");
+          hotspotKpi.textContent = button.getAttribute("data-kpi");
+          hotspotAction.textContent = button.getAttribute("data-action");
+          hotspotNote.textContent = button.getAttribute("data-note");
+        });
+      });
+
+      function animateCounter(node) {
+        if (node.dataset.done === "true") {
+          return;
+        }
+
+        var target = Number(node.getAttribute("data-target"));
+        var suffix = node.getAttribute("data-suffix") || "";
+        var prefix = node.getAttribute("data-prefix") || "";
+        var decimals = target % 1 === 0 ? 0 : 1;
+        var duration = reducedMotion ? 1 : 1200;
+        var startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) {
+            startTime = timestamp;
+          }
+
+          var progress = Math.min((timestamp - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 4);
+          var value = target * eased;
+          node.textContent = prefix + value.toFixed(decimals) + suffix;
+
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          } else {
+            node.dataset.done = "true";
+            node.textContent = prefix + target.toFixed(decimals) + suffix;
+          }
+        }
+
+        window.requestAnimationFrame(step);
+      }
+
+      if ("IntersectionObserver" in window) {
+        var revealObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.18 });
+
+        revealItems.forEach(function (item) {
+          revealObserver.observe(item);
+        });
+
+        var counterObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function (counter) {
+          counterObserver.observe(counter);
+        });
+      } else {
+        revealItems.forEach(function (item) {
+          item.classList.add("is-visible");
+        });
+        counters.forEach(animateCounter);
+      }
+
+      tiltCards.forEach(function (card) {
+        card.addEventListener("mousemove", function (event) {
+          if (reducedMotion) {
+            return;
+          }
+
+          var rect = card.getBoundingClientRect();
+          var x = (event.clientX - rect.left) / rect.width;
+          var y = (event.clientY - rect.top) / rect.height;
+          var rotateX = (0.5 - y) * 10;
+          var rotateY = (x - 0.5) * 12;
+
+          card.style.transform = "perspective(1100px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-4px)";
+          card.style.setProperty("--mx", Math.round(x * 100) + "%");
+          card.style.setProperty("--my", Math.round(y * 100) + "%");
+        });
+
+        card.addEventListener("mouseleave", function () {
+          card.style.transform = "";
+        });
+      });
+
+      function resizeCanvas() {
+        var dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.floor(window.innerWidth * dpr);
+        canvas.height = Math.floor(window.innerHeight * dpr);
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        createParticles();
+      }
+
+      function createParticles() {
+        particles = [];
+        var styles = getComputedStyle(root);
+        var brand = styles.getPropertyValue("--color-brand").trim();
+        var accent = styles.getPropertyValue("--color-accent").trim();
+
+        for (var i = 0; i < particleCount; i += 1) {
+          particles.push({
+            x: Math.random() * window.innerWidth,
+            y: Math.random() * window.innerHeight,
+            vx: (Math.random() - 0.5) * 0.42,
+            vy: (Math.random() - 0.5) * 0.42,
+            r: 1.2 + Math.random() * 2.2,
+            color: i % 2 === 0 ? brand : accent
+          });
+        }
+      }
+
+      function drawParticles() {
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+        particles.forEach(function (particle, index) {
+          particle.x += reducedMotion ? 0 : particle.vx;
+          particle.y += reducedMotion ? 0 : particle.vy;
+
+          if (particle.x < 0 || particle.x > window.innerWidth) {
+            particle.vx *= -1;
+          }
+          if (particle.y < 0 || particle.y > window.innerHeight) {
+            particle.vy *= -1;
+          }
+
+          ctx.beginPath();
+          ctx.fillStyle = particle.color;
+          ctx.globalAlpha = 0.26;
+          ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          for (var j = index + 1; j < particles.length; j += 1) {
+            var other = particles[j];
+            var dx = particle.x - other.x;
+            var dy = particle.y - other.y;
+            var distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 120) {
+              ctx.beginPath();
+              ctx.globalAlpha = (1 - distance / 120) * 0.12;
+              ctx.strokeStyle = particle.color;
+              ctx.moveTo(particle.x, particle.y);
+              ctx.lineTo(other.x, other.y);
+              ctx.stroke();
+            }
+          }
+        });
+
+        ctx.globalAlpha = 1;
+        window.requestAnimationFrame(drawParticles);
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+
+      setTheme("light");
+      resizeCanvas();
+      drawParticles();
+    })();
+  </script>
+</body>
+</html>

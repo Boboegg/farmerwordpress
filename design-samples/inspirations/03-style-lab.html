@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX/UI Style Lab - 多風格互動展示</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#FBFAF7; --bg2:#F4F0E6; --text:#1F1A14; --muted:#5C5448; --line:#D8CFB8;
+      --brand:#3D5A2C; --deep:#2A3F1E; --accent:#A8740B; --warn:#8B2D14;
+      --radius:14px;
+      --shadow:0 10px 24px rgba(31,26,20,.08);
+    }
+    /* 4種風格主題 */
+    .theme-cinematic{
+      --bg:#FBFAF7; --bg2:#F4F0E6; --text:#1F1A14; --muted:#5C5448; --line:#D8CFB8;
+      --brand:#3D5A2C; --deep:#2A3F1E; --accent:#A8740B;
+    }
+    .theme-editorial{
+      --bg:#FDFDFC; --bg2:#F5F5F3; --text:#151515; --muted:#4c4c4c; --line:#D7D7D2;
+      --brand:#1C3F73; --deep:#0F2A4F; --accent:#D49A22;
+    }
+    .theme-interactive{
+      --bg:#0F1115; --bg2:#171a21; --text:#F4F6FB; --muted:#B8C0D4; --line:#2A3142;
+      --brand:#57D18B; --deep:#34B070; --accent:#7AA2FF; --shadow:0 14px 30px rgba(0,0,0,.4);
+    }
+    .theme-warm{
+      --bg:#FFF8F2; --bg2:#F9EEDF; --text:#2C1D16; --muted:#6E564C; --line:#E3CCB8;
+      --brand:#A05A2C; --deep:#7A431F; --accent:#D18E2F;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:"Noto Sans TC",sans-serif;
+      background:var(--bg); color:var(--text); line-height:1.75;
+      transition: background .25s ease, color .25s ease;
+      overflow-x:hidden;
+    }
+    .container{width:min(1150px,calc(100% - 32px));margin:0 auto}
+    .serif{font-family:"Noto Serif TC",serif}
+
+    .progress{
+      position:fixed;top:0;left:0;height:3px;width:0%;
+      background:linear-gradient(90deg,var(--brand),var(--accent));z-index:99999;
+    }
+
+    .topbar{
+      position:sticky;top:0;z-index:90;
+      border-bottom:1px solid var(--line);
+      background:color-mix(in oklab,var(--bg),transparent 10%);
+      backdrop-filter: blur(8px);
+    }
+    .topbar-inner{
+      display:flex;justify-content:space-between;align-items:center;gap:10px;
+      padding:10px 0;
+    }
+    .style-switch{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{
+      border:1px solid var(--line); background:transparent; color:var(--text);
+      border-radius:999px; padding:6px 10px; font-weight:700; cursor:pointer;
+      transition:.18s ease;
+    }
+    .chip:hover,.chip.is-on{background:var(--brand); color:#fff; border-color:var(--brand)}
+    .reduce-toggle{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+
+    .hero{
+      position:relative; overflow:hidden; padding:88px 0 62px;
+      border-bottom:1px solid var(--line);
+      background:
+        radial-gradient(1000px 420px at 15% -10%, color-mix(in oklab,var(--accent),transparent 75%), transparent 60%),
+        radial-gradient(1000px 420px at 100% 0%, color-mix(in oklab,var(--brand),transparent 75%), transparent 60%),
+        linear-gradient(180deg, color-mix(in oklab,var(--bg2),white 20%), var(--bg));
+      isolation:isolate;
+    }
+    .grain{
+      position:absolute; inset:0; pointer-events:none; opacity:.08;
+      background-image: radial-gradient(rgba(0,0,0,.15) .5px, transparent .5px);
+      background-size:3px 3px;
+      animation:grain 8s steps(8) infinite;
+    }
+    .spot{
+      position:absolute; inset:-20%; pointer-events:none; opacity:.45;
+      background:radial-gradient(280px 280px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.35), transparent 65%);
+    }
+    @keyframes grain{
+      0%{transform:translate(0,0)}25%{transform:translate(-1%,1%)}50%{transform:translate(1%,-1%)}75%{transform:translate(.5%,1%)}100%{transform:translate(0,0)}
+    }
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:end}
+    .kicker{
+      display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;letter-spacing:.08em;color:var(--brand);
+      background:color-mix(in oklab,var(--bg),transparent 30%);
+    }
+    h1{margin:12px 0 10px;line-height:1.2;font-size:clamp(34px,5.2vw,58px)}
+    .lead{margin:0 0 14px;max-width:56ch;color:var(--muted)}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      border:1px solid transparent;border-radius:999px;padding:10px 16px;font-weight:700;text-decoration:none;display:inline-flex;gap:8px;align-items:center;
+      transition:transform .16s ease, box-shadow .16s ease, background .16s ease;
+      will-change:transform;
+    }
+    .btn-primary{background:var(--brand);color:#fff}
+    .btn-ghost{border-color:var(--line);color:var(--brand);background:transparent}
+    .btn:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .btn:focus-visible{outline:3px solid color-mix(in oklab,var(--brand),white 45%);outline-offset:2px}
+
+    .stats{display:grid;gap:10px}
+    .stat{
+      border:1px solid var(--line);border-radius:12px;padding:12px;
+      background:color-mix(in oklab,var(--bg),transparent 15%);
+    }
+    .stat .n{font:700 clamp(28px,4.6vw,46px)/1 "Noto Serif TC",serif;color:var(--deep)}
+    .stat .t{font-size:14px;color:var(--muted)}
+
+    .section{padding:54px 0}
+    .head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:12px}
+    .head h2{margin:0;font-size:clamp(24px,3.2vw,36px)}
+    .head p{margin:0;color:var(--muted)}
+
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 16px}
+    .tab{border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:transparent;cursor:pointer;font-weight:700;color:var(--text)}
+    .tab.is-active,.tab:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .card{
+      text-decoration:none;color:inherit;position:relative;overflow:hidden;
+      border:1px solid var(--line);border-radius:14px;padding:14px;background:var(--bg2);
+      transition:.2s ease;transform-style:preserve-3d;will-change:transform;
+    }
+    .card-inner{transform:translateZ(18px)}
+    .card::after{
+      content:"";position:absolute;left:-20%;right:-20%;bottom:-70px;height:130px;
+      background:radial-gradient(ellipse at center, color-mix(in oklab,var(--accent),transparent 80%), transparent 70%);
+      opacity:0;transform:translateY(10px);transition:.22s ease;
+    }
+    .card:hover,.card:focus-visible{transform:translateY(-3px);box-shadow:var(--shadow);border-color:color-mix(in oklab,var(--brand),white 55%)}
+    .card:hover::after,.card:focus-visible::after{opacity:1;transform:none}
+    .card h3{margin:3px 0 6px;font-size:22px}
+    .card p{margin:0;color:var(--muted)}
+    .card small{font-weight:700;color:var(--brand)}
+    .card:focus-visible{outline:3px solid color-mix(in oklab,var(--brand),white 45%);outline-offset:2px}
+
+    .accord{display:grid;gap:8px}
+    .acc{
+      border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--bg2);
+    }
+    .acc button{
+      width:100%;text-align:left;padding:12px 14px;border:0;background:transparent;color:var(--text);font-weight:700;cursor:pointer;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    .acc button:hover{background:color-mix(in oklab,var(--brand),transparent 90%)}
+    .acc .panel{max-height:0;overflow:hidden;transition:max-height .25s ease;padding:0 14px}
+    .acc.open .panel{max-height:220px;padding:0 14px 12px}
+    .acc .panel p{margin:0;color:var(--muted)}
+
+    .timeline{
+      border-left:2px solid var(--line);margin-left:8px;padding-left:14px;display:grid;gap:10px;
+    }
+    .tl-item{position:relative}
+    .tl-item::before{
+      content:"";position:absolute;left:-21px;top:5px;width:10px;height:10px;border-radius:50%;
+      background:var(--brand);box-shadow:0 0 0 3px color-mix(in oklab,var(--brand),transparent 80%);
+    }
+    .tl-item h4{margin:0 0 4px}
+    .tl-item p{margin:0;color:var(--muted)}
+
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s cubic-bezier(.22,.61,.36,1),transform .5s cubic-bezier(.22,.61,.36,1)}
+    .reveal.in{opacity:1;transform:none}
+
+    .footer-cta{
+      margin:12px 0 60px;padding:14px;border:1px solid var(--line);border-radius:14px;
+      background:linear-gradient(90deg, color-mix(in oklab,var(--brand),transparent 92%), color-mix(in oklab,var(--accent),transparent 92%));
+      display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+    }
+
+    @media (max-width:960px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:680px){
+      .grid{grid-template-columns:1fr}
+      .hero{padding:72px 0 54px}
+    }
+
+    .reduce-motion *{animation:none!important;transition:none!important}
+    .reduce-motion .reveal{opacity:1;transform:none}
+  </style>
+</head>
+<body class="theme-cinematic">
+  <!--
+  注意：原始 demo 完整 HTML body + script 約 250 行，已省略不寫入存檔
+  關鍵功能：theme switcher (4 chips)、reduce motion toggle、hero spotlight follow、
+  magnetic buttons、tilt cards (perspective)、tabs filter、accordion、
+  IntersectionObserver reveal、count animation、CSS color-mix() theming
+  完整原文見 conversation 紀錄 2026-04-09 13:xx
+  -->
+</body>
+</html>
