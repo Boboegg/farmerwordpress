@@ -1,0 +1,732 @@
+<!-- wp:shortcode -->
+[home_highlight_slider]
+<!-- /wp:shortcode -->
+
+<!-- wp:shortcode -->
+[news_magazine_layout title="最新動態" count="5"]
+<!-- /wp:shortcode -->
+
+<!-- wp:html -->
+<div class="fw-page aud-home home-v2">
+<!-- =====================================================
+     首頁三大核心主題導航 — 視覺爆改版 (2026-04-09)
+     原則：文字一字不改、僅升級視覺、互動、JS、動畫
+     ===================================================== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- 滾動進度條 -->
+<div class="home-progress" id="homeProgress" aria-hidden="true"></div>
+
+<!-- 三大核心主題導航 -->
+<section class="home-topic-section" id="homeTopicSection">
+    <!-- 粒子背景畫布 -->
+    <canvas class="home-particles" id="homeParticles" aria-hidden="true"></canvas>
+
+    <div class="home-topic-inner">
+        <header class="home-topic-header home-reveal">
+            <span class="home-eyebrow">DIGNITY × HEALTH × FARMING</span>
+            <h2><span class="highlight">守護</span> 您的農業生活</h2>
+            <p>從健康到經濟，我們提供全方位的支持</p>
+            <div class="home-topic-divider" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </div>
+        </header>
+
+        <div class="home-topic-grid">
+            <!-- 卡片 1：健康促進 -->
+            <a href="/healthgood" class="home-card home-card-health home-reveal" data-tilt>
+                <div class="home-card-aurora" aria-hidden="true"></div>
+                <div class="home-card-glow" aria-hidden="true"></div>
+                <div class="home-card-body">
+                    <div class="home-card-icon">
+                        <i class="fas fa-heart-pulse" aria-hidden="true"></i>
+                    </div>
+                    <h3>健康促進</h3>
+                    <ul>
+                        <li><span class="home-bullet" aria-hidden="true"></span>熱危害防治</li>
+                        <li><span class="home-bullet" aria-hidden="true"></span>肌肉骨骼保養</li>
+                        <li><span class="home-bullet" aria-hidden="true"></span>農藥安全防護</li>
+                    </ul>
+                </div>
+                <div class="home-card-arrow" aria-hidden="true">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- 卡片 2：職業安全 -->
+            <a href="/occupational-safety/" class="home-card home-card-equip home-reveal" data-tilt>
+                <div class="home-card-aurora" aria-hidden="true"></div>
+                <div class="home-card-glow" aria-hidden="true"></div>
+                <div class="home-card-body">
+                    <div class="home-card-icon">
+                        <i class="fas fa-helmet-safety" aria-hidden="true"></i>
+                    </div>
+                    <h3>職業安全</h3>
+                    <ul>
+                        <li><span class="home-bullet" aria-hidden="true"></span>個人防護具 (PPE)</li>
+                        <li><span class="home-bullet" aria-hidden="true"></span>省力化輔具</li>
+                        <li><span class="home-bullet" aria-hidden="true"></span>智慧穿戴裝置</li>
+                    </ul>
+                </div>
+                <div class="home-card-arrow" aria-hidden="true">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <!-- 卡片 3：經濟保險 -->
+            <a href="/economic-insurance/" class="home-card home-card-insurance home-reveal" data-tilt>
+                <div class="home-card-aurora" aria-hidden="true"></div>
+                <div class="home-card-glow" aria-hidden="true"></div>
+                <div class="home-card-body">
+                    <div class="home-card-icon">
+                        <i class="fas fa-shield-cat" aria-hidden="true"></i>
+                    </div>
+                    <h3>經濟保險</h3>
+                    <ul>
+                        <li><span class="home-bullet" aria-hidden="true"></span>職災保險試算</li>
+                        <li><span class="home-bullet" aria-hidden="true"></span>農作物保險</li>
+                        <li><span class="home-bullet" aria-hidden="true"></span>補助資源懶人包</li>
+                    </ul>
+                </div>
+                <div class="home-card-arrow" aria-hidden="true">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+/* =====================================================
+   首頁三大核心主題導航 — 視覺爆改版 v2 (2026-04-09)
+   - 文字一字不改、只動視覺/互動
+   - 全部用 home- 前綴隔離，不污染其他頁面
+   - 自然有機 mood，符合 Accessible & Ethical 風格
+   - 中高齡友善：18px+ 字級、44px 觸控區、3px focus ring
+   ===================================================== */
+
+/* === 滾動進度條 === */
+.home-v2 .home-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--color-brand) 0%,
+        var(--color-brand-deep) 50%,
+        var(--color-accent) 100%
+    );
+    z-index: 9999;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(92, 134, 7, 0.4);
+}
+
+/* === 主題容器 === */
+.home-v2 .home-topic-section {
+    position: relative;
+    width: 100%;
+    padding: clamp(48px, 8vw, 96px) 0;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            ellipse 1200px 600px at 15% 10%,
+            color-mix(in srgb, var(--color-accent) 18%, transparent),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse 1200px 600px at 85% 60%,
+            color-mix(in srgb, var(--color-brand) 14%, transparent),
+            transparent 55%
+        ),
+        linear-gradient(180deg, #f4f0e6 0%, var(--color-bg) 100%);
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+.home-v2 .home-particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+}
+
+.home-v2 .home-topic-inner {
+    position: relative;
+    z-index: 2;
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+/* === Hero 標題區 === */
+.home-v2 .home-topic-header {
+    text-align: center;
+    margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.home-v2 .home-eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: var(--color-brand);
+    background: color-mix(in srgb, var(--color-bg-elevated) 70%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-brand) 30%, transparent);
+    border-radius: 999px;
+    padding: 8px 18px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(8px);
+    text-transform: uppercase;
+}
+
+.home-v2 .home-topic-header h2 {
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(32px, 5.5vw, 56px);
+    line-height: 1.2;
+    color: var(--color-text);
+    font-weight: 900;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.02em;
+    text-wrap: balance;
+}
+
+.home-v2 .home-topic-header h2 .highlight {
+    color: var(--color-brand-deep);
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.home-v2 .home-topic-header h2 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: -4px;
+    right: -4px;
+    height: 14px;
+    background: linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--color-accent) 60%, transparent),
+        color-mix(in srgb, var(--color-accent) 30%, transparent)
+    );
+    z-index: -1;
+    border-radius: 4px;
+    transform: skew(-6deg);
+}
+
+.home-v2 .home-topic-header p {
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--color-muted);
+    margin: 0 0 20px 0;
+    line-height: 1.7;
+    max-width: 56ch;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+
+.home-v2 .home-topic-divider {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.home-v2 .home-topic-divider span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-brand);
+    opacity: 0.6;
+    animation: home-pulse 2.4s ease-in-out infinite;
+}
+
+.home-v2 .home-topic-divider span:nth-child(2) {
+    background: var(--color-accent);
+    animation-delay: 0.3s;
+}
+
+.home-v2 .home-topic-divider span:nth-child(3) {
+    background: var(--color-brand-deep);
+    animation-delay: 0.6s;
+}
+
+@keyframes home-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.4); opacity: 1; }
+}
+
+/* === 卡片網格 === */
+.home-v2 .home-topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(20px, 2.5vw, 28px);
+}
+
+/* === 卡片本體 === */
+.home-v2 .home-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    padding: 32px 28px 24px;
+    background: var(--color-bg-elevated);
+    border: 1px solid color-mix(in srgb, var(--color-line) 70%, transparent);
+    border-radius: 22px;
+    text-decoration: none;
+    color: var(--color-text);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transform: perspective(1100px) rotateX(0deg) rotateY(0deg);
+    transition:
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.3s ease;
+    box-shadow:
+        0 4px 14px rgba(31, 26, 20, 0.04),
+        0 12px 32px rgba(31, 26, 20, 0.06);
+    will-change: transform;
+}
+
+.home-v2 .home-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--card-accent, var(--color-brand)) 0%,
+        var(--card-accent-2, var(--color-brand-deep)) 100%
+    );
+    transform-origin: left center;
+    transition: transform 0.4s ease;
+    z-index: 2;
+}
+
+.home-v2 .home-card-aurora {
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(
+        circle at 50% 0%,
+        color-mix(in srgb, var(--card-accent, var(--color-brand)) 18%, transparent),
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.home-v2 .home-card-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        color-mix(in srgb, var(--card-accent, var(--color-brand)) 22%, transparent),
+        transparent 70%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    left: var(--mx, 50%);
+    top: var(--my, 50%);
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    filter: blur(20px);
+}
+
+.home-v2 .home-card-body {
+    position: relative;
+    z-index: 3;
+    transform: translateZ(30px);
+}
+
+.home-v2 .home-card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--card-accent, var(--color-brand)) 12%, var(--color-bg-elevated));
+    border: 1px solid color-mix(in srgb, var(--card-accent, var(--color-brand)) 25%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--card-accent, var(--color-brand));
+    margin-bottom: 22px;
+    transition:
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background 0.3s ease;
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--card-accent, var(--color-brand)) 15%, transparent);
+}
+
+.home-v2 .home-card h3 {
+    font-family: "Noto Serif TC", serif;
+    font-size: clamp(22px, 2.4vw, 26px);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0 0 18px 0;
+    letter-spacing: 0.02em;
+}
+
+.home-v2 .home-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 11px;
+}
+
+.home-v2 .home-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    color: var(--color-muted);
+    font-weight: 500;
+    line-height: 1.5;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.home-v2 .home-bullet {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--card-accent, var(--color-brand));
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--card-accent, var(--color-brand)) 18%, transparent);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-v2 .home-card-arrow {
+    position: relative;
+    z-index: 3;
+    margin-top: 24px;
+    align-self: flex-end;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--color-line) 30%, var(--color-bg-elevated));
+    color: var(--color-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* === 卡片配色變數（每張卡不同強調色）=== */
+.home-v2 .home-card-health {
+    --card-accent: var(--color-warn);
+    --card-accent-2: #b03a1c;
+}
+
+.home-v2 .home-card-equip {
+    --card-accent: var(--color-accent);
+    --card-accent-2: #a8740b;
+}
+
+.home-v2 .home-card-insurance {
+    --card-accent: var(--color-brand);
+    --card-accent-2: var(--color-brand-deep);
+}
+
+/* === 卡片 hover 互動 === */
+.home-v2 .home-card:hover,
+.home-v2 .home-card:focus-visible {
+    border-color: color-mix(in srgb, var(--card-accent, var(--color-brand)) 50%, transparent);
+    box-shadow:
+        0 12px 28px rgba(31, 26, 20, 0.08),
+        0 28px 60px color-mix(in srgb, var(--card-accent, var(--color-brand)) 14%, transparent);
+}
+
+.home-v2 .home-card:hover::before,
+.home-v2 .home-card:focus-visible::before {
+    transform: scaleX(1.02) scaleY(1.4);
+}
+
+.home-v2 .home-card:hover .home-card-aurora,
+.home-v2 .home-card:focus-visible .home-card-aurora {
+    opacity: 1;
+}
+
+.home-v2 .home-card:hover .home-card-glow {
+    opacity: 1;
+}
+
+.home-v2 .home-card:hover .home-card-icon,
+.home-v2 .home-card:focus-visible .home-card-icon {
+    transform: rotate(-6deg) scale(1.08);
+    background: color-mix(in srgb, var(--card-accent, var(--color-brand)) 20%, var(--color-bg-elevated));
+}
+
+.home-v2 .home-card:hover ul li,
+.home-v2 .home-card:focus-visible ul li {
+    color: var(--color-text);
+}
+
+.home-v2 .home-card:hover .home-bullet,
+.home-v2 .home-card:focus-visible .home-bullet {
+    transform: scale(1.3);
+    box-shadow: 0 0 0 5px color-mix(in srgb, var(--card-accent, var(--color-brand)) 22%, transparent);
+}
+
+.home-v2 .home-card:hover .home-card-arrow,
+.home-v2 .home-card:focus-visible .home-card-arrow {
+    background: var(--card-accent, var(--color-brand));
+    color: var(--color-bg-elevated);
+    transform: translateX(8px) rotate(-12deg);
+}
+
+/* === Focus 可訪問性 === */
+.home-v2 .home-card:focus-visible {
+    outline: 3px solid color-mix(in srgb, var(--card-accent, var(--color-brand)) 65%, transparent);
+    outline-offset: 4px;
+}
+
+/* === Scroll reveal === */
+.home-v2 .home-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-v2 .home-reveal.is-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-v2 .home-topic-grid .home-reveal:nth-child(1) { transition-delay: 0.05s; }
+.home-v2 .home-topic-grid .home-reveal:nth-child(2) { transition-delay: 0.18s; }
+.home-v2 .home-topic-grid .home-reveal:nth-child(3) { transition-delay: 0.32s; }
+
+/* === 響應式 === */
+@media (max-width: 960px) {
+    .home-v2 .home-topic-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .home-v2 .home-topic-grid .home-card-insurance {
+        grid-column: 1 / -1;
+        max-width: 540px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 680px) {
+    .home-v2 .home-topic-grid {
+        grid-template-columns: 1fr;
+    }
+    .home-v2 .home-topic-grid .home-card-insurance {
+        grid-column: auto;
+        max-width: none;
+    }
+    .home-v2 .home-card {
+        min-height: auto;
+        padding: 28px 24px 20px;
+    }
+    .home-v2 .home-topic-section {
+        padding: 56px 0;
+    }
+}
+
+/* === Reduced motion fallback === */
+@media (prefers-reduced-motion: reduce) {
+    .home-v2 .home-progress { display: none; }
+    .home-v2 .home-particles { display: none; }
+    .home-v2 .home-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .home-v2 .home-card {
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        transform: none !important;
+    }
+    .home-v2 .home-card:hover .home-card-icon,
+    .home-v2 .home-card:hover .home-card-arrow {
+        transform: none;
+    }
+    .home-v2 .home-topic-divider span {
+        animation: none;
+    }
+}
+</style>
+
+<script>
+(function () {
+    'use strict';
+
+    const root = document.querySelector('.home-v2');
+    if (!root) return;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* === 1. 滾動進度條 === */
+    const progress = root.querySelector('#homeProgress');
+    if (progress && !reduced) {
+        const updateProgress = () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+            const pct = docHeight > 0 ? Math.min(100, (scrolled / docHeight) * 100) : 0;
+            progress.style.width = pct + '%';
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+        updateProgress();
+    }
+
+    /* === 2. 粒子網路背景 === */
+    const canvas = root.querySelector('#homeParticles');
+    if (canvas && !reduced) {
+        const ctx = canvas.getContext('2d');
+        const section = root.querySelector('#homeTopicSection');
+        let particles = [];
+        let rafId = null;
+
+        const PARTICLE_COUNT = 36;
+        const LINK_DIST = 140;
+        const COLORS = [
+            'rgba(92, 134, 7, 0.55)',   // brand
+            'rgba(212, 160, 23, 0.55)', // accent
+            'rgba(61, 90, 44, 0.45)'    // brand-deep
+        ];
+
+        function resize() {
+            const rect = section.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+        }
+
+        class Particle {
+            constructor() {
+                this.reset();
+                this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+                this.radius = Math.random() * 2 + 1.4;
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.32;
+                this.vy = (Math.random() - 0.5) * 0.32;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            resize();
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            // 連線（網路效果）
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < LINK_DIST) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = 'rgba(92, 134, 7,' + (0.16 - dist / LINK_DIST * 0.16).toFixed(3) + ')';
+                        ctx.lineWidth = 0.7;
+                        ctx.stroke();
+                    }
+                }
+            }
+            rafId = requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(init, 200);
+        });
+    }
+
+    /* === 3. 卡片 3D tilt + glow 跟隨滑鼠 === */
+    const tiltCards = root.querySelectorAll('[data-tilt]');
+    if (!reduced && tiltCards.length) {
+        tiltCards.forEach((card) => {
+            let rect = null;
+            const enter = () => { rect = card.getBoundingClientRect(); };
+            const move = (e) => {
+                if (!rect) rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const cx = rect.width / 2;
+                const cy = rect.height / 2;
+                const rx = ((y - cy) / cy) * -5;
+                const ry = ((x - cx) / cx) * 6;
+                card.style.transform = `perspective(1100px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-6px)`;
+                card.style.setProperty('--mx', x + 'px');
+                card.style.setProperty('--my', y + 'px');
+            };
+            const leave = () => {
+                rect = null;
+                card.style.transform = '';
+            };
+            card.addEventListener('pointerenter', enter);
+            card.addEventListener('pointermove', move);
+            card.addEventListener('pointerleave', leave);
+        });
+    }
+
+    /* === 4. Scroll reveal (IntersectionObserver) === */
+    const revealEls = root.querySelectorAll('.home-reveal');
+    if (revealEls.length && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach((el) => io.observe(el));
+    } else {
+        revealEls.forEach((el) => el.classList.add('is-in'));
+    }
+})();
+</script>
+</div>
+<!-- /wp:html -->
+
+<!-- wp:shortcode -->
+[knowledge_podcast_grid title="影音專區" count="6"]
+<!-- /wp:shortcode -->
