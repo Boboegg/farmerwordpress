@@ -3,7 +3,7 @@
      URL：/economic-insurance/crop-insurance/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：crop-
-     主色系：#1565c0（藍色系，與 /economic-insurance/ 一致）
+     主色系：var(--color-info)（藍色系，與 /economic-insurance/ 一致）
      ===================================================== -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
   <div class="crop-hero-visual">
     <div class="crop-hero-stats">
       <div class="crop-stat-item">
-        <div class="crop-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;"><i class="fas fa-leaf"></i></div>
+        <div class="crop-stat-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);"><i class="fas fa-leaf"></i></div>
         <div class="crop-stat-text">
           <span class="crop-stat-number">28 品項</span>
           <span class="crop-stat-label">已開辦保險品項數</span>
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="crop-stat-item">
-        <div class="crop-stat-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;"><i class="fas fa-percent"></i></div>
+        <div class="crop-stat-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);"><i class="fas fa-percent"></i></div>
         <div class="crop-stat-text">
           <span class="crop-stat-number">50% 補助</span>
           <span class="crop-stat-label">中央政府保費補助比例</span>
@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="crop-stat-item">
-        <div class="crop-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-file-contract"></i></div>
+        <div class="crop-stat-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);"><i class="fas fa-file-contract"></i></div>
         <div class="crop-stat-text">
           <span class="crop-stat-number">44 張保單</span>
           <span class="crop-stat-label">各品項各式保單組合</span>
@@ -107,7 +107,7 @@
           <div class="crop-type-pros"><i class="fas fa-circle-check"></i> 理賠最快（約 15 天撥款）、免現場查勘</div>
         </div>
         <div class="crop-type-card">
-          <div class="crop-type-head"><div class="crop-type-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;"><i class="fas fa-chart-line"></i></div><h3>收入保障型</h3></div>
+          <div class="crop-type-head"><div class="crop-type-icon" style="background:rgba(245,158,11,.1);color:var(--color-accent);"><i class="fas fa-chart-line"></i></div><h3>收入保障型</h3></div>
           <p class="crop-type-how"><strong>理賠方式：</strong>當農民實際收入低於保障水準時，理賠差額。保障「收入」而非只保障「產量」。</p>
           <div class="crop-type-crops"><span class="crop-type-label">適用品項</span><div class="crop-type-tags"><span>水稻</span><span>釋迦</span><span>香蕉</span><span>高粱</span></div></div>
           <div class="crop-type-pros"><i class="fas fa-circle-check"></i> 價格下跌也能理賠，最全面的收入保障</div>
@@ -220,9 +220,9 @@
             <div class="crop-bar-segment crop-bar-farmer" style="width:25%;"><span>農民自付</span></div>
           </div>
           <div class="crop-bar-legend">
-            <span><i class="fas fa-square" style="color:#1565c0;"></i> 中央政府（50%，全國統一）</span>
+            <span><i class="fas fa-square" style="color:var(--color-info);"></i> 中央政府（50%，全國統一）</span>
             <span><i class="fas fa-square" style="color:#7c3aed;"></i> 地方政府（10%–40%，各縣市不同）</span>
-            <span><i class="fas fa-square" style="color:#f59e0b;"></i> 農民自付（最低 10%）</span>
+            <span><i class="fas fa-square" style="color:var(--color-accent);"></i> 農民自付（最低 10%）</span>
           </div>
         </div>
       </div>
@@ -288,7 +288,7 @@
     <div class="crop-sec-body">
       <div class="crop-case-grid">
         <div class="crop-case-card">
-          <div class="crop-case-header" style="background:linear-gradient(135deg,#e8f5e9,#fff);"><i class="fas fa-seedling" style="color:#2e7d32;"></i><h3>水稻收入保險</h3></div>
+          <div class="crop-case-header" style="background:linear-gradient(135deg,#e8f5e9,#fff);"><i class="fas fa-seedling" style="color:var(--color-brand);"></i><h3>水稻收入保險</h3></div>
           <div class="crop-case-body">
             <div class="crop-case-row"><span class="crop-case-label">年度</span><span>111 年（2022）</span></div>
             <div class="crop-case-row"><span class="crop-case-label">理賠金額</span><span><strong>4.3 億元</strong></span></div>
@@ -308,7 +308,7 @@
           </div>
         </div>
         <div class="crop-case-card">
-          <div class="crop-case-header" style="background:linear-gradient(135deg,#e3f2fd,#fff);"><i class="fas fa-wind" style="color:#1565c0;"></i><h3>釋迦收入保險</h3></div>
+          <div class="crop-case-header" style="background:linear-gradient(135deg,#e3f2fd,#fff);"><i class="fas fa-wind" style="color:var(--color-info);"></i><h3>釋迦收入保險</h3></div>
           <div class="crop-case-body">
             <div class="crop-case-row"><span class="crop-case-label">年度</span><span>110–111 年（2021–2022）</span></div>
             <div class="crop-case-row"><span class="crop-case-label">累計理賠</span><span>超過 <strong>6 億元</strong></span></div>
@@ -388,7 +388,7 @@
 
 <!-- ========== CSS ========== -->
 <style>
-.crop-hero,.crop-sections,.crop-sec-disclaimer{--brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;--brand-legacy-hover:#0b4a8a;--accent:#f59e0b;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;}
+.crop-hero,.crop-sections,.crop-sec-disclaimer{--brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;--brand-legacy-hover:#0b4a8a;--accent:var(--color-accent);--text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;}
 .crop-hero *,.crop-sections *,.crop-sec-disclaimer *{box-sizing:border-box;}
 .crop-hero{display:flex;gap:40px;align-items:flex-start;padding:40px;background:linear-gradient(135deg,var(--brand-legacy-light) 0%,#fff 60%,#e8eaf6 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(21,101,192,.1);}
 .crop-hero-content{flex:1.2;}.crop-hero-visual{flex:.8;position:sticky;top:20px;}
@@ -409,7 +409,7 @@
 .crop-stat-number{font-size:1.4rem;font-weight:900;display:block;line-height:1;}
 .crop-stat-label{font-size:.85rem;color:var(--text-secondary);}.crop-stat-source{font-size:.72rem;color:#aaa;font-style:italic;display:block;margin-top:3px;}
 .crop-sections{margin-top:24px;}
-.crop-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
+.crop-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid var(--color-line);}
 .crop-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-legacy-light);}
 .crop-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-legacy-light);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
 .crop-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 4px;}
@@ -421,9 +421,9 @@
 .crop-compare-table th.crop-highlight-col{background:var(--brand-legacy-light);color:var(--brand-legacy-dark);}
 .crop-compare-table td.crop-highlight-col{background:rgba(21,101,192,.03);}
 .crop-row-key td{background:#fffbeb;}
-.crop-note-box{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:#fffbeb;border-radius:10px;font-size:.9rem;line-height:1.6;border:1px solid #fde68a;}.crop-note-box i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
+.crop-note-box{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:#fffbeb;border-radius:10px;font-size:.9rem;line-height:1.6;border:1px solid #fde68a;}.crop-note-box i{color:var(--color-accent);margin-top:3px;flex-shrink:0;}
 .crop-type-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-.crop-type-card{background:#f8fafc;border-radius:14px;padding:24px;border:1px solid #e2e8f0;position:relative;transition:all .3s;}
+.crop-type-card{background:var(--color-bg-elevated);border-radius:14px;padding:24px;border:1px solid var(--color-line);position:relative;transition:all .3s;}
 .crop-type-card:hover{box-shadow:0 8px 24px rgba(0,0,0,.08);transform:translateY(-3px);}
 .crop-type-highlight{border-color:var(--brand-legacy);border-width:2px;grid-column:1/-1;}
 .crop-type-tag{position:absolute;top:12px;right:12px;background:var(--brand-legacy);color:#fff;padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;}
@@ -432,7 +432,7 @@
 .crop-type-card h3{font-size:1.1rem;font-weight:800;margin:0;color:var(--brand-legacy-dark);}
 .crop-type-how{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0 0 12px;}
 .crop-type-crops{margin-bottom:12px;}.crop-type-label{font-size:.8rem;font-weight:700;color:var(--brand-legacy);display:block;margin-bottom:6px;}
-.crop-type-tags{display:flex;flex-wrap:wrap;gap:6px;}.crop-type-tags span{font-size:.8rem;padding:3px 10px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;color:var(--text-primary);}
+.crop-type-tags{display:flex;flex-wrap:wrap;gap:6px;}.crop-type-tags span{font-size:.8rem;padding:3px 10px;background:#fff;border:1px solid var(--color-line);border-radius:16px;color:var(--text-primary);}
 .crop-type-pros{font-size:.88rem;color:#15803d;display:flex;align-items:center;gap:6px;font-weight:600;}.crop-type-pros i{flex-shrink:0;}
 .crop-sub-title{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .crop-item-table{width:100%;border-collapse:collapse;font-size:.9rem;}
@@ -440,26 +440,26 @@
 .crop-item-table th{background:#f8f9fa;font-weight:700;font-size:.82rem;color:var(--text-secondary);}
 .crop-item-table td:first-child{text-align:left;font-weight:500;}
 .crop-check{color:#15803d;font-size:.9rem;}
-.crop-local-tag{font-size:.7rem;background:#e8f5e9;color:#2e7d32;padding:2px 8px;border-radius:10px;font-weight:700;margin-left:4px;}
+.crop-local-tag{font-size:.7rem;background:#e8f5e9;color:var(--color-brand);padding:2px 8px;border-radius:10px;font-weight:700;margin-left:4px;}
 .crop-subsidy-visual{margin-bottom:28px;}.crop-subsidy-bar-wrap{margin-bottom:16px;}
 .crop-subsidy-bar{display:flex;height:48px;border-radius:12px;overflow:hidden;box-shadow:var(--shadow);}
 .crop-bar-segment{display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;color:#fff;}
 .crop-bar-central{background:var(--brand-legacy);}.crop-bar-local{background:#7c3aed;}.crop-bar-farmer{background:var(--accent);}
 .crop-bar-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px;font-size:.82rem;color:var(--text-secondary);}.crop-bar-legend span{display:flex;align-items:center;gap:4px;}
 .crop-local-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
-.crop-local-card{background:#f8fafc;border-radius:12px;padding:20px;text-align:center;border:1px solid #e2e8f0;}
+.crop-local-card{background:var(--color-bg-elevated);border-radius:12px;padding:20px;text-align:center;border:1px solid var(--color-line);}
 .crop-local-top{border-color:var(--brand-legacy);background:var(--brand-legacy-light);}
 .crop-local-pct{font-size:1.8rem;font-weight:900;color:var(--brand-legacy);}
 .crop-local-name{font-size:.95rem;font-weight:700;margin:4px 0;color:var(--text-primary);}.crop-local-result{font-size:.85rem;color:var(--text-secondary);}
 .crop-step-flow{display:flex;flex-direction:column;align-items:center;gap:0;}
-.crop-step{display:flex;align-items:flex-start;gap:16px;width:100%;padding:16px 20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;}
+.crop-step{display:flex;align-items:flex-start;gap:16px;width:100%;padding:16px 20px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);}
 .crop-step-wide{max-width:100%;}
 .crop-step-num{width:32px;height:32px;background:var(--brand-legacy);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0;}
 .crop-step-content{font-size:.95rem;line-height:1.6;}
 .crop-step-sub{margin-top:8px;font-size:.88rem;color:var(--text-secondary);line-height:1.7;}.crop-step-sub i{color:var(--brand-legacy);margin-right:4px;}
 .crop-step-arrow{color:#bbb;font-size:.8rem;padding:4px 0;}
 .crop-case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.crop-case-card{border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;transition:all .3s;}
+.crop-case-card{border-radius:14px;overflow:hidden;border:1px solid var(--color-line);transition:all .3s;}
 .crop-case-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
 .crop-case-header{padding:16px 20px;display:flex;align-items:center;gap:10px;}.crop-case-header i{font-size:24px;}
 .crop-case-header h3{font-size:1.05rem;font-weight:800;margin:0;color:var(--brand-legacy-dark);}
@@ -468,15 +468,15 @@
 .crop-case-label{font-weight:700;color:var(--brand-legacy);min-width:80px;flex-shrink:0;}
 .crop-case-note{margin-top:12px;font-size:.85rem;color:var(--text-secondary);line-height:1.6;padding-top:10px;border-top:1px solid #eee;}
 .crop-faq-list{display:flex;flex-direction:column;gap:8px;}
-.crop-faq-item{border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;transition:border-color .3s;}
+.crop-faq-item{border:1px solid var(--color-line);border-radius:12px;overflow:hidden;transition:border-color .3s;}
 .crop-faq-item.is-open{border-color:var(--brand-legacy);}
-.crop-faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:#f8fafc;border:none;cursor:pointer;font-size:.95rem;font-weight:700;color:var(--brand-legacy-dark);text-align:left;transition:all .3s;font-family:inherit;}
+.crop-faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--color-bg-elevated);border:none;cursor:pointer;font-size:.95rem;font-weight:700;color:var(--brand-legacy-dark);text-align:left;transition:all .3s;font-family:inherit;}
 .crop-faq-q:hover{background:var(--brand-legacy-light);}
 .crop-faq-q i{transition:transform .3s;color:var(--brand-legacy);}.crop-faq-item.is-open .crop-faq-q i{transform:rotate(180deg);}
 .crop-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;}.crop-faq-item.is-open .crop-faq-a{max-height:400px;padding:16px 20px;}
 .crop-faq-a p{font-size:.93rem;line-height:1.7;margin:0 0 8px;}
 .crop-tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.crop-tool-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 24px;background:#f8fafc;border-radius:14px;border:2px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.crop-tool-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 24px;background:var(--color-bg-elevated);border-radius:14px;border:2px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
 .crop-tool-card:hover{border-color:var(--brand-legacy);transform:translateY(-5px);box-shadow:0 12px 28px rgba(21,101,192,.12);}
 .crop-tool-icon{width:64px;height:64px;border-radius:50%;background:var(--brand-legacy-light);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px;}
 .crop-tool-card h3{font-size:1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 8px;line-height:1.4;}
@@ -488,7 +488,7 @@
 .crop-disclaimer-box p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
 .crop-contact-grid{margin-bottom:28px;}.crop-contact-grid h3{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .crop-contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.crop-contact-item{display:flex;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;font-size:.9rem;}
+.crop-contact-item{display:flex;gap:14px;padding:18px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);font-size:.9rem;}
 .crop-contact-icon{width:40px;height:40px;border-radius:10px;background:var(--brand-legacy-light);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
 .crop-contact-item strong{display:block;margin-bottom:4px;color:var(--brand-legacy-dark);font-size:.9rem;}
 .crop-contact-item span{font-size:.85rem;color:var(--text-secondary);}.crop-contact-use{font-size:.78rem;color:#aaa;margin:4px 0 0;}
@@ -496,7 +496,7 @@
 .crop-references ol{padding-left:20px;margin:0;}.crop-references li{font-size:.85rem;line-height:1.7;color:var(--text-secondary);margin-bottom:6px;}.crop-references a{color:var(--brand-legacy);word-break:break-all;}
 .crop-cross-links h3{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .crop-cross-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.crop-cross-card{display:flex;align-items:center;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.crop-cross-card{display:flex;align-items:center;gap:14px;padding:18px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
 .crop-cross-card:hover{border-color:var(--brand-legacy);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
 .crop-cross-card i{font-size:24px;color:var(--brand-legacy);}.crop-cross-card span{font-weight:700;font-size:.95rem;display:block;}
 .crop-cross-card small{font-size:.8rem;color:var(--text-secondary);display:block;margin-top:2px;}

@@ -18,8 +18,8 @@
       <p>2022 年農業致死率為每 10 萬 FTE 18.6 人，是全產業平均 3.7 的 <strong>5 倍</strong>。交通運輸事故為首要死因。</p>
       <span class="prevS-stat-source">CDC/NIOSH (2024). Agriculture Worker Safety and Health.</span>
     </div>
-    <div class="prevS-stat-card" style="border-top:4px solid #f59e0b;">
-      <div class="prevS-stat-num" style="color:#f59e0b;">8.79<small>億人</small></div>
+    <div class="prevS-stat-card" style="border-top:4px solid var(--color-accent);">
+      <div class="prevS-stat-num" style="color:var(--color-accent);">8.79<small>億人</small></div>
       <h4>全球農業就業人口</h4>
       <p>2023 年全球約 8.79 億人從事農業，占就業人口 28%。亞太地區最多（5.51 億），農業工作者普遍面臨缺乏勞動與社會保護的困境。</p>
       <span class="prevS-stat-source">ILO (2023). Employment in Agriculture Sector.</span>
@@ -81,7 +81,7 @@
     </a>
 
     <a href="/occupational-safety/greenhouse-zone/" class="prevS-subpage-card">
-      <div class="prevS-subpage-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+      <div class="prevS-subpage-icon" style="background:rgba(245,158,11,.1);color:var(--color-accent);">
         <i class="fas fa-warehouse"></i>
       </div>
       <h3>溫室作業安全</h3>
@@ -136,7 +136,7 @@
 <style>
 /* === 07-subpages-refs 專用樣式（prevS 前綴） === */
 .prevS-subpage-section,.prevS-articles-section,.prevS-references{
-  --brand-legacy:#5C8607;--brand-legacy-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:var(--color-brand-deep);--text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .prevS-subpage-section *,.prevS-references *{box-sizing:border-box;}
@@ -168,10 +168,10 @@
 .prevS-stat-num small{font-size:.5em;font-weight:700;opacity:.7;}
 .prevS-stat-card h4{font-size:1.05rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 8px;}
 .prevS-stat-card p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 10px;}
-.prevS-stat-source{font-size:.78rem;color:#9ca3af;font-style:italic;display:block;}
+.prevS-stat-source{font-size:.78rem;color:var(--color-muted);font-style:italic;display:block;}
 
 /* References */
-.prevS-references{margin:40px 0 0;background:#f9fafb;border-radius:var(--radius);padding:30px;border:1px solid #eee;}
+.prevS-references{margin:40px 0 0;background:var(--color-bg-elevated);border-radius:var(--radius);padding:30px;border:1px solid #eee;}
 .prevS-ref-list{display:flex;flex-direction:column;gap:10px;}
 .prevS-ref-item{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;padding-left:24px;text-indent:-24px;}
 .prevS-ref-item a{color:var(--brand-legacy);word-break:break-all;}

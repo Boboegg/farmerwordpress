@@ -14,7 +14,7 @@
 
     <!-- 欄 1：農職保 -->
     <div class="hpR-col-card">
-      <div class="hpR-col-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+      <div class="hpR-col-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
         <i class="fas fa-shield-halved"></i>
       </div>
       <h3>農民職業災害保險</h3>
@@ -67,7 +67,7 @@
 
     <!-- 欄 2：就醫資源 -->
     <div class="hpR-col-card">
-      <div class="hpR-col-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
+      <div class="hpR-col-icon" style="background:rgba(21,101,192,.1);color:var(--color-info);">
         <i class="fas fa-hospital"></i>
       </div>
       <h3>雲嘉地區就醫資源</h3>
@@ -119,7 +119,7 @@
 
     <!-- 欄 3：緊急聯絡 -->
     <div class="hpR-col-card">
-      <div class="hpR-col-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
+      <div class="hpR-col-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
         <i class="fas fa-phone-flip"></i>
       </div>
       <h3>緊急聯絡資訊</h3>
@@ -165,8 +165,8 @@
 <style>
 /* === 06-resources 專用樣式（hpR 前綴） === */
 .hpR-resource-section{
-  --brand-legacy:#2e7d32;--brand-legacy-dark:#1a3a1a;
-  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:#1a3a1a;
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
@@ -185,7 +185,7 @@
 
 /* Insurance info */
 .hpR-info-list{display:flex;flex-direction:column;gap:0;}
-.hpR-info-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #f5f5f5;}
+.hpR-info-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--color-bg-elevated);}
 .hpR-info-row:last-child{border-bottom:none;}
 .hpR-info-label{flex-shrink:0;width:80px;font-size:.82rem;font-weight:700;color:var(--brand-legacy);padding-top:2px;}
 .hpR-info-value{font-size:.88rem;line-height:1.6;color:var(--text-primary);}
@@ -196,7 +196,7 @@
 
 /* Disclaimer */
 .hpR-disclaimer{display:flex;gap:10px;padding:14px 16px;background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-radius:10px;margin-top:14px;}
-.hpR-disclaimer i{color:#f59e0b;margin-top:2px;flex-shrink:0;font-size:14px;}
+.hpR-disclaimer i{color:var(--color-accent);margin-top:2px;flex-shrink:0;font-size:14px;}
 .hpR-disclaimer strong{display:block;font-size:.82rem;color:#e65100;margin-bottom:2px;}
 .hpR-disclaimer p{font-size:.78rem;line-height:1.5;color:var(--text-secondary);margin:0 0 4px;}
 .hpR-disclaimer p:last-child{margin-bottom:0;}
@@ -206,21 +206,21 @@
 
 /* Hospital list */
 .hpR-hospital-list{display:flex;flex-direction:column;gap:12px;}
-.hpR-hospital{padding:12px 0;border-bottom:1px solid #f5f5f5;}
+.hpR-hospital{padding:12px 0;border-bottom:1px solid var(--color-bg-elevated);}
 .hpR-hospital:last-child{border-bottom:none;}
 .hpR-hospital h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:#222;}
 .hpR-hospital-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.hpR-htag{padding:3px 10px;background:#f0f7ff;color:#1565c0;border-radius:6px;font-size:.75rem;font-weight:600;}
+.hpR-htag{padding:3px 10px;background:#f0f7ff;color:var(--color-info);border-radius:6px;font-size:.75rem;font-weight:600;}
 .hpR-hospital-note{font-size:.8rem;color:var(--text-secondary);margin:6px 0 0;font-style:italic;}
 
 /* Phone list */
 .hpR-phone-list{display:flex;flex-direction:column;gap:8px;}
-.hpR-phone-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:#f9fafb;text-decoration:none;color:inherit;transition:all .2s;border:1px solid transparent;}
-.hpR-phone-item:hover{background:#f0f0f0;border-color:#ddd;}
+.hpR-phone-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:var(--color-bg-elevated);text-decoration:none;color:inherit;transition:all .2s;border:1px solid transparent;}
+.hpR-phone-item:hover{background:var(--color-bg-elevated);border-color:#ddd;}
 .hpR-phone-number{font-size:1.05rem;font-weight:800;color:var(--text-primary);white-space:nowrap;min-width:120px;}
 .hpR-phone-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.4;}
-.hpR-phone-emergency .hpR-phone-number{color:#c62828;}
-.hpR-phone-mental .hpR-phone-number{color:#2e7d32;}
+.hpR-phone-emergency .hpR-phone-number{color:var(--color-warn);}
+.hpR-phone-mental .hpR-phone-number{color:var(--color-brand);}
 .hpR-phone-poison .hpR-phone-number{color:#7b1fa2;}
 
 .hpR-local-contacts{margin-top:16px;padding:14px;background:rgba(46,125,50,.04);border-radius:10px;}

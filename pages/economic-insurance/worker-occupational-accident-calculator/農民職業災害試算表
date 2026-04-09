@@ -58,7 +58,7 @@
   #disease-section {
     border-radius: 16px;
     padding: 16px 18px;
-    background: #f9fafb;
+    background: var(--color-bg-elevated);
     border: 1px solid #e5e7eb;
     margin-top: 10px;               /* 和上面的 Tab 拉開一點 */
   }

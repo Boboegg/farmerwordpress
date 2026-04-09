@@ -16,71 +16,71 @@
 
   <!-- Tab 按鈕（四個） -->
   <div class="hp-tab-btns">
-    <button class="hp-tab-btn is-active" data-tab="hp-tab-heat" style="--tab-color:#c62828;">
+    <button class="hp-tab-btn is-active" data-tab="hp-tab-heat" style="--tab-color:var(--color-warn);">
       <i class="fas fa-temperature-arrow-up"></i><span>熱危害預防</span>
     </button>
     <button class="hp-tab-btn" data-tab="hp-tab-pesticide" style="--tab-color:#7b1fa2;">
       <i class="fas fa-flask-vial"></i><span>農藥安全</span>
     </button>
-    <button class="hp-tab-btn" data-tab="hp-tab-msd" style="--tab-color:#1565c0;">
+    <button class="hp-tab-btn" data-tab="hp-tab-msd" style="--tab-color:var(--color-info);">
       <i class="fas fa-bone"></i><span>骨骼肌肉</span>
     </button>
-    <button class="hp-tab-btn" data-tab="hp-tab-mental" style="--tab-color:#2e7d32;">
+    <button class="hp-tab-btn" data-tab="hp-tab-mental" style="--tab-color:var(--color-brand);">
       <i class="fas fa-brain"></i><span>心靈紓壓</span>
     </button>
   </div>
 
   <!-- ===== Tab 1：熱危害預防 ===== -->
   <div class="hp-tab-panel is-active" id="hp-tab-heat">
-    <div class="hp-tab-intro" style="border-left:4px solid #c62828;">
+    <div class="hp-tab-intro" style="border-left:4px solid var(--color-warn);">
       <div class="hp-tab-intro-text">
         <p>
           雲嘉地區夏季高溫經常超過 35°C，溫室內部更可能突破 40°C。農民長時間在烈日下作業，是熱中暑和熱衰竭的高風險族群。更值得注意的是，長期熱暴露與慢性腎臟病風險顯著相關——中暑患者日後罹患慢性腎臟病的風險為一般人的 4.3 倍（Tseng et al., 2020）。
         </p>
       </div>
-      <a href="/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/" class="hp-tab-link" style="color:#c62828;border-color:#c62828;">
+      <a href="/healthgood/%e7%86%b1%e5%8d%b1%e5%ae%b3%e9%a0%90%e9%98%b2/" class="hp-tab-link" style="color:var(--color-warn);border-color:var(--color-warn);">
         查看完整指南 <i class="fas fa-arrow-right"></i>
       </a>
     </div>
 
     <div class="hp-icon-grid">
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
           <i class="fas fa-head-side-virus"></i>
         </div>
         <h4>熱中暑 vs 熱衰竭</h4>
         <p>體溫 ≥40°C 且意識改變 = 中暑，是急診狀況，死亡率超過 30%</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
           <i class="fas fa-droplet"></i>
         </div>
         <h4>喝水規則</h4>
         <p>每 15-20 分鐘喝 150-200 mL，不要等到渴了才喝</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
           <i class="fas fa-clock"></i>
         </div>
         <h4>避開高溫時段</h4>
         <p>建議：清晨 5:00-10:00 作業 → 中午休息 → 下午 15:00-18:00 作業</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
           <i class="fas fa-heart-pulse"></i>
         </div>
         <h4>心跳監測法</h4>
         <p>心跳超過（180 − 年齡）就要立刻休息。65 歲農友 → 超過 115 下就要停</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
           <i class="fas fa-disease"></i>
         </div>
         <h4>熱與腎臟的關係</h4>
         <p>長期熱暴露會傷腎，中暑患者日後的慢性腎臟病風險比一般人高出數倍</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:#c62828;">
+        <div class="hp-icon-circle" style="background:rgba(198,40,40,.1);color:var(--color-warn);">
           <i class="fas fa-kit-medical"></i>
         </div>
         <h4>中暑急救</h4>
@@ -150,55 +150,55 @@
 
   <!-- ===== Tab 3：骨骼肌肉保健 ===== -->
   <div class="hp-tab-panel" id="hp-tab-msd">
-    <div class="hp-tab-intro" style="border-left:4px solid #1565c0;">
+    <div class="hp-tab-intro" style="border-left:4px solid var(--color-info);">
       <div class="hp-tab-intro-text">
         <p>
           國際研究顯示，超過 90% 的農民一生中會經歷肌肉骨骼疼痛（Osborne et al., 2012）。最常見的部位是腰部、膝蓋和肩膀，跟農務中的蹲姿、搬運和仰頭動作直接相關。國衛院的台灣農民健康世代研究也發現，農民的髖關節退化、膝關節退化和膝蓋滑囊炎風險顯著高於一般人（國衛院, 2024）。
         </p>
       </div>
-      <a href="/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/" class="hp-tab-link" style="color:#1565c0;border-color:#1565c0;">
+      <a href="/healthgood/%e9%aa%a8%e9%aa%bc%e8%82%8c%e8%82%89%e4%bf%9d%e5%81%a5/" class="hp-tab-link" style="color:var(--color-info);border-color:var(--color-info);">
         查看完整指南 <i class="fas fa-arrow-right"></i>
       </a>
     </div>
 
     <div class="hp-icon-grid">
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
           <i class="fas fa-person-walking-arrow-loop-left"></i>
         </div>
         <h4>腰痛</h4>
         <p>農民下背痛盛行率 63-87%，長時間彎腰和搬重物是主因</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
           <i class="fas fa-person-falling"></i>
         </div>
         <h4>膝蓋問題</h4>
         <p>稻農膝關節疼痛盛行率 54-80%，長時間蹲姿是最大元兇</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
           <i class="fas fa-hand-holding-medical"></i>
         </div>
         <h4>肩膀傷害</h4>
         <p>果農旋轉肌撕裂盛行率 60%，長時間仰頭採摘修剪造成</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
           <i class="fas fa-dumbbell"></i>
         </div>
         <h4>工前暖身</h4>
         <p>5-10 分鐘暖身可顯著降低傷害風險，深蹲、手臂伸展、軀幹旋轉</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
           <i class="fas fa-stethoscope"></i>
         </div>
         <h4>什麼時候該看醫生</h4>
         <p>疼痛持續超過 2 週、愈來愈嚴重、出現麻木感 → 盡早就醫</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:#1565c0;">
+        <div class="hp-icon-circle" style="background:rgba(21,101,192,.1);color:var(--color-info);">
           <i class="fas fa-hospital"></i>
         </div>
         <h4>雲嘉復健資源</h4>
@@ -209,55 +209,55 @@
 
   <!-- ===== Tab 4：心靈紓壓 ===== -->
   <div class="hp-tab-panel" id="hp-tab-mental">
-    <div class="hp-tab-intro" style="border-left:4px solid #2e7d32;">
+    <div class="hp-tab-intro" style="border-left:4px solid var(--color-brand);">
       <div class="hp-tab-intro-text">
         <p>
           農民面對的壓力是多重的：天候不確定、收入不穩定、身體疼痛、人口外移後的孤獨感。研究指出，因工受傷的農民罹患憂鬱症的機率顯著更高（Kang et al., 2020）。但超過半數台灣民眾認為精神疾病有汙名，65% 不知道有哪些心理健康服務（Liu et al., 2008）——這意味著很多需要幫助的農友從來沒有尋求過幫助。
         </p>
       </div>
-      <a href="/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/" class="hp-tab-link" style="color:#2e7d32;border-color:#2e7d32;">
+      <a href="/healthgood/%e5%bf%83%e9%9d%88%e7%b4%93%e5%a3%93/" class="hp-tab-link" style="color:var(--color-brand);border-color:var(--color-brand);">
         查看完整指南 <i class="fas fa-arrow-right"></i>
       </a>
     </div>
 
     <div class="hp-icon-grid">
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
           <i class="fas fa-cloud-rain"></i>
         </div>
         <h4>農民特有壓力源</h4>
         <p>看天吃飯、收入波動、獨居孤立、身體慢性疼痛</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
           <i class="fas fa-lungs"></i>
         </div>
         <h4>腹式呼吸</h4>
         <p>最簡單的紓壓法：吸氣 4 秒、吐氣 8 秒，每天 10 分鐘，田邊就能做</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
           <i class="fas fa-phone"></i>
         </div>
         <h4>安心專線 1925</h4>
         <p>24 小時免費，衛福部設置的心理諮詢專線，有人聽你說</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
           <i class="fas fa-people-group"></i>
         </div>
         <h4>社群連結很重要</h4>
         <p>參加農會活動、廟口聚會、鄰里互動，人際連結是最好的心理疫苗</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
           <i class="fas fa-moon"></i>
         </div>
         <h4>睡眠品質</h4>
         <p>固定作息、睡前避免咖啡和酒精、中午可短睡 15-20 分鐘</p>
       </div>
       <div class="hp-icon-card">
-        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:#2e7d32;">
+        <div class="hp-icon-circle" style="background:rgba(46,125,50,.1);color:var(--color-brand);">
           <i class="fas fa-heart"></i>
         </div>
         <h4>求助是勇敢</h4>
@@ -274,11 +274,11 @@
 <style>
 /* === 基礎變數與容器 === */
 .hp-tabs-section {
-  --brand-legacy: #2e7d32;
+  --brand-legacy: var(--color-brand);
   --brand-legacy-hover: #1b5e20;
   --brand-legacy-dark: #1a3a1a;
-  --text-primary: #1f2937;
-  --text-secondary: #6b7280;
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-muted);
   --radius: 16px;
   font-family: "Noto Sans TC", "Lato", sans-serif;
   color: var(--text-primary);
@@ -359,7 +359,7 @@
   padding: 24px;
   border-radius: 12px;
   margin-bottom: 24px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--color-bg-elevated);
   flex-wrap: wrap;
   gap: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
@@ -417,7 +417,7 @@
 .hp-icon-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  border-color: #e2e8f0;
+  border-color: var(--color-line);
 }
 .hp-icon-circle {
   width: 52px;

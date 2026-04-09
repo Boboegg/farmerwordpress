@@ -82,7 +82,15 @@ TOTAL_REPLACEMENTS=0
 
 while IFS= read -r file; do
   FILES+=("$file")
-done < <(find "$PAGES_DIR" -type f -name '*.html' | sort)
+done < <(
+  find "$PAGES_DIR" -type f \
+    ! -name '*.bak' ! -name '*.md' ! -name '*.json' \
+    ! -name '*.png' ! -name '*.jpg' ! -name '*.jpeg' \
+    ! -name '*.gif' ! -name '*.svg' ! -name '*.webp' \
+    ! -name '*.gitkeep' \
+    -exec grep -lE '<(div|section|style|wp:html|!--)' {} \; \
+    | sort
+)
 
 TOTAL_FILES=${#FILES[@]}
 

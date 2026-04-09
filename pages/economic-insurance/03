@@ -69,11 +69,11 @@
 <style>
 /* === 03-insurance-snapshot 樣式 === */
 .money-snapshot{
-  --brand-legacy:#1565c0;--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
-  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
+  --text-primary:var(--color-text);--text-secondary:var(--color-muted);
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;background:#fff;border-radius:16px;padding:36px;
-  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid var(--color-line);
   box-sizing:border-box;
 }
 .money-snapshot *{box-sizing:border-box;}
@@ -85,8 +85,8 @@
 
 .money-snap-table-wrap{overflow-x:auto;margin-bottom:16px;}
 .money-snap-table{width:100%;border-collapse:collapse;font-size:.9rem;}
-.money-snap-table th,.money-snap-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #eef2f7;vertical-align:middle;}
-.money-snap-table th{background:#f8fafc;font-weight:700;color:var(--text-primary);font-size:.85rem;text-transform:uppercase;letter-spacing:.3px;}
+.money-snap-table th,.money-snap-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--color-line);vertical-align:middle;}
+.money-snap-table th{background:var(--color-bg-elevated);font-weight:700;color:var(--text-primary);font-size:.85rem;text-transform:uppercase;letter-spacing:.3px;}
 .money-snap-table tbody tr:hover{background:#fafbfc;}
 .money-snap-highlight{background:#eff6ff !important;}
 .money-snap-highlight:hover{background:#e0ecff !important;}
@@ -103,7 +103,7 @@
 .money-snap-wip{font-size:.82rem;color:#92400e;font-weight:600;}
 .money-snap-note{font-size:.82rem;color:var(--text-secondary);}
 
-.money-snap-footnote{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:#f8fafc;border-radius:10px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);border:1px solid #eef2f7;}
+.money-snap-footnote{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:var(--color-bg-elevated);border-radius:10px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);border:1px solid var(--color-line);}
 .money-snap-footnote i{color:var(--brand-legacy);margin-top:3px;flex-shrink:0;}
 
 @media(max-width:768px){

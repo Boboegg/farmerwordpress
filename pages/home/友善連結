@@ -58,13 +58,13 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: #5C8607; /* Brand Color */
+    background: var(--color-brand); /* Brand Color */
     opacity: 0.6;
     border-radius: 2px;
 }
 
 .side-title i {
-    color: #5C8607;
+    color: var(--color-brand);
     font-size: 17px;
 }
 
@@ -97,8 +97,8 @@
 /* --- 懸停效果 (Hover) --- */
 .link-item:hover {
     background: #F9FBF7; /* Subtle Green BG */
-    border-color: #5C8607; /* Brand Border */
-    color: #5C8607;
+    border-color: var(--color-brand); /* Brand Border */
+    color: var(--color-brand);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(92, 134, 7, 0.1);
 }

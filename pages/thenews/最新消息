@@ -3,7 +3,7 @@
      URL：/thenews/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：tnews-
-     主色系：#5C8607（品牌尊嚴綠）
+     主色系：var(--color-brand)（品牌尊嚴綠）
 
      【維護指南】
      - 本頁使用 [my_newss_loop] 短碼自動撈取文章
@@ -166,8 +166,8 @@
 <style>
 /* === 變數 === */
 .tnews-hero,.tnews-wrapper,.tnews-explore {
-  --brand-legacy:#5C8607;--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
-  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
+  --accent:#D4A017;--text-primary:var(--color-text);--text-secondary:var(--color-muted);
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
@@ -214,7 +214,7 @@
 }
 .tnews-hero-icon:hover{transform:translateY(-4px);}
 .tnews-hero-icon:nth-child(2){color:var(--accent);}
-.tnews-hero-icon:nth-child(3){color:#c62828;}
+.tnews-hero-icon:nth-child(3){color:var(--color-warn);}
 
 /* === Tab Bar === */
 .tnews-wrapper{margin-top:24px;}
@@ -222,12 +222,12 @@
   display:flex;flex-wrap:wrap;gap:8px;
   padding:20px 24px;
   background:#fff;border-radius:var(--radius) var(--radius) 0 0;
-  box-shadow:var(--shadow);border:1px solid #eef2f7;border-bottom:none;
+  box-shadow:var(--shadow);border:1px solid var(--color-line);border-bottom:none;
   position:sticky;top:0;z-index:10;
 }
 .tnews-tab {
   padding:10px 20px;border-radius:50px;
-  border:1px solid #e2e8f0;background:#f8fafc;
+  border:1px solid var(--color-line);background:var(--color-bg-elevated);
   font-size:.88rem;font-weight:600;color:var(--text-secondary);
   cursor:pointer;transition:all .3s;font-family:inherit;
   display:inline-flex;align-items:center;gap:6px;
@@ -246,7 +246,7 @@
   display:none;
   padding:28px 24px;
   background:#fff;border-radius:0 0 var(--radius) var(--radius);
-  box-shadow:var(--shadow);border:1px solid #eef2f7;border-top:none;
+  box-shadow:var(--shadow);border:1px solid var(--color-line);border-top:none;
   animation:tnewsFadeIn .4s ease;
 }
 .tnews-tab-panel.is-visible{display:block;}
@@ -258,7 +258,7 @@
 /* === 延伸探索 === */
 .tnews-explore {
   margin-top:24px;background:#fff;border-radius:var(--radius);
-  padding:28px 36px;box-shadow:var(--shadow);border:1px solid #eef2f7;
+  padding:28px 36px;box-shadow:var(--shadow);border:1px solid var(--color-line);
 }
 .tnews-explore-title {
   font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);
@@ -269,8 +269,8 @@
 }
 .tnews-explore-card {
   display:flex;flex-direction:column;align-items:center;text-align:center;
-  gap:8px;padding:20px 12px;background:#f8fafc;border-radius:12px;
-  border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);
+  gap:8px;padding:20px 12px;background:var(--color-bg-elevated);border-radius:12px;
+  border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);
   transition:all .3s;
 }
 .tnews-explore-card:hover {
@@ -281,31 +281,31 @@
 .tnews-explore-card span{font-weight:700;font-size:.9rem;}
 
 /* === Tab 分類專屬色標 === */
-.tnews-tab[data-tab="news"] i      { color:#2c5e2e; }
+.tnews-tab[data-tab="news"] i      { color:var(--color-brand-deep); }
 .tnews-tab[data-tab="event"] i     { color:#d4a017; }
 .tnews-tab[data-tab="press"] i     { color:#0d7377; }
-.tnews-tab[data-tab="notices"] i   { color:#6b7280; }
-.tnews-tab[data-tab="podcast"] i   { color:#c62828; }
+.tnews-tab[data-tab="notices"] i   { color:var(--color-muted); }
+.tnews-tab[data-tab="podcast"] i   { color:var(--color-warn); }
 .tnews-tab[data-tab="youtube"] i   { color:#ff0000; }
 .tnews-tab[data-tab="agri-school"] i { color:#92400e; }
 .tnews-tab[data-tab="health"] i    { color:#e74c3c; }
 .tnews-tab[data-tab="equipment"] i { color:#e67e22; }
-.tnews-tab[data-tab="insurance"] i { color:#5C8607; }
-.tnews-tab[data-tab="research"] i  { color:#1565c0; }
+.tnews-tab[data-tab="insurance"] i { color:var(--color-brand); }
+.tnews-tab[data-tab="research"] i  { color:var(--color-info); }
 .tnews-tab.is-active[data-tab] i   { color:#fff !important; }
 
 /* Active tab 底色跟隨分類 */
-.tnews-tab.is-active[data-tab="news"]      { background:#2c5e2e;border-color:#2c5e2e; }
+.tnews-tab.is-active[data-tab="news"]      { background:var(--color-brand-deep);border-color:var(--color-brand-deep); }
 .tnews-tab.is-active[data-tab="event"]     { background:#b8860b;border-color:#b8860b; }
 .tnews-tab.is-active[data-tab="press"]     { background:#0d7377;border-color:#0d7377; }
-.tnews-tab.is-active[data-tab="notices"]   { background:#6b7280;border-color:#6b7280; }
-.tnews-tab.is-active[data-tab="podcast"]   { background:#c62828;border-color:#c62828; }
+.tnews-tab.is-active[data-tab="notices"]   { background:var(--color-muted);border-color:var(--color-muted); }
+.tnews-tab.is-active[data-tab="podcast"]   { background:var(--color-warn);border-color:var(--color-warn); }
 .tnews-tab.is-active[data-tab="youtube"]   { background:#cc0000;border-color:#cc0000; }
 .tnews-tab.is-active[data-tab="agri-school"]{ background:#92400e;border-color:#92400e; }
 .tnews-tab.is-active[data-tab="health"]    { background:#e74c3c;border-color:#e74c3c; }
 .tnews-tab.is-active[data-tab="equipment"] { background:#e67e22;border-color:#e67e22; }
-.tnews-tab.is-active[data-tab="insurance"] { background:#5C8607;border-color:#5C8607; }
-.tnews-tab.is-active[data-tab="research"]  { background:#1565c0;border-color:#1565c0; }
+.tnews-tab.is-active[data-tab="insurance"] { background:var(--color-brand);border-color:var(--color-brand); }
+.tnews-tab.is-active[data-tab="research"]  { background:var(--color-info);border-color:var(--color-info); }
 
 /* === RWD === */
 @media(max-width:768px){
