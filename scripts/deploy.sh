@@ -42,8 +42,11 @@ fi
 COVERAGE_MODE="${DEPLOY_COVERAGE_MODE:-warn}"
 if [ "$COVERAGE_MODE" != "off" ] && [ -f "scripts/audit-page-coverage.sh" ]; then
     echo "→ [0/4] 部署前覆蓋檢查（模式：$COVERAGE_MODE）..."
-    COVERAGE_JSON="$(bash scripts/audit-page-coverage.sh --json)"
-    COVERAGE_JSON="$COVERAGE_JSON" python3 - "$COVERAGE_MODE" <<'PY'
+    if ! command -v python3 &>/dev/null; then
+        echo "   ⚠️  python3 未安裝，跳過覆蓋檢查（本地開發時請安裝 python3 以啟用）"
+    else
+        COVERAGE_JSON="$(bash scripts/audit-page-coverage.sh --json)"
+        COVERAGE_JSON="$COVERAGE_JSON" python3 - "$COVERAGE_MODE" <<'PY'
 import json
 import os
 import sys
@@ -86,6 +89,7 @@ if unmapped_html:
 else:
     print("   ✓ 覆蓋檢查通過：可部署 .html 均已映射")
 PY
+    fi
 else
     echo "→ [0/4] 略過覆蓋檢查（DEPLOY_COVERAGE_MODE=off 或找不到 audit 腳本）"
 fi
