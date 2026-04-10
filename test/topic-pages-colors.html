@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6 大主題頁配色方案</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans TC', sans-serif; background: #888; }
+
+.header { text-align: center; padding: 36px 24px 24px; background: #fff; border-bottom: 1px solid #ddd; }
+.header h1 { font-size: 22px; margin-bottom: 6px; }
+.header p { color: #666; font-size: 14px; line-height: 1.6; }
+
+.row-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; max-width: 1800px; margin: 0 auto; }
+
+.panel {
+    padding: 28px 16px; background: var(--bg); color: var(--text);
+    border-right: 1px solid rgba(0,0,0,0.06);
+}
+.panel:last-child { border-right: none; }
+
+.tag { font-size: 9px; font-weight: 700; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 999px; display: inline-block; margin-bottom: 10px; background: var(--theme); color: #fff; }
+
+.hero {
+    padding: 20px 16px; border-radius: 12px;
+    background: var(--hero-bg); border: 1px solid var(--hero-border);
+    margin-bottom: 12px;
+}
+.hero .kicker { font-size: 9px; font-weight: 700; color: var(--theme); letter-spacing: 0.08em; margin-bottom: 5px; }
+.hero .kicker::after { content: ''; display: block; width: 20px; height: 2px; background: var(--theme); margin-top: 3px; }
+.hero h3 { font-family: 'Noto Serif TC', serif; font-size: 18px; line-height: 1.4; margin-bottom: 6px; letter-spacing: 0.04em; }
+.hero p { font-size: 12px; line-height: 1.7; color: var(--muted); margin-bottom: 10px; }
+.hero .btn { padding: 7px 16px; border-radius: 999px; font-size: 11px; font-weight: 700; border: none; background: var(--theme); color: #fff; cursor: pointer; }
+.hero .btn-outline { background: transparent; color: var(--theme); border: 1.5px solid var(--theme); margin-left: 6px; }
+
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px; }
+.card { padding: 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--card-bg); }
+.card-icon { width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; margin-bottom: 5px; background: var(--theme); color: #fff; }
+.card h4 { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+.card p { font-size: 10px; color: var(--muted); line-height: 1.4; }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; margin-bottom: 10px; }
+.stat { text-align: center; padding: 10px 4px; border-radius: 8px; border: 1px solid var(--line); background: var(--card-bg); }
+.stat .n { font-family: 'Noto Serif TC', serif; font-size: 18px; font-weight: 700; color: var(--theme); }
+.stat .u { font-size: 9px; color: var(--muted); }
+
+.alert { padding: 8px 12px; border-radius: 8px; font-size: 11px; line-height: 1.5; border-left: 3px solid var(--theme); margin-bottom: 8px; background: var(--alert-bg); color: var(--theme-dark); }
+
+.tags-row { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 10px; }
+.tg { padding: 2px 8px; border-radius: 999px; font-size: 9px; font-weight: 500; }
+.tg-solid { background: var(--theme); color: #fff; }
+.tg-soft { background: var(--alert-bg); color: var(--theme-dark); }
+.tg-outline { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+
+.text-block { padding: 14px; border-radius: 10px; background: var(--bg2); border: 1px solid var(--line); margin-bottom: 10px; }
+.text-block h4 { font-family: 'Noto Serif TC', serif; font-size: 14px; color: var(--theme); margin-bottom: 6px; }
+.text-block p { font-size: 12px; line-height: 1.75; color: var(--text); }
+.text-block a { color: var(--theme); text-decoration: underline; text-underline-offset: 2px; }
+
+.nav-bar { display: flex; gap: 3px; padding: 8px; border-radius: 10px; background: var(--theme); }
+.nav-bar a { flex: 1; text-align: center; padding: 6px 2px; border-radius: 6px; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 9px; font-weight: 500; }
+.nav-bar a.active { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* === 6 主題色 === */
+.occ-safety {
+    --bg: #F7F4ED; --bg2: #F5E6DF; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE;
+    --theme: #8B2D14; --theme-dark: #6A1E0A;
+    --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #F5E6DF 100%);
+    --hero-border: rgba(139,45,20,.12); --alert-bg: #FBE9E2;
+}
+.econ-ins {
+    --bg: #F7F4ED; --bg2: #F5EDE2; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE;
+    --theme: #B07E12; --theme-dark: #7A5508;
+    --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #FDF3D7 100%);
+    --hero-border: rgba(176,126,18,.12); --alert-bg: #FDF3D7;
+}
+.farm-study {
+    --bg: #F7F4ED; --bg2: #E8EDDF; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE;
+    --theme: #4A6932; --theme-dark: #354D22;
+    --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #E8EDDF 100%);
+    --hero-border: rgba(74,105,50,.12); --alert-bg: #EDF2E6;
+}
+.advocacy {
+    --bg: #F7F4ED; --bg2: #F4ECE0; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE;
+    --theme: #7A4E12; --theme-dark: #5C3A0C;
+    --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #F4ECE0 100%);
+    --hero-border: rgba(122,78,18,.12); --alert-bg: #F5EDE2;
+}
+.about-us {
+    --bg: #F7F4ED; --bg2: #E2EDE6; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE;
+    --theme: #3D7A5A; --theme-dark: #2B5A40;
+    --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #E2EDE6 100%);
+    --hero-border: rgba(61,122,90,.12); --alert-bg: #E8F0EB;
+}
+.the-news {
+    --bg: #F7F4ED; --bg2: #E8EEF3; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE;
+    --theme: #4A6A8A; --theme-dark: #2E4A66;
+    --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #E8EEF3 100%);
+    --hero-border: rgba(74,106,138,.12); --alert-bg: #E8EEF3;
+}
+
+/* 總覽 */
+.overview { background: #F7F4ED; padding: 32px 28px; max-width: 1800px; margin: 0 auto; }
+.overview h2 { font-family: 'Noto Serif TC', serif; font-size: 20px; text-align: center; margin-bottom: 20px; color: #2C2418; }
+.color-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.color-item { text-align: center; }
+.color-swatch { width: 64px; height: 64px; border-radius: 14px; margin: 0 auto 6px; border: 1px solid #D5CBAE; }
+.color-name { font-size: 12px; font-weight: 700; color: #2C2418; }
+.color-hex { font-size: 9px; color: #6B5F4E; font-family: monospace; }
+.color-desc { font-size: 9px; color: #8A7D6B; margin-top: 1px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>6 大主題頁 — V1 暖米配色方案</h1>
+    <p>每頁有自己的識別色，全部在暖米底色上調和</p>
+</div>
+
+<!-- 總覽 -->
+<div class="overview">
+    <h2>6 頁主題色總覽</h2>
+    <div class="color-grid">
+        <div class="color-item"><div class="color-swatch" style="background:#8B2D14;"></div><div class="color-name">職業安全</div><div class="color-hex">#8B2D14</div><div class="color-desc">燒土紅 — 警示安全</div></div>
+        <div class="color-item"><div class="color-swatch" style="background:#B07E12;"></div><div class="color-name">經濟與保險</div><div class="color-hex">#B07E12</div><div class="color-desc">蜂蜜金 — 經濟金融</div></div>
+        <div class="color-item"><div class="color-swatch" style="background:#4A6932;"></div><div class="color-name">農學堂</div><div class="color-hex">#4A6932</div><div class="color-desc">橄欖綠 — 農業學習</div></div>
+        <div class="color-item"><div class="color-swatch" style="background:#7A4E12;"></div><div class="color-name">倡議</div><div class="color-hex">#7A4E12</div><div class="color-desc">深棕 — 大地倡導</div></div>
+        <div class="color-item"><div class="color-swatch" style="background:#3D7A5A;"></div><div class="color-name">關於我們</div><div class="color-hex">#3D7A5A</div><div class="color-desc">森林綠 — 機構信任</div></div>
+        <div class="color-item"><div class="color-swatch" style="background:#4A6A8A;"></div><div class="color-name">最新消息</div><div class="color-hex">#4A6A8A</div><div class="color-desc">青石暖藍 — 新聞資訊</div></div>
+    </div>
+</div>
+
+<!-- 6 欄 -->
+<div class="row-6">
+
+<!-- 職業安全 -->
+<div class="panel occ-safety">
+    <span class="tag">職業安全 #8B2D14</span>
+    <div class="hero">
+        <div class="kicker">職業安全</div>
+        <h3>安全的農場，<br>尊嚴的勞動</h3>
+        <p>農業是高風險行業，認識危害因子與防護措施，讓每次出工都能平安回家。</p>
+        <button class="btn">安全指南</button>
+        <button class="btn btn-outline">風險評估</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9876;</div><h4>農機安全</h4><p>操作規範與防護</p></div>
+        <div class="card"><div class="card-icon">&#9888;</div><h4>化學品</h4><p>存放與使用守則</p></div>
+        <div class="card"><div class="card-icon">&#9729;</div><h4>溫室專區</h4><p>密閉空間風險</p></div>
+        <div class="card"><div class="card-icon">&#9881;</div><h4>防護裝備</h4><p>個人防護具選擇</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">67%</div><div class="u">曾遭職災</div></div>
+        <div class="stat"><div class="n">4.2x</div><div class="u">風險倍率</div></div>
+        <div class="stat"><div class="n">82%</div><div class="u">可預防</div></div>
+    </div>
+    <div class="alert">注意：操作農機前務必檢查安全裝置，穿著適當防護裝備。</div>
+    <div class="text-block">
+        <h4>為什麼職業安全很重要？</h4>
+        <p>台灣農業工作者的職災風險是一般行業的 4.2 倍。<a href="#">閱讀報告 →</a></p>
+    </div>
+    <div class="tags-row">
+        <span class="tg tg-solid">農機</span><span class="tg tg-soft">化學品</span><span class="tg tg-outline">溫室</span>
+    </div>
+    <div class="nav-bar">
+        <a href="#" class="active">總覽</a><a href="#">農機</a><a href="#">化學</a><a href="#">溫室</a><a href="#">防護</a>
+    </div>
+</div>
+
+<!-- 經濟與保險 -->
+<div class="panel econ-ins">
+    <span class="tag">經濟保險 #B07E12</span>
+    <div class="hero">
+        <div class="kicker">經濟與保險</div>
+        <h3>保障農民的<br>經濟安全網</h3>
+        <p>從農業保險到退休規劃，完整的經濟保障讓農民無後顧之憂。</p>
+        <button class="btn">保險方案</button>
+        <button class="btn btn-outline">試算工具</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9733;</div><h4>農業保險</h4><p>作物與設施保險</p></div>
+        <div class="card"><div class="card-icon">&#9830;</div><h4>職災保險</h4><p>職業災害理賠</p></div>
+        <div class="card"><div class="card-icon">&#10004;</div><h4>補助資源</h4><p>政府補助總覽</p></div>
+        <div class="card"><div class="card-icon">&#9998;</div><h4>退休試算</h4><p>退休金規劃</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">5類</div><div class="u">保險方案</div></div>
+        <div class="stat"><div class="n">78%</div><div class="u">理賠成功率</div></div>
+        <div class="stat"><div class="n">30+</div><div class="u">補助項目</div></div>
+    </div>
+    <div class="alert">提醒：113 年度農業保險申請已開放，截止日 6 月 30 日。</div>
+    <div class="text-block">
+        <h4>農業保險怎麼選？</h4>
+        <p>依據作物類型、耕作面積選擇合適的保險方案。<a href="#">完整比較 →</a></p>
+    </div>
+    <div class="tags-row">
+        <span class="tg tg-solid">保險</span><span class="tg tg-soft">補助</span><span class="tg tg-outline">試算</span>
+    </div>
+    <div class="nav-bar">
+        <a href="#" class="active">總覽</a><a href="#">農保</a><a href="#">職災</a><a href="#">補助</a><a href="#">試算</a>
+    </div>
+</div>
+
+<!-- 農學堂 -->
+<div class="panel farm-study">
+    <span class="tag">農學堂 #4A6932</span>
+    <div class="hero">
+        <div class="kicker">農學堂</div>
+        <h3>從田間到課堂<br>持續學習成長</h3>
+        <p>線上課程、實務工作坊、專家講座，打造農業終身學習平台。</p>
+        <button class="btn">瀏覽課程</button>
+        <button class="btn btn-outline">最新講座</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9997;</div><h4>線上課程</h4><p>隨時隨地學習</p></div>
+        <div class="card"><div class="card-icon">&#9734;</div><h4>工作坊</h4><p>實務操作訓練</p></div>
+        <div class="card"><div class="card-icon">&#9783;</div><h4>專家講座</h4><p>產官學交流</p></div>
+        <div class="card"><div class="card-icon">&#10003;</div><h4>認證課程</h4><p>技能認證</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">24</div><div class="u">堂課程</div></div>
+        <div class="stat"><div class="n">1.2K</div><div class="u">學員</div></div>
+        <div class="stat"><div class="n">96%</div><div class="u">滿意度</div></div>
+    </div>
+    <div class="alert">最新：「有機農業入門」線上課程已上線，免費報名中。</div>
+    <div class="text-block">
+        <h4>學習資源</h4>
+        <p>整合農委會、各大學推廣部的教育資源。<a href="#">課程清單 →</a></p>
+    </div>
+    <div class="tags-row">
+        <span class="tg tg-solid">課程</span><span class="tg tg-soft">講座</span><span class="tg tg-outline">認證</span>
+    </div>
+    <div class="nav-bar">
+        <a href="#" class="active">總覽</a><a href="#">線上</a><a href="#">工坊</a><a href="#">講座</a><a href="#">認證</a>
+    </div>
+</div>
+
+<!-- 倡議 -->
+<div class="panel advocacy">
+    <span class="tag">倡議 #7A4E12</span>
+    <div class="hero">
+        <div class="kicker">尊嚴農業倡議</div>
+        <h3>為農民發聲<br>推動制度改革</h3>
+        <p>從政策建議到國際連結，為農業工作者爭取應有的權益與尊嚴。</p>
+        <button class="btn">了解倡議</button>
+        <button class="btn btn-outline">加入行動</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9998;</div><h4>政策建議</h4><p>立法與制度推動</p></div>
+        <div class="card"><div class="card-icon">&#9742;</div><h4>國際趨勢</h4><p>他山之石</p></div>
+        <div class="card"><div class="card-icon">&#9825;</div><h4>農民權益</h4><p>勞動權與社會保障</p></div>
+        <div class="card"><div class="card-icon">&#9733;</div><h4>行動參與</h4><p>公民倡議</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">12</div><div class="u">政策提案</div></div>
+        <div class="stat"><div class="n">5國</div><div class="u">國際合作</div></div>
+        <div class="stat"><div class="n">3K+</div><div class="u">連署支持</div></div>
+    </div>
+    <div class="alert">最新：「農業職災保護法」修正案已送立院審議。</div>
+    <div class="text-block">
+        <h4>尊嚴農業宣言</h4>
+        <p>農業工作者應享有安全、健康、有保障的工作環境。<a href="#">閱讀全文 →</a></p>
+    </div>
+    <div class="tags-row">
+        <span class="tg tg-solid">政策</span><span class="tg tg-soft">國際</span><span class="tg tg-outline">行動</span>
+    </div>
+    <div class="nav-bar">
+        <a href="#" class="active">總覽</a><a href="#">政策</a><a href="#">國際</a><a href="#">權益</a><a href="#">行動</a>
+    </div>
+</div>
+
+<!-- 關於我們 -->
+<div class="panel about-us">
+    <span class="tag">關於我們 #3D7A5A</span>
+    <div class="hero">
+        <div class="kicker">關於尊嚴農業</div>
+        <h3>共構農業工作者<br>的社會安全網</h3>
+        <p>國立中正大學研究團隊，致力於提升台灣農業工作者的職業健康與社會保障。</p>
+        <button class="btn">認識我們</button>
+        <button class="btn btn-outline">聯絡方式</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9734;</div><h4>研究團隊</h4><p>跨領域專家</p></div>
+        <div class="card"><div class="card-icon">&#9783;</div><h4>計畫緣起</h4><p>USR 社會責任</p></div>
+        <div class="card"><div class="card-icon">&#9742;</div><h4>合作夥伴</h4><p>產官學網絡</p></div>
+        <div class="card"><div class="card-icon">&#10004;</div><h4>成果發表</h4><p>研究與出版</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">3年</div><div class="u">計畫期程</div></div>
+        <div class="stat"><div class="n">15+</div><div class="u">研究成員</div></div>
+        <div class="stat"><div class="n">20+</div><div class="u">合作單位</div></div>
+    </div>
+    <div class="alert">歡迎各界合作交流，共同推動農業工作者福祉。</div>
+    <div class="text-block">
+        <h4>我們的使命</h4>
+        <p>透過研究、教育與倡議，建構更安全的農業工作環境。<a href="#">了解更多 →</a></p>
+    </div>
+    <div class="tags-row">
+        <span class="tg tg-solid">團隊</span><span class="tg tg-soft">計畫</span><span class="tg tg-outline">合作</span>
+    </div>
+    <div class="nav-bar">
+        <a href="#" class="active">關於</a><a href="#">團隊</a><a href="#">緣起</a><a href="#">夥伴</a><a href="#">成果</a>
+    </div>
+</div>
+
+<!-- 最新消息 -->
+<div class="panel the-news">
+    <span class="tag">最新消息 #4A6A8A</span>
+    <div class="hero">
+        <div class="kicker">最新消息</div>
+        <h3>掌握農業<br>最新動態</h3>
+        <p>計畫進展、活動公告、政策更新，第一手消息不漏接。</p>
+        <button class="btn">全部消息</button>
+        <button class="btn btn-outline">訂閱通知</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9998;</div><h4>計畫動態</h4><p>最新進展</p></div>
+        <div class="card"><div class="card-icon">&#9733;</div><h4>活動公告</h4><p>講座與工坊</p></div>
+        <div class="card"><div class="card-icon">&#9783;</div><h4>政策速報</h4><p>法規與補助</p></div>
+        <div class="card"><div class="card-icon">&#9742;</div><h4>媒體報導</h4><p>外部露出</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">156</div><div class="u">篇消息</div></div>
+        <div class="stat"><div class="n">12K</div><div class="u">瀏覽次數</div></div>
+        <div class="stat"><div class="n">週更</div><div class="u">更新頻率</div></div>
+    </div>
+    <div class="alert">最新：4 月份農業安全宣導月活動報名開始。</div>
+    <div class="text-block">
+        <h4>熱門話題</h4>
+        <p>農業職災保險新制上路，農民該怎麼因應？<a href="#">閱讀 →</a></p>
+    </div>
+    <div class="tags-row">
+        <span class="tg tg-solid">動態</span><span class="tg tg-soft">活動</span><span class="tg tg-outline">政策</span>
+    </div>
+    <div class="nav-bar">
+        <a href="#" class="active">全部</a><a href="#">動態</a><a href="#">活動</a><a href="#">政策</a><a href="#">媒體</a>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

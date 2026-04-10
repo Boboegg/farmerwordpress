@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>健康促進子頁面配色比較</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans TC', sans-serif; background: #777; }
+
+.header {
+    text-align: center; padding: 36px 24px 24px;
+    background: #fff; border-bottom: 1px solid #ddd;
+}
+.header h1 { font-size: 22px; margin-bottom: 6px; }
+.header p { color: #666; font-size: 14px; line-height: 1.6; }
+
+.section-label {
+    text-align: center; padding: 20px; font-size: 18px; font-weight: 700;
+    color: #fff; letter-spacing: 0.05em;
+}
+
+.compare {
+    display: grid; grid-template-columns: 1fr 1fr;
+    max-width: 1500px; margin: 0 auto;
+}
+
+.panel {
+    padding: 36px 28px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* 共用元件 */
+.tag { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 999px; display: inline-block; margin-bottom: 16px; }
+.hero {
+    padding: 32px 24px; border-radius: 14px;
+    background: var(--hero-bg); border: 1px solid var(--hero-border);
+    margin-bottom: 20px; position: relative;
+}
+.hero .kicker { font-size: 12px; font-weight: 700; color: var(--theme); letter-spacing: 0.08em; margin-bottom: 8px; }
+.hero .kicker::after { content: ''; display: block; width: 28px; height: 2px; background: var(--theme); margin-top: 6px; }
+.hero h3 { font-family: 'Noto Serif TC', serif; font-size: 26px; line-height: 1.4; margin-bottom: 10px; letter-spacing: 0.04em; }
+.hero p { font-size: 16px; line-height: 1.8; color: var(--muted); margin-bottom: 16px; max-width: 420px; }
+.hero .btn { padding: 10px 24px; border-radius: 999px; font-size: 13px; font-weight: 700; border: none; background: var(--theme); color: #fff; cursor: pointer; }
+
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.card {
+    padding: 18px; border-radius: 12px;
+    border: 1px solid var(--line); background: var(--card-bg);
+}
+.card-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; margin-bottom: 8px; background: var(--theme); color: #fff; }
+.card h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+.card p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+.stat { text-align: center; padding: 16px 8px; border-radius: 10px; border: 1px solid var(--line); background: var(--card-bg); }
+.stat .n { font-family: 'Noto Serif TC', serif; font-size: 26px; font-weight: 700; color: var(--theme); }
+.stat .u { font-size: 11px; color: var(--muted); }
+
+.alert { padding: 12px 16px; border-radius: 10px; font-size: 13px; line-height: 1.6; border-left: 4px solid var(--theme); margin-bottom: 12px; background: var(--alert-bg); color: var(--theme-dark); }
+
+.progress-item { margin-bottom: 10px; }
+.progress-item label { font-size: 12px; color: var(--text); display: flex; justify-content: space-between; margin-bottom: 3px; }
+.progress-bar { height: 6px; border-radius: 999px; background: var(--line); }
+.progress-fill { height: 100%; border-radius: 999px; background: var(--theme); }
+
+.tags-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.tg { padding: 4px 12px; border-radius: 999px; font-size: 11px; font-weight: 500; }
+.tg-solid { background: var(--theme); color: #fff; }
+.tg-soft { background: var(--alert-bg); color: var(--theme-dark); }
+.tg-outline { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+
+.nav-bar { display: flex; gap: 4px; padding: 10px; border-radius: 12px; background: var(--theme); }
+.nav-bar a { flex: 1; text-align: center; padding: 8px 4px; border-radius: 8px; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 11px; font-weight: 500; }
+.nav-bar a.active { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* ===== 現有冷色 ===== */
+.heat-old { --bg: #fff; --card-bg: #fff; --text: #333; --muted: #666; --line: #eee; --theme: #e53935; --theme-dark: #b71c1c; --hero-bg: linear-gradient(135deg, #ffebee 0%, #fff 60%, #ffcdd2 100%); --hero-border: rgba(198,40,40,.1); --alert-bg: #ffebee; }
+.mind-old { --bg: #fff; --card-bg: #fff; --text: #333; --muted: #666; --line: #eee; --theme: #388e3c; --theme-dark: #1b5e20; --hero-bg: linear-gradient(135deg, #e8f5e9 0%, #fff 60%, #c8e6c9 100%); --hero-border: rgba(46,125,50,.1); --alert-bg: #e8f5e9; }
+.msd-old { --bg: #fff; --card-bg: #fff; --text: #333; --muted: #666; --line: #eee; --theme: #1976d2; --theme-dark: #0d47a1; --hero-bg: linear-gradient(135deg, #e3f2fd 0%, #fff 60%, #bbdefb 100%); --hero-border: rgba(21,101,192,.1); --alert-bg: #e3f2fd; }
+.pest-old { --bg: #fff; --card-bg: #fff; --text: #333; --muted: #666; --line: #eee; --theme: #7b1fa2; --theme-dark: #4a148c; --hero-bg: linear-gradient(135deg, #f3e5f5 0%, #fff 60%, #e1bee7 100%); --hero-border: rgba(123,31,162,.1); --alert-bg: #f3e5f5; }
+
+/* ===== V1 暖米調和 ===== */
+.heat-new { --bg: #F7F4ED; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE; --theme: #B84A2D; --theme-dark: #8B2D14; --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #F5E6DF 100%); --hero-border: rgba(184,74,45,.12); --alert-bg: #F8EBE6; }
+.mind-new { --bg: #F7F4ED; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE; --theme: #4A6932; --theme-dark: #354D22; --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #E8EDDF 100%); --hero-border: rgba(74,105,50,.12); --alert-bg: #EDF2E6; }
+.msd-new { --bg: #F7F4ED; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE; --theme: #2A6B5A; --theme-dark: #1A4D3E; --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #E4F0EC 100%); --hero-border: rgba(42,107,90,.12); --alert-bg: #E8F0EC; }
+.pest-new { --bg: #F7F4ED; --card-bg: #FDFCF8; --text: #2C2418; --muted: #6B5F4E; --line: #D5CBAE; --theme: #7A4E12; --theme-dark: #5C3A0C; --hero-bg: linear-gradient(135deg, #F7F4ED 0%, #FDFCF8 40%, #F4ECE0 100%); --hero-border: rgba(122,78,18,.12); --alert-bg: #F5EDE2; }
+
+.row-label {
+    grid-column: 1 / -1; text-align: center;
+    padding: 16px; font-size: 15px; font-weight: 700; color: #fff;
+    letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>健康促進 4 子頁配色比較</h1>
+    <p>左欄：現有 Material Design 冷色 ｜ 右欄：V1 暖米調和版</p>
+</div>
+
+<!-- ====== 熱傷害 ====== -->
+<div class="section-label" style="background:#B84A2D;">熱傷害 — 現有 vs 暖米</div>
+<div class="compare">
+<div class="panel heat-old">
+    <span class="tag" style="background:#e53935;color:#fff;">現有：Material Red #e53935</span>
+    <div class="hero">
+        <div class="kicker">健康促進 — 熱傷害預防</div>
+        <h3>烈日下的隱形殺手</h3>
+        <p>農業工作者是熱傷害的高風險族群，了解預防措施能保護您與家人的健康。</p>
+        <button class="btn">查看預防指南</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9728;</div><h4>中暑辨識</h4><p>症狀判斷與緊急處理</p></div>
+        <div class="card"><div class="card-icon">&#9748;</div><h4>補水策略</h4><p>科學化飲水時間表</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">42°C</div><div class="u">體感高溫</div></div>
+        <div class="stat"><div class="n">3x</div><div class="u">農民風險倍率</div></div>
+        <div class="stat"><div class="n">78%</div><div class="u">可預防比例</div></div>
+    </div>
+    <div class="alert">高溫警報：今日體感溫度達 38°C，建議避免 10:00-14:00 戶外作業。</div>
+    <div class="tags-row">
+        <span class="tg tg-solid">熱傷害</span><span class="tg tg-soft">中暑</span><span class="tg tg-outline">預防</span>
+    </div>
+</div>
+<div class="panel heat-new">
+    <span class="tag" style="background:#B84A2D;color:#fff;">暖米：燒土橘紅 #B84A2D</span>
+    <div class="hero">
+        <div class="kicker">健康促進 — 熱傷害預防</div>
+        <h3>烈日下的隱形殺手</h3>
+        <p>農業工作者是熱傷害的高風險族群，了解預防措施能保護您與家人的健康。</p>
+        <button class="btn">查看預防指南</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9728;</div><h4>中暑辨識</h4><p>症狀判斷與緊急處理</p></div>
+        <div class="card"><div class="card-icon">&#9748;</div><h4>補水策略</h4><p>科學化飲水時間表</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">42°C</div><div class="u">體感高溫</div></div>
+        <div class="stat"><div class="n">3x</div><div class="u">農民風險倍率</div></div>
+        <div class="stat"><div class="n">78%</div><div class="u">可預防比例</div></div>
+    </div>
+    <div class="alert">高溫警報：今日體感溫度達 38°C，建議避免 10:00-14:00 戶外作業。</div>
+    <div class="tags-row">
+        <span class="tg tg-solid">熱傷害</span><span class="tg tg-soft">中暑</span><span class="tg tg-outline">預防</span>
+    </div>
+</div>
+</div>
+
+<!-- ====== 心理健康 ====== -->
+<div class="section-label" style="background:#4A6932;">心理健康 — 現有 vs 暖米</div>
+<div class="compare">
+<div class="panel mind-old">
+    <span class="tag" style="background:#388e3c;color:#fff;">現有：Material Green #388e3c</span>
+    <div class="hero">
+        <div class="kicker">健康促進 — 心理健康</div>
+        <h3>看不見的傷，也需要被照顧</h3>
+        <p>農村心理健康資源匱乏，認識壓力來源與紓壓方法是守護自己的第一步。</p>
+        <button class="btn">了解更多</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9825;</div><h4>壓力辨識</h4><p>農忙期情緒警訊</p></div>
+        <div class="card"><div class="card-icon">&#9742;</div><h4>求助管道</h4><p>24小時專線與在地資源</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">62%</div><div class="u">感受高壓力</div></div>
+        <div class="stat"><div class="n">23%</div><div class="u">曾尋求協助</div></div>
+        <div class="stat"><div class="n">1925</div><div class="u">安心專線</div></div>
+    </div>
+    <div class="alert">提醒：農忙季節結束後是情緒低潮好發期，留意家人與自身狀態。</div>
+    <div class="tags-row">
+        <span class="tg tg-solid">心理健康</span><span class="tg tg-soft">紓壓</span><span class="tg tg-outline">求助</span>
+    </div>
+</div>
+<div class="panel mind-new">
+    <span class="tag" style="background:#4A6932;color:#fff;">暖米：橄欖綠 #4A6932（品牌主色）</span>
+    <div class="hero">
+        <div class="kicker">健康促進 — 心理健康</div>
+        <h3>看不見的傷，也需要被照顧</h3>
+        <p>農村心理健康資源匱乏，認識壓力來源與紓壓方法是守護自己的第一步。</p>
+        <button class="btn">了解更多</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9825;</div><h4>壓力辨識</h4><p>農忙期情緒警訊</p></div>
+        <div class="card"><div class="card-icon">&#9742;</div><h4>求助管道</h4><p>24小時專線與在地資源</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">62%</div><div class="u">感受高壓力</div></div>
+        <div class="stat"><div class="n">23%</div><div class="u">曾尋求協助</div></div>
+        <div class="stat"><div class="n">1925</div><div class="u">安心專線</div></div>
+    </div>
+    <div class="alert">提醒：農忙季節結束後是情緒低潮好發期，留意家人與自身狀態。</div>
+    <div class="tags-row">
+        <span class="tg tg-solid">心理健康</span><span class="tg tg-soft">紓壓</span><span class="tg tg-outline">求助</span>
+    </div>
+</div>
+</div>
+
+<!-- ====== 肌肉骨骼 ====== -->
+<div class="section-label" style="background:#2A6B5A;">肌肉骨骼 — 現有 vs 暖米</div>
+<div class="compare">
+<div class="panel msd-old">
+    <span class="tag" style="background:#1976d2;color:#fff;">現有：Material Blue #1976d2</span>
+    <div class="hero">
+        <div class="kicker">健康促進 — 肌肉骨骼</div>
+        <h3>彎腰一輩子，也要挺得直</h3>
+        <p>農業工作對肌肉骨骼的負擔遠超一般職業，正確姿勢與伸展是最好的預防。</p>
+        <button class="btn">伸展教學</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9899;</div><h4>疼痛評估</h4><p>自我檢測肌骨問題</p></div>
+        <div class="card"><div class="card-icon">&#9898;</div><h4>職前伸展</h4><p>5 分鐘暖身操</p></div>
+    </div>
+    <div class="progress-item"><label><span>下背痛</span><span>70%</span></label><div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div></div>
+    <div class="progress-item"><label><span>肩頸痠痛</span><span>58%</span></label><div class="progress-bar"><div class="progress-fill" style="width:58%"></div></div></div>
+    <div class="progress-item"><label><span>膝關節</span><span>41%</span></label><div class="progress-bar"><div class="progress-fill" style="width:41%"></div></div></div>
+    <br>
+    <div class="alert">注意：連續彎腰作業超過 30 分鐘，應休息並做伸展運動。</div>
+    <div class="tags-row">
+        <span class="tg tg-solid">肌骨</span><span class="tg tg-soft">伸展</span><span class="tg tg-outline">預防</span>
+    </div>
+</div>
+<div class="panel msd-new">
+    <span class="tag" style="background:#2A6B5A;color:#fff;">暖米：湖綠 #2A6B5A</span>
+    <div class="hero">
+        <div class="kicker">健康促進 — 肌肉骨骼</div>
+        <h3>彎腰一輩子，也要挺得直</h3>
+        <p>農業工作對肌肉骨骼的負擔遠超一般職業，正確姿勢與伸展是最好的預防。</p>
+        <button class="btn">伸展教學</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9899;</div><h4>疼痛評估</h4><p>自我檢測肌骨問題</p></div>
+        <div class="card"><div class="card-icon">&#9898;</div><h4>職前伸展</h4><p>5 分鐘暖身操</p></div>
+    </div>
+    <div class="progress-item"><label><span>下背痛</span><span>70%</span></label><div class="progress-bar"><div class="progress-fill" style="width:70%"></div></div></div>
+    <div class="progress-item"><label><span>肩頸痠痛</span><span>58%</span></label><div class="progress-bar"><div class="progress-fill" style="width:58%"></div></div></div>
+    <div class="progress-item"><label><span>膝關節</span><span>41%</span></label><div class="progress-bar"><div class="progress-fill" style="width:41%"></div></div></div>
+    <br>
+    <div class="alert">注意：連續彎腰作業超過 30 分鐘，應休息並做伸展運動。</div>
+    <div class="tags-row">
+        <span class="tg tg-solid">肌骨</span><span class="tg tg-soft">伸展</span><span class="tg tg-outline">預防</span>
+    </div>
+</div>
+</div>
+
+<!-- ====== 農藥安全 ====== -->
+<div class="section-label" style="background:#7A4E12;">農藥安全 — 現有 vs 暖米</div>
+<div class="compare">
+<div class="panel pest-old">
+    <span class="tag" style="background:#7b1fa2;color:#fff;">現有：Material Purple #7b1fa2</span>
+    <div class="hero">
+        <div class="kicker">健康促進 — 農藥安全</div>
+        <h3>正確用藥，守護健康</h3>
+        <p>農藥使用不當是農民健康的最大威脅之一，掌握安全操作流程至關重要。</p>
+        <button class="btn">安全用藥指南</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9888;</div><h4>毒性分級</h4><p>農藥標籤色帶辨識</p></div>
+        <div class="card"><div class="card-icon">&#9881;</div><h4>防護裝備</h4><p>噴藥時的個人防護</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">4色</div><div class="u">毒性分級</div></div>
+        <div class="stat"><div class="n">85%</div><div class="u">防護不足</div></div>
+        <div class="stat"><div class="n">7天</div><div class="u">安全採收期</div></div>
+    </div>
+    <div class="alert">警告：施藥後 48 小時內禁止無防護進入噴藥區域。</div>
+    <div class="tags-row">
+        <span class="tg tg-solid">農藥</span><span class="tg tg-soft">防護</span><span class="tg tg-outline">安全</span>
+    </div>
+</div>
+<div class="panel pest-new">
+    <span class="tag" style="background:#7A4E12;color:#fff;">暖米：深棕 #7A4E12</span>
+    <div class="hero">
+        <div class="kicker">健康促進 — 農藥安全</div>
+        <h3>正確用藥，守護健康</h3>
+        <p>農藥使用不當是農民健康的最大威脅之一，掌握安全操作流程至關重要。</p>
+        <button class="btn">安全用藥指南</button>
+    </div>
+    <div class="cards">
+        <div class="card"><div class="card-icon">&#9888;</div><h4>毒性分級</h4><p>農藥標籤色帶辨識</p></div>
+        <div class="card"><div class="card-icon">&#9881;</div><h4>防護裝備</h4><p>噴藥時的個人防護</p></div>
+    </div>
+    <div class="stats">
+        <div class="stat"><div class="n">4色</div><div class="u">毒性分級</div></div>
+        <div class="stat"><div class="n">85%</div><div class="u">防護不足</div></div>
+        <div class="stat"><div class="n">7天</div><div class="u">安全採收期</div></div>
+    </div>
+    <div class="alert">警告：施藥後 48 小時內禁止無防護進入噴藥區域。</div>
+    <div class="tags-row">
+        <span class="tg tg-solid">農藥</span><span class="tg tg-soft">防護</span><span class="tg tg-outline">安全</span>
+    </div>
+</div>
+</div>
+
+<!-- 總覽色票 -->
+<div style="background:#F7F4ED; padding: 40px 28px; max-width: 1500px; margin: 0 auto;">
+    <h2 style="font-family:'Noto Serif TC',serif; font-size: 22px; text-align:center; margin-bottom: 24px; color: #2C2418;">暖米調和版 — 4 子頁主題色總覽</h2>
+    <div style="display:grid; grid-template-columns: repeat(4,1fr); gap: 16px;">
+        <div style="text-align:center;">
+            <div style="width:80px;height:80px;border-radius:16px;background:#B84A2D;margin:0 auto 8px;"></div>
+            <div style="font-size:14px;font-weight:700;color:#2C2418;">熱傷害</div>
+            <div style="font-size:11px;color:#6B5F4E;">燒土橘紅 #B84A2D</div>
+        </div>
+        <div style="text-align:center;">
+            <div style="width:80px;height:80px;border-radius:16px;background:#4A6932;margin:0 auto 8px;"></div>
+            <div style="font-size:14px;font-weight:700;color:#2C2418;">心理健康</div>
+            <div style="font-size:11px;color:#6B5F4E;">橄欖綠 #4A6932</div>
+        </div>
+        <div style="text-align:center;">
+            <div style="width:80px;height:80px;border-radius:16px;background:#2A6B5A;margin:0 auto 8px;"></div>
+            <div style="font-size:14px;font-weight:700;color:#2C2418;">肌肉骨骼</div>
+            <div style="font-size:11px;color:#6B5F4E;">湖綠 #2A6B5A</div>
+        </div>
+        <div style="text-align:center;">
+            <div style="width:80px;height:80px;border-radius:16px;background:#7A4E12;margin:0 auto 8px;"></div>
+            <div style="font-size:14px;font-weight:700;color:#2C2418;">農藥安全</div>
+            <div style="font-size:11px;color:#6B5F4E;">深棕 #7A4E12</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A 方案底色微調</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans TC', sans-serif; background: #888; }
+
+.header {
+    text-align: center;
+    padding: 40px 24px 24px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.header h1 { font-size: 24px; margin-bottom: 6px; }
+.header p { color: #666; font-size: 15px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.panel {
+    padding: 40px 28px;
+    --brand: #3D5A2C;
+    --brand-deep: #2A3F1E;
+    --accent: #A8740B;
+    --warn: #8B2D14;
+    --text: #1F1A14;
+}
+
+/* 6 個底色候選 */
+.v0 { --bg: #FBFAF7; --bg2: #F4F0E6; --muted: #5C5448; --line: #D8CFB8; background: var(--bg); color: var(--text); }
+.v1 { --bg: #F7F4ED; --bg2: #EFE9DD; --muted: #5C5448; --line: #D5CBAE; background: var(--bg); color: var(--text); }
+.v2 { --bg: #F5F1E8; --bg2: #ECE6D8; --muted: #5A5140; --line: #D2C7AB; background: var(--bg); color: var(--text); }
+.v3 { --bg: #F3EFE4; --bg2: #E9E3D3; --muted: #584F3E; --line: #CFC3A5; background: var(--bg); color: var(--text); }
+.v4 { --bg: #F0EDDF; --bg2: #E5E0CE; --muted: #564D3B; --line: #CBC0A0; background: var(--bg); color: var(--text); }
+.v5 { --bg: #EDE9DA; --bg2: #E1DCCA; --muted: #544B38; --line: #C8BC9A; background: var(--bg); color: var(--text); }
+
+.label-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.label-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brand);
+}
+.label-hex {
+    font-size: 12px;
+    color: var(--muted);
+    font-family: monospace;
+}
+.current-tag {
+    font-size: 11px;
+    background: var(--warn);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-left: 8px;
+}
+
+/* 色票對比列 */
+.swatch-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+.sw {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+}
+
+/* Hero 模擬 */
+.hero-mini {
+    padding: 32px 24px;
+    border-radius: 14px;
+    background: var(--bg2);
+    border: 1px solid var(--line);
+    margin-bottom: 16px;
+}
+.hero-mini .kicker {
+    font-size: 12px; font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+.hero-mini h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px; line-height: 1.4;
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+}
+.hero-mini p {
+    font-size: 16px; line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 16px;
+}
+.hero-mini .btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-size: 14px; font-weight: 700;
+    background: var(--brand);
+    color: #fff; border: none;
+}
+
+/* 卡片 */
+.cards-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.card-mini {
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+}
+.card-mini h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.card-mini p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* 分眾 */
+.aud-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 16px;
+}
+.aud-chip {
+    padding: 10px 4px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* 內文 */
+.text-mini {
+    padding: 20px;
+    border-radius: 14px;
+    background: var(--bg2);
+    border: 1px solid var(--line);
+    margin-bottom: 16px;
+}
+.text-mini h4 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    color: var(--brand);
+    margin-bottom: 8px;
+}
+.text-mini p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text);
+}
+
+/* Stats */
+.stats-mini {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.stat-mini {
+    text-align: center;
+    padding: 16px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+}
+.stat-mini .n {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 28px; font-weight: 700;
+    color: var(--brand);
+}
+.stat-mini .u { font-size: 12px; color: var(--muted); }
+
+/* Tags */
+.tags-mini { display: flex; gap: 6px; flex-wrap: wrap; }
+.tg {
+    padding: 4px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 500;
+}
+.tg-b { background: var(--brand); color: #fff; }
+.tg-a { background: var(--accent); color: #fff; }
+.tg-o { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>A 方案底色微調 — 從白到暖</h1>
+    <p>同樣的苔蘚墨綠 #3D5A2C + 稻穗金 #A8740B，只換底色深淺</p>
+</div>
+
+<div class="grid">
+
+<!-- V0: 原版 -->
+<div class="panel v0">
+    <div class="label-bar">
+        <span class="label-name">V0 原版米紙白<span class="current-tag">現在</span></span>
+        <span class="label-hex">#FBFAF7 → #F4F0E6</span>
+    </div>
+    <div class="swatch-row">
+        <div class="sw" style="background:#FBFAF7"></div>
+        <div class="sw" style="background:#F4F0E6"></div>
+        <div class="sw" style="background:#3D5A2C"></div>
+        <div class="sw" style="background:#A8740B"></div>
+        <div class="sw" style="background:#1F1A14"></div>
+    </div>
+    <div class="hero-mini">
+        <div class="kicker">尊嚴農業 Dignity Farming</div>
+        <h3>讓每位農人都被看見</h3>
+        <p>從職業安全到心理健康，我們相信農業工作者值得更好的未來。</p>
+        <button class="btn">開始探索</button>
+    </div>
+    <div class="cards-mini">
+        <div class="card-mini"><h4>職業安全</h4><p>農機操作、防護裝備</p></div>
+        <div class="card-mini"><h4>健康促進</h4><p>熱傷害、心理健康</p></div>
+    </div>
+    <div class="aud-row">
+        <div class="aud-chip" style="background:#5A7D48">新手</div>
+        <div class="aud-chip" style="background:#3A5D82">青農</div>
+        <div class="aud-chip" style="background:#9E5F3E">資深</div>
+        <div class="aud-chip" style="background:#A67C0B">民眾</div>
+    </div>
+    <div class="stats-mini">
+        <div class="stat-mini"><div class="n">152</div><div class="u">萬農業工作者</div></div>
+        <div class="stat-mini"><div class="n">67%</div><div class="u">曾遭遇職災</div></div>
+        <div class="stat-mini"><div class="n">4.2</div><div class="u">倍風險</div></div>
+    </div>
+    <div class="text-mini">
+        <h4>為什麼農業安全很重要？</h4>
+        <p>台灣農業工作者面臨的職業風險遠高於一般行業。</p>
+    </div>
+    <div class="tags-mini">
+        <span class="tg tg-b">職業安全</span>
+        <span class="tg tg-a">最新消息</span>
+        <span class="tg tg-o">研究報告</span>
+    </div>
+</div>
+
+<!-- V1 -->
+<div class="panel v1">
+    <div class="label-bar">
+        <span class="label-name">V1 暖米</span>
+        <span class="label-hex">#F7F4ED → #EFE9DD</span>
+    </div>
+    <div class="swatch-row">
+        <div class="sw" style="background:#F7F4ED"></div>
+        <div class="sw" style="background:#EFE9DD"></div>
+        <div class="sw" style="background:#3D5A2C"></div>
+        <div class="sw" style="background:#A8740B"></div>
+        <div class="sw" style="background:#1F1A14"></div>
+    </div>
+    <div class="hero-mini">
+        <div class="kicker">尊嚴農業 Dignity Farming</div>
+        <h3>讓每位農人都被看見</h3>
+        <p>從職業安全到心理健康，我們相信農業工作者值得更好的未來。</p>
+        <button class="btn">開始探索</button>
+    </div>
+    <div class="cards-mini">
+        <div class="card-mini"><h4>職業安全</h4><p>農機操作、防護裝備</p></div>
+        <div class="card-mini"><h4>健康促進</h4><p>熱傷害、心理健康</p></div>
+    </div>
+    <div class="aud-row">
+        <div class="aud-chip" style="background:#5A7D48">新手</div>
+        <div class="aud-chip" style="background:#3A5D82">青農</div>
+        <div class="aud-chip" style="background:#9E5F3E">資深</div>
+        <div class="aud-chip" style="background:#A67C0B">民眾</div>
+    </div>
+    <div class="stats-mini">
+        <div class="stat-mini"><div class="n">152</div><div class="u">萬農業工作者</div></div>
+        <div class="stat-mini"><div class="n">67%</div><div class="u">曾遭遇職災</div></div>
+        <div class="stat-mini"><div class="n">4.2</div><div class="u">倍風險</div></div>
+    </div>
+    <div class="text-mini">
+        <h4>為什麼農業安全很重要？</h4>
+        <p>台灣農業工作者面臨的職業風險遠高於一般行業。</p>
+    </div>
+    <div class="tags-mini">
+        <span class="tg tg-b">職業安全</span>
+        <span class="tg tg-a">最新消息</span>
+        <span class="tg tg-o">研究報告</span>
+    </div>
+</div>
+
+<!-- V2 -->
+<div class="panel v2">
+    <div class="label-bar">
+        <span class="label-name">V2 稻草暖</span>
+        <span class="label-hex">#F5F1E8 → #ECE6D8</span>
+    </div>
+    <div class="swatch-row">
+        <div class="sw" style="background:#F5F1E8"></div>
+        <div class="sw" style="background:#ECE6D8"></div>
+        <div class="sw" style="background:#3D5A2C"></div>
+        <div class="sw" style="background:#A8740B"></div>
+        <div class="sw" style="background:#1F1A14"></div>
+    </div>
+    <div class="hero-mini">
+        <div class="kicker">尊嚴農業 Dignity Farming</div>
+        <h3>讓每位農人都被看見</h3>
+        <p>從職業安全到心理健康，我們相信農業工作者值得更好的未來。</p>
+        <button class="btn">開始探索</button>
+    </div>
+    <div class="cards-mini">
+        <div class="card-mini"><h4>職業安全</h4><p>農機操作、防護裝備</p></div>
+        <div class="card-mini"><h4>健康促進</h4><p>熱傷害、心理健康</p></div>
+    </div>
+    <div class="aud-row">
+        <div class="aud-chip" style="background:#5A7D48">新手</div>
+        <div class="aud-chip" style="background:#3A5D82">青農</div>
+        <div class="aud-chip" style="background:#9E5F3E">資深</div>
+        <div class="aud-chip" style="background:#A67C0B">民眾</div>
+    </div>
+    <div class="stats-mini">
+        <div class="stat-mini"><div class="n">152</div><div class="u">萬農業工作者</div></div>
+        <div class="stat-mini"><div class="n">67%</div><div class="u">曾遭遇職災</div></div>
+        <div class="stat-mini"><div class="n">4.2</div><div class="u">倍風險</div></div>
+    </div>
+    <div class="text-mini">
+        <h4>為什麼農業安全很重要？</h4>
+        <p>台灣農業工作者面臨的職業風險遠高於一般行業。</p>
+    </div>
+    <div class="tags-mini">
+        <span class="tg tg-b">職業安全</span>
+        <span class="tg tg-a">最新消息</span>
+        <span class="tg tg-o">研究報告</span>
+    </div>
+</div>
+
+<!-- V3 -->
+<div class="panel v3">
+    <div class="label-bar">
+        <span class="label-name">V3 亞麻</span>
+        <span class="label-hex">#F3EFE4 → #E9E3D3</span>
+    </div>
+    <div class="swatch-row">
+        <div class="sw" style="background:#F3EFE4"></div>
+        <div class="sw" style="background:#E9E3D3"></div>
+        <div class="sw" style="background:#3D5A2C"></div>
+        <div class="sw" style="background:#A8740B"></div>
+        <div class="sw" style="background:#1F1A14"></div>
+    </div>
+    <div class="hero-mini">
+        <div class="kicker">尊嚴農業 Dignity Farming</div>
+        <h3>讓每位農人都被看見</h3>
+        <p>從職業安全到心理健康，我們相信農業工作者值得更好的未來。</p>
+        <button class="btn">開始探索</button>
+    </div>
+    <div class="cards-mini">
+        <div class="card-mini"><h4>職業安全</h4><p>農機操作、防護裝備</p></div>
+        <div class="card-mini"><h4>健康促進</h4><p>熱傷害、心理健康</p></div>
+    </div>
+    <div class="aud-row">
+        <div class="aud-chip" style="background:#5A7D48">新手</div>
+        <div class="aud-chip" style="background:#3A5D82">青農</div>
+        <div class="aud-chip" style="background:#9E5F3E">資深</div>
+        <div class="aud-chip" style="background:#A67C0B">民眾</div>
+    </div>
+    <div class="stats-mini">
+        <div class="stat-mini"><div class="n">152</div><div class="u">萬農業工作者</div></div>
+        <div class="stat-mini"><div class="n">67%</div><div class="u">曾遭遇職災</div></div>
+        <div class="stat-mini"><div class="n">4.2</div><div class="u">倍風險</div></div>
+    </div>
+    <div class="text-mini">
+        <h4>為什麼農業安全很重要？</h4>
+        <p>台灣農業工作者面臨的職業風險遠高於一般行業。</p>
+    </div>
+    <div class="tags-mini">
+        <span class="tg tg-b">職業安全</span>
+        <span class="tg tg-a">最新消息</span>
+        <span class="tg tg-o">研究報告</span>
+    </div>
+</div>
+
+<!-- V4 -->
+<div class="panel v4">
+    <div class="label-bar">
+        <span class="label-name">V4 糙米</span>
+        <span class="label-hex">#F0EDDF → #E5E0CE</span>
+    </div>
+    <div class="swatch-row">
+        <div class="sw" style="background:#F0EDDF"></div>
+        <div class="sw" style="background:#E5E0CE"></div>
+        <div class="sw" style="background:#3D5A2C"></div>
+        <div class="sw" style="background:#A8740B"></div>
+        <div class="sw" style="background:#1F1A14"></div>
+    </div>
+    <div class="hero-mini">
+        <div class="kicker">尊嚴農業 Dignity Farming</div>
+        <h3>讓每位農人都被看見</h3>
+        <p>從職業安全到心理健康，我們相信農業工作者值得更好的未來。</p>
+        <button class="btn">開始探索</button>
+    </div>
+    <div class="cards-mini">
+        <div class="card-mini"><h4>職業安全</h4><p>農機操作、防護裝備</p></div>
+        <div class="card-mini"><h4>健康促進</h4><p>熱傷害、心理健康</p></div>
+    </div>
+    <div class="aud-row">
+        <div class="aud-chip" style="background:#5A7D48">新手</div>
+        <div class="aud-chip" style="background:#3A5D82">青農</div>
+        <div class="aud-chip" style="background:#9E5F3E">資深</div>
+        <div class="aud-chip" style="background:#A67C0B">民眾</div>
+    </div>
+    <div class="stats-mini">
+        <div class="stat-mini"><div class="n">152</div><div class="u">萬農業工作者</div></div>
+        <div class="stat-mini"><div class="n">67%</div><div class="u">曾遭遇職災</div></div>
+        <div class="stat-mini"><div class="n">4.2</div><div class="u">倍風險</div></div>
+    </div>
+    <div class="text-mini">
+        <h4>為什麼農業安全很重要？</h4>
+        <p>台灣農業工作者面臨的職業風險遠高於一般行業。</p>
+    </div>
+    <div class="tags-mini">
+        <span class="tg tg-b">職業安全</span>
+        <span class="tg tg-a">最新消息</span>
+        <span class="tg tg-o">研究報告</span>
+    </div>
+</div>
+
+<!-- V5 -->
+<div class="panel v5">
+    <div class="label-bar">
+        <span class="label-name">V5 土壤</span>
+        <span class="label-hex">#EDE9DA → #E1DCCA</span>
+    </div>
+    <div class="swatch-row">
+        <div class="sw" style="background:#EDE9DA"></div>
+        <div class="sw" style="background:#E1DCCA"></div>
+        <div class="sw" style="background:#3D5A2C"></div>
+        <div class="sw" style="background:#A8740B"></div>
+        <div class="sw" style="background:#1F1A14"></div>
+    </div>
+    <div class="hero-mini">
+        <div class="kicker">尊嚴農業 Dignity Farming</div>
+        <h3>讓每位農人都被看見</h3>
+        <p>從職業安全到心理健康，我們相信農業工作者值得更好的未來。</p>
+        <button class="btn">開始探索</button>
+    </div>
+    <div class="cards-mini">
+        <div class="card-mini"><h4>職業安全</h4><p>農機操作、防護裝備</p></div>
+        <div class="card-mini"><h4>健康促進</h4><p>熱傷害、心理健康</p></div>
+    </div>
+    <div class="aud-row">
+        <div class="aud-chip" style="background:#5A7D48">新手</div>
+        <div class="aud-chip" style="background:#3A5D82">青農</div>
+        <div class="aud-chip" style="background:#9E5F3E">資深</div>
+        <div class="aud-chip" style="background:#A67C0B">民眾</div>
+    </div>
+    <div class="stats-mini">
+        <div class="stat-mini"><div class="n">152</div><div class="u">萬農業工作者</div></div>
+        <div class="stat-mini"><div class="n">67%</div><div class="u">曾遭遇職災</div></div>
+        <div class="stat-mini"><div class="n">4.2</div><div class="u">倍風險</div></div>
+    </div>
+    <div class="text-mini">
+        <h4>為什麼農業安全很重要？</h4>
+        <p>台灣農業工作者面臨的職業風險遠高於一般行業。</p>
+    </div>
+    <div class="tags-mini">
+        <span class="tg tg-b">職業安全</span>
+        <span class="tg tg-a">最新消息</span>
+        <span class="tg tg-o">研究報告</span>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

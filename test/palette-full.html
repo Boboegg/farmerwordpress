@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>完整色盤比較：V1 暖米 vs V2 稻草暖</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Noto Sans TC', sans-serif; background: #777; }
+
+.header {
+    text-align: center;
+    padding: 40px 24px 28px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.header h1 { font-size: 24px; margin-bottom: 6px; }
+.header p { color: #666; font-size: 15px; line-height: 1.6; }
+
+.compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.panel { padding: 48px 36px; color: var(--text); background: var(--bg); }
+
+/* === V1 暖米：整體偏暖白，綠色帶橄欖調 === */
+.v1 {
+    --bg:         #F7F4ED;
+    --bg-2:       #EFE9DD;
+    --bg-card:    #FDFCF8;
+    --text:       #2C2418;
+    --muted:      #6B5F4E;
+    --line:       #D5CBAE;
+    --brand:      #4A6932;
+    --brand-deep: #354D22;
+    --brand-light:#E8EDDF;
+    --accent:     #B07E12;
+    --accent-light:#FDF3D7;
+    --warn:       #8B2D14;
+    --warn-light: #FBE9E2;
+    --info:       #2A6B5A;
+    --info-light: #E4F0EC;
+    --aud-start:  #5A7D48;
+    --aud-young:  #4A6E8A;
+    --aud-senior: #A8694A;
+    --aud-public: #B8880F;
+    border-right: 2px solid #aaa;
+}
+
+/* === V2 稻草暖：更深暖底，綠色更沉穩，金色更古銅 === */
+.v2 {
+    --bg:         #F5F1E8;
+    --bg-2:       #ECE6D8;
+    --bg-card:    #FAFAF5;
+    --text:       #261E12;
+    --muted:      #635740;
+    --line:       #D2C7AB;
+    --brand:      #3D5A2C;
+    --brand-deep: #2A3F1E;
+    --brand-light:#DFE6D2;
+    --accent:     #9A6E08;
+    --accent-light:#FAF0CE;
+    --warn:       #7A2610;
+    --warn-light: #F8E5DD;
+    --info:       #24604F;
+    --info-light: #DEF0E8;
+    --aud-start:  #4E7240;
+    --aud-young:  #3E6380;
+    --aud-senior: #966040;
+    --aud-public: #A67C0B;
+}
+
+/* --- 共用元件樣式 --- */
+.label-bar {
+    display: flex; align-items: baseline; gap: 12px;
+    margin-bottom: 24px;
+}
+.label-name {
+    font-size: 13px; font-weight: 700; letter-spacing: 0.1em;
+    padding: 5px 14px; border-radius: 999px;
+    background: var(--brand); color: #fff;
+}
+.label-desc {
+    font-size: 13px; color: var(--muted);
+}
+
+/* 色票 */
+.section-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+    color: var(--muted); text-transform: uppercase;
+    margin: 36px 0 12px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+}
+.swatches {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+    margin-bottom: 8px;
+}
+.sw-item { text-align: center; }
+.sw-box {
+    width: 100%; aspect-ratio: 1; border-radius: 12px;
+    border: 1px solid var(--line); margin-bottom: 4px;
+}
+.sw-label { font-size: 10px; color: var(--muted); }
+.sw-hex { font-size: 9px; font-family: monospace; color: var(--muted); opacity: 0.7; }
+
+/* Hero */
+.hero {
+    padding: 40px 28px; border-radius: 16px;
+    background: var(--bg-2); border: 1px solid var(--line);
+    margin-bottom: 20px; position: relative; overflow: hidden;
+}
+.hero::before {
+    content: ''; position: absolute; top: 0; right: 0;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: var(--brand-light); opacity: 0.5;
+    transform: translate(40%, -40%);
+}
+.hero .kicker {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--accent); margin-bottom: 12px;
+    position: relative;
+}
+.hero .kicker::after {
+    content: ''; display: block; width: 32px; height: 2px;
+    background: var(--accent); margin-top: 8px;
+}
+.hero h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 30px; line-height: 1.4; margin-bottom: 12px;
+    letter-spacing: 0.04em; position: relative;
+}
+.hero p {
+    font-size: 17px; line-height: 1.85; color: var(--muted);
+    max-width: 420px; margin-bottom: 20px; position: relative;
+}
+.btn-row { display: flex; gap: 10px; position: relative; }
+.btn {
+    padding: 12px 28px; border-radius: 999px;
+    font-size: 14px; font-weight: 700; border: none; cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { background: var(--brand-deep); }
+.btn-outline {
+    background: transparent; color: var(--brand);
+    border: 2px solid var(--brand);
+}
+.btn-accent { background: var(--accent); color: #fff; }
+
+/* 分眾 */
+.aud-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+    margin-bottom: 8px;
+}
+.aud-card {
+    padding: 20px 12px; border-radius: 14px;
+    text-align: center; color: #fff;
+    position: relative; overflow: hidden;
+}
+.aud-card .aud-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.aud-card .aud-desc { font-size: 11px; opacity: 0.85; }
+
+/* 功能卡片 */
+.cards {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.card {
+    padding: 22px; border-radius: 14px;
+    border: 1px solid var(--line); background: var(--bg-card);
+    transition: transform 0.2s, border-color 0.2s;
+}
+.card:hover { transform: translateY(-3px); border-color: var(--brand); }
+.card-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; margin-bottom: 10px; color: #fff;
+}
+.card h4 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.card p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+/* Stats */
+.stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+}
+.stat {
+    text-align: center; padding: 20px 10px; border-radius: 14px;
+    background: var(--bg-card); border: 1px solid var(--line);
+}
+.stat .num {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px; font-weight: 700; color: var(--brand);
+}
+.stat .unit { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* 內文 */
+.text-block {
+    padding: 28px; border-radius: 14px;
+    background: var(--bg-2); border: 1px solid var(--line);
+}
+.text-block h4 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px; color: var(--brand); margin-bottom: 10px;
+}
+.text-block p {
+    font-size: 17px; line-height: 1.85; color: var(--text); max-width: 480px;
+}
+.text-block a {
+    color: var(--accent); text-decoration: underline;
+    text-underline-offset: 3px; font-weight: 500;
+}
+
+/* Alerts */
+.alerts { display: flex; flex-direction: column; gap: 10px; }
+.alert {
+    padding: 14px 18px; border-radius: 12px;
+    font-size: 14px; line-height: 1.6;
+    border-left: 4px solid; display: flex; align-items: flex-start; gap: 10px;
+}
+.alert-warn { background: var(--warn-light); border-color: var(--warn); color: var(--warn); }
+.alert-info { background: var(--info-light); border-color: var(--info); color: var(--info); }
+.alert-accent { background: var(--accent-light); border-color: var(--accent); color: #5A4508; }
+.alert-brand { background: var(--brand-light); border-color: var(--brand); color: var(--brand-deep); }
+.alert-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+/* Tags */
+.tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.tg { padding: 5px 14px; border-radius: 999px; font-size: 13px; font-weight: 500; }
+.tg-brand { background: var(--brand); color: #fff; }
+.tg-brand-soft { background: var(--brand-light); color: var(--brand-deep); }
+.tg-accent { background: var(--accent); color: #fff; }
+.tg-accent-soft { background: var(--accent-light); color: #5A4508; }
+.tg-warn { background: var(--warn); color: #fff; }
+.tg-info { background: var(--info); color: #fff; }
+.tg-outline { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+.tg-ghost { background: var(--bg-2); color: var(--muted); }
+
+/* Timeline */
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before {
+    content: ''; position: absolute; left: 7px; top: 4px; bottom: 4px;
+    width: 2px; background: var(--line);
+}
+.tl-item { position: relative; margin-bottom: 20px; }
+.tl-item::before {
+    content: ''; position: absolute; left: -21px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--brand); border: 2px solid var(--bg);
+}
+.tl-item h5 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+.tl-item p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.tl-item .tl-date { font-size: 11px; color: var(--accent); font-weight: 500; }
+
+/* Bottom nav */
+.bottom-nav {
+    display: flex; gap: 6px; padding: 12px;
+    border-radius: 14px; background: var(--brand);
+}
+.bottom-nav a {
+    flex: 1; text-align: center; padding: 10px 6px;
+    border-radius: 10px; color: rgba(255,255,255,0.65);
+    text-decoration: none; font-size: 12px; font-weight: 500;
+    transition: all 0.15s;
+}
+.bottom-nav a:hover, .bottom-nav a.active {
+    background: rgba(255,255,255,0.15); color: #fff;
+}
+
+/* Accordion */
+.accordion { display: flex; flex-direction: column; gap: 8px; }
+.acc-item {
+    border: 1px solid var(--line); border-radius: 12px;
+    background: var(--bg-card); overflow: hidden;
+}
+.acc-header {
+    padding: 14px 18px; font-size: 15px; font-weight: 700;
+    cursor: pointer; display: flex; justify-content: space-between;
+    align-items: center;
+}
+.acc-header .arrow { color: var(--brand); font-size: 18px; }
+.acc-body {
+    padding: 0 18px 14px; font-size: 14px;
+    color: var(--muted); line-height: 1.6;
+    border-top: 1px solid var(--line);
+}
+
+/* CTA Banner */
+.cta-banner {
+    padding: 32px 28px; border-radius: 16px;
+    background: var(--brand); color: #fff;
+    text-align: center; position: relative; overflow: hidden;
+}
+.cta-banner::before {
+    content: ''; position: absolute; top: -30px; right: -30px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(255,255,255,0.08);
+}
+.cta-banner h3 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 24px; margin-bottom: 8px; position: relative;
+}
+.cta-banner p {
+    font-size: 15px; opacity: 0.85; margin-bottom: 20px; position: relative;
+}
+.cta-banner .btn {
+    background: var(--accent); color: #fff;
+    font-size: 15px; padding: 14px 36px; position: relative;
+}
+
+/* Progress bar */
+.progress-group { display: flex; flex-direction: column; gap: 14px; }
+.progress-item label {
+    font-size: 13px; font-weight: 500; color: var(--text);
+    display: flex; justify-content: space-between; margin-bottom: 4px;
+}
+.progress-bar {
+    height: 8px; border-radius: 999px; background: var(--bg-2);
+    overflow: hidden;
+}
+.progress-fill { height: 100%; border-radius: 999px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>完整色盤比較</h1>
+    <p>V1 暖米 vs V2 稻草暖 — 所有顏色都跟著底色調整過，包含綠、金、警示、資訊、分眾</p>
+</div>
+
+<div class="compare">
+
+<!-- ========== V1 暖米 ========== -->
+<div class="panel v1">
+    <div class="label-bar">
+        <span class="label-name">V1 暖米</span>
+        <span class="label-desc">底色偏奶白，綠帶橄欖調，金偏蜂蜜</span>
+    </div>
+
+    <div class="section-title">完整色票</div>
+    <div class="swatches">
+        <div class="sw-item"><div class="sw-box" style="background:#F7F4ED"></div><div class="sw-label">bg</div><div class="sw-hex">#F7F4ED</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#EFE9DD"></div><div class="sw-label">bg-2</div><div class="sw-hex">#EFE9DD</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#FDFCF8"></div><div class="sw-label">card</div><div class="sw-hex">#FDFCF8</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#2C2418"></div><div class="sw-label">text</div><div class="sw-hex">#2C2418</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#6B5F4E"></div><div class="sw-label">muted</div><div class="sw-hex">#6B5F4E</div></div>
+    </div>
+    <div class="swatches">
+        <div class="sw-item"><div class="sw-box" style="background:#4A6932"></div><div class="sw-label">brand</div><div class="sw-hex">#4A6932</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#354D22"></div><div class="sw-label">deep</div><div class="sw-hex">#354D22</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#B07E12"></div><div class="sw-label">accent</div><div class="sw-hex">#B07E12</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#8B2D14"></div><div class="sw-label">warn</div><div class="sw-hex">#8B2D14</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#2A6B5A"></div><div class="sw-label">info</div><div class="sw-hex">#2A6B5A</div></div>
+    </div>
+
+    <div class="section-title">Hero</div>
+    <div class="hero">
+        <div class="kicker">尊嚴農業 Dignity Farming</div>
+        <h3>讓每位農人<br>都被看見</h3>
+        <p>從職業安全到心理健康，從經濟保障到社會倡議——我們相信農業工作者值得更好的未來。</p>
+        <div class="btn-row">
+            <button class="btn btn-primary">開始探索</button>
+            <button class="btn btn-outline">了解更多</button>
+            <button class="btn btn-accent">最新消息</button>
+        </div>
+    </div>
+
+    <div class="section-title">四分眾</div>
+    <div class="aud-grid">
+        <div class="aud-card" style="background:#5A7D48"><div class="aud-name">新手務農</div><div class="aud-desc">從零開始</div></div>
+        <div class="aud-card" style="background:#4A6E8A"><div class="aud-name">青年農民</div><div class="aud-desc">返鄉新力</div></div>
+        <div class="aud-card" style="background:#A8694A"><div class="aud-name">資深農友</div><div class="aud-desc">經驗傳承</div></div>
+        <div class="aud-card" style="background:#B8880F"><div class="aud-name">一般民眾</div><div class="aud-desc">認識農業</div></div>
+    </div>
+
+    <div class="section-title">功能卡片</div>
+    <div class="cards">
+        <div class="card"><div class="card-icon" style="background:var(--brand)">&#9876;</div><h4>職業安全</h4><p>農機操作、防護裝備、化學品管理指南</p></div>
+        <div class="card"><div class="card-icon" style="background:var(--info)">&#9829;</div><h4>健康促進</h4><p>熱傷害預防、肌肉骨骼、心理健康資源</p></div>
+        <div class="card"><div class="card-icon" style="background:var(--accent)">&#9733;</div><h4>經濟保障</h4><p>農業保險、補助資源、災害理賠說明</p></div>
+        <div class="card"><div class="card-icon" style="background:var(--warn)">&#9742;</div><h4>社會倡議</h4><p>農民權益、政策建議、國際趨勢分析</p></div>
+    </div>
+
+    <div class="section-title">數據統計</div>
+    <div class="stats">
+        <div class="stat"><div class="num">152</div><div class="unit">萬農業工作者</div></div>
+        <div class="stat"><div class="num">67%</div><div class="unit">曾遭遇職災</div></div>
+        <div class="stat"><div class="num">4.2</div><div class="unit">倍風險高於平均</div></div>
+    </div>
+
+    <div class="section-title">內文段落</div>
+    <div class="text-block">
+        <h4>為什麼農業職業安全很重要？</h4>
+        <p>台灣農業工作者面臨的職業風險遠高於一般行業。從烈日下的熱傷害、農藥暴露到農機操作意外，每一項都需要系統性的預防措施與政策支持。<a href="#">閱讀完整報告 →</a></p>
+    </div>
+
+    <div class="section-title">標籤系統</div>
+    <div class="tags">
+        <span class="tg tg-brand">職業安全</span>
+        <span class="tg tg-brand-soft">農機操作</span>
+        <span class="tg tg-accent">最新消息</span>
+        <span class="tg tg-accent-soft">補助公告</span>
+        <span class="tg tg-info">政策更新</span>
+        <span class="tg tg-warn">緊急</span>
+        <span class="tg tg-outline">研究報告</span>
+        <span class="tg tg-ghost">歸檔</span>
+    </div>
+
+    <div class="section-title">提示訊息</div>
+    <div class="alerts">
+        <div class="alert alert-warn"><span class="alert-icon">&#9888;</span>高溫警報期間，請農友避免在上午 10 點至下午 2 點之間進行戶外農事。</div>
+        <div class="alert alert-info"><span class="alert-icon">&#8505;</span>113 年度農業職災保險申請已開放，截止日期為 6 月 30 日。</div>
+        <div class="alert alert-accent"><span class="alert-icon">&#9733;</span>新增：青年農民創業貸款利率優惠方案，即日起受理申請。</div>
+        <div class="alert alert-brand"><span class="alert-icon">&#10003;</span>您的農業職災保險申請已通過審核，核撥金額請查閱通知書。</div>
+    </div>
+
+    <div class="section-title">進度條</div>
+    <div class="progress-group">
+        <div class="progress-item"><label><span>計畫完成度</span><span>72%</span></label><div class="progress-bar"><div class="progress-fill" style="width:72%; background:var(--brand)"></div></div></div>
+        <div class="progress-item"><label><span>預算執行率</span><span>58%</span></label><div class="progress-bar"><div class="progress-fill" style="width:58%; background:var(--accent)"></div></div></div>
+        <div class="progress-item"><label><span>風險指數</span><span>35%</span></label><div class="progress-bar"><div class="progress-fill" style="width:35%; background:var(--warn)"></div></div></div>
+    </div>
+
+    <div class="section-title">時間軸</div>
+    <div class="timeline">
+        <div class="tl-item"><div class="tl-date">2026.04</div><h5>啟動田野調查</h5><p>訪談 50 位農民，收集職災經驗</p></div>
+        <div class="tl-item"><div class="tl-date">2026.06</div><h5>發布中期報告</h5><p>統計分析與政策建議初稿</p></div>
+        <div class="tl-item"><div class="tl-date">2026.09</div><h5>國際研討會發表</h5><p>與日韓研究團隊交流成果</p></div>
+    </div>
+
+    <div class="section-title">FAQ 手風琴</div>
+    <div class="accordion">
+        <div class="acc-item"><div class="acc-header">農業職災保險怎麼申請？<span class="arrow">&#9660;</span></div><div class="acc-body">可至各區農會或勞保局臨櫃申請，亦可透過線上系統送件。</div></div>
+        <div class="acc-item"><div class="acc-header">青農貸款利率是多少？<span class="arrow">&#9660;</span></div><div class="acc-body">目前優惠年利率為 1.5%，前三年免息，詳見農委會公告。</div></div>
+    </div>
+
+    <div class="section-title">CTA Banner</div>
+    <div class="cta-banner">
+        <h3>加入尊嚴農業行動</h3>
+        <p>每一份關注都是改變的開始</p>
+        <button class="btn">立即參與</button>
+    </div>
+
+    <div class="section-title">底部導航</div>
+    <div class="bottom-nav">
+        <a href="#" class="active">首頁</a>
+        <a href="#">安全</a>
+        <a href="#">健康</a>
+        <a href="#">經濟</a>
+        <a href="#">倡議</a>
+        <a href="#">研究</a>
+    </div>
+</div>
+
+<!-- ========== V2 稻草暖 ========== -->
+<div class="panel v2">
+    <div class="label-bar">
+        <span class="label-name">V2 稻草暖</span>
+        <span class="label-desc">底色偏稻草，綠更沉穩墨綠，金偏古銅</span>
+    </div>
+
+    <div class="section-title">完整色票</div>
+    <div class="swatches">
+        <div class="sw-item"><div class="sw-box" style="background:#F5F1E8"></div><div class="sw-label">bg</div><div class="sw-hex">#F5F1E8</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#ECE6D8"></div><div class="sw-label">bg-2</div><div class="sw-hex">#ECE6D8</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#FAFAF5"></div><div class="sw-label">card</div><div class="sw-hex">#FAFAF5</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#261E12"></div><div class="sw-label">text</div><div class="sw-hex">#261E12</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#635740"></div><div class="sw-label">muted</div><div class="sw-hex">#635740</div></div>
+    </div>
+    <div class="swatches">
+        <div class="sw-item"><div class="sw-box" style="background:#3D5A2C"></div><div class="sw-label">brand</div><div class="sw-hex">#3D5A2C</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#2A3F1E"></div><div class="sw-label">deep</div><div class="sw-hex">#2A3F1E</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#9A6E08"></div><div class="sw-label">accent</div><div class="sw-hex">#9A6E08</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#7A2610"></div><div class="sw-label">warn</div><div class="sw-hex">#7A2610</div></div>
+        <div class="sw-item"><div class="sw-box" style="background:#24604F"></div><div class="sw-label">info</div><div class="sw-hex">#24604F</div></div>
+    </div>
+
+    <div class="section-title">Hero</div>
+    <div class="hero">
+        <div class="kicker">尊嚴農業 Dignity Farming</div>
+        <h3>讓每位農人<br>都被看見</h3>
+        <p>從職業安全到心理健康，從經濟保障到社會倡議——我們相信農業工作者值得更好的未來。</p>
+        <div class="btn-row">
+            <button class="btn btn-primary">開始探索</button>
+            <button class="btn btn-outline">了解更多</button>
+            <button class="btn btn-accent">最新消息</button>
+        </div>
+    </div>
+
+    <div class="section-title">四分眾</div>
+    <div class="aud-grid">
+        <div class="aud-card" style="background:#4E7240"><div class="aud-name">新手務農</div><div class="aud-desc">從零開始</div></div>
+        <div class="aud-card" style="background:#3E6380"><div class="aud-name">青年農民</div><div class="aud-desc">返鄉新力</div></div>
+        <div class="aud-card" style="background:#966040"><div class="aud-name">資深農友</div><div class="aud-desc">經驗傳承</div></div>
+        <div class="aud-card" style="background:#A67C0B"><div class="aud-name">一般民眾</div><div class="aud-desc">認識農業</div></div>
+    </div>
+
+    <div class="section-title">功能卡片</div>
+    <div class="cards">
+        <div class="card"><div class="card-icon" style="background:var(--brand)">&#9876;</div><h4>職業安全</h4><p>農機操作、防護裝備、化學品管理指南</p></div>
+        <div class="card"><div class="card-icon" style="background:var(--info)">&#9829;</div><h4>健康促進</h4><p>熱傷害預防、肌肉骨骼、心理健康資源</p></div>
+        <div class="card"><div class="card-icon" style="background:var(--accent)">&#9733;</div><h4>經濟保障</h4><p>農業保險、補助資源、災害理賠說明</p></div>
+        <div class="card"><div class="card-icon" style="background:var(--warn)">&#9742;</div><h4>社會倡議</h4><p>農民權益、政策建議、國際趨勢分析</p></div>
+    </div>
+
+    <div class="section-title">數據統計</div>
+    <div class="stats">
+        <div class="stat"><div class="num">152</div><div class="unit">萬農業工作者</div></div>
+        <div class="stat"><div class="num">67%</div><div class="unit">曾遭遇職災</div></div>
+        <div class="stat"><div class="num">4.2</div><div class="unit">倍風險高於平均</div></div>
+    </div>
+
+    <div class="section-title">內文段落</div>
+    <div class="text-block">
+        <h4>為什麼農業職業安全很重要？</h4>
+        <p>台灣農業工作者面臨的職業風險遠高於一般行業。從烈日下的熱傷害、農藥暴露到農機操作意外，每一項都需要系統性的預防措施與政策支持。<a href="#">閱讀完整報告 →</a></p>
+    </div>
+
+    <div class="section-title">標籤系統</div>
+    <div class="tags">
+        <span class="tg tg-brand">職業安全</span>
+        <span class="tg tg-brand-soft">農機操作</span>
+        <span class="tg tg-accent">最新消息</span>
+        <span class="tg tg-accent-soft">補助公告</span>
+        <span class="tg tg-info">政策更新</span>
+        <span class="tg tg-warn">緊急</span>
+        <span class="tg tg-outline">研究報告</span>
+        <span class="tg tg-ghost">歸檔</span>
+    </div>
+
+    <div class="section-title">提示訊息</div>
+    <div class="alerts">
+        <div class="alert alert-warn"><span class="alert-icon">&#9888;</span>高溫警報期間，請農友避免在上午 10 點至下午 2 點之間進行戶外農事。</div>
+        <div class="alert alert-info"><span class="alert-icon">&#8505;</span>113 年度農業職災保險申請已開放，截止日期為 6 月 30 日。</div>
+        <div class="alert alert-accent"><span class="alert-icon">&#9733;</span>新增：青年農民創業貸款利率優惠方案，即日起受理申請。</div>
+        <div class="alert alert-brand"><span class="alert-icon">&#10003;</span>您的農業職災保險申請已通過審核，核撥金額請查閱通知書。</div>
+    </div>
+
+    <div class="section-title">進度條</div>
+    <div class="progress-group">
+        <div class="progress-item"><label><span>計畫完成度</span><span>72%</span></label><div class="progress-bar"><div class="progress-fill" style="width:72%; background:var(--brand)"></div></div></div>
+        <div class="progress-item"><label><span>預算執行率</span><span>58%</span></label><div class="progress-bar"><div class="progress-fill" style="width:58%; background:var(--accent)"></div></div></div>
+        <div class="progress-item"><label><span>風險指數</span><span>35%</span></label><div class="progress-bar"><div class="progress-fill" style="width:35%; background:var(--warn)"></div></div></div>
+    </div>
+
+    <div class="section-title">時間軸</div>
+    <div class="timeline">
+        <div class="tl-item"><div class="tl-date">2026.04</div><h5>啟動田野調查</h5><p>訪談 50 位農民，收集職災經驗</p></div>
+        <div class="tl-item"><div class="tl-date">2026.06</div><h5>發布中期報告</h5><p>統計分析與政策建議初稿</p></div>
+        <div class="tl-item"><div class="tl-date">2026.09</div><h5>國際研討會發表</h5><p>與日韓研究團隊交流成果</p></div>
+    </div>
+
+    <div class="section-title">FAQ 手風琴</div>
+    <div class="accordion">
+        <div class="acc-item"><div class="acc-header">農業職災保險怎麼申請？<span class="arrow">&#9660;</span></div><div class="acc-body">可至各區農會或勞保局臨櫃申請，亦可透過線上系統送件。</div></div>
+        <div class="acc-item"><div class="acc-header">青農貸款利率是多少？<span class="arrow">&#9660;</span></div><div class="acc-body">目前優惠年利率為 1.5%，前三年免息，詳見農委會公告。</div></div>
+    </div>
+
+    <div class="section-title">CTA Banner</div>
+    <div class="cta-banner">
+        <h3>加入尊嚴農業行動</h3>
+        <p>每一份關注都是改變的開始</p>
+        <button class="btn">立即參與</button>
+    </div>
+
+    <div class="section-title">底部導航</div>
+    <div class="bottom-nav">
+        <a href="#" class="active">首頁</a>
+        <a href="#">安全</a>
+        <a href="#">健康</a>
+        <a href="#">經濟</a>
+        <a href="#">倡議</a>
+        <a href="#">研究</a>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
