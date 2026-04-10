@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "audit:coverage": "bash scripts/audit-page-coverage.sh"
+  },
   "devDependencies": {
     "gsap": "^3.12.5"
   }

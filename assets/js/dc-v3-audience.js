@@ -11,6 +11,7 @@
     if (!root) return;
 
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var canHover = window.matchMedia('(hover: hover)').matches && window.matchMedia('(pointer: fine)').matches;
     var progress = root.querySelector('.dc-progress');
 
     function updateProgress() {
@@ -24,43 +25,9 @@
 
     if (reduce) return;
 
-    // Magnetic CTA
-    try {
-      root.querySelectorAll('.dc-magnetic').forEach(function (el) {
-        el.addEventListener('pointermove', function (e) {
-          var r = el.getBoundingClientRect();
-          var dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
-          var dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
-          el.style.transform = 'translate(' + (dx * 6).toFixed(1) + 'px,' + (dy * 4).toFixed(1) + 'px)';
-        });
-        el.addEventListener('pointerleave', function () {
-          el.style.transform = '';
-        });
-      });
-    } catch (e) {
-      console.warn('[dc-v3-audience] magnetic failed:', e);
-    }
-
-    // 3D tilt cards
-    function bindTilt(selector, strengthX, strengthY, lift) {
-      root.querySelectorAll(selector).forEach(function (card) {
-        card.addEventListener('pointermove', function (e) {
-          var r = card.getBoundingClientRect();
-          var x = (e.clientX - r.left) / r.width - 0.5;
-          var y = (e.clientY - r.top) / r.height - 0.5;
-          card.style.transform = 'perspective(900px) rotateX(' + (-y * strengthY).toFixed(2) + 'deg) rotateY(' + (x * strengthX).toFixed(2) + 'deg) translateY(' + lift + 'px)';
-        });
-        card.addEventListener('pointerleave', function () {
-          card.style.transform = '';
-        });
-      });
-    }
-
-    try {
-      bindTilt('.dc-tilt', 8, 6, -3);
-      bindTilt('.dc-tilt-lite', 4, 3, -2);
-    } catch (e) {
-      console.warn('[dc-v3-audience] tilt failed:', e);
+    // 互動保留最小必要回饋：僅在可 hover 裝置加上可選 class
+    if (canHover) {
+      root.classList.add('dc-hover-ready');
     }
 
     if (!(window.gsap && window.ScrollTrigger)) return;
@@ -95,19 +62,7 @@
         });
       });
 
-      // Scene cut flash on stats and scenarios entrance
-      ['.young-stats', '.senior-stats', '.public-stats', '.young-scenarios', '.senior-scenarios', '.public-scenarios'].forEach(function (selector) {
-        var target = root.querySelector(selector);
-        if (!target) return;
-        ScrollTrigger.create({
-          trigger: target,
-          start: 'top 82%',
-          once: true,
-          onEnter: function () {
-            gsap.fromTo('.dc-scene-cut', { opacity: 0 }, { opacity: 0.34, duration: 0.12, yoyo: true, repeat: 1 });
-          }
-        });
-      });
+      // 移除場景閃屏，避免干擾閱讀
     } catch (e) {
       console.warn('[dc-v3-audience] GSAP init failed:', e);
       root.classList.remove('has-gsap');

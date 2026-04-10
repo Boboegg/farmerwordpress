@@ -3,8 +3,8 @@
  * 依賴：gsap.min.js + ScrollTrigger.min.js
  * 設計原則：
  *   1. 所有文字預設可見（CSS default），JS 失敗不影響閱讀
- *   2. 只有在 GSAP 成功載入後才加 .has-gsap class 啟用隱藏+動畫
- *   3. Hero 永遠立即可見（不 scrub opacity），parallax 才做 scrub
+ *   2. 只有在 GSAP 成功載入後才加 .has-gsap class 啟用 reveal
+ *   3. 移除 parallax / scene-cut / 3D 動效，保留可讀性優先
  *   4. 全部 try/catch 包住，一個 bug 不連動整個 init
  */
 (function () {
@@ -28,63 +28,6 @@
 
     if (reduce) return; // 尊重 reduced-motion，不開任何動畫
 
-    // Noise canvas — 背景顆粒動畫
-    try {
-      var canvas = root.querySelector('.dc-noise');
-      if (canvas) {
-        var ctx = canvas.getContext('2d');
-        var fit = function () {
-          canvas.width = canvas.clientWidth;
-          canvas.height = canvas.clientHeight;
-        };
-        fit();
-        window.addEventListener('resize', fit);
-        (function drawNoise() {
-          var w = canvas.width;
-          var h = canvas.height;
-          if (!w || !h) {
-            requestAnimationFrame(drawNoise);
-            return;
-          }
-          var img = ctx.createImageData(w, h);
-          var d = img.data;
-          for (var i = 0; i < d.length; i += 4) {
-            var v = (Math.random() * 255) | 0;
-            d[i] = d[i + 1] = d[i + 2] = v;
-            d[i + 3] = 18;
-          }
-          ctx.putImageData(img, 0, 0);
-          requestAnimationFrame(drawNoise);
-        })();
-      }
-    } catch (e) { console.warn('[dc-v3] noise canvas failed:', e); }
-
-    // Magnetic CTA
-    try {
-      root.querySelectorAll('.dc-magnetic').forEach(function (btn) {
-        btn.addEventListener('pointermove', function (e) {
-          var r = btn.getBoundingClientRect();
-          var dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
-          var dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
-          btn.style.transform = 'translate(' + (dx * 6).toFixed(1) + 'px,' + (dy * 4).toFixed(1) + 'px)';
-        });
-        btn.addEventListener('pointerleave', function () { btn.style.transform = ''; });
-      });
-    } catch (e) { console.warn('[dc-v3] magnetic failed:', e); }
-
-    // 3D Tilt cards
-    try {
-      root.querySelectorAll('.dc-tilt').forEach(function (card) {
-        card.addEventListener('pointermove', function (e) {
-          var r = card.getBoundingClientRect();
-          var x = (e.clientX - r.left) / r.width - 0.5;
-          var y = (e.clientY - r.top) / r.height - 0.5;
-          card.style.transform = 'perspective(900px) rotateX(' + (-y * 6).toFixed(2) + 'deg) rotateY(' + (x * 8).toFixed(2) + 'deg) translateY(-3px)';
-        });
-        card.addEventListener('pointerleave', function () { card.style.transform = ''; });
-      });
-    } catch (e) { console.warn('[dc-v3] tilt failed:', e); }
-
     // GSAP animations — 只有 GSAP 真的載入才執行
     if (window.gsap && window.ScrollTrigger) {
       try {
@@ -93,35 +36,7 @@
         // 啟用 has-gsap class：CSS 把 .dc-reveal 元素切換到「隱藏等進場」狀態
         root.classList.add('has-gsap');
 
-        // Hero parallax only — 絕不 scrub hero 文字（文字永遠可見）
-        var heroWrap = root.querySelector('.start-hero-wrap');
-        if (heroWrap) {
-          gsap.to('.start-hero-wrap .dc-bg1', {
-            scale: 1.08, yPercent: -6,
-            scrollTrigger: { trigger: heroWrap, start: 'top top', end: 'bottom bottom', scrub: 1.1 }
-          });
-          gsap.to('.start-hero-wrap .dc-bg2', {
-            xPercent: 6, yPercent: -3, opacity: 0.7,
-            scrollTrigger: { trigger: heroWrap, start: 'top top', end: 'bottom bottom', scrub: 1.1 }
-          });
-          gsap.to('.start-hero-wrap .dc-fog', {
-            xPercent: -8, yPercent: 5, opacity: 0.55,
-            scrollTrigger: { trigger: heroWrap, start: 'top top', end: 'bottom bottom', scrub: 1.1 }
-          });
-          gsap.to('.start-hero-wrap .dc-beam', {
-            xPercent: 120, ease: 'none',
-            scrollTrigger: { trigger: heroWrap, start: 'top top', end: 'bottom bottom', scrub: 1.1 }
-          });
-        }
-
-        // Scene cut flash
-        ScrollTrigger.create({
-          trigger: '.start-stats',
-          start: 'top 80%',
-          onEnter: function () {
-            gsap.fromTo('.dc-scene-cut', { opacity: 0 }, { opacity: 0.35, duration: 0.12, yoyo: true, repeat: 1 });
-          }
-        });
+        // 不使用 parallax 與閃屏，避免視覺噱頭干擾閱讀
 
         // Reveal sections
         root.querySelectorAll('.dc-reveal').forEach(function (el) {

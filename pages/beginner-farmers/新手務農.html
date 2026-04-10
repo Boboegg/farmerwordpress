@@ -11,7 +11,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- L3 Director Cut: Scroll progress bar -->
@@ -205,53 +205,27 @@
 /* === Hero Pinned Cinematic Wrap (L3 dc-v3) === */
 .start-hero-wrap{
   position:relative;
-  height:120vh;
-  margin-bottom:32px;
+  height:auto;
+  margin-bottom:24px;
 }
 .start-hero-pin{
-  position:sticky;top:0;
-  height:100vh;
+  position:relative;
+  top:auto;
+  height:auto;
   display:flex;align-items:center;
   overflow:hidden;
   border-radius:var(--radius);
   background:linear-gradient(135deg,var(--brand-bg) 0%,#fff 50%,#d5e8c5 100%);
   border:1px solid rgba(135,174,115,.2);
   isolation:isolate;
-  margin:0 -16px;
+  margin:0;
 }
 
 /* 4-layer documentary parallax planes */
-.dc-plane{
-  position:absolute;inset:-10% -10%;
-  will-change:transform,opacity;
-  pointer-events:none;
-}
-.dc-bg1{
-  background:
-    radial-gradient(circle at 20% 70%, rgba(135,174,115,.22), transparent 45%),
-    radial-gradient(circle at 80% 20%, rgba(90,125,72,.12), transparent 35%);
-}
-.dc-bg2{
-  background:repeating-linear-gradient(10deg,rgba(0,0,0,.02) 0 2px,transparent 2px 18px);
-  mix-blend-mode:multiply;opacity:.5;
-}
-.dc-fog{
-  background:
-    radial-gradient(ellipse at 30% 40%,rgba(255,255,255,.5),transparent 45%),
-    radial-gradient(ellipse at 70% 60%,rgba(255,255,255,.4),transparent 45%);
-  filter:blur(22px);opacity:.45;
-}
-.dc-noise{
-  position:absolute;inset:0;width:100%;height:100%;
-  opacity:.07;mix-blend-mode:multiply;pointer-events:none;
-}
+.dc-plane,
+.dc-noise,
 .dc-beam{
-  position:absolute;inset:-20% -10%;
-  background:linear-gradient(110deg,
-    transparent 38%,rgba(255,255,255,.02) 45%,
-    rgba(255,255,255,.35) 50%,rgba(255,255,255,.02) 55%,transparent 62%);
-  transform:translateX(-60%);opacity:.5;pointer-events:none;
-  mix-blend-mode:overlay;
+  display:none;
 }
 
 /* Scroll progress bar */

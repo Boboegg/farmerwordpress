@@ -37,6 +37,59 @@ if [ ! -d "$MU_PLUGINS" ]; then
     mkdir -p "$MU_PLUGINS"
 fi
 
+# 0. 部署前覆蓋檢查（避免「有檔案但不會上線」）
+# 模式：warn（預設，提示但不中止）/ strict（發現未映射 html 直接中止）/ off（關閉檢查）
+COVERAGE_MODE="${DEPLOY_COVERAGE_MODE:-warn}"
+if [ "$COVERAGE_MODE" != "off" ] && [ -f "scripts/audit-page-coverage.sh" ]; then
+    echo "→ [0/4] 部署前覆蓋檢查（模式：$COVERAGE_MODE）..."
+    COVERAGE_JSON="$(bash scripts/audit-page-coverage.sh --json)"
+    COVERAGE_JSON="$COVERAGE_JSON" python3 - "$COVERAGE_MODE" <<'PY'
+import json
+import os
+import sys
+
+mode = sys.argv[1]
+ignore_html = {
+    "pages/shared/sidebar.html",  # 共用片段，不是獨立頁面
+}
+
+try:
+    report = json.loads(os.environ.get("COVERAGE_JSON", ""))
+except Exception as exc:
+    print(f"❌ 覆蓋檢查失敗：無法解析 audit JSON（{exc}）")
+    sys.exit(2)
+
+mapped_missing = report.get("mapped_missing_or_empty", [])
+unmapped_html = [
+    p for p in report.get("unmapped_non_empty_html", [])
+    if p not in ignore_html
+]
+
+if mapped_missing:
+    print("❌ page-map 內有不存在或空白來源，請先修正：")
+    for item in mapped_missing:
+        print(f"   - {item}")
+    sys.exit(2)
+
+if unmapped_html:
+    if mode == "strict":
+        print("❌ 發現未映射的非空 .html（strict 模式中止部署）：")
+        for item in unmapped_html:
+            print(f"   - {item}")
+        print("   請補 page ID 並更新 scripts/page-map.json 後重試。")
+        sys.exit(3)
+
+    print("⚠️  發現未映射的非空 .html（warn 模式僅提示）：")
+    for item in unmapped_html:
+        print(f"   - {item}")
+    print("   提醒：補 page ID 後加入 scripts/page-map.json。")
+else:
+    print("   ✓ 覆蓋檢查通過：可部署 .html 均已映射")
+PY
+else
+    echo "→ [0/4] 略過覆蓋檢查（DEPLOY_COVERAGE_MODE=off 或找不到 audit 腳本）"
+fi
+
 # 1. 部署 CSS
 echo "→ [1/4] 部署 global.css..."
 cp css/global.css "$THEME_PATH/global.css"

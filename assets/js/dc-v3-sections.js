@@ -1,7 +1,7 @@
 /*!
  * dc-v3-sections.js — L3 互動層（7 主章節頁）
  * 依賴：gsap.min.js + ScrollTrigger.min.js
- * 策略：桌機優先；內容預設可見；JS 失敗自動降級
+ * 策略：內容預設可見；JS 失敗自動降級；僅保留必要互動
  */
 (function () {
   'use strict';
@@ -74,34 +74,6 @@
     update();
   }
 
-  function bindMagnetic(root) {
-    root.querySelectorAll('.dc-magnetic').forEach(function (el) {
-      el.addEventListener('pointermove', function (e) {
-        var r = el.getBoundingClientRect();
-        var dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
-        var dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
-        el.style.transform = 'translate(' + (dx * 6).toFixed(1) + 'px,' + (dy * 4).toFixed(1) + 'px)';
-      });
-      el.addEventListener('pointerleave', function () {
-        el.style.transform = '';
-      });
-    });
-  }
-
-  function bindTilt(root, selector, sx, sy, lift) {
-    root.querySelectorAll(selector).forEach(function (card) {
-      card.addEventListener('pointermove', function (e) {
-        var r = card.getBoundingClientRect();
-        var x = (e.clientX - r.left) / r.width - 0.5;
-        var y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.transform = 'perspective(900px) rotateX(' + (-y * sy).toFixed(2) + 'deg) rotateY(' + (x * sx).toFixed(2) + 'deg) translateY(' + lift + 'px)';
-      });
-      card.addEventListener('pointerleave', function () {
-        card.style.transform = '';
-      });
-    });
-  }
-
   function initGsap(root) {
     if (!(window.gsap && window.ScrollTrigger)) return;
 
@@ -120,20 +92,7 @@
         });
       });
 
-      var cut = root.querySelector('.dc-scene-cut');
-      if (cut) {
-        var flashTargets = root.querySelectorAll('.dc-hover-card');
-        if (flashTargets.length) {
-          ScrollTrigger.create({
-            trigger: flashTargets[0],
-            start: 'top 84%',
-            once: true,
-            onEnter: function () {
-              gsap.fromTo(cut, { opacity: 0 }, { opacity: 0.34, duration: 0.12, yoyo: true, repeat: 1 });
-            }
-          });
-        }
-      }
+      // 不使用閃屏效果，避免章節長文閱讀被打斷
     } catch (e) {
       console.warn('[dc-v3-sections] gsap failed:', e);
       root.classList.remove('has-gsap');
@@ -150,11 +109,6 @@
     bindProgress(root);
 
     if (reduce) return;
-    if (window.matchMedia('(hover: hover)').matches) {
-      bindMagnetic(root);
-      bindTilt(root, '.dc-tilt', 8, 6, -3);
-      bindTilt(root, '.dc-tilt-lite', 4, 3, -2);
-    }
 
     initGsap(root);
   }
