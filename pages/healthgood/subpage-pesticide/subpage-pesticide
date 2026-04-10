@@ -30,7 +30,7 @@
 
   <!-- 第一節：暴露途徑 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
+    <div class="pest-sec-header" style="--sec-color:#7A4E12;">
       <div class="pest-sec-icon"><i class="fas fa-hand"></i></div>
       <div>
         <h2>農藥怎麼進入你的身體</h2>
@@ -60,7 +60,7 @@
 
   <!-- 第二節：防護裝備 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
+    <div class="pest-sec-header" style="--sec-color:#7A4E12;">
       <div class="pest-sec-icon"><i class="fas fa-shield-halved"></i></div>
       <div>
         <h2>防護裝備：依毒性等級穿戴</h2>
@@ -80,22 +80,22 @@
           <tbody>
             <tr>
               <td><strong>低毒</strong></td>
-              <td><span class="pest-label" style="background:#4caf50;">綠色</span></td>
+              <td><span class="pest-label" style="background:#4A6932;">綠色</span></td>
               <td>長袖衣褲、耐化學手套、防護口罩</td>
             </tr>
             <tr>
               <td><strong>中等毒</strong></td>
-              <td><span class="pest-label" style="background:#2196f3;">藍色</span></td>
+              <td><span class="pest-label" style="background:#4A6A8A;">藍色</span></td>
               <td>上述 + 防護衣連身式、寬沿帽、長統膠靴、防護圍裙</td>
             </tr>
             <tr>
               <td><strong>高毒</strong></td>
-              <td><span class="pest-label" style="background:#ff9800;">黃色</span></td>
+              <td><span class="pest-label" style="background:#B07E12;">黃色</span></td>
               <td>上述 + 防飛濺護目鏡、化學濾罐式防毒面具</td>
             </tr>
             <tr>
               <td><strong>極毒</strong></td>
-              <td><span class="pest-label" style="background:#f44336;">紅色</span></td>
+              <td><span class="pest-label" style="background:#B84A2D;">紅色</span></td>
               <td>全套化學防護衣、全面式防毒面具（專業人員操作）</td>
             </tr>
           </tbody>
@@ -135,7 +135,7 @@
 
   <!-- 第三節：安全用藥流程 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
+    <div class="pest-sec-header" style="--sec-color:#7A4E12;">
       <div class="pest-sec-icon"><i class="fas fa-list-check"></i></div>
       <div>
         <h2>安全用藥流程</h2>
@@ -260,7 +260,7 @@
 
   <!-- 第五節：慢性影響 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
+    <div class="pest-sec-header" style="--sec-color:#7A4E12;">
       <div class="pest-sec-icon"><i class="fas fa-hourglass-half"></i></div>
       <div>
         <h2>農藥的慢性健康影響</h2>
@@ -332,17 +332,17 @@
 <!-- ========== CSS ========== -->
 <style>
 .pest-hero,.pest-sections,.pest-crosslinks,.pest-references{
-  --brand-legacy:var(--color-brand);--brand-legacy-dark:#1a3a1a;--accent:#7b1fa2;
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:#2C2418;--accent:#7A4E12;
   --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .pest-hero *,.pest-sections *,.pest-crosslinks *,.pest-references *{box-sizing:border-box;}
 
 /* Hero */
-.pest-hero{padding:36px;background:linear-gradient(135deg,#f3e5f5 0%,#fff 60%,#e1bee7 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(123,31,162,.1);}
+.pest-hero{padding:36px;background:linear-gradient(135deg,#F5EDE2 0%,#fff 60%,#F4ECE0 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(123,31,162,.1);}
 .pest-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(123,31,162,.1);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
 .pest-hero-title{font-size:2rem;font-weight:900;color:var(--accent);margin:0 0 8px;line-height:1.3;}
-.pest-hero-subtitle{font-size:1.1rem;color:#8e24aa;font-weight:600;margin:0 0 18px;}
+.pest-hero-subtitle{font-size:1.1rem;color:#7A4E12;font-weight:600;margin:0 0 18px;}
 .pest-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(123,31,162,.06);}
 .pest-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.pest-hero-intro p:last-child{margin-bottom:0;}
 .pest-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand-legacy);font-weight:700;text-decoration:none;font-size:.9rem;}

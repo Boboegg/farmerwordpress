@@ -317,17 +317,17 @@
 <!-- ========== CSS ========== -->
 <style>
 .mind-hero,.mind-sections,.mind-crosslinks,.mind-references{
-  --brand-legacy:var(--color-brand);--brand-legacy-dark:#1a3a1a;--accent:var(--color-brand);
+  --brand-legacy:var(--color-brand);--brand-legacy-dark:#2C2418;--accent:var(--color-brand);
   --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .mind-hero *,.mind-sections *,.mind-crosslinks *,.mind-references *{box-sizing:border-box;}
 
 /* Hero */
-.mind-hero{padding:36px;background:linear-gradient(135deg,#e8f5e9 0%,#fff 60%,#c8e6c9 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(46,125,50,.1);}
+.mind-hero{padding:36px;background:linear-gradient(135deg,#EDF2E6 0%,#fff 60%,#E8EDDF 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(46,125,50,.1);}
 .mind-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(46,125,50,.1);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
 .mind-hero-title{font-size:2rem;font-weight:900;color:var(--accent);margin:0 0 8px;line-height:1.3;}
-.mind-hero-subtitle{font-size:1.05rem;color:#388e3c;font-weight:600;margin:0 0 18px;line-height:1.6;}
+.mind-hero-subtitle{font-size:1.05rem;color:#4A6932;font-weight:600;margin:0 0 18px;line-height:1.6;}
 .mind-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(46,125,50,.06);}
 .mind-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.mind-hero-intro p:last-child{margin-bottom:0;}
 .mind-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand-legacy);font-weight:700;text-decoration:none;font-size:.9rem;}
@@ -363,7 +363,7 @@
 .mind-method-card{padding:24px;border-radius:12px;border:1px solid #eee;background:var(--color-bg-elevated);}
 .mind-method-featured{grid-column:1 / -1;background:rgba(46,125,50,.04);border-color:rgba(46,125,50,.15);}
 .mind-method-card h3{font-size:1.05rem;font-weight:800;color:var(--accent);margin:0 0 6px;display:flex;align-items:center;gap:8px;}
-.mind-method-tag{font-size:.8rem;font-weight:700;color:#388e3c;background:rgba(46,125,50,.1);display:inline-block;padding:3px 12px;border-radius:12px;margin:0 0 14px;}
+.mind-method-tag{font-size:.8rem;font-weight:700;color:#4A6932;background:rgba(46,125,50,.1);display:inline-block;padding:3px 12px;border-radius:12px;margin:0 0 14px;}
 .mind-method-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:12px;}
 .mind-method-step{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text-primary);}
 .mind-step-num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;flex-shrink:0;}
