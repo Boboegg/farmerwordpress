@@ -1,86 +1,91 @@
 # 交接文件 — farmerwordpress
 
-最後更新：2026-04-09
+最後更新：2026-04-10
 目前分支：main
-目前最新 commit：696ee36a80b4b6f91aad914ca9b95ac4f18031dd
+目前最新 commit：33d34cd
 
 ---
 
-## 本輪已完成（可直接視為桌機版第一輪完成）
+## 目標
 
-### 1) 設計系統整合
-- `css/global.css`：設計 token 與相容層收斂，舊 alias 保留，對齊現行稻穗熟成配色。
-- `docs/design-system.md`：新增設計系統說明文件。
-- `README.md`：品牌快查與設計系統入口同步更新。
-- `docs/architecture.md`：補上 IA 與 design token 的權威來源分工。
-
-### 2) 視覺與互動（桌機優先）
-- 首頁 L3 互動層已上線（不改文案）。
-- 三個分眾頁已接上共用互動：青農、資深農友、一般民眾。
-- 七個主章節頁已接上共用互動：關於我們、職業安全、健康促進、經濟與保險、尊嚴農業倡議、研究成果、農學堂。
-
-### 3) 新增/更新的互動資產
-- `assets/js/dc-v3-audience.js`：分眾頁共用互動。
-- `assets/js/dc-v3-sections.js`：主章節頁共用互動。
-- `assets/js/dc-v3-start.js`：首頁互動腳本（既有檔，持續使用）。
-
-### 4) Git 狀態
-- 本地工作樹乾淨（無未提交變更）。
-- 已成功 push 到遠端 `origin/main`。
+全站前端美化 — V1 暖米色盤統一 + 各主題頁/子頁配色調和
 
 ---
 
-## 本輪核心原則（已落地）
+## 已完成（2026-04-10）
 
-- 文案保持原樣，不做內容改寫。
-- 先完成桌機視覺與互動，再做行動端精修。
-- 互動採漸進增強，保留 `prefers-reduced-motion` 降級。
-- 主要互動以本地 GSAP/ScrollTrigger 檔案載入。
+### 1) V1 暖米色盤定案
+- 底色 `#F7F4ED`、主色 `#4A6932`、輔色 `#B07E12`、警示 `#8B2D14`、資訊 `#2A6B5A`
+- 鐵律：新增顏色必須在暖米方向調和，禁止冷色調
+- 字體只留 Noto Serif TC + Noto Sans TC，移除 Lato/Lora
 
----
+### 2) 全站色盤統一
+- `css/global.css` :root tokens 全部換成 V1
+- 6 個 HTML 頁面 + 3 個 PHP shortcode 舊硬編碼色值清零
+- 側邊欄雙框線修復（widget 改無框風格）
 
-## 下一步（你重開 VS 後可直接接）
+### 3) 健康促進 5 頁配色完成
+- 主頁：森林綠 `#3D7A5A`
+- 熱傷害：燒土橘紅 `#B84A2D`
+- 心理健康：橄欖綠 `#4A6932`
+- 肌肉骨骼：青石暖藍 `#4A6A8A`
+- 農藥安全：深棕 `#7A4E12`
+- 僅替換色值，內文零變更
 
-1. 行動端優化（最高優先）
-- 針對首頁、三分眾頁、七章節頁做手機與平板版面調整。
-- 針對觸控裝置隔離 hover 行為，避免殘留。
+### 4) 部署修復
+- `scripts/deploy.sh` 加 python3 前置檢查（Hostinger 無 python3）
+- 停用 6 個 Gemini workflow（省 GitHub Actions 額度）
+- Copilot code review / coding agent 需到 GitHub 網頁手動關
 
-2. 驗收清單
-- 手機 Safari/Chrome 檢查：首屏高度、按鈕可點擊區、文字可讀性。
-- 動畫負載檢查：低階裝置與 reduced-motion 是否正常降級。
-- WordPress 貼上後檢查：程式碼模式與前台顯示一致。
-
-3. 若要上線
-- 走既有部署流程：`bash scripts/deploy.sh`。
-
----
-
-## 本輪重點檔案
-
-- `css/global.css`
-- `docs/design-system.md`
-- `docs/architecture.md`
-- `README.md`
-- `assets/js/dc-v3-start.js`
-- `assets/js/dc-v3-audience.js`
-- `assets/js/dc-v3-sections.js`
-- `pages/home/index.html`
-- `pages/young-farmers/青農.html`
-- `pages/experienced-farmers/資深農友.html`
-- `pages/Public/一般民眾.html`
-- `pages/About/關於我們.html`
-- `pages/occupational-safety/職業安全.html`
-- `pages/healthgood/健康促進.html`
-- `pages/economic-insurance/經濟與保險.html`
-- `pages/dignity-farming-initiative/倡議.html`
-- `pages/research-result/研究成果.html`
-- `pages/farmer-study/農學堂.html`
+### 5) 6 大主題頁配色方案已出（待 Bobo 確認）
+- 預覽檔：`test/topic-pages-colors.html`
+- 職業安全 `#8B2D14` / 經濟保險 `#B07E12` / 農學堂 `#4A6932` / 倡議 `#7A4E12` / 關於我們 `#3D7A5A` / 最新消息 `#4A6A8A`
 
 ---
 
-## 快速開工提示
+## 遇到的問題
 
-重開 VS 後先做兩件事：
+1. **健康促進主頁變色未在前台生效** — deploy log 顯示 ID 1328 成功寫入，疑似瀏覽器/CDN 快取。需 `Cmd+Shift+R` 或清 Hostinger LiteSpeed 快取確認
+2. **健康促進 4 子頁不在 page-map** — 檔案沒有 .html 副檔名（`subpage-heat`），且無 WordPress 頁面 ID，部署腳本跳過。需 Bobo 提供 WP 後台的頁面 ID
+3. **Hostinger SSH 偶爾連線逾時** — 跟程式碼無關，重跑 workflow 即可
 
-1. `git pull origin main`
-2. 直接開始「行動端優化」批次（首頁 -> 分眾 -> 主章節）
+---
+
+## 下一步（按優先順序）
+
+1. **確認健康促進變色是否生效**（清快取驗證）
+2. **Bobo 確認 6 大主題頁配色**（看 `test/topic-pages-colors.html`）
+3. **批次替換 6 大主題頁色值**（職業安全 45 色最複雜）
+4. **取得健康促進 4 子頁 WordPress 頁面 ID**，加入 `scripts/page-map.json`
+5. **處理其他子頁面配色**（職業安全 10 子頁、經濟保險 10 子頁...）
+6. **行動端優化**（觸控、RWD）
+7. **L3 Director Cut 首頁重寫**
+
+---
+
+## 關鍵檔案
+
+| 檔案 | 用途 |
+|------|------|
+| `/Users/boboegg/farmerwordpress/css/global.css` | 全站樣式（V1 暖米 token） |
+| `/Users/boboegg/farmerwordpress/docs/design-system.md` | 設計系統文件（V1 定案版） |
+| `/Users/boboegg/farmerwordpress/scripts/page-map.json` | HTML → WP 頁面 ID 映射 |
+| `/Users/boboegg/farmerwordpress/scripts/deploy.sh` | Hostinger 部署腳本 |
+| `/Users/boboegg/farmerwordpress/test/topic-pages-colors.html` | 6 大主題頁配色預覽（待確認） |
+| `/Users/boboegg/farmerwordpress/test/health-v2.html` | 健康促進 5 頁配色預覽 |
+| `~/.claude/projects/-Users-boboegg/memory/reference_dignity_farming_design_spec.md` | 設計規範 memory |
+| `~/.claude/projects/-Users-boboegg/memory/reference_farmerwordpress_design_index.md` | 設計入口索引 memory |
+| `~/vault/Projects/P8-尊嚴農業/status.md` | Vault 專案狀態 |
+
+---
+
+## 快速開工
+
+```bash
+cd ~/farmerwordpress
+git pull origin main
+# 確認同步後，問 Bobo：
+# 1. 健康促進清快取後有沒有變色？
+# 2. 6 大主題頁配色 OK 嗎？
+# 3. 健康促進子頁的 WordPress 頁面 ID？
+```
