@@ -92,7 +92,7 @@ add_shortcode('podcast_full_archive', function ($atts) {
 
             $is_video = (strpos($cat_slug, 'video') !== false || strpos($cat_slug, 'youtube') !== false || $has_video);
             $type_icon  = $is_video ? 'fas fa-video' : 'fas fa-microphone';
-            $type_color = $is_video ? '#8B2D14' : '#3D5A2C';
+            $type_color = $is_video ? '#8B2D14' : '#4A6932';
             $btn_text   = $is_video ? '觀看影片' : '收聽節目';
             $btn_icon   = $is_video ? 'fas fa-play' : 'fas fa-headphones';
             $overlay_icon = $is_video ? 'fas fa-play' : 'fas fa-headphones';

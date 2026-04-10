@@ -137,7 +137,7 @@ add_shortcode('farmer_courses', function ($atts) {
     // 更多連結
     $html .= '<div style="text-align:center;margin-top:16px;">';
     $html .= '<a href="https://academy.moa.gov.tw/list.php?id=19" target="_blank" rel="noopener" '
-           . 'style="color:var(--brand,#3D5A2C);font-weight:600;">'
+           . 'style="color:var(--brand,#4A6932);font-weight:600;">'
            . '前往農民學院查看所有課程 <i class="fas fa-arrow-right"></i></a>';
     $html .= '</div>';
 

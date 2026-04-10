@@ -12,107 +12,108 @@
 /* ===================================================
    COMPAT LAYER — design system token alias
    建立日期：2026-04-09
+   v4 更新：V1 暖米色盤定案（2026-04-10）
    用途：提供 var(--color-xxx) 與舊版 var(--radius)/var(--shadow)
        的相容映射，避免頁面與 shortcode 斷樣。
-    v3 更新：回正品牌規格（#E3E9D8 / #5C8607 / #D4A017）
    =================================================== */
 :root {
-     --color-bg: #E3E9D8;
-     --color-bg-elevated: #F7F9F1;
-     --color-text: #1F2A13;
-     --color-muted: #4E5E37;
-     --color-line: #C6D1B1;
-     --color-brand: #5C8607;
-     --color-brand-deep: #4A6B05;
-     --color-accent: #D4A017;
-    --color-warn: #8B2D14;
-     --color-info: #2C6E9F;
+     --color-bg: #F7F4ED;
+     --color-bg-elevated: #FDFCF8;
+     --color-text: #2C2418;
+     --color-muted: #6B5F4E;
+     --color-line: #D5CBAE;
+     --color-brand: #4A6932;
+     --color-brand-deep: #354D22;
+     --color-accent: #B07E12;
+     --color-warn: #8B2D14;
+     --color-info: #2A6B5A;
 }
 
 /* ===================================================
-    0. 全站設計 Token — 尊嚴農業品牌回正
-    主色：#5C8607（尊嚴綠）
-    背景：#E3E9D8（品牌底色）
-    輔色：#D4A017（稻金黃）
-    字體：Noto Sans TC + Lato + Lora
-   字級：8 階全整數（12/14/16/18/22/28/36/48）
-   Hero h1 上限：48px。行高 ≥ 1.75。內文寬度 ≤ 680px。
+    0. 全站設計 Token — V1 暖米色盤（2026-04-10 定案）
+    主色：#4A6932（橄欖綠）
+    背景：#F7F4ED（暖米白）
+    輔色：#B07E12（蜂蜜金）
+    字體：Noto Serif TC + Noto Sans TC（僅此兩家族）
+    字級：8 階全整數（12/14/16/18/22/28/36/48）
+    Hero h1 上限：48px。行高 ≥ 1.75。內文寬度 ≤ 680px。
+    新增顏色必須在暖米色盤方向上調和，禁止引入冷色調。
    =================================================== */
 :root {
     /* === Legacy（保護舊 13 CSS 前綴頁面，勿動） === */
-    --brand-legacy: #5C8607;
-    --brand-legacy-dark: #4a6b05;
-    --brand-legacy-light: #eef5ea;
-    --brand-legacy-hover: #3d5a04;
+    --brand-legacy: #4A6932;
+    --brand-legacy-dark: #354D22;
+    --brand-legacy-light: #E8EDDF;
+    --brand-legacy-hover: #354D22;
 
      /* === 品牌主色（變數名沿用下游相容） === */
-     --brand: #5C8607;
-     --brand-deep: #4A6B05;
-     --brand-accent: #D4A017;
+     --brand: #4A6932;
+     --brand-deep: #354D22;
+     --brand-accent: #B07E12;
      --brand-warning: #8B2D14;
-     --brand-relief: #87AE73;
+     --brand-relief: #5A7D48;
 
     /* 相容別名（別的舊 rule 會抓到） */
-     --accent: #D4A017;
-     --brand-dark: #4A6B05;
-     --brand-hover: #4A6B05;
-     --brand-bg: #E3E9D8;
+     --accent: #B07E12;
+     --brand-dark: #354D22;
+     --brand-hover: #354D22;
+     --brand-bg: #F7F4ED;
 
      /* === 中性色 === */
-     --bg: #E3E9D8;
-     --bg-white: #F7F9F1;
-     --bg-light: #D4DEC2;
-     --surface: #F7F9F1;
-     --surface-muted: #EAF0DE;
+     --bg: #F7F4ED;
+     --bg-white: #FDFCF8;
+     --bg-light: #EFE9DD;
+     --surface: #FDFCF8;
+     --surface-muted: #EFE9DD;
 
-     --fg: #1F2A13;
-     --fg-strong: #16200D;
-     --fg-muted: #4E5E37;
-     --fg-subtle: #6A7854;
+     --fg: #2C2418;
+     --fg-strong: #1A1208;
+     --fg-muted: #6B5F4E;
+     --fg-subtle: #8A7D6B;
 
-     --text-primary: #1F2A13;
-     --text-secondary: #4E5E37;
-     --text-muted: #6A7854;
+     --text-primary: #2C2418;
+     --text-secondary: #6B5F4E;
+     --text-muted: #8A7D6B;
 
-     --border: #C6D1B1;
-     --border-strong: #A8B98E;
-     --border-subtle: #D5E0C3;
-     --border-light: #C6D1B1;
-     --border-lighter: #D5E0C3;
+     --border: #D5CBAE;
+     --border-strong: #BFB494;
+     --border-subtle: #E2D9C4;
+     --border-light: #D5CBAE;
+     --border-lighter: #E2D9C4;
 
-     /* === 章節色 === */
-     --ch-about: #5C8607;
+     /* === 章節色（暖米調和） === */
+     --ch-about: #4A6932;
      --ch-safety: #8B2D14;
-     --ch-health: #4A6B05;
-     --ch-economic: #2C6E9F;
-     --ch-empower: #D4A017;
+     --ch-health: #3D6B4A;
+     --ch-economic: #2A6B5A;
+     --ch-empower: #B07E12;
      --ch-advocacy: #7A4E12;
-     --ch-research: #3F5F0E;
+     --ch-research: #4A6932;
 
-     --ch-about-bg: #EAF0DE;
-     --ch-safety-bg: #F3E7E2;
-     --ch-health-bg: #E5EED5;
-     --ch-economic-bg: #E6EEF5;
-     --ch-empower-bg: #FDF4DC;
+     --ch-about-bg: #E8EDDF;
+     --ch-safety-bg: #FBE9E2;
+     --ch-health-bg: #E4F0EC;
+     --ch-economic-bg: #E4F0EC;
+     --ch-empower-bg: #FDF3D7;
      --ch-advocacy-bg: #F4ECE0;
-     --ch-research-bg: #E8EFD8;
+     --ch-research-bg: #E8EDDF;
 
-     /* === 分眾入口差異配色 === */
-     --aud-start: #87AE73;
-     --aud-start-deep: #5A7D48;
-     --aud-start-bg: #EEF5EA;
+     /* === 分眾入口差異配色（暖米調和） === */
+     --aud-start: #5A7D48;
+     --aud-start-deep: #4A6932;
+     --aud-start-bg: #E8EDDF;
 
-     --aud-young: #5B7FA6;
+     --aud-young: #4A6E8A;
      --aud-young-deep: #3A5D82;
-     --aud-young-bg: #E8EFF7;
+     --aud-young-bg: #E4EEF5;
 
-     --aud-senior: #C17F5E;
-     --aud-senior-deep: #9E5F3E;
-     --aud-senior-bg: #F9EDE7;
+     --aud-senior: #A8694A;
+     --aud-senior-deep: #8A5438;
+     --aud-senior-bg: #F5ECE4;
 
-     --aud-public: #D4A017;
-     --aud-public-deep: #A67C0B;
-     --aud-public-bg: #FDF4DC;
+     --aud-public: #B8880F;
+     --aud-public-deep: #9A6E08;
+     --aud-public-bg: #FDF3D7;
 
     /* === 間距尺度（8pt grid 保留相容） === */
     --space-xs: 8px;
@@ -125,14 +126,13 @@
     --space-4xl: 96px;
     --space-5xl: 128px;
 
-     /* === 字體 === */
-     --font-serif-tc: "Lora", "Noto Sans TC", "PMingLiU", serif;
-    --font-sans-tc: "Noto Sans TC", "Hiragino Sans CNS", "PingFang TC", sans-serif;
-     --font-display-en: "Lato", "Noto Sans TC", sans-serif;
-     --font-display: var(--font-display-en);
+     /* === 字體（僅 Noto 兩家族，禁止新增其他字體） === */
+     --font-serif-tc: "Noto Serif TC", "PMingLiU", serif;
+     --font-sans-tc: "Noto Sans TC", "Hiragino Sans CNS", "PingFang TC", sans-serif;
+     --font-display: var(--font-serif-tc);
      --font-body: var(--font-sans-tc);
      --font-body-a11y: var(--font-sans-tc);
-     --font-mono: "Lato", "Noto Sans TC", sans-serif;
+     --font-mono: "Noto Sans TC", monospace;
 
     /* === 字級尺度 — 8 階全整數（px） === */
     --text-xs: 12px;
@@ -217,7 +217,7 @@
     --container-full: 1200px;
 
     /* === 無障礙 === */
-    --focus-ring: 0 0 0 3px rgba(92, 134, 7, 0.45);
+    --focus-ring: 0 0 0 3px rgba(74, 105, 50, 0.45);
     --focus-ring-offset: 2px;
     --skip-link-bg: var(--brand);
     --skip-link-fg: var(--bg);
@@ -674,7 +674,7 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     left: 0;
     width: 40px;
     height: 3px;
-    background: #5C8607;
+    background: var(--brand);
     opacity: 0.6;
     border-radius: 2px;
 }
@@ -705,7 +705,7 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    color: #5C8607;
+    color: var(--brand);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     font-size: 16px;
     flex-shrink: 0;
@@ -729,11 +729,11 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 }
 .tool-link:hover .download-icon {
     opacity: 1;
-    color: #5C8607;
+    color: var(--brand);
     transform: scale(1.1);
 }
 .tool-link:hover .tool-icon {
-    background: #5C8607;
+    background: var(--brand);
     color: #ffffff;
 }
 
@@ -777,8 +777,8 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 }
 .link-item:hover {
     background: #F9FBF7;
-    border-color: #5C8607;
-    color: #5C8607;
+    border-color: var(--brand);
+    color: var(--brand);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(92, 134, 7, 0.1);
 }
@@ -1247,18 +1247,19 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page.aud-public { border-top: 4px solid var(--aud-public); }
 
 /* ===================================================
-   === 稻穗熟成（Rice Ripening）全站視覺層 ===
-   取代舊 v2.1 視覺爆改層（2026-04-08）
+   === V1 暖米（Warm Rice）全站視覺層 ===
+   2026-04-10 定案，取代稻穗熟成（Rice Ripening）
    原則：
-   - 字體 2 家族（serif + sans）
+   - 字體 2 家族（Noto Serif TC + Noto Sans TC，禁止其他）
    - 字級 ≤ 48px
    - 行高 ≥ 1.75
-   - 單底色 #FBFAF7，章節輪替用 --bg-light
-   - 卡片扁平 1px border 零 shadow
+   - 底色 #F7F4ED（暖米白），章節輪替用 --bg-light (#EFE9DD)
+   - 卡片 #FDFCF8 + 1px border 零 shadow
    - Section 節奏 96px 空白
    - 動畫 delay ≤ 0.2s
    - 大字中文 letter-spacing 0.04em
    - hover 包進 @media (hover: hover)
+   - 新增顏色必須在暖米色盤方向調和，禁止冷色調
    =================================================== */
 
 /* ----- 1. fw-page 容器基礎（所有稻穗頁共用） ----- */
@@ -2819,8 +2820,8 @@ body[class*="page-id"],
     height: 3px;
     width: 0;
     z-index: 9999;
-    background: linear-gradient(90deg, var(--brand, #3D5A2C), var(--brand-accent, #A8740B));
-    box-shadow: 0 0 14px color-mix(in srgb, var(--brand, #3D5A2C) 45%, transparent);
+    background: linear-gradient(90deg, var(--brand, #4A6932), var(--brand-accent, #B07E12));
+    box-shadow: 0 0 14px color-mix(in srgb, var(--brand, #4A6932) 45%, transparent);
 }
 
 .fw-page.dc-v3:not(.aud-start) .dc-scene-cut {
@@ -2892,8 +2893,8 @@ body[class*="page-id"],
     .fw-page.dc-v3:not(.aud-start) .young-explore-card:hover,
     .fw-page.dc-v3:not(.aud-start) .senior-explore-card:hover,
     .fw-page.dc-v3:not(.aud-start) .public-explore-card:hover {
-        box-shadow: 0 14px 28px color-mix(in srgb, var(--brand, #3D5A2C) 12%, transparent);
-        border-color: color-mix(in srgb, var(--brand, #3D5A2C) 30%, var(--border, #D8CFB8));
+        box-shadow: 0 14px 28px color-mix(in srgb, var(--brand, #4A6932) 12%, transparent);
+        border-color: color-mix(in srgb, var(--brand, #4A6932) 30%, var(--border, #D5CBAE));
     }
 }
 
@@ -2910,7 +2911,7 @@ body[class*="page-id"],
    目標：桌機優先互動一致化，行動端後續再微調
    =================================================== */
 .fw-page.dc-v3[class*="ch-"] {
-    --dc-glow-color: color-mix(in srgb, var(--brand, #3D5A2C) 16%, transparent);
+    --dc-glow-color: color-mix(in srgb, var(--brand, #4A6932) 16%, transparent);
 }
 
 .fw-page.dc-v3[class*="ch-"] .dc-progress {
@@ -2920,8 +2921,8 @@ body[class*="page-id"],
     width: 0;
     height: 3px;
     z-index: 9999;
-    background: linear-gradient(90deg, var(--brand, #3D5A2C), var(--brand-accent, #A8740B));
-    box-shadow: 0 0 14px color-mix(in srgb, var(--brand, #3D5A2C) 45%, transparent);
+    background: linear-gradient(90deg, var(--brand, #4A6932), var(--brand-accent, #B07E12));
+    box-shadow: 0 0 14px color-mix(in srgb, var(--brand, #4A6932) 45%, transparent);
 }
 
 .fw-page.dc-v3[class*="ch-"] .dc-scene-cut {
@@ -2964,7 +2965,7 @@ body[class*="page-id"],
     .fw-page.dc-v3[class*="ch-"] .dc-hover-card:hover,
     .fw-page.dc-v3[class*="ch-"] .dc-hover-panel:hover {
         transform: translateY(-3px);
-        border-color: color-mix(in srgb, var(--brand, #3D5A2C) 30%, var(--border, #D8CFB8));
+        border-color: color-mix(in srgb, var(--brand, #4A6932) 30%, var(--border, #D5CBAE));
         box-shadow: 0 14px 28px var(--dc-glow-color);
     }
 }
