@@ -3369,70 +3369,139 @@ body[class*="page-id"],
 }
 
 /* ==========================================================
-   === V15 Inline-Style Override（2026-04-11 緊急修正）===
-   24 頁每頁 inline <style> 硬編碼 bg/gradient/border-left 色條
-   V15 custom property 層級覆蓋不了（因為 inline 不讀 var）
-   強制 reset 為 V15 tinted neutral + 圓角 + 無色條
+   === V15 Inline-Style Override v2 (2026-04-11)===
+   修正 v1 問題：
+     1. [class$="-hero"] 沒抓到 absolute positioned 漸層子層 -hero-bg
+     2. v1 top-level 有 bg 內層透明 → 看起來不統一
+   v2 策略：
+     A. 殺掉所有漸層層（*-bg / *-overlay 類） — display none 或 bg transparent
+     B. 所有主要容器統一 neutral-0 bg + 1px border + 16px radius
+     C. 所有 nested sub-item 透明 + 無 border（融入主卡片）
+     D. 清掉 border-left 色條 anti-pattern
    ========================================================== */
 
-/* ---- 主要容器類：hero / card / panel / intro / data / steps / ---- */
+/* ---- A. 殺掉漸層 overlay 層 ---- */
+.fw-page.v14 [class*="-hero-bg"],
+.fw-page.v14 [class*="-hero-overlay"],
+.fw-page.v14 [class*="-hero-bg-layer"],
+.fw-page.v14 [class*="-bg-gradient"],
+.fw-page.v14 [class*="-bg-overlay"] {
+    display: none !important;                    /* 直接隱藏漸層層 */
+}
+
+.fw-page.v14 [class*="-hero-bg"]::before,
+.fw-page.v14 [class*="-hero-bg"]::after,
+.fw-page.v14 [class*="-hero"]::before,
+.fw-page.v14 [class*="-hero"]::after {
+    content: none !important;
+    background: none !important;
+    background-image: none !important;
+}
+
+/* ---- B. 所有主要 top-level container 統一 neutral-0 卡片 ---- */
 .fw-page.v14 [class$="-hero"],
-.fw-page.v14 [class$="-card"],
-.fw-page.v14 [class$="-panel"],
-.fw-page.v14 [class*="-hero-intro"],
-.fw-page.v14 [class*="-hero-data"],
+.fw-page.v14 [class*="-how-it-works"],
+.fw-page.v14 [class*="-archive-section"],
+.fw-page.v14 [class*="-categories"],
 .fw-page.v14 [class*="-cat-card"],
-.fw-page.v14 [class*="-cat-header"],
-.fw-page.v14 [class*="-info-card"],
-.fw-page.v14 [class*="-apply-steps"],
-.fw-page.v14 [class*="-equip-item"],
-.fw-page.v14 [class*="-scenario-card"],
-.fw-page.v14 [class*="-topic-card"],
-.fw-page.v14 [class*="-explore-card"],
 .fw-page.v14 [class*="-subsidy-section"],
 .fw-page.v14 [class*="-safety-section"],
 .fw-page.v14 [class*="-references"],
-.fw-page.v14 [class*="-stat-card"],
 .fw-page.v14 [class*="-timeline"],
-.fw-page.v14 [class*="-quote-block"],
-.fw-page.v14 [class*="-action-item"],
-.fw-page.v14 [class*="-callout"],
-.fw-page.v14 [class*="-stats-note"] {
+.fw-page.v14 [class*="-topics-section"],
+.fw-page.v14 [class*="-footer-links"],
+.fw-page.v14 [class*="-protection-section"],
+.fw-page.v14 [class*="-section-wrapper"],
+.fw-page.v14 [class*="-featured"],
+.fw-page.v14 [class*="-body-content"],
+.fw-page.v14 [class*="-publication-list"],
+.fw-page.v14 [class*="-download-list"],
+.fw-page.v14 [class*="-resource-list"],
+.fw-page.v14 [class*="-research-group"],
+.fw-page.v14 [class*="-advocacy"],
+.fw-page.v14 [class*="-news-feed"],
+.fw-page.v14 [class$="-section"] {
+    position: relative !important;
     background: var(--neutral-0) !important;
-    background-image: none !important;           /* 殺 linear-gradient 漸層 */
+    background-image: none !important;
     background-color: var(--neutral-0) !important;
     border: 1px solid var(--neutral-200) !important;
-    border-left-color: var(--neutral-200) !important;   /* 殺 border-left 色條 */
-    border-right-color: var(--neutral-200) !important;
     border-radius: var(--v14-radius-card) !important;
     box-shadow: none !important;
-    color: var(--neutral-900) !important;
-}
-
-/* ---- Hero 外層 padding 統一 ---- */
-.fw-page.v14 [class$="-hero"] {
     padding: 40px !important;
     margin-bottom: 36px !important;
+    color: var(--neutral-900) !important;
+    overflow: hidden;
 }
 
-/* ---- 次要內層區塊（intro/data）padding 調小 ---- */
-.fw-page.v14 [class*="-hero-intro"],
-.fw-page.v14 [class*="-hero-data"] {
-    padding: 20px 24px !important;
-    margin-bottom: 16px !important;
+/* Hero 特殊 padding 和 display 以容納漸層移除後的 layout */
+.fw-page.v14 [class$="-hero"] {
+    display: block !important;
+    min-height: auto !important;
 }
 
-/* ---- Hero 副標 / tagline ---- */
-.fw-page.v14 [class*="-hero-subtitle"],
-.fw-page.v14 [class*="-hero-tagline"] {
-    color: var(--neutral-700) !important;
+/* ---- Hero content wrapper 不能再 absolute ---- */
+.fw-page.v14 [class*="-hero-content"],
+.fw-page.v14 [class*="-hero-inner"],
+.fw-page.v14 [class*="-hero-wrap"] {
+    position: relative !important;
+    z-index: auto !important;
     background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* ---- Badge/Kicker 維持純字+brand 色（V15 scene-tag 風） ---- */
+/* ---- C. 所有 nested sub-items 透明 + 無 border ---- */
+.fw-page.v14 [class*="-hero-intro"],
+.fw-page.v14 [class*="-hero-data"],
+.fw-page.v14 [class*="-hero-left"],
+.fw-page.v14 [class*="-hero-right"],
+.fw-page.v14 [class*="-hero-stats"],
+.fw-page.v14 [class*="-stat-card"],
+.fw-page.v14 [class*="-equip-item"],
+.fw-page.v14 [class*="-info-card"],
+.fw-page.v14 [class*="-apply-steps"],
+.fw-page.v14 [class*="-scenario-card"],
+.fw-page.v14 [class*="-topic-card"],
+.fw-page.v14 [class*="-explore-card"],
+.fw-page.v14 [class*="-callout"],
+.fw-page.v14 [class*="-stats-note"],
+.fw-page.v14 [class*="-action-item"],
+.fw-page.v14 [class*="-cat-header"],
+.fw-page.v14 [class*="-cat-body"],
+.fw-page.v14 [class*="-step-item"],
+.fw-page.v14 [class*="-pub-item"],
+.fw-page.v14 [class*="-resource-item"],
+.fw-page.v14 [class*="-download-item"],
+.fw-page.v14 [class*="-dl-item"],
+.fw-page.v14 [class*="-news-item"],
+.fw-page.v14 [class*="-featured-card"],
+.fw-page.v14 [class*="-program-card"],
+.fw-page.v14 [class*="-topic-item"] {
+    background: transparent !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: inherit !important;
+}
+
+/* ---- 明確殺 border-left/right 色條 anti-pattern ---- */
+.fw-page.v14 * {
+    border-left-color: var(--neutral-200) !important;
+    border-right-color: var(--neutral-200) !important;
+}
+
+/* ---- Kicker / Badge / Section-tag: 純字 + brand 色 ---- */
 .fw-page.v14 [class*="-hero-badge"],
 .fw-page.v14 [class*="-kicker"],
-.fw-page.v14 [class*="-section-tag"] {
+.fw-page.v14 [class*="-section-tag"],
+.fw-page.v14 [class*="-pod-badge"] {
     display: inline-flex !important;
     align-items: center !important;
     gap: 12px !important;
@@ -3452,8 +3521,8 @@ body[class*="page-id"],
     box-shadow: none !important;
 }
 
-/* ---- Icon 小方塊保留（避免被覆蓋）---- */
-.fw-page.v14 [class*="-icon"]:not([class*="-card"]):not([class*="-panel"]) {
+/* ---- Icons 保留圓形 brand tint ---- */
+.fw-page.v14 [class*="-icon"]:not([class*="-card"]):not([class*="-panel"]):not([class*="-hero"]) {
     background: color-mix(in oklch, var(--brand) 12%, transparent) !important;
     background-image: none !important;
     color: var(--brand) !important;
@@ -3461,25 +3530,18 @@ body[class*="page-id"],
     border: 0 !important;
 }
 
-/* ---- 清除所有 border-left / border-right 色條 anti-pattern ---- */
-.fw-page.v14 [class*="stats-note"],
-.fw-page.v14 [class*="-hero-data"],
-.fw-page.v14 [class*="-callout"],
-.fw-page.v14 [class*="-quote"] {
-    border-left: 1px solid var(--neutral-200) !important;
-    border-right: 1px solid var(--neutral-200) !important;
-}
-
-/* ---- Stats cards：保留容器但強制 neutral-0 bg ---- */
-.fw-page.v14 .fw-page [class*="-stat-number"],
+/* ---- Stat number 用 brand 色，透明 bg ---- */
+.fw-page.v14 [class*="-stat-number"],
 .fw-page.v14 [class*="-stat-num"] {
     color: var(--brand) !important;
     background: transparent !important;
 }
 
-/* ---- Categories / section wrappers 不要有 bg ---- */
-.fw-page.v14 [class*="-categories"],
-.fw-page.v14 [class*="-sections"] {
+/* ---- Categories / section wrappers 本身不要 bg（讓內層卡片浮出）---- */
+.fw-page.v14 [class*="-topics-grid"],
+.fw-page.v14 [class*="-stats-grid"],
+.fw-page.v14 [class*="-cards-grid"],
+.fw-page.v14 [class*="-items-grid"] {
     background: transparent !important;
     background-image: none !important;
     border: 0 !important;
