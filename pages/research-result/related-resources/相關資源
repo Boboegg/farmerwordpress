@@ -1,0 +1,296 @@
+<!-- wp:html -->
+
+<!-- =====================================================
+     子頁：研究成果 / 相關資源
+     URL：/research-result/related-resources/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     CSS 前綴：res-（與主頁共用）
+
+     【維護指南】
+     - 資源連結卡：複製 .res-link-card 區塊新增
+     - 每個分類區塊可獨立增減
+     - 此頁需搭配主頁的 <style> 區塊（已內含）
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Hero -->
+<div class="res-hero" style="padding:36px 40px;">
+  <div class="res-hero-inner">
+    <div class="res-hero-badge" style="background:rgba(124,58,237,.1);color:#7c3aed;"><i class="fas fa-link"></i> Resources</div>
+    <h1 class="res-hero-title" style="font-size:2rem;">相關資源</h1>
+    <p class="res-hero-subtitle">與農民職業健康、農業安全相關的政府資料庫、學術資源、國際組織及實用工具彙整。</p>
+    <a href="/research-result/" class="res-back-link"><i class="fas fa-arrow-left"></i> 回到研究成果總覽</a>
+  </div>
+</div>
+
+<!-- 子頁導覽列 -->
+<div class="res-sections" style="margin-top:16px;">
+  <div class="res-sub-nav">
+    <a href="/research-result/research-publication/" class="res-sub-nav-item">研究出版</a>
+    <a href="/research-result/podcast/" class="res-sub-nav-item">影音 Podcast</a>
+    <a href="/research-result/infographic/" class="res-sub-nav-item">圖文資訊</a>
+    <a href="/research-result/download-zone/" class="res-sub-nav-item">下載專區</a>
+    <a href="/research-result/related-resources/" class="res-sub-nav-item is-current">相關資源</a>
+  </div>
+</div>
+
+<!-- ========== 政府資源 ========== -->
+<div class="res-sections">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon" style="background:rgba(21,101,192,.1);color:#1565c0;"><i class="fas fa-landmark"></i></div>
+      <div><h2>政府機關與資料庫</h2><p>台灣各級政府關於農業安全、職業健康的官方資源。</p></div>
+    </div>
+    <div class="res-sec-body">
+      <div class="res-link-grid">
+
+        <a href="https://www.moa.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon"><i class="fas fa-building-columns"></i></div>
+          <div class="res-link-body">
+            <h4>農業部</h4>
+            <p>農業政策、農民福利、補助資訊、農業統計資料。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.osha.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon"><i class="fas fa-shield-halved"></i></div>
+          <div class="res-link-body">
+            <h4>勞動部職業安全衛生署</h4>
+            <p>職業安全法規、職災預防、安全衛生教育訓練資源。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.hpa.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon"><i class="fas fa-hospital"></i></div>
+          <div class="res-link-body">
+            <h4>衛生福利部國民健康署</h4>
+            <p>健康促進政策、慢性病防治、高溫健康警示等公衛資源。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.bli.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="res-link-body">
+            <h4>勞動部勞工保險局</h4>
+            <p>農民健康保險、農民職業災害保險相關業務與給付查詢。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://agrstat.moa.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="res-link-body">
+            <h4>農業統計資料查詢</h4>
+            <p>農業部統計資料庫，含農戶數、耕地面積、產值等數據。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.afa.gov.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon"><i class="fas fa-coins"></i></div>
+          <div class="res-link-body">
+            <h4>農業金融署</h4>
+            <p>農業保險、農業貸款、農業信用保證等金融服務資訊。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 學術資源 ========== -->
+<div class="res-sections">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-graduation-cap"></i></div>
+      <div><h2>學術資源與資料庫</h2><p>國內外與農業職業健康相關的學術研究資料庫。</p></div>
+    </div>
+    <div class="res-sec-body">
+      <div class="res-link-grid">
+
+        <a href="https://ndltd.ncl.edu.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-book-bookmark"></i></div>
+          <div class="res-link-body">
+            <h4>臺灣博碩士論文知識加值系統</h4>
+            <p>國家圖書館管理，收錄全國博碩士學位論文。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.airitilibrary.com/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-database"></i></div>
+          <div class="res-link-body">
+            <h4>華藝線上圖書館</h4>
+            <p>收錄台灣與華文地區期刊論文、學位論文等學術資源。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-magnifying-glass"></i></div>
+          <div class="res-link-body">
+            <h4>PubMed</h4>
+            <p>美國國家醫學圖書館生物醫學文獻資料庫，含農業職業健康研究。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-microscope"></i></div>
+          <div class="res-link-body">
+            <h4>Google Scholar</h4>
+            <p>跨領域學術搜尋引擎，搜尋期刊、論文、書籍、摘要等學術文獻。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 國際組織 ========== -->
+<div class="res-sections">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-earth-asia"></i></div>
+      <div><h2>國際組織與相關計畫</h2><p>國際間關注農業工作者健康與安全的組織及倡議。</p></div>
+    </div>
+    <div class="res-sec-body">
+      <div class="res-link-grid">
+
+        <a href="https://www.ilo.org/safety-and-health-agriculture" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-globe"></i></div>
+          <div class="res-link-body">
+            <h4>ILO 國際勞工組織 — 農業安全</h4>
+            <p>農業部門勞動安全衛生公約、指引與技術合作計畫。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.who.int/health-topics/occupational-health" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-stethoscope"></i></div>
+          <div class="res-link-body">
+            <h4>WHO 世界衛生組織 — 職業健康</h4>
+            <p>職業健康政策指引、全球工作者健康行動計畫。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.fao.org/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-tractor"></i></div>
+          <div class="res-link-body">
+            <h4>FAO 聯合國糧農組織</h4>
+            <p>全球農業發展、糧食安全與農村發展政策資源。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.cdc.gov/niosh/agriculture/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-flask-vial"></i></div>
+          <div class="res-link-body">
+            <h4>NIOSH — 農業安全與健康</h4>
+            <p>美國國家職業安全衛生研究所農業安全與健康中心。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HISP 相關計畫 ========== -->
+<div class="res-sections">
+  <div class="res-sec-card">
+    <div class="res-sec-header">
+      <div class="res-sec-icon" style="background:rgba(92,134,7,.1);color:#5C8607;"><i class="fas fa-seedling"></i></div>
+      <div><h2>HISP 與相關計畫</h2><p>人文創新與社會實踐計畫及國內相關研究團隊。</p></div>
+    </div>
+    <div class="res-sec-body">
+      <div class="res-link-grid">
+
+        <a href="https://www.hisp.ntu.edu.tw/" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(92,134,7,.1);color:#5C8607;"><i class="fas fa-university"></i></div>
+          <div class="res-link-body">
+            <h4>HISP 人文創新與社會實踐計畫</h4>
+            <p>科技部（國科會）推動，連結大學與在地社會的人文社會實踐平台。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+        <a href="https://www.hisp.ntu.edu.tw/teams/ccu" target="_blank" rel="noopener" class="res-link-card">
+          <div class="res-link-icon" style="background:rgba(92,134,7,.1);color:#5C8607;"><i class="fas fa-users"></i></div>
+          <div class="res-link-body">
+            <h4>HISP 新作坊 — 中正大學團隊</h4>
+            <p>本計畫於 HISP 新作坊平台的團隊頁面與研究成果。</p>
+          </div>
+          <i class="fas fa-arrow-right res-link-arrow"></i>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 免責 ========== -->
+<div class="res-sections">
+  <div style="padding:16px 20px;background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;font-size:.85rem;line-height:1.6;color:var(--text-secondary);display:flex;align-items:flex-start;gap:10px;">
+    <i class="fas fa-circle-info" style="margin-top:3px;flex-shrink:0;color:#9ca3af;"></i>
+    <span>本頁所列外部連結僅供參考，各網站內容由其管理單位負責。若發現連結失效，歡迎透過<a href="/about/contact/" style="color:var(--brand);font-weight:600;text-decoration:none;">聯絡我們</a>回報。</span>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+.res-hero,.res-sections{
+  --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
+  --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.res-hero *,.res-sections *{box-sizing:border-box;}
+.res-hero{display:flex;gap:40px;align-items:flex-start;padding:48px 40px;background:linear-gradient(135deg,var(--brand-light) 0%,#fff 60%,#f0f4e8 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(92,134,7,.12);}
+.res-hero-inner{flex:1;}
+.res-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;letter-spacing:.5px;}
+.res-hero-title{font-size:2.4rem;font-weight:900;color:var(--brand-dark);margin:0 0 10px;line-height:1.2;}
+.res-hero-subtitle{font-size:1.05rem;color:var(--text-secondary);font-weight:500;margin:0 0 20px;line-height:1.7;}
+.res-back-link{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;color:var(--text-secondary);text-decoration:none;transition:.2s;margin-top:16px;}.res-back-link:hover{color:var(--brand);}
+.res-sections{margin-top:24px;}
+.res-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
+.res-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-light);}
+.res-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.res-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;}
+.res-sec-header p{font-size:.95rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+.res-sub-nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+.res-sub-nav-item{padding:8px 18px;border-radius:50px;font-size:.88rem;font-weight:600;text-decoration:none;border:1px solid #e2e8f0;color:var(--text-secondary);transition:all .3s;}
+.res-sub-nav-item:hover{border-color:var(--brand);color:var(--brand);}
+.res-sub-nav-item.is-current{background:var(--brand);color:#fff;border-color:var(--brand);}
+.res-link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.res-link-card{display:flex;gap:16px;padding:20px 24px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);align-items:flex-start;transition:all .3s;}
+.res-link-card:hover{border-color:var(--brand);box-shadow:0 6px 18px rgba(0,0,0,.06);transform:translateY(-3px);}
+.res-link-icon{width:48px;height:48px;border-radius:12px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.res-link-body{flex-grow:1;}
+.res-link-body h4{font-size:1rem;font-weight:700;color:var(--brand-dark);margin:0 0 4px;}
+.res-link-body p{font-size:.85rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+.res-link-arrow{color:var(--brand);align-self:center;font-size:16px;opacity:.4;transition:.3s;}
+.res-link-card:hover .res-link-arrow{opacity:1;transform:translateX(4px);}
+@media(max-width:768px){
+  .res-hero{flex-direction:column;padding:28px 20px;gap:24px;}
+  .res-hero-title{font-size:1.8rem;}
+  .res-sec-card{padding:20px;}.res-sec-header{flex-direction:column;gap:10px;}
+  .res-sub-nav{gap:6px;}.res-sub-nav-item{padding:6px 14px;font-size:.82rem;}
+  .res-link-grid{grid-template-columns:1fr;}
+}
+</style>
+
+<!-- /wp:html -->

@@ -1,0 +1,594 @@
+<!-- wp:html -->
+<!-- =====================================================
+     頁面：農學堂（培力與實踐）— 學習園區
+     URL：/農學堂/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     CSS 前綴：edu-
+     主色系：#5C8607（品牌尊嚴綠）
+
+     【維護指南】
+     - 影片卡片：複製 .edu-video-card 區塊即可新增
+     - 工作坊項目：複製 .edu-ws-item 區塊即可新增
+     - 外部平台卡片：複製 .edu-platform-card 即可新增
+     - 難易度標籤：edu-diff-beginner / edu-diff-intermediate / edu-diff-advanced
+     - 狀態標籤：edu-ws-open（報名中）/ edu-ws-closed（已截止）/ edu-ws-full（額滿）
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== 區塊 1：Hero — 學習園區概念 ========== -->
+<div class="edu-hero">
+  <div class="edu-hero-inner">
+    <div class="edu-hero-badge"><i class="fas fa-graduation-cap"></i> 培力與實踐</div>
+    <h1 class="edu-hero-title">農學堂 <span class="edu-hero-subtitle-tag">學習園區</span></h1>
+    <p class="edu-hero-subtitle">從 3 分鐘微學習到整日工作坊，從線上影片到田間實作——為雲嘉農友打造最務實的職業安全與健康學習資源，讓每位農民都能「安全做、健康活」。</p>
+    <div class="edu-hero-nav">
+      <a href="#edu-videos" class="edu-hero-chip"><i class="fas fa-play-circle"></i> 微學習影片</a>
+      <a href="#edu-workshops" class="edu-hero-chip"><i class="fas fa-chalkboard-user"></i> 工作坊課程</a>
+      <a href="#edu-platforms" class="edu-hero-chip"><i class="fas fa-globe"></i> 學習平台</a>
+      <a href="#edu-resources" class="edu-hero-chip"><i class="fas fa-download"></i> 教材下載</a>
+    </div>
+  </div>
+  <div class="edu-hero-deco">
+    <div class="edu-hero-stat">
+      <span class="edu-hero-stat-num">6</span>
+      <span class="edu-hero-stat-label">大學習主題</span>
+    </div>
+    <div class="edu-hero-stat">
+      <span class="edu-hero-stat-num">170+</span>
+      <span class="edu-hero-stat-label">支國際安全影片</span>
+    </div>
+    <div class="edu-hero-stat">
+      <span class="edu-hero-stat-num">97</span>
+      <span class="edu-hero-stat-label">門農民學院數位課程</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 2：學習路徑導覽 ========== -->
+<div class="edu-sections" id="edu-paths">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon"><i class="fas fa-route"></i></div>
+      <div>
+        <h2>六大學習主題</h2>
+        <p>依據農業工作者最常面對的風險，規劃六大主題學習路徑。點選即可篩選對應內容。</p>
+      </div>
+    </div>
+    <div class="edu-path-grid">
+      <div class="edu-path-card" data-path="heat">
+        <div class="edu-path-icon" style="background:#fef2f2;color:#dc2626;"><i class="fas fa-temperature-high"></i></div>
+        <h4>熱危害防護</h4>
+        <p>中暑預防、熱指數監測、急救處置</p>
+      </div>
+      <div class="edu-path-card" data-path="chemical">
+        <div class="edu-path-icon" style="background:#fefce8;color:#ca8a04;"><i class="fas fa-skull-crossbones"></i></div>
+        <h4>農藥安全</h4>
+        <p>安全用藥、防護裝備、中毒急救</p>
+      </div>
+      <div class="edu-path-card" data-path="ergonomic">
+        <div class="edu-path-icon" style="background:#eff6ff;color:#2563eb;"><i class="fas fa-person-walking"></i></div>
+        <h4>人因工程</h4>
+        <p>搬運姿勢、肌骨保健、腰背保護</p>
+      </div>
+      <div class="edu-path-card" data-path="machine">
+        <div class="edu-path-icon" style="background:#f0fdf4;color:#16a34a;"><i class="fas fa-tractor"></i></div>
+        <h4>農機安全</h4>
+        <p>操作規範、保養維修、翻覆防護</p>
+      </div>
+      <div class="edu-path-card" data-path="ppe">
+        <div class="edu-path-icon" style="background:#faf5ff;color:#9333ea;"><i class="fas fa-helmet-safety"></i></div>
+        <h4>個人防護</h4>
+        <p>PPE 穿戴、呼吸防護、紫外線防護</p>
+      </div>
+      <div class="edu-path-card" data-path="insurance">
+        <div class="edu-path-icon" style="background:#fff7ed;color:#ea580c;"><i class="fas fa-shield-halved"></i></div>
+        <h4>保險權益</h4>
+        <p>農保、職災保險、退休儲金</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 3：微學習影片（自動抓取 YouTube 頻道） ========== -->
+<div class="edu-sections" id="edu-videos">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon"><i class="fas fa-film"></i></div>
+      <div>
+        <h2>農業影音專區</h2>
+        <p>自動抓取農業部官方 YouTube 頻道最新影片，涵蓋農業技術、食農教育、綠色照顧等主題，點擊可直接播放。</p>
+      </div>
+    </div>
+    <div class="edu-sec-body">
+      [farmer_videos count="6"]
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 4：外部學習平台 ========== -->
+<div class="edu-sections" id="edu-platforms">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon"><i class="fas fa-globe"></i></div>
+      <div>
+        <h2>學習平台導覽</h2>
+        <p>嚴選台灣政府與國際權威機構提供的免費線上學習資源，為農友打造完整的知識補給站。</p>
+      </div>
+    </div>
+    <div class="edu-sec-body">
+
+      <h3 class="edu-platform-group-title"><i class="fas fa-flag"></i> 台灣官方學習平台</h3>
+      <div class="edu-platform-grid">
+
+        <a href="https://academy.moa.gov.tw/" class="edu-platform-card" target="_blank" rel="noopener">
+          <div class="edu-platform-badge tw">官方</div>
+          <div class="edu-platform-header">
+            <div class="edu-platform-icon" style="background:#f0fdf4;color:#16a34a;"><i class="fas fa-seedling"></i></div>
+            <div>
+              <h4>農民學院</h4>
+              <span class="edu-platform-org">農業部</span>
+            </div>
+          </div>
+          <p class="edu-platform-desc">台灣最大農業學習平台，97 門數位課程涵蓋農糧、畜產、水產、經營管理等 7 大類。入門班已全面數位化，隨時隨地可學。</p>
+          <div class="edu-platform-tags">
+            <span>入門班</span><span>初階班</span><span>進階班</span><span>農場見習</span>
+          </div>
+        </a>
+
+        <a href="https://agdigischool.atri.org.tw/" class="edu-platform-card" target="_blank" rel="noopener">
+          <div class="edu-platform-badge tw">官方</div>
+          <div class="edu-platform-header">
+            <div class="edu-platform-icon" style="background:#eff6ff;color:#2563eb;"><i class="fas fa-laptop-code"></i></div>
+            <div>
+              <h4>農業數位學堂</h4>
+              <span class="edu-platform-org">農業科技研究院</span>
+            </div>
+          </div>
+          <p class="edu-platform-desc">提供線上學習與直播課程，設有學習歷程證明系統。涵蓋智慧農業、數位行銷、農業創新等前瞻主題。</p>
+          <div class="edu-platform-tags">
+            <span>數位課程</span><span>直播教學</span><span>學習證明</span>
+          </div>
+        </a>
+
+        <a href="https://isafeel.osha.gov.tw/mooc/index.php" class="edu-platform-card" target="_blank" rel="noopener">
+          <div class="edu-platform-badge tw">官方</div>
+          <div class="edu-platform-header">
+            <div class="edu-platform-icon" style="background:#fef2f2;color:#dc2626;"><i class="fas fa-hard-hat"></i></div>
+            <div>
+              <h4>職業安全衛生數位學習平台</h4>
+              <span class="edu-platform-org">勞動部職安署</span>
+            </div>
+          </div>
+          <p class="edu-platform-desc">免費職安衛線上課程，包含一般安全衛生教育訓練教材。適合所有勞動者，農業工作者也適用。</p>
+          <div class="edu-platform-tags">
+            <span>安全衛生</span><span>教育訓練</span><span>免費</span>
+          </div>
+        </a>
+
+        <a href="https://www.hdares.gov.tw/ws.php?id=1484" class="edu-platform-card" target="_blank" rel="noopener">
+          <div class="edu-platform-badge tw">官方</div>
+          <div class="edu-platform-header">
+            <div class="edu-platform-icon" style="background:#fefce8;color:#ca8a04;"><i class="fas fa-video"></i></div>
+            <div>
+              <h4>農業改良場數位學習專區</h4>
+              <span class="edu-platform-org">花蓮區農業改良場</span>
+            </div>
+          </div>
+          <p class="edu-platform-desc">各地農業改良場製作的種植技術教學影片，含作物栽培、病蟲害防治、有機農業實務等在地化內容。</p>
+          <div class="edu-platform-tags">
+            <span>栽培技術</span><span>病蟲害</span><span>影片</span>
+          </div>
+        </a>
+
+      </div>
+
+      <h3 class="edu-platform-group-title"><i class="fas fa-earth-americas"></i> 國際農業安全學習資源</h3>
+      <div class="edu-platform-grid">
+
+        <a href="https://www.youtube.com/@USagCenters" class="edu-platform-card" target="_blank" rel="noopener">
+          <div class="edu-platform-badge intl">國際</div>
+          <div class="edu-platform-header">
+            <div class="edu-platform-icon" style="background:#fef2f2;color:#dc2626;"><i class="fab fa-youtube"></i></div>
+            <div>
+              <h4>NIOSH 農業安全影片頻道</h4>
+              <span class="edu-platform-org">CDC / NIOSH</span>
+            </div>
+          </div>
+          <p class="edu-platform-desc">美國國家職業安全衛生研究所農業安全中心 YouTube 頻道，170+ 支影片，三種語言，涵蓋農藥、感染、穀倉、農機安全等主題。</p>
+          <div class="edu-platform-tags">
+            <span>YouTube</span><span>多語字幕</span><span>170+ 影片</span>
+          </div>
+        </a>
+
+        <a href="https://www.osha.gov/agricultural-operations/resources" class="edu-platform-card" target="_blank" rel="noopener">
+          <div class="edu-platform-badge intl">國際</div>
+          <div class="edu-platform-header">
+            <div class="edu-platform-icon" style="background:#f0fdf4;color:#16a34a;"><i class="fas fa-book-open"></i></div>
+            <div>
+              <h4>OSHA 農業作業資源中心</h4>
+              <span class="edu-platform-org">美國勞動部 OSHA</span>
+            </div>
+          </div>
+          <p class="edu-platform-desc">農業危害識別與控制完整指引，含熱傷害預防、農藥安全、PPE 標準、青少年農業安全互動工具等免費教材。</p>
+          <div class="edu-platform-tags">
+            <span>教材</span><span>互動工具</span><span>指引</span>
+          </div>
+        </a>
+
+        <a href="https://www.necasag.org/safetytraining/" class="edu-platform-card" target="_blank" rel="noopener">
+          <div class="edu-platform-badge intl">國際</div>
+          <div class="edu-platform-header">
+            <div class="edu-platform-icon" style="background:#eff6ff;color:#2563eb;"><i class="fas fa-user-shield"></i></div>
+            <div>
+              <h4>NECAS 農業安全訓練</h4>
+              <span class="edu-platform-org">美國國家農業安全教育中心</span>
+            </div>
+          </div>
+          <p class="edu-platform-desc">穀倉密閉空間安全、糞池安全、跌落防護、穀物粉塵火災預防等專業訓練課程，適合農場管理者進修。</p>
+          <div class="edu-platform-tags">
+            <span>密閉空間</span><span>跌落防護</span><span>專業訓練</span>
+          </div>
+        </a>
+
+        <a href="https://www.sh168.org.tw/shortFilm.aspx" class="edu-platform-card" target="_blank" rel="noopener">
+          <div class="edu-platform-badge tw">官方</div>
+          <div class="edu-platform-header">
+            <div class="edu-platform-icon" style="background:#faf5ff;color:#9333ea;"><i class="fas fa-clapperboard"></i></div>
+            <div>
+              <h4>職安衛宣導短片</h4>
+              <span class="edu-platform-org">中小企業安全衛生資訊網</span>
+            </div>
+          </div>
+          <p class="edu-platform-desc">勞動部職安署委託製作的安全衛生宣導影片合集，含火災爆炸預防、濕熱環境危害、外籍移工多語版本等。</p>
+          <div class="edu-platform-tags">
+            <span>宣導影片</span><span>多語版</span><span>免費</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 5：訓練課程（自動抓取農民學院 RSS） ========== -->
+<div class="edu-sections" id="edu-workshops">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon"><i class="fas fa-chalkboard-user"></i></div>
+      <div>
+        <h2>農民學院近期課程</h2>
+        <p>自動抓取農民學院最新訓練課程，資料每 12 小時更新。點擊可前往官網查看詳情與報名。</p>
+      </div>
+    </div>
+    <div class="edu-sec-body">
+      [farmer_courses count="6"]
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 6：學習資源下載 ========== -->
+<div class="edu-sections" id="edu-resources">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon"><i class="fas fa-folder-open"></i></div>
+      <div>
+        <h2>教材與資源下載</h2>
+        <p>實用圖解懶人包、急救卡片、檢核表等，列印帶到田間隨時查閱。</p>
+      </div>
+    </div>
+    <div class="edu-sec-body">
+      <div class="edu-dl-grid">
+
+        <a href="https://www.osha.gov.tw/media/kp2pvhn1/%E4%BA%BA%E5%9B%A0%E6%80%A7%E5%8D%B1%E5%AE%B3%E9%A0%90%E9%98%B2%E8%A8%88%E7%95%AB%E6%8C%87%E5%BC%95.pdf?mediaDL=true" class="edu-dl-card" target="_blank" rel="noopener">
+          <div class="edu-dl-icon"><i class="fas fa-file-pdf"></i></div>
+          <div class="edu-dl-info">
+            <h4>人因性危害預防計畫指引</h4>
+            <span class="edu-dl-meta">PDF・勞動部職安署・含肌骨傷病評估檢核表</span>
+          </div>
+          <div class="edu-dl-arrow"><i class="fas fa-download"></i></div>
+        </a>
+
+        <a href="https://www.coapre.org.tw/files/20240528140047760.pdf" class="edu-dl-card" target="_blank" rel="noopener">
+          <div class="edu-dl-icon" style="color:#f59e0b;"><i class="fas fa-file-pdf"></i></div>
+          <div class="edu-dl-info">
+            <h4>職場人因性危害預防</h4>
+            <span class="edu-dl-meta">PDF・職業災害預防及重建中心・教育訓練教材</span>
+          </div>
+          <div class="edu-dl-arrow"><i class="fas fa-download"></i></div>
+        </a>
+
+        <a href="https://www.osha.gov.tw/media/pocp0fbr/%E8%81%B7%E5%A0%B4%E4%BA%BA%E5%9B%A0%E5%8D%B1%E5%AE%B3%E9%A0%90%E9%98%B2%E5%84%AA%E8%89%AF%E6%A1%88%E4%BE%8B%E4%BD%9C%E5%93%81%E9%9B%86.pdf" class="edu-dl-card" target="_blank" rel="noopener">
+          <div class="edu-dl-icon" style="color:#7c3aed;"><i class="fas fa-file-pdf"></i></div>
+          <div class="edu-dl-info">
+            <h4>職場人因危害預防優良案例作品集</h4>
+            <span class="edu-dl-meta">PDF・勞動部職安署・實際改善案例與成效</span>
+          </div>
+          <div class="edu-dl-arrow"><i class="fas fa-download"></i></div>
+        </a>
+
+        <a href="https://www.cdc.gov/niosh/agriculture/about/index.html" class="edu-dl-card" target="_blank" rel="noopener">
+          <div class="edu-dl-icon" style="color:#2563eb;"><i class="fas fa-file-lines"></i></div>
+          <div class="edu-dl-info">
+            <h4>NIOSH Simple Solutions: Ergonomics for Farmworkers</h4>
+            <span class="edu-dl-meta">英文・NIOSH・農業人因工程實用指南</span>
+          </div>
+          <div class="edu-dl-arrow"><i class="fas fa-download"></i></div>
+        </a>
+
+        <a href="https://www.bli.gov.tw/" class="edu-dl-card" target="_blank" rel="noopener">
+          <div class="edu-dl-icon" style="color:#16a34a;"><i class="fas fa-file-invoice-dollar"></i></div>
+          <div class="edu-dl-info">
+            <h4>農民職業災害保險申請指南</h4>
+            <span class="edu-dl-meta">勞保局・投保資格、給付項目與申請流程</span>
+          </div>
+          <div class="edu-dl-arrow"><i class="fas fa-external-link-alt"></i></div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 7：學習園區概念圖 ========== -->
+<div class="edu-sections" id="edu-concept">
+  <div class="edu-sec-card">
+    <div class="edu-sec-header">
+      <div class="edu-sec-icon" style="background:#fff7ed;color:#ea580c;"><i class="fas fa-lightbulb"></i></div>
+      <div>
+        <h2>學習園區概念</h2>
+        <p>農學堂以「線上自學 → 實體實作 → 持續精進」三階段循環，打造農民終身學習生態系。</p>
+      </div>
+    </div>
+    <div class="edu-sec-body">
+      <div class="edu-concept-flow">
+        <div class="edu-concept-step">
+          <div class="edu-concept-num">1</div>
+          <div class="edu-concept-icon"><i class="fas fa-mobile-screen-button"></i></div>
+          <h4>線上自學</h4>
+          <p>3 分鐘微學習影片<br>隨時隨地、田間休息就能看<br>農民學院 97 門數位課程</p>
+        </div>
+        <div class="edu-concept-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="edu-concept-step">
+          <div class="edu-concept-num">2</div>
+          <div class="edu-concept-icon"><i class="fas fa-hands-holding"></i></div>
+          <h4>實體實作</h4>
+          <p>工作坊動手操作<br>田間實地演練<br>專家現場指導</p>
+        </div>
+        <div class="edu-concept-arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="edu-concept-step">
+          <div class="edu-concept-num">3</div>
+          <div class="edu-concept-icon"><i class="fas fa-arrows-rotate"></i></div>
+          <h4>持續精進</h4>
+          <p>進階課程與資源<br>國際研究新知<br>HISP 社群交流</p>
+        </div>
+      </div>
+
+      <div class="edu-concept-partners">
+        <h4><i class="fas fa-handshake"></i> 合作夥伴與資源來源</h4>
+        <div class="edu-partner-tags">
+          <span>農業部農民學院</span>
+          <span>農業科技研究院</span>
+          <span>勞動部職安署</span>
+          <span>CDC / NIOSH</span>
+          <span>OSHA</span>
+          <span>NECAS</span>
+          <span>WHO 農藥安全</span>
+          <span>ILO 農業安全</span>
+          <span>嘉義大學農推中心</span>
+          <span>HISP 計畫</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 區塊 8：交叉連結 ========== -->
+<div class="edu-sections">
+  <div class="edu-sec-card edu-sec-slim">
+    <h3 class="edu-cross-title"><i class="fas fa-link"></i> 延伸探索</h3>
+    <div class="edu-cross-grid">
+      <a href="/occupational-safety/" class="edu-cross-card"><i class="fas fa-helmet-safety"></i><span>職業安全</span><small>防護具型錄與風險評估工具</small></a>
+      <a href="/healthgood/" class="edu-cross-card"><i class="fas fa-heart-pulse"></i><span>健康促進</span><small>人體互動圖與復健運動處方</small></a>
+      <a href="/economic-insurance/" class="edu-cross-card"><i class="fas fa-shield-cat"></i><span>經濟與保險</span><small>職災保險、農作物保險、補助資源</small></a>
+      <a href="/research-result/" class="edu-cross-card"><i class="fas fa-flask"></i><span>研究成果</span><small>最新研究出版與 Podcast</small></a>
+    </div>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+/* === 全域變數 === */
+.edu-hero,.edu-sections{
+  --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;--brand-hover:#3d5a04;
+  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
+  --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
+  font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
+}
+.edu-hero *,.edu-sections *{box-sizing:border-box;}
+
+/* === Hero === */
+.edu-hero{display:flex;gap:40px;align-items:center;padding:48px 40px;background:linear-gradient(135deg,var(--brand-light) 0%,#fff 60%,#f0f4e8 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(92,134,7,.12);}
+.edu-hero-inner{flex:1.3;}
+.edu-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;}
+.edu-hero-title{font-size:2.4rem;font-weight:900;color:var(--brand-dark);margin:0 0 10px;line-height:1.2;}
+.edu-hero-subtitle-tag{font-size:1rem;font-weight:600;color:var(--accent);background:rgba(212,160,23,.12);padding:4px 14px;border-radius:20px;vertical-align:middle;margin-left:8px;}
+.edu-hero-subtitle{font-size:1.05rem;color:var(--text-secondary);font-weight:500;margin:0 0 24px;line-height:1.7;}
+.edu-hero-nav{display:flex;gap:10px;flex-wrap:wrap;}
+.edu-hero-chip{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;background:#fff;color:var(--brand);border:2px solid rgba(92,134,7,.2);transition:all .3s;}
+.edu-hero-chip:hover{background:var(--brand);color:#fff;border-color:var(--brand);transform:translateY(-2px);}
+.edu-hero-deco{flex:.7;display:flex;flex-direction:column;gap:14px;}
+.edu-hero-stat{background:#fff;padding:18px 24px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:baseline;gap:12px;}
+.edu-hero-stat-num{font-size:1.6rem;font-weight:900;color:var(--brand);font-family:"Lato",sans-serif;}
+.edu-hero-stat-label{font-size:.9rem;color:var(--text-secondary);}
+
+/* === 通用區塊 === */
+.edu-sections{margin-top:24px;}
+.edu-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
+.edu-sec-slim{padding:28px 36px;}
+.edu-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-light);}
+.edu-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.edu-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;}
+.edu-sec-header p{font-size:.95rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+
+/* === 學習路徑六宮格 === */
+.edu-path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.edu-path-card{padding:24px;border-radius:14px;border:1px solid #e2e8f0;background:#fafbfc;text-align:center;transition:all .3s;cursor:pointer;}
+.edu-path-card:hover{border-color:var(--brand);transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
+.edu-path-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin:0 auto 14px;}
+.edu-path-card h4{font-size:1.05rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
+.edu-path-card p{font-size:.85rem;color:var(--text-secondary);margin:0;line-height:1.5;}
+
+/* === 篩選列 === */
+.edu-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid #f0f0f0;}
+.edu-filter-btn{padding:8px 18px;border-radius:50px;border:1px solid #e2e8f0;background:#f8fafc;font-size:.88rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
+.edu-filter-btn:hover{border-color:var(--brand);color:var(--brand);}
+.edu-filter-btn.is-active{background:var(--brand);color:#fff;border-color:var(--brand);}
+
+/* === 影片網格 === */
+.edu-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.edu-video-card{border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;transition:all .3s;display:flex;flex-direction:column;}
+.edu-video-card.is-hidden{display:none;}
+.edu-video-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1);}
+.edu-video-thumb{position:relative;height:180px;overflow:hidden;background:#111;}
+.edu-video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s;opacity:.9;}
+.edu-video-card:hover .edu-video-thumb img{transform:scale(1.08);opacity:1;}
+.edu-video-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:52px;height:52px;background:rgba(0,0,0,.6);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0;transition:all .3s;padding-left:3px;}
+.edu-video-card:hover .edu-video-play{opacity:1;transform:translate(-50%,-50%) scale(1);}
+.edu-video-duration{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.75);color:#fff;padding:3px 10px;border-radius:4px;font-size:.75rem;font-weight:600;display:flex;align-items:center;gap:4px;}
+.edu-video-info{padding:18px;flex-grow:1;display:flex;flex-direction:column;}
+.edu-video-tags{display:flex;gap:6px;margin-bottom:10px;}
+.edu-tag-topic{font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:12px;background:var(--brand-light);color:var(--brand);}
+.edu-tag-diff{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;}
+.edu-diff-beginner{background:#dbeafe;color:#1d4ed8;}
+.edu-diff-intermediate{background:#fef3c7;color:#92400e;}
+.edu-diff-advanced{background:#fce7f3;color:#be185d;}
+.edu-video-title{font-size:1.05rem;font-weight:700;margin:0 0 8px;line-height:1.4;color:#222;}
+.edu-video-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.5;margin:0 0 14px;flex-grow:1;}
+.edu-video-link{font-size:.9rem;font-weight:700;color:var(--brand);text-decoration:none;display:flex;align-items:center;gap:6px;transition:.2s;}
+.edu-video-link:hover{color:var(--brand-dark);}
+.edu-video-more{display:flex;align-items:center;gap:12px;margin-top:24px;padding:18px 24px;background:linear-gradient(135deg,#f0f9ff,#eff6ff);border-radius:12px;border:1px solid #bfdbfe;font-size:.9rem;color:#1e40af;}
+.edu-video-more i:first-child{font-size:18px;flex-shrink:0;}
+.edu-video-more span{flex-grow:1;line-height:1.5;}
+.edu-video-more a{font-weight:700;color:#1d4ed8;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:4px;}
+.edu-video-more a:hover{text-decoration:underline;}
+
+/* === 外部學習平台 === */
+.edu-platform-group-title{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;padding-top:8px;}
+.edu-platform-group-title + .edu-platform-grid{margin-bottom:32px;}
+.edu-platform-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.edu-platform-card{position:relative;display:flex;flex-direction:column;padding:24px;border-radius:14px;border:1px solid #e2e8f0;background:#fafbfc;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.edu-platform-card:hover{border-color:var(--brand);transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.08);}
+.edu-platform-badge{position:absolute;top:14px;right:14px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:10px;}
+.edu-platform-badge.tw{background:#dcfce7;color:#15803d;}
+.edu-platform-badge.intl{background:#dbeafe;color:#1d4ed8;}
+.edu-platform-header{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+.edu-platform-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.edu-platform-header h4{font-size:1.05rem;font-weight:800;margin:0;color:var(--brand-dark);}
+.edu-platform-org{font-size:.8rem;color:var(--text-secondary);font-weight:600;}
+.edu-platform-desc{font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin:0 0 14px;flex-grow:1;}
+.edu-platform-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.edu-platform-tags span{font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:10px;background:#f1f5f9;color:var(--text-secondary);}
+
+/* === 工作坊清單 === */
+.edu-ws-list{display:flex;flex-direction:column;gap:16px;}
+.edu-ws-item{display:flex;gap:20px;padding:24px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;align-items:flex-start;}
+.edu-ws-item:hover{border-color:var(--brand);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.edu-ws-date-box{min-width:72px;text-align:center;background:var(--brand);color:#fff;border-radius:12px;padding:12px 8px;flex-shrink:0;display:flex;flex-direction:column;line-height:1;}
+.edu-ws-month{font-size:.75rem;font-weight:600;opacity:.8;}
+.edu-ws-day{font-size:1.8rem;font-weight:900;margin:2px 0;}
+.edu-ws-weekday{font-size:.8rem;font-weight:600;opacity:.8;}
+.edu-ws-content{flex-grow:1;}
+.edu-ws-meta{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.edu-ws-status{font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:12px;display:flex;align-items:center;gap:4px;}
+.edu-ws-open{background:#dcfce7;color:#15803d;}
+.edu-ws-open i{font-size:6px;animation:pulse-dot 1.5s infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;}50%{opacity:.3;}}
+.edu-ws-closed{background:#f3f4f6;color:#9ca3af;}
+.edu-ws-full{background:#fef3c7;color:#92400e;}
+.edu-ws-category{font-size:.8rem;font-weight:600;color:var(--text-secondary);padding:3px 10px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;}
+.edu-ws-title{font-size:1.15rem;font-weight:800;margin:0 0 10px;color:var(--brand-dark);}
+.edu-ws-details{display:flex;flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--text-secondary);margin-bottom:10px;}
+.edu-ws-details span{display:flex;align-items:center;gap:4px;}
+.edu-ws-details i{color:var(--brand);font-size:.8rem;}
+.edu-ws-desc{font-size:.9rem;color:var(--text-secondary);line-height:1.6;margin:0;}
+.edu-ws-action{flex-shrink:0;align-self:center;}
+.edu-ws-register{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;background:var(--brand);color:#fff;font-weight:700;font-size:.93rem;text-decoration:none;transition:all .3s;box-shadow:0 4px 12px rgba(92,134,7,.25);}
+.edu-ws-register:hover{background:var(--brand-hover);transform:translateY(-2px);}
+.edu-ws-ended{font-size:.88rem;color:#9ca3af;font-weight:600;}
+
+/* === 下載資源 === */
+.edu-dl-grid{display:flex;flex-direction:column;gap:12px;}
+.edu-dl-card{display:flex;align-items:center;gap:16px;padding:18px 24px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.edu-dl-card:hover{border-color:var(--brand);transform:translateX(5px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
+.edu-dl-icon{width:44px;height:44px;border-radius:10px;background:rgba(198,40,40,.08);color:#c62828;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.edu-dl-info{flex-grow:1;}
+.edu-dl-info h4{font-size:1rem;font-weight:700;margin:0 0 2px;color:var(--brand-dark);}
+.edu-dl-meta{font-size:.82rem;color:var(--text-secondary);}
+.edu-dl-arrow{font-size:1rem;color:var(--brand);transition:transform .3s;}
+.edu-dl-card:hover .edu-dl-arrow{transform:translateY(3px);}
+
+/* === 學習園區概念流程 === */
+.edu-concept-flow{display:flex;align-items:flex-start;justify-content:center;gap:0;margin-bottom:36px;padding:20px 0;}
+.edu-concept-step{flex:1;text-align:center;max-width:280px;position:relative;}
+.edu-concept-num{position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:28px;height:28px;background:var(--brand);color:#fff;border-radius:50%;font-size:.85rem;font-weight:900;display:flex;align-items:center;justify-content:center;font-family:"Lato",sans-serif;}
+.edu-concept-icon{width:72px;height:72px;border-radius:20px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:30px;margin:16px auto 14px;}
+.edu-concept-step h4{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 8px;}
+.edu-concept-step p{font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin:0;}
+.edu-concept-arrow{display:flex;align-items:center;padding-top:52px;color:var(--accent);font-size:24px;flex-shrink:0;margin:0 8px;}
+.edu-concept-partners{background:#f8fafc;border-radius:14px;padding:24px 28px;border:1px solid #e2e8f0;}
+.edu-concept-partners h4{font-size:1rem;font-weight:800;color:var(--brand-dark);margin:0 0 14px;display:flex;align-items:center;gap:8px;}
+.edu-partner-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.edu-partner-tags span{font-size:.82rem;font-weight:600;padding:6px 14px;border-radius:50px;background:#fff;color:var(--text-secondary);border:1px solid #e2e8f0;transition:all .2s;}
+.edu-partner-tags span:hover{border-color:var(--brand);color:var(--brand);}
+
+/* === 交叉連結 === */
+.edu-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.edu-cross-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.edu-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.edu-cross-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.edu-cross-card i{font-size:24px;color:var(--brand);}
+.edu-cross-card span{font-weight:700;font-size:.95rem;}
+.edu-cross-card small{font-size:.78rem;color:var(--text-secondary);}
+
+/* === RWD === */
+@media(max-width:768px){
+  .edu-hero{flex-direction:column;padding:28px 20px;gap:24px;}
+  .edu-hero-title{font-size:1.8rem;}
+  .edu-hero-subtitle-tag{display:block;margin:8px 0 0;font-size:.9rem;}
+  .edu-hero-deco{flex-direction:row;flex-wrap:wrap;gap:10px;}
+  .edu-hero-stat{flex:1;min-width:130px;padding:14px 16px;}
+  .edu-sec-card{padding:20px;}.edu-sec-header{flex-direction:column;gap:10px;}
+  .edu-path-grid{grid-template-columns:1fr 1fr;}
+  .edu-video-grid{grid-template-columns:1fr;}
+  .edu-video-more{flex-direction:column;align-items:flex-start;gap:8px;}
+  .edu-platform-grid{grid-template-columns:1fr;}
+  .edu-ws-item{flex-direction:column;}.edu-ws-date-box{flex-direction:row;min-width:auto;gap:8px;padding:10px 16px;align-items:center;}
+  .edu-ws-day{font-size:1.2rem;margin:0;}.edu-ws-action{align-self:flex-start;}
+  .edu-concept-flow{flex-direction:column;align-items:center;gap:0;}
+  .edu-concept-arrow{transform:rotate(90deg);padding:0;margin:10px 0;}
+  .edu-cross-grid{grid-template-columns:1fr 1fr;}
+  .edu-filter-bar{gap:6px;}.edu-filter-btn{padding:6px 14px;font-size:.82rem;}
+}
+</style>
+
+<!-- ========== JavaScript ========== -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  /* 學習路徑卡片點擊 → 捲動到影片區 */
+  document.querySelectorAll('.edu-path-card').forEach(function(pc){
+    pc.addEventListener('click',function(){
+      var target=document.getElementById('edu-videos');
+      if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  /* 平滑捲動 */
+  document.querySelectorAll('a[href^="#edu-"]').forEach(function(a){
+    a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});
+  });
+});
+</script>
+<!-- /wp:html -->

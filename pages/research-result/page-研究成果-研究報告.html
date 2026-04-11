@@ -1,12 +1,12 @@
-<!-- wp:html -->
 <!-- =====================================================
      頁面：研究成果（主頁）
      URL：/研究成果/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：res-
      主色系：#5C8607（品牌尊嚴綠）
-
+     
      【維護指南】
+     - 所有 ⚠️ 標記處為需替換的佔位內容
      - 精選成果卡片：複製 .res-feat-card 區塊新增
      - 五大分類導覽連結已預設，修改 href 即可
      ===================================================== -->
@@ -21,7 +21,7 @@
   <div class="res-hero-inner">
     <div class="res-hero-badge"><i class="fas fa-flask"></i> Research</div>
     <h1 class="res-hero-title">研究成果</h1>
-    <p class="res-hero-subtitle">以台灣本土實證數據為基石，系統性建構雲嘉農業工作者職業健康知識體系。</p>
+    <p class="res-hero-subtitle">⚠️ 在此填入一句話定位，例如：以台灣本土實證數據為基石，系統性建構雲嘉農業工作者職業健康知識體系。</p>
     <div class="res-hero-note">
       <i class="fas fa-bookmark"></i>
       <span>所有文獻引用嚴格遵守 <strong>APA 格式第 7 版</strong>。本站系統性排除中國大陸來源數據，以台灣本土研究及日、韓等具相似高齡農業背景之實證研究為學術基石。</span>
@@ -29,16 +29,16 @@
   </div>
   <div class="res-hero-deco">
     <div class="res-hero-stat">
-      <span class="res-hero-stat-num"><i class="fas fa-sync-alt" style="font-size:.9rem;"></i></span>
-      <span class="res-hero-stat-label">篇學術發表<br><span style="font-size:.75rem;color:#999;">持續更新中</span></span>
+      <span class="res-hero-stat-num">⚠️ 15</span>
+      <span class="res-hero-stat-label">篇學術發表</span>
     </div>
     <div class="res-hero-stat">
-      <span class="res-hero-stat-num"><i class="fas fa-sync-alt" style="font-size:.9rem;"></i></span>
-      <span class="res-hero-stat-label">場研討會發表<br><span style="font-size:.75rem;color:#999;">持續更新中</span></span>
+      <span class="res-hero-stat-num">⚠️ 8</span>
+      <span class="res-hero-stat-label">場研討會發表</span>
     </div>
     <div class="res-hero-stat">
-      <span class="res-hero-stat-num"><i class="fas fa-sync-alt" style="font-size:.9rem;"></i></span>
-      <span class="res-hero-stat-label">集 Podcast 節目<br><span style="font-size:.75rem;color:#999;">持續更新中</span></span>
+      <span class="res-hero-stat-num">⚠️ 12</span>
+      <span class="res-hero-stat-label">集 Podcast 節目</span>
     </div>
   </div>
 </div>
@@ -57,35 +57,35 @@
           <div class="res-cat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;"><i class="fas fa-book-open"></i></div>
           <h3>學術發表</h3>
           <p>期刊論文、學位論文</p>
-          <span class="res-cat-count">持續更新中</span>
+          <span class="res-cat-count">⚠️ 15 篇</span>
         </a>
 
         <a href="/研究成果/研究報告/" class="res-cat-card">
           <div class="res-cat-icon" style="background:rgba(124,58,237,.1);color:#7c3aed;"><i class="fas fa-file-contract"></i></div>
           <h3>研究報告</h3>
           <p>計畫報告、政策白皮書</p>
-          <span class="res-cat-count">持續更新中</span>
+          <span class="res-cat-count">⚠️ 6 份</span>
         </a>
 
         <a href="/研究成果/研討會與演講/" class="res-cat-card">
           <div class="res-cat-icon" style="background:rgba(13,148,136,.1);color:#0d9488;"><i class="fas fa-person-chalkboard"></i></div>
           <h3>研討會與演講</h3>
           <p>會議論文、口頭發表、海報</p>
-          <span class="res-cat-count">持續更新中</span>
+          <span class="res-cat-count">⚠️ 8 場</span>
         </a>
 
         <a href="/研究成果/影音與podcast/" class="res-cat-card">
           <div class="res-cat-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-podcast"></i></div>
           <h3>影音與 Podcast</h3>
           <p>訪談錄音、知識轉譯影片</p>
-          <span class="res-cat-count">持續更新中</span>
+          <span class="res-cat-count">⚠️ 12 集</span>
         </a>
 
         <a href="/研究成果/資料圖表/" class="res-cat-card">
           <div class="res-cat-icon" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-chart-pie"></i></div>
           <h3>資料圖表</h3>
           <p>Infographics、數據視覺化</p>
-          <span class="res-cat-count">持續更新中</span>
+          <span class="res-cat-count">⚠️ 10 張</span>
         </a>
 
       </div>
@@ -103,15 +103,48 @@
     <div class="res-sec-body">
       <div class="res-feat-list">
 
-        <!-- 待更新提示 -->
-        <div class="res-pending-notice">
-          <div class="res-pending-icon"><i class="fas fa-hourglass-half"></i></div>
-          <div class="res-pending-text">
-            <h4>研究成果待更新</h4>
-            <p>計畫研究成果正在整理中，將陸續上架學術發表、研究報告、Podcast 等內容。敬請期待。</p>
+        <!-- ===== 精選卡片模板（複製此區塊新增）===== -->
+        <div class="res-feat-card">
+          <div class="res-feat-type res-type-journal"><i class="fas fa-book-open"></i> 學術發表</div>
+          <div class="res-feat-content">
+            <h3>⚠️ APA 格式完整引用，例如：<br>Wang, Y.-C., & Chen, L.-H. (2025). Occupational health literacy among aging farmers in Yunlin-Chiayi region. <em>Journal of Agricultural Safety and Health</em>, <em>31</em>(2), 145–162. https://doi.org/xxxxx</h3>
+            <p class="res-feat-abstract">⚠️ 摘要：50–80 字概述研究目的、方法與主要發現。</p>
+            <div class="res-feat-tags">
+              <span class="res-feat-tag">⚠️ 關鍵字 1</span>
+              <span class="res-feat-tag">⚠️ 關鍵字 2</span>
+              <span class="res-feat-tag">⚠️ 關鍵字 3</span>
+            </div>
+          </div>
+          <div class="res-feat-actions">
+            <!-- ⚠️ 替換 href 為 PDF 檔案 URL -->
+            <a href="#" class="res-dl-btn"><i class="fas fa-file-pdf"></i> PDF 下載<span class="res-dl-size">⚠️ 2.3 MB</span></a>
+          </div>
+        </div>
+        <!-- ===== 精選卡片模板結束 ===== -->
+
+        <div class="res-feat-card">
+          <div class="res-feat-type res-type-podcast"><i class="fas fa-podcast"></i> Podcast</div>
+          <div class="res-feat-content">
+            <h3>⚠️ 節目標題，例如：EP.12 — 與 72 歲稻農的對話：農業職災不該是宿命</h3>
+            <p class="res-feat-abstract">⚠️ 節目摘要。</p>
+          </div>
+          <div class="res-feat-actions">
+            <a href="#" class="res-play-btn"><i class="fas fa-headphones"></i> 前往收聽</a>
           </div>
         </div>
 
+        <div class="res-feat-card">
+          <div class="res-feat-type res-type-report"><i class="fas fa-file-contract"></i> 研究報告</div>
+          <div class="res-feat-content">
+            <h3>⚠️ 報告標題，APA 格式。</h3>
+            <p class="res-feat-abstract">⚠️ 摘要。</p>
+          </div>
+          <div class="res-feat-actions">
+            <a href="#" class="res-dl-btn"><i class="fas fa-file-pdf"></i> PDF 下載<span class="res-dl-size">⚠️ 5.1 MB</span></a>
+          </div>
+        </div>
+
+        <!-- ⚠️ 繼續複製 .res-feat-card 新增更多精選 -->
       </div>
     </div>
   </div>
@@ -153,12 +186,6 @@
 .res-hero-stat{background:#fff;padding:18px 24px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:baseline;gap:12px;}
 .res-hero-stat-num{font-size:1.6rem;font-weight:900;color:var(--brand);font-family:"Lato",sans-serif;}
 .res-hero-stat-label{font-size:.9rem;color:var(--text-secondary);}
-
-/* === 待更新提示 === */
-.res-pending-notice{display:flex;gap:20px;padding:32px;background:linear-gradient(135deg,#f8fafc 0%,var(--brand-light) 100%);border-radius:14px;border:1px dashed rgba(92,134,7,.3);align-items:center;}
-.res-pending-icon{width:60px;height:60px;border-radius:50%;background:rgba(92,134,7,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
-.res-pending-text h4{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
-.res-pending-text p{font-size:.92rem;color:var(--text-secondary);margin:0;line-height:1.6;}
 
 /* === 通用區塊 === */
 .res-sections{margin-top:24px;}
@@ -268,7 +295,6 @@
   .res-bib-item{flex-direction:column;gap:8px;}.res-bib-actions{align-self:flex-start;}
   .res-gallery-grid{grid-template-columns:1fr;}
   .res-sub-nav{gap:6px;}.res-sub-nav-item{padding:6px 14px;font-size:.82rem;}
-  .res-pending-notice{flex-direction:column;text-align:center;padding:24px;}
 }
 </style>
 <script>
@@ -290,4 +316,3 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
-<!-- /wp:html -->

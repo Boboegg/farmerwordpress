@@ -5,7 +5,7 @@
      URL：/research-result/infographic/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：res-（與主頁共用）
-
+     
      【維護指南】
      - 圖表卡片：複製 .res-gallery-card 區塊新增
      - 圖片建議尺寸：寬度至少 800px，比例 16:9 或 4:3
@@ -24,7 +24,7 @@
   <div class="res-hero-inner">
     <div class="res-hero-badge" style="background:rgba(245,158,11,.1);color:#d97706;"><i class="fas fa-chart-pie"></i> Infographics</div>
     <h1 class="res-hero-title" style="font-size:2rem;">圖文資訊</h1>
-    <p class="res-hero-subtitle">將研究數據轉化為視覺化圖表與資訊圖表（Infographics），供教學、倡議與社群傳播使用。</p>
+    <p class="res-hero-subtitle">⚠️ 一句話說明，例如：將研究數據轉化為視覺化圖表與資訊圖表（Infographics），供教學、倡議與社群傳播使用。</p>
     <a href="/research-result/" class="res-back-link"><i class="fas fa-arrow-left"></i> 回到研究成果總覽</a>
   </div>
 </div>
@@ -57,20 +57,64 @@
     </div>
 
     <div class="res-sec-body">
-      <!-- 資料準備中提示 -->
-      <div class="res-pending-notice">
-        <div class="res-pending-icon"><i class="fas fa-chart-pie"></i></div>
-        <div class="res-pending-text">
-          <h4>資料準備中</h4>
-          <p>研究數據的視覺化圖表與資訊圖表正在製作中，將陸續上架資訊圖表、統計圖表、地圖及懶人包等內容。敬請期待。</p>
-        </div>
+      <div class="res-gallery-grid">
+
+        <!-- ===== 圖表卡片模板 ===== -->
+        <a href="#" class="res-gallery-card" data-category="infographic">
+          <!-- ⚠️ 替換 href 為高解析度圖檔或 PDF URL -->
+          <div class="res-gallery-thumb">
+            <!-- ⚠️ 替換 src 為縮圖 URL -->
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="⚠️ 圖表標題">
+          </div>
+          <div class="res-gallery-info">
+            <h4>⚠️ 圖表標題</h4>
+            <p>⚠️ 簡述：這張圖呈現什麼數據或觀點。1-2 行。</p>
+            <span class="res-gallery-dl"><i class="fas fa-download"></i> 下載（⚠️ PNG・2.1 MB）</span>
+          </div>
+        </a>
+        <!-- ===== 模板結束 ===== -->
+
+        <a href="#" class="res-gallery-card" data-category="map">
+          <div class="res-gallery-thumb">
+            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=600&q=80" alt="⚠️ 圖表標題">
+          </div>
+          <div class="res-gallery-info">
+            <h4>⚠️ 雲嘉農業職災熱力圖</h4>
+            <p>⚠️ 簡述。</p>
+            <span class="res-gallery-dl"><i class="fas fa-download"></i> 下載（⚠️ PDF・3.5 MB）</span>
+          </div>
+        </a>
+
+        <a href="#" class="res-gallery-card" data-category="chart">
+          <div class="res-gallery-thumb">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="⚠️ 圖表標題">
+          </div>
+          <div class="res-gallery-info">
+            <h4>⚠️ 雲嘉農民年齡分佈統計</h4>
+            <p>⚠️ 簡述。</p>
+            <span class="res-gallery-dl"><i class="fas fa-download"></i> 下載（⚠️ PNG・1.8 MB）</span>
+          </div>
+        </a>
+
+        <a href="#" class="res-gallery-card" data-category="lazypack">
+          <div class="res-gallery-thumb">
+            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&q=80" alt="⚠️ 圖表標題">
+          </div>
+          <div class="res-gallery-info">
+            <h4>⚠️ 農民職災保險懶人包</h4>
+            <p>⚠️ 簡述。</p>
+            <span class="res-gallery-dl"><i class="fas fa-download"></i> 下載（⚠️ PDF・4.2 MB）</span>
+          </div>
+        </a>
+
+        <!-- ⚠️ 繼續複製 .res-gallery-card 新增更多 -->
       </div>
     </div>
 
     <!-- 引用說明 -->
     <div style="margin-top:24px;padding:16px 20px;background:#fffbeb;border-radius:10px;border:1px solid #fde68a;font-size:.88rem;line-height:1.6;color:#92400e;display:flex;align-items:flex-start;gap:10px;">
       <i class="fas fa-creative-commons" style="margin-top:3px;flex-shrink:0;"></i>
-      <span>本頁所有圖表採 CC BY-NC 4.0 授權。使用時請標註「尊嚴農業計畫團隊，國立中正大學」。商業使用請事先聯繫。</span>
+      <span>⚠️ 授權說明，例如：本頁所有圖表採 CC BY-NC 4.0 授權。使用時請標註「尊嚴農業計畫團隊，國立中正大學」。商業使用請事先聯繫。</span>
     </div>
   </div>
 </div>
@@ -114,18 +158,12 @@
 .res-gallery-info h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--brand-dark);}
 .res-gallery-info p{font-size:.85rem;color:var(--text-secondary);margin:0 0 10px;line-height:1.5;}
 .res-gallery-dl{font-size:.85rem;font-weight:700;color:var(--brand);display:flex;align-items:center;gap:4px;}
-/* === 待更新提示 === */
-.res-pending-notice{display:flex;gap:20px;padding:32px;background:linear-gradient(135deg,#f8fafc 0%,var(--brand-light) 100%);border-radius:14px;border:1px dashed rgba(92,134,7,.3);align-items:center;}
-.res-pending-icon{width:60px;height:60px;border-radius:50%;background:rgba(92,134,7,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
-.res-pending-text h4{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
-.res-pending-text p{font-size:.92rem;color:var(--text-secondary);margin:0;line-height:1.6;}
 @media(max-width:768px){
   .res-hero{flex-direction:column;padding:28px 20px;gap:24px;}
   .res-hero-title{font-size:1.8rem;}
   .res-sec-card{padding:20px;}.res-sec-header{flex-direction:column;gap:10px;}
   .res-sub-nav{gap:6px;}.res-sub-nav-item{padding:6px 14px;font-size:.82rem;}
   .res-gallery-grid{grid-template-columns:1fr;}
-  .res-pending-notice{flex-direction:column;text-align:center;padding:24px;}
 }
 </style>
 <script>

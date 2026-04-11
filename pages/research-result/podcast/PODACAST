@@ -1,0 +1,366 @@
+<!-- wp:html -->
+
+<!-- =====================================================
+     子頁：研究成果 / 影音 Podcast
+     URL：/research-result/podcast/
+     WordPress 頁面 → 程式碼編輯器 → 全選貼入
+     
+     【維護方式】
+     - 此頁面透過 [podcast_full_archive] shortcode 自動抓取
+       WordPress 文章（分類 slug = podcast）。
+     - 只要發表新的 podcast 文章，本頁即自動更新。
+     - Hero 區塊為靜態內容，可自行修改文字。
+     - shortcode 參數可調整：
+         category ＝ 分類 slug（預設 podcast）
+         count    ＝ 顯示篇數（預設 99）
+         title    ＝ 區塊標題
+     ===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- ========== Hero ========== -->
+<div class="pod-hero">
+  <div class="pod-hero-bg"></div>
+  <div class="pod-hero-content">
+    <div class="pod-hero-left">
+      <div class="pod-badge"><i class="fas fa-podcast"></i> Podcast</div>
+      <h1 class="pod-hero-title">影音 Podcast</h1>
+      <p class="pod-hero-desc">
+        用聲音走進田間，聽見農業職業健康的真實故事。<br>
+        由尊嚴農業計畫團隊製作，記錄農民訪談、研究轉譯與政策對話。
+      </p>
+      <div class="pod-hero-actions">
+        <a href="/research-result/" class="pod-back-btn"><i class="fas fa-arrow-left"></i> 研究成果</a>
+      </div>
+    </div>
+    <div class="pod-hero-right">
+      <div class="pod-visual">
+        <div class="pod-visual-ring pod-ring-1"></div>
+        <div class="pod-visual-ring pod-ring-2"></div>
+        <div class="pod-visual-ring pod-ring-3"></div>
+        <div class="pod-visual-icon"><i class="fas fa-microphone-lines"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 使用方式提示 ========== -->
+<div class="pod-how-it-works">
+  <div class="pod-how-card">
+    <div class="pod-how-icon"><i class="fas fa-pen-to-square"></i></div>
+    <div>
+      <h3>收聽方式</h3>
+      <p>點擊任一集封面或標題，即可進入文章頁面觀看完整內容與影音。含有 YouTube 影片的集數，可直接在本頁點擊播放。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== Shortcode 自動抓取區 ========== -->
+<div class="pod-archive-section">
+  [podcast_full_archive category="podcast" count="99" title="全部集數"]
+</div>
+
+<!-- ========== 底部交叉連結 ========== -->
+<div class="pod-footer-links">
+  <h3 class="pod-footer-title"><i class="fas fa-compass"></i> 更多研究成果</h3>
+  <div class="pod-footer-grid">
+    <a href="/research-result/research-publication/" class="pod-footer-card">
+      <i class="fas fa-book-open"></i>
+      <span>研究出版</span>
+    </a>
+    <a href="/research-result/infographic/" class="pod-footer-card">
+      <i class="fas fa-chart-pie"></i>
+      <span>圖文資訊</span>
+    </a>
+    <a href="/research-result/download-zone/" class="pod-footer-card">
+      <i class="fas fa-download"></i>
+      <span>下載專區</span>
+    </a>
+    <a href="/research-result/related-resources/" class="pod-footer-card">
+      <i class="fas fa-link"></i>
+      <span>相關資源</span>
+    </a>
+  </div>
+</div>
+
+<!-- ========== CSS ========== -->
+<style>
+/* === 變數與基底 === */
+.pod-hero, .pod-how-it-works, .pod-archive-section, .pod-footer-links {
+  --brand: #5C8607;
+  --brand-dark: #4a6b05;
+  --brand-light: #eef5ea;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --radius: 16px;
+  --shadow: 0 4px 16px rgba(0,0,0,.06);
+  font-family: "Noto Sans TC", "Lato", sans-serif;
+  color: var(--text-primary);
+  box-sizing: border-box;
+}
+.pod-hero *, .pod-how-it-works *, .pod-archive-section *, .pod-footer-links * {
+  box-sizing: border-box;
+}
+
+/* === Hero === */
+.pod-hero {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.pod-hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #1a2e05 0%, #2d4a0a 30%, #3d6510 60%, #5C8607 100%);
+  z-index: 0;
+}
+.pod-hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(212,160,23,.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,.06) 0%, transparent 40%);
+}
+.pod-hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 52px 48px;
+}
+.pod-hero-left { flex: 1.3; }
+.pod-hero-right { flex: 0.7; display: flex; justify-content: center; }
+
+.pod-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.12);
+  color: #D4A017;
+  padding: 6px 18px;
+  border-radius: 24px;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,.08);
+}
+.pod-hero-title {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 14px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+.pod-hero-desc {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.78);
+  line-height: 1.8;
+  margin: 0 0 28px;
+  max-width: 520px;
+}
+.pod-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.pod-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+  background: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.85);
+  border: 1px solid rgba(255,255,255,.15);
+  transition: all .3s;
+  backdrop-filter: blur(4px);
+}
+.pod-back-btn:hover {
+  background: rgba(255,255,255,.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* === Visual / 動態視覺 === */
+.pod-visual {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pod-visual-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid rgba(212,160,23,.2);
+}
+.pod-ring-1 {
+  width: 200px; height: 200px;
+  animation: pod-pulse 3s ease-in-out infinite;
+}
+.pod-ring-2 {
+  width: 150px; height: 150px;
+  border-color: rgba(212,160,23,.3);
+  animation: pod-pulse 3s ease-in-out .5s infinite;
+}
+.pod-ring-3 {
+  width: 100px; height: 100px;
+  border-color: rgba(212,160,23,.4);
+  animation: pod-pulse 3s ease-in-out 1s infinite;
+}
+@keyframes pod-pulse {
+  0%, 100% { transform: scale(1); opacity: .6; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+.pod-visual-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #D4A017, #b8860b);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(212,160,23,.35);
+  z-index: 2;
+}
+
+/* === 使用方式提示 === */
+.pod-how-it-works {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.pod-how-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f7;
+}
+.pod-how-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--brand-light);
+  color: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.pod-how-card h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  margin: 0 0 4px;
+}
+.pod-how-card p {
+  font-size: .92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* === Archive Section === */
+.pod-archive-section {
+  margin-top: 24px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f7;
+}
+
+/* === Footer Links === */
+.pod-footer-links {
+  margin-top: 24px;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 28px 36px;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef2f7;
+}
+.pod-footer-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--brand-dark);
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pod-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.pod-footer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 20px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all .3s;
+}
+.pod-footer-card:hover {
+  border-color: var(--brand);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+.pod-footer-card i {
+  font-size: 22px;
+  color: var(--brand);
+}
+.pod-footer-card span {
+  font-weight: 700;
+  font-size: .92rem;
+}
+
+/* === RWD === */
+@media (max-width: 768px) {
+  .pod-hero-content {
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+  .pod-hero-title { font-size: 1.9rem; }
+  .pod-hero-right { display: none; }
+  .pod-how-card {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+  .pod-archive-section {
+    padding: 20px 16px;
+  }
+  .pod-footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+
+<!-- /wp:html -->
