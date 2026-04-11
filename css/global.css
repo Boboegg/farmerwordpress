@@ -3001,3 +3001,542 @@ body[class*="page-id"],
         display: none;
     }
 }
+
+/* ==========================================================
+   === V14 Happy Hues 風定案（2026-04-11）===
+   命名空間：
+     .fw-page.p-*  → 每頁獨立 palette（24 頁各自一個）
+     .fw-page.v14  → 共用結構重置（radius / shadow / 字級）
+   共存策略：舊 .ch-* 規則保留為 fallback，未遷移頁面不受影響
+   Happy Hues 精準尺寸：32px/19.2px = 1.67 倍差、3px 方角、無陰影
+   ========================================================== */
+
+/* ---- V14 共用尺寸 tokens（獨立命名） ---- */
+:root {
+    --v14-radius: 3px;
+    --v14-card-padding: 40px;
+    --v14-fs-hero: 56px;
+    --v14-lh-hero: 64.4px;
+    --v14-fs-h2: 32px;
+    --v14-lh-h2: 36px;
+    --v14-fs-body: 19.2px;
+    --v14-lh-body: 34.56px;
+    --v14-fs-button: 17.6px;
+    --v14-fs-tag: 12px;
+    --v14-btn-padding: 19.2px 32px;
+    --v14-btn-ghost-padding: 17.2px 30px;
+}
+
+/* ==========================================================
+   === 24 頁 palette — 覆蓋既有變數讓舊規則自動換色 ===
+   每頁獨立配色，不繼承父頁。色值來源：test/palette-v14.html
+   ========================================================== */
+
+.fw-page.p-about {
+    --bg: #eaddcf; --bg-white: #eaddcf; --bg-light: #eaddcf; --surface: #eaddcf; --surface-muted: #eaddcf;
+    --fg: #2D2640; --fg-strong: #020826; --fg-muted: #4a4057; --fg-subtle: #6a5f77;
+    --text-primary: #2D2640; --text-secondary: #4a4057; --text-muted: #6a5f77;
+    --brand: #f25042; --brand-deep: #020826; --brand-dark: #020826; --brand-hover: #020826;
+    --brand-accent: #f9bc60; --accent: #f9bc60; --brand-warning: #f25042; --brand-relief: #f9bc60;
+    --border: #D5C8B5; --border-strong: #c2b4a0; --border-lighter: #e3d8c9; --border-subtle: #e3d8c9;
+    --color-bg: #eaddcf; --color-bg-elevated: #eaddcf; --color-text: #2D2640; --color-muted: #4a4057; --color-line: #D5C8B5;
+    --color-brand: #f25042; --color-brand-deep: #020826; --color-accent: #f9bc60; --color-warn: #f25042; --color-info: #020826;
+    --v14-btn-text: #fffffe; --v14-highlight: #f25042; --v14-tag-bg: #f9bc60; --v14-tag-text: #020826;
+}
+
+.fw-page.p-safety {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f6f5ef;
+    --fg: #2E2E3E; --fg-strong: #020826; --fg-muted: #4d4d5e; --fg-subtle: #6d6d7e;
+    --text-primary: #2E2E3E; --text-secondary: #4d4d5e; --text-muted: #6d6d7e;
+    --brand: #ff8906; --brand-deep: #020826; --brand-dark: #020826; --brand-hover: #020826;
+    --brand-accent: #ff8906; --accent: #ff8906; --brand-warning: #e53170; --brand-relief: #ff8906;
+    --border: #E5E2D8; --border-strong: #d2cec0; --border-lighter: #efece2; --border-subtle: #efece2;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #2E2E3E; --color-muted: #4d4d5e; --color-line: #E5E2D8;
+    --color-brand: #ff8906; --color-brand-deep: #020826; --color-accent: #e53170; --color-warn: #e53170; --color-info: #020826;
+    --v14-btn-text: #020826; --v14-highlight: #e53170; --v14-tag-bg: #f25f4c; --v14-tag-text: #fffffe;
+}
+
+.fw-page.p-health {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f5f8f6;
+    --fg: #2d334a; --fg-strong: #272343; --fg-muted: #4c5269; --fg-subtle: #6c7285;
+    --text-primary: #2d334a; --text-secondary: #4c5269; --text-muted: #6c7285;
+    --brand: #2cb67d; --brand-deep: #272343; --brand-dark: #272343; --brand-hover: #272343;
+    --brand-accent: #2cb67d; --accent: #2cb67d; --brand-warning: #2cb67d; --brand-relief: #2cb67d;
+    --border: #E0E5E5; --border-strong: #ccd3d3; --border-lighter: #eaeded; --border-subtle: #eaeded;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #2d334a; --color-muted: #4c5269; --color-line: #E0E5E5;
+    --color-brand: #2cb67d; --color-brand-deep: #272343; --color-accent: #2cb67d; --color-warn: #2cb67d; --color-info: #272343;
+    --v14-btn-text: #272343; --v14-highlight: #2cb67d; --v14-tag-bg: #bae8e8; --v14-tag-text: #272343;
+}
+
+.fw-page.p-economy {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f4f7fa;
+    --fg: #5f6c7b; --fg-strong: #094067; --fg-muted: #7a8794; --fg-subtle: #92a0ad;
+    --text-primary: #5f6c7b; --text-secondary: #7a8794; --text-muted: #92a0ad;
+    --brand: #3da9fc; --brand-deep: #094067; --brand-dark: #094067; --brand-hover: #094067;
+    --brand-accent: #3da9fc; --accent: #3da9fc; --brand-warning: #ef4565; --brand-relief: #3da9fc;
+    --border: #D8E5EF; --border-strong: #bfd2e2; --border-lighter: #e6eef5; --border-subtle: #e6eef5;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #5f6c7b; --color-muted: #7a8794; --color-line: #D8E5EF;
+    --color-brand: #3da9fc; --color-brand-deep: #094067; --color-accent: #ef4565; --color-warn: #ef4565; --color-info: #094067;
+    --v14-btn-text: #fffffe; --v14-highlight: #ef4565; --v14-tag-bg: #90b4ce; --v14-tag-text: #fffffe;
+}
+
+.fw-page.p-study {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f5f8f7;
+    --fg: #1C5850; --fg-strong: #00473e; --fg-muted: #396b64; --fg-subtle: #5c857f;
+    --text-primary: #1C5850; --text-secondary: #396b64; --text-muted: #5c857f;
+    --brand: #faae2b; --brand-deep: #00473e; --brand-dark: #00473e; --brand-hover: #00473e;
+    --brand-accent: #faae2b; --accent: #faae2b; --brand-warning: #fa5246; --brand-relief: #faae2b;
+    --border: #D8E8E5; --border-strong: #bed4d0; --border-lighter: #e6efec; --border-subtle: #e6efec;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #1C5850; --color-muted: #396b64; --color-line: #D8E8E5;
+    --color-brand: #faae2b; --color-brand-deep: #00473e; --color-accent: #fa5246; --color-warn: #fa5246; --color-info: #00473e;
+    --v14-btn-text: #00473e; --v14-highlight: #fa5246; --v14-tag-bg: #ffa8ba; --v14-tag-text: #00473e;
+}
+
+.fw-page.p-advocacy {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f6f6f8;
+    --fg: #4A4B52; --fg-strong: #2b2c34; --fg-muted: #646570; --fg-subtle: #808189;
+    --text-primary: #4A4B52; --text-secondary: #646570; --text-muted: #808189;
+    --brand: #6246ea; --brand-deep: #2b2c34; --brand-dark: #2b2c34; --brand-hover: #2b2c34;
+    --brand-accent: #6246ea; --accent: #6246ea; --brand-warning: #e45858; --brand-relief: #6246ea;
+    --border: #E0E0E8; --border-strong: #cacada; --border-lighter: #ededf3; --border-subtle: #ededf3;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #4A4B52; --color-muted: #646570; --color-line: #E0E0E8;
+    --color-brand: #6246ea; --color-brand-deep: #2b2c34; --color-accent: #e45858; --color-warn: #e45858; --color-info: #2b2c34;
+    --v14-btn-text: #fffffe; --v14-highlight: #e45858; --v14-tag-bg: #d1d1e9; --v14-tag-text: #2b2c34;
+}
+
+.fw-page.p-research {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f4f6fa;
+    --fg: #1b2d45; --fg-strong: #00214D; --fg-muted: #394962; --fg-subtle: #5c6b82;
+    --text-primary: #1b2d45; --text-secondary: #394962; --text-muted: #5c6b82;
+    --brand: #00ebc7; --brand-deep: #00214D; --brand-dark: #00214D; --brand-hover: #00214D;
+    --brand-accent: #00ebc7; --accent: #00ebc7; --brand-warning: #ff5470; --brand-relief: #00ebc7;
+    --border: #D8E2F0; --border-strong: #bed0e3; --border-lighter: #e6ecf5; --border-subtle: #e6ecf5;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #1b2d45; --color-muted: #394962; --color-line: #D8E2F0;
+    --color-brand: #00ebc7; --color-brand-deep: #00214D; --color-accent: #ff5470; --color-warn: #ff5470; --color-info: #00214D;
+    --v14-btn-text: #00214D; --v14-highlight: #ff5470; --v14-tag-bg: #fde24f; --v14-tag-text: #00214D;
+}
+
+.fw-page.p-news {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f6f6f6;
+    --fg: #2E2E2E; --fg-strong: #0d0d0d; --fg-muted: #4a4a4a; --fg-subtle: #6a6a6a;
+    --text-primary: #2E2E2E; --text-secondary: #4a4a4a; --text-muted: #6a6a6a;
+    --brand: #ff8e3c; --brand-deep: #0d0d0d; --brand-dark: #0d0d0d; --brand-hover: #0d0d0d;
+    --brand-accent: #ff8e3c; --accent: #ff8e3c; --brand-warning: #d9376e; --brand-relief: #ff8e3c;
+    --border: #E5E5E5; --border-strong: #cccccc; --border-lighter: #efefef; --border-subtle: #efefef;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #2E2E2E; --color-muted: #4a4a4a; --color-line: #E5E5E5;
+    --color-brand: #ff8e3c; --color-brand-deep: #0d0d0d; --color-accent: #d9376e; --color-warn: #d9376e; --color-info: #0d0d0d;
+    --v14-btn-text: #0d0d0d; --v14-highlight: #d9376e; --v14-tag-bg: #d9376e; --v14-tag-text: #fffffe;
+}
+
+.fw-page.p-heat {
+    --bg: #f8f5f2; --bg-white: #f8f5f2; --bg-light: #f8f5f2; --surface: #f8f5f2; --surface-muted: #f0ede8;
+    --fg: #3A3A3A; --fg-strong: #232323; --fg-muted: #555555; --fg-subtle: #757575;
+    --text-primary: #3A3A3A; --text-secondary: #555555; --text-muted: #757575;
+    --brand: #f45d48; --brand-deep: #232323; --brand-dark: #232323; --brand-hover: #232323;
+    --brand-accent: #f45d48; --accent: #f45d48; --brand-warning: #ff8906; --brand-relief: #f45d48;
+    --border: #E8E2D8; --border-strong: #d5ceaf; --border-lighter: #efeae2; --border-subtle: #efeae2;
+    --color-bg: #f8f5f2; --color-bg-elevated: #f8f5f2; --color-text: #3A3A3A; --color-muted: #555555; --color-line: #E8E2D8;
+    --color-brand: #f45d48; --color-brand-deep: #232323; --color-accent: #ff8906; --color-warn: #f45d48; --color-info: #232323;
+    --v14-btn-text: #fffffe; --v14-highlight: #ff8906; --v14-tag-bg: #ff8906; --v14-tag-text: #232323;
+}
+
+.fw-page.p-msd {
+    --bg: #f8f5f2; --bg-white: #f8f5f2; --bg-light: #f8f5f2; --surface: #f8f5f2; --surface-muted: #f0ede8;
+    --fg: #4B5D6E; --fg-strong: #094067; --fg-muted: #657686; --fg-subtle: #808e9e;
+    --text-primary: #4B5D6E; --text-secondary: #657686; --text-muted: #808e9e;
+    --brand: #3da9fc; --brand-deep: #094067; --brand-dark: #094067; --brand-hover: #094067;
+    --brand-accent: #3da9fc; --accent: #3da9fc; --brand-warning: #094067; --brand-relief: #3da9fc;
+    --border: #E8E2D8; --border-strong: #d5ceaf; --border-lighter: #efeae2; --border-subtle: #efeae2;
+    --color-bg: #f8f5f2; --color-bg-elevated: #f8f5f2; --color-text: #4B5D6E; --color-muted: #657686; --color-line: #E8E2D8;
+    --color-brand: #3da9fc; --color-brand-deep: #094067; --color-accent: #094067; --color-warn: #094067; --color-info: #094067;
+    --v14-btn-text: #fffffe; --v14-highlight: #094067; --v14-tag-bg: #90b4ce; --v14-tag-text: #094067;
+}
+
+.fw-page.p-pesticide {
+    --bg: #f2f4f6; --bg-white: #f2f4f6; --bg-light: #f2f4f6; --surface: #f2f4f6; --surface-muted: #e9ecef;
+    --fg: #2E2E2E; --fg-strong: #181818; --fg-muted: #4a4a4a; --fg-subtle: #6a6a6a;
+    --text-primary: #2E2E2E; --text-secondary: #4a4a4a; --text-muted: #6a6a6a;
+    --brand: #4fc4cf; --brand-deep: #181818; --brand-dark: #181818; --brand-hover: #181818;
+    --brand-accent: #4fc4cf; --accent: #4fc4cf; --brand-warning: #078080; --brand-relief: #4fc4cf;
+    --border: #DCE0E5; --border-strong: #c4c9d2; --border-lighter: #e7ebf0; --border-subtle: #e7ebf0;
+    --color-bg: #f2f4f6; --color-bg-elevated: #f2f4f6; --color-text: #2E2E2E; --color-muted: #4a4a4a; --color-line: #DCE0E5;
+    --color-brand: #4fc4cf; --color-brand-deep: #181818; --color-accent: #078080; --color-warn: #078080; --color-info: #181818;
+    --v14-btn-text: #181818; --v14-highlight: #078080; --v14-tag-bg: #fbdd74; --v14-tag-text: #181818;
+}
+
+.fw-page.p-mental {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f6f4fa;
+    --fg: #3E4458; --fg-strong: #0e172c; --fg-muted: #586075; --fg-subtle: #7a8296;
+    --text-primary: #3E4458; --text-secondary: #586075; --text-muted: #7a8296;
+    --brand: #a786df; --brand-deep: #0e172c; --brand-dark: #0e172c; --brand-hover: #0e172c;
+    --brand-accent: #a786df; --accent: #a786df; --brand-warning: #a786df; --brand-relief: #a786df;
+    --border: #E5E0ED; --border-strong: #cdc5dc; --border-lighter: #efeaf5; --border-subtle: #efeaf5;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #3E4458; --color-muted: #586075; --color-line: #E5E0ED;
+    --color-brand: #a786df; --color-brand-deep: #0e172c; --color-accent: #a786df; --color-warn: #a786df; --color-info: #0e172c;
+    --v14-btn-text: #0e172c; --v14-highlight: #a786df; --v14-tag-bg: #fec7d7; --v14-tag-text: #0e172c;
+}
+
+.fw-page.p-ppe {
+    --bg: #eaddcf; --bg-white: #eaddcf; --bg-light: #eaddcf; --surface: #eaddcf; --surface-muted: #eaddcf;
+    --fg: #2D2640; --fg-strong: #020826; --fg-muted: #4a4057; --fg-subtle: #6a5f77;
+    --text-primary: #2D2640; --text-secondary: #4a4057; --text-muted: #6a5f77;
+    --brand: #f9bc60; --brand-deep: #020826; --brand-dark: #020826; --brand-hover: #020826;
+    --brand-accent: #f9bc60; --accent: #f9bc60; --brand-warning: #f25042; --brand-relief: #f9bc60;
+    --border: #D5C8B5; --border-strong: #c2b4a0; --border-lighter: #e3d8c9; --border-subtle: #e3d8c9;
+    --color-bg: #eaddcf; --color-bg-elevated: #eaddcf; --color-text: #2D2640; --color-muted: #4a4057; --color-line: #D5C8B5;
+    --color-brand: #f9bc60; --color-brand-deep: #020826; --color-accent: #f25042; --color-warn: #f25042; --color-info: #020826;
+    --v14-btn-text: #020826; --v14-highlight: #f25042; --v14-tag-bg: #f25042; --v14-tag-text: #fffffe;
+}
+
+.fw-page.p-machinery {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f6f6f7;
+    --fg: #444650; --fg-strong: #242629; --fg-muted: #5e606c; --fg-subtle: #7a7c88;
+    --text-primary: #444650; --text-secondary: #5e606c; --text-muted: #7a7c88;
+    --brand: #2cb67d; --brand-deep: #242629; --brand-dark: #242629; --brand-hover: #242629;
+    --brand-accent: #2cb67d; --accent: #2cb67d; --brand-warning: #7f5af0; --brand-relief: #2cb67d;
+    --border: #DCDCE0; --border-strong: #c3c3c9; --border-lighter: #e7e7eb; --border-subtle: #e7e7eb;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #444650; --color-muted: #5e606c; --color-line: #DCDCE0;
+    --color-brand: #2cb67d; --color-brand-deep: #242629; --color-accent: #7f5af0; --color-warn: #7f5af0; --color-info: #242629;
+    --v14-btn-text: #242629; --v14-highlight: #7f5af0; --v14-tag-bg: #72757e; --v14-tag-text: #fffffe;
+}
+
+.fw-page.p-greenhouse {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f7f3f4;
+    --fg: #4D3F42; --fg-strong: #33272a; --fg-muted: #66585b; --fg-subtle: #837578;
+    --text-primary: #4D3F42; --text-secondary: #66585b; --text-muted: #837578;
+    --brand: #c3f0ca; --brand-deep: #33272a; --brand-dark: #33272a; --brand-hover: #33272a;
+    --brand-accent: #c3f0ca; --accent: #c3f0ca; --brand-warning: #ff8ba7; --brand-relief: #c3f0ca;
+    --border: #E8E0DC; --border-strong: #d5cbc5; --border-lighter: #efe8e3; --border-subtle: #efe8e3;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #4D3F42; --color-muted: #66585b; --color-line: #E8E0DC;
+    --color-brand: #c3f0ca; --color-brand-deep: #33272a; --color-accent: #ff8ba7; --color-warn: #ff8ba7; --color-info: #33272a;
+    --v14-btn-text: #33272a; --v14-highlight: #ff8ba7; --v14-tag-bg: #ff8ba7; --v14-tag-text: #33272a;
+}
+
+.fw-page.p-occ {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f4f7fa;
+    --fg: #4B5D6E; --fg-strong: #094067; --fg-muted: #657686; --fg-subtle: #808e9e;
+    --text-primary: #4B5D6E; --text-secondary: #657686; --text-muted: #808e9e;
+    --brand: #094067; --brand-deep: #094067; --brand-dark: #094067; --brand-hover: #062c48;
+    --brand-accent: #094067; --accent: #094067; --brand-warning: #ef4565; --brand-relief: #3da9fc;
+    --border: #D8E5EF; --border-strong: #bfd2e2; --border-lighter: #e6eef5; --border-subtle: #e6eef5;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #4B5D6E; --color-muted: #657686; --color-line: #D8E5EF;
+    --color-brand: #094067; --color-brand-deep: #094067; --color-accent: #ef4565; --color-warn: #ef4565; --color-info: #094067;
+    --v14-btn-text: #fffffe; --v14-highlight: #ef4565; --v14-tag-bg: #3da9fc; --v14-tag-text: #fffffe;
+}
+
+.fw-page.p-crop {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f5f8f7;
+    --fg: #1C5850; --fg-strong: #00473e; --fg-muted: #396b64; --fg-subtle: #5c857f;
+    --text-primary: #1C5850; --text-secondary: #396b64; --text-muted: #5c857f;
+    --brand: #00473e; --brand-deep: #00473e; --brand-dark: #00473e; --brand-hover: #002d26;
+    --brand-accent: #00473e; --accent: #00473e; --brand-warning: #faae2b; --brand-relief: #faae2b;
+    --border: #D8E8E5; --border-strong: #bed4d0; --border-lighter: #e6efec; --border-subtle: #e6efec;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #1C5850; --color-muted: #396b64; --color-line: #D8E8E5;
+    --color-brand: #00473e; --color-brand-deep: #00473e; --color-accent: #faae2b; --color-warn: #faae2b; --color-info: #00473e;
+    --v14-btn-text: #fffffe; --v14-highlight: #faae2b; --v14-tag-bg: #ffa8ba; --v14-tag-text: #00473e;
+}
+
+.fw-page.p-subsidy {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f5f8f6;
+    --fg: #2d334a; --fg-strong: #272343; --fg-muted: #4c5269; --fg-subtle: #6c7285;
+    --text-primary: #2d334a; --text-secondary: #4c5269; --text-muted: #6c7285;
+    --brand: #ffd803; --brand-deep: #272343; --brand-dark: #272343; --brand-hover: #272343;
+    --brand-accent: #ffd803; --accent: #ffd803; --brand-warning: #ffd803; --brand-relief: #ffd803;
+    --border: #E0E5E5; --border-strong: #ccd3d3; --border-lighter: #eaeded; --border-subtle: #eaeded;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #2d334a; --color-muted: #4c5269; --color-line: #E0E5E5;
+    --color-brand: #ffd803; --color-brand-deep: #272343; --color-accent: #ffd803; --color-warn: #ffd803; --color-info: #272343;
+    --v14-btn-text: #272343; --v14-highlight: #ffd803; --v14-tag-bg: #e3f6f5; --v14-tag-text: #272343;
+}
+
+.fw-page.p-calc1 {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f4f8f8;
+    --fg: #2E2E3E; --fg-strong: #020826; --fg-muted: #4d4d5e; --fg-subtle: #6d6d7e;
+    --text-primary: #2E2E3E; --text-secondary: #4d4d5e; --text-muted: #6d6d7e;
+    --brand: #078080; --brand-deep: #020826; --brand-dark: #020826; --brand-hover: #020826;
+    --brand-accent: #078080; --accent: #078080; --brand-warning: #e16162; --brand-relief: #078080;
+    --border: #DCEAEA; --border-strong: #c3d5d5; --border-lighter: #e7f0f0; --border-subtle: #e7f0f0;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #2E2E3E; --color-muted: #4d4d5e; --color-line: #DCEAEA;
+    --color-brand: #078080; --color-brand-deep: #020826; --color-accent: #e16162; --color-warn: #e16162; --color-info: #020826;
+    --v14-btn-text: #fffffe; --v14-highlight: #e16162; --v14-tag-bg: #f9bc60; --v14-tag-text: #020826;
+}
+
+.fw-page.p-calc2 {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f6f6f8;
+    --fg: #2E2E3E; --fg-strong: #020826; --fg-muted: #4d4d5e; --fg-subtle: #6d6d7e;
+    --text-primary: #2E2E3E; --text-secondary: #4d4d5e; --text-muted: #6d6d7e;
+    --brand: #8c7851; --brand-deep: #020826; --brand-dark: #020826; --brand-hover: #020826;
+    --brand-accent: #8c7851; --accent: #8c7851; --brand-warning: #eebbc3; --brand-relief: #8c7851;
+    --border: #E0E0E8; --border-strong: #cacada; --border-lighter: #ededf3; --border-subtle: #ededf3;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #2E2E3E; --color-muted: #4d4d5e; --color-line: #E0E0E8;
+    --color-brand: #8c7851; --color-brand-deep: #020826; --color-accent: #eebbc3; --color-warn: #eebbc3; --color-info: #020826;
+    --v14-btn-text: #fffffe; --v14-highlight: #eebbc3; --v14-tag-bg: #d4d8f0; --v14-tag-text: #020826;
+}
+
+.fw-page.p-pub {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f4f6fa;
+    --fg: #1b2d45; --fg-strong: #00214D; --fg-muted: #394962; --fg-subtle: #5c6b82;
+    --text-primary: #1b2d45; --text-secondary: #394962; --text-muted: #5c6b82;
+    --brand: #00214D; --brand-deep: #00214D; --brand-dark: #00214D; --brand-hover: #00152f;
+    --brand-accent: #00214D; --accent: #00214D; --brand-warning: #00ebc7; --brand-relief: #00ebc7;
+    --border: #D8E2F0; --border-strong: #bed0e3; --border-lighter: #e6ecf5; --border-subtle: #e6ecf5;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #1b2d45; --color-muted: #394962; --color-line: #D8E2F0;
+    --color-brand: #00214D; --color-brand-deep: #00214D; --color-accent: #00ebc7; --color-warn: #00ebc7; --color-info: #00214D;
+    --v14-btn-text: #fffffe; --v14-highlight: #00ebc7; --v14-tag-bg: #fde24f; --v14-tag-text: #00214D;
+}
+
+.fw-page.p-dl {
+    --bg: #fffffe; --bg-white: #fffffe; --bg-light: #fffffe; --surface: #fffffe; --surface-muted: #f6f6f7;
+    --fg: #444650; --fg-strong: #242629; --fg-muted: #5e606c; --fg-subtle: #7a7c88;
+    --text-primary: #444650; --text-secondary: #5e606c; --text-muted: #7a7c88;
+    --brand: #7f5af0; --brand-deep: #242629; --brand-dark: #242629; --brand-hover: #242629;
+    --brand-accent: #7f5af0; --accent: #7f5af0; --brand-warning: #2cb67d; --brand-relief: #7f5af0;
+    --border: #DCDCE0; --border-strong: #c3c3c9; --border-lighter: #e7e7eb; --border-subtle: #e7e7eb;
+    --color-bg: #fffffe; --color-bg-elevated: #fffffe; --color-text: #444650; --color-muted: #5e606c; --color-line: #DCDCE0;
+    --color-brand: #7f5af0; --color-brand-deep: #242629; --color-accent: #2cb67d; --color-warn: #2cb67d; --color-info: #242629;
+    --v14-btn-text: #fffffe; --v14-highlight: #2cb67d; --v14-tag-bg: #72757e; --v14-tag-text: #fffffe;
+}
+
+.fw-page.p-rel {
+    --bg: #f2f4f6; --bg-white: #f2f4f6; --bg-light: #f2f4f6; --surface: #f2f4f6; --surface-muted: #e9ecef;
+    --fg: #2E2E2E; --fg-strong: #181818; --fg-muted: #4a4a4a; --fg-subtle: #6a6a6a;
+    --text-primary: #2E2E2E; --text-secondary: #4a4a4a; --text-muted: #6a6a6a;
+    --brand: #994ff3; --brand-deep: #181818; --brand-dark: #181818; --brand-hover: #181818;
+    --brand-accent: #994ff3; --accent: #994ff3; --brand-warning: #4fc4cf; --brand-relief: #994ff3;
+    --border: #DCE0E5; --border-strong: #c4c9d2; --border-lighter: #e7ebf0; --border-subtle: #e7ebf0;
+    --color-bg: #f2f4f6; --color-bg-elevated: #f2f4f6; --color-text: #2E2E2E; --color-muted: #4a4a4a; --color-line: #DCE0E5;
+    --color-brand: #994ff3; --color-brand-deep: #181818; --color-accent: #4fc4cf; --color-warn: #4fc4cf; --color-info: #181818;
+    --v14-btn-text: #fffffe; --v14-highlight: #4fc4cf; --v14-tag-bg: #fbdd74; --v14-tag-text: #181818;
+}
+
+.fw-page.p-pod {
+    --bg: #f3d2c1; --bg-white: #f3d2c1; --bg-light: #f3d2c1; --surface: #f3d2c1; --surface-muted: #eccab9;
+    --fg: #4A3D3A; --fg-strong: #271c19; --fg-muted: #645652; --fg-subtle: #81736f;
+    --text-primary: #4A3D3A; --text-secondary: #645652; --text-muted: #81736f;
+    --brand: #9656a1; --brand-deep: #271c19; --brand-dark: #271c19; --brand-hover: #1c1310;
+    --brand-accent: #9656a1; --accent: #9656a1; --brand-warning: #e78fb3; --brand-relief: #9656a1;
+    --border: #E5CBB8; --border-strong: #d3b9a5; --border-lighter: #eed6c5; --border-subtle: #eed6c5;
+    --color-bg: #f3d2c1; --color-bg-elevated: #f3d2c1; --color-text: #4A3D3A; --color-muted: #645652; --color-line: #E5CBB8;
+    --color-brand: #9656a1; --color-brand-deep: #271c19; --color-accent: #e78fb3; --color-warn: #e78fb3; --color-info: #271c19;
+    --v14-btn-text: #fffffe; --v14-highlight: #e78fb3; --v14-tag-bg: #e78fb3; --v14-tag-text: #271c19;
+}
+
+/* ==========================================================
+   === V14 共用視覺重置 — 只套用到掛 .v14 的頁面 ===
+   ========================================================== */
+
+.fw-page.v14 {
+    /* 全面覆蓋舊 V1 圓角與陰影變數 */
+    --radius: var(--v14-radius);
+    --radius-xs: var(--v14-radius);
+    --radius-sm: var(--v14-radius);
+    --radius-md: var(--v14-radius);
+    --radius-lg: var(--v14-radius);
+    --radius-xl: var(--v14-radius);
+    --radius-2xl: var(--v14-radius);
+    --radius-card: var(--v14-radius);
+    --radius-badge: var(--v14-radius);
+    --radius-btn: var(--v14-radius);
+    --shadow: none;
+    --shadow-xs: none;
+    --shadow-sm: none;
+    --shadow-md: none;
+    --shadow-lg: none;
+    --shadow-xl: none;
+    --shadow-2xl: none;
+    --shadow-brand: none;
+    --shadow-card: none;
+    --shadow-card-hover: none;
+    /* 背景與字體重整 */
+    background: var(--bg) !important;
+    color: var(--fg);
+    font-family: var(--font-sans-tc);
+    font-size: var(--v14-fs-body);
+    line-height: var(--v14-lh-body);
+}
+
+/* 清除所有卡片殘留的圓角與陰影（部分規則不走變數） */
+.fw-page.v14 .content-card,
+.fw-page.v14 .fw-card,
+.fw-page.v14 .sidebar-section,
+.fw-page.v14 [class*="-card"],
+.fw-page.v14 [class*="-panel"],
+.fw-page.v14 [class*="-box"] {
+    box-shadow: none !important;
+    border-radius: var(--v14-radius) !important;
+}
+
+/* H2 級標題 → 32px 壓扁 1.1 倍 */
+.fw-page.v14 h2,
+.fw-page.v14 .fw-section-head h2,
+.fw-page.v14 [class*="-card-title"],
+.fw-page.v14 [class*="-scenario-title"],
+.fw-page.v14 [class*="-topic-title"] {
+    font-size: var(--v14-fs-h2) !important;
+    line-height: var(--v14-lh-h2) !important;
+    font-weight: 900 !important;
+    color: var(--brand-deep) !important;
+    letter-spacing: 0.01em !important;
+    font-family: var(--font-serif-tc) !important;
+}
+
+/* 內文段落 → 19.2px 放開 1.8 倍 */
+.fw-page.v14 p,
+.fw-page.v14 .content-body p,
+.fw-page.v14 [class*="-body"] p,
+.fw-page.v14 [class*="-desc"],
+.fw-page.v14 [class*="-text"] p {
+    font-size: var(--v14-fs-body) !important;
+    line-height: var(--v14-lh-body) !important;
+    color: var(--fg) !important;
+}
+
+/* 主按鈕 — 所有 *-btn-primary + 新 .btn-primary */
+.fw-page.v14 [class*="-btn-primary"],
+.fw-page.v14 .btn-primary {
+    display: inline-block !important;
+    padding: var(--v14-btn-padding) !important;
+    font-size: var(--v14-fs-button) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    border-radius: var(--v14-radius) !important;
+    background: var(--brand) !important;
+    color: var(--v14-btn-text) !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    text-decoration: none !important;
+    transform: none !important;
+}
+.fw-page.v14 [class*="-btn-primary"]:hover,
+.fw-page.v14 .btn-primary:hover {
+    background: var(--brand-hover, var(--brand-deep)) !important;
+    color: var(--v14-btn-text) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* 次按鈕 — 所有 *-btn-secondary + 新 .btn-ghost */
+.fw-page.v14 [class*="-btn-secondary"],
+.fw-page.v14 .btn-ghost {
+    display: inline-block !important;
+    padding: var(--v14-btn-ghost-padding) !important;
+    font-size: var(--v14-fs-button) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    border-radius: var(--v14-radius) !important;
+    background: transparent !important;
+    color: var(--brand-deep) !important;
+    border: 2px solid var(--brand-deep) !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+.fw-page.v14 [class*="-btn-secondary"]:hover,
+.fw-page.v14 .btn-ghost:hover {
+    background: var(--brand-deep) !important;
+    color: var(--bg) !important;
+}
+
+/* 內文連結 → V14 highlight + underline 語義 */
+.fw-page.v14 p a,
+.fw-page.v14 .content-body a,
+.fw-page.v14 .scene .body a {
+    color: var(--v14-highlight) !important;
+    text-decoration: underline !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 3px !important;
+    font-weight: 700 !important;
+}
+/* 清除舊的 sliding underline pseudo-element 動畫 */
+.fw-page.v14 .content-body a::after,
+.fw-page.v14 p a::after {
+    content: none !important;
+}
+
+/* Hero 標題 → 跟隨 V14 palette deep 色 + 放大到 56px */
+.fw-page.v14 .hp-hero-title,
+.fw-page.v14 .prev-hero-title,
+.fw-page.v14 .money-hero-title,
+.fw-page.v14 .res-hero-title,
+.fw-page.v14 .adv-hero-title,
+.fw-page.v14 [class*="-hero-title"] {
+    font-size: clamp(40px, 6vw, 56px) !important;
+    line-height: 1.15 !important;
+    font-weight: 900 !important;
+    color: var(--brand-deep) !important;
+    letter-spacing: 0.01em !important;
+    font-family: var(--font-serif-tc) !important;
+}
+
+/* Hero badge / kicker → 使用 V14 palette accent 色 */
+.fw-page.v14 [class*="-hero-badge"] {
+    color: var(--brand) !important;
+    border-bottom-color: var(--v14-highlight) !important;
+}
+
+/* Hero 副標 → 使用 V14 fg-muted */
+.fw-page.v14 [class*="-hero-subtitle"],
+.fw-page.v14 [class*="-hero-tagline"] {
+    color: var(--fg-muted) !important;
+    font-size: 22px !important;
+    line-height: 1.6 !important;
+}
+
+/* Stat number → V14 palette brand 色（已自動換，但強制 serif weight 900） */
+.fw-page.v14 [class*="-stat-number"],
+.fw-page.v14 [class*="-stat-num"] {
+    color: var(--brand-deep) !important;
+    font-family: var(--font-serif-tc) !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+}
+
+/* ==========================================================
+   === V14 新 Utility Classes (供未來新 HTML 區塊使用) ===
+   ========================================================== */
+
+.fw-page .scene {
+    padding: var(--v14-card-padding);
+    background: var(--bg);
+    border-radius: var(--v14-radius);
+    border: 1px solid var(--border);
+    box-shadow: none;
+}
+.fw-page .scene h2 {
+    font-family: var(--font-serif-tc);
+    font-size: var(--v14-fs-h2);
+    font-weight: 900;
+    line-height: var(--v14-lh-h2);
+    color: var(--brand-deep);
+    margin: 0 0 16px;
+    letter-spacing: 0.01em;
+}
+.fw-page .scene .body {
+    font-size: var(--v14-fs-body);
+    font-weight: 400;
+    line-height: var(--v14-lh-body);
+    color: var(--fg);
+    margin: 0 0 40px;
+}
+.fw-page .scene .body a {
+    color: var(--v14-highlight);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: 700;
+}
+.fw-page .scene-tag {
+    display: inline-block;
+    font-family: var(--font-sans-tc);
+    font-size: var(--v14-fs-tag);
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    padding: 6px 14px;
+    background: var(--v14-tag-bg);
+    color: var(--v14-tag-text);
+    border-radius: var(--v14-radius);
+    margin-bottom: 20px;
+}
+.fw-page .scene .btns {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
