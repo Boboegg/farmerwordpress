@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>V2 全站色盤 — 無衝突版</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F4ED;
+    --bg-card: #FDFCF8;
+    --text: #2C2418;
+    --muted: #6B5F4E;
+    --line: #D5CBAE;
+    /* 基礎 token */
+    --tok-brand: #4A6932;
+    --tok-accent: #B07E12;
+    --tok-warn: #8B2D14;
+    --tok-info: #2A6B5A;
+    /* 6 主題 */
+    --safety: #A24A24;
+    --economy: #8A5A1C;
+    --study: #3E5874;
+    --advocacy: #7A3438;
+    --about: #5F3E24;
+    --news: #4E6478;
+    /* 健康 5 色 */
+    --health: #2D6B48;
+    --heat: #C05328;
+    --msd: #5472A0;
+    --pesticide: #6E4A14;
+    --mental: #6A8040;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans TC", sans-serif;
+    margin: 0;
+    padding: 48px 32px;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; }
+  h1 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 36px;
+    margin: 0 0 8px;
+    color: var(--text);
+  }
+  .sub { color: var(--muted); margin: 0 0 40px; font-size: 16px; }
+  h2 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 24px;
+    margin: 40px 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--line);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .swatch {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: "Noto Serif TC", serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .05em;
+  }
+  .info {
+    padding: 14px 16px;
+    border-top: 1px solid var(--line);
+  }
+  .info .name { font-size: 15px; font-weight: 700; }
+  .info .hex {
+    font-family: "SF Mono", monospace;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .info .role { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .preview {
+    padding: 14px 16px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+  }
+  .btn-outline {
+    background: transparent;
+    border: 2px solid;
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .divider { height: 40px; }
+  .legend {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .legend strong { color: var(--text); }
+
+  /* 套用色 */
+  .tok-brand .swatch { background: var(--tok-brand); }
+  .tok-accent .swatch { background: var(--tok-accent); }
+  .tok-warn .swatch { background: var(--tok-warn); }
+  .tok-info .swatch { background: var(--tok-info); }
+  .safety .swatch { background: var(--safety); }
+  .economy .swatch { background: var(--economy); }
+  .study .swatch { background: var(--study); }
+  .advocacy .swatch { background: var(--advocacy); }
+  .about .swatch { background: var(--about); }
+  .news .swatch { background: var(--news); }
+  .health .swatch { background: var(--health); }
+  .heat .swatch { background: var(--heat); }
+  .msd .swatch { background: var(--msd); }
+  .pesticide .swatch { background: var(--pesticide); }
+  .mental .swatch { background: var(--mental); }
+
+  .tok-brand .btn,
+  .tok-brand .badge { background: var(--tok-brand); }
+  .tok-brand .btn-outline { border-color: var(--tok-brand); color: var(--tok-brand); background: transparent; }
+  .tok-accent .btn,
+  .tok-accent .badge { background: var(--tok-accent); }
+  .tok-accent .btn-outline { border-color: var(--tok-accent); color: var(--tok-accent); background: transparent; }
+  .tok-warn .btn,
+  .tok-warn .badge { background: var(--tok-warn); }
+  .tok-warn .btn-outline { border-color: var(--tok-warn); color: var(--tok-warn); background: transparent; }
+  .tok-info .btn,
+  .tok-info .badge { background: var(--tok-info); }
+  .tok-info .btn-outline { border-color: var(--tok-info); color: var(--tok-info); background: transparent; }
+
+  .safety .btn, .safety .badge { background: var(--safety); }
+  .safety .btn-outline { border-color: var(--safety); color: var(--safety); background: transparent; }
+  .economy .btn, .economy .badge { background: var(--economy); }
+  .economy .btn-outline { border-color: var(--economy); color: var(--economy); background: transparent; }
+  .study .btn, .study .badge { background: var(--study); }
+  .study .btn-outline { border-color: var(--study); color: var(--study); background: transparent; }
+  .advocacy .btn, .advocacy .badge { background: var(--advocacy); }
+  .advocacy .btn-outline { border-color: var(--advocacy); color: var(--advocacy); background: transparent; }
+  .about .btn, .about .badge { background: var(--about); }
+  .about .btn-outline { border-color: var(--about); color: var(--about); background: transparent; }
+  .news .btn, .news .badge { background: var(--news); }
+  .news .btn-outline { border-color: var(--news); color: var(--news); background: transparent; }
+
+  .health .btn, .health .badge { background: var(--health); }
+  .health .btn-outline { border-color: var(--health); color: var(--health); background: transparent; }
+  .heat .btn, .heat .badge { background: var(--heat); }
+  .heat .btn-outline { border-color: var(--heat); color: var(--heat); background: transparent; }
+  .msd .btn, .msd .badge { background: var(--msd); }
+  .msd .btn-outline { border-color: var(--msd); color: var(--msd); background: transparent; }
+  .pesticide .btn, .pesticide .badge { background: var(--pesticide); }
+  .pesticide .btn-outline { border-color: var(--pesticide); color: var(--pesticide); background: transparent; }
+  .mental .btn, .mental .badge { background: var(--mental); }
+  .mental .btn-outline { border-color: var(--mental); color: var(--mental); background: transparent; }
+
+  /* 色相分佈圖 */
+  .hue-map {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+  .hue-map .label { font-weight: 700; padding-top: 6px; }
+  .hue-map .colors { display: flex; gap: 6px; flex-wrap: wrap; }
+  .hue-map .chip {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    position: relative;
+  }
+  .hue-map .chip::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .hue-row { margin-bottom: 28px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>V2 全站色盤 — 無衝突版</h1>
+  <p class="sub">15 色完整盤點：4 基礎 token + 6 主題頁 + 4 健康子頁 + 1 健康主頁 · 底色 #F7F4ED · 互不相撞</p>
+
+  <div class="legend">
+    <strong>檢視重點：</strong>每個卡片顯示「大色塊 + 按鈕 + outline 按鈕 + badge」。注意看同色相的深淺差別（例如三個紅、四個金棕、四個綠）。底色都是暖米 #F7F4ED。
+  </div>
+
+  <h2>基礎 Token（保留，不改）</h2>
+  <div class="grid">
+    <div class="card tok-brand">
+      <div class="swatch">橄欖綠</div>
+      <div class="info"><div class="name">brand · 全站主色</div><div class="hex">#4A6932</div></div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">標籤</span>
+      </div>
+    </div>
+    <div class="card tok-accent">
+      <div class="swatch">蜂蜜金</div>
+      <div class="info"><div class="name">accent · 全站輔色</div><div class="hex">#B07E12</div></div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">標籤</span>
+      </div>
+    </div>
+    <div class="card tok-warn">
+      <div class="swatch">燒土紅</div>
+      <div class="info"><div class="name">warn · 全站警示</div><div class="hex">#8B2D14</div></div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">標籤</span>
+      </div>
+    </div>
+    <div class="card tok-info">
+      <div class="swatch">湖綠</div>
+      <div class="info"><div class="name">info · 全站資訊</div><div class="hex">#2A6B5A</div></div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">標籤</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>6 大主題頁（全新配色）</h2>
+  <div class="grid">
+    <div class="card safety">
+      <div class="swatch">職業安全</div>
+      <div class="info">
+        <div class="name">赭土紅</div>
+        <div class="hex">#A24A24</div>
+        <div class="role">比 warn 更橘，避開警示色</div>
+      </div>
+      <div class="preview">
+        <button class="btn">查看</button>
+        <button class="btn btn-outline">更多</button>
+        <span class="badge">專區</span>
+      </div>
+    </div>
+    <div class="card economy">
+      <div class="swatch">經濟與保險</div>
+      <div class="info">
+        <div class="name">焦糖棕</div>
+        <div class="hex">#8A5A1C</div>
+        <div class="role">比 accent 更深更棕，更沉穩</div>
+      </div>
+      <div class="preview">
+        <button class="btn">查看</button>
+        <button class="btn btn-outline">更多</button>
+        <span class="badge">專區</span>
+      </div>
+    </div>
+    <div class="card study">
+      <div class="swatch">農學堂</div>
+      <div class="info">
+        <div class="name">靛藍</div>
+        <div class="hex">#3E5874</div>
+        <div class="role">學術藍，避開全站 brand 綠</div>
+      </div>
+      <div class="preview">
+        <button class="btn">查看</button>
+        <button class="btn btn-outline">更多</button>
+        <span class="badge">專區</span>
+      </div>
+    </div>
+    <div class="card advocacy">
+      <div class="swatch">倡議</div>
+      <div class="info">
+        <div class="name">紫丹</div>
+        <div class="hex">#7A3438</div>
+        <div class="role">暖紫紅，獨特強烈</div>
+      </div>
+      <div class="preview">
+        <button class="btn">查看</button>
+        <button class="btn btn-outline">更多</button>
+        <span class="badge">專區</span>
+      </div>
+    </div>
+    <div class="card about">
+      <div class="swatch">關於我們</div>
+      <div class="info">
+        <div class="name">茶棕</div>
+        <div class="hex">#5F3E24</div>
+        <div class="role">深沉穩重，敘事感</div>
+      </div>
+      <div class="preview">
+        <button class="btn">查看</button>
+        <button class="btn btn-outline">更多</button>
+        <span class="badge">專區</span>
+      </div>
+    </div>
+    <div class="card news">
+      <div class="swatch">最新消息</div>
+      <div class="info">
+        <div class="name">鋼青</div>
+        <div class="hex">#4E6478</div>
+        <div class="role">中性資訊感，比農學堂更灰</div>
+      </div>
+      <div class="preview">
+        <button class="btn">查看</button>
+        <button class="btn btn-outline">更多</button>
+        <span class="badge">專區</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>健康促進 主頁 + 4 子頁</h2>
+  <div class="grid">
+    <div class="card health">
+      <div class="swatch">健康主頁</div>
+      <div class="info">
+        <div class="name">森林深綠</div>
+        <div class="hex">#2D6B48</div>
+        <div class="role">主頁專用，區隔其他綠</div>
+      </div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">健康</span>
+      </div>
+    </div>
+    <div class="card heat">
+      <div class="swatch">熱傷害</div>
+      <div class="info">
+        <div class="name">赤陶橘</div>
+        <div class="hex">#C05328</div>
+        <div class="role">高溫感，避開職安赭土紅</div>
+      </div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">警訊</span>
+      </div>
+    </div>
+    <div class="card msd">
+      <div class="swatch">肌肉骨骼</div>
+      <div class="info">
+        <div class="name">藍石板</div>
+        <div class="hex">#5472A0</div>
+        <div class="role">比最新消息鋼青更亮</div>
+      </div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">保健</span>
+      </div>
+    </div>
+    <div class="card pesticide">
+      <div class="swatch">農藥安全</div>
+      <div class="info">
+        <div class="name">暗琥珀</div>
+        <div class="hex">#6E4A14</div>
+        <div class="role">深褐暗金，避開經濟焦糖棕</div>
+      </div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">危害</span>
+      </div>
+    </div>
+    <div class="card mental">
+      <div class="swatch">心理健康</div>
+      <div class="info">
+        <div class="name">草綠</div>
+        <div class="hex">#6A8040</div>
+        <div class="role">明亮綠，避開全站 brand</div>
+      </div>
+      <div class="preview">
+        <button class="btn">主按鈕</button>
+        <button class="btn btn-outline">次按鈕</button>
+        <span class="badge">紓壓</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>色相分佈（同色相深淺比較）</h2>
+  <div class="hue-map">
+    <div class="label">紅 / 橘系</div>
+    <div class="colors">
+      <div class="chip" style="background:#8B2D14" data-name="warn"></div>
+      <div class="chip" style="background:#A24A24" data-name="職安"></div>
+      <div class="chip" style="background:#C05328" data-name="熱傷"></div>
+      <div class="chip" style="background:#7A3438" data-name="倡議"></div>
+    </div>
+  </div>
+  <div class="hue-map">
+    <div class="label">金 / 棕系</div>
+    <div class="colors">
+      <div class="chip" style="background:#B07E12" data-name="accent"></div>
+      <div class="chip" style="background:#8A5A1C" data-name="經濟"></div>
+      <div class="chip" style="background:#6E4A14" data-name="農藥"></div>
+      <div class="chip" style="background:#5F3E24" data-name="關於"></div>
+    </div>
+  </div>
+  <div class="hue-map">
+    <div class="label">綠系</div>
+    <div class="colors">
+      <div class="chip" style="background:#4A6932" data-name="brand"></div>
+      <div class="chip" style="background:#2A6B5A" data-name="info"></div>
+      <div class="chip" style="background:#2D6B48" data-name="健康"></div>
+      <div class="chip" style="background:#6A8040" data-name="心理"></div>
+    </div>
+  </div>
+  <div class="hue-map">
+    <div class="label">藍系</div>
+    <div class="colors">
+      <div class="chip" style="background:#3E5874" data-name="農學堂"></div>
+      <div class="chip" style="background:#4E6478" data-name="最新"></div>
+      <div class="chip" style="background:#5472A0" data-name="肌肉"></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+</div>
+</body>
+</html>

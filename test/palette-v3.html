@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>V3 全站色盤 — 全子頁獨立色</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F4ED;
+    --bg-card: #FDFCF8;
+    --text: #2C2418;
+    --muted: #6B5F4E;
+    --line: #D5CBAE;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans TC", sans-serif;
+    margin: 0;
+    padding: 48px 32px;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 1320px; margin: 0 auto; }
+  h1 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 40px;
+    margin: 0 0 8px;
+  }
+  .sub { color: var(--muted); margin: 0 0 40px; font-size: 16px; }
+  h2 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 26px;
+    margin: 48px 0 8px;
+  }
+  .section-desc { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+  .bar { height: 3px; background: var(--line); margin: 0 0 24px; border-radius: 2px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .swatch {
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: "Noto Serif TC", serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-shadow: 0 1px 2px rgba(0,0,0,.15);
+  }
+  .info {
+    padding: 12px 14px 6px;
+  }
+  .info .name { font-size: 14px; font-weight: 700; }
+  .info .hex {
+    font-family: "SF Mono", monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .preview {
+    padding: 10px 14px 14px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    color: #fff;
+  }
+  .btn-out {
+    background: transparent;
+    border: 2px solid;
+    padding: 4px 10px;
+  }
+  .badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  /* 色彩定義：主題頁 */
+  .c-about { --c: #5F3E24; }
+  .c-safety { --c: #A24A24; }
+  .c-health { --c: #2D6B48; }
+  .c-economy { --c: #8A5A1C; }
+  .c-study { --c: #4E7A2E; }
+  .c-advocacy { --c: #7A3438; }
+  .c-research { --c: #3A4A6E; }
+  .c-news { --c: #6B7785; }
+  /* 基礎 token */
+  .c-brand { --c: #4A6932; }
+  .c-accent { --c: #B07E12; }
+  .c-warn { --c: #8B2D14; }
+  .c-info { --c: #2A6B5A; }
+  /* 健康子頁 */
+  .c-heat { --c: #C05328; }
+  .c-msd { --c: #4A6A8E; }
+  .c-pesticide { --c: #8A6A0E; }
+  .c-mental { --c: #7B6BA0; }
+  /* 職安子頁 */
+  .c-ppe { --c: #8E3828; }
+  .c-machinery { --c: #5A5A5A; }
+  .c-greenhouse { --c: #C47A2E; }
+  /* 經濟子頁 */
+  .c-occ { --c: #2E4A7A; }
+  .c-crop { --c: #C89A1E; }
+  .c-subsidy { --c: #3E8A6E; }
+  .c-calc1 { --c: #B0527A; }
+  .c-calc2 { --c: #5C9BCB; }
+  /* 研究子頁 */
+  .c-pub { --c: #2E2E5A; }
+  .c-dl { --c: #1E8C6B; }
+  .c-rel { --c: #6B3A7A; }
+  .c-pod { --c: #D96A4A; }
+
+  /* 套用 */
+  [class*="c-"] .swatch { background: var(--c); }
+  [class*="c-"] .btn { background: var(--c); }
+  [class*="c-"] .btn-out { border-color: var(--c); color: var(--c); background: transparent; }
+  [class*="c-"] .badge { background: var(--c); }
+
+  .legend {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .legend strong { color: var(--text); }
+
+  /* 全景色相帶 */
+  .panorama {
+    display: flex;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 16px 0 32px;
+    border: 1px solid var(--line);
+  }
+  .panorama .bit {
+    flex: 1;
+    position: relative;
+  }
+  .panorama .bit::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .panorama-wrap { padding-bottom: 28px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>V3 全站色盤 — 24 色獨立主題</h1>
+  <p class="sub">7 主題頁 + 1 獨立頁 + 16 子頁 + 4 基礎 token = 28 色。每個頁面獨立身份，完整色相環分布。</p>
+
+  <div class="legend">
+    <strong>修正重點：</strong>
+    <br>1. 農學堂改回綠色系（葉綠 #4E7A2E）— 農業身份
+    <br>2. 取消「禁止冷色調」的限制 — 藍/紫/粉都可以用
+    <br>3. 所有子頁都有獨立色（方向 A）— 子頁內容不同就要視覺可辨
+    <br>4. 底色維持暖米 #F7F4ED 不變
+  </div>
+
+  <h2>全景色相帶（28 色一次看）</h2>
+  <div class="panorama-wrap">
+    <div class="panorama">
+      <div class="bit" style="background:#8B2D14" data-label="warn"></div>
+      <div class="bit" style="background:#A24A24" data-label="職安"></div>
+      <div class="bit" style="background:#8E3828" data-label="防護具"></div>
+      <div class="bit" style="background:#C05328" data-label="熱傷"></div>
+      <div class="bit" style="background:#D96A4A" data-label="Podcast"></div>
+      <div class="bit" style="background:#C47A2E" data-label="溫室"></div>
+      <div class="bit" style="background:#B07E12" data-label="accent"></div>
+      <div class="bit" style="background:#C89A1E" data-label="農業險"></div>
+      <div class="bit" style="background:#8A5A1C" data-label="經濟"></div>
+      <div class="bit" style="background:#8A6A0E" data-label="農藥"></div>
+      <div class="bit" style="background:#5F3E24" data-label="關於"></div>
+      <div class="bit" style="background:#4E7A2E" data-label="農學堂"></div>
+      <div class="bit" style="background:#4A6932" data-label="brand"></div>
+      <div class="bit" style="background:#2D6B48" data-label="健康"></div>
+      <div class="bit" style="background:#1E8C6B" data-label="下載"></div>
+      <div class="bit" style="background:#2A6B5A" data-label="info"></div>
+      <div class="bit" style="background:#3E8A6E" data-label="補助"></div>
+      <div class="bit" style="background:#4A6A8E" data-label="肌肉"></div>
+      <div class="bit" style="background:#5C9BCB" data-label="退休金"></div>
+      <div class="bit" style="background:#2E4A7A" data-label="職災險"></div>
+      <div class="bit" style="background:#3A4A6E" data-label="研究"></div>
+      <div class="bit" style="background:#2E2E5A" data-label="出版"></div>
+      <div class="bit" style="background:#7B6BA0" data-label="心理"></div>
+      <div class="bit" style="background:#6B3A7A" data-label="相關"></div>
+      <div class="bit" style="background:#7A3438" data-label="倡議"></div>
+      <div class="bit" style="background:#B0527A" data-label="職災試算"></div>
+      <div class="bit" style="background:#6B7785" data-label="最新"></div>
+      <div class="bit" style="background:#5A5A5A" data-label="農機"></div>
+    </div>
+  </div>
+
+  <h2>基礎 Token（4 色，保留不動）</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="card c-brand">
+      <div class="swatch">橄欖綠</div>
+      <div class="info"><div class="name">brand · 全站主色</div><div class="hex">#4A6932</div></div>
+      <div class="preview"><button class="btn">按鈕</button><button class="btn btn-out">次</button><span class="badge">標籤</span></div>
+    </div>
+    <div class="card c-accent">
+      <div class="swatch">蜂蜜金</div>
+      <div class="info"><div class="name">accent · 全站輔色</div><div class="hex">#B07E12</div></div>
+      <div class="preview"><button class="btn">按鈕</button><button class="btn btn-out">次</button><span class="badge">標籤</span></div>
+    </div>
+    <div class="card c-warn">
+      <div class="swatch">燒土紅</div>
+      <div class="info"><div class="name">warn · 警示</div><div class="hex">#8B2D14</div></div>
+      <div class="preview"><button class="btn">按鈕</button><button class="btn btn-out">次</button><span class="badge">標籤</span></div>
+    </div>
+    <div class="card c-info">
+      <div class="swatch">湖綠</div>
+      <div class="info"><div class="name">info · 資訊</div><div class="hex">#2A6B5A</div></div>
+      <div class="preview"><button class="btn">按鈕</button><button class="btn btn-out">次</button><span class="badge">標籤</span></div>
+    </div>
+  </div>
+
+  <h2>7 大主題頁 + 最新消息</h2>
+  <p class="section-desc">每個頁面都是計畫的一個內容領域，需要獨立身份</p>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="card c-about">
+      <div class="swatch">關於我們</div>
+      <div class="info"><div class="name">茶棕</div><div class="hex">#5F3E24</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">團隊</span></div>
+    </div>
+    <div class="card c-safety">
+      <div class="swatch">職業安全</div>
+      <div class="info"><div class="name">赭土紅</div><div class="hex">#A24A24</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">專區</span></div>
+    </div>
+    <div class="card c-health">
+      <div class="swatch">健康促進</div>
+      <div class="info"><div class="name">森林深綠</div><div class="hex">#2D6B48</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">健康</span></div>
+    </div>
+    <div class="card c-economy">
+      <div class="swatch">經濟與保險</div>
+      <div class="info"><div class="name">焦糖棕</div><div class="hex">#8A5A1C</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">財務</span></div>
+    </div>
+    <div class="card c-study">
+      <div class="swatch">農學堂</div>
+      <div class="info"><div class="name">葉綠（農業）</div><div class="hex">#4E7A2E</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">教學</span></div>
+    </div>
+    <div class="card c-advocacy">
+      <div class="swatch">倡議</div>
+      <div class="info"><div class="name">紫丹</div><div class="hex">#7A3438</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">倡議</span></div>
+    </div>
+    <div class="card c-research">
+      <div class="swatch">研究成果</div>
+      <div class="info"><div class="name">深藍墨</div><div class="hex">#3A4A6E</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">學術</span></div>
+    </div>
+    <div class="card c-news">
+      <div class="swatch">最新消息</div>
+      <div class="info"><div class="name">石灰青</div><div class="hex">#6B7785</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">News</span></div>
+    </div>
+  </div>
+
+  <h2>健康促進 4 子頁</h2>
+  <p class="section-desc">熱傷害/肌肉/農藥/心理 — 四個獨立健康領域</p>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="card c-heat">
+      <div class="swatch">熱傷害</div>
+      <div class="info"><div class="name">赤陶橘</div><div class="hex">#C05328</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">高溫</span></div>
+    </div>
+    <div class="card c-msd">
+      <div class="swatch">肌肉骨骼</div>
+      <div class="info"><div class="name">鋼藍</div><div class="hex">#4A6A8E</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">保健</span></div>
+    </div>
+    <div class="card c-pesticide">
+      <div class="swatch">農藥安全</div>
+      <div class="info"><div class="name">芥末</div><div class="hex">#8A6A0E</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">化學</span></div>
+    </div>
+    <div class="card c-mental">
+      <div class="swatch">心理健康</div>
+      <div class="info"><div class="name">薰衣草紫</div><div class="hex">#7B6BA0</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">紓壓</span></div>
+    </div>
+  </div>
+
+  <h2>職業安全 3 子頁</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="card c-ppe">
+      <div class="swatch">個人防護具</div>
+      <div class="info"><div class="name">磚紅</div><div class="hex">#8E3828</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">PPE</span></div>
+    </div>
+    <div class="card c-machinery">
+      <div class="swatch">省工農機具</div>
+      <div class="info"><div class="name">鐵灰</div><div class="hex">#5A5A5A</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">機械</span></div>
+    </div>
+    <div class="card c-greenhouse">
+      <div class="swatch">溫室專區</div>
+      <div class="info"><div class="name">琥珀橘</div><div class="hex">#C47A2E</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">溫室</span></div>
+    </div>
+  </div>
+
+  <h2>經濟與保險 5 子頁</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="card c-occ">
+      <div class="swatch">職災險</div>
+      <div class="info"><div class="name">靛青</div><div class="hex">#2E4A7A</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">保險</span></div>
+    </div>
+    <div class="card c-crop">
+      <div class="swatch">農業險</div>
+      <div class="info"><div class="name">麥金</div><div class="hex">#C89A1E</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">保險</span></div>
+    </div>
+    <div class="card c-subsidy">
+      <div class="swatch">補助資源</div>
+      <div class="info"><div class="name">翡翠綠</div><div class="hex">#3E8A6E</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">補助</span></div>
+    </div>
+    <div class="card c-calc1">
+      <div class="swatch">職災試算</div>
+      <div class="info"><div class="name">玫瑰紅</div><div class="hex">#B0527A</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">試算</span></div>
+    </div>
+    <div class="card c-calc2">
+      <div class="swatch">退休金試算</div>
+      <div class="info"><div class="name">天藍</div><div class="hex">#5C9BCB</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">試算</span></div>
+    </div>
+  </div>
+
+  <h2>研究成果 4 子頁</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="card c-pub">
+      <div class="swatch">研究出版</div>
+      <div class="info"><div class="name">墨藍</div><div class="hex">#2E2E5A</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">論文</span></div>
+    </div>
+    <div class="card c-dl">
+      <div class="swatch">下載專區</div>
+      <div class="info"><div class="name">孔雀綠</div><div class="hex">#1E8C6B</div></div>
+      <div class="preview"><button class="btn">下載</button><button class="btn btn-out">更多</button><span class="badge">DL</span></div>
+    </div>
+    <div class="card c-rel">
+      <div class="swatch">相關資源</div>
+      <div class="info"><div class="name">葡萄紫</div><div class="hex">#6B3A7A</div></div>
+      <div class="preview"><button class="btn">查看</button><button class="btn btn-out">更多</button><span class="badge">資源</span></div>
+    </div>
+    <div class="card c-pod">
+      <div class="swatch">Podcast</div>
+      <div class="info"><div class="name">珊瑚橘</div><div class="hex">#D96A4A</div></div>
+      <div class="preview"><button class="btn">收聽</button><button class="btn btn-out">更多</button><span class="badge">Audio</span></div>
+    </div>
+  </div>
+
+  <div style="height:60px"></div>
+</div>
+</body>
+</html>

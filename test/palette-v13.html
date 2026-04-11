@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>V13 Happy Hues 簡化版 — 每頁 3 色主角</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.75;
+    background: #FAFAF7;
+    padding: 48px 32px;
+  }
+  .wrap { max-width: 1420px; margin: 0 auto; }
+
+  .doc-head h1 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 44px;
+    color: #1C1C2E;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+  .doc-head .sub { color: #6B5F4E; margin-bottom: 28px; }
+
+  .doc-note {
+    background: #FFF;
+    border: 1px solid #E8E0CC;
+    border-left: 5px solid #FFD803;
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+    color: #1C1C2E;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .doc-note h3 { font-family: "Noto Serif TC", serif; font-size: 20px; margin-bottom: 10px; }
+
+  .section-label {
+    display: block;
+    font-family: "Noto Serif TC", serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #1C1C2E;
+    margin: 40px 0 14px;
+    padding-left: 14px;
+    border-left: 5px solid #1C1C2E;
+  }
+
+  /* ===== 簡化的 Happy Hues Card ===== */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 22px;
+  }
+  .scene {
+    background: var(--bg);
+    border-radius: 20px;
+    padding: 32px 30px 28px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .scene:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0,0,0,.08);
+  }
+  /* 小裝飾圓（secondary 輕量存在） */
+  .scene::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--theme);
+    opacity: 0.12;
+  }
+  .scene-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: var(--theme);
+    color: var(--btn-text);
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .scene h2 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.25;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    position: relative;
+  }
+  .scene .subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .scene .body {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 22px;
+    position: relative;
+  }
+  .scene .body a,
+  .scene .highlight {
+    color: var(--text);
+    background: linear-gradient(180deg, transparent 60%, var(--theme) 60%);
+    font-weight: 900;
+    text-decoration: none;
+    padding: 0 2px;
+  }
+  .scene .btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .btn-primary {
+    background: var(--theme);
+    color: var(--btn-text);
+    border: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(28,28,46,.12);
+  }
+  .btn-ghost {
+    background: transparent;
+    border: 2px solid var(--text);
+    color: var(--text);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  /* ===== 8 組 palette ===== */
+  /* 每組：bg + text (深色帶色調) + text-muted + theme (vivid) + btn-text */
+
+  .p-about {
+    --bg: #FEF6E4;
+    --text: #001858;
+    --text-muted: #172C66;
+    --theme: #F582AE;
+    --btn-text: #001858;
+    --line: #E8DFCC;
+  }
+  .p-safety {
+    --bg: #FFFFFE;
+    --text: #2E0F08;
+    --text-muted: #5A2A20;
+    --theme: #F25F4C;
+    --btn-text: #FFFFFE;
+    --line: #E8D5CC;
+  }
+  .p-health {
+    --bg: #FFFFFE;
+    --text: #272343;
+    --text-muted: #2D334A;
+    --theme: #FFD803;
+    --btn-text: #272343;
+    --line: #D8E0E8;
+  }
+  .p-economy {
+    --bg: #FFFFFE;
+    --text: #094067;
+    --text-muted: #5F6C7B;
+    --theme: #3DA9FC;
+    --btn-text: #FFFFFE;
+    --line: #D0E0F0;
+  }
+  .p-study {
+    --bg: #FFFFFE;
+    --text: #00473E;
+    --text-muted: #1A5E55;
+    --theme: #2CB67D;
+    --btn-text: #00473E;
+    --line: #C8E8DC;
+  }
+  .p-advocacy {
+    --bg: #FFFFFE;
+    --text: #020826;
+    --text-muted: #292F4D;
+    --theme: #FF8906;
+    --btn-text: #020826;
+    --line: #EDE4D0;
+  }
+  .p-research {
+    --bg: #FFFFFE;
+    --text: #16161A;
+    --text-muted: #72757E;
+    --theme: #7F5AF0;
+    --btn-text: #FFFFFE;
+    --line: #D8D2E8;
+  }
+  .p-news {
+    --bg: #FFFFFE;
+    --text: #00214D;
+    --text-muted: #1B2D45;
+    --theme: #00EBC7;
+    --btn-text: #00214D;
+    --line: #C8DCE8;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="doc-head">
+    <h1>V13 Happy Hues 簡化版</h1>
+    <p class="sub">每頁 3 色主角（深色文字 + vivid 按鈕 + 隱約主題裝飾圓），文字帶該頁色調，不是純黑</p>
+  </div>
+
+  <div class="doc-note">
+    <h3>修正 V12 豐富過頭</h3>
+    <strong>V12 問題</strong>：我把 Happy Hues 的 5-6 個 accent 全塞在 demo（側欄卡片 × 2 + 5 個圓點 + 按鈕 + highlight）→ 看起來像 dashboard 而不是 content page<br>
+    <strong>V13 修正</strong>：每頁只主角 3 色：
+    <ul style="margin-top:8px; padding-left:24px;">
+      <li><strong>Text</strong>：深色帶色調（不是純黑）— 每頁不同</li>
+      <li><strong>Theme</strong>：1 個 vivid button color</li>
+      <li><strong>輕量裝飾</strong>：右上角低透明度裝飾圓 + highlight 文字背景</li>
+    </ul>
+    Secondary / Tertiary 藏起來不用。整頁保持 <strong>大量留白 + 一個鮮豔色焦點</strong>，這才是 Happy Hues 的留白美學。
+  </div>
+
+  <span class="section-label">8 組主題頁（子頁繼承父頁 palette）</span>
+  <div class="grid">
+    <div class="scene p-about">
+      <span class="scene-tag">關於我們</span>
+      <h2>農業尊嚴團隊</h2>
+      <p class="subtitle">中正 × 臺大雲林</p>
+      <p class="body">在雲嘉深耕農業健康研究五年的學術工作者，用研究為農民發聲。<a href="#" class="highlight">深入閱讀</a></p>
+      <div class="btns">
+        <button class="btn-primary">認識團隊</button>
+        <button class="btn-ghost">歷程</button>
+      </div>
+    </div>
+
+    <div class="scene p-safety">
+      <span class="scene-tag">職業安全</span>
+      <h2>農作業職業安全</h2>
+      <p class="subtitle">防護 · 機具 · 環境 (3 子頁繼承)</p>
+      <p class="body">農業是高風險工作，正確的防護可避免 <a href="#" class="highlight">80% 意外事故</a>。</p>
+      <div class="btns">
+        <button class="btn-primary">立即查看</button>
+        <button class="btn-ghost">手冊</button>
+      </div>
+    </div>
+
+    <div class="scene p-health">
+      <span class="scene-tag">健康促進</span>
+      <h2>農民健康促進</h2>
+      <p class="subtitle">身心環境全方位 (4 子頁繼承)</p>
+      <p class="body">健康不是生病才看醫生，而是日常預防。<a href="#" class="highlight">現在開始</a>還不遲。</p>
+      <div class="btns">
+        <button class="btn-primary">健康速篩</button>
+        <button class="btn-ghost">四主題</button>
+      </div>
+    </div>
+
+    <div class="scene p-economy">
+      <span class="scene-tag">經濟與保險</span>
+      <h2>農民經濟安全網</h2>
+      <p class="subtitle">職災 · 保險 · 退休 (5 子頁繼承)</p>
+      <p class="body">意外、收入波動、老年生活——<a href="#" class="highlight">完整試算工具</a>幫你一次看懂。</p>
+      <div class="btns">
+        <button class="btn-primary">開始試算</button>
+        <button class="btn-ghost">比較</button>
+      </div>
+    </div>
+
+    <div class="scene p-study">
+      <span class="scene-tag">農學堂</span>
+      <h2>農業教育培力</h2>
+      <p class="subtitle">從新手到資深</p>
+      <p class="body">課程、工作坊、田間實作——<a href="#" class="highlight">200+ 學員</span>一起走的進階路徑。</p>
+      <div class="btns">
+        <button class="btn-primary">瀏覽課程</button>
+        <button class="btn-ghost">諮詢</button>
+      </div>
+    </div>
+
+    <div class="scene p-advocacy">
+      <span class="scene-tag">倡議</span>
+      <h2>農業尊嚴倡議</h2>
+      <p class="subtitle">政策發聲 · 媒體行動</p>
+      <p class="body">政策倡議、媒體發聲、跨界合作——<a href="#" class="highlight">為農民爭取保障</a>。</p>
+      <div class="btns">
+        <button class="btn-primary">加入倡議</button>
+        <button class="btn-ghost">立場</button>
+      </div>
+    </div>
+
+    <div class="scene p-research">
+      <span class="scene-tag">研究成果</span>
+      <h2>計畫研究產出</h2>
+      <p class="subtitle">論文 · 報告 · Podcast (4 子頁繼承)</p>
+      <p class="body">五年量化數據、質性訪談、<a href="#" class="highlight">APA 第 7 版</a>完整引用。</p>
+      <div class="btns">
+        <button class="btn-primary">下載報告</button>
+        <button class="btn-ghost">引用</button>
+      </div>
+    </div>
+
+    <div class="scene p-news">
+      <span class="scene-tag">最新消息</span>
+      <h2>新聞與活動</h2>
+      <p class="subtitle">動態 · 研討會 · 媒體</p>
+      <p class="body">訂閱月報，不錯過任何一場<a href="#" class="highlight">活動與重要公告</a>。</p>
+      <div class="btns">
+        <button class="btn-primary">訂閱電子報</button>
+        <button class="btn-ghost">歷史</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:60px"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>V12 Happy Hues 完整套用 — 每頁一組豐富 palette</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 1.75;
+    background: #fafafa;
+    padding: 40px 28px;
+  }
+  .wrap { max-width: 1440px; margin: 0 auto; }
+  .doc-header h1 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 48px;
+    margin-bottom: 8px;
+    color: #0E172C;
+    font-weight: 900;
+  }
+  .doc-header .sub { color: #6B5F4E; margin-bottom: 32px; }
+  .doc-legend {
+    background: #FFF;
+    border: 2px solid #E8E0CC;
+    border-left: 6px solid #ffd803;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #0E172C;
+  }
+  .doc-legend h3 { font-family: "Noto Serif TC", serif; font-size: 22px; margin-bottom: 12px; }
+
+  .group-label {
+    display: block;
+    font-family: "Noto Serif TC", serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: #0E172C;
+    margin: 40px 0 12px;
+    padding-left: 16px;
+    border-left: 5px solid #0E172C;
+  }
+
+  /* ===== Happy Hues 風完整 palette demo ===== */
+  .hh {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,.1);
+    margin-bottom: 24px;
+    min-height: 340px;
+  }
+  .hh-main {
+    padding: 40px 48px;
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hh-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    margin-bottom: 12px;
+  }
+  .hh h2 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--headline);
+    line-height: 1.2;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+  .hh .subtitle {
+    font-size: 15px;
+    color: var(--paragraph);
+    margin-bottom: 16px;
+  }
+  .hh .body-text {
+    font-size: 14px;
+    color: var(--paragraph);
+    line-height: 1.75;
+    margin-bottom: 20px;
+    max-width: 560px;
+  }
+  .hh .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+    max-width: 420px;
+  }
+  .hh .stat {
+    background: var(--secondary);
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 2px solid var(--tertiary);
+  }
+  .hh .stat-n {
+    font-family: "Noto Serif TC", serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--headline);
+    display: block;
+    line-height: 1;
+  }
+  .hh .stat-l {
+    font-size: 10px;
+    color: var(--paragraph);
+    margin-top: 3px;
+    display: block;
+  }
+  .hh .btns {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .hh .btn-primary {
+    background: var(--button);
+    color: var(--button-text);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,.1);
+  }
+  .hh .btn-ghost {
+    background: transparent;
+    border: 2px solid var(--headline);
+    color: var(--headline);
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .hh .highlight-link {
+    color: var(--highlight);
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  .hh-side {
+    padding: 28px 24px;
+    background: var(--card);
+    border-left: 2px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .hh-card {
+    background: var(--secondary);
+    padding: 16px;
+    border-radius: 12px;
+    border: 2px solid var(--tertiary);
+  }
+  .hh-card h4 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--headline);
+    margin-bottom: 6px;
+  }
+  .hh-card p {
+    font-size: 12px;
+    color: var(--paragraph);
+    line-height: 1.6;
+  }
+  .hh-swatches {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+  }
+  .hh-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,.08);
+  }
+
+  /* ======= V12 8 組 Happy Hues 風 palette ======= */
+
+  /* 1. 關於我們 — Pink & Navy (粉紫) */
+  .p-about {
+    --bg: #fef6e4;
+    --text: #001858;
+    --headline: #001858;
+    --paragraph: #172c66;
+    --button: #f582ae;
+    --button-text: #001858;
+    --highlight: #f582ae;
+    --secondary: #8bd3dd;
+    --tertiary: #fec7d7;
+    --card: #ffffff;
+    --tag-bg: #f3d2c1;
+    --tag-text: #001858;
+    --line: #e0d0b5;
+  }
+
+  /* 2. 職業安全 — Red & Dark (經典警示) */
+  .p-safety {
+    --bg: #f8f5f2;
+    --text: #232323;
+    --headline: #232323;
+    --paragraph: #3a3a3a;
+    --button: #f25f4c;
+    --button-text: #fffffe;
+    --highlight: #f25f4c;
+    --secondary: #fef6e4;
+    --tertiary: #fddcd5;
+    --card: #ffffff;
+    --tag-bg: #fddcd5;
+    --tag-text: #232323;
+    --line: #e0d0b5;
+  }
+
+  /* 3. 健康促進 — Yellow & Mint (朝氣) */
+  .p-health {
+    --bg: #fffffe;
+    --text: #272343;
+    --headline: #272343;
+    --paragraph: #2d334a;
+    --button: #ffd803;
+    --button-text: #272343;
+    --highlight: #ffd803;
+    --secondary: #e3f6f5;
+    --tertiary: #bae8e8;
+    --card: #fffffe;
+    --tag-bg: #e3f6f5;
+    --tag-text: #272343;
+    --line: #d8e5e4;
+  }
+
+  /* 4. 經濟保險 — Blue & Coral (金融) */
+  .p-economy {
+    --bg: #fffffe;
+    --text: #094067;
+    --headline: #094067;
+    --paragraph: #5f6c7b;
+    --button: #3da9fc;
+    --button-text: #fffffe;
+    --highlight: #ef4565;
+    --secondary: #d8eefe;
+    --tertiary: #90b4ce;
+    --card: #fffffe;
+    --tag-bg: #d8eefe;
+    --tag-text: #094067;
+    --line: #c5d9e8;
+  }
+
+  /* 5. 農學堂 — Green & Gold (農業) */
+  .p-study {
+    --bg: #fffffe;
+    --text: #00473e;
+    --headline: #00473e;
+    --paragraph: #00473e;
+    --button: #faae2b;
+    --button-text: #00473e;
+    --highlight: #fa5246;
+    --secondary: #fef6e4;
+    --tertiary: #ffa8ba;
+    --card: #fffffe;
+    --tag-bg: #ffa8ba;
+    --tag-text: #00473e;
+    --line: #d8c8a0;
+  }
+
+  /* 6. 倡議 — Orange & Dark (行動) */
+  .p-advocacy {
+    --bg: #fef6e4;
+    --text: #020826;
+    --headline: #020826;
+    --paragraph: #020826;
+    --button: #ff8906;
+    --button-text: #020826;
+    --highlight: #f25f4c;
+    --secondary: #e3f6f5;
+    --tertiary: #bae8e8;
+    --card: #fffffe;
+    --tag-bg: #f25f4c;
+    --tag-text: #fffffe;
+    --line: #d8c8a0;
+  }
+
+  /* 7. 研究成果 — Purple & Mint (學術電感) */
+  .p-research {
+    --bg: #fffffe;
+    --text: #242629;
+    --headline: #242629;
+    --paragraph: #72757e;
+    --button: #7f5af0;
+    --button-text: #fffffe;
+    --highlight: #2cb67d;
+    --secondary: #e3f6f5;
+    --tertiary: #d4d8f0;
+    --card: #fffffe;
+    --tag-bg: #d4d8f0;
+    --tag-text: #242629;
+    --line: #d0d0d8;
+  }
+
+  /* 8. 最新消息 — Neon Triple (霓虹) */
+  .p-news {
+    --bg: #fffffe;
+    --text: #00214d;
+    --headline: #00214d;
+    --paragraph: #1b2d45;
+    --button: #00ebc7;
+    --button-text: #00214d;
+    --highlight: #ff5470;
+    --secondary: #d8eefe;
+    --tertiary: #fde24f;
+    --card: #fffffe;
+    --tag-bg: #fde24f;
+    --tag-text: #00214d;
+    --line: #c5d9e8;
+  }
+
+  .doc-footer {
+    margin-top: 60px;
+    padding: 24px 28px;
+    background: #FFF;
+    border: 2px solid #E8E0CC;
+    border-radius: 16px;
+    color: #6B5F4E;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="doc-header">
+    <h1>V12 Happy Hues 完整套用</h1>
+    <p class="sub">8 組主題頁族，每組一整套 Happy Hues 風 palette（5-6 色），子頁繼承父頁 palette</p>
+  </div>
+
+  <div class="doc-legend">
+    <h3>這版學到什麼</h3>
+    <p>1. <strong>文字不是純黑</strong> — 每個 palette 的文字是跟主題呼應的「深色變體」（紫黑 / 藍黑 / 墨綠黑 等）<br>
+    2. <strong>每頁不只 1 色，是 5-6 色一組</strong> — bg / headline / paragraph / button+text / highlight / secondary+tertiary accent<br>
+    3. <strong>按鈕文字看亮度決定</strong> — vivid 淺色按鈕用深色文字（如霓虹黃+深紫），深色按鈕用白字（如電紫+白）<br>
+    4. <strong>子頁繼承父頁 palette</strong> — 因為每個 palette 本身就豐富，不需要每個子頁都換色</p>
+  </div>
+
+  <!-- 關於我們 -->
+  <span class="group-label">1. 關於我們</span>
+  <div class="hh p-about">
+    <div class="hh-main">
+      <div>
+        <span class="hh-tag">關於我們</span>
+        <h2>農業尊嚴團隊</h2>
+        <p class="subtitle">中正 × 臺大雲林 — 五年深耕雲嘉農業健康</p>
+        <p class="body-text">我們是一群在雲嘉地區用研究為農民發聲的工作者。從職業傷害到老年保障，從田間訪談到政策倡議，我們相信農業勞動有尊嚴。<span class="highlight-link">深入閱讀我們的故事 →</span></p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">5年</span><span class="stat-l">場域深耕</span></div>
+          <div class="stat"><span class="stat-n">20+</span><span class="stat-l">團隊成員</span></div>
+          <div class="stat"><span class="stat-n">15</span><span class="stat-l">SSCI 論文</span></div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn-primary">認識團隊 →</button>
+        <button class="btn-ghost">計畫歷程</button>
+      </div>
+    </div>
+    <div class="hh-side">
+      <div class="hh-card">
+        <h4>2026 新計畫</h4>
+        <p>青銀共學 — 農業職業健康教育推廣</p>
+      </div>
+      <div class="hh-card">
+        <h4>合作夥伴</h4>
+        <p>衛福部、農業部、臺大雲林分院、在地農會</p>
+      </div>
+      <div class="hh-swatches">
+        <div class="hh-swatch" style="background:#fef6e4" title="bg"></div>
+        <div class="hh-swatch" style="background:#001858" title="headline"></div>
+        <div class="hh-swatch" style="background:#f582ae" title="button"></div>
+        <div class="hh-swatch" style="background:#8bd3dd" title="secondary"></div>
+        <div class="hh-swatch" style="background:#fec7d7" title="tertiary"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 職業安全 -->
+  <span class="group-label">2. 職業安全 + 3 子頁（防護具/農機/溫室）繼承</span>
+  <div class="hh p-safety">
+    <div class="hh-main">
+      <div>
+        <span class="hh-tag">職業安全</span>
+        <h2>農作業職業安全指南</h2>
+        <p class="subtitle">防護具 · 省工機具 · 溫室作業</p>
+        <p class="body-text">農業是高風險工作，正確的防護可以避免 80% 意外。從選錯口罩到機具夾傷，<span class="highlight-link">這些真實案例都有解</span>。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">80%</span><span class="stat-l">可預防意外</span></div>
+          <div class="stat"><span class="stat-n">12</span><span class="stat-l">PPE 類別</span></div>
+          <div class="stat"><span class="stat-n">3</span><span class="stat-l">子主題</span></div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn-primary">立即查看</button>
+        <button class="btn-ghost">下載手冊</button>
+      </div>
+    </div>
+    <div class="hh-side">
+      <div class="hh-card">
+        <h4>個人防護具 PPE</h4>
+        <p>手套、口罩、護目鏡選用指南</p>
+      </div>
+      <div class="hh-card">
+        <h4>省力農機</h4>
+        <p>降低身體負擔的 30+ 款工具</p>
+      </div>
+      <div class="hh-swatches">
+        <div class="hh-swatch" style="background:#f8f5f2"></div>
+        <div class="hh-swatch" style="background:#232323"></div>
+        <div class="hh-swatch" style="background:#f25f4c"></div>
+        <div class="hh-swatch" style="background:#fef6e4"></div>
+        <div class="hh-swatch" style="background:#fddcd5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 健康促進 -->
+  <span class="group-label">3. 健康促進 + 4 子頁（熱/肌/藥/心）繼承</span>
+  <div class="hh p-health">
+    <div class="hh-main">
+      <div>
+        <span class="hh-tag">健康促進</span>
+        <h2>農民健康促進</h2>
+        <p class="subtitle">身體 · 心理 · 作業環境全方位照顧</p>
+        <p class="body-text">健康不是生病才看醫生，而是日常預防。台灣農民平均年齡 62 歲，91% 有肌肉骨骼不適。<span class="highlight-link">現在開始還不遲</span>。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">62+</span><span class="stat-l">平均年齡</span></div>
+          <div class="stat"><span class="stat-n">91%</span><span class="stat-l">肌肉不適</span></div>
+          <div class="stat"><span class="stat-n">4</span><span class="stat-l">主題</span></div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn-primary">健康速篩</button>
+        <button class="btn-ghost">四大主題</button>
+      </div>
+    </div>
+    <div class="hh-side">
+      <div class="hh-card">
+        <h4>熱傷害預防</h4>
+        <p>辨識、預防、急救三步驟</p>
+      </div>
+      <div class="hh-card">
+        <h4>心靈紓壓</h4>
+        <p>24 小時求助專線 + 自我檢測</p>
+      </div>
+      <div class="hh-swatches">
+        <div class="hh-swatch" style="background:#fffffe"></div>
+        <div class="hh-swatch" style="background:#272343"></div>
+        <div class="hh-swatch" style="background:#ffd803"></div>
+        <div class="hh-swatch" style="background:#e3f6f5"></div>
+        <div class="hh-swatch" style="background:#bae8e8"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 經濟保險 -->
+  <span class="group-label">4. 經濟保險 + 5 子頁（職災/作物/補助/試算x2）繼承</span>
+  <div class="hh p-economy">
+    <div class="hh-main">
+      <div>
+        <span class="hh-tag">經濟保險</span>
+        <h2>農民經濟安全網</h2>
+        <p class="subtitle">職災險 · 農業險 · 退休規劃</p>
+        <p class="body-text">意外、收入波動、老年生活——<span class="highlight-link">完整的保險與補助知識</span>加上即時試算工具，幫你一次看懂。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">5</span><span class="stat-l">險種</span></div>
+          <div class="stat"><span class="stat-n">2</span><span class="stat-l">試算器</span></div>
+          <div class="stat"><span class="stat-n">8+</span><span class="stat-l">補助資源</span></div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn-primary">開始試算</button>
+        <button class="btn-ghost">險種比較</button>
+      </div>
+    </div>
+    <div class="hh-side">
+      <div class="hh-card">
+        <h4>職災給付試算</h4>
+        <p>輸入薪資年資，即時算出給付</p>
+      </div>
+      <div class="hh-card">
+        <h4>退休金規劃</h4>
+        <p>年金 + 老農津貼整合方案</p>
+      </div>
+      <div class="hh-swatches">
+        <div class="hh-swatch" style="background:#fffffe"></div>
+        <div class="hh-swatch" style="background:#094067"></div>
+        <div class="hh-swatch" style="background:#3da9fc"></div>
+        <div class="hh-swatch" style="background:#ef4565"></div>
+        <div class="hh-swatch" style="background:#90b4ce"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 農學堂 -->
+  <span class="group-label">5. 農學堂</span>
+  <div class="hh p-study">
+    <div class="hh-main">
+      <div>
+        <span class="hh-tag">農學堂</span>
+        <h2>農業教育與培力</h2>
+        <p class="subtitle">從新手務農到資深農友的進階路徑</p>
+        <p class="body-text">課程、工作坊、田間實作——學習不只是知識，是技能和社群。<span class="highlight-link">200+ 學員一起走的路</span>。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">30+</span><span class="stat-l">線上課</span></div>
+          <div class="stat"><span class="stat-n">4</span><span class="stat-l">進階階段</span></div>
+          <div class="stat"><span class="stat-n">200+</span><span class="stat-l">學員</span></div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn-primary">瀏覽課程</button>
+        <button class="btn-ghost">報名諮詢</button>
+      </div>
+    </div>
+    <div class="hh-side">
+      <div class="hh-card">
+        <h4>新手入門</h4>
+        <p>從零開始的 12 堂務農必修課</p>
+      </div>
+      <div class="hh-card">
+        <h4>進階課程</h4>
+        <p>有機耕作 / 溫室管理 / 農機操作</p>
+      </div>
+      <div class="hh-swatches">
+        <div class="hh-swatch" style="background:#fffffe"></div>
+        <div class="hh-swatch" style="background:#00473e"></div>
+        <div class="hh-swatch" style="background:#faae2b"></div>
+        <div class="hh-swatch" style="background:#fa5246"></div>
+        <div class="hh-swatch" style="background:#ffa8ba"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 倡議 -->
+  <span class="group-label">6. 倡議</span>
+  <div class="hh p-advocacy">
+    <div class="hh-main">
+      <div>
+        <span class="hh-tag">倡議</span>
+        <h2>農業尊嚴倡議</h2>
+        <p class="subtitle">讓農業工作者的聲音被聽見</p>
+        <p class="body-text">政策倡議、媒體發聲、跨界合作——為農民爭取應有的職業保障。<span class="highlight-link">12 份政策建言</span>，持續發酵中。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">12</span><span class="stat-l">政策建言</span></div>
+          <div class="stat"><span class="stat-n">50+</span><span class="stat-l">媒體露出</span></div>
+          <div class="stat"><span class="stat-n">8</span><span class="stat-l">聯盟夥伴</span></div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn-primary">加入倡議 🔥</button>
+        <button class="btn-ghost">閱讀立場</button>
+      </div>
+    </div>
+    <div class="hh-side">
+      <div class="hh-card">
+        <h4>最新倡議</h4>
+        <p>農民職災保險覆蓋率擴大提案</p>
+      </div>
+      <div class="hh-card">
+        <h4>媒體聯絡</h4>
+        <p>歡迎記者與研究者聯繫</p>
+      </div>
+      <div class="hh-swatches">
+        <div class="hh-swatch" style="background:#fef6e4"></div>
+        <div class="hh-swatch" style="background:#020826"></div>
+        <div class="hh-swatch" style="background:#ff8906"></div>
+        <div class="hh-swatch" style="background:#f25f4c"></div>
+        <div class="hh-swatch" style="background:#e3f6f5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 研究成果 -->
+  <span class="group-label">7. 研究成果 + 4 子頁（論文/下載/資源/Podcast）繼承</span>
+  <div class="hh p-research">
+    <div class="hh-main">
+      <div>
+        <span class="hh-tag">研究成果</span>
+        <h2>計畫研究產出</h2>
+        <p class="subtitle">論文 · 報告 · 延伸資源 · Podcast</p>
+        <p class="body-text">五年來的量化數據、質性訪談、跨國比較——<span class="highlight-link">APA 第 7 版完整引用</span>，全部開放存取。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">15</span><span class="stat-l">SSCI 論文</span></div>
+          <div class="stat"><span class="stat-n">8</span><span class="stat-l">Podcast</span></div>
+          <div class="stat"><span class="stat-n">24</span><span class="stat-l">教材手冊</span></div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn-primary">下載報告</button>
+        <button class="btn-ghost">學術引用</button>
+      </div>
+    </div>
+    <div class="hh-side">
+      <div class="hh-card">
+        <h4>最新 Podcast</h4>
+        <p>EP08 農藥中毒急救流程全解析</p>
+      </div>
+      <div class="hh-card">
+        <h4>下載專區</h4>
+        <p>教材、懶人包、研究資料</p>
+      </div>
+      <div class="hh-swatches">
+        <div class="hh-swatch" style="background:#fffffe"></div>
+        <div class="hh-swatch" style="background:#242629"></div>
+        <div class="hh-swatch" style="background:#7f5af0"></div>
+        <div class="hh-swatch" style="background:#2cb67d"></div>
+        <div class="hh-swatch" style="background:#d4d8f0"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 最新消息 -->
+  <span class="group-label">8. 最新消息</span>
+  <div class="hh p-news">
+    <div class="hh-main">
+      <div>
+        <span class="hh-tag">最新消息</span>
+        <h2>新聞與活動</h2>
+        <p class="subtitle">計畫動態 · 研討會 · 媒體露出</p>
+        <p class="body-text">訂閱月報，不錯過任何一場活動與重要公告。<span class="highlight-link">24 小時內通知</span>最新動態。</p>
+        <div class="stats">
+          <div class="stat"><span class="stat-n">月</span><span class="stat-l">電子報</span></div>
+          <div class="stat"><span class="stat-n">4</span><span class="stat-l">年度活動</span></div>
+          <div class="stat"><span class="stat-n">∞</span><span class="stat-l">即時公告</span></div>
+        </div>
+      </div>
+      <div class="btns">
+        <button class="btn-primary">訂閱電子報 ⚡</button>
+        <button class="btn-ghost">歷史公告</button>
+      </div>
+    </div>
+    <div class="hh-side">
+      <div class="hh-card">
+        <h4>近期研討會</h4>
+        <p>2026 農業職業健康年會 · 4/20 嘉義</p>
+      </div>
+      <div class="hh-card">
+        <h4>媒體報導</h4>
+        <p>農民日報、天下雜誌、中央社</p>
+      </div>
+      <div class="hh-swatches">
+        <div class="hh-swatch" style="background:#fffffe"></div>
+        <div class="hh-swatch" style="background:#00214d"></div>
+        <div class="hh-swatch" style="background:#00ebc7"></div>
+        <div class="hh-swatch" style="background:#ff5470"></div>
+        <div class="hh-swatch" style="background:#fde24f"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <strong>V12 vs 之前版本的最大差異：</strong>
+    每頁不再是「1 個主題色 + 黑字」，而是完整 Happy Hues 風 palette（bg + 深色 headline + paragraph + 鮮豔 button + button text + highlight + secondary + tertiary）。每個 palette 是一個完整設計宇宙，子頁繼承父頁 palette。8 組 palette 對應 8 個主題頁族。
+  </div>
+</div>
+</body>
+</html>

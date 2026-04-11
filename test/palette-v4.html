@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>V4 全站色盤 — Primary + CTA 配對</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F4ED;
+    --bg-card: #FDFCF8;
+    --text: #2C2418;
+    --muted: #6B5F4E;
+    --line: #D5CBAE;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans TC", sans-serif;
+    margin: 0;
+    padding: 48px 32px;
+    line-height: 1.75;
+  }
+  .wrap { max-width: 1320px; margin: 0 auto; }
+  h1 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 40px;
+    margin: 0 0 8px;
+  }
+  .sub { color: var(--muted); margin: 0 0 32px; font-size: 16px; }
+  h2 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 26px;
+    margin: 48px 0 8px;
+  }
+  .bar { height: 3px; background: var(--line); margin: 0 0 24px; border-radius: 2px; }
+
+  .legend {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 0 0 32px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .legend strong { color: var(--text); }
+  .legend h3 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 18px;
+    color: var(--text);
+    margin: 0 0 12px;
+  }
+
+  /* 主要卡片 — 模擬真實頁面區塊 */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 22px;
+  }
+  .scene {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .scene-head {
+    padding: 20px 24px 18px;
+    border-bottom: 4px solid var(--primary);
+    background: linear-gradient(180deg,
+      color-mix(in srgb, var(--primary) 8%, transparent) 0%,
+      transparent 100%);
+  }
+  .scene-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: color-mix(in srgb, var(--primary) 12%, transparent);
+    color: var(--primary);
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: .05em;
+  }
+  .scene-title {
+    font-family: "Noto Serif TC", serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--primary);
+    margin: 0 0 4px;
+    line-height: 1.3;
+  }
+  .scene-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .scene-body {
+    padding: 16px 24px 18px;
+    flex: 1;
+  }
+  .scene-body p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0 0 12px;
+    line-height: 1.7;
+  }
+  .scene-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+  .scene-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .scene-list li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 10px;
+    top: 3px;
+  }
+  .scene-cta {
+    padding: 14px 24px 18px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px dashed var(--line);
+  }
+  .btn-cta {
+    background: var(--cta);
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 22px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--cta) 28%, transparent);
+  }
+  .btn-ghost {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 8px 14px;
+    border-radius: 22px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .color-footer {
+    padding: 10px 18px;
+    background: color-mix(in srgb, var(--primary) 5%, var(--bg));
+    border-top: 1px solid var(--line);
+    font-family: "SF Mono", monospace;
+    font-size: 11px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+  }
+  .color-footer .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+  .p-dot { background: var(--primary); }
+  .c-dot { background: var(--cta); }
+
+  /* 所有色彩定義 */
+  .pair { --primary: #000; --cta: #000; }
+
+  /* Base token */
+  .pair-brand { --primary: #4A6932; --cta: #B07E12; }
+  .pair-accent { --primary: #B07E12; --cta: #4A6932; }
+  .pair-warn { --primary: #8B2D14; --cta: #1E6A8A; }
+  .pair-info { --primary: #2A6B5A; --cta: #D4A01E; }
+
+  /* 7 主題頁 */
+  .pair-about { --primary: #5F3E24; --cta: #1E8C8C; }
+  .pair-safety { --primary: #A24A24; --cta: #2A5A8E; }
+  .pair-health { --primary: #2D6B48; --cta: #D4A01E; }
+  .pair-economy { --primary: #8A5A1C; --cta: #2A5A8E; }
+  .pair-study { --primary: #4E7A2E; --cta: #D97A1E; }
+  .pair-advocacy { --primary: #7A3438; --cta: #D4A01E; }
+  .pair-research { --primary: #3A4A6E; --cta: #D95A2E; }
+  .pair-news { --primary: #6B7785; --cta: #D4A01E; }
+
+  /* 健康 4 子頁 */
+  .pair-heat { --primary: #C05328; --cta: #2A5A8E; }
+  .pair-msd { --primary: #4A6A8E; --cta: #D4A01E; }
+  .pair-pesticide { --primary: #8A6A0E; --cta: #1E6A8A; }
+  .pair-mental { --primary: #7B6BA0; --cta: #D4A01E; }
+
+  /* 職安 3 子頁 */
+  .pair-ppe { --primary: #8E3828; --cta: #1E6A8A; }
+  .pair-machinery { --primary: #5A5A5A; --cta: #D4A01E; }
+  .pair-greenhouse { --primary: #C47A2E; --cta: #2A5A8E; }
+
+  /* 經濟 5 子頁 */
+  .pair-occ { --primary: #2E4A7A; --cta: #D4A01E; }
+  .pair-crop { --primary: #C89A1E; --cta: #2A5A8E; }
+  .pair-subsidy { --primary: #3E8A6E; --cta: #D97A1E; }
+  .pair-calc1 { --primary: #B0527A; --cta: #1E8C6B; }
+  .pair-calc2 { --primary: #5C9BCB; --cta: #D95A2E; }
+
+  /* 研究 4 子頁 */
+  .pair-pub { --primary: #2E2E5A; --cta: #D4A01E; }
+  .pair-dl { --primary: #1E8C6B; --cta: #D95A2E; }
+  .pair-rel { --primary: #6B3A7A; --cta: #D4A01E; }
+  .pair-pod { --primary: #D96A4A; --cta: #1E6A8A; }
+
+  .cta-summary {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 24px 0 40px;
+  }
+  .cta-summary h3 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 18px;
+    margin: 0 0 16px;
+  }
+  .cta-pills {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .cta-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 8px 14px 8px 8px;
+    border-radius: 24px;
+    font-size: 13px;
+  }
+  .cta-pill .swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>V4 全站色盤 — Primary + CTA 配對</h1>
+  <p class="sub">每個頁面一組主色 + 對比 CTA。按鈕、重點、連結自動跳出來。</p>
+
+  <div class="legend">
+    <h3>解決的問題</h3>
+    Bobo 指出：一頁只有一個色 = 沒有對比 = 按鈕沒法凸顯。<br><br>
+    <strong>V4 的做法：</strong>每個頁面配一對「Primary + CTA」——
+    <ul style="margin: 8px 0 0; padding-left: 20px;">
+      <li><strong>Primary</strong>（頁面身份）：section 標題、border、小裝飾、outline 按鈕</li>
+      <li><strong>CTA</strong>（對比色）：主按鈕、連結高亮、數據強調</li>
+    </ul>
+    <br>
+    <strong>配對規則：</strong>用互補色保證跳出 —
+    <br>• 冷色主頁（綠/藍/紫）→ 暖金 / 橙 CTA
+    <br>• 暖色主頁（紅/橘/棕）→ 青藍 / 湖綠 CTA
+  </div>
+
+  <div class="cta-summary">
+    <h3>全站 CTA 只用 5 種（降低視覺混亂）</h3>
+    <div class="cta-pills">
+      <div class="cta-pill"><div class="swatch" style="background:#D4A01E"></div><span>暖金 <strong>#D4A01E</strong></span></div>
+      <div class="cta-pill"><div class="swatch" style="background:#D97A1E"></div><span>豐收橙 <strong>#D97A1E</strong></span></div>
+      <div class="cta-pill"><div class="swatch" style="background:#D95A2E"></div><span>橙紅 <strong>#D95A2E</strong></span></div>
+      <div class="cta-pill"><div class="swatch" style="background:#2A5A8E"></div><span>深藍 <strong>#2A5A8E</strong></span></div>
+      <div class="cta-pill"><div class="swatch" style="background:#1E6A8A"></div><span>深青 <strong>#1E6A8A</strong></span></div>
+      <div class="cta-pill"><div class="swatch" style="background:#1E8C6B"></div><span>翡翠 <strong>#1E8C6B</strong></span></div>
+      <div class="cta-pill"><div class="swatch" style="background:#1E8C8C"></div><span>翠青 <strong>#1E8C8C</strong></span></div>
+    </div>
+  </div>
+
+  <h2>7 大主題頁 + 最新消息</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="scene pair pair-about">
+      <div class="scene-head">
+        <div class="scene-tag">關於我們</div>
+        <h3 class="scene-title">農業尊嚴 — 團隊介紹</h3>
+        <p class="scene-sub">由中正大學與臺大雲林分院共同推動</p>
+      </div>
+      <div class="scene-body">
+        <p>我們是一群在雲嘉地區深耕農業健康研究的工作者。</p>
+        <ul class="scene-list"><li>跨領域研究團隊</li><li>場域深耕五年</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">認識團隊 →</button>
+        <button class="btn-ghost">閱讀更多</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>茶棕 #5F3E24</span><span><span class="dot c-dot"></span>翠青 #1E8C8C</span></div>
+    </div>
+
+    <div class="scene pair pair-safety">
+      <div class="scene-head">
+        <div class="scene-tag">職業安全</div>
+        <h3 class="scene-title">農作業職業安全指南</h3>
+        <p class="scene-sub">從 PPE 到機具防護的完整知識</p>
+      </div>
+      <div class="scene-body">
+        <p>農業是高風險工作，正確的防護可避免 80% 意外。</p>
+        <ul class="scene-list"><li>個人防護具選用</li><li>機具安全守則</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">立即查看</button>
+        <button class="btn-ghost">下載指南</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>赭土紅 #A24A24</span><span><span class="dot c-dot"></span>深藍 #2A5A8E</span></div>
+    </div>
+
+    <div class="scene pair pair-health">
+      <div class="scene-head">
+        <div class="scene-tag">健康促進</div>
+        <h3 class="scene-title">農民健康促進</h3>
+        <p class="scene-sub">身體、心理、作業環境全方位照護</p>
+      </div>
+      <div class="scene-body">
+        <p>健康不是生病才看醫生，而是日常預防。</p>
+        <ul class="scene-list"><li>熱傷害預防</li><li>心靈紓壓工具</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">健康速篩</button>
+        <button class="btn-ghost">四大主題</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>森林深綠 #2D6B48</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+
+    <div class="scene pair pair-economy">
+      <div class="scene-head">
+        <div class="scene-tag">經濟與保險</div>
+        <h3 class="scene-title">農民經濟安全網</h3>
+        <p class="scene-sub">從職災到退休金的保障體系</p>
+      </div>
+      <div class="scene-body">
+        <p>意外事故、收入波動、老年生活——保險與補助的實用資訊。</p>
+        <ul class="scene-list"><li>職災試算</li><li>退休金規劃</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">開始試算</button>
+        <button class="btn-ghost">了解更多</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>焦糖棕 #8A5A1C</span><span><span class="dot c-dot"></span>深藍 #2A5A8E</span></div>
+    </div>
+
+    <div class="scene pair pair-study">
+      <div class="scene-head">
+        <div class="scene-tag">農學堂</div>
+        <h3 class="scene-title">農業教育與培力</h3>
+        <p class="scene-sub">從新手到資深的進階路徑</p>
+      </div>
+      <div class="scene-body">
+        <p>課程、工作坊、田間實作——學習不只是知識。</p>
+        <ul class="scene-list"><li>新手務農入門</li><li>資深農友進修</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">瀏覽課程</button>
+        <button class="btn-ghost">報名諮詢</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>葉綠 #4E7A2E</span><span><span class="dot c-dot"></span>豐收橙 #D97A1E</span></div>
+    </div>
+
+    <div class="scene pair pair-advocacy">
+      <div class="scene-head">
+        <div class="scene-tag">倡議</div>
+        <h3 class="scene-title">農業尊嚴倡議</h3>
+        <p class="scene-sub">讓農業工作者的聲音被聽見</p>
+      </div>
+      <div class="scene-body">
+        <p>政策倡議、媒體發聲、跨界合作——為農民爭取應有的職業保障。</p>
+        <ul class="scene-list"><li>政策白皮書</li><li>媒體報導集</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">加入倡議</button>
+        <button class="btn-ghost">閱讀立場</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>紫丹 #7A3438</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+
+    <div class="scene pair pair-research">
+      <div class="scene-head">
+        <div class="scene-tag">研究成果</div>
+        <h3 class="scene-title">計畫研究產出</h3>
+        <p class="scene-sub">論文、報告、資源與 Podcast</p>
+      </div>
+      <div class="scene-body">
+        <p>五年來的研究成果：量化數據、質性訪談、跨國比較。</p>
+        <ul class="scene-list"><li>APA 第 7 版引用</li><li>開放存取</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">下載報告</button>
+        <button class="btn-ghost">學術引用</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>深藍墨 #3A4A6E</span><span><span class="dot c-dot"></span>橙紅 #D95A2E</span></div>
+    </div>
+
+    <div class="scene pair pair-news">
+      <div class="scene-head">
+        <div class="scene-tag">最新消息</div>
+        <h3 class="scene-title">新聞與活動公告</h3>
+        <p class="scene-sub">計畫動態、媒體露出、研討會資訊</p>
+      </div>
+      <div class="scene-body">
+        <p>訂閱最新消息，不錯過任何一場活動。</p>
+        <ul class="scene-list"><li>月度電子報</li><li>研討會報名</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">訂閱電子報</button>
+        <button class="btn-ghost">歷史公告</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>石灰青 #6B7785</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+  </div>
+
+  <h2>健康促進 4 子頁</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="scene pair pair-heat">
+      <div class="scene-head">
+        <div class="scene-tag">熱傷害</div>
+        <h3 class="scene-title">熱危害預防指南</h3>
+        <p class="scene-sub">辨識、預防、急救三步驟</p>
+      </div>
+      <div class="scene-body">
+        <p>高溫下工作，每 30 分鐘應補水 500ml。</p>
+        <ul class="scene-list"><li>熱中暑急救</li><li>作業時段規劃</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">急救步驟</button>
+        <button class="btn-ghost">預防清單</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>赤陶橘 #C05328</span><span><span class="dot c-dot"></span>深藍 #2A5A8E</span></div>
+    </div>
+
+    <div class="scene pair pair-msd">
+      <div class="scene-head">
+        <div class="scene-tag">肌肉骨骼</div>
+        <h3 class="scene-title">骨骼肌肉保健</h3>
+        <p class="scene-sub">暖身、施力、就醫時機</p>
+      </div>
+      <div class="scene-body">
+        <p>91% 農民曾有肌肉骨骼不適。每天 5 分鐘伸展可降低 60% 風險。</p>
+        <ul class="scene-list"><li>晨間暖身操</li><li>搬運正確姿勢</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">伸展示範</button>
+        <button class="btn-ghost">就醫指引</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>鋼藍 #4A6A8E</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+
+    <div class="scene pair pair-pesticide">
+      <div class="scene-head">
+        <div class="scene-tag">農藥安全</div>
+        <h3 class="scene-title">農藥防護完整指南</h3>
+        <p class="scene-sub">皮膚是最大破口，95% 暴露源</p>
+      </div>
+      <div class="scene-body">
+        <p>正確的防護不是只戴口罩，而是全身包覆。</p>
+        <ul class="scene-list"><li>PPE 選用指引</li><li>中毒急救步驟</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">防護清單</button>
+        <button class="btn-ghost">急救電話</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>芥末 #8A6A0E</span><span><span class="dot c-dot"></span>深青 #1E6A8A</span></div>
+    </div>
+
+    <div class="scene pair pair-mental">
+      <div class="scene-head">
+        <div class="scene-tag">心理健康</div>
+        <h3 class="scene-title">心靈紓壓指南</h3>
+        <p class="scene-sub">農友專屬的壓力調適</p>
+      </div>
+      <div class="scene-body">
+        <p>務農的壓力來自天氣、市場、家庭——找到出口才能走得遠。</p>
+        <ul class="scene-list"><li>自我檢測問卷</li><li>24小時求助專線</li></ul>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">壓力檢測</button>
+        <button class="btn-ghost">諮詢資源</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>薰衣草紫 #7B6BA0</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+  </div>
+
+  <h2>職業安全 3 子頁</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="scene pair pair-ppe">
+      <div class="scene-head">
+        <div class="scene-tag">個人防護具</div>
+        <h3 class="scene-title">PPE 選用與使用</h3>
+        <p class="scene-sub">手套、口罩、護目鏡</p>
+      </div>
+      <div class="scene-body">
+        <p>正確的 PPE 才能真正保護你，選錯或沒戴都等於沒用。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">選用指南</button>
+        <button class="btn-ghost">常見錯誤</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>磚紅 #8E3828</span><span><span class="dot c-dot"></span>深青 #1E6A8A</span></div>
+    </div>
+
+    <div class="scene pair pair-machinery">
+      <div class="scene-head">
+        <div class="scene-tag">省工農機具</div>
+        <h3 class="scene-title">省力機具選購</h3>
+        <p class="scene-sub">降低身體負擔的工具</p>
+      </div>
+      <div class="scene-body">
+        <p>從搬運車到自動噴灌，工具升級能延長工作壽命。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">機具清單</button>
+        <button class="btn-ghost">補助申請</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>鐵灰 #5A5A5A</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+
+    <div class="scene pair pair-greenhouse">
+      <div class="scene-head">
+        <div class="scene-tag">溫室專區</div>
+        <h3 class="scene-title">溫室作業安全</h3>
+        <p class="scene-sub">熱、濕、化學三重風險</p>
+      </div>
+      <div class="scene-body">
+        <p>溫室環境的安全守則不同於開放田間，特別注意通風與 REI。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">安全守則</button>
+        <button class="btn-ghost">通風指南</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>琥珀橘 #C47A2E</span><span><span class="dot c-dot"></span>深藍 #2A5A8E</span></div>
+    </div>
+  </div>
+
+  <h2>經濟與保險 5 子頁</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="scene pair pair-occ">
+      <div class="scene-head">
+        <div class="scene-tag">職災險</div>
+        <h3 class="scene-title">農民職災保險</h3>
+        <p class="scene-sub">2018 年納保新制</p>
+      </div>
+      <div class="scene-body">
+        <p>職災險是農民專屬的社會保險，投保費率與一般勞工不同。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">申請流程</button>
+        <button class="btn-ghost">保費試算</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>靛青 #2E4A7A</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+
+    <div class="scene pair pair-crop">
+      <div class="scene-head">
+        <div class="scene-tag">農業險</div>
+        <h3 class="scene-title">農作物保險</h3>
+        <p class="scene-sub">天災與病蟲害保障</p>
+      </div>
+      <div class="scene-body">
+        <p>農業保險分區域型、收入型、品質型，選對才有用。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">險種比較</button>
+        <button class="btn-ghost">理賠案例</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>麥金 #C89A1E</span><span><span class="dot c-dot"></span>深藍 #2A5A8E</span></div>
+    </div>
+
+    <div class="scene pair pair-subsidy">
+      <div class="scene-head">
+        <div class="scene-tag">補助資源</div>
+        <h3 class="scene-title">農業補助清單</h3>
+        <p class="scene-sub">中央與地方資源整合</p>
+      </div>
+      <div class="scene-body">
+        <p>補助申請有時限——錯過就要等下一期，提前規劃最重要。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">查詢補助</button>
+        <button class="btn-ghost">申請教學</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>翡翠綠 #3E8A6E</span><span><span class="dot c-dot"></span>豐收橙 #D97A1E</span></div>
+    </div>
+
+    <div class="scene pair pair-calc1">
+      <div class="scene-head">
+        <div class="scene-tag">職災試算</div>
+        <h3 class="scene-title">職災給付試算</h3>
+        <p class="scene-sub">用數字了解保障額度</p>
+      </div>
+      <div class="scene-body">
+        <p>輸入你的投保薪資、年資、事故類型，立即試算給付金額。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">開始試算</button>
+        <button class="btn-ghost">規則說明</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>玫瑰紅 #B0527A</span><span><span class="dot c-dot"></span>翡翠 #1E8C6B</span></div>
+    </div>
+
+    <div class="scene pair pair-calc2">
+      <div class="scene-head">
+        <div class="scene-tag">退休金試算</div>
+        <h3 class="scene-title">農民退休金規劃</h3>
+        <p class="scene-sub">從年金到老農津貼</p>
+      </div>
+      <div class="scene-body">
+        <p>農民退休金的計算比一般勞工複雜，試算工具幫你一次看懂。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">試算退休金</button>
+        <button class="btn-ghost">方案比較</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>天藍 #5C9BCB</span><span><span class="dot c-dot"></span>橙紅 #D95A2E</span></div>
+    </div>
+  </div>
+
+  <h2>研究成果 4 子頁</h2>
+  <div class="bar"></div>
+  <div class="grid">
+    <div class="scene pair pair-pub">
+      <div class="scene-head">
+        <div class="scene-tag">研究出版</div>
+        <h3 class="scene-title">學術論文集</h3>
+        <p class="scene-sub">SSCI / SCI / TSSCI</p>
+      </div>
+      <div class="scene-body">
+        <p>計畫期間發表的同儕審查論文，完整 APA 第 7 版引用格式。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">查看論文</button>
+        <button class="btn-ghost">下載列表</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>墨藍 #2E2E5A</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+
+    <div class="scene pair pair-dl">
+      <div class="scene-head">
+        <div class="scene-tag">下載專區</div>
+        <h3 class="scene-title">教材與手冊下載</h3>
+        <p class="scene-sub">PDF 一鍵取用</p>
+      </div>
+      <div class="scene-body">
+        <p>所有研究產出的教材、手冊、懶人包，開放下載。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">立即下載</button>
+        <button class="btn-ghost">分類瀏覽</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>孔雀綠 #1E8C6B</span><span><span class="dot c-dot"></span>橙紅 #D95A2E</span></div>
+    </div>
+
+    <div class="scene pair pair-rel">
+      <div class="scene-head">
+        <div class="scene-tag">相關資源</div>
+        <h3 class="scene-title">延伸閱讀資源</h3>
+        <p class="scene-sub">政府、學術、NGO 連結</p>
+      </div>
+      <div class="scene-body">
+        <p>整理國內外與農業健康相關的官方與學術資源，方便進一步研究。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">瀏覽資源</button>
+        <button class="btn-ghost">提交連結</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>葡萄紫 #6B3A7A</span><span><span class="dot c-dot"></span>暖金 #D4A01E</span></div>
+    </div>
+
+    <div class="scene pair pair-pod">
+      <div class="scene-head">
+        <div class="scene-tag">Podcast</div>
+        <h3 class="scene-title">農業尊嚴 Podcast</h3>
+        <p class="scene-sub">音頻節目與逐字稿</p>
+      </div>
+      <div class="scene-body">
+        <p>每集 30 分鐘深度對話，邀請農友、研究者、政策制定者共談。</p>
+      </div>
+      <div class="scene-cta">
+        <button class="btn-cta">立即收聽</button>
+        <button class="btn-ghost">訂閱節目</button>
+      </div>
+      <div class="color-footer"><span><span class="dot p-dot"></span>珊瑚橘 #D96A4A</span><span><span class="dot c-dot"></span>深青 #1E6A8A</span></div>
+    </div>
+  </div>
+
+  <div style="height:80px"></div>
+</div>
+</body>
+</html>
