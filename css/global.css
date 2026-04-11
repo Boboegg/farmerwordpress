@@ -3367,3 +3367,122 @@ body[class*="page-id"],
     flex-shrink: 0;
     box-shadow: 0 0 0 4px color-mix(in oklch, var(--brand) 18%, transparent);
 }
+
+/* ==========================================================
+   === V15 Inline-Style Override（2026-04-11 緊急修正）===
+   24 頁每頁 inline <style> 硬編碼 bg/gradient/border-left 色條
+   V15 custom property 層級覆蓋不了（因為 inline 不讀 var）
+   強制 reset 為 V15 tinted neutral + 圓角 + 無色條
+   ========================================================== */
+
+/* ---- 主要容器類：hero / card / panel / intro / data / steps / ---- */
+.fw-page.v14 [class$="-hero"],
+.fw-page.v14 [class$="-card"],
+.fw-page.v14 [class$="-panel"],
+.fw-page.v14 [class*="-hero-intro"],
+.fw-page.v14 [class*="-hero-data"],
+.fw-page.v14 [class*="-cat-card"],
+.fw-page.v14 [class*="-cat-header"],
+.fw-page.v14 [class*="-info-card"],
+.fw-page.v14 [class*="-apply-steps"],
+.fw-page.v14 [class*="-equip-item"],
+.fw-page.v14 [class*="-scenario-card"],
+.fw-page.v14 [class*="-topic-card"],
+.fw-page.v14 [class*="-explore-card"],
+.fw-page.v14 [class*="-subsidy-section"],
+.fw-page.v14 [class*="-safety-section"],
+.fw-page.v14 [class*="-references"],
+.fw-page.v14 [class*="-stat-card"],
+.fw-page.v14 [class*="-timeline"],
+.fw-page.v14 [class*="-quote-block"],
+.fw-page.v14 [class*="-action-item"],
+.fw-page.v14 [class*="-callout"],
+.fw-page.v14 [class*="-stats-note"] {
+    background: var(--neutral-0) !important;
+    background-image: none !important;           /* 殺 linear-gradient 漸層 */
+    background-color: var(--neutral-0) !important;
+    border: 1px solid var(--neutral-200) !important;
+    border-left-color: var(--neutral-200) !important;   /* 殺 border-left 色條 */
+    border-right-color: var(--neutral-200) !important;
+    border-radius: var(--v14-radius-card) !important;
+    box-shadow: none !important;
+    color: var(--neutral-900) !important;
+}
+
+/* ---- Hero 外層 padding 統一 ---- */
+.fw-page.v14 [class$="-hero"] {
+    padding: 40px !important;
+    margin-bottom: 36px !important;
+}
+
+/* ---- 次要內層區塊（intro/data）padding 調小 ---- */
+.fw-page.v14 [class*="-hero-intro"],
+.fw-page.v14 [class*="-hero-data"] {
+    padding: 20px 24px !important;
+    margin-bottom: 16px !important;
+}
+
+/* ---- Hero 副標 / tagline ---- */
+.fw-page.v14 [class*="-hero-subtitle"],
+.fw-page.v14 [class*="-hero-tagline"] {
+    color: var(--neutral-700) !important;
+    background: transparent !important;
+}
+
+/* ---- Badge/Kicker 維持純字+brand 色（V15 scene-tag 風） ---- */
+.fw-page.v14 [class*="-hero-badge"],
+.fw-page.v14 [class*="-kicker"],
+.fw-page.v14 [class*="-section-tag"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    background: transparent !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    color: var(--brand) !important;
+    border: 0 !important;
+    border-bottom: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.18em !important;
+    margin: 0 0 20px 0 !important;
+    text-transform: uppercase !important;
+    box-shadow: none !important;
+}
+
+/* ---- Icon 小方塊保留（避免被覆蓋）---- */
+.fw-page.v14 [class*="-icon"]:not([class*="-card"]):not([class*="-panel"]) {
+    background: color-mix(in oklch, var(--brand) 12%, transparent) !important;
+    background-image: none !important;
+    color: var(--brand) !important;
+    border-radius: 50% !important;
+    border: 0 !important;
+}
+
+/* ---- 清除所有 border-left / border-right 色條 anti-pattern ---- */
+.fw-page.v14 [class*="stats-note"],
+.fw-page.v14 [class*="-hero-data"],
+.fw-page.v14 [class*="-callout"],
+.fw-page.v14 [class*="-quote"] {
+    border-left: 1px solid var(--neutral-200) !important;
+    border-right: 1px solid var(--neutral-200) !important;
+}
+
+/* ---- Stats cards：保留容器但強制 neutral-0 bg ---- */
+.fw-page.v14 .fw-page [class*="-stat-number"],
+.fw-page.v14 [class*="-stat-num"] {
+    color: var(--brand) !important;
+    background: transparent !important;
+}
+
+/* ---- Categories / section wrappers 不要有 bg ---- */
+.fw-page.v14 [class*="-categories"],
+.fw-page.v14 [class*="-sections"] {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
