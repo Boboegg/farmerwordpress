@@ -1,3 +1,5 @@
+<!-- wp:html -->
+<div class="fw-page ch-economic">
 <!-- =====================================================
      子頁面：農民職業災害保險
      URL：/economic-insurance/occupational-accident-insurance/
@@ -993,3 +995,5 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
+</div>
+<!-- /wp:html -->

@@ -1,3 +1,5 @@
+<!-- wp:html -->
+<div class="fw-page ch-economic">
 <div id="agri-pension-tool" class="bg-gray-50 p-4 md:p-8 rounded-3xl border border-gray-200 shadow-sm font-sans text-slate-800">
     
     <div class="max-w-5xl mx-auto">
@@ -365,3 +367,5 @@
 })();
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
+</div>
+<!-- /wp:html -->

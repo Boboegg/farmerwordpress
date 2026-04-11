@@ -1,3 +1,5 @@
+<!-- wp:html -->
+<div class="fw-page ch-safety">
 <!-- =====================================================
      子頁面：溫室作業安全
      URL：/occupational-safety/greenhouse-zone/
@@ -332,3 +334,5 @@
   .gh-emergency-grid{grid-template-columns:1fr;}
 }
 </style>
+</div>
+<!-- /wp:html -->

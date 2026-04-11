@@ -1,3 +1,5 @@
+<!-- wp:html -->
+<div class="fw-page ch-economic">
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -707,3 +709,5 @@
 </script>
 </body>
 </html>
+</div>
+<!-- /wp:html -->

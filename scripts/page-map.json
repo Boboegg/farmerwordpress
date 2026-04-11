@@ -19,5 +19,23 @@
   "pages/experienced-farmers/資深農友.html": 1533,
   "pages/Public/一般民眾.html": 1689,
   "pages/research-result/download-zone/下載專區.html": 1379,
-  "pages/research-result/podcast/PODCAST.html": 1343
+  "pages/research-result/podcast/PODCAST.html": 1343,
+
+  "_健康促進子頁": "以下 4 頁為健康促進的子頁面，檔案無 .html 副檔名",
+  "pages/healthgood/subpage-heat/subpage-heat": 1333,
+  "pages/healthgood/subpage-msd/subpage-msd": 1334,
+  "pages/healthgood/subpage-pesticide/subpage-pesticide": 1335,
+  "pages/healthgood/subpage-mental/subpage-mental": 1336,
+
+  "_職業安全子頁": "parent=1329",
+  "pages/occupational-safety/personal-protective-equipment/個人防護具": 1337,
+  "pages/occupational-safety/labor-saving-machinery/省工農機具": 1338,
+  "pages/occupational-safety/greenhouse-zone/溫室專區": 1339,
+
+  "_經濟與保險子頁": "parent=1330",
+  "pages/economic-insurance/occupational-accident-insurance/職業災害保險": 1340,
+  "pages/economic-insurance/crop-insurance/農業保險": 1341,
+  "pages/economic-insurance/agricultural-subsidy-resources/農業補助資源": 1342,
+  "pages/economic-insurance/worker-occupational-accident-calculator/農民職業災害試算表": 1507,
+  "pages/economic-insurance/farmer-worker-retirement-calculator/農民退休金試算表": 1524
 }

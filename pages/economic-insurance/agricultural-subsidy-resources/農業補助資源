@@ -1,3 +1,5 @@
+<!-- wp:html -->
+<div class="fw-page ch-economic">
 <!-- =====================================================
      子頁面：補助資源懶人包
      URL：/economic-insurance/agricultural-subsidy-resources/
@@ -503,3 +505,5 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
+</div>
+<!-- /wp:html -->

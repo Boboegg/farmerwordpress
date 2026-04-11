@@ -84,7 +84,7 @@
      /* === 章節色（暖米調和） === */
      --ch-about: #4A6932;
      --ch-safety: #8B2D14;
-     --ch-health: #3D6B4A;
+     --ch-health: #3D7A5A;
      --ch-economic: #2A6B5A;
      --ch-empower: #B07E12;
      --ch-advocacy: #7A4E12;
@@ -1234,6 +1234,35 @@ footer, .elementor-location-footer { border-top: 4px solid var(--brand-legacy); 
 .fw-page.ch-empower  { border-top: 4px solid var(--ch-empower); }
 .fw-page.ch-advocacy { border-top: 4px solid var(--ch-advocacy); }
 .fw-page.ch-research { border-top: 4px solid var(--ch-research); }
+
+/* === 主題頁級別 CSS 變數覆蓋 ===
+   每個主題頁的 .fw-page.ch-* wrapper 覆蓋 --color-brand，
+   讓頁面內所有 var(--color-brand) 自動換成該頁主題色
+   ================================================= */
+
+/* 健康促進（主頁 + 4 子頁） */
+.fw-page.ch-health { --color-brand: #3D7A5A; --color-brand-deep: #2B5A40; }
+.fw-page.ch-health-heat { --color-brand: #B84A2D; --color-brand-deep: #8B2D14; }
+.fw-page.ch-health-msd { --color-brand: #4A6A8A; --color-brand-deep: #3A5A7A; }
+.fw-page.ch-health-pesticide { --color-brand: #7A4E12; --color-brand-deep: #5A3A0E; }
+.fw-page.ch-health-mental { --color-brand: #4A6932; --color-brand-deep: #354D22; }
+
+/* 職業安全 */
+.fw-page.ch-safety { --color-brand: #8B2D14; --color-brand-deep: #6B1E0E; }
+
+/* 經濟與保險 */
+.fw-page.ch-economic { --color-brand: #B07E12; --color-brand-deep: #8A620E; }
+
+/* 農學堂 */
+.fw-page.ch-empower { --color-brand: #4A6932; --color-brand-deep: #354D22; }
+
+/* 倡議 */
+.fw-page.ch-advocacy { --color-brand: #7A4E12; --color-brand-deep: #5A3A0E; }
+
+/* 關於我們 */
+.fw-page.ch-about { --color-brand: #3D7A5A; --color-brand-deep: #2B5A40; }
+
+/* 最新消息 — 暫不覆蓋（用全站 brand） */
 
 /* 分眾入口頁色帶（首頁與 4 分眾頁）— 8px 加粗 */
 .fw-page.aud-home   { border-top: 4px solid var(--brand); }
