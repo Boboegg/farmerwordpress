@@ -3378,29 +3378,48 @@ body[class*="page-id"],
     box-shadow: 0 0 0 4px color-mix(in oklch, var(--brand) 18%, transparent);
 }
 
+
 /* ==========================================================
-   === V15 Inline-Style Override v2 (2026-04-11)===
-   修正 v1 問題：
-     1. [class$="-hero"] 沒抓到 absolute positioned 漸層子層 -hero-bg
-     2. v1 top-level 有 bg 內層透明 → 看起來不統一
-   v2 策略：
-     A. 殺掉所有漸層層（*-bg / *-overlay 類） — display none 或 bg transparent
-     B. 所有主要容器統一 neutral-0 bg + 1px border + 16px radius
-     C. 所有 nested sub-item 透明 + 無 border（融入主卡片）
-     D. 清掉 border-left 色條 anti-pattern
+   === V16 Exhaustive Inline-Style Override (2026-04-11)===
+   基於 29 頁 inline <style> 完整盤點（4 個 Explore agent parallel audit）
+   取代 V15 v1-v4 的 attribute selector 漸進式補丁
+   策略：exhaustive class list，不再用 [class*="..."] 猜測
+
+   處理：
+     • 29 頁 / 26 個 class 前綴 / ~100 top-level containers / ~80 nested sub-items
+     • 10+ gradient overlay 子層 display:none
+     • Universal: *:not(icon/badge/btn) background-image/box-shadow 清除
    ========================================================== */
 
-/* ---- A. 殺掉漸層 overlay 層 ---- */
-.fw-page.v14 [class*="-hero-bg"],
-.fw-page.v14 [class*="-hero-overlay"],
-.fw-page.v14 [class*="-hero-bg-layer"],
-.fw-page.v14 [class*="-bg-gradient"],
-.fw-page.v14 [class*="-bg-overlay"] {
-    display: none !important;                    /* 直接隱藏漸層層 */
+/* ---- A. Universal kill：所有子孫元素的 gradient + shadow ---- */
+.fw-page.v14 *:not([class*="-icon"]):not([class*="-badge"]):not([class*="-btn"]):not([class*="-button"]):not(img):not(svg) {
+    background-image: none !important;
+    box-shadow: none !important;
 }
 
-.fw-page.v14 [class*="-hero-bg"]::before,
-.fw-page.v14 [class*="-hero-bg"]::after,
+/* ---- B. 殺所有 border-left/right 色條 anti-pattern ---- */
+.fw-page.v14 *:not([class*="-btn"]):not([class*="-button"]) {
+    border-left-color: var(--neutral-200) !important;
+    border-right-color: var(--neutral-200) !important;
+}
+
+/* ---- C. 隱藏漸層 overlay / 裝飾子層 ---- */
+.fw-page.v14 .pod-hero-bg,
+.fw-page.v14 .dc-home-atmosphere,
+.fw-page.v14 .dc-orb-a,
+.fw-page.v14 .dc-orb-b,
+.fw-page.v14 .dc-grid-noise,
+.fw-page.v14 .dc-plane,
+.fw-page.v14 .dc-noise,
+.fw-page.v14 .dc-beam,
+.fw-page.v14 .dc-glow,
+.fw-page.v14 .dc-scene-cut,
+.fw-page.v14 .dc-progress,
+.fw-page.v14 .adv-hero-overlay {
+    display: none !important;
+}
+.fw-page.v14 .pod-hero-bg::before,
+.fw-page.v14 .pod-hero-bg::after,
 .fw-page.v14 [class*="-hero"]::before,
 .fw-page.v14 [class*="-hero"]::after {
     content: none !important;
@@ -3408,122 +3427,359 @@ body[class*="page-id"],
     background-image: none !important;
 }
 
-/* ---- B. 所有主要 top-level container 統一 neutral-0 卡片 ---- */
-.fw-page.v14 [class$="-hero"],
-.fw-page.v14 [class*="-how-it-works"],
-.fw-page.v14 [class*="-archive-section"],
-.fw-page.v14 [class*="-categories"],
-.fw-page.v14 [class*="-cat-card"],
-.fw-page.v14 [class*="-subsidy-section"],
-.fw-page.v14 [class*="-safety-section"],
-.fw-page.v14 [class*="-references"],
-.fw-page.v14 [class*="-timeline"],
-.fw-page.v14 [class*="-topics-section"],
-.fw-page.v14 [class*="-footer-links"],
-.fw-page.v14 [class*="-protection-section"],
-.fw-page.v14 [class*="-section-wrapper"],
-.fw-page.v14 [class*="-featured"],
-.fw-page.v14 [class*="-body-content"],
-.fw-page.v14 [class*="-publication-list"],
-.fw-page.v14 [class*="-download-list"],
-.fw-page.v14 [class*="-resource-list"],
-.fw-page.v14 [class*="-research-group"],
-.fw-page.v14 [class*="-advocacy"],
-.fw-page.v14 [class*="-news-feed"],
-.fw-page.v14 [class*="-stats"],
-.fw-page.v14 [class*="-explore"],
-.fw-page.v14 [class*="-scenario"],
-.fw-page.v14 [class*="-topics"],
-.fw-page.v14 [class*="-pillars"],
-.fw-page.v14 [class*="-programs"],
-.fw-page.v14 [class$="-section"] {
-    position: relative !important;
+/* ==========================================================
+   === D. Top-level containers → neutral-0 floating cards ===
+   所有 29 頁的主要區塊，共約 100 個 class
+   ========================================================== */
+
+/* 首頁 */
+.fw-page.v14 .dc-home,
+.fw-page.v14 .topic-header,
+.fw-page.v14 .topic-container,
+
+/* 4 分眾入口：青農 */
+.fw-page.v14 .young-page-wrapper,
+.fw-page.v14 .young-hero,
+.fw-page.v14 .young-stats,
+.fw-page.v14 .young-scenarios,
+.fw-page.v14 .young-about,
+.fw-page.v14 .young-cta,
+.fw-page.v14 .young-emergency,
+.fw-page.v14 .young-explore,
+.fw-page.v14 .young-bottom-nav,
+
+/* 4 分眾入口：新手 */
+.fw-page.v14 .start-page-wrapper,
+.fw-page.v14 .start-hero-wrap,
+.fw-page.v14 .start-hero-pin,
+.fw-page.v14 .start-hero,
+.fw-page.v14 .start-stats,
+.fw-page.v14 .start-scenarios,
+.fw-page.v14 .start-about,
+.fw-page.v14 .start-cta,
+.fw-page.v14 .start-emergency,
+.fw-page.v14 .start-explore,
+.fw-page.v14 .start-bottom-nav,
+
+/* 4 分眾入口：資深 */
+.fw-page.v14 .senior-page-wrapper,
+.fw-page.v14 .senior-hero,
+.fw-page.v14 .senior-stats,
+.fw-page.v14 .senior-scenarios,
+.fw-page.v14 .senior-about,
+.fw-page.v14 .senior-cta,
+.fw-page.v14 .senior-emergency,
+.fw-page.v14 .senior-explore,
+.fw-page.v14 .senior-bottom-nav,
+
+/* 4 分眾入口：一般民眾 */
+.fw-page.v14 .public-page-wrapper,
+.fw-page.v14 .public-hero,
+.fw-page.v14 .public-stats,
+.fw-page.v14 .public-quote-card,
+.fw-page.v14 .public-scenarios,
+.fw-page.v14 .public-about,
+.fw-page.v14 .public-cta,
+.fw-page.v14 .public-emergency,
+.fw-page.v14 .public-explore,
+.fw-page.v14 .public-bottom-nav,
+
+/* 關於我們 */
+.fw-page.v14 .content-card,
+.fw-page.v14 .field-card,
+.fw-page.v14 .action-card,
+
+/* 健康促進主頁 + 4 子頁 */
+.fw-page.v14 .hp-hero,
+.fw-page.v14 .hp-tabs-section,
+.fw-page.v14 .hpQ-risk-tools,
+.fw-page.v14 .hpH-table-card,
+.fw-page.v14 .heat-hero,
+.fw-page.v14 .heat-sec-card,
+.fw-page.v14 .msd-hero,
+.fw-page.v14 .msd-sec-card,
+.fw-page.v14 .pest-hero,
+.fw-page.v14 .pest-sec-card,
+.fw-page.v14 .mind-hero,
+.fw-page.v14 .mind-sec-card,
+
+/* 農學堂 */
+.fw-page.v14 .edu-hero,
+.fw-page.v14 .edu-sec-card,
+
+/* 倡議 */
+.fw-page.v14 .adv-hero,
+.fw-page.v14 .adv-sec-card,
+.fw-page.v14 .adv-timeline,
+.fw-page.v14 .adv-cta-card,
+
+/* 職業安全主頁 */
+.fw-page.v14 .prev-hero,
+.fw-page.v14 .prev-card,
+.fw-page.v14 .prevS-subpages,
+
+/* 職業安全 3 子頁：PPE / 省工農機 / 溫室 */
+.fw-page.v14 .ppe-hero,
+.fw-page.v14 .ppe-cat-card,
+.fw-page.v14 .ppe-sop-card,
+.fw-page.v14 .ppe-legal,
+.fw-page.v14 .ppe-references,
+.fw-page.v14 .mach-hero,
+.fw-page.v14 .mach-cat-card,
+.fw-page.v14 .mach-categories,
+.fw-page.v14 .mach-subsidy-section,
+.fw-page.v14 .mach-safety-section,
+.fw-page.v14 .mach-references,
+.fw-page.v14 .gh-hero,
+.fw-page.v14 .gh-hazard-card,
+.fw-page.v14 .gh-hazards,
+.fw-page.v14 .gh-controls,
+
+/* 研究成果主頁 + 4 子頁 */
+.fw-page.v14 .res-hero,
+.fw-page.v14 .res-sec-card,
+.fw-page.v14 .res-stats,
+.fw-page.v14 .res-categories,
+.fw-page.v14 .res-footer-links,
+.fw-page.v14 .res-pub-list,
+.fw-page.v14 .res-filter-bar,
+.fw-page.v14 .res-dl-list,
+
+/* Podcast */
+.fw-page.v14 .pod-hero,
+.fw-page.v14 .pod-how-card,
+.fw-page.v14 .pod-how-it-works,
+.fw-page.v14 .pod-archive-section,
+.fw-page.v14 .pod-footer-links,
+
+/* 經濟與保險主頁 + 5 子頁 */
+.fw-page.v14 .money-hero,
+.fw-page.v14 .money-topic-card,
+.fw-page.v14 .money-stats,
+.fw-page.v14 .occ-hero,
+.fw-page.v14 .occ-sec-card,
+.fw-page.v14 .occ-stats,
+.fw-page.v14 .crop-hero,
+.fw-page.v14 .crop-sec-card,
+.fw-page.v14 .crop-stats,
+.fw-page.v14 .subs-hero,
+.fw-page.v14 .subs-sec-card,
+.fw-page.v14 .subs-stats,
+.fw-page.v14 .subs-youth-main,
+
+/* 試算表 */
+.fw-page.v14 #agri-pension-tool,
+.fw-page.v14 #disease-section,
+
+/* 最新消息 */
+.fw-page.v14 .tnews-hero,
+.fw-page.v14 .tnews-wrapper {
     background: var(--neutral-0) !important;
-    background-image: none !important;
     background-color: var(--neutral-0) !important;
+    background-image: none !important;
     border: 1px solid var(--neutral-200) !important;
-    border-radius: var(--v14-radius-card) !important;
-    box-shadow: var(--v15-card-shadow) !important;  /* ⭐ 漂浮感 */
+    border-radius: 16px !important;
+    box-shadow: var(--v15-card-shadow) !important;
     padding: 40px !important;
     margin-bottom: 36px !important;
     color: var(--neutral-900) !important;
     overflow: hidden;
+    position: relative;
 }
 
-/* Hero 特殊 padding 和 display 以容納漸層移除後的 layout */
-.fw-page.v14 [class$="-hero"] {
-    display: block !important;
-    min-height: auto !important;
-}
+/* ==========================================================
+   === E. Nested sub-items → transparent（融入主卡片）===
+   所有 29 頁 nested 小卡/list item/內層區塊，共約 80 個 class
+   ========================================================== */
 
-/* ---- Hero content wrapper 不能再 absolute ---- */
-.fw-page.v14 [class*="-hero-content"],
-.fw-page.v14 [class*="-hero-inner"],
-.fw-page.v14 [class*="-hero-wrap"] {
-    position: relative !important;
-    z-index: auto !important;
+/* 4 分眾入口 nested */
+.fw-page.v14 .young-stat-card,
+.fw-page.v14 .young-stats-note,
+.fw-page.v14 .young-pillar,
+.fw-page.v14 .young-scenario-card,
+.fw-page.v14 .young-explore-card,
+.fw-page.v14 .young-emergency-item,
+.fw-page.v14 .young-hero-intro,
+.fw-page.v14 .start-stat-card,
+.fw-page.v14 .start-stats-note,
+.fw-page.v14 .start-pillar,
+.fw-page.v14 .start-scenario-card,
+.fw-page.v14 .start-explore-card,
+.fw-page.v14 .start-emergency-item,
+.fw-page.v14 .start-hero-intro,
+.fw-page.v14 .senior-stat-card,
+.fw-page.v14 .senior-stats-note,
+.fw-page.v14 .senior-pillar,
+.fw-page.v14 .senior-scenario-card,
+.fw-page.v14 .senior-explore-card,
+.fw-page.v14 .senior-emergency-item,
+.fw-page.v14 .senior-hero-intro,
+.fw-page.v14 .public-stat-card,
+.fw-page.v14 .public-quote-card,
+.fw-page.v14 .public-pillar,
+.fw-page.v14 .public-scenario-card,
+.fw-page.v14 .public-explore-card,
+.fw-page.v14 .public-emergency-item,
+.fw-page.v14 .public-hero-intro,
+
+/* 健康促進 nested */
+.fw-page.v14 .hp-hero-intro,
+.fw-page.v14 .hp-hero-note,
+.fw-page.v14 .hp-stat-item,
+.fw-page.v14 .hpQ-tool-card,
+.fw-page.v14 .heat-hero-intro,
+.fw-page.v14 .heat-hero-badge,
+.fw-page.v14 .heat-warning-box,
+.fw-page.v14 .heat-compare-danger,
+.fw-page.v14 .heat-compare-warning,
+.fw-page.v14 .heat-kidney-stat,
+.fw-page.v14 .heat-sop-step-emergency,
+.fw-page.v14 .heat-sec-header,
+.fw-page.v14 .msd-hero-intro,
+.fw-page.v14 .msd-hero-badge,
+.fw-page.v14 .msd-stretch-before,
+.fw-page.v14 .msd-stretch-during,
+.fw-page.v14 .msd-stretch-after,
+.fw-page.v14 .msd-sign-red,
+.fw-page.v14 .msd-sign-orange,
+.fw-page.v14 .msd-sec-header,
+.fw-page.v14 .pest-hero-intro,
+.fw-page.v14 .pest-hero-badge,
+.fw-page.v14 .pest-route-main,
+.fw-page.v14 .pest-sec-header,
+.fw-page.v14 .mind-hero-intro,
+.fw-page.v14 .mind-hero-badge,
+.fw-page.v14 .mind-hotline-primary,
+.fw-page.v14 .mind-destigma-wrong,
+.fw-page.v14 .mind-destigma-right,
+.fw-page.v14 .mind-sec-header,
+
+/* 農學堂 nested */
+.fw-page.v14 .edu-hero-stat,
+.fw-page.v14 .edu-path-card,
+.fw-page.v14 .edu-ws-item,
+.fw-page.v14 .edu-video-thumb,
+.fw-page.v14 .edu-diff-beginner,
+.fw-page.v14 .edu-diff-intermediate,
+.fw-page.v14 .edu-diff-advanced,
+.fw-page.v14 .edu-platform-badge,
+.fw-page.v14 .edu-ws-open,
+.fw-page.v14 .edu-ws-closed,
+.fw-page.v14 .edu-ws-full,
+
+/* 倡議 nested */
+.fw-page.v14 .adv-blockquote,
+.fw-page.v14 .adv-problem-card,
+.fw-page.v14 .adv-pillar-card,
+.fw-page.v14 .adv-tl-card,
+.fw-page.v14 .adv-fg-card,
+.fw-page.v14 .adv-media-card,
+.fw-page.v14 .adv-cross-card,
+.fw-page.v14 .adv-fg-findings,
+.fw-page.v14 .adv-cta-main,
+
+/* 職安/PPE nested */
+.fw-page.v14 .prev-hero-intro,
+.fw-page.v14 .prev-hero-note,
+.fw-page.v14 .prev-stat-item,
+.fw-page.v14 .prev-card-icon-area,
+.fw-page.v14 .prevS-stat-card,
+.fw-page.v14 .ppe-hero-intro,
+.fw-page.v14 .ppe-hero-data,
+.fw-page.v14 .ppe-equip-item,
+.fw-page.v14 .ppe-warning-box,
+.fw-page.v14 .ppe-sop-note,
+.fw-page.v14 .ppe-legal-item,
+.fw-page.v14 .ppe-cat-header,
+
+/* 省工農機 nested */
+.fw-page.v14 .mach-hero-intro,
+.fw-page.v14 .mach-hero-data,
+.fw-page.v14 .mach-cat-header,
+.fw-page.v14 .mach-cat-body,
+.fw-page.v14 .mach-equip-item,
+.fw-page.v14 .mach-info-card,
+.fw-page.v14 .mach-apply-steps,
+
+/* 溫室 nested */
+.fw-page.v14 .gh-hero-intro,
+.fw-page.v14 .gh-hero-data,
+.fw-page.v14 .gh-hazard-item,
+.fw-page.v14 .gh-ctrl-item,
+
+/* 研究成果 nested */
+.fw-page.v14 .res-hero-intro,
+.fw-page.v14 .res-hero-badge,
+.fw-page.v14 .res-stat-item,
+.fw-page.v14 .res-cat-card,
+.fw-page.v14 .res-pub-card,
+.fw-page.v14 .res-pub-body,
+.fw-page.v14 .res-feat-tag,
+.fw-page.v14 .res-dl-item,
+.fw-page.v14 .res-pending-notice,
+.fw-page.v14 .res-link-card,
+.fw-page.v14 .res-sub-nav,
+
+/* Podcast nested */
+.fw-page.v14 .pod-hero-left,
+.fw-page.v14 .pod-hero-right,
+.fw-page.v14 .pod-visual,
+.fw-page.v14 .pod-visual-ring,
+.fw-page.v14 .pod-hero-content,
+
+/* 經濟 nested */
+.fw-page.v14 .money-hero-intro,
+.fw-page.v14 .money-hero-note,
+.fw-page.v14 .money-stat-item,
+.fw-page.v14 .money-topic-icon,
+.fw-page.v14 .occ-hero-intro,
+.fw-page.v14 .occ-stat-item,
+.fw-page.v14 .occ-note-box,
+.fw-page.v14 .occ-example-box,
+.fw-page.v14 .occ-example-header,
+.fw-page.v14 .occ-calc-item,
+.fw-page.v14 .occ-calc-total,
+.fw-page.v14 .occ-premium-formula,
+.fw-page.v14 .occ-premium-block,
+.fw-page.v14 .occ-alert-info,
+.fw-page.v14 .crop-hero-intro,
+.fw-page.v14 .crop-stat-item,
+.fw-page.v14 .crop-note-box,
+.fw-page.v14 .crop-type-card,
+.fw-page.v14 .crop-step,
+.fw-page.v14 .subs-hero-intro,
+.fw-page.v14 .subs-stat-item,
+.fw-page.v14 .subs-note-box,
+.fw-page.v14 .subs-nav-card,
+.fw-page.v14 .subs-timeline,
+.fw-page.v14 .subs-step,
+.fw-page.v14 .subs-doc-card,
+.fw-page.v14 .subs-youth-card,
+.fw-page.v14 .subs-loan-card,
+.fw-page.v14 .subs-tool-card {
     background: transparent !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* ---- C. 所有 nested sub-items 透明 + 無 border ---- */
-.fw-page.v14 [class*="-hero-intro"],
-.fw-page.v14 [class*="-hero-data"],
-.fw-page.v14 [class*="-hero-left"],
-.fw-page.v14 [class*="-hero-right"],
-.fw-page.v14 [class*="-hero-stats"],
-.fw-page.v14 [class*="-stat-card"],
-.fw-page.v14 [class*="-equip-item"],
-.fw-page.v14 [class*="-info-card"],
-.fw-page.v14 [class*="-apply-steps"],
-.fw-page.v14 [class*="-scenario-card"],
-.fw-page.v14 [class*="-topic-card"],
-.fw-page.v14 [class*="-explore-card"],
-.fw-page.v14 [class*="-callout"],
-.fw-page.v14 [class*="-stats-note"],
-.fw-page.v14 [class*="-action-item"],
-.fw-page.v14 [class*="-cat-header"],
-.fw-page.v14 [class*="-cat-body"],
-.fw-page.v14 [class*="-step-item"],
-.fw-page.v14 [class*="-pub-item"],
-.fw-page.v14 [class*="-resource-item"],
-.fw-page.v14 [class*="-download-item"],
-.fw-page.v14 [class*="-dl-item"],
-.fw-page.v14 [class*="-news-item"],
-.fw-page.v14 [class*="-featured-card"],
-.fw-page.v14 [class*="-program-card"],
-.fw-page.v14 [class*="-topic-item"] {
-    background: transparent !important;
-    background-image: none !important;
     background-color: transparent !important;
+    background-image: none !important;
     border: 0 !important;
-    border-left: 0 !important;
-    border-right: 0 !important;
-    border-top: 0 !important;
-    border-bottom: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     color: inherit !important;
 }
 
-/* ---- 明確殺 border-left/right 色條 anti-pattern ---- */
-.fw-page.v14 * {
-    border-left-color: var(--neutral-200) !important;
-    border-right-color: var(--neutral-200) !important;
-}
-
-/* ---- Kicker / Badge / Section-tag: 純字 + brand 色 ---- */
+/* ==========================================================
+   === F. Kicker / Badge → 純字 + brand 色 ===
+   所有 29 頁的 hero badge / section kicker
+   ========================================================== */
 .fw-page.v14 [class*="-hero-badge"],
 .fw-page.v14 [class*="-kicker"],
 .fw-page.v14 [class*="-section-tag"],
-.fw-page.v14 [class*="-pod-badge"] {
+.fw-page.v14 .pod-badge,
+.fw-page.v14 [class*="-sec-header"] {
     display: inline-flex !important;
     align-items: center !important;
     gap: 12px !important;
     background: transparent !important;
     background-image: none !important;
-    background-color: transparent !important;
     color: var(--brand) !important;
     border: 0 !important;
     border-bottom: 0 !important;
@@ -3533,29 +3789,62 @@ body[class*="page-id"],
     font-weight: 900 !important;
     letter-spacing: 0.18em !important;
     margin: 0 0 20px 0 !important;
-    text-transform: uppercase !important;
     box-shadow: none !important;
 }
 
-/* ---- Icons 保留圓形 brand tint ---- */
-.fw-page.v14 [class*="-icon"]:not([class*="-card"]):not([class*="-panel"]):not([class*="-hero"]) {
+/* ==========================================================
+   === G. Icons 保留 brand tint 圓形 ===
+   ========================================================== */
+.fw-page.v14 [class*="-icon"]:not([class*="-card"]):not([class*="-panel"]):not([class*="-hero"]):not([class*="-section"]) {
     background: color-mix(in oklch, var(--brand) 12%, transparent) !important;
     background-image: none !important;
     color: var(--brand) !important;
     border-radius: 50% !important;
     border: 0 !important;
+    box-shadow: none !important;
 }
 
-/* ---- Stat number 用 brand 色，透明 bg ---- */
+/* ==========================================================
+   === H. Stat number → brand 色，透明 bg ===
+   ========================================================== */
 .fw-page.v14 [class*="-stat-number"],
-.fw-page.v14 [class*="-stat-num"] {
+.fw-page.v14 [class*="-stat-num"],
+.fw-page.v14 [class*="-stat-value"] {
     color: var(--brand) !important;
     background: transparent !important;
+    background-image: none !important;
 }
 
-/* ---- Categories / section wrappers 本身不要 bg（讓內層卡片浮出）---- */
-.fw-page.v14 [class*="-topics-grid"],
+/* ==========================================================
+   === I. Hero title / subtitle 統一色 ===
+   ========================================================== */
+.fw-page.v14 [class*="-hero-title"] {
+    font-size: clamp(40px, 6vw, 56px) !important;
+    line-height: 1.15 !important;
+    font-weight: 900 !important;
+    color: var(--neutral-900) !important;
+    font-family: var(--font-serif-tc) !important;
+    background: transparent !important;
+    background-image: none !important;
+}
+.fw-page.v14 [class*="-hero-subtitle"],
+.fw-page.v14 [class*="-hero-tagline"] {
+    color: var(--neutral-700) !important;
+    background: transparent !important;
+    background-image: none !important;
+    font-size: 22px !important;
+    line-height: 1.6 !important;
+}
+
+/* ==========================================================
+   === J. Grid containers 透明（讓子卡片浮出）===
+   ========================================================== */
+.fw-page.v14 [class*="-grid"]:not([class*="-card"]):not([class*="-panel"]),
 .fw-page.v14 [class*="-stats-grid"],
+.fw-page.v14 [class*="-scenarios-grid"],
+.fw-page.v14 [class*="-topics-grid"],
+.fw-page.v14 [class*="-pillars"],
+.fw-page.v14 [class*="-explore-grid"],
 .fw-page.v14 [class*="-cards-grid"],
 .fw-page.v14 [class*="-items-grid"] {
     background: transparent !important;
