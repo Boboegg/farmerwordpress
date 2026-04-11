@@ -49,7 +49,7 @@
     <h3><i class="fas fa-link"></i> 相關專區</h3>
     <div class="money-cross-grid">
       <a href="/healthgood/" class="money-cross-card">
-        <div class="money-cross-icon" style="background:rgba(46,125,50,.1);color:var(--color-brand);"><i class="fas fa-heart-pulse"></i></div>
+        <div class="money-cross-icon" style="background:rgba(46,125,50,.1);color:#2e7d32;"><i class="fas fa-heart-pulse"></i></div>
         <div>
           <strong>健康促進</strong>
           <small>中暑、農藥中毒屬農職保涵蓋的職業傷病——先學會預防</small>
@@ -70,11 +70,11 @@
 <style>
 /* === 05-disclaimer-refs 樣式 === */
 .money-footer-section{
-  --brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
-  --text-primary:var(--color-text);--text-secondary:var(--color-muted);
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;background:#fff;border-radius:16px;padding:36px;
-  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid var(--color-line);
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
   box-sizing:border-box;
 }
 .money-footer-section *{box-sizing:border-box;}
@@ -86,21 +86,21 @@
 
 /* 查詢窗口 */
 .money-contacts{margin-bottom:28px;}
-.money-contacts h3{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
-.money-contacts h3 i{color:var(--brand-legacy);}
+.money-contacts h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.money-contacts h3 i{color:var(--brand);}
 .money-contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.money-contact-card{display:flex;gap:14px;padding:18px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);font-size:.9rem;}
-.money-contact-icon{width:40px;height:40px;border-radius:10px;background:var(--brand-legacy-light);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.money-contact-card strong{display:block;margin-bottom:4px;color:var(--brand-legacy-dark);font-size:.9rem;}
+.money-contact-card{display:flex;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;font-size:.9rem;}
+.money-contact-icon{width:40px;height:40px;border-radius:10px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.money-contact-card strong{display:block;margin-bottom:4px;color:var(--brand-dark);font-size:.9rem;}
 .money-contact-card span{font-size:.85rem;color:var(--text-secondary);display:flex;align-items:center;gap:4px;}
 .money-contact-card p{font-size:.78rem;color:#aaa;margin:4px 0 0;}
 
 /* 站內連結 */
-.money-cross h3{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
-.money-cross h3 i{color:var(--brand-legacy);}
+.money-cross h3{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.money-cross h3 i{color:var(--brand);}
 .money-cross-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.money-cross-card{display:flex;align-items:center;gap:14px;padding:18px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
-.money-cross-card:hover{border-color:var(--brand-legacy);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.money-cross-card{display:flex;align-items:center;gap:14px;padding:18px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.money-cross-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
 .money-cross-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .money-cross-card strong{font-size:.95rem;display:block;margin-bottom:2px;}
 .money-cross-card small{font-size:.8rem;color:var(--text-secondary);display:block;}

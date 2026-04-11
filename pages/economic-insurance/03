@@ -69,42 +69,42 @@
 <style>
 /* === 03-insurance-snapshot 樣式 === */
 .money-snapshot{
-  --brand-legacy:var(--color-info);--brand-legacy-dark:#0d47a1;--brand-legacy-light:#e3f2fd;
-  --text-primary:var(--color-text);--text-secondary:var(--color-muted);
+  --brand:#1565c0;--brand-dark:#0d47a1;--brand-light:#e3f2fd;
+  --text-primary:#1f2937;--text-secondary:#6b7280;
   font-family:"Noto Sans TC","Lato",sans-serif;
   margin-top:24px;background:#fff;border-radius:16px;padding:36px;
-  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid var(--color-line);
+  box-shadow:0 4px 16px rgba(0,0,0,.06);border:1px solid #eef2f7;
   box-sizing:border-box;
 }
 .money-snapshot *{box-sizing:border-box;}
 
-.money-snap-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--brand-legacy-light);}
-.money-snap-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
-.money-snap-header h2 i{color:var(--brand-legacy);}
+.money-snap-header{margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid var(--brand-light);}
+.money-snap-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;display:flex;align-items:center;gap:10px;}
+.money-snap-header h2 i{color:var(--brand);}
 .money-snap-header p{font-size:.93rem;color:var(--text-secondary);margin:0;}
 
 .money-snap-table-wrap{overflow-x:auto;margin-bottom:16px;}
 .money-snap-table{width:100%;border-collapse:collapse;font-size:.9rem;}
-.money-snap-table th,.money-snap-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--color-line);vertical-align:middle;}
-.money-snap-table th{background:var(--color-bg-elevated);font-weight:700;color:var(--text-primary);font-size:.85rem;text-transform:uppercase;letter-spacing:.3px;}
+.money-snap-table th,.money-snap-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #eef2f7;vertical-align:middle;}
+.money-snap-table th{background:#f8fafc;font-weight:700;color:var(--text-primary);font-size:.85rem;text-transform:uppercase;letter-spacing:.3px;}
 .money-snap-table tbody tr:hover{background:#fafbfc;}
 .money-snap-highlight{background:#eff6ff !important;}
 .money-snap-highlight:hover{background:#e0ecff !important;}
 
 .money-snap-tag{display:inline-block;padding:4px 12px;border-radius:20px;font-size:.8rem;font-weight:700;white-space:nowrap;}
-.money-snap-tag-primary{background:var(--brand-legacy);color:#fff;}
+.money-snap-tag-primary{background:var(--brand);color:#fff;}
 .money-snap-tag-blue{background:#dbeafe;color:#1e40af;}
 .money-snap-tag-green{background:#dcfce7;color:#166534;}
 .money-snap-tag-teal{background:#ccfbf1;color:#115e59;}
 .money-snap-tag-amber{background:#fef3c7;color:#92400e;}
 
-.money-snap-link{color:var(--brand-legacy);font-weight:700;text-decoration:none;font-size:.88rem;transition:color .2s;}
-.money-snap-link:hover{color:var(--brand-legacy-dark);text-decoration:underline;}
+.money-snap-link{color:var(--brand);font-weight:700;text-decoration:none;font-size:.88rem;transition:color .2s;}
+.money-snap-link:hover{color:var(--brand-dark);text-decoration:underline;}
 .money-snap-wip{font-size:.82rem;color:#92400e;font-weight:600;}
 .money-snap-note{font-size:.82rem;color:var(--text-secondary);}
 
-.money-snap-footnote{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:var(--color-bg-elevated);border-radius:10px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);border:1px solid var(--color-line);}
-.money-snap-footnote i{color:var(--brand-legacy);margin-top:3px;flex-shrink:0;}
+.money-snap-footnote{display:flex;align-items:flex-start;gap:10px;padding:14px 18px;background:#f8fafc;border-radius:10px;font-size:.85rem;line-height:1.6;color:var(--text-secondary);border:1px solid #eef2f7;}
+.money-snap-footnote i{color:var(--brand);margin-top:3px;flex-shrink:0;}
 
 @media(max-width:768px){
   .money-snapshot{padding:20px;}

@@ -83,7 +83,7 @@
     left: 0;
     width: 40px;
     height: 3px;
-    background: var(--color-brand);
+    background: #5C8607;
     opacity: 0.6;
     border-radius: 2px;
 }
@@ -124,7 +124,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 15px;
-    color: var(--color-brand);
+    color: #5C8607;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     font-size: 16px;
 }
@@ -145,19 +145,19 @@
 /* --- 懸停效果 (Hover State) --- */
 .tool-link:hover {
     background: #e8f5e9;
-    color: var(--color-brand-deep);
+    color: #2c5e2e;
     transform: translateX(8px); /* 遵循規範之位移 */
     border-color: rgba(92, 134, 7, 0.2);
 }
 
 .tool-link:hover .download-icon {
     opacity: 1;
-    color: var(--color-brand);
+    color: #5C8607;
     transform: scale(1.1);
 }
 
 .tool-link:hover .tool-icon {
-    background: var(--color-brand);
+    background: #5C8607;
     color: #ffffff;
 }
 </style>

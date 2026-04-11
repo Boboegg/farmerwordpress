@@ -169,8 +169,8 @@
 <style>
 /* === 02-tabs 共用樣式 === */
 .prev-tabs-section{
-  --brand-legacy:var(--color-brand);--brand-legacy-hover:#4a6b05;--brand-legacy-dark:var(--color-brand-deep);
-  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
+  --brand:#5C8607;--brand-hover:#4a6b05;--brand-dark:#2c5e2e;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
@@ -178,30 +178,30 @@
 
 /* Section Header */
 .prev-section-header{margin-bottom:24px;}
-.prev-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.prev-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
 .prev-section-desc{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0 0 8px;max-width:800px;}
-.prev-section-source{font-size:.78rem;color:var(--color-muted);margin:0;font-style:italic;}
+.prev-section-source{font-size:.78rem;color:#9ca3af;margin:0;font-style:italic;}
 
 /* Tab Buttons */
 .prev-tab-btns{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;}
 .prev-tab-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;border:2px solid #e0e0e0;background:#fff;font-size:.95rem;font-weight:700;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
-.prev-tab-btn.is-active,.prev-tab-btn:hover{background:var(--brand-legacy);color:#fff;border-color:var(--brand-legacy);}
+.prev-tab-btn.is-active,.prev-tab-btn:hover{background:var(--brand);color:#fff;border-color:var(--brand);}
 .prev-tab-panel{display:none;}
 .prev-tab-panel.is-active{display:block;}
 
 /* Tab Intro */
-.prev-tab-intro{display:flex;justify-content:space-between;align-items:flex-start;background:#fff;padding:24px;border-radius:12px;margin-bottom:24px;border:1px solid var(--color-bg-elevated);flex-wrap:wrap;gap:16px;}
+.prev-tab-intro{display:flex;justify-content:space-between;align-items:flex-start;background:#fff;padding:24px;border-radius:12px;margin-bottom:24px;border:1px solid #f0f0f0;flex-wrap:wrap;gap:16px;}
 .prev-tab-intro-text{flex:1;min-width:240px;}
 .prev-tab-intro-text p{margin:0 0 8px;line-height:1.8;font-size:.95rem;color:var(--text-primary);}
 .prev-tab-intro-text p:last-child{margin-bottom:0;}
-.prev-external-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand-legacy);font-weight:700;text-decoration:none;padding:10px 18px;border:1.5px solid var(--brand-legacy);border-radius:8px;transition:all .3s;white-space:nowrap;align-self:flex-start;margin-top:4px;}
-.prev-external-link:hover{background:var(--brand-legacy);color:#fff;}
+.prev-external-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;padding:10px 18px;border:1.5px solid var(--brand);border-radius:8px;transition:all .3s;white-space:nowrap;align-self:flex-start;margin-top:4px;}
+.prev-external-link:hover{background:var(--brand);color:#fff;}
 
 /* Grid Cards */
 .prev-grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
 .prev-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);transition:all .3s ease;}
 .prev-card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(0,0,0,.08);}
-.prev-card-img{height:180px;position:relative;overflow:hidden;background:var(--color-bg-elevated);}
+.prev-card-img{height:180px;position:relative;overflow:hidden;background:#f5f5f5;}
 .prev-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
 .prev-card:hover .prev-card-img img{transform:scale(1.06);}
 .prev-card-badge{position:absolute;top:12px;left:12px;padding:4px 12px;border-radius:6px;font-size:.75rem;font-weight:800;color:#fff;}
@@ -210,7 +210,7 @@
 .prev-card-body h3{font-size:1.1rem;font-weight:700;margin:0 0 10px;color:#222;}
 .prev-card-scene,.prev-card-benefit{font-size:.9rem;color:var(--text-secondary);margin:0 0 8px;display:flex;align-items:flex-start;gap:8px;line-height:1.6;}
 .prev-card-scene i,.prev-card-benefit i{margin-top:3px;flex-shrink:0;}
-.prev-card-scene i{color:var(--brand-legacy);}.prev-card-benefit i{color:#3b82f6;}
+.prev-card-scene i{color:var(--brand);}.prev-card-benefit i{color:#3b82f6;}
 .prev-card-subsidy{display:inline-flex;align-items:center;gap:6px;background:rgba(212,160,23,.1);color:#b8860b;padding:6px 14px;border-radius:6px;font-size:.85rem;font-weight:700;margin-top:8px;}
 
 @media(max-width:768px){

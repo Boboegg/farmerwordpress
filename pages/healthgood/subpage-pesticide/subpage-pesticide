@@ -1,5 +1,3 @@
-<!-- wp:html -->
-<div class="fw-page ch-health ch-health-pesticide">
 <!-- =====================================================
      子頁面：農藥安全
      URL：/healthgood/農藥安全/
@@ -8,7 +6,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- ========== Hero ========== -->
@@ -32,7 +30,7 @@
 
   <!-- 第一節：暴露途徑 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:#7A4E12;">
+    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
       <div class="pest-sec-icon"><i class="fas fa-hand"></i></div>
       <div>
         <h2>農藥怎麼進入你的身體</h2>
@@ -62,7 +60,7 @@
 
   <!-- 第二節：防護裝備 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:#7A4E12;">
+    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
       <div class="pest-sec-icon"><i class="fas fa-shield-halved"></i></div>
       <div>
         <h2>防護裝備：依毒性等級穿戴</h2>
@@ -82,22 +80,22 @@
           <tbody>
             <tr>
               <td><strong>低毒</strong></td>
-              <td><span class="pest-label" style="background:#4A6932;">綠色</span></td>
+              <td><span class="pest-label" style="background:#4caf50;">綠色</span></td>
               <td>長袖衣褲、耐化學手套、防護口罩</td>
             </tr>
             <tr>
               <td><strong>中等毒</strong></td>
-              <td><span class="pest-label" style="background:#4A6A8A;">藍色</span></td>
+              <td><span class="pest-label" style="background:#2196f3;">藍色</span></td>
               <td>上述 + 防護衣連身式、寬沿帽、長統膠靴、防護圍裙</td>
             </tr>
             <tr>
               <td><strong>高毒</strong></td>
-              <td><span class="pest-label" style="background:#B07E12;">黃色</span></td>
+              <td><span class="pest-label" style="background:#ff9800;">黃色</span></td>
               <td>上述 + 防飛濺護目鏡、化學濾罐式防毒面具</td>
             </tr>
             <tr>
               <td><strong>極毒</strong></td>
-              <td><span class="pest-label" style="background:#B84A2D;">紅色</span></td>
+              <td><span class="pest-label" style="background:#f44336;">紅色</span></td>
               <td>全套化學防護衣、全面式防毒面具（專業人員操作）</td>
             </tr>
           </tbody>
@@ -137,7 +135,7 @@
 
   <!-- 第三節：安全用藥流程 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:#7A4E12;">
+    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
       <div class="pest-sec-icon"><i class="fas fa-list-check"></i></div>
       <div>
         <h2>安全用藥流程</h2>
@@ -194,8 +192,8 @@
 
   <!-- 第四節：中毒辨識和急救 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:var(--color-warn);">
-      <div class="pest-sec-icon" style="background:rgba(198,40,40,.1);color:var(--color-warn);"><i class="fas fa-kit-medical"></i></div>
+    <div class="pest-sec-header" style="--sec-color:#c62828;">
+      <div class="pest-sec-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-kit-medical"></i></div>
       <div>
         <h2>中毒辨識與急救</h2>
         <p>越早辨識、越早處理，傷害越小。</p>
@@ -262,7 +260,7 @@
 
   <!-- 第五節：慢性影響 -->
   <div class="pest-sec-card">
-    <div class="pest-sec-header" style="--sec-color:#7A4E12;">
+    <div class="pest-sec-header" style="--sec-color:#7b1fa2;">
       <div class="pest-sec-icon"><i class="fas fa-hourglass-half"></i></div>
       <div>
         <h2>農藥的慢性健康影響</h2>
@@ -334,25 +332,25 @@
 <!-- ========== CSS ========== -->
 <style>
 .pest-hero,.pest-sections,.pest-crosslinks,.pest-references{
-  --brand-legacy:var(--color-brand);--brand-legacy-dark:#2C2418;--accent:#7A4E12;
-  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
+  --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#7b1fa2;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .pest-hero *,.pest-sections *,.pest-crosslinks *,.pest-references *{box-sizing:border-box;}
 
 /* Hero */
-.pest-hero{padding:36px;background:linear-gradient(135deg,#F5EDE2 0%,#fff 60%,#F4ECE0 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(123,31,162,.1);}
+.pest-hero{padding:36px;background:linear-gradient(135deg,#f3e5f5 0%,#fff 60%,#e1bee7 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(123,31,162,.1);}
 .pest-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(123,31,162,.1);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
 .pest-hero-title{font-size:2rem;font-weight:900;color:var(--accent);margin:0 0 8px;line-height:1.3;}
-.pest-hero-subtitle{font-size:1.1rem;color:#7A4E12;font-weight:600;margin:0 0 18px;}
+.pest-hero-subtitle{font-size:1.1rem;color:#8e24aa;font-weight:600;margin:0 0 18px;}
 .pest-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(123,31,162,.06);}
 .pest-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.pest-hero-intro p:last-child{margin-bottom:0;}
-.pest-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand-legacy);font-weight:700;text-decoration:none;font-size:.9rem;}
+.pest-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
 
 /* Section Cards */
 .pest-sections{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}
 .pest-sec-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
-.pest-sec-header{display:flex;align-items:center;gap:16px;padding:24px;background:rgba(123,31,162,.02);border-bottom:1px solid var(--color-bg-elevated);}
+.pest-sec-header{display:flex;align-items:center;gap:16px;padding:24px;background:rgba(123,31,162,.02);border-bottom:1px solid #f0f0f0;}
 .pest-sec-icon{width:52px;height:52px;border-radius:14px;background:rgba(123,31,162,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
 .pest-sec-header h2{font-size:1.2rem;font-weight:800;color:var(--sec-color,var(--accent));margin:0 0 4px;}
 .pest-sec-header>div>p{font-size:.9rem;color:var(--text-secondary);margin:0;line-height:1.6;}
@@ -360,7 +358,7 @@
 
 /* Route Grid */
 .pest-route-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px;}
-.pest-route-item{padding:20px;border-radius:12px;border:1px solid #eee;background:var(--color-bg-elevated);}
+.pest-route-item{padding:20px;border-radius:12px;border:1px solid #eee;background:#f9fafb;}
 .pest-route-main{background:rgba(123,31,162,.04);border-color:rgba(123,31,162,.15);}
 .pest-route-pct{font-size:2.2rem;font-weight:900;color:var(--accent);margin-bottom:8px;}
 .pest-route-item h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
@@ -369,26 +367,26 @@
 /* PPE Table */
 .pest-ppe-table-wrap{overflow-x:auto;margin-bottom:20px;}
 .pest-ppe-table{width:100%;border-collapse:collapse;font-size:.9rem;}
-.pest-ppe-table th{background:var(--color-bg-elevated);padding:12px 16px;text-align:left;font-weight:700;font-size:.85rem;color:var(--text-secondary);border-bottom:2px solid #eee;}
-.pest-ppe-table td{padding:12px 16px;border-bottom:1px solid var(--color-bg-elevated);line-height:1.6;}
+.pest-ppe-table th{background:#f5f5f5;padding:12px 16px;text-align:left;font-weight:700;font-size:.85rem;color:var(--text-secondary);border-bottom:2px solid #eee;}
+.pest-ppe-table td{padding:12px 16px;border-bottom:1px solid #f0f0f0;line-height:1.6;}
 .pest-label{color:#fff;padding:3px 10px;border-radius:4px;font-size:.8rem;font-weight:800;display:inline-block;}
 
 /* PPE Tips */
 .pest-ppe-tips{display:flex;flex-direction:column;gap:12px;margin-bottom:16px;}
-.pest-ppe-tip{display:flex;gap:14px;padding:16px;background:var(--color-bg-elevated);border-radius:10px;border:1px solid var(--color-bg-elevated);}
+.pest-ppe-tip{display:flex;gap:14px;padding:16px;background:#f9fafb;border-radius:10px;border:1px solid #f0f0f0;}
 .pest-ppe-tip i{font-size:20px;color:var(--accent);margin-top:2px;flex-shrink:0;}
 .pest-ppe-tip strong{font-size:.95rem;color:var(--text-primary);display:block;margin-bottom:4px;}
 .pest-ppe-tip p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;}
 
 /* Crosslink Box */
 .pest-crosslink-box{display:flex;align-items:center;gap:8px;padding:14px 18px;background:rgba(92,134,7,.06);border-radius:10px;font-size:.9rem;color:var(--text-primary);}
-.pest-crosslink-box i{color:var(--color-brand);flex-shrink:0;}
-.pest-crosslink-box a{color:var(--color-brand);font-weight:700;text-decoration:none;}
+.pest-crosslink-box i{color:#5C8607;flex-shrink:0;}
+.pest-crosslink-box a{color:#5C8607;font-weight:700;text-decoration:none;}
 .pest-crosslink-box a:hover{text-decoration:underline;}
 
 /* Flow Steps */
 .pest-flow-steps{display:flex;flex-direction:column;gap:14px;}
-.pest-flow-step{display:flex;gap:16px;padding:18px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-bg-elevated);}
+.pest-flow-step{display:flex;gap:16px;padding:18px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
 .pest-flow-num{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0;}
 .pest-flow-step h4{font-size:1rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
 .pest-flow-step p{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0;}
@@ -397,13 +395,13 @@
 .pest-sub-title{font-size:1.05rem;font-weight:800;color:var(--text-primary);margin:0 0 14px;padding-top:4px;}
 .pest-symptom-grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
 .pest-symptom-item{padding:8px 16px;background:rgba(198,40,40,.05);border:1px solid rgba(198,40,40,.12);border-radius:8px;font-size:.88rem;color:var(--text-primary);}
-.pest-symptom-item strong{color:var(--color-warn);font-size:1rem;}
+.pest-symptom-item strong{color:#c62828;font-size:1rem;}
 .pest-symptom-note{font-size:.9rem;line-height:1.7;color:var(--text-secondary);margin:0 0 20px;}
 
 /* First Aid */
 .pest-firstaid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:20px;}
-.pest-firstaid-item{padding:20px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-bg-elevated);}
-.pest-firstaid-icon{width:40px;height:40px;border-radius:10px;background:rgba(198,40,40,.1);color:var(--color-warn);display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px;}
+.pest-firstaid-item{padding:20px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
+.pest-firstaid-icon{width:40px;height:40px;border-radius:10px;background:rgba(198,40,40,.1);color:#c62828;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:10px;}
 .pest-firstaid-item h4{font-size:.95rem;font-weight:700;margin:0 0 6px;color:var(--text-primary);}
 .pest-firstaid-item p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);margin:0;}
 
@@ -417,36 +415,36 @@
 .pest-emergency-number:hover{text-decoration:underline;}
 
 /* Warning Box */
-.pest-warning-box{padding:14px 18px;background:rgba(245,158,11,.08);border-radius:10px;border-left:4px solid var(--color-accent);font-size:.9rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;color:var(--text-primary);}
-.pest-warning-box i{color:var(--color-accent);margin-top:3px;flex-shrink:0;}
+.pest-warning-box{padding:14px 18px;background:rgba(245,158,11,.08);border-radius:10px;border-left:4px solid #f59e0b;font-size:.9rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;color:var(--text-primary);}
+.pest-warning-box i{color:#f59e0b;margin-top:3px;flex-shrink:0;}
 
 /* Chronic */
 .pest-chronic-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px;}
-.pest-chronic-item{padding:20px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-bg-elevated);}
+.pest-chronic-item{padding:20px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
 .pest-chronic-item h4{font-size:.95rem;font-weight:700;margin:0 0 8px;color:var(--accent);display:flex;align-items:center;gap:8px;}
 .pest-chronic-item p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);margin:0;}
 
 .pest-checkup-box{display:flex;gap:14px;padding:18px;background:rgba(46,125,50,.05);border:1px solid rgba(46,125,50,.12);border-radius:12px;}
-.pest-checkup-box i{font-size:22px;color:var(--brand-legacy);margin-top:2px;flex-shrink:0;}
-.pest-checkup-box strong{display:block;margin-bottom:4px;color:var(--brand-legacy-dark);}
+.pest-checkup-box i{font-size:22px;color:var(--brand);margin-top:2px;flex-shrink:0;}
+.pest-checkup-box strong{display:block;margin-bottom:4px;color:var(--brand-dark);}
 .pest-checkup-box p{font-size:.88rem;line-height:1.7;color:var(--text-secondary);margin:0;}
 
 /* Crosslinks */
 .pest-crosslinks{margin-bottom:36px;}
-.pest-crosslinks h3{font-size:1.2rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:8px;margin:0 0 16px;}
+.pest-crosslinks h3{font-size:1.2rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:8px;margin:0 0 16px;}
 .pest-crosslink-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
 .pest-crosslink-card{display:flex;flex-direction:column;gap:4px;padding:20px;background:#fff;border-radius:12px;border:1px solid #eee;text-decoration:none;color:inherit;transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.03);}
-.pest-crosslink-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.07);border-color:var(--brand-legacy);}
-.pest-crosslink-card i{font-size:1.2rem;color:var(--brand-legacy);margin-bottom:4px;}
-.pest-crosslink-card span{font-weight:700;font-size:.95rem;color:var(--brand-legacy-dark);}
+.pest-crosslink-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(0,0,0,.07);border-color:var(--brand);}
+.pest-crosslink-card i{font-size:1.2rem;color:var(--brand);margin-bottom:4px;}
+.pest-crosslink-card span{font-weight:700;font-size:.95rem;color:var(--brand-dark);}
 .pest-crosslink-card small{font-size:.82rem;color:var(--text-secondary);line-height:1.5;}
 
 /* References */
-.pest-references{background:var(--color-bg-elevated);border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
-.pest-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.pest-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
+.pest-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
 .pest-ref-list{display:flex;flex-direction:column;gap:8px;}
 .pest-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
-.pest-ref-list a{color:var(--brand-legacy);word-break:break-all;}
+.pest-ref-list a{color:var(--brand);word-break:break-all;}
 
 @media(max-width:768px){
   .pest-hero{padding:24px;}.pest-hero-title{font-size:1.5rem;}
@@ -454,5 +452,3 @@
   .pest-firstaid-grid,.pest-crosslink-grid{grid-template-columns:1fr;}
 }
 </style>
-</div>
-<!-- /wp:html -->

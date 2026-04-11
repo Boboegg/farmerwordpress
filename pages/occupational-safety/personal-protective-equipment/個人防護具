@@ -1,5 +1,3 @@
-<!-- wp:html -->
-<div class="fw-page ch-safety">
 <!-- =====================================================
      子頁面：個人防護具（PPE）選用指南
      URL：/occupational-safety/personal-protective-equipment/
@@ -8,7 +6,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- ========== Hero ========== -->
@@ -105,7 +103,7 @@
 
   <!-- 3. 呼吸 -->
   <div class="ppe-cat-card">
-    <div class="ppe-cat-header" style="--cat-color:var(--color-warn);">
+    <div class="ppe-cat-header" style="--cat-color:#c62828;">
       <div class="ppe-cat-icon"><i class="fas fa-lungs"></i></div>
       <div>
         <h2>呼吸防護</h2>
@@ -115,7 +113,7 @@
     <div class="ppe-cat-body">
       <div class="ppe-equip-grid">
         <div class="ppe-equip-item">
-          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-mask-face" style="color:var(--color-warn);"></i></div>
+          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-mask-face" style="color:#c62828;"></i></div>
           <div>
             <h4>N95 防塵口罩</h4>
             <p class="ppe-equip-when">翻土、碎土等粉塵環境</p>
@@ -123,7 +121,7 @@
           </div>
         </div>
         <div class="ppe-equip-item">
-          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-head-side-mask" style="color:var(--color-warn);"></i></div>
+          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-head-side-mask" style="color:#c62828;"></i></div>
           <div>
             <h4>半面式防毒面具</h4>
             <p class="ppe-equip-when">噴灑農藥（一般露天環境）</p>
@@ -131,7 +129,7 @@
           </div>
         </div>
         <div class="ppe-equip-item">
-          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-mask-ventilator" style="color:var(--color-warn);"></i></div>
+          <div class="ppe-equip-icon" style="background:rgba(198,40,40,.1);"><i class="fas fa-mask-ventilator" style="color:#c62828;"></i></div>
           <div>
             <h4>全面式防毒面具</h4>
             <p class="ppe-equip-when">溫室內施藥、高濃度藥劑環境</p>
@@ -187,7 +185,7 @@
 
   <!-- 5. 軀幹 -->
   <div class="ppe-cat-card">
-    <div class="ppe-cat-header" style="--cat-color:var(--color-brand);">
+    <div class="ppe-cat-header" style="--cat-color:#2e7d32;">
       <div class="ppe-cat-icon"><i class="fas fa-shirt"></i></div>
       <div>
         <h2>軀幹防護</h2>
@@ -197,7 +195,7 @@
     <div class="ppe-cat-body">
       <div class="ppe-equip-grid">
         <div class="ppe-equip-item">
-          <div class="ppe-equip-icon" style="background:rgba(46,125,50,.1);"><i class="fas fa-shirt" style="color:var(--color-brand);"></i></div>
+          <div class="ppe-equip-icon" style="background:rgba(46,125,50,.1);"><i class="fas fa-shirt" style="color:#2e7d32;"></i></div>
           <div>
             <h4>UPF 50+ 長袖防曬工作服</h4>
             <p class="ppe-equip-when">一般田間露天作業</p>
@@ -205,7 +203,7 @@
           </div>
         </div>
         <div class="ppe-equip-item">
-          <div class="ppe-equip-icon" style="background:rgba(46,125,50,.1);"><i class="fas fa-vest" style="color:var(--color-brand);"></i></div>
+          <div class="ppe-equip-icon" style="background:rgba(46,125,50,.1);"><i class="fas fa-vest" style="color:#2e7d32;"></i></div>
           <div>
             <h4>防水圍裙 / 全身防護衣</h4>
             <p class="ppe-equip-when">施藥、調配農藥</p>
@@ -218,7 +216,7 @@
 
   <!-- 6. 下肢 -->
   <div class="ppe-cat-card">
-    <div class="ppe-cat-header" style="--cat-color:var(--color-info);">
+    <div class="ppe-cat-header" style="--cat-color:#1565c0;">
       <div class="ppe-cat-icon"><i class="fas fa-socks"></i></div>
       <div>
         <h2>下肢防護</h2>
@@ -228,7 +226,7 @@
     <div class="ppe-cat-body">
       <div class="ppe-equip-grid">
         <div class="ppe-equip-item">
-          <div class="ppe-equip-icon" style="background:rgba(21,101,192,.1);"><i class="fas fa-shield-halved" style="color:var(--color-info);"></i></div>
+          <div class="ppe-equip-icon" style="background:rgba(21,101,192,.1);"><i class="fas fa-shield-halved" style="color:#1565c0;"></i></div>
           <div>
             <h4>緩衝護膝</h4>
             <p class="ppe-equip-when">蹲著採收、移苗</p>
@@ -236,7 +234,7 @@
           </div>
         </div>
         <div class="ppe-equip-item">
-          <div class="ppe-equip-icon" style="background:rgba(21,101,192,.1);"><i class="fas fa-shoe-prints" style="color:var(--color-info);"></i></div>
+          <div class="ppe-equip-icon" style="background:rgba(21,101,192,.1);"><i class="fas fa-shoe-prints" style="color:#1565c0;"></i></div>
           <div>
             <h4>安全鞋 / 防滑雨鞋</h4>
             <p class="ppe-equip-when">田間作業、操作農機</p>
@@ -361,29 +359,29 @@
 <style>
 /* PPE 子頁面 */
 .ppe-hero,.ppe-categories,.ppe-sop-section,.ppe-legal-section,.ppe-references{
-  --brand-legacy:var(--color-brand);--brand-legacy-dark:var(--color-brand-deep);--text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .ppe-hero *,.ppe-categories *,.ppe-sop-section *,.ppe-legal-section *,.ppe-references *{box-sizing:border-box;}
 
 /* Hero */
 .ppe-hero{padding:36px;background:linear-gradient(135deg,#fce4ec 0%,#fff 60%,#f8bbd0 100%);border-radius:var(--radius);margin-bottom:36px;border:1px solid rgba(198,40,40,.1);}
-.ppe-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(198,40,40,.1);color:var(--color-warn);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
-.ppe-hero-title{font-size:2rem;font-weight:900;color:var(--color-warn);margin:0 0 8px;line-height:1.3;}
+.ppe-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(198,40,40,.1);color:#c62828;padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:14px;}
+.ppe-hero-title{font-size:2rem;font-weight:900;color:#c62828;margin:0 0 8px;line-height:1.3;}
 .ppe-hero-subtitle{font-size:1.1rem;color:#e53935;font-weight:600;margin:0 0 18px;}
 .ppe-hero-intro{background:rgba(255,255,255,.75);border-radius:12px;padding:20px;margin-bottom:20px;border:1px solid rgba(198,40,40,.06);}
 .ppe-hero-intro p{margin:0 0 10px;line-height:1.8;font-size:1rem;}.ppe-hero-intro p:last-child{margin-bottom:0;}
-.ppe-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand-legacy);font-weight:700;text-decoration:none;font-size:.9rem;}
+.ppe-back-link{display:inline-flex;align-items:center;gap:6px;color:var(--brand);font-weight:700;text-decoration:none;font-size:.9rem;}
 .ppe-back-link:hover{text-decoration:underline;}
-.ppe-hero-data{background:rgba(198,40,40,.06);border-left:4px solid var(--color-warn);border-radius:8px;padding:16px 20px;margin-top:16px;font-size:.93rem;line-height:1.8;}
-.ppe-hero-data p{margin:0 0 8px;font-weight:700;color:var(--color-warn);}
+.ppe-hero-data{background:rgba(198,40,40,.06);border-left:4px solid #c62828;border-radius:8px;padding:16px 20px;margin-top:16px;font-size:.93rem;line-height:1.8;}
+.ppe-hero-data p{margin:0 0 8px;font-weight:700;color:#c62828;}
 .ppe-hero-data ul{margin:0;padding:0 0 0 20px;}
 .ppe-hero-data li{margin-bottom:4px;color:var(--text-secondary);}
 
 /* Category Cards */
 .ppe-categories{display:flex;flex-direction:column;gap:24px;margin-bottom:36px;}
 .ppe-cat-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
-.ppe-cat-header{display:flex;align-items:center;gap:16px;padding:24px;background:rgba(0,0,0,.015);border-bottom:1px solid var(--color-bg-elevated);}
+.ppe-cat-header{display:flex;align-items:center;gap:16px;padding:24px;background:rgba(0,0,0,.015);border-bottom:1px solid #f0f0f0;}
 .ppe-cat-icon{width:52px;height:52px;border-radius:14px;background:rgba(0,0,0,.04);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--cat-color);flex-shrink:0;}
 .ppe-cat-header h2{font-size:1.2rem;font-weight:800;color:var(--cat-color);margin:0 0 4px;}
 .ppe-cat-why{font-size:.9rem;color:var(--text-secondary);margin:0;line-height:1.6;}
@@ -391,10 +389,10 @@
 
 /* Equipment Grid */
 .ppe-equip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;}
-.ppe-equip-item{display:flex;gap:14px;padding:18px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-bg-elevated);}
+.ppe-equip-item{display:flex;gap:14px;padding:18px;background:#f9fafb;border-radius:12px;border:1px solid #f0f0f0;}
 .ppe-equip-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
 .ppe-equip-item h4{font-size:1rem;font-weight:700;margin:0 0 4px;color:var(--text-primary);}
-.ppe-equip-when{font-size:.8rem;color:var(--brand-legacy);font-weight:600;margin:0 0 6px;}
+.ppe-equip-when{font-size:.8rem;color:var(--brand);font-weight:600;margin:0 0 6px;}
 .ppe-equip-item p{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0;}
 
 /* Warning box */
@@ -404,33 +402,33 @@
 /* SOP */
 .ppe-sop-section{margin-bottom:36px;}
 .ppe-sop-header{margin-bottom:20px;}
-.ppe-sop-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.ppe-sop-header h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
 .ppe-sop-header p{color:var(--text-secondary);margin:0;font-size:.95rem;line-height:1.7;}
 .ppe-sop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px;}
 .ppe-sop-card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;}
 .ppe-sop-card h3{font-size:1.1rem;font-weight:800;margin:0 0 16px;display:flex;align-items:center;gap:8px;}
-.ppe-sop-on h3{color:var(--color-brand);}.ppe-sop-off h3{color:var(--color-warn);}
+.ppe-sop-on h3{color:#2e7d32;}.ppe-sop-off h3{color:#c62828;}
 .ppe-sop-card ol{margin:0;padding:0 0 0 20px;counter-reset:sop;}
 .ppe-sop-card li{font-size:.93rem;line-height:1.7;margin-bottom:10px;color:var(--text-primary);}
 .ppe-highlight{background:rgba(255,235,59,.3);padding:2px 6px;border-radius:4px;font-weight:700;}
-.ppe-sop-note{margin:16px 0 0;padding:12px 16px;background:#f0f5e8;border-radius:8px;font-size:.9rem;line-height:1.6;color:var(--brand-legacy-dark);display:flex;align-items:flex-start;gap:8px;}
-.ppe-sop-note i{color:var(--brand-legacy);margin-top:2px;flex-shrink:0;}
+.ppe-sop-note{margin:16px 0 0;padding:12px 16px;background:#f0f5e8;border-radius:8px;font-size:.9rem;line-height:1.6;color:var(--brand-dark);display:flex;align-items:flex-start;gap:8px;}
+.ppe-sop-note i{color:var(--brand);margin-top:2px;flex-shrink:0;}
 
 /* Legal */
 .ppe-legal-section{margin-bottom:36px;}
-.ppe-legal-section h2{font-size:1.4rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
+.ppe-legal-section h2{font-size:1.4rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 8px;}
 .ppe-legal-section>p{color:var(--text-secondary);margin:0 0 16px;font-size:.95rem;line-height:1.7;}
 .ppe-legal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
 .ppe-legal-item{background:#fff;border-radius:12px;padding:20px;border:1px solid #eee;box-shadow:0 2px 8px rgba(0,0,0,.03);}
-.ppe-legal-item h4{font-size:.95rem;font-weight:700;margin:0 0 8px;color:var(--brand-legacy-dark);}
+.ppe-legal-item h4{font-size:.95rem;font-weight:700;margin:0 0 8px;color:var(--brand-dark);}
 .ppe-legal-item p{font-size:.9rem;line-height:1.6;color:var(--text-secondary);margin:0;}
 
 /* References */
-.ppe-references{background:var(--color-bg-elevated);border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
-.ppe-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
+.ppe-references{background:#f9fafb;border-radius:var(--radius);padding:28px;border:1px solid #eee;margin-bottom:36px;}
+.ppe-references h2{font-size:1.3rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 16px;}
 .ppe-ref-list{display:flex;flex-direction:column;gap:8px;}
 .ppe-ref-list p{font-size:.88rem;line-height:1.6;color:var(--text-secondary);margin:0;padding-left:20px;text-indent:-20px;}
-.ppe-ref-list a{color:var(--brand-legacy);word-break:break-all;}
+.ppe-ref-list a{color:var(--brand);word-break:break-all;}
 
 @media(max-width:768px){
   .ppe-hero{padding:24px;}
@@ -440,5 +438,3 @@
   .ppe-legal-grid{grid-template-columns:1fr;}
 }
 </style>
-</div>
-<!-- /wp:html -->

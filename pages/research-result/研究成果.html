@@ -1,12 +1,11 @@
 <!-- wp:html -->
-<div class="fw-page dc-v3 ch-research">
 
 <!-- =====================================================
      頁面：研究成果（主頁）
      URL：/research-result/
      WordPress 頁面 → 程式碼編輯器 → 全選貼入
      CSS 前綴：res-
-     主色系：var(--color-brand)（品牌尊嚴綠）
+     主色系：#5C8607（品牌尊嚴綠）
 
      【維護指南】
      - 精選成果卡片：複製 .res-feat-card 區塊新增
@@ -18,9 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-<div class="dc-progress" aria-hidden="true"></div>
-<div class="dc-scene-cut" aria-hidden="true"></div>
 
 <!-- ========== 區塊 1：Hero ========== -->
 <div class="res-hero">
@@ -66,7 +62,7 @@
         </div>
       </div>
       <div class="res-stat-item">
-        <div class="res-stat-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);">
+        <div class="res-stat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;">
           <i class="fas fa-university"></i>
         </div>
         <div class="res-stat-text">
@@ -75,7 +71,7 @@
         </div>
       </div>
       <div class="res-stat-item">
-        <div class="res-stat-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);">
+        <div class="res-stat-icon" style="background:rgba(198,40,40,.1);color:#c62828;">
           <i class="fas fa-calendar-check"></i>
         </div>
         <div class="res-stat-text">
@@ -98,14 +94,14 @@
       <div class="res-cat-grid">
 
         <a href="/research-result/research-publication/" class="res-cat-card res-cat-active">
-          <div class="res-cat-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);"><i class="fas fa-book-open"></i></div>
+          <div class="res-cat-icon" style="background:rgba(21,101,192,.1);color:#1565c0;"><i class="fas fa-book-open"></i></div>
           <h3>研究出版</h3>
           <p>HISP 季會發表、計畫報告</p>
           <span class="res-cat-count">3 篇</span>
         </a>
 
         <a href="/research-result/podcast/" class="res-cat-card">
-          <div class="res-cat-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);"><i class="fas fa-podcast"></i></div>
+          <div class="res-cat-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-podcast"></i></div>
           <h3>影音 Podcast</h3>
           <p>訪談錄音、知識轉譯影片</p>
           <span class="res-cat-count">持續更新</span>
@@ -214,19 +210,19 @@
       <div class="res-approach-grid">
 
         <div class="res-approach-card">
-          <div class="res-approach-icon" style="background:rgba(92,134,7,.1);color:var(--color-brand);"><i class="fas fa-users-rectangle"></i></div>
+          <div class="res-approach-icon" style="background:rgba(92,134,7,.1);color:#5C8607;"><i class="fas fa-users-rectangle"></i></div>
           <h3>田野調查與質性研究</h3>
           <p>深入雲嘉地區農村社區，透過參與觀察、深度訪談與焦點團體，理解農業工作者的日常勞動經驗與健康困境。</p>
         </div>
 
         <div class="res-approach-card">
-          <div class="res-approach-icon" style="background:color-mix(in srgb, var(--color-info) 10%, transparent);color:var(--color-info);"><i class="fas fa-chart-column"></i></div>
+          <div class="res-approach-icon" style="background:rgba(21,101,192,.1);color:#1565c0;"><i class="fas fa-chart-column"></i></div>
           <h3>量化數據與實證分析</h3>
           <p>結合農保資料、職災統計與健康調查數據，進行系統性的量化分析，為政策建議提供實證基礎。</p>
         </div>
 
         <div class="res-approach-card">
-          <div class="res-approach-icon" style="background:color-mix(in srgb, var(--color-warn) 10%, transparent);color:var(--color-warn);"><i class="fas fa-stethoscope"></i></div>
+          <div class="res-approach-icon" style="background:rgba(198,40,40,.1);color:#c62828;"><i class="fas fa-stethoscope"></i></div>
           <h3>醫學專業與職業健康</h3>
           <p>聯合臺大醫院雲林分院職業醫學科，針對農業勞動的特殊職業暴露與健康風險進行專業評估。</p>
         </div>
@@ -275,18 +271,18 @@
 <style>
 /* === 變數 === */
 .res-hero,.res-sections{
-  --brand-legacy:var(--color-brand);--brand-legacy-dark:#4a6b05;--brand-legacy-light:#eef5ea;--brand-legacy-hover:#3d5a04;
-  --accent:#B07E12;--text-primary:var(--color-text);--text-secondary:var(--color-muted);
+  --brand:#5C8607;--brand-dark:#4a6b05;--brand-light:#eef5ea;--brand-hover:#3d5a04;
+  --accent:#D4A017;--text-primary:#1f2937;--text-secondary:#6b7280;
   --radius:16px;--shadow:0 4px 16px rgba(0,0,0,.06);
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);box-sizing:border-box;
 }
 .res-hero *,.res-sections *{box-sizing:border-box;}
 
 /* === Hero === */
-.res-hero{display:flex;gap:40px;align-items:flex-start;padding:40px;background:linear-gradient(135deg,var(--brand-legacy-light) 0%,#fff 60%,#f0f4e8 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(92,134,7,.12);}
+.res-hero{display:flex;gap:40px;align-items:flex-start;padding:40px;background:linear-gradient(135deg,var(--brand-light) 0%,#fff 60%,#f0f4e8 100%);border-radius:var(--radius);margin-bottom:0;border:1px solid rgba(92,134,7,.12);}
 .res-hero-inner{flex:1.2;}
-.res-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand-legacy);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;letter-spacing:.5px;}
-.res-hero-title{font-size:2.4rem;font-weight:900;color:var(--brand-legacy-dark);margin:0 0 10px;line-height:1.2;}
+.res-hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(92,134,7,.1);color:var(--brand);padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:700;margin-bottom:16px;letter-spacing:.5px;}
+.res-hero-title{font-size:2.4rem;font-weight:900;color:var(--brand-dark);margin:0 0 10px;line-height:1.2;}
 .res-hero-subtitle{font-size:1.05rem;color:var(--text-secondary);font-weight:500;margin:0 0 20px;line-height:1.7;}
 
 /* Hero intro */
@@ -294,14 +290,14 @@
 .res-hero-intro p{font-size:.95rem;color:var(--text-secondary);line-height:1.7;margin:0 0 12px;}
 .res-hero-list{list-style:none;padding:0;margin:0 0 12px;}
 .res-hero-list li{display:flex;align-items:flex-start;gap:8px;font-size:.92rem;color:var(--text-secondary);line-height:1.6;margin-bottom:8px;}
-.res-hero-list li i{color:var(--brand-legacy);margin-top:4px;flex-shrink:0;font-size:.82rem;}
+.res-hero-list li i{color:var(--brand);margin-top:4px;flex-shrink:0;font-size:.82rem;}
 
 /* Hero buttons */
 .res-hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
-.res-btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;background:var(--brand-legacy);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s;box-shadow:0 4px 14px rgba(92,134,7,.25);}
-.res-btn-primary:hover{background:var(--brand-legacy-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(92,134,7,.35);color:#fff;}
-.res-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;background:#fff;color:var(--brand-legacy);font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid var(--brand-legacy);transition:all .3s;}
-.res-btn-secondary:hover{background:var(--brand-legacy-light);transform:translateY(-2px);color:var(--brand-legacy);}
+.res-btn-primary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;background:var(--brand);color:#fff;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s;box-shadow:0 4px 14px rgba(92,134,7,.25);}
+.res-btn-primary:hover{background:var(--brand-hover);transform:translateY(-2px);box-shadow:0 6px 20px rgba(92,134,7,.35);color:#fff;}
+.res-btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;background:#fff;color:var(--brand);font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid var(--brand);transition:all .3s;}
+.res-btn-secondary:hover{background:var(--brand-light);transform:translateY(-2px);color:var(--brand);}
 
 /* Hero visual / stats */
 .res-hero-visual{flex:.8;position:sticky;top:20px;}
@@ -309,32 +305,32 @@
 .res-stat-item{background:#fff;padding:18px 22px;border-radius:14px;box-shadow:var(--shadow);display:flex;align-items:center;gap:14px;border:1px solid rgba(0,0,0,.04);}
 .res-stat-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .res-stat-text{display:flex;flex-direction:column;}
-.res-stat-number{font-size:1.5rem;font-weight:900;color:var(--brand-legacy);font-family:"Lato",sans-serif;line-height:1.2;}
+.res-stat-number{font-size:1.5rem;font-weight:900;color:var(--brand);font-family:"Lato",sans-serif;line-height:1.2;}
 .res-stat-label{font-size:.85rem;color:var(--text-secondary);line-height:1.4;}
 
 /* === 通用區塊 === */
 .res-sections{margin-top:24px;}
-.res-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid var(--color-line);}
+.res-sec-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);border:1px solid #eef2f7;}
 .res-sec-slim{padding:28px 36px;}
-.res-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-legacy-light);}
-.res-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-legacy-light);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
-.res-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 4px;}
+.res-sec-header{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px;padding-bottom:20px;border-bottom:2px solid var(--brand-light);}
+.res-sec-icon{width:52px;height:52px;border-radius:14px;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.res-sec-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);margin:0 0 4px;}
 .res-sec-header p{font-size:.95rem;color:var(--text-secondary);margin:0;line-height:1.5;}
 
 /* === 五大分類卡 === */
 .res-cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
-.res-cat-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 16px;background:var(--color-bg-elevated);border-radius:14px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;position:relative;}
-.res-cat-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1);border-color:var(--brand-legacy);}
-.res-cat-active{border-color:var(--brand-legacy);background:var(--brand-legacy-light);}
+.res-cat-card{display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 16px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;position:relative;}
+.res-cat-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.1);border-color:var(--brand);}
+.res-cat-active{border-color:var(--brand);background:var(--brand-light);}
 .res-cat-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px;}
-.res-cat-card h3{font-size:1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 6px;}
+.res-cat-card h3{font-size:1rem;font-weight:800;color:var(--brand-dark);margin:0 0 6px;}
 .res-cat-card p{font-size:.82rem;color:var(--text-secondary);line-height:1.4;margin:0 0 10px;}
-.res-cat-count{font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:12px;background:var(--brand-legacy-light);color:var(--brand-legacy);}
+.res-cat-count{font-size:.78rem;font-weight:700;padding:3px 12px;border-radius:12px;background:var(--brand-light);color:var(--brand);}
 
 /* === 精選成果列表 === */
 .res-feat-list{display:flex;flex-direction:column;gap:16px;}
-.res-feat-card{display:flex;gap:20px;padding:24px;background:var(--color-bg-elevated);border-radius:14px;border:1px solid var(--color-line);align-items:flex-start;transition:all .3s;}
-.res-feat-card:hover{border-color:var(--brand-legacy);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.res-feat-card{display:flex;gap:20px;padding:24px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;align-items:flex-start;transition:all .3s;}
+.res-feat-card:hover{border-color:var(--brand);box-shadow:0 6px 18px rgba(0,0,0,.06);}
 .res-feat-link{text-decoration:none;color:inherit;cursor:pointer;}
 .res-feat-link:hover{color:inherit;}
 .res-feat-type{writing-mode:vertical-rl;text-orientation:mixed;font-size:.78rem;font-weight:800;padding:8px 6px;border-radius:8px;display:flex;align-items:center;gap:6px;flex-shrink:0;letter-spacing:1px;}
@@ -344,33 +340,33 @@
 .res-feat-date{font-size:.82rem;color:var(--text-secondary);margin:0 0 8px;display:flex;align-items:center;gap:6px;}
 .res-feat-abstract{font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin:0 0 10px;}
 .res-feat-tags{display:flex;flex-wrap:wrap;gap:6px;}
-.res-feat-tag{font-size:.75rem;padding:2px 10px;border-radius:10px;background:var(--color-line);color:var(--text-secondary);}
+.res-feat-tag{font-size:.75rem;padding:2px 10px;border-radius:10px;background:#e2e8f0;color:var(--text-secondary);}
 .res-feat-actions{flex-shrink:0;align-self:center;display:flex;flex-direction:column;gap:8px;}
-.res-ext-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;white-space:nowrap;background:var(--brand-legacy-light);color:var(--brand-legacy);border:1px solid rgba(92,134,7,.2);transition:all .3s;}
-.res-feat-link:hover .res-ext-btn{background:var(--brand-legacy);color:#fff;transform:translateY(-2px);}
+.res-ext-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:10px;font-weight:700;font-size:.88rem;white-space:nowrap;background:var(--brand-light);color:var(--brand);border:1px solid rgba(92,134,7,.2);transition:all .3s;}
+.res-feat-link:hover .res-ext-btn{background:var(--brand);color:#fff;transform:translateY(-2px);}
 
 /* === 研究取徑 === */
 .res-approach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
-.res-approach-card{padding:28px;background:var(--color-bg-elevated);border-radius:14px;border:1px solid var(--color-line);transition:all .3s;}
-.res-approach-card:hover{border-color:var(--brand-legacy);background:var(--brand-legacy-light);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.06);}
+.res-approach-card{padding:28px;background:#f8fafc;border-radius:14px;border:1px solid #e2e8f0;transition:all .3s;}
+.res-approach-card:hover{border-color:var(--brand);background:var(--brand-light);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.06);}
 .res-approach-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px;}
-.res-approach-card h3{font-size:1.05rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 8px;}
+.res-approach-card h3{font-size:1.05rem;font-weight:800;color:var(--brand-dark);margin:0 0 8px;}
 .res-approach-card p{font-size:.88rem;color:var(--text-secondary);line-height:1.6;margin:0;}
 
 /* === 合作夥伴 === */
 .res-partner-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-.res-partner-label{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--brand-legacy-dark);font-size:.95rem;white-space:nowrap;}
-.res-partner-label i{color:var(--brand-legacy);font-size:18px;}
+.res-partner-label{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--brand-dark);font-size:.95rem;white-space:nowrap;}
+.res-partner-label i{color:var(--brand);font-size:18px;}
 .res-partner-list{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
-.res-partner-item{font-size:.9rem;color:var(--text-secondary);font-weight:600;padding:6px 16px;background:var(--color-bg-elevated);border-radius:8px;border:1px solid var(--color-line);}
+.res-partner-item{font-size:.9rem;color:var(--text-secondary);font-weight:600;padding:6px 16px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0;}
 .res-partner-divider{width:4px;height:4px;border-radius:50%;background:#d1d5db;}
 
 /* === 交叉連結 === */
-.res-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-legacy-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
+.res-cross-title{font-size:1.1rem;font-weight:800;color:var(--brand-dark);margin:0 0 16px;display:flex;align-items:center;gap:8px;}
 .res-cross-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.res-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:var(--color-bg-elevated);border-radius:12px;border:1px solid var(--color-line);text-decoration:none;color:var(--text-primary);transition:all .3s;}
-.res-cross-card:hover{border-color:var(--brand-legacy);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
-.res-cross-card i{font-size:24px;color:var(--brand-legacy);}
+.res-cross-card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;padding:20px;background:#f8fafc;border-radius:12px;border:1px solid #e2e8f0;text-decoration:none;color:var(--text-primary);transition:all .3s;}
+.res-cross-card:hover{border-color:var(--brand);transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.06);}
+.res-cross-card i{font-size:24px;color:var(--brand);}
 .res-cross-card span{font-weight:700;font-size:.95rem;}
 
 /* === RWD === */
@@ -392,8 +388,4 @@
 }
 </style>
 
-<script src="/wp-content/themes/astra-child/assets/js/gsap.min.js" defer></script>
-<script src="/wp-content/themes/astra-child/assets/js/ScrollTrigger.min.js" defer></script>
-<script src="/wp-content/themes/astra-child/assets/js/dc-v3-sections.js" defer></script>
-</div>
 <!-- /wp:html -->

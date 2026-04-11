@@ -119,15 +119,15 @@
 <style>
 /* === 05-heat-index 專用樣式（hpH 前綴） === */
 .hpH-heat-section{
-  --brand-legacy:var(--color-brand);--brand-legacy-dark:#1a3a1a;--accent:var(--color-warn);
-  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
+  --brand:#2e7d32;--brand-dark:#1a3a1a;--accent:#c62828;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
 .hpH-heat-section *{box-sizing:border-box;}
 
 .hpH-section-header{margin-bottom:24px;}
-.hpH-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpH-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
 .hpH-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;}
 
 .hpH-content-row{display:flex;gap:24px;align-items:flex-start;}
@@ -139,8 +139,8 @@
 
 .hpH-table-wrap{overflow-x:auto;margin-bottom:16px;}
 .hpH-table{width:100%;border-collapse:collapse;font-size:.9rem;}
-.hpH-table th{background:var(--color-bg-elevated);padding:12px 16px;text-align:left;font-weight:700;font-size:.85rem;color:var(--text-secondary);border-bottom:2px solid #eee;}
-.hpH-table td{padding:12px 16px;border-bottom:1px solid var(--color-bg-elevated);line-height:1.6;}
+.hpH-table th{background:#f5f5f5;padding:12px 16px;text-align:left;font-weight:700;font-size:.85rem;color:var(--text-secondary);border-bottom:2px solid #eee;}
+.hpH-table td{padding:12px 16px;border-bottom:1px solid #f0f0f0;line-height:1.6;}
 .hpH-badge{padding:4px 12px;border-radius:6px;font-size:.8rem;font-weight:800;display:inline-block;}
 
 .hpH-row-green td:first-child{border-left:4px solid #81C784;}
@@ -150,7 +150,7 @@
 .hpH-row-black td:first-child{border-left:4px solid #424242;}
 
 .hpH-source{font-size:.82rem;color:var(--text-secondary);display:flex;align-items:flex-start;gap:6px;line-height:1.6;}
-.hpH-source a{color:var(--brand-legacy);}
+.hpH-source a{color:var(--brand);}
 
 /* Right: Heart Rate */
 .hpH-hr-card{flex:.8;background:#fff;border-radius:var(--radius);padding:28px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
@@ -162,7 +162,7 @@
 .hpH-hr-input{flex:1;padding:12px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:1.1rem;font-weight:700;font-family:inherit;outline:none;transition:border-color .3s;}
 .hpH-hr-input:focus{border-color:var(--accent);}
 .hpH-hr-calc-btn{padding:12px 24px;border-radius:10px;background:var(--accent);color:#fff;font-size:.95rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;white-space:nowrap;}
-.hpH-hr-calc-btn:hover{background:var(--color-warn);}
+.hpH-hr-calc-btn:hover{background:#b71c1c;}
 
 .hpH-hr-result{margin-top:20px;padding:20px;background:rgba(198,40,40,.04);border-radius:12px;border:1px solid rgba(198,40,40,.12);}
 .hpH-hr-result-main{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;}
@@ -176,7 +176,7 @@
 .hpH-hr-examples{margin-top:20px;padding-top:16px;border-top:1px solid #eee;}
 .hpH-hr-examples-title{font-size:.9rem;margin:0 0 10px;}
 .hpH-hr-example-tags{display:flex;flex-wrap:wrap;gap:8px;}
-.hpH-ex-tag{padding:6px 14px;background:var(--color-bg-elevated);border-radius:8px;font-size:.85rem;color:var(--text-secondary);}
+.hpH-ex-tag{padding:6px 14px;background:#f5f5f5;border-radius:8px;font-size:.85rem;color:var(--text-secondary);}
 .hpH-ex-tag strong{color:var(--accent);}
 
 @media(max-width:768px){

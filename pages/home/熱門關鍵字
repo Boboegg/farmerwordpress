@@ -23,9 +23,9 @@
 .side-widget{background:#fff;border-radius:16px;padding:25px;box-shadow:0 5px 15px rgba(0,0,0,.05);margin-bottom:25px;transition:transform .3s;border:1px solid rgba(53,64,31,.05);}
 .side-widget:hover{transform:translateY(-5px);}
 .side-title{font-family:'Lato','Noto Sans TC',sans-serif;font-size:19px;font-weight:700;color:#343F1E;margin-bottom:25px;display:flex;align-items:center;gap:10px;position:relative;}
-.side-title::after{content:'';position:absolute;bottom:-10px;left:0;width:40px;height:3px;background:var(--color-brand);opacity:.6;border-radius:2px;}
+.side-title::after{content:'';position:absolute;bottom:-10px;left:0;width:40px;height:3px;background:#5C8607;opacity:.6;border-radius:2px;}
 .side-title i{color:#d4a017;}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;}
 .tag-btn{background:#fff;border:1px solid #e0e0e0;padding:6px 14px;border-radius:20px;font-size:.85rem;color:#666;text-decoration:none;transition:all .2s;}
-.tag-btn:hover{background:var(--color-brand-deep);color:#fff;border-color:var(--color-brand-deep);box-shadow:0 4px 10px rgba(44,94,46,.2);}
+.tag-btn:hover{background:#2c5e2e;color:#fff;border-color:#2c5e2e;box-shadow:0 4px 10px rgba(44,94,46,.2);}
 </style>

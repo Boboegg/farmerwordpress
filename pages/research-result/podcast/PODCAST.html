@@ -18,7 +18,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 <!-- ========== Hero ========== -->
@@ -90,11 +90,11 @@
 <style>
 /* === 變數與基底 === */
 .pod-hero, .pod-how-it-works, .pod-archive-section, .pod-footer-links {
-  --brand-legacy: var(--color-brand);
-  --brand-legacy-dark: #4a6b05;
-  --brand-legacy-light: #eef5ea;
-  --text-primary: var(--color-text);
-  --text-secondary: var(--color-muted);
+  --brand: #5C8607;
+  --brand-dark: #4a6b05;
+  --brand-light: #eef5ea;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
   --radius: 16px;
   --shadow: 0 4px 16px rgba(0,0,0,.06);
   font-family: "Noto Sans TC", "Lato", sans-serif;
@@ -115,7 +115,7 @@
 .pod-hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #1a2e05 0%, #2d4a0a 30%, #3d6510 60%, var(--color-brand) 100%);
+  background: linear-gradient(135deg, #1a2e05 0%, #2d4a0a 30%, #3d6510 60%, #5C8607 100%);
   z-index: 0;
 }
 .pod-hero-bg::after {
@@ -142,7 +142,7 @@
   align-items: center;
   gap: 8px;
   background: rgba(255,255,255,.12);
-  color: var(--color-accent);
+  color: #D4A017;
   padding: 6px 18px;
   border-radius: 24px;
   font-size: .85rem;
@@ -205,7 +205,7 @@
 .pod-visual-ring {
   position: absolute;
   border-radius: 50%;
-  border: 2px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border: 2px solid rgba(212,160,23,.2);
 }
 .pod-ring-1 {
   width: 200px; height: 200px;
@@ -213,12 +213,12 @@
 }
 .pod-ring-2 {
   width: 150px; height: 150px;
-  border-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+  border-color: rgba(212,160,23,.3);
   animation: pod-pulse 3s ease-in-out .5s infinite;
 }
 .pod-ring-3 {
   width: 100px; height: 100px;
-  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  border-color: rgba(212,160,23,.4);
   animation: pod-pulse 3s ease-in-out 1s infinite;
 }
 @keyframes pod-pulse {
@@ -228,14 +228,14 @@
 .pod-visual-icon {
   width: 72px;
   height: 72px;
-  background: linear-gradient(135deg, var(--color-accent), #7a5508);
+  background: linear-gradient(135deg, #D4A017, #b8860b);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 30px;
   color: #fff;
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--color-accent) 35%, transparent);
+  box-shadow: 0 8px 28px rgba(212,160,23,.35);
   z-index: 2;
 }
 
@@ -252,14 +252,14 @@
   border-radius: var(--radius);
   padding: 24px 32px;
   box-shadow: var(--shadow);
-  border: 1px solid var(--color-line);
+  border: 1px solid #eef2f7;
 }
 .pod-how-icon {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: var(--brand-legacy-light);
-  color: var(--brand-legacy);
+  background: var(--brand-light);
+  color: var(--brand);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -269,7 +269,7 @@
 .pod-how-card h3 {
   font-size: 1.05rem;
   font-weight: 800;
-  color: var(--brand-legacy-dark);
+  color: var(--brand-dark);
   margin: 0 0 4px;
 }
 .pod-how-card p {
@@ -286,7 +286,7 @@
   border-radius: var(--radius);
   padding: 36px;
   box-shadow: var(--shadow);
-  border: 1px solid var(--color-line);
+  border: 1px solid #eef2f7;
 }
 
 /* === Footer Links === */
@@ -296,12 +296,12 @@
   border-radius: var(--radius);
   padding: 28px 36px;
   box-shadow: var(--shadow);
-  border: 1px solid var(--color-line);
+  border: 1px solid #eef2f7;
 }
 .pod-footer-title {
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--brand-legacy-dark);
+  color: var(--brand-dark);
   margin: 0 0 18px;
   display: flex;
   align-items: center;
@@ -320,20 +320,20 @@
   gap: 8px;
   padding: 20px 12px;
   border-radius: 12px;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-line);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   text-decoration: none;
   color: var(--text-primary);
   transition: all .3s;
 }
 .pod-footer-card:hover {
-  border-color: var(--brand-legacy);
+  border-color: var(--brand);
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,.06);
 }
 .pod-footer-card i {
   font-size: 22px;
-  color: var(--brand-legacy);
+  color: var(--brand);
 }
 .pod-footer-card span {
   font-weight: 700;

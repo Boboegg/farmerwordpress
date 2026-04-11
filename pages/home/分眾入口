@@ -82,8 +82,8 @@
 .portal-header {
     font-size: 1.1rem;
     font-weight: 800;
-    color: var(--color-brand-deep);
-    border-bottom: 2px solid var(--color-brand-deep);
+    color: #2c5e2e;
+    border-bottom: 2px solid #2c5e2e;
     padding-bottom: 15px;
     margin-bottom: 20px;
     display: flex;
@@ -141,8 +141,8 @@
 
 /* 滑鼠懸停效果 */
 .role-btn:hover {
-    background: var(--color-brand-deep);
-    border-color: var(--color-brand-deep);
+    background: #2c5e2e;
+    border-color: #2c5e2e;
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(44, 94, 46, 0.2);
 }

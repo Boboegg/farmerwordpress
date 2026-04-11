@@ -70,7 +70,7 @@
       </div>
     </div>
 
-    <div class="prev-h-level" data-level="4" style="--level-color:var(--color-accent);">
+    <div class="prev-h-level" data-level="4" style="--level-color:#f59e0b;">
       <div class="prev-h-bar">
         <span class="prev-h-label"><span class="prev-h-num">❹</span> 行政管理 — 調整工作方式和時間</span>
         <i class="fas fa-chevron-down prev-h-arrow"></i>
@@ -113,23 +113,23 @@
 <style>
 /* === 05-tool-niosh 專用樣式 === */
 .prev-tool-card-n{
-  --brand-legacy:var(--color-brand);--brand-legacy-dark:var(--color-brand-deep);--text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
+  --brand:#5C8607;--brand-dark:#2c5e2e;--text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   background:#fff;border-radius:var(--radius);padding:30px;margin:0 0 24px;
   box-shadow:0 4px 12px rgba(0,0,0,.04);border:1px solid #eee;box-sizing:border-box;
 }
 .prev-tool-card-n *{box-sizing:border-box;}
 .prev-tool-header-n{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
-.prev-tool-icon-n{width:52px;height:52px;border-radius:14px;background:rgba(92,134,7,.1);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
-.prev-tool-header-n h3{font-size:1.15rem;font-weight:800;margin:0;color:var(--brand-legacy-dark);}
+.prev-tool-icon-n{width:52px;height:52px;border-radius:14px;background:rgba(92,134,7,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.prev-tool-header-n h3{font-size:1.15rem;font-weight:800;margin:0;color:var(--brand-dark);}
 .prev-tool-header-n p{margin:4px 0 0;font-size:.9rem;color:var(--text-secondary);line-height:1.6;}
 
-.prev-niosh-explain{background:var(--color-bg-elevated);border-radius:10px;padding:16px 20px;margin-bottom:20px;border:1px solid var(--color-bg-elevated);}
+.prev-niosh-explain{background:#f9fafb;border-radius:10px;padding:16px 20px;margin-bottom:20px;border:1px solid #f0f0f0;}
 .prev-niosh-explain p{margin:0 0 12px;font-size:.95rem;line-height:1.7;color:var(--text-primary);}
 .prev-niosh-explain p:last-child{margin-bottom:0;}
 .prev-niosh-data{background:rgba(59,130,246,.05);border-radius:8px;padding:12px 16px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;border:1px solid rgba(59,130,246,.1);}
 .prev-niosh-data i{margin-top:3px;flex-shrink:0;}
-.prev-niosh-source-inline{display:block;width:100%;font-size:.75rem;color:var(--color-muted);font-style:italic;margin-top:6px;}
+.prev-niosh-source-inline{display:block;width:100%;font-size:.75rem;color:#9ca3af;font-style:italic;margin-top:6px;}
 
 .prev-hierarchy-body{display:flex;flex-direction:column;gap:8px;}
 .prev-h-level{border-radius:10px;overflow:hidden;}
@@ -142,7 +142,7 @@
 .prev-h-detail p{margin:0 0 8px;line-height:1.7;font-size:.95rem;}
 .prev-h-level.is-open .prev-h-detail{display:block;}
 .prev-h-source-n{font-size:.8rem;color:var(--text-secondary);margin-top:16px;text-align:right;}
-.prev-h-source-n a{color:var(--brand-legacy);margin-left:4px;}
+.prev-h-source-n a{color:var(--brand);margin-left:4px;}
 </style>
 
 <script>

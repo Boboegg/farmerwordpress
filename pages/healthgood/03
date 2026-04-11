@@ -143,56 +143,56 @@
 <style>
 /* === 04-health-check 專用樣式（hpQ 前綴） === */
 .hp-risk-section{
-  --brand-legacy:var(--color-brand);--brand-legacy-dark:#1a3a1a;
-  --text-primary:var(--color-text);--text-secondary:var(--color-muted);--radius:16px;
+  --brand:#2e7d32;--brand-dark:#1a3a1a;
+  --text-primary:#1f2937;--text-secondary:#6b7280;--radius:16px;
   font-family:"Noto Sans TC","Lato",sans-serif;color:var(--text-primary);
   margin:40px 0 0;box-sizing:border-box;
 }
 .hp-risk-section *{box-sizing:border-box;}
 
 .hpQ-section-header{margin-bottom:24px;}
-.hpQ-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-legacy-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
+.hpQ-section-header h2{font-size:1.5rem;font-weight:800;color:var(--brand-dark);display:flex;align-items:center;gap:10px;margin:0 0 12px;}
 .hpQ-section-header p{font-size:1rem;line-height:1.8;color:var(--text-primary);margin:0;max-width:800px;}
 
 .hpQ-tool-card{background:#fff;border-radius:var(--radius);padding:30px;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,.04);}
-.hpQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--color-bg-elevated);}
-.hpQ-tool-icon{width:56px;height:56px;border-radius:14px;background:rgba(46,125,50,.1);color:var(--brand-legacy);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
-.hpQ-tool-header h3{font-size:1.15rem;font-weight:800;margin:0 0 4px;color:var(--brand-legacy-dark);}
+.hpQ-tool-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #f0f0f0;}
+.hpQ-tool-icon{width:56px;height:56px;border-radius:14px;background:rgba(46,125,50,.1);color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.hpQ-tool-header h3{font-size:1.15rem;font-weight:800;margin:0 0 4px;color:var(--brand-dark);}
 .hpQ-tool-header p{font-size:.9rem;color:var(--text-secondary);margin:0;}
 
 /* Disclaimer */
 .hpQ-disclaimer{display:flex;gap:12px;padding:16px 20px;background:rgba(21,101,192,.04);border:1px solid rgba(21,101,192,.12);border-radius:12px;margin-bottom:20px;}
-.hpQ-disclaimer i{color:var(--color-info);margin-top:2px;flex-shrink:0;font-size:16px;}
-.hpQ-disclaimer strong{display:block;font-size:.9rem;color:var(--color-info);margin-bottom:4px;}
+.hpQ-disclaimer i{color:#1565c0;margin-top:2px;flex-shrink:0;font-size:16px;}
+.hpQ-disclaimer strong{display:block;font-size:.9rem;color:#1565c0;margin-bottom:4px;}
 .hpQ-disclaimer p{font-size:.82rem;line-height:1.6;color:var(--text-secondary);margin:0;}
 
 /* Steps */
 .hpQ-quiz-step{margin-bottom:24px;}
 .hpQ-quiz-label{display:flex;align-items:center;gap:10px;font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:14px;}
-.hpQ-step-num{width:28px;height:28px;border-radius:50%;background:var(--brand-legacy);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;flex-shrink:0;}
+.hpQ-step-num{width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:800;flex-shrink:0;}
 
 /* Age buttons */
 .hpQ-age-options{display:flex;gap:12px;flex-wrap:wrap;}
 .hpQ-age-btn{padding:12px 24px;border-radius:10px;border:2px solid #e0e0e0;background:#fff;font-size:.95rem;font-weight:600;color:var(--text-secondary);cursor:pointer;transition:all .3s;font-family:inherit;}
-.hpQ-age-btn.is-selected{background:var(--brand-legacy);color:#fff;border-color:var(--brand-legacy);}
+.hpQ-age-btn.is-selected{background:var(--brand);color:#fff;border-color:var(--brand);}
 
 /* Checkboxes */
 .hpQ-check-list{display:flex;flex-direction:column;gap:8px;}
 .hpQ-check-item{display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;border:1px solid #eee;cursor:pointer;transition:all .2s;position:relative;}
-.hpQ-check-item:hover{background:var(--color-bg-elevated);}
+.hpQ-check-item:hover{background:#f9fafb;}
 .hpQ-check-item input{display:none;}
 .hpQ-check-mark{width:22px;height:22px;border-radius:6px;border:2px solid #d0d0d0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
-.hpQ-check-item input:checked ~ .hpQ-check-mark{background:var(--brand-legacy);border-color:var(--brand-legacy);}
+.hpQ-check-item input:checked ~ .hpQ-check-mark{background:var(--brand);border-color:var(--brand);}
 .hpQ-check-item input:checked ~ .hpQ-check-mark::after{content:'\f00c';font-family:"Font Awesome 6 Free";font-weight:900;color:#fff;font-size:12px;}
 .hpQ-check-item input:checked ~ span{color:var(--text-primary);font-weight:600;}
 .hpQ-topic-tag{margin-left:auto;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:12px;flex-shrink:0;}
-.heat-tag{background:rgba(198,40,40,.1);color:var(--color-warn);}
+.heat-tag{background:rgba(198,40,40,.1);color:#c62828;}
 .pest-tag{background:rgba(123,31,162,.1);color:#7b1fa2;}
-.msd-tag{background:rgba(21,101,192,.1);color:var(--color-info);}
-.mental-tag{background:rgba(46,125,50,.1);color:var(--color-brand);}
+.msd-tag{background:rgba(21,101,192,.1);color:#1565c0;}
+.mental-tag{background:rgba(46,125,50,.1);color:#2e7d32;}
 
 /* Submit */
-.hpQ-submit-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;background:var(--brand-legacy);color:#fff;font-size:1rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:8px;}
+.hpQ-submit-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:50px;background:var(--brand);color:#fff;font-size:1rem;font-weight:700;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:8px;}
 .hpQ-submit-btn:hover{background:#1b5e20;transform:translateY(-2px);}
 
 /* Result */
@@ -205,17 +205,17 @@
 .hpQ-result-topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
 .hpQ-topic-link{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .3s;border:1.5px solid;}
 .hpQ-topic-link:hover{transform:translateY(-2px);opacity:.85;}
-.hpQ-topic-link.heat-link{color:var(--color-warn);border-color:var(--color-warn);background:rgba(198,40,40,.05);}
+.hpQ-topic-link.heat-link{color:#c62828;border-color:#c62828;background:rgba(198,40,40,.05);}
 .hpQ-topic-link.pest-link{color:#7b1fa2;border-color:#7b1fa2;background:rgba(123,31,162,.05);}
-.hpQ-topic-link.msd-link{color:var(--color-info);border-color:var(--color-info);background:rgba(21,101,192,.05);}
-.hpQ-topic-link.mental-link{color:var(--color-brand);border-color:var(--color-brand);background:rgba(46,125,50,.05);}
+.hpQ-topic-link.msd-link{color:#1565c0;border-color:#1565c0;background:rgba(21,101,192,.05);}
+.hpQ-topic-link.mental-link{color:#2e7d32;border-color:#2e7d32;background:rgba(46,125,50,.05);}
 
 .hpQ-mental-card{display:flex;align-items:center;gap:14px;background:rgba(46,125,50,.06);border:1px solid rgba(46,125,50,.15);border-radius:12px;padding:16px 20px;margin-top:16px;}
-.hpQ-mental-card i{font-size:24px;color:var(--color-brand);flex-shrink:0;}
-.hpQ-mental-card strong{color:var(--color-brand);font-size:1rem;}
+.hpQ-mental-card i{font-size:24px;color:#2e7d32;flex-shrink:0;}
+.hpQ-mental-card strong{color:#2e7d32;font-size:1rem;}
 .hpQ-mental-card p{font-size:.88rem;color:var(--text-secondary);margin:4px 0 0;}
 
-.hpQ-reset-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;background:var(--color-bg-elevated);color:var(--text-secondary);font-size:.9rem;font-weight:600;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:16px;}
+.hpQ-reset-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:50px;background:#f5f5f5;color:var(--text-secondary);font-size:.9rem;font-weight:600;border:none;cursor:pointer;transition:all .3s;font-family:inherit;margin-top:16px;}
 .hpQ-reset-btn:hover{background:#e0e0e0;}
 
 @media(max-width:768px){
@@ -273,7 +273,7 @@
         level='高度風險';color='#EF5350';icon='fa-triangle-exclamation';
         msg='你的健康風險較高，建議盡快改善作業習慣。特別留意下方標示的重點主題。';
       }else{
-        level='極高風險';color='var(--color-warn)';icon='fa-circle-xmark';
+        level='極高風險';color='#c62828';icon='fa-circle-xmark';
         msg='你同時面臨多項風險因子，建議儘早安排健康檢查，並逐步改善每一個勾選項目。';
       }
 
