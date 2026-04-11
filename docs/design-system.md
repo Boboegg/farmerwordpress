@@ -1,216 +1,169 @@
-# 尊嚴農業網站設計系統 — V14 Happy Hues 風定案
+# 尊嚴農業網站設計系統 — V16 OKLCH Tinted Neutral 定案
 
-> 更新日期：2026-04-11
-> 取代：V1 暖米（2026-04-10）已棄用
-> 靈感來源：https://www.happyhues.co/
-> 預覽：[test/palette-v14.html](../test/palette-v14.html)
+> **定案日期**：2026-04-11
+> **取代**：V14 Happy Hues（白底量瞎）+ V15 v1-v4（漸進式 override）
+> **Source of truth**：[css/global.css line 3005-3855](../css/global.css)
+> **三方 skill 共識**：ui-ux-pro-max + impeccable + stitch taste-design
 
 ## 1. 設計哲學
 
-1. **每頁獨立 palette**（不繼承父頁）— 24 頁每頁都有自己的配色組合
-2. **大量留白 + 一個鮮豔焦點** — 不是把顏色擠滿
-3. **對比來自尺寸不是色彩** — 字級差 1.67 倍、line-height 對比
-4. **文字不是純黑** — 用帶該頁色調的深色變體
-5. **Highlight 回歸語義** — 只用在 `<a>` 連結 + underline
-6. **按鈕方角無陰影** — border-radius 3px、純色塊
+1. **全站統一 tinted neutral bg** — 不再每頁獨立 palette bg
+2. **60-30-10 視覺權重** — 60% neutral + 30% text + 10% brand accent
+3. **漂浮卡片層級** — bg neutral-50 → card neutral-0 + border + shadow + 16px radius
+4. **Brand 只在 accent** — 按鈕 / 連結 / icon / stat number / kicker
+5. **OKLCH 感知一致** — 所有 brand 色 lightness 52-72%，中高齡眼中等價刺激
+6. **無漸層 / 無色條 / 無純白** — 三大 anti-pattern 全殺
 
-## 2. Happy Hues 精準尺寸（必遵守）
+## 2. 核心 Tokens（OKLCH）
 
-| 元素 | 尺寸 | 行高 | font-weight | 用途 |
-|------|------|------|-------------|------|
-| Hero H1 | 56px | 64.4 (1.15) | 900 | 整站入口頂部 |
-| Card H2 | 32px | 36px (1.1) | 900 | 每頁主標 |
-| Body | 19.2px | 34.56px (1.8) | 400 | 內文 |
-| Button | 17.6px | 1 | 700 | CTA |
-| Tag | 12px | 1 | 900 | 小標籤 |
+### Neutral 色系（全站 bg + text）
 
-**字級差鐵律**：H2 : Body = 32 ÷ 19.2 = **1.67 倍**（Happy Hues 強對比核心）
+| Token | 值 | 用途 |
+|-------|-----|------|
+| `--neutral-0` | `oklch(99.5% 0.004 75)` | 卡片近白（浮現層）|
+| `--neutral-50` | `oklch(95% 0.014 72)` | 主 bg 明顯暖米（底層）|
+| `--neutral-100` | `oklch(92% 0.016 68)` | surface alt |
+| `--neutral-200` | `oklch(86% 0.018 62)` | border |
+| `--neutral-400` | `oklch(62% 0.020 60)` | muted text |
+| `--neutral-700` | `oklch(38% 0.025 55)` | secondary text |
+| `--neutral-900` | `oklch(22% 0.028 50)` | 主文字 深暖近黑 |
 
-## 3. CSS 核心規範
+### 漂浮感 Shadow
 
 ```css
-/* Card container */
-.scene {
-  padding: 40px;
-  background: var(--bg);
-  border-radius: 3px;        /* 方角！不是 12-16 */
-  border: 1px solid var(--line);
-  box-shadow: none;          /* 無陰影 */
-}
-
-/* Headline */
-.scene h2 {
-  font-size: 32px;
-  font-weight: 900;
-  line-height: 36px;         /* 壓扁 1.1 */
-  margin: 0 0 16px;
-  color: var(--headline);
-  letter-spacing: 0.01em;
-}
-
-/* Body */
-.scene .body {
-  font-size: 19.2px;
-  font-weight: 400;
-  line-height: 34.56px;      /* 放開 1.8 */
-  margin: 0 0 40px;
-  color: var(--paragraph);
-}
-
-/* Link / highlight */
-.scene .body a {
-  color: var(--highlight);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-  font-weight: 700;
-}
-
-/* Button */
-.btn-primary {
-  padding: 19.2px 32px;
-  font-size: 17.6px;
-  font-weight: 700;
-  line-height: 1;
-  border-radius: 3px;
-  background: var(--button);
-  color: var(--button-text);
-  box-shadow: none;
-  border: 0;
-}
-
-/* Tag */
-.scene-tag {
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.15em;
-  padding: 6px 14px;
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  border-radius: 3px;
-}
+--v15-card-shadow: 0 4px 16px oklch(22% 0.02 50 / 0.05),
+                   0 1px 3px oklch(22% 0.02 50 / 0.08);
 ```
 
-## 4. 24 頁獨立 Palette 對應表
+### 字級（保留 Happy Hues 精準尺寸）
 
-### 7 主題頁 + 1 獨立頁
+| 元素 | 尺寸 | 行高 | font-weight |
+|------|------|------|-------------|
+| Hero H1 | clamp(40px, 6vw, 56px) | 1.15 | 900 |
+| Card H2 | 32px | 36px (1.1) | 900 |
+| Body | 19.2px | 34.56px (1.8) | 400 |
+| Button | 17.6px | 1 | 700 |
+| Tag / Kicker | 16px | 1 | 900 |
 
-| 頁面 | BG | Headline | Button | Button Text | Highlight | 基礎 palette |
-|------|-----|----------|--------|-------------|-----------|-------------|
-| 關於我們 | `#eaddcf` | `#020826` | `#f25042` | `#fffffe` | `#f25042` | P7 Red Gold Navy |
-| 職業安全 | `#fffffe` | `#020826` | `#ff8906` | `#020826` | `#e53170` | P5 Orange Red |
-| 健康促進 | `#fffffe` | `#272343` | `#2cb67d` | `#272343` | `#2cb67d` | P4 變體 |
-| 經濟保險 | `#fffffe` | `#094067` | `#3da9fc` | `#fffffe` | `#ef4565` | P15 Blue Coral |
-| 農學堂 | `#fffffe` | `#00473e` | `#faae2b` | `#00473e` | `#fa5246` | P13 變體 |
-| 倡議 | `#fffffe` | `#2b2c34` | `#6246ea` | `#fffffe` | `#e45858` | P12 Electric Purple |
-| 研究成果 | `#fffffe` | `#00214D` | `#00ebc7` | `#00214D` | `#ff5470` | P16 變體 |
-| 最新消息 | `#fffffe` | `#0d0d0d` | `#ff8e3c` | `#0d0d0d` | `#d9376e` | P9 Orange Magenta |
+字級差鐵律：H2 : Body = 32 ÷ 19.2 = **1.67 倍**
 
-### 健康促進 4 子頁
+### 圓角（V15 柔和取代 V14 3px 方角）
 
-| 頁面 | BG | Headline | Button | Button Text | Highlight |
-|------|-----|----------|--------|-------------|-----------|
-| 熱傷害 | `#f8f5f2` | `#232323` | `#f45d48` | `#fffffe` | `#ff8906` |
-| 肌肉骨骼 | `#f8f5f2` | `#094067` | `#3da9fc` | `#fffffe` | `#094067` |
-| 農藥安全 | `#f2f4f6` | `#181818` | `#4fc4cf` | `#181818` | `#078080` |
-| 心理健康 | `#fffffe` | `#0e172c` | `#a786df` | `#0e172c` | `#a786df` |
+| Token | 值 | 用途 |
+|-------|-----|------|
+| `--v14-radius` | `10px` | 按鈕 / tag / 小元素 |
+| `--v14-radius-card` | `16px` | 卡片 / 面板 |
 
-### 職業安全 3 子頁
+## 3. 28 頁 Brand Palette
 
-| 頁面 | BG | Headline | Button | Button Text | Highlight |
-|------|-----|----------|--------|-------------|-----------|
-| 個人防護具 | `#eaddcf` | `#020826` | `#f9bc60` | `#020826` | `#f25042` |
-| 省工農機 | `#fffffe` | `#242629` | `#2cb67d` | `#242629` | `#7f5af0` |
-| 溫室專區 | `#fffffe` | `#33272a` | `#c3f0ca` | `#33272a` | `#ff8ba7` |
+```css
+/* 7 主題 + 1 獨立頁 */
+.fw-page.p-about    { --brand: oklch(58% 0.20 25);  }  /* 珊瑚紅 */
+.fw-page.p-safety   { --brand: oklch(68% 0.20 50);  }  /* 警示橘 */
+.fw-page.p-health   { --brand: oklch(62% 0.16 155); }  /* 薄荷綠 */
+.fw-page.p-economy  { --brand: oklch(58% 0.18 245); }  /* 信任藍 */
+.fw-page.p-study    { --brand: oklch(70% 0.17 80);  }  /* 豐收金 */
+.fw-page.p-advocacy { --brand: oklch(55% 0.22 290); }  /* 電紫 */
+.fw-page.p-research { --brand: oklch(55% 0.14 235); }  /* 學術藍 */
+.fw-page.p-news     { --brand: oklch(65% 0.19 40);  }  /* 橙 */
 
-### 經濟與保險 5 子頁
+/* 健康促進 4 子頁 */
+.fw-page.p-heat      { --brand: oklch(60% 0.21 25);  }
+.fw-page.p-msd       { --brand: oklch(58% 0.16 230); }
+.fw-page.p-pesticide { --brand: oklch(60% 0.13 180); }
+.fw-page.p-mental    { --brand: oklch(62% 0.14 300); }
 
-| 頁面 | BG | Headline | Button | Button Text | Highlight |
-|------|-----|----------|--------|-------------|-----------|
-| 職災險 | `#fffffe` | `#094067` | `#094067` | `#fffffe` | `#ef4565` |
-| 農業險 | `#fffffe` | `#00473e` | `#00473e` | `#fffffe` | `#faae2b` |
-| 補助資源 | `#fffffe` | `#272343` | `#ffd803` | `#272343` | `#ffd803` |
-| 職災試算 | `#fffffe` | `#020826` | `#078080` | `#fffffe` | `#e16162` |
-| 退休金試算 | `#fffffe` | `#020826` | `#8c7851` | `#fffffe` | `#eebbc3` |
+/* 職業安全 3 子頁 */
+.fw-page.p-ppe        { --brand: oklch(70% 0.17 85);  }
+.fw-page.p-machinery  { --brand: oklch(58% 0.16 140); }
+.fw-page.p-greenhouse { --brand: oklch(68% 0.14 150); }
 
-### 研究成果 4 子頁
+/* 經濟保險 5 子頁 */
+.fw-page.p-occ     { --brand: oklch(52% 0.16 250); }
+.fw-page.p-crop    { --brand: oklch(52% 0.13 165); }
+.fw-page.p-subsidy { --brand: oklch(72% 0.18 88);  }
+.fw-page.p-calc1   { --brand: oklch(58% 0.12 195); }
+.fw-page.p-calc2   { --brand: oklch(50% 0.08 70);  }
 
-| 頁面 | BG | Headline | Button | Button Text | Highlight |
-|------|-----|----------|--------|-------------|-----------|
-| 研究出版 | `#fffffe` | `#00214D` | `#00214D` | `#fffffe` | `#00ebc7` |
-| 下載專區 | `#fffffe` | `#242629` | `#7f5af0` | `#fffffe` | `#2cb67d` |
-| 相關資源 | `#f2f4f6` | `#181818` | `#994ff3` | `#fffffe` | `#4fc4cf` |
-| Podcast | `#f3d2c1` | `#271c19` | `#9656a1` | `#fffffe` | `#e78fb3` |
+/* 研究成果 4 子頁 */
+.fw-page.p-pub { --brand: oklch(52% 0.14 240); }
+.fw-page.p-dl  { --brand: oklch(55% 0.22 275); }
+.fw-page.p-rel { --brand: oklch(58% 0.22 285); }
+.fw-page.p-pod { --brand: oklch(58% 0.17 320); }
 
-## 5. 按鈕文字色判定規則
-
-```
-if Primary 色的 relative luminance < 0.25:
-    button_text = #fffffe (白)
-else:
-    button_text = headline 色 (深色)
-```
-
-淺亮按鈕（黃/青/粉/薄荷）用**深色文字**，深鮮按鈕（電紫/深藍/深酒紅）用**白字**。
-
-## 6. Wrapper Class 命名
-
-每頁 HTML 最外層用 `.fw-page.p-{pageKey}`：
-
-```html
-<!-- wp:html -->
-<div class="fw-page p-health">
-  <!-- 健康促進頁內容 -->
-</div>
-<!-- /wp:html -->
+/* 4 分眾入口 */
+.fw-page.p-young       { --brand: oklch(65% 0.19 115); }  /* 萊姆綠 */
+.fw-page.p-beginner    { --brand: oklch(68% 0.16 15);  }  /* 溫暖粉橘 */
+.fw-page.p-experienced { --brand: oklch(50% 0.10 55);  }  /* 深棕 */
+.fw-page.p-public      { --brand: oklch(58% 0.10 220); }  /* 灰藍 */
 ```
 
-Page keys：`p-about`, `p-safety`, `p-health`, `p-economy`, `p-study`, `p-advocacy`, `p-research`, `p-news`, `p-heat`, `p-msd`, `p-pesticide`, `p-mental`, `p-ppe`, `p-machinery`, `p-greenhouse`, `p-occ`, `p-crop`, `p-subsidy`, `p-calc1`, `p-calc2`, `p-pub`, `p-dl`, `p-rel`, `p-pod`
+## 4. V16 Override 結構
 
-## 7. 原始 Happy Hues 17 Palette 色值庫
+實際實作在 `css/global.css` line 3005-3855，共 475 行：
 
-```
-P1 Pink Navy: bg#fef6e4 text#001858 btn#f582ae acc#8bd3dd
-P2 Peach Purple: bg#f3d2c1 text#271c19 btn#e78fb3 acc#ffc0ad
-P3 Pink Mint: bg#fffffe text#33272a btn#ff8ba7 acc#c3f0ca
-P4 Yellow Mint: bg#fffffe text#272343 btn#ffd803 acc#e3f6f5
-P5 Orange Red: bg#fffffe text#020826 btn#ff8906 acc#f25f4c
-P6 Lavender Gold: bg#fffffe text#020826 btn#eebbc3 acc#d4d8f0
-P7 Red Gold Navy: bg#eaddcf text#020826 btn#f25042 acc#f9bc60
-P8 Green Coral: bg#fffffe text#020826 btn#abd1c6 acc#e16162
-P9 Orange Magenta: bg#fffffe text#0d0d0d btn#ff8e3c acc#d9376e
-P10 Teal Red: bg#f8f5f2 text#232323 btn#078080 acc#f45d48
-P11 Pink Purple: bg#fffffe text#0e172c btn#a786df acc#fec7d7
-P12 Electric Purple: bg#fffffe text#2b2c34 btn#6246ea acc#e45858
-P13 Gold Pink Red: bg#fffffe text#00473e btn#faae2b acc#fa5246
-P14 Violet Mint: bg#fffffe text#242629 btn#7f5af0 acc#2cb67d
-P15 Blue Coral: bg#fffffe text#094067 btn#3da9fc acc#ef4565
-P16 Neon Triple: bg#fffffe text#00214D btn#00ebc7 acc#ff5470
-P17 Purple Yellow Teal: bg#f2f4f6 text#181818 btn#994ff3 acc#fbdd74
-```
+| 區段 | 作用 |
+|------|------|
+| A. Universal kill | `.fw-page.v14 *:not(icon/badge/btn)` background-image + box-shadow 清除 |
+| B. Border-left/right 色條殺 | 所有元素強制 neutral-200 |
+| C. Gradient overlay 子層 display:none | `.pod-hero-bg` / `.dc-orb-*` / `.dc-grid-noise` / `.adv-hero-overlay` 等 10+ 層 |
+| D. Top-level containers → neutral-0 卡片 | ~100 個 class exhaustive list |
+| E. Nested sub-items → transparent | ~80 個 class exhaustive list |
+| F. Badge / kicker → 純字 + brand 色 | `-hero-badge` / `-kicker` / `-sec-header` |
+| G. Icons → brand 12% tint 圓形 | `[class*="-icon"]` (exclude card/panel/hero) |
+| H. Stat number → brand 色 | `[class*="-stat-number"]` |
+| I. Hero title/subtitle 統一 | `[class*="-hero-title/subtitle"]` |
+| J. Grid containers 透明 | `[class*="-grid"]:not(card/panel)` |
 
-## 8. 字體（不變）
+## 5. 新頁面檢查清單
+
+改任何頁面前檢查：
+
+- [ ] Wrapper 加 `v14` + `p-*` class（例：`<div class="fw-page v14 p-health">`）
+- [ ] 不用 `linear-gradient` / `radial-gradient`（任何 gradient）
+- [ ] 不用 `#fff` / `#fffffe` / `rgba(255,255,255,x)`
+- [ ] 不用 `border-left` / `border-right` 超過 1px 帶色（impeccable anti-pattern）
+- [ ] 不用硬編碼 `box-shadow`（用 `var(--v15-card-shadow)`）
+- [ ] 不用 `--brand-legacy` 自訂變數（用 global.css 定義的 `var(--brand)`）
+- [ ] 所有顏色必須 `var(--brand)` 或 `var(--neutral-*)`
+- [ ] 新 class name 要加到 V16 override list（`css/global.css` line 3381+）
+- [ ] 內文字級 ≥ 19.2px
+- [ ] 標題:內文 = 1.67 倍
+- [ ] 觸控目標 ≥ 44×44px
+- [ ] 文字一字不改（content preservation）
+
+## 6. 字體（不變）
 
 - **標題**：Noto Serif TC (weight 900)
 - **內文**：Noto Sans TC (weight 400, 700)
 
-## 9. 廢棄紀錄
+## 7. 廢除紀錄
 
-- ❌ **V1 暖米**（2026-04-10）：bg #F7F4ED、brand #4A6932、accent #B07E12、禁冷色
-- ❌ **V2 ~ V13**（2026-04-11）：各種失敗迭代（太暗、太豐富、太保守、橘黃不敢用）
+- ❌ **V1 暖米**（2026-04-10）：bg `#F7F4ED`、brand `#4A6932`、accent `#B07E12`、禁冷色
+- ❌ **V14 Happy Hues**（2026-04-11 上午）：24 頁獨立 palette + `#fffffe` 純白 + 3px 方角
+  - 失敗原因：純白量瞎 + 打破 60-30-10 + 每頁 bg 獨立失去統一感
+- ❌ **V15 v1-v4**（2026-04-11 下午）：漸進式 attribute selector override
+  - 失敗原因：`[class*="-hero"]` 打不到 `.pod-hero-bg`、`.dc-home` 等非 hero 結尾 class
+- ✅ **V16 定案**（2026-04-11 晚間）：4 agent parallel 盤點 + exhaustive class list
 
-演化路徑詳見：memory `reference_dignity_farming_v14_happy_hues.md`
+演化路徑詳見：memory `reference_dignity_farming_v16_oklch_neutral.md`
 
-## 10. 派任 Checklist
+## 8. 派任 Checklist（給 Agent 改頁面時）
 
-改任何頁面前檢查：
-
-- [ ] 內文字級 ≥ 19.2px
+- [ ] 內文字級 ≥ 19.2px（不是 18）
 - [ ] 標題:內文 ≥ 1.67 倍
-- [ ] 標題 line-height ≤ 1.1 倍（壓扁）
-- [ ] 內文 line-height 1.8 倍（放開）
-- [ ] border-radius 3px（不是 12-16）
-- [ ] Button 無 box-shadow
-- [ ] Highlight 只用在 `<a>` + underline
-- [ ] 使用該頁對應的 Happy Hues palette
-- [ ] 文字一字不改（content preservation）
+- [ ] 標題 line-height ≤ 1.1 倍
+- [ ] 內文 line-height 1.8 倍
+- [ ] border-radius 10-16px（按鈕 10，卡片 16）
+- [ ] Button 無 box-shadow（除非用 `var(--v15-card-shadow)`）
+- [ ] Kicker/Badge 純字 + brand 色，無底框
+- [ ] 使用該頁對應的 OKLCH brand
+- [ ] 不自創色（必須在 28 頁 brand list 裡）
+- [ ] HTML wrapper 含 `v14` class
+
+## 參考檔案
+
+- **V15 preview**：[test/palette-v15.html](../test/palette-v15.html)（OKLCH 24 頁預覽）
+- **V16 定案 Memory**：`~/.claude/projects/-Users-boboegg/memory/reference_dignity_farming_v16_oklch_neutral.md`
+- **V14 廢棄預覽**：[test/palette-v14.html](../test/palette-v14.html)（保留做歷史參考）
+- **Skill source**：ui-ux-pro-max / impeccable / stitch taste-design / cinematic-layout (all in `~/.claude/skills/`)
