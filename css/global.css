@@ -3021,13 +3021,17 @@ body[class*="page-id"],
 /* ---- V15 :root tokens ---- */
 :root {
     /* Tinted neutrals — warm farmer dignity, hue 50-75 */
-    --neutral-0:   oklch(99% 0.005 75);   /* 最亮卡片 */
-    --neutral-50:  oklch(97% 0.010 75);   /* 主 bg 暖米 off-white */
-    --neutral-100: oklch(94% 0.013 70);   /* surface alt */
-    --neutral-200: oklch(88% 0.016 65);   /* border */
+    /* 2026-04-11 v3：擴大 card vs bg 色差產生漂浮感 */
+    --neutral-0:   oklch(99.5% 0.004 75); /* 卡片近白（浮現層）*/
+    --neutral-50:  oklch(95% 0.014 72);   /* 主 bg 明顯暖米（底層）*/
+    --neutral-100: oklch(92% 0.016 68);   /* surface alt */
+    --neutral-200: oklch(86% 0.018 62);   /* border */
     --neutral-400: oklch(62% 0.020 60);   /* muted text */
     --neutral-700: oklch(38% 0.025 55);   /* secondary text */
     --neutral-900: oklch(22% 0.028 50);   /* 主文字 深暖近黑 */
+    /* 漂浮感 shadow — 暖色調微落地 */
+    --v15-card-shadow: 0 4px 16px oklch(22% 0.02 50 / 0.05),
+                       0 1px 3px oklch(22% 0.02 50 / 0.08);
 
     /* V15 shared sizes（保留 Happy Hues 精準字級） */
     --v14-fs-hero: 56px;
@@ -3087,6 +3091,12 @@ body[class*="page-id"],
 .fw-page.p-dl  { --brand: oklch(55% 0.22 275); }  /* 下載紫 */
 .fw-page.p-rel { --brand: oklch(58% 0.22 285); }  /* 資源紫 */
 .fw-page.p-pod { --brand: oklch(58% 0.17 320); }  /* Podcast 紫紅 */
+
+/* 4 分眾入口 */
+.fw-page.p-young       { --brand: oklch(65% 0.19 115); }  /* 萊姆綠 — 活力 */
+.fw-page.p-beginner    { --brand: oklch(68% 0.16 15);  }  /* 溫暖粉橘 — 友善 */
+.fw-page.p-experienced { --brand: oklch(50% 0.10 55);  }  /* 深棕 — 穩重 */
+.fw-page.p-public      { --brand: oklch(58% 0.10 220); }  /* 灰藍 — 中性 */
 
 /* ==========================================================
    === V15 全站視覺重置 — .fw-page.v14 scope ===
@@ -3420,6 +3430,12 @@ body[class*="page-id"],
 .fw-page.v14 [class*="-research-group"],
 .fw-page.v14 [class*="-advocacy"],
 .fw-page.v14 [class*="-news-feed"],
+.fw-page.v14 [class*="-stats"],
+.fw-page.v14 [class*="-explore"],
+.fw-page.v14 [class*="-scenario"],
+.fw-page.v14 [class*="-topics"],
+.fw-page.v14 [class*="-pillars"],
+.fw-page.v14 [class*="-programs"],
 .fw-page.v14 [class$="-section"] {
     position: relative !important;
     background: var(--neutral-0) !important;
@@ -3427,7 +3443,7 @@ body[class*="page-id"],
     background-color: var(--neutral-0) !important;
     border: 1px solid var(--neutral-200) !important;
     border-radius: var(--v14-radius-card) !important;
-    box-shadow: none !important;
+    box-shadow: var(--v15-card-shadow) !important;  /* ⭐ 漂浮感 */
     padding: 40px !important;
     margin-bottom: 36px !important;
     color: var(--neutral-900) !important;
