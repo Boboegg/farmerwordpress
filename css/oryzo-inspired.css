@@ -1,0 +1,401 @@
+/* ===================================================
+   Oryzo-Inspired 暗色主題 + 動畫系統
+   來源：oryzo.ai（Lusion 工作室）設計分析
+   適用：尊嚴農業暗色 section、特殊頁面
+   日期：2026-04-12
+   =================================================== */
+
+/* ---------------------------------------------------
+   1. 暖色暗色 Token（零純黑零純白）
+   --------------------------------------------------- */
+:root {
+    /* Oryzo 暗色系 */
+    --oryzo-bg-deep: #100904;        /* 深棕黑（取代純黑） */
+    --oryzo-bg-dark: #1a0f08;        /* 稍淺棕黑 */
+    --oryzo-bg-card: #382416;        /* 深棕（按鈕/卡片底） */
+    --oryzo-text-warm: #FFEDD7;      /* 暖奶油（取代純白） */
+    --oryzo-text-muted: #6C5F51;     /* 灰棕（次要文字） */
+    --oryzo-accent: #DC5000;         /* 燒橘（CTA/強調） */
+    --oryzo-accent-hover: #ff6a1a;   /* 燒橘亮版 */
+    --oryzo-surface: #F6E0C6;        /* 淺暖底（亮色穿插） */
+    --oryzo-olive: #445231;          /* 橄欖綠（功能區） */
+}
+
+/* ---------------------------------------------------
+   2. 暗色 Section 基底
+   用法：在 WordPress block 加 class "oryzo-dark"
+   --------------------------------------------------- */
+.oryzo-dark {
+    background-color: var(--oryzo-bg-deep);
+    color: var(--oryzo-text-warm);
+    padding: 5rem 0;
+}
+
+.oryzo-dark h2,
+.oryzo-dark h3 {
+    color: var(--oryzo-text-warm);
+    text-transform: uppercase;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+}
+
+.oryzo-dark h2 { font-size: clamp(2.5rem, 5vw, 4rem); }
+.oryzo-dark h3 { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+
+.oryzo-dark p {
+    color: var(--oryzo-text-muted);
+    line-height: 1.7;
+    max-width: 640px;
+}
+
+.oryzo-dark a {
+    color: var(--oryzo-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.oryzo-dark a:hover { color: var(--oryzo-accent-hover); }
+
+/* 選取色 */
+.oryzo-dark ::selection {
+    background: rgba(220, 80, 0, 0.3);
+    color: var(--oryzo-accent);
+}
+
+/* ---------------------------------------------------
+   3. 膠囊按鈕（雙變體）
+   --------------------------------------------------- */
+.oryzo-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 17px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none;
+    border: none;
+}
+
+/* 主要：燒橘底 */
+.oryzo-btn--primary {
+    background: var(--oryzo-accent);
+    color: var(--oryzo-bg-deep);
+}
+.oryzo-btn--primary:hover {
+    background: var(--oryzo-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(220, 80, 0, 0.3);
+}
+
+/* 次要：深棕底 + 燒橘邊框 */
+.oryzo-btn--secondary {
+    background: var(--oryzo-bg-card);
+    color: var(--oryzo-text-warm);
+    border: 2px solid var(--oryzo-accent);
+}
+.oryzo-btn--secondary:hover {
+    background: var(--oryzo-accent);
+    color: var(--oryzo-bg-deep);
+}
+
+/* ---------------------------------------------------
+   4. 統計數據展示（大數字排版）
+   用法：<div class="oryzo-stat"><span class="oryzo-stat__label">平均初收年份</span><span class="oryzo-stat__number">25</span><span class="oryzo-stat__unit">年</span></div>
+   --------------------------------------------------- */
+.oryzo-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    padding: 3rem 0;
+}
+
+.oryzo-stat {
+    text-align: center;
+}
+
+.oryzo-stat__label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--oryzo-text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.oryzo-stat__number {
+    display: block;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--oryzo-text-warm);
+}
+
+.oryzo-stat__unit {
+    display: block;
+    font-size: 1rem;
+    color: var(--oryzo-text-muted);
+    margin-top: 0.25rem;
+}
+
+/* ---------------------------------------------------
+   5. 雜誌式堆疊圖片
+   --------------------------------------------------- */
+.oryzo-magazine {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.oryzo-magazine img {
+    border-radius: 8px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    object-fit: cover;
+    width: 100%;
+}
+
+.oryzo-magazine img:nth-child(2) {
+    transform: rotate(-3deg) translateY(20px);
+    z-index: 2;
+}
+
+.oryzo-magazine img:nth-child(3) {
+    transform: rotate(2deg) translateY(-10px);
+}
+
+.oryzo-magazine img:hover {
+    transform: rotate(0deg) translateY(0) scale(1.02);
+    z-index: 10;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------------------------------------------
+   6. Scroll 提示動畫
+   --------------------------------------------------- */
+.oryzo-scroll-hint {
+    position: relative;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--oryzo-text-muted);
+}
+
+.oryzo-scroll-hint::after {
+    content: '↓';
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    animation: oryzo-bounce 2s ease-in-out infinite;
+}
+
+@keyframes oryzo-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(10px); opacity: 1; }
+}
+
+/* ---------------------------------------------------
+   7. 三欄比較卡片
+   --------------------------------------------------- */
+.oryzo-compare {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 3rem 0;
+}
+
+.oryzo-compare__card {
+    background: var(--oryzo-bg-card);
+    border: 2px solid transparent;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.oryzo-compare__card--featured {
+    border-color: var(--oryzo-accent);
+}
+
+.oryzo-compare__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.oryzo-compare__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.oryzo-compare__price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--oryzo-accent);
+    margin-bottom: 1.5rem;
+}
+
+.oryzo-compare__features {
+    list-style: none;
+    padding: 0;
+}
+
+.oryzo-compare__features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 237, 215, 0.1);
+    font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------
+   8. Scroll-Triggered 動畫（GSAP ScrollTrigger 簡化版）
+   純 CSS 版 — 不需 JS
+   --------------------------------------------------- */
+
+/* 淡入上滑 */
+.oryzo-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.oryzo-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 從左滑入 */
+.oryzo-reveal--left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.oryzo-reveal--left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 從右滑入 */
+.oryzo-reveal--right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.oryzo-reveal--right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 縮放淡入 */
+.oryzo-reveal--scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.oryzo-reveal--scale.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 交錯延遲 */
+.oryzo-reveal--delay-1 { transition-delay: 0.1s; }
+.oryzo-reveal--delay-2 { transition-delay: 0.2s; }
+.oryzo-reveal--delay-3 { transition-delay: 0.3s; }
+.oryzo-reveal--delay-4 { transition-delay: 0.4s; }
+
+/* ---------------------------------------------------
+   9. 視差效果（純 CSS，簡化版 Scroll-driven）
+   --------------------------------------------------- */
+.oryzo-parallax {
+    position: relative;
+    overflow: hidden;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oryzo-parallax__bg {
+    position: absolute;
+    inset: -20%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    filter: brightness(0.4);
+}
+
+.oryzo-parallax__content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 3rem;
+}
+
+/* ---------------------------------------------------
+   10. 3D 卡片翻轉（簡化版 Gaussian Splatting 替代）
+   --------------------------------------------------- */
+.oryzo-flip {
+    perspective: 1000px;
+    width: 300px;
+    height: 400px;
+    cursor: pointer;
+}
+
+.oryzo-flip__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-style: preserve-3d;
+}
+
+.oryzo-flip:hover .oryzo-flip__inner {
+    transform: rotateY(180deg);
+}
+
+.oryzo-flip__front,
+.oryzo-flip__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.oryzo-flip__front {
+    background: var(--oryzo-bg-card);
+}
+
+.oryzo-flip__back {
+    background: var(--oryzo-accent);
+    color: var(--oryzo-bg-deep);
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* ---------------------------------------------------
+   11. 響應式
+   --------------------------------------------------- */
+@media (max-width: 768px) {
+    .oryzo-dark h2 { font-size: 2rem; }
+    .oryzo-magazine { grid-template-columns: 1fr; }
+    .oryzo-magazine img:nth-child(2),
+    .oryzo-magazine img:nth-child(3) {
+        transform: none;
+    }
+    .oryzo-stats { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    .oryzo-parallax__bg { background-attachment: scroll; }
+}

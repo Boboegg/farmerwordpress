@@ -1,0 +1,3 @@
+name,status,update,version,update_version,auto_update
+astra-child,active,none,,,off
+astra,parent,none,4.13.0,,off

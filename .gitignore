@@ -17,3 +17,20 @@ gha-creds-*.json
 # P0.5 added 2026-04-09
 node_modules/
 package-lock.json
+
+# ============================================
+# Backups (2026-04-20)
+# 整站備份不進 git：DB 含密碼 hash、uploads 301MB 圖片
+# ============================================
+backups/wp-db-*.sql.gz
+backups/wp-all-options.json
+backups/active-options.json
+backups/uploads/
+backups/wp-pages/
+backups/pages-live-*/
+backups/wp-all-pages.tar.gz
+backups/wp-meta.tar.gz
+backups/page-*-content.html
+
+# /tmp 產生的暫存
+/tmp/wp-*

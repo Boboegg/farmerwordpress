@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>尊嚴農業 — Pre-ripening × 亮色電影感 Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@400;700;900&display=swap" rel="stylesheet" />
+<style>
+/* ===== Pre-ripening palette（老茶米黃 × 7 章節） ===== */
+:root {
+  --brand: #854D0E;
+  --brand-deep: #7F1D1D;
+  --brand-accent: #B45309;
+  --brand-relief: #047857;
+  --bg: #FFFBEB;
+  --surface: #FFFFFF;
+  --surface-muted: #F8F2F0;
+  --paper-warm: #FAF3E0;
+  --fg: #0F172A;
+  --fg-muted: #4B5563;
+  --border: #E7E0D8;
+  --border-strong: #C8BFB3;
+
+  /* 7 章節 */
+  --ch-about: #5B6B2F;
+  --ch-safety: #9A3412;
+  --ch-health: #0E7490;
+  --ch-economic: #78350F;
+  --ch-empower: #B45309;
+  --ch-advocacy: #B91C1C;
+  --ch-research: #064E3B;
+
+  --ch-about-bg: #F0F4E5;
+  --ch-safety-bg: #FDF4E8;
+  --ch-health-bg: #E8F4F8;
+  --ch-economic-bg: #FAF3E0;
+  --ch-empower-bg: #FEF3C7;
+  --ch-advocacy-bg: #FEE2E2;
+  --ch-research-bg: #DCFCE7;
+
+  --font-display: "Inter Tight", "Helvetica Neue", sans-serif;
+  --font-body: "Inter", "Helvetica Neue", sans-serif;
+  --font-serif-tc: "Noto Serif TC", serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-slow: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body), var(--font-serif-tc);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== 紙張質感（噪點 + 暖色光） ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.35'/></svg>");
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+}
+
+/* 暖光溫漸層（跟隨滾動變化） */
+.warm-light {
+  position: fixed;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at var(--x, 30%) var(--y, 20%),
+    rgba(180, 83, 9, 0.18) 0%,
+    rgba(250, 243, 224, 0.12) 35%,
+    transparent 70%
+  );
+  transition: background 1.2s var(--ease-slow);
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 0 6vw;
+  z-index: 2;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+
+.hero-kicker {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  padding: 8px 18px;
+  border: 1.5px solid var(--brand-accent);
+  border-radius: 0;
+  margin-bottom: 32px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: riseIn 1.2s var(--ease-out) 0.2s forwards;
+}
+
+.hero-title {
+  font-family: var(--font-serif-tc);
+  font-weight: 900;
+  font-size: clamp(44px, 8vw, 120px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--brand);
+  margin-bottom: 40px;
+  max-width: 16ch;
+}
+
+.hero-title .line {
+  display: block;
+  overflow: hidden;
+}
+.hero-title .line span {
+  display: inline-block;
+  transform: translateY(110%);
+  animation: lineRise 1.4s var(--ease-out) forwards;
+}
+.hero-title .line:nth-child(1) span { animation-delay: 0.4s; }
+.hero-title .line:nth-child(2) span { animation-delay: 0.6s; color: var(--brand-deep); }
+.hero-title .line:nth-child(3) span { animation-delay: 0.8s; font-style: italic; color: var(--brand-accent); }
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.7;
+  color: var(--fg-muted);
+  max-width: 52ch;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: riseIn 1.2s var(--ease-out) 1.2s forwards;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  opacity: 0;
+  animation: riseIn 1.2s var(--ease-out) 1.4s forwards;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 32px;
+  background: var(--brand);
+  color: var(--bg);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.4s var(--ease-out);
+}
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--brand-deep);
+  transform: translateY(100%);
+  transition: transform 0.5s var(--ease-out);
+}
+.btn-primary:hover::before { transform: translateY(0); }
+.btn-primary span { position: relative; z-index: 1; }
+.btn-primary .arrow {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s var(--ease-out);
+}
+.btn-primary:hover .arrow { transform: translateX(6px); }
+
+.btn-ghost {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid var(--fg);
+  padding-bottom: 4px;
+  transition: color 0.3s, border-color 0.3s;
+}
+.btn-ghost:hover { color: var(--brand-accent); border-color: var(--brand-accent); }
+
+/* 右下角 scroll hint */
+.scroll-hint {
+  position: absolute;
+  right: 6vw;
+  bottom: 8vh;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--fg-muted);
+  writing-mode: vertical-rl;
+  opacity: 0;
+  animation: riseIn 1.2s var(--ease-out) 2s forwards;
+}
+.scroll-hint::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 60px;
+  background: var(--fg-muted);
+  margin-top: 16px;
+  transform-origin: top;
+  animation: scrollPulse 2.4s ease-in-out infinite;
+}
+
+/* ===== 敘事 Section ===== */
+.section {
+  position: relative;
+  padding: clamp(80px, 15vh, 180px) 6vw;
+  z-index: 2;
+}
+
+.section-narrative {
+  background: var(--surface-muted);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.narrative-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(48px, 8vw, 120px);
+  align-items: start;
+}
+
+.narrative-label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--brand-accent);
+  padding-top: 20px;
+  border-top: 2px solid var(--brand-accent);
+  position: sticky;
+  top: 120px;
+}
+
+.narrative-body h2 {
+  font-family: var(--font-serif-tc);
+  font-weight: 900;
+  font-size: clamp(32px, 4.5vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--brand);
+  margin-bottom: 40px;
+}
+.narrative-body h2 em {
+  font-style: italic;
+  color: var(--brand-deep);
+}
+
+.narrative-body p {
+  font-size: 18px;
+  line-height: 1.85;
+  color: var(--fg);
+  margin-bottom: 28px;
+  max-width: 56ch;
+}
+.narrative-body p.lead {
+  font-size: 22px;
+  line-height: 1.6;
+  color: var(--fg);
+  font-weight: 500;
+}
+
+/* ===== 7 章節卡片 ===== */
+.section-chapters {
+  background: var(--bg);
+}
+
+.chapter-head {
+  max-width: 1200px;
+  margin: 0 auto 72px;
+}
+.chapter-head .kicker {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 16px;
+}
+.chapter-head h2 {
+  font-family: var(--font-serif-tc);
+  font-weight: 900;
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 1.05;
+  color: var(--fg);
+  max-width: 14ch;
+}
+
+.chapter-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.chapter-card {
+  position: relative;
+  padding: 40px 32px 48px;
+  background: var(--ch-bg, var(--surface));
+  transition: all 0.6s var(--ease-out);
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chapter-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--ch-color);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.6s var(--ease-out);
+}
+.chapter-card:hover::before { transform: scaleY(1); }
+
+.chapter-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 80% 20%,
+    color-mix(in srgb, var(--ch-color) 12%, transparent) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out);
+  pointer-events: none;
+}
+.chapter-card:hover::after { opacity: 1; }
+
+.chapter-num {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--ch-color);
+  margin-bottom: 24px;
+}
+
+.chapter-title {
+  font-family: var(--font-serif-tc);
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--ch-color);
+  margin-bottom: 16px;
+  transition: transform 0.5s var(--ease-out);
+}
+.chapter-card:hover .chapter-title { transform: translateX(8px); }
+
+.chapter-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--fg-muted);
+  margin-bottom: 28px;
+}
+
+.chapter-link {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ch-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.chapter-link .arrow { transition: transform 0.4s var(--ease-out); }
+.chapter-card:hover .chapter-link .arrow { transform: translateX(6px); }
+
+/* ===== Animation keyframes ===== */
+@keyframes riseIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes lineRise {
+  to { transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.3; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .narrative-grid { grid-template-columns: 1fr; }
+  .narrative-label { position: static; }
+  .scroll-hint { display: none; }
+  .hero-title { font-size: clamp(40px, 11vw, 64px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="warm-light" aria-hidden="true"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-kicker">Dignity in Agriculture</span>
+    <h1 class="hero-title">
+      <span class="line"><span>被忽略的</span></span>
+      <span class="line"><span>不是收成</span></span>
+      <span class="line"><span>是人的尊嚴</span></span>
+    </h1>
+    <p class="hero-sub">
+      從田裡的職業安全、中高齡農民的健康老化，到青銀共學的世代對話——尊嚴農業整合七大章節研究，讓每一位務農者被看見、被照顧、被記得。
+    </p>
+    <div class="hero-cta-row">
+      <a class="btn-primary" href="#narrative">
+        <span>開始閱讀</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="btn-ghost" href="#chapters">瀏覽七大章節</a>
+    </div>
+  </div>
+  <span class="scroll-hint">SCROLL</span>
+</section>
+
+<!-- ============ NARRATIVE ============ -->
+<section class="section section-narrative" id="narrative">
+  <div class="narrative-grid">
+    <div class="narrative-label reveal">01 — 困境</div>
+    <div class="narrative-body">
+      <h2 class="reveal">在<em>金黃稻浪</em>背後，是 65 歲仍彎腰的手。</h2>
+      <p class="lead reveal">
+        臺灣農業從業人口平均年齡 64.4 歲，每三位農民就有一位超過 65 歲。但這組數字背後，是無法退休、無保險、無代間傳承的結構困境。
+      </p>
+      <p class="reveal">
+        我們不是要浪漫化農村，也不是悲情化老農。我們問的是：當一個人願意用一生守住土地，社會該還給他什麼？不是補助、不是憐憫——是一套讓他能有尊嚴地老去、被看見、被記得的制度。
+      </p>
+      <p class="reveal">
+        尊嚴農業計畫整合七大章節研究，從<strong style="color:var(--brand-accent)">職業安全</strong>、<strong style="color:var(--brand-accent)">健康促進</strong>、<strong style="color:var(--brand-accent)">經濟保障</strong>到<strong style="color:var(--brand-accent)">倡議行動</strong>，回應這個時代最難的一道題。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CHAPTERS ============ -->
+<section class="section section-chapters" id="chapters">
+  <div class="chapter-head reveal">
+    <span class="kicker">Seven Chapters</span>
+    <h2>七大章節，<br />一套整合視野。</h2>
+  </div>
+
+  <div class="chapter-grid">
+    <a class="chapter-card reveal" style="--ch-color: var(--ch-about); --ch-bg: var(--ch-about-bg);" href="#">
+      <div>
+        <div class="chapter-num">01 / ABOUT</div>
+        <h3 class="chapter-title">關於</h3>
+        <p class="chapter-desc">為什麼是尊嚴？計畫緣起、核心價值與研究團隊。</p>
+      </div>
+      <span class="chapter-link">閱讀 <span class="arrow">→</span></span>
+    </a>
+
+    <a class="chapter-card reveal" style="--ch-color: var(--ch-safety); --ch-bg: var(--ch-safety-bg);" href="#">
+      <div>
+        <div class="chapter-num">02 / SAFETY</div>
+        <h3 class="chapter-title">職安</h3>
+        <p class="chapter-desc">務農災害率、機具風險與老農作業安全的田野調查。</p>
+      </div>
+      <span class="chapter-link">閱讀 <span class="arrow">→</span></span>
+    </a>
+
+    <a class="chapter-card reveal" style="--ch-color: var(--ch-health); --ch-bg: var(--ch-health-bg);" href="#">
+      <div>
+        <div class="chapter-num">03 / HEALTH</div>
+        <h3 class="chapter-title">健康</h3>
+        <p class="chapter-desc">中高齡農民的健康促進、慢性病管理與健康老化模式。</p>
+      </div>
+      <span class="chapter-link">閱讀 <span class="arrow">→</span></span>
+    </a>
+
+    <a class="chapter-card reveal" style="--ch-color: var(--ch-economic); --ch-bg: var(--ch-economic-bg);" href="#">
+      <div>
+        <div class="chapter-num">04 / ECONOMIC</div>
+        <h3 class="chapter-title">經濟</h3>
+        <p class="chapter-desc">收入穩定、退休保障與金融素養，農業不只是產業。</p>
+      </div>
+      <span class="chapter-link">閱讀 <span class="arrow">→</span></span>
+    </a>
+
+    <a class="chapter-card reveal" style="--ch-color: var(--ch-empower); --ch-bg: var(--ch-empower-bg);" href="#">
+      <div>
+        <div class="chapter-num">05 / EMPOWER</div>
+        <h3 class="chapter-title">培力</h3>
+        <p class="chapter-desc">青銀共學、數位工具與跨世代知識傳承的實踐。</p>
+      </div>
+      <span class="chapter-link">閱讀 <span class="arrow">→</span></span>
+    </a>
+
+    <a class="chapter-card reveal" style="--ch-color: var(--ch-advocacy); --ch-bg: var(--ch-advocacy-bg);" href="#">
+      <div>
+        <div class="chapter-num">06 / ADVOCACY</div>
+        <h3 class="chapter-title">倡議</h3>
+        <p class="chapter-desc">政策建言、媒體溝通與讓農民聲音被聽見的行動。</p>
+      </div>
+      <span class="chapter-link">閱讀 <span class="arrow">→</span></span>
+    </a>
+
+    <a class="chapter-card reveal" style="--ch-color: var(--ch-research); --ch-bg: var(--ch-research-bg);" href="#">
+      <div>
+        <div class="chapter-num">07 / RESEARCH</div>
+        <h3 class="chapter-title">研究</h3>
+        <p class="chapter-desc">學術論文、研究報告與開放資料的完整彙整。</p>
+      </div>
+      <span class="chapter-link">閱讀 <span class="arrow">→</span></span>
+    </a>
+  </div>
+</section>
+
+<script>
+// Warm light follows scroll + mouse
+const warm = document.querySelector('.warm-light');
+document.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth * 100).toFixed(1);
+  const y = (e.clientY / window.innerHeight * 100).toFixed(1);
+  warm.style.setProperty('--x', x + '%');
+  warm.style.setProperty('--y', y + '%');
+});
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('in'), i * 80);
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

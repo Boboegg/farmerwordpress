@@ -37,5 +37,13 @@
   "pages/economic-insurance/crop-insurance/農業保險": 1341,
   "pages/economic-insurance/agricultural-subsidy-resources/農業補助資源": 1342,
   "pages/economic-insurance/worker-occupational-accident-calculator/農民職業災害試算表": 1507,
-  "pages/economic-insurance/farmer-worker-retirement-calculator/農民退休金試算表": 1524
+  "pages/economic-insurance/farmer-worker-retirement-calculator/農民退休金試算表": 1524,
+
+  "_About 子頁": "parent=1476",
+  "pages/About/ResearchTeam/研究團隊.html": 1405,
+  "pages/About/contact/聯繫我們.html": 925,
+  "pages/About/day/行事曆.html": 927,
+
+  "_研究成果子頁（圖解懶人包 2026-04-20 補 map，線上目前空）": "parent=1331",
+  "pages/research-result/infographic/圖解懶人包.html": 1378
 }

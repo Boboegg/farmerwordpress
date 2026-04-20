@@ -1,0 +1,1216 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>尊嚴農業 — V15 MASTER A 版章節頁（職業安全 · 五幕敘事）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* =============================================================
+   V15 MASTER A 版章節頁 — 職業安全（2026-04-20）
+   特色：MILESTONE 視覺語言 + 五幕敘事骨架
+   決策來源：Bobo Q1 選 B（章節頁加敘事節奏）+ Q3 選 C（砍 tilt/magnetic 到 1+1）
+   示範章節：safety（data-page="safety"）
+   ============================================================= */
+
+.fw-page-v15 {
+  /* Neutral tokens */
+  --v15-n0:   oklch(100% 0 0);
+  --v15-n50:  oklch(98.5% 0.005 75);
+  --v15-n100: oklch(96% 0.008 72);
+  --v15-n200: oklch(90% 0.010 62);
+  --v15-n400: oklch(62% 0.020 60);
+  --v15-n700: oklch(38% 0.025 55);
+  --v15-n900: oklch(15% 0.018 50);
+
+  /* 預設 brand（會被 data-page="safety" 覆寫） */
+  --v15-brand:      oklch(55% 0.17 155);
+  --v15-brand-deep: oklch(35% 0.14 155);
+  --v15-brand-bg:   oklch(94% 0.04 155);
+  --v15-brand-hot:  oklch(68% 0.22 50);
+
+  /* Typography — 收斂字級階 */
+  --v15-f-tc: "Noto Sans TC", "PingFang TC", sans-serif;
+  --v15-f-ui: "Inter", sans-serif;
+
+  --v15-fs-hero: clamp(44px, 6.5vw, 88px);
+  --v15-fs-h2:   clamp(32px, 4vw, 56px);
+  --v15-fs-h3:   clamp(22px, 2.5vw, 32px);
+  --v15-fs-stat: clamp(48px, 6vw, 72px);
+  --v15-fs-big:  clamp(56px, 7vw, 88px);
+  --v15-fs-cta:  clamp(56px, 8vw, 120px);
+  --v15-fs-body: 20px;
+  --v15-fs-lead: 22px;
+
+  --v15-r-btn:  10px;
+  --v15-r-card: 16px;
+  --v15-r-xl:   24px;
+  --v15-r-pill: 999px;
+
+  --v15-e-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --v15-e-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  background: var(--v15-n50);
+  color: var(--v15-n900);
+  font-family: var(--v15-f-tc);
+  font-size: var(--v15-fs-body);
+  line-height: 1.75;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.6s var(--v15-e-out);
+}
+
+.fw-page-v15 *, .fw-page-v15 *::before, .fw-page-v15 *::after { box-sizing: border-box; }
+.fw-page-v15 a { color: inherit; text-decoration: none; }
+.fw-page-v15 img, .fw-page-v15 svg { display: block; max-width: 100%; }
+
+/* 28 頁 brand override — 章節頁預設就是 safety */
+.fw-page-v15[data-page="safety"] {
+  --v15-brand:      oklch(68% 0.20 50);
+  --v15-brand-deep: oklch(45% 0.17 50);
+  --v15-brand-bg:   oklch(95% 0.04 50);
+}
+
+/* 紙張 noise */
+.fw-page-v15::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='280' height='280' filter='url(%23n)' opacity='0.4'/></svg>");
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+}
+
+/* Mesh gradient 桌機 only */
+.fw-page-v15 .mesh-bg { display: none; }
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .fw-page-v15 .mesh-bg {
+    display: block;
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 120vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .fw-page-v15 .mesh-bg .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    mix-blend-mode: multiply;
+    opacity: 0.4;
+    will-change: transform;
+    animation: v15BlobFloat 30s ease-in-out infinite;
+  }
+  .fw-page-v15 .mesh-bg .b1 { width: 560px; height: 560px; top: -10%; left: -8%; background: color-mix(in oklch, var(--v15-brand) 38%, transparent); }
+  .fw-page-v15 .mesh-bg .b2 { width: 480px; height: 480px; top: 30%; right: -5%; background: color-mix(in oklch, var(--v15-brand-hot) 28%, transparent); animation-delay: -10s; }
+  .fw-page-v15 .mesh-bg .b3 { width: 420px; height: 420px; bottom: -5%; left: 28%; background: color-mix(in oklch, var(--v15-brand-deep) 22%, transparent); animation-delay: -18s; }
+  @keyframes v15BlobFloat {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    33%      { transform: translate(40px,-30px) scale(1.06); }
+    66%      { transform: translate(-30px,40px) scale(0.96); }
+  }
+}
+
+/* Scroll progress */
+.fw-page-v15 .v15-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--v15-brand), var(--v15-brand-hot));
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* Topbar */
+.fw-page-v15 .v15-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: color-mix(in oklch, var(--v15-n50) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.4s;
+}
+.fw-page-v15.scrolled .v15-topbar { border-bottom-color: var(--v15-n200); }
+.fw-page-v15 .v15-logo {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--v15-n900);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fw-page-v15 .v15-logo::before {
+  content: "";
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--v15-brand);
+  animation: v15Pulse 2.4s ease-in-out infinite;
+}
+.fw-page-v15 .v15-logo .en { font-family: var(--v15-f-ui); font-weight: 600; font-size: 13px; color: var(--v15-n400); letter-spacing: 0.05em; }
+@keyframes v15Pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+
+.fw-page-v15 .v15-nav { display: flex; gap: 28px; margin-left: auto; font-family: var(--v15-f-tc); font-size: 15px; font-weight: 500; }
+.fw-page-v15 .v15-nav a { position: relative; padding: 6px 0; color: var(--v15-n700); transition: color 0.3s; }
+.fw-page-v15 .v15-nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: var(--v15-brand); transform: scaleX(0); transform-origin: right; transition: transform 0.4s var(--v15-e-out); }
+.fw-page-v15 .v15-nav a:hover { color: var(--v15-n900); }
+.fw-page-v15 .v15-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.fw-page-v15 .v15-breadcrumb {
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--v15-n400);
+  margin-left: 16px;
+}
+.fw-page-v15 .v15-breadcrumb .sep { margin: 0 10px; opacity: 0.6; }
+.fw-page-v15 .v15-breadcrumb .cur { color: var(--v15-brand-deep); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .fw-page-v15 .v15-nav { display: none; }
+  .fw-page-v15 .v15-breadcrumb { margin-left: auto; }
+}
+
+/* Act meta label */
+.fw-page-v15 .act-meta {
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--v15-brand);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.fw-page-v15 .act-meta::before { content: ""; width: 32px; height: 1.5px; background: var(--v15-brand); }
+
+.fw-page-v15 h2 {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-h2);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--v15-n900);
+}
+.fw-page-v15 h2 .brand { color: var(--v15-brand-deep); }
+
+/* Buttons */
+.fw-page-v15 .v15-btn {
+  font-family: var(--v15-f-tc);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 34px;
+  border-radius: var(--v15-r-pill);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--v15-e-out), box-shadow 0.4s;
+}
+.fw-page-v15 .v15-btn-primary { background: var(--v15-n900); color: var(--v15-n0); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.fw-page-v15 .v15-btn-primary::before { content: ""; position: absolute; inset: 0; background: var(--v15-brand); transform: translateY(100%); transition: transform 0.5s var(--v15-e-out); }
+.fw-page-v15 .v15-btn-primary:hover::before { transform: translateY(0); }
+.fw-page-v15 .v15-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+.fw-page-v15 .v15-btn-primary > * { position: relative; z-index: 1; }
+.fw-page-v15 .v15-btn-primary .arrow { transition: transform 0.4s var(--v15-e-out); }
+.fw-page-v15 .v15-btn-primary:hover .arrow { transform: translateX(6px); }
+
+.fw-page-v15 .v15-btn-ghost { background: transparent; color: var(--v15-n900); border: 1.5px solid var(--v15-n200); }
+.fw-page-v15 .v15-btn-ghost:hover { border-color: var(--v15-brand); color: var(--v15-brand-deep); background: var(--v15-brand-bg); }
+
+/* =============================================================
+   幕一｜HOOK — 衝擊
+   ============================================================= */
+.fw-page-v15 .act-hook {
+  padding: 100px 6vw 80px;
+  min-height: calc(100vh - 72px);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+.fw-page-v15 .hook-text { max-width: 640px; }
+.fw-page-v15 .hook-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: var(--v15-r-pill);
+  background: var(--v15-brand-bg);
+  color: var(--v15-brand-deep);
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid color-mix(in oklch, var(--v15-brand) 25%, transparent);
+  margin-bottom: 32px;
+}
+.fw-page-v15 .hook-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--v15-brand); animation: v15Pulse 2.4s ease-in-out infinite; }
+
+/* 逐字進場 */
+.fw-page-v15 .hook-title {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-hero);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--v15-n900);
+  margin-bottom: 32px;
+  max-width: 16ch;
+}
+.fw-page-v15 .hook-title .row { display: block; overflow: hidden; padding: 2px 0; }
+.fw-page-v15 .hook-title .row .char {
+  display: inline-block;
+  transform: translateY(105%);
+  transition: transform 1s var(--v15-e-out);
+}
+.fw-page-v15.js-ready .hook-title .row .char { transform: translateY(0); }
+.fw-page-v15 .hook-title .brand { color: var(--v15-brand-deep); }
+.fw-page-v15 .hook-title .hl { position: relative; display: inline-block; }
+.fw-page-v15 .hook-title .hl::after {
+  content: "";
+  position: absolute;
+  left: -2%; right: -2%;
+  bottom: 8%;
+  height: 24%;
+  background: var(--v15-brand-bg);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s var(--v15-e-out) 1.6s;
+}
+.fw-page-v15.js-ready .hook-title .hl::after { transform: scaleX(1); }
+
+.fw-page-v15 .hook-lead {
+  font-size: var(--v15-fs-lead);
+  line-height: 1.7;
+  color: var(--v15-n700);
+  margin-bottom: 40px;
+  max-width: 48ch;
+}
+.fw-page-v15 .hook-lead strong { color: var(--v15-brand-deep); font-weight: 700; }
+.fw-page-v15 .hook-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Hero visual — 安全主題影像佔位 */
+.fw-page-v15 .hook-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--v15-r-xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--v15-brand-deep) 0%, oklch(45% 0.17 50) 50%, var(--v15-brand-hot) 100%);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.6s var(--v15-e-out) 0.4s;
+}
+.fw-page-v15.js-ready .hook-visual { clip-path: inset(0 0 0 0); }
+.fw-page-v15 .hook-visual::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.8'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.5'/></svg>");
+  opacity: 0.22; mix-blend-mode: overlay;
+}
+.fw-page-v15 .hook-visual svg { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 72%; opacity: 0.88; }
+.fw-page-v15 .hook-visual-caption {
+  position: absolute;
+  bottom: 24px; left: 24px; right: 24px;
+  font-family: var(--v15-f-ui);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 251, 235, 0.82);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .fw-page-v15 .act-hook { grid-template-columns: 1fr; gap: 48px; min-height: auto; }
+  .fw-page-v15 .hook-visual { aspect-ratio: 4 / 3; }
+}
+
+/* =============================================================
+   Stat Band — 職安 4 格概覽（MILESTONE 精華）
+   ============================================================= */
+.fw-page-v15 .v15-statband {
+  padding: clamp(60px, 10vh, 100px) 6vw;
+  background: var(--v15-n0);
+  border-top: 1px solid var(--v15-n200);
+  border-bottom: 1px solid var(--v15-n200);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+.fw-page-v15 .v15-statband::before {
+  content: "職業安全";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(80px, 14vw, 220px);
+  line-height: 1;
+  color: var(--v15-brand);
+  opacity: 0.05;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+}
+.fw-page-v15 .stat-grid {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+.fw-page-v15 .stat-cell { padding: 24px 0; position: relative; }
+.fw-page-v15 .stat-cell .kicker {
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--v15-brand);
+  margin-bottom: 14px;
+}
+.fw-page-v15 .stat-cell .num {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-stat);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--v15-n900);
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+}
+.fw-page-v15 .stat-cell .num .unit { font-size: 0.4em; color: var(--v15-n400); margin-left: 6px; font-weight: 500; }
+.fw-page-v15 .stat-cell .label { font-size: 15px; color: var(--v15-n700); line-height: 1.6; }
+
+/* =============================================================
+   幕二｜PROOF — 深度 3 數字（scramble 唯一使用處）
+   ============================================================= */
+.fw-page-v15 .act-proof {
+  position: relative;
+  z-index: 3;
+  background: var(--v15-n50);
+}
+.fw-page-v15 .proof-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(80px, 14vh, 140px) 6vw;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 80px;
+}
+.fw-page-v15 .proof-aside { position: sticky; top: 110px; align-self: start; height: fit-content; }
+.fw-page-v15 .proof-aside h2 { margin-bottom: 20px; font-size: clamp(28px, 3.5vw, 44px); }
+.fw-page-v15 .proof-aside p { font-size: 17px; line-height: 1.7; color: var(--v15-n700); }
+
+.fw-page-v15 .proof-list { display: flex; flex-direction: column; gap: 8px; }
+.fw-page-v15 .proof-item {
+  padding: 48px 0;
+  border-top: 1px solid var(--v15-n200);
+  position: relative;
+}
+.fw-page-v15 .proof-item::before {
+  content: ""; position: absolute; top: -1px; left: 0;
+  height: 2px; width: 0;
+  background: var(--v15-brand);
+  transition: width 1.4s var(--v15-e-out);
+}
+.fw-page-v15 .proof-item.in::before { width: 100%; }
+
+.fw-page-v15 .proof-num {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-stat);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--v15-n900);
+  margin-bottom: 14px;
+  font-variant-numeric: tabular-nums;
+  display: flex; align-items: baseline; gap: 8px;
+}
+.fw-page-v15 .proof-num .unit { font-size: 0.45em; font-weight: 500; color: var(--v15-n400); letter-spacing: 0; }
+.fw-page-v15 .proof-label { font-size: 18px; font-weight: 500; color: var(--v15-n900); margin-bottom: 8px; }
+.fw-page-v15 .proof-desc { font-size: 17px; line-height: 1.7; color: var(--v15-n700); margin-bottom: 10px; max-width: 52ch; }
+.fw-page-v15 .proof-src { font-family: var(--v15-f-ui); font-size: 12px; color: var(--v15-n400); letter-spacing: 0.1em; text-transform: uppercase; }
+.fw-page-v15 .proof-note { font-size: 13px; color: var(--v15-n400); font-style: italic; margin-top: 6px; }
+
+@media (max-width: 900px) {
+  .fw-page-v15 .proof-inner { grid-template-columns: 1fr; gap: 40px; }
+  .fw-page-v15 .proof-aside { position: static; }
+}
+
+/* =============================================================
+   幕三｜METHOD — 三步驟方法卡片（normal grid，無 tilt）
+   ============================================================= */
+.fw-page-v15 .act-method {
+  padding: clamp(80px, 14vh, 140px) 6vw;
+  position: relative;
+  z-index: 3;
+}
+.fw-page-v15 .method-head {
+  max-width: 1400px;
+  margin: 0 auto 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+}
+.fw-page-v15 .method-head h2 { max-width: 16ch; }
+.fw-page-v15 .method-head p { font-size: 18px; line-height: 1.7; color: var(--v15-n700); max-width: 42ch; }
+@media (max-width: 768px) { .fw-page-v15 .method-head { grid-template-columns: 1fr; gap: 24px; } }
+
+.fw-page-v15 .method-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.fw-page-v15 .method-card {
+  background: var(--v15-n0);
+  border: 1px solid var(--v15-n200);
+  border-radius: var(--v15-r-card);
+  padding: 36px 32px 40px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--v15-e-out), box-shadow 0.4s, border-color 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+}
+.fw-page-v15 .method-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.08);
+  border-color: var(--v15-brand);
+}
+.fw-page-v15 .method-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 85% 10%, color-mix(in oklch, var(--v15-brand) 12%, transparent), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.fw-page-v15 .method-card:hover::before { opacity: 1; }
+.fw-page-v15 .method-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+.fw-page-v15 .method-num { font-family: var(--v15-f-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: var(--v15-brand); }
+.fw-page-v15 .method-glyph {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: color-mix(in oklch, var(--v15-brand) 14%, transparent);
+  color: var(--v15-brand-deep);
+  display: grid; place-items: center;
+  font-weight: 900; font-size: 18px;
+  transition: transform 0.5s var(--v15-e-snap);
+}
+.fw-page-v15 .method-card:hover .method-glyph { transform: rotate(-6deg) scale(1.1); }
+.fw-page-v15 .method-title {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-h3);
+  line-height: 1.2;
+  color: var(--v15-brand-deep);
+  margin-bottom: 12px;
+}
+.fw-page-v15 .method-desc { font-size: 16px; line-height: 1.7; color: var(--v15-n700); margin-bottom: 20px; }
+.fw-page-v15 .method-ref {
+  font-family: var(--v15-f-ui);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--v15-n400);
+  padding-top: 16px;
+  border-top: 1px solid var(--v15-n200);
+}
+
+/* =============================================================
+   幕四｜PROMISE — feature row + 1 tilt-card
+   ============================================================= */
+.fw-page-v15 .act-promise {
+  padding: clamp(80px, 14vh, 140px) 6vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+.fw-page-v15 .promise-head {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+.fw-page-v15 .promise-head h2 { max-width: 22ch; margin: 0 auto; }
+.fw-page-v15 .promise-head .act-meta { justify-content: center; }
+.fw-page-v15 .promise-head .act-meta::before { display: none; }
+
+.fw-page-v15 .promise-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .fw-page-v15 .promise-layout { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* MILESTONE 風 feature-row */
+.fw-page-v15 .feature-row {
+  display: flex;
+  flex-direction: column;
+}
+.fw-page-v15 .feat-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 36px;
+  align-items: start;
+  padding: 36px 0;
+  border-top: 1px solid var(--v15-n200);
+  transition: background 0.4s, padding 0.4s, border-radius 0.4s;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.fw-page-v15 .feat-item:hover {
+  background: var(--v15-brand-bg);
+  padding-left: 24px; padding-right: 24px;
+  border-radius: var(--v15-r-card);
+}
+.fw-page-v15 .feat-num {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-big);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--v15-brand);
+  font-variant-numeric: tabular-nums;
+  transition: transform 0.5s var(--v15-e-out);
+}
+.fw-page-v15 .feat-item:hover .feat-num { transform: translateX(6px) scale(1.04); }
+.fw-page-v15 .feat-body h3 {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.2;
+  color: var(--v15-n900);
+  margin-bottom: 10px;
+}
+.fw-page-v15 .feat-body h3 .brand { color: var(--v15-brand-deep); }
+.fw-page-v15 .feat-body p { font-size: 16px; line-height: 1.7; color: var(--v15-n700); max-width: 48ch; }
+
+@media (max-width: 768px) {
+  .fw-page-v15 .feat-item { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* Tilt card — 唯一使用處（Promise 幕右欄） */
+.fw-page-v15 .tilt-card {
+  position: sticky;
+  top: 110px;
+  background: linear-gradient(160deg, var(--v15-brand-deep) 0%, var(--v15-brand-hot) 100%);
+  color: var(--v15-n0);
+  border-radius: var(--v15-r-xl);
+  padding: 44px 36px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.5s var(--v15-e-out), box-shadow 0.4s;
+  will-change: transform;
+  overflow: hidden;
+}
+.fw-page-v15 .tilt-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.85'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.45'/></svg>");
+  opacity: 0.15; mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.fw-page-v15 .tilt-card .kicker {
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 251, 235, 0.85);
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+.fw-page-v15 .tilt-card h3 {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.2;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.fw-page-v15 .tilt-card p {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: rgba(255, 251, 235, 0.92);
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+.fw-page-v15 .tilt-card .mou-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+}
+.fw-page-v15 .tilt-card .mou-list li {
+  list-style: none;
+  font-size: 14.5px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.fw-page-v15 .tilt-card .mou-list li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--v15-n0);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .fw-page-v15 .tilt-card { position: static; }
+}
+
+/* =============================================================
+   唯一 Marquee — Promise → Invite 節奏切換
+   ============================================================= */
+.fw-page-v15 .marquee {
+  padding: 32px 0;
+  overflow: hidden;
+  background: var(--v15-n900);
+  color: var(--v15-n0);
+  position: relative;
+  z-index: 3;
+}
+.fw-page-v15 .marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: v15Marquee 45s linear infinite;
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: -0.02em;
+  gap: 40px;
+}
+.fw-page-v15 .marquee-track span { display: inline-flex; align-items: center; gap: 40px; }
+.fw-page-v15 .marquee-track .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--v15-brand-hot); }
+@keyframes v15Marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* =============================================================
+   幕五｜INVITE — 情緒高潮 + 1 btn-magnetic
+   ============================================================= */
+.fw-page-v15 .act-invite {
+  padding: clamp(120px, 20vh, 180px) 6vw;
+  background: var(--v15-n900);
+  color: var(--v15-n0);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+.fw-page-v15 .act-invite::before {
+  content: "安全";
+  position: absolute;
+  right: -4%; bottom: -12%;
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(200px, 30vw, 480px);
+  line-height: 0.85;
+  color: var(--v15-brand);
+  opacity: 0.14;
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+.fw-page-v15 .invite-inner {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.fw-page-v15 .invite-inner .act-meta { color: var(--v15-brand-hot); }
+.fw-page-v15 .invite-inner .act-meta::before { background: var(--v15-brand-hot); }
+.fw-page-v15 .invite-title {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-cta);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
+  color: var(--v15-n0);
+}
+.fw-page-v15 .invite-title em { font-style: normal; color: var(--v15-brand-hot); }
+.fw-page-v15 .invite-sub { font-size: 20px; line-height: 1.7; opacity: 0.85; max-width: 42ch; margin-bottom: 40px; }
+.fw-page-v15 .invite-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+
+/* Magnetic button（主 CTA 唯一使用） */
+.fw-page-v15 .btn-magnetic {
+  transition: transform 0.3s var(--v15-e-out), background 0.4s, box-shadow 0.4s;
+  will-change: transform;
+}
+
+.fw-page-v15 .invite-actions .v15-btn-primary { background: var(--v15-brand-hot); color: var(--v15-n900); }
+.fw-page-v15 .invite-actions .v15-btn-primary::before { background: var(--v15-n0); }
+.fw-page-v15 .invite-actions .v15-btn-primary:hover { color: var(--v15-n900); }
+.fw-page-v15 .invite-actions .v15-btn-ghost { color: var(--v15-n0); border-color: rgba(255, 255, 255, 0.3); }
+.fw-page-v15 .invite-actions .v15-btn-ghost:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--v15-n0); color: var(--v15-n0); }
+
+.fw-page-v15 .chapter-siblings {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  gap: 24px 36px;
+  flex-wrap: wrap;
+  font-family: var(--v15-f-ui);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+.fw-page-v15 .chapter-siblings a {
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.3s;
+}
+.fw-page-v15 .chapter-siblings a:hover { color: var(--v15-brand-hot); }
+
+.fw-page-v15 .v15-foot {
+  padding: 40px 6vw;
+  background: var(--v15-n900);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--v15-f-ui);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: relative;
+  z-index: 3;
+}
+.fw-page-v15 .v15-foot a { color: inherit; }
+.fw-page-v15 .v15-foot a:hover { color: var(--v15-brand-hot); }
+
+@media (max-width: 768px) { .fw-page-v15 .invite-inner { grid-template-columns: 1fr; gap: 48px; } }
+
+/* Reveal */
+.fw-page-v15 .reveal { opacity: 0.001; transform: translateY(24px); transition: opacity 1s var(--v15-e-out), transform 1s var(--v15-e-out); }
+.fw-page-v15 .reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .fw-page-v15 *, .fw-page-v15 *::before, .fw-page-v15 *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+  .fw-page-v15 .hook-title .row .char, .fw-page-v15 .hook-visual, .fw-page-v15 .hook-title .hl::after {
+    transform: none !important; clip-path: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="fw-page-v15" data-page="safety" id="page">
+<div class="v15-progress" aria-hidden="true"></div>
+
+<div class="mesh-bg" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<header class="v15-topbar">
+  <div class="v15-logo">尊嚴農業 <span class="en">Dignity Farming</span></div>
+  <nav class="v15-nav" aria-label="主選單">
+    <a href="#hook">概覽</a>
+    <a href="#proof">證據</a>
+    <a href="#method">方法</a>
+    <a href="#promise">承諾</a>
+    <a href="#invite">下載</a>
+  </nav>
+  <div class="v15-breadcrumb" aria-label="頁面位置">
+    <span>章節</span><span class="sep">/</span><span class="cur">02 職業安全</span>
+  </div>
+</header>
+
+<!-- ========== 幕一｜HOOK ========== -->
+<section class="act-hook" id="hook">
+  <div class="hook-text">
+    <span class="hook-chip">Chapter 02 · Occupational Safety</span>
+    <h1 class="hook-title" id="heroTitle">
+      <span class="row"><span class="char">田</span><span class="char">裡</span><span class="char">不</span><span class="char">是</span><span class="char">沒</span><span class="char">有</span></span>
+      <span class="row"><span class="char brand">危</span><span class="char brand">險</span><span class="char">，</span></span>
+      <span class="row"><span class="char">只</span><span class="char">是</span><span class="char">沒</span><span class="char"><span class="hl">人</span></span><span class="char">記</span><span class="char">錄</span><span class="char">。</span></span>
+    </h1>
+    <p class="hook-lead">
+      臺灣農業職業災害發生率為全產業的 <strong>2.8 倍</strong>。但真正的問題不是數字大——而是絕大多數事故從來沒被寫下來、沒被分類、沒被用來預防下一次。
+    </p>
+    <div class="hook-ctas">
+      <a class="v15-btn v15-btn-primary" href="#proof"><span>看見三個真實數字</span><span class="arrow">→</span></a>
+      <a class="v15-btn v15-btn-ghost" href="#invite">下載安全手冊</a>
+    </div>
+  </div>
+  <figure class="hook-visual" aria-label="職業安全主題影像佔位">
+    <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- 農機械剪影（曳引機抽象輪廓） -->
+      <rect x="40" y="150" width="120" height="60" rx="8" fill="rgba(255,255,255,0.18)"/>
+      <rect x="60" y="110" width="80" height="50" rx="6" fill="rgba(255,255,255,0.22)"/>
+      <circle cx="70" cy="215" r="18" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="140" cy="215" r="24" fill="rgba(255,255,255,0.25)"/>
+      <path d="M0 240 Q50 234 100 238 T200 236" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
+      <!-- 安全標誌三角形（幾何提示） -->
+      <polygon points="150,50 165,80 135,80" fill="rgba(255,251,235,0.35)" stroke="rgba(255,251,235,0.55)" stroke-width="1.2"/>
+      <text x="150" y="75" font-family="Inter" font-size="16" font-weight="900" fill="rgba(255,251,235,0.9)" text-anchor="middle">!</text>
+    </svg>
+    <figcaption class="hook-visual-caption">
+      <span>Photo Placeholder</span>
+      <span>田間安全場景</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- ========== Stat Band 4 格概覽 ========== -->
+<section class="v15-statband" aria-label="職安概覽">
+  <div class="stat-grid">
+    <div class="stat-cell">
+      <div class="kicker">Avg Age</div>
+      <div class="num">64.4<span class="unit">歲</span></div>
+      <div class="label">臺灣務農者平均年齡</div>
+    </div>
+    <div class="stat-cell">
+      <div class="kicker">Risk Ratio</div>
+      <div class="num">2.8<span class="unit">倍</span></div>
+      <div class="label">農業對全產業職災比率</div>
+    </div>
+    <div class="stat-cell">
+      <div class="kicker">Trained</div>
+      <div class="num">1,280<span class="unit">人</span></div>
+      <div class="label">已完成在地培訓人次</div>
+    </div>
+    <div class="stat-cell">
+      <div class="kicker">Coverage</div>
+      <div class="num">17<span class="unit">鄉鎮</span></div>
+      <div class="label">跨縣市田野佈點</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 幕二｜PROOF ========== -->
+<section class="act-proof" id="proof">
+  <div class="proof-inner">
+    <aside class="proof-aside">
+      <div class="act-meta">The Reality</div>
+      <h2>我們查了<br/><span class="brand">三個真實</span>的數字。</h2>
+      <p>每一個數字不是為了震撼，是為了被檢驗。來源、年份、期刊、DOI——都附在下面，歡迎一起翻開原始資料。</p>
+    </aside>
+    <div class="proof-list">
+      <div class="proof-item" data-proof>
+        <div class="proof-num"><span data-scramble="1043">0</span><span class="unit">件</span></div>
+        <div class="proof-label">2010–2020 臺灣曳引機翻覆事故累積件數</div>
+        <div class="proof-desc">代表性機械職災樣態，每年平均百餘件。機械防護與作業規範的改善是本章重點。</div>
+        <div class="proof-src">Source · 農業機械事故登錄資料庫 2021</div>
+        <div class="proof-note">※ 示範數據，待替換為真實來源（APA 第 7 版）</div>
+      </div>
+      <div class="proof-item" data-proof>
+        <div class="proof-num"><span data-scramble="91.8">0</span><span class="unit">%</span></div>
+        <div class="proof-label">日本職災樣態 4 大類覆蓋率（方法論參考）</div>
+        <div class="proof-desc">佐久綜合醫院歸納的四大樣態，可解釋九成以上案例。為臺灣的在地分類提供方法論基礎。</div>
+        <div class="proof-src">Source · 佐久綜合醫院職業傷病統計 2019</div>
+        <div class="proof-note">※ 示範數據，待替換為真實來源（APA 第 7 版）</div>
+      </div>
+      <div class="proof-item" data-proof>
+        <div class="proof-num"><span data-scramble="57">0</span><span class="unit">%</span></div>
+        <div class="proof-label">臺灣農民從未接受過任何形式的安全訓練</div>
+        <div class="proof-desc">即便有教材、有補助、有宣導，仍有超過半數務農者從未被觸及。教育的最後一哩路還沒走完。</div>
+        <div class="proof-src">Source · 農民職安調查 2023</div>
+        <div class="proof-note">※ 示範數據，待替換為真實來源（APA 第 7 版）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 幕三｜METHOD ========== -->
+<section class="act-method" id="method">
+  <div class="method-head">
+    <div>
+      <div class="act-meta">The Approach</div>
+      <h2>三步驟讓田間<br/>不再是<span class="brand">黑盒子</span>。</h2>
+    </div>
+    <p class="reveal">我們的方法不是創新框架，而是把國際公認的職安原則——NIOSH Hierarchy of Controls、日本南佐久模式——在地化、可操作、可複製。</p>
+  </div>
+  <div class="method-grid">
+    <article class="method-card reveal">
+      <div class="method-top">
+        <div class="method-num">STEP 01</div>
+        <div class="method-glyph">辨</div>
+      </div>
+      <div>
+        <div class="method-title">風險辨識</div>
+        <div class="method-desc">以 NIOSH 的 Hierarchy of Controls 為起點，逐一盤點每個田間作業場景的暴露來源：機械、化學、生理、環境。先看見，才可能預防。</div>
+      </div>
+      <div class="method-ref">Ref · NIOSH · HoC Framework</div>
+    </article>
+    <article class="method-card reveal">
+      <div class="method-top">
+        <div class="method-num">STEP 02</div>
+        <div class="method-glyph">工</div>
+      </div>
+      <div>
+        <div class="method-title">工程控制</div>
+        <div class="method-desc">優先改造機械與環境：曳引機防翻架、噴藥系統封閉化、溫室通風與高溫警示。工程介入的效益高於個人防護。</div>
+      </div>
+      <div class="method-ref">Ref · ISO 3776 · ROPS Standard</div>
+    </article>
+    <article class="method-card reveal">
+      <div class="method-top">
+        <div class="method-num">STEP 03</div>
+        <div class="method-glyph">教</div>
+      </div>
+      <div>
+        <div class="method-title">行為教育</div>
+        <div class="method-desc">結合日本南佐久模式的在地培訓：點檢表、同儕示範、季節性工作坊。讓安全成為日常，而不是法規的壓力。</div>
+      </div>
+      <div class="method-ref">Ref · Saku Model · Community-Based Health</div>
+    </article>
+  </div>
+</section>
+
+<!-- ========== 幕四｜PROMISE ========== -->
+<section class="act-promise" id="promise">
+  <div class="promise-head">
+    <div class="act-meta">Our Promise</div>
+    <h2>我們用<span class="brand">證據</span>說話。</h2>
+  </div>
+
+  <div class="promise-layout">
+    <!-- 左欄：MILESTONE 風 feature-row -->
+    <div class="feature-row">
+      <a class="feat-item reveal" href="#">
+        <div class="feat-num">01</div>
+        <div class="feat-body">
+          <h3>系統性<span class="brand">排除</span>中國大陸來源。</h3>
+          <p>本章所有引用皆經機構所在地判別，完全排除中國大陸研究。台灣、日本、歐美、韓國、東南亞的中英日韓文獻皆為參考依據。</p>
+        </div>
+      </a>
+      <a class="feat-item reveal" href="#">
+        <div class="feat-num">02</div>
+        <div class="feat-body">
+          <h3>APA 第 7 版<span class="brand">引用</span>，每筆可查證。</h3>
+          <p>每個數字、每個結論都附 DOI 或 URL。你可以親自翻開原文，驗證每一個主張。找不到的我們會標記「需人工核實」，不假補。</p>
+        </div>
+      </a>
+      <a class="feat-item reveal" href="#">
+        <div class="feat-num">03</div>
+        <div class="feat-body">
+          <h3>與臨床<span class="brand">MOU</span>合作。</h3>
+          <p>在日本有佐久綜合醫院的方法論共學，在臺灣有台大雲林分院的臨床協作。研究與實務兩邊都在場。</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- 右欄：唯一 tilt-card -->
+    <aside class="tilt-card reveal" aria-label="MOU 合作對象">
+      <div class="kicker">Partners · MOU</div>
+      <h3>與我們一起<br/>盯著田間的人。</h3>
+      <p>這不是單方面的研究，是跨海、跨院、跨世代的共同現場。</p>
+      <ul class="mou-list">
+        <li>佐久綜合醫院｜農村健康與職業醫學</li>
+        <li>台大醫院雲林分院｜在地臨床合作</li>
+        <li>慈濟大學公共衛生系｜健康促進研究</li>
+        <li>南佐久厚生連｜農村保健網絡</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<!-- ========== 節奏 Marquee ========== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>SAFETY FIRST<span class="dot"></span></span>
+    <span>職業安全<span class="dot"></span></span>
+    <span>DIGNITY<span class="dot"></span></span>
+    <span>尊嚴農業<span class="dot"></span></span>
+    <span>NIOSH HIERARCHY<span class="dot"></span></span>
+    <span>三級防護<span class="dot"></span></span>
+    <span>SAFETY FIRST<span class="dot"></span></span>
+    <span>職業安全<span class="dot"></span></span>
+    <span>DIGNITY<span class="dot"></span></span>
+    <span>尊嚴農業<span class="dot"></span></span>
+    <span>NIOSH HIERARCHY<span class="dot"></span></span>
+    <span>三級防護<span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- ========== 幕五｜INVITE ========== -->
+<section class="act-invite" id="invite">
+  <div class="invite-inner">
+    <div>
+      <div class="act-meta">Join</div>
+      <h2 class="invite-title">下載<em>職業安全</em><br/>手冊。</h2>
+      <p class="invite-sub">72 頁、六大章節、18 張圖表、32 筆引用——全部開放閱讀。你讀得懂，你就能用；你用過，就可以教下一個人。</p>
+    </div>
+    <div class="invite-actions">
+      <a class="v15-btn v15-btn-primary btn-magnetic" href="#">
+        <span>下載職業安全手冊</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="v15-btn v15-btn-ghost" href="#">查看 NIOSH 原始框架</a>
+      <a class="v15-btn v15-btn-ghost" href="#">聯繫田野團隊</a>
+    </div>
+  </div>
+
+  <nav class="chapter-siblings" aria-label="瀏覽其他章節">
+    <span style="color: rgba(255,255,255,0.4);">Other Chapters ·</span>
+    <a href="#">01 關於我們</a>
+    <a href="#">03 健康促進</a>
+    <a href="#">04 經濟保險</a>
+    <a href="#">05 農學堂</a>
+    <a href="#">06 倡議</a>
+    <a href="#">07 研究成果</a>
+  </nav>
+</section>
+
+<footer class="v15-foot">
+  <div>© 2026 尊嚴農業 Dignity Farming Initiative · Taiwan</div>
+  <div><a href="#">Privacy</a> · <a href="#">Credits</a> · <a href="#">Contact</a></div>
+</footer>
+
+</div><!-- /.fw-page-v15 -->
+
+<script>
+(function() {
+  'use strict';
+  var root = document.getElementById('page');
+  if (!root) return;
+
+  /* Hero entrance — stagger 每個 char */
+  requestAnimationFrame(function() {
+    var heroChars = root.querySelectorAll('.hook-title .char');
+    heroChars.forEach(function(c, i) { c.style.transitionDelay = (0.2 + i * 0.04) + 's'; });
+    root.classList.add('js-ready');
+  });
+
+  /* Scroll progress + scrolled state */
+  var progress = root.querySelector('.v15-progress');
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement;
+    var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    if (progress) progress.style.width = pct + '%';
+    root.classList.toggle('scrolled', h.scrollTop > 10);
+  }, { passive: true });
+
+  if ('IntersectionObserver' in window) {
+    /* Reveal */
+    var revealIo = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -60px 0px' });
+    root.querySelectorAll('.reveal, [data-proof]').forEach(function(el) { revealIo.observe(el); });
+
+    /* Scramble — proof 3 數字（章節頁唯一使用處） */
+    var scrambleIo = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = el.dataset.scramble;
+        var chars = '0123456789.,';
+        var iter = 0;
+        var finalArr = target.split('');
+        var len = finalArr.length;
+        var interval = setInterval(function() {
+          var out = '';
+          for (var i = 0; i < len; i++) {
+            if (i < iter) out += finalArr[i];
+            else out += chars[Math.floor(Math.random() * chars.length)];
+          }
+          el.textContent = out;
+          iter += 1 / 3;
+          if (iter >= len) {
+            clearInterval(interval);
+            el.textContent = target;
+          }
+        }, 60);
+        scrambleIo.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    root.querySelectorAll('[data-scramble]').forEach(function(el) { scrambleIo.observe(el); });
+  } else {
+    /* Fallback: 全部直接顯示 */
+    root.querySelectorAll('.reveal, [data-proof]').forEach(function(el) { el.classList.add('in'); });
+    root.querySelectorAll('[data-scramble]').forEach(function(el) { el.textContent = el.dataset.scramble; });
+  }
+
+  /* Magnetic button — 唯一使用處（主 CTA） */
+  root.querySelectorAll('.btn-magnetic').forEach(function(btn) {
+    btn.addEventListener('mousemove', function(e) {
+      var r = btn.getBoundingClientRect();
+      var mx = e.clientX - r.left - r.width / 2;
+      var my = e.clientY - r.top - r.height / 2;
+      btn.style.transform = 'translate(' + (mx * 0.22) + 'px, ' + (my * 0.3) + 'px)';
+    });
+    btn.addEventListener('mouseleave', function() { btn.style.transform = ''; });
+  });
+
+  /* 3D tilt — 唯一使用處（Promise 右欄卡片） */
+  root.querySelectorAll('.tilt-card').forEach(function(card) {
+    card.addEventListener('mousemove', function(e) {
+      var r = card.getBoundingClientRect();
+      var mx = (e.clientX - r.left) / r.width - 0.5;
+      var my = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = 'perspective(900px) rotateX(' + (-my * 5) + 'deg) rotateY(' + (mx * 6) + 'deg)';
+    });
+    card.addEventListener('mouseleave', function() { card.style.transform = ''; });
+  });
+})();
+</script>
+
+</body>
+</html>

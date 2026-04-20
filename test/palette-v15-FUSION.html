@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>尊嚴農業 — FUSION（Milestone × FINAL 整合）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* =============================================================
+   V15 FUSION — Milestone 精華 + FINAL 敘事
+   ✓ 五幕敘事主線（FINAL）
+   ✓ 28 頁切色系統（Milestone）
+   ✓ Hero 逐字 reveal + 影像佔位（兩版合體）
+   ✓ Stat Band 4 格快速概覽（Milestone）
+   ✓ Proof 3 深度數字 + scramble（FINAL）
+   ✓ 方法 normal grid（TA 友善）
+   ✓ 承諾 feature row + 影像佔位
+   ✓ 唯一 marquee + CTA 情緒高潮
+   ✓ WP-ready scope（.fw-page-v15）
+   ✓ 字級收斂：88/72/56/44/32/120（CTA唯一）
+   ✗ 砍掉 cursor / magnetic / 3D tilt（TA 不友善）
+   ============================================================= */
+
+.fw-page-v15 {
+  /* Neutral tokens */
+  --v15-n0:   oklch(100% 0 0);
+  --v15-n50:  oklch(98.5% 0.005 75);
+  --v15-n100: oklch(96% 0.008 72);
+  --v15-n200: oklch(90% 0.010 62);
+  --v15-n400: oklch(62% 0.020 60);
+  --v15-n700: oklch(38% 0.025 55);
+  --v15-n900: oklch(15% 0.018 50);
+
+  /* 預設 brand（首頁 森林綠） */
+  --v15-brand:      oklch(55% 0.17 155);
+  --v15-brand-deep: oklch(35% 0.14 155);
+  --v15-brand-bg:   oklch(94% 0.04 155);
+  --v15-brand-hot:  oklch(68% 0.22 50);
+
+  /* Typography — 收斂字級階 */
+  --v15-f-tc: "Noto Sans TC", "PingFang TC", sans-serif;
+  --v15-f-ui: "Inter", sans-serif;
+
+  --v15-fs-hero: clamp(44px, 6.5vw, 88px);
+  --v15-fs-h2:   clamp(32px, 4vw, 56px);
+  --v15-fs-h3:   clamp(22px, 2.5vw, 32px);
+  --v15-fs-stat: clamp(48px, 6vw, 72px);
+  --v15-fs-big:  clamp(56px, 7vw, 88px);
+  --v15-fs-cta:  clamp(56px, 8vw, 120px);   /* 全站唯一允許 100px+ */
+  --v15-fs-body: 20px;
+  --v15-fs-lead: 22px;
+
+  --v15-r-btn:  10px;
+  --v15-r-card: 16px;
+  --v15-r-xl:   24px;
+  --v15-r-pill: 999px;
+
+  --v15-e-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --v15-e-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  background: var(--v15-n50);
+  color: var(--v15-n900);
+  font-family: var(--v15-f-tc);
+  font-size: var(--v15-fs-body);
+  line-height: 1.75;
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.6s var(--v15-e-out);
+}
+
+.fw-page-v15 *, .fw-page-v15 *::before, .fw-page-v15 *::after { box-sizing: border-box; }
+.fw-page-v15 a { color: inherit; text-decoration: none; }
+.fw-page-v15 img, .fw-page-v15 svg { display: block; max-width: 100%; }
+
+/* 28 頁 brand override — page switcher / body class 切色 */
+.fw-page-v15[data-page="home"]       { --v15-brand: oklch(55% 0.17 155); --v15-brand-deep: oklch(35% 0.14 155); --v15-brand-bg: oklch(94% 0.04 155); }
+.fw-page-v15[data-page="about"]      { --v15-brand: oklch(58% 0.20 25);  --v15-brand-deep: oklch(38% 0.17 25);  --v15-brand-bg: oklch(94% 0.04 25); }
+.fw-page-v15[data-page="safety"]     { --v15-brand: oklch(68% 0.20 50);  --v15-brand-deep: oklch(45% 0.17 50);  --v15-brand-bg: oklch(95% 0.04 50); }
+.fw-page-v15[data-page="health"]     { --v15-brand: oklch(62% 0.16 155); --v15-brand-deep: oklch(40% 0.14 155); --v15-brand-bg: oklch(94% 0.04 155); }
+.fw-page-v15[data-page="economy"]    { --v15-brand: oklch(58% 0.18 245); --v15-brand-deep: oklch(38% 0.15 245); --v15-brand-bg: oklch(94% 0.04 245); }
+.fw-page-v15[data-page="study"]      { --v15-brand: oklch(70% 0.17 80);  --v15-brand-deep: oklch(45% 0.14 80);  --v15-brand-bg: oklch(95% 0.04 80); }
+.fw-page-v15[data-page="advocacy"]   { --v15-brand: oklch(55% 0.22 290); --v15-brand-deep: oklch(38% 0.18 290); --v15-brand-bg: oklch(94% 0.05 290); }
+.fw-page-v15[data-page="research"]   { --v15-brand: oklch(55% 0.14 235); --v15-brand-deep: oklch(35% 0.12 235); --v15-brand-bg: oklch(94% 0.03 235); }
+
+/* 紙張 noise */
+.fw-page-v15::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='280' height='280'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='280' height='280' filter='url(%23n)' opacity='0.4'/></svg>");
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+}
+
+/* Mesh gradient 桌機 only */
+.fw-page-v15 .mesh-bg { display: none; }
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .fw-page-v15 .mesh-bg {
+    display: block;
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 120vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .fw-page-v15 .mesh-bg .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    mix-blend-mode: multiply;
+    opacity: 0.4;
+    will-change: transform;
+    animation: v15BlobFloat 30s ease-in-out infinite;
+  }
+  .fw-page-v15 .mesh-bg .b1 { width: 560px; height: 560px; top: -10%; left: -8%; background: rgba(52, 132, 74, 0.4); background: color-mix(in oklch, var(--v15-brand) 38%, transparent); }
+  .fw-page-v15 .mesh-bg .b2 { width: 480px; height: 480px; top: 30%; right: -5%; background: rgba(220, 140, 60, 0.3); background: color-mix(in oklch, var(--v15-brand-hot) 28%, transparent); animation-delay: -10s; }
+  .fw-page-v15 .mesh-bg .b3 { width: 420px; height: 420px; bottom: -5%; left: 28%; background: rgba(40, 90, 60, 0.25); background: color-mix(in oklch, var(--v15-brand-deep) 22%, transparent); animation-delay: -18s; }
+  @keyframes v15BlobFloat {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    33%      { transform: translate(40px,-30px) scale(1.06); }
+    66%      { transform: translate(-30px,40px) scale(0.96); }
+  }
+}
+
+/* Scroll progress */
+.fw-page-v15 .v15-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--v15-brand), var(--v15-brand-hot));
+  z-index: 100;
+  transition: width 0.1s linear;
+}
+
+/* Topbar */
+.fw-page-v15 .v15-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 18px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: rgba(252, 251, 244, 0.88);
+  background: color-mix(in oklch, var(--v15-n50) 88%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.4s;
+}
+.fw-page-v15.scrolled .v15-topbar { border-bottom-color: var(--v15-n200); }
+.fw-page-v15 .v15-logo {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--v15-n900);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fw-page-v15 .v15-logo::before {
+  content: "";
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--v15-brand);
+  animation: v15Pulse 2.4s ease-in-out infinite;
+}
+.fw-page-v15 .v15-logo .en { font-family: var(--v15-f-ui); font-weight: 600; font-size: 13px; color: var(--v15-n400); letter-spacing: 0.05em; }
+@keyframes v15Pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.3); } }
+
+.fw-page-v15 .v15-nav { display: flex; gap: 28px; margin-left: auto; font-family: var(--v15-f-tc); font-size: 15px; font-weight: 500; }
+.fw-page-v15 .v15-nav a { position: relative; padding: 6px 0; color: var(--v15-n700); transition: color 0.3s; }
+.fw-page-v15 .v15-nav a::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; background: var(--v15-brand); transform: scaleX(0); transform-origin: right; transition: transform 0.4s var(--v15-e-out); }
+.fw-page-v15 .v15-nav a:hover { color: var(--v15-n900); }
+.fw-page-v15 .v15-nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Page switcher demo tool（Milestone 保留，正式上 WP 不用） */
+.fw-page-v15 .v15-switcher {
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: var(--v15-r-pill);
+  border: 1.5px solid var(--v15-brand);
+  background: var(--v15-n0);
+  color: var(--v15-n900);
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+@media (max-width: 900px) {
+  .fw-page-v15 .v15-nav { display: none; }
+  .fw-page-v15 .v15-switcher { margin-left: auto; }
+}
+
+/* Act meta label */
+.fw-page-v15 .act-meta {
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--v15-brand);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.fw-page-v15 .act-meta::before { content: ""; width: 32px; height: 1.5px; background: var(--v15-brand); }
+
+.fw-page-v15 h2 {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-h2);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--v15-n900);
+}
+.fw-page-v15 h2 .brand { color: var(--v15-brand-deep); }
+
+/* Buttons */
+.fw-page-v15 .v15-btn {
+  font-family: var(--v15-f-tc);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 34px;
+  border-radius: var(--v15-r-pill);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--v15-e-out), box-shadow 0.4s;
+}
+.fw-page-v15 .v15-btn-primary { background: var(--v15-n900); color: var(--v15-n0); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.fw-page-v15 .v15-btn-primary::before { content: ""; position: absolute; inset: 0; background: var(--v15-brand); transform: translateY(100%); transition: transform 0.5s var(--v15-e-out); }
+.fw-page-v15 .v15-btn-primary:hover::before { transform: translateY(0); }
+.fw-page-v15 .v15-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+.fw-page-v15 .v15-btn-primary > * { position: relative; z-index: 1; }
+.fw-page-v15 .v15-btn-primary .arrow { transition: transform 0.4s var(--v15-e-out); }
+.fw-page-v15 .v15-btn-primary:hover .arrow { transform: translateX(6px); }
+
+.fw-page-v15 .v15-btn-ghost { background: transparent; color: var(--v15-n900); border: 1.5px solid var(--v15-n200); }
+.fw-page-v15 .v15-btn-ghost:hover { border-color: var(--v15-brand); color: var(--v15-brand-deep); background: var(--v15-brand-bg); }
+
+/* =============================================================
+   幕一｜HOOK
+   ============================================================= */
+.fw-page-v15 .act-hook {
+  padding: 100px 6vw 80px;
+  min-height: calc(100vh - 72px);
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+.fw-page-v15 .hook-text { max-width: 640px; }
+.fw-page-v15 .hook-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: var(--v15-r-pill);
+  background: var(--v15-brand-bg);
+  color: var(--v15-brand-deep);
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(52, 132, 74, 0.25);
+  border: 1px solid color-mix(in oklch, var(--v15-brand) 25%, transparent);
+  margin-bottom: 32px;
+}
+.fw-page-v15 .hook-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--v15-brand); animation: v15Pulse 2.4s ease-in-out infinite; }
+
+/* 逐字進場（Milestone 精華）— 字級收 88px（FINAL 規範） */
+.fw-page-v15 .hook-title {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-hero);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--v15-n900);
+  margin-bottom: 32px;
+  max-width: 16ch;
+}
+.fw-page-v15 .hook-title .row { display: block; overflow: hidden; padding: 2px 0; }
+.fw-page-v15 .hook-title .row .char {
+  display: inline-block;
+  transform: translateY(105%);
+  transition: transform 1s var(--v15-e-out);
+}
+.fw-page-v15.js-ready .hook-title .row .char { transform: translateY(0); }
+.fw-page-v15 .hook-title .brand { color: var(--v15-brand-deep); }
+.fw-page-v15 .hook-title .hl { position: relative; display: inline-block; }
+.fw-page-v15 .hook-title .hl::after {
+  content: "";
+  position: absolute;
+  left: -2%; right: -2%;
+  bottom: 8%;
+  height: 24%;
+  background: var(--v15-brand-bg);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s var(--v15-e-out) 1.6s;
+}
+.fw-page-v15.js-ready .hook-title .hl::after { transform: scaleX(1); }
+
+.fw-page-v15 .hook-lead {
+  font-size: var(--v15-fs-lead);
+  line-height: 1.7;
+  color: var(--v15-n700);
+  margin-bottom: 40px;
+  max-width: 48ch;
+}
+.fw-page-v15 .hook-lead strong { color: var(--v15-brand-deep); font-weight: 700; }
+.fw-page-v15 .hook-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* Hero visual — 農民影像佔位（clip-path 揭露） */
+.fw-page-v15 .hook-visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--v15-r-xl);
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--v15-brand-deep) 0%, oklch(40% 0.15 80) 50%, var(--v15-brand-hot) 100%);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.6s var(--v15-e-out) 0.4s;
+}
+.fw-page-v15.js-ready .hook-visual { clip-path: inset(0 0 0 0); }
+.fw-page-v15 .hook-visual::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.8'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.5'/></svg>");
+  opacity: 0.2; mix-blend-mode: overlay;
+}
+.fw-page-v15 .hook-visual svg { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 70%; opacity: 0.85; }
+.fw-page-v15 .hook-visual-caption {
+  position: absolute;
+  bottom: 24px; left: 24px; right: 24px;
+  font-family: var(--v15-f-ui);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 251, 235, 0.78);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .fw-page-v15 .act-hook { grid-template-columns: 1fr; gap: 48px; min-height: auto; }
+  .fw-page-v15 .hook-visual { aspect-ratio: 4 / 3; }
+}
+
+/* =============================================================
+   Stat Band — Milestone 4 格概覽（背景中文字裝飾）
+   ============================================================= */
+.fw-page-v15 .v15-statband {
+  padding: clamp(60px, 10vh, 100px) 6vw;
+  background: var(--v15-n0);
+  border-top: 1px solid var(--v15-n200);
+  border-bottom: 1px solid var(--v15-n200);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+.fw-page-v15 .v15-statband::before {
+  content: "數字會說話";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(80px, 14vw, 220px);
+  line-height: 1;
+  color: var(--v15-brand);
+  opacity: 0.05;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  user-select: none;
+}
+.fw-page-v15 .statband-grid {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+.fw-page-v15 .statband-cell { padding: 24px 0; }
+.fw-page-v15 .statband-cell .sk {
+  font-family: var(--v15-f-ui);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--v15-brand);
+  margin-bottom: 14px;
+}
+.fw-page-v15 .statband-cell .sn {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-stat);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--v15-n900);
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  align-items: baseline;
+}
+.fw-page-v15 .statband-cell .sn .u { font-size: 0.4em; color: var(--v15-n400); margin-left: 6px; font-weight: 500; }
+.fw-page-v15 .statband-cell .sl { font-size: 15px; color: var(--v15-n700); line-height: 1.6; }
+
+/* =============================================================
+   幕二｜PROOF — 深度 3 數字（scramble 唯一使用處）
+   ============================================================= */
+.fw-page-v15 .act-proof {
+  position: relative;
+  z-index: 3;
+  background: var(--v15-n50);
+}
+.fw-page-v15 .proof-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(80px, 14vh, 140px) 6vw;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 80px;
+}
+.fw-page-v15 .proof-aside { position: sticky; top: 110px; align-self: start; height: fit-content; }
+.fw-page-v15 .proof-aside h2 { margin-bottom: 20px; font-size: clamp(28px, 3.5vw, 44px); }
+.fw-page-v15 .proof-aside p { font-size: 17px; line-height: 1.7; color: var(--v15-n700); }
+
+.fw-page-v15 .proof-list { display: flex; flex-direction: column; gap: 8px; }
+.fw-page-v15 .proof-item {
+  padding: 48px 0;
+  border-top: 1px solid var(--v15-n200);
+  position: relative;
+}
+.fw-page-v15 .proof-item::before {
+  content: ""; position: absolute; top: -1px; left: 0;
+  height: 2px; width: 0;
+  background: var(--v15-brand);
+  transition: width 1.4s var(--v15-e-out);
+}
+.fw-page-v15 .proof-item.in::before { width: 100%; }
+
+.fw-page-v15 .proof-num {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-stat);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--v15-n900);
+  margin-bottom: 14px;
+  font-variant-numeric: tabular-nums;
+  display: flex; align-items: baseline; gap: 8px;
+}
+.fw-page-v15 .proof-num .unit { font-size: 0.45em; font-weight: 500; color: var(--v15-n400); letter-spacing: 0; }
+.fw-page-v15 .proof-label { font-size: 18px; font-weight: 500; color: var(--v15-n900); margin-bottom: 8px; }
+.fw-page-v15 .proof-src { font-family: var(--v15-f-ui); font-size: 12px; color: var(--v15-n400); letter-spacing: 0.1em; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+  .fw-page-v15 .proof-inner { grid-template-columns: 1fr; gap: 40px; }
+  .fw-page-v15 .proof-aside { position: static; }
+}
+
+/* =============================================================
+   唯一 Marquee — Proof → Method 節奏切換
+   ============================================================= */
+.fw-page-v15 .v15-marquee {
+  padding: 32px 0;
+  overflow: hidden;
+  background: var(--v15-n900);
+  color: var(--v15-n0);
+  position: relative;
+  z-index: 3;
+}
+.fw-page-v15 .v15-marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: v15Marquee 45s linear infinite;
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  letter-spacing: -0.02em;
+  gap: 40px;
+}
+.fw-page-v15 .v15-marquee-track span { display: inline-flex; align-items: center; gap: 40px; }
+.fw-page-v15 .v15-marquee-track .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--v15-brand-hot); }
+@keyframes v15Marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* =============================================================
+   幕三｜METHOD — 七章節 normal grid
+   ============================================================= */
+.fw-page-v15 .act-method { padding: clamp(80px, 14vh, 140px) 6vw; position: relative; z-index: 3; }
+.fw-page-v15 .method-head {
+  max-width: 1400px;
+  margin: 0 auto 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+}
+.fw-page-v15 .method-head h2 { max-width: 14ch; }
+.fw-page-v15 .method-head p { font-size: 18px; line-height: 1.7; color: var(--v15-n700); max-width: 40ch; }
+@media (max-width: 768px) { .fw-page-v15 .method-head { grid-template-columns: 1fr; gap: 24px; } }
+
+.fw-page-v15 .method-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.fw-page-v15 .method-card {
+  background: var(--v15-n0);
+  border: 1px solid var(--v15-n200);
+  border-radius: var(--v15-r-card);
+  padding: 36px 32px 40px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s var(--v15-e-out), box-shadow 0.4s, border-color 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  text-decoration: none;
+}
+.fw-page-v15 .method-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.08); border-color: var(--ch); }
+.fw-page-v15 .method-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 85% 10%, color-mix(in oklch, var(--ch) 12%, transparent), transparent 60%);
+  opacity: 0; transition: opacity 0.5s; pointer-events: none;
+}
+.fw-page-v15 .method-card:hover::before { opacity: 1; }
+.fw-page-v15 .method-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+.fw-page-v15 .method-num { font-family: var(--v15-f-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: var(--ch); }
+.fw-page-v15 .method-glyph {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: color-mix(in oklch, var(--ch) 14%, transparent);
+  color: var(--ch);
+  display: grid; place-items: center;
+  font-weight: 900; font-size: 18px;
+  transition: transform 0.5s var(--v15-e-snap);
+}
+.fw-page-v15 .method-card:hover .method-glyph { transform: rotate(-6deg) scale(1.1); }
+.fw-page-v15 .method-title { font-family: var(--v15-f-tc); font-weight: 900; font-size: var(--v15-fs-h3); line-height: 1.15; color: var(--ch); margin-bottom: 10px; transition: transform 0.4s var(--v15-e-out); }
+.fw-page-v15 .method-card:hover .method-title { transform: translateX(4px); }
+.fw-page-v15 .method-desc { font-size: 15.5px; line-height: 1.65; color: var(--v15-n700); margin-bottom: 24px; }
+.fw-page-v15 .method-link { font-family: var(--v15-f-tc); font-size: 14px; font-weight: 700; color: var(--ch); display: inline-flex; align-items: center; gap: 8px; }
+.fw-page-v15 .method-link .arrow { transition: transform 0.4s var(--v15-e-out); }
+.fw-page-v15 .method-card:hover .method-link .arrow { transform: translateX(6px); }
+
+.fw-page-v15 .m-about    { --ch: oklch(58% 0.20 25); }
+.fw-page-v15 .m-safety   { --ch: oklch(68% 0.20 50); }
+.fw-page-v15 .m-health   { --ch: oklch(62% 0.16 155); }
+.fw-page-v15 .m-economy  { --ch: oklch(58% 0.18 245); }
+.fw-page-v15 .m-study    { --ch: oklch(70% 0.17 80); }
+.fw-page-v15 .m-advocacy { --ch: oklch(55% 0.22 290); }
+.fw-page-v15 .m-research { --ch: oklch(55% 0.14 235); }
+
+/* =============================================================
+   幕四｜PROMISE — Milestone feature-row + FINAL 影像佔位
+   ============================================================= */
+.fw-page-v15 .act-promise { padding: clamp(80px, 14vh, 140px) 6vw; max-width: 1400px; margin: 0 auto; position: relative; z-index: 3; }
+.fw-page-v15 .promise-head {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.fw-page-v15 .promise-head h2 { max-width: 20ch; margin: 0 auto; }
+.fw-page-v15 .promise-head .act-meta { justify-content: center; }
+.fw-page-v15 .promise-head .act-meta::before { display: none; }
+
+/* Feature row 01/02/03 — hover 整行變色（Milestone 精華） */
+.fw-page-v15 .promise-row {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 48px;
+  align-items: center;
+  padding: 36px 0;
+  border-top: 1px solid var(--v15-n200);
+  transition: background 0.4s, padding 0.4s, border-radius 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.fw-page-v15 .promise-row:hover {
+  background: var(--v15-brand-bg);
+  padding-left: 24px; padding-right: 24px;
+  border-radius: var(--v15-r-card);
+}
+.fw-page-v15 .promise-num {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-big);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--v15-brand);
+  font-variant-numeric: tabular-nums;
+  transition: transform 0.5s var(--v15-e-out);
+}
+.fw-page-v15 .promise-row:hover .promise-num { transform: translateX(6px) scale(1.04); }
+.fw-page-v15 .promise-body h3 {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.15;
+  color: var(--v15-n900);
+  margin-bottom: 10px;
+}
+.fw-page-v15 .promise-body h3 .brand { color: var(--v15-brand-deep); }
+.fw-page-v15 .promise-body p { font-size: 17px; line-height: 1.65; color: var(--v15-n700); max-width: 56ch; }
+.fw-page-v15 .promise-arrow {
+  font-family: var(--v15-f-ui);
+  font-size: 36px;
+  color: var(--v15-brand);
+  transition: transform 0.5s var(--v15-e-out);
+}
+.fw-page-v15 .promise-row:hover .promise-arrow { transform: translateX(12px); }
+@media (max-width: 768px) {
+  .fw-page-v15 .promise-row { grid-template-columns: 1fr; gap: 12px; }
+  .fw-page-v15 .promise-arrow { display: none; }
+}
+
+/* Promise deep — 三張大型田野影像佔位（展開 feature row 深度） */
+.fw-page-v15 .promise-visuals {
+  margin-top: 64px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.fw-page-v15 .p-visual {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--v15-r-card);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transition: transform 0.5s var(--v15-e-out), box-shadow 0.5s;
+}
+.fw-page-v15 .p-visual:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.12); }
+.fw-page-v15 .p-visual::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.85'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.45'/></svg>");
+  opacity: 0.18; mix-blend-mode: overlay; pointer-events: none;
+}
+.fw-page-v15 .p-visual .cap {
+  position: absolute;
+  bottom: 20px; left: 20px; right: 20px;
+  font-family: var(--v15-f-ui);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 251, 235, 0.85);
+  display: flex; justify-content: space-between;
+}
+.fw-page-v15 .p-visual-1 { background: linear-gradient(135deg, var(--v15-brand-deep), oklch(38% 0.12 160)); }
+.fw-page-v15 .p-visual-2 { background: linear-gradient(135deg, oklch(32% 0.08 240), var(--v15-brand-deep)); }
+.fw-page-v15 .p-visual-3 { background: linear-gradient(135deg, oklch(34% 0.14 60), var(--v15-brand-hot)); }
+@media (max-width: 900px) {
+  .fw-page-v15 .promise-visuals { grid-template-columns: 1fr; }
+  .fw-page-v15 .p-visual { aspect-ratio: 16 / 9; }
+}
+
+/* =============================================================
+   幕五｜INVITATION — 唯一情緒高潮
+   ============================================================= */
+.fw-page-v15 .act-invite {
+  padding: clamp(120px, 20vh, 180px) 6vw;
+  background: var(--v15-n900);
+  color: var(--v15-n0);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+}
+.fw-page-v15 .act-invite::before {
+  content: "尊嚴";
+  position: absolute;
+  right: -4%; bottom: -12%;
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: clamp(200px, 30vw, 480px);
+  line-height: 0.85;
+  color: var(--v15-brand);
+  opacity: 0.14;
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+.fw-page-v15 .invite-inner {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.fw-page-v15 .invite-inner .act-meta { color: var(--v15-brand-hot); }
+.fw-page-v15 .invite-inner .act-meta::before { background: var(--v15-brand-hot); }
+.fw-page-v15 .invite-title {
+  font-family: var(--v15-f-tc);
+  font-weight: 900;
+  font-size: var(--v15-fs-cta);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
+  color: var(--v15-n0);
+}
+.fw-page-v15 .invite-title em { font-style: normal; color: var(--v15-brand-hot); }
+.fw-page-v15 .invite-sub { font-size: 20px; line-height: 1.7; opacity: 0.85; max-width: 40ch; margin-bottom: 40px; }
+.fw-page-v15 .invite-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.fw-page-v15 .invite-actions .v15-btn-primary { background: var(--v15-brand-hot); color: var(--v15-n900); }
+.fw-page-v15 .invite-actions .v15-btn-primary::before { background: var(--v15-n0); }
+.fw-page-v15 .invite-actions .v15-btn-primary:hover { color: var(--v15-n900); }
+.fw-page-v15 .invite-actions .v15-btn-ghost { color: var(--v15-n0); border-color: rgba(255, 255, 255, 0.3); }
+.fw-page-v15 .invite-actions .v15-btn-ghost:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--v15-n0); color: var(--v15-n0); }
+
+.fw-page-v15 .v15-foot {
+  padding: 40px 6vw;
+  background: var(--v15-n900);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--v15-f-ui);
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: relative;
+  z-index: 3;
+}
+.fw-page-v15 .v15-foot a { color: inherit; }
+.fw-page-v15 .v15-foot a:hover { color: var(--v15-brand-hot); }
+
+@media (max-width: 768px) { .fw-page-v15 .invite-inner { grid-template-columns: 1fr; gap: 48px; } }
+
+/* Reveal */
+.fw-page-v15 .reveal { opacity: 0.001; transform: translateY(24px); transition: opacity 1s var(--v15-e-out), transform 1s var(--v15-e-out); }
+.fw-page-v15 .reveal.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .fw-page-v15 *, .fw-page-v15 *::before, .fw-page-v15 *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+  .fw-page-v15 .hook-title .row .char, .fw-page-v15 .hook-visual, .fw-page-v15 .hook-title .hl::after {
+    transform: none !important; clip-path: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="fw-page-v15" data-page="home" id="page">
+<div class="v15-progress" aria-hidden="true"></div>
+
+<div class="mesh-bg" aria-hidden="true">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<header class="v15-topbar">
+  <div class="v15-logo">尊嚴農業 <span class="en">Dignity Farming</span></div>
+  <nav class="v15-nav" aria-label="主選單">
+    <a href="#proof">數字</a>
+    <a href="#method">七章</a>
+    <a href="#promise">我們做什麼</a>
+    <a href="#invite">加入</a>
+  </nav>
+  <select class="v15-switcher" id="pageSwitcher" aria-label="預覽頁面配色">
+    <option value="home">[預覽] 首頁 · 森林綠</option>
+    <option value="about">關於我們 · 珊瑚紅</option>
+    <option value="safety">職業安全 · 警示橘</option>
+    <option value="health">健康促進 · 薄荷綠</option>
+    <option value="economy">經濟保險 · 信任藍</option>
+    <option value="study">農學堂 · 豐收金</option>
+    <option value="advocacy">倡議 · 電紫</option>
+    <option value="research">研究 · 學術藍</option>
+  </select>
+</header>
+
+<!-- 幕一｜HOOK -->
+<section class="act-hook" id="hook">
+  <div class="hook-text">
+    <span class="hook-chip">Research Initiative · 2025—</span>
+    <h1 class="hook-title" id="heroTitle">
+      <span class="row"><span class="char">被</span><span class="char">忽</span><span class="char">略</span><span class="char">的</span></span>
+      <span class="row"><span class="char">不</span><span class="char">是</span><span class="char"><span class="hl">收成</span></span><span class="char">，</span></span>
+      <span class="row"><span class="char brand">是</span><span class="char brand">人</span><span class="char brand">的</span><span class="char brand">尊</span><span class="char brand">嚴</span><span class="char brand">。</span></span>
+    </h1>
+    <p class="hook-lead">
+      臺灣農村正在老去，但他們不該是統計裡的<strong>一行數字</strong>。尊嚴農業用三年田野、180 份訪談、七大章節研究——證明看見他們，是可能的。
+    </p>
+    <div class="hook-ctas">
+      <a class="v15-btn v15-btn-primary" href="#proof"><span>看見數字背後</span><span class="arrow">→</span></a>
+      <a class="v15-btn v15-btn-ghost" href="#method">瀏覽七個章節</a>
+    </div>
+  </div>
+  <figure class="hook-visual" aria-label="農民影像佔位">
+    <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M60 260 L60 170 Q60 140 100 140 Q140 140 140 170 L140 260 Z" fill="rgba(255,255,255,0.15)"/>
+      <circle cx="100" cy="110" r="28" fill="rgba(255,255,255,0.18)"/>
+      <path d="M50 95 Q100 65 150 95 Q145 100 100 98 Q55 100 50 95 Z" fill="rgba(255,255,255,0.22)"/>
+      <path d="M0 255 Q50 248 100 252 T200 250" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+    </svg>
+    <figcaption class="hook-visual-caption">
+      <span>Photo Placeholder</span>
+      <span>替換為真實農民影像</span>
+    </figcaption>
+  </figure>
+</section>
+
+<!-- Stat Band 4 格快速概覽（Milestone 精華） -->
+<section class="v15-statband">
+  <div class="statband-grid">
+    <div class="statband-cell"><div class="sk">Average Age</div><div class="sn"><span data-count="64.4" data-dec="1">0</span><span class="u">歲</span></div><div class="sl">農業人口平均年齡</div></div>
+    <div class="statband-cell"><div class="sk">Fieldwork</div><div class="sn"><span data-count="3">0</span><span class="u">年</span></div><div class="sl">累積跨縣市田野調查</div></div>
+    <div class="statband-cell"><div class="sk">Interviews</div><div class="sn"><span data-count="180">0</span><span class="u">+ 份</span></div><div class="sl">深度訪談資料庫</div></div>
+    <div class="statband-cell"><div class="sk">Chapters</div><div class="sn"><span data-count="7">0</span><span class="u">大主題</span></div><div class="sl">整合研究視野</div></div>
+  </div>
+</section>
+
+<!-- 幕二｜PROOF -->
+<section class="act-proof" id="proof">
+  <div class="proof-inner">
+    <aside class="proof-aside">
+      <div class="act-meta">Act II · 證據</div>
+      <h2>數字會<span class="brand">先說話</span>，<br/>再讓人來說。</h2>
+      <p>不是口號，不是揣測。每一個數字後面，都有一群具體的人、一段可以追溯的田野歷程。</p>
+    </aside>
+    <div class="proof-list">
+      <div class="proof-item" data-proof>
+        <div class="proof-num"><span data-scramble="64.4">0</span><span class="unit">歲</span></div>
+        <div class="proof-label">臺灣農業從業人口平均年齡</div>
+        <div class="proof-src">Source · 農委會農家所得調查 2024</div>
+      </div>
+      <div class="proof-item" data-proof>
+        <div class="proof-num"><span data-scramble="43">0</span><span class="unit">%</span></div>
+        <div class="proof-label">無退休保障的務農人口比例</div>
+        <div class="proof-src">Source · 勞動部農業勞動統計 2024</div>
+      </div>
+      <div class="proof-item" data-proof>
+        <div class="proof-num"><span data-scramble="1/3">0</span><span class="unit">超過 65 歲</span></div>
+        <div class="proof-label">每三位農民就有一位超過法定退休年齡</div>
+        <div class="proof-src">Source · 主計總處人力運用調查 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 節奏 Marquee -->
+<div class="v15-marquee" aria-hidden="true">
+  <div class="v15-marquee-track">
+    <span>看見<span class="dot"></span></span><span>論證<span class="dot"></span></span><span>改變<span class="dot"></span></span><span>尊嚴<span class="dot"></span></span><span>DIGNITY<span class="dot"></span></span>
+    <span>看見<span class="dot"></span></span><span>論證<span class="dot"></span></span><span>改變<span class="dot"></span></span><span>尊嚴<span class="dot"></span></span><span>DIGNITY<span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- 幕三｜METHOD -->
+<section class="act-method" id="method">
+  <div class="method-head">
+    <div>
+      <div class="act-meta">Act III · 方法</div>
+      <h2>七個<span class="brand">視角</span>，<br/>一張網。</h2>
+    </div>
+    <p class="reveal">章節之間彼此扣連——不是平行的七個題目，而是一個整合的尊嚴農業支持系統。點進任一章進入獨立敘事。</p>
+  </div>
+  <div class="method-grid">
+    <a class="method-card m-about reveal" data-goto="about">
+      <div class="method-top"><div class="method-num">01 / ABOUT</div><div class="method-glyph">關</div></div>
+      <div><div class="method-title">關於我們</div><div class="method-desc">計畫緣起、核心價值、研究團隊與合作夥伴。</div></div>
+      <span class="method-link">進入頁面 <span class="arrow">→</span></span>
+    </a>
+    <a class="method-card m-safety reveal" data-goto="safety">
+      <div class="method-top"><div class="method-num">02 / SAFETY</div><div class="method-glyph">職</div></div>
+      <div><div class="method-title">職業安全</div><div class="method-desc">農業災害率、機具風險、田野調查與安全對策。</div></div>
+      <span class="method-link">進入頁面 <span class="arrow">→</span></span>
+    </a>
+    <a class="method-card m-health reveal" data-goto="health">
+      <div class="method-top"><div class="method-num">03 / HEALTH</div><div class="method-glyph">健</div></div>
+      <div><div class="method-title">健康促進</div><div class="method-desc">中高齡農民的健康促進、慢性病與健康老化路徑。</div></div>
+      <span class="method-link">進入頁面 <span class="arrow">→</span></span>
+    </a>
+    <a class="method-card m-economy reveal" data-goto="economy">
+      <div class="method-top"><div class="method-num">04 / ECONOMY</div><div class="method-glyph">經</div></div>
+      <div><div class="method-title">經濟保險</div><div class="method-desc">收入穩定、退休保障、金融素養與補助資源。</div></div>
+      <span class="method-link">進入頁面 <span class="arrow">→</span></span>
+    </a>
+    <a class="method-card m-study reveal" data-goto="study">
+      <div class="method-top"><div class="method-num">05 / STUDY</div><div class="method-glyph">農</div></div>
+      <div><div class="method-title">農學堂</div><div class="method-desc">青銀共學、數位工具與跨世代知識傳承。</div></div>
+      <span class="method-link">進入頁面 <span class="arrow">→</span></span>
+    </a>
+    <a class="method-card m-advocacy reveal" data-goto="advocacy">
+      <div class="method-top"><div class="method-num">06 / ADVOCACY</div><div class="method-glyph">倡</div></div>
+      <div><div class="method-title">倡議</div><div class="method-desc">政策建言、媒體溝通與讓農民聲音被聽見。</div></div>
+      <span class="method-link">進入頁面 <span class="arrow">→</span></span>
+    </a>
+    <a class="method-card m-research reveal" data-goto="research">
+      <div class="method-top"><div class="method-num">07 / RESEARCH</div><div class="method-glyph">研</div></div>
+      <div><div class="method-title">研究成果</div><div class="method-desc">學術論文、研究報告、訪談資料與開放資料。</div></div>
+      <span class="method-link">進入頁面 <span class="arrow">→</span></span>
+    </a>
+  </div>
+</section>
+
+<!-- 幕四｜PROMISE — feature row + 3 田野影像 -->
+<section class="act-promise" id="promise">
+  <div class="promise-head">
+    <div class="act-meta">Act IV · 承諾</div>
+    <h2>我們做<span class="brand">三件事</span>。</h2>
+  </div>
+
+  <a class="promise-row reveal" href="#">
+    <div class="promise-num">01</div>
+    <div class="promise-body">
+      <h3>系統性<span class="brand">看見</span>。</h3>
+      <p>不是片段採訪，而是建立跨縣市、跨年齡、跨作物的完整資料庫，讓被忽略的成為公共議題。</p>
+    </div>
+    <div class="promise-arrow">→</div>
+  </a>
+
+  <a class="promise-row reveal" href="#">
+    <div class="promise-num">02</div>
+    <div class="promise-body">
+      <h3>嚴謹地<span class="brand">論證</span>。</h3>
+      <p>3 年田野、12 場工作坊、180+ 份訪談、40+ 篇同行評審文獻。所有主張都有證據背書。</p>
+    </div>
+    <div class="promise-arrow">→</div>
+  </a>
+
+  <a class="promise-row reveal" href="#">
+    <div class="promise-num">03</div>
+    <div class="promise-body">
+      <h3>具體地<span class="brand">改變</span>。</h3>
+      <p>從職安法規、保險制度到青銀共學課程——我們推動的是可落地、可驗證、可複製的政策與實踐。</p>
+    </div>
+    <div class="promise-arrow">→</div>
+  </a>
+
+  <div class="promise-visuals">
+    <figure class="p-visual p-visual-1 reveal"><div class="cap"><span>Photo</span><span>田野現場</span></div></figure>
+    <figure class="p-visual p-visual-2 reveal"><div class="cap"><span>Photo</span><span>訪談現場</span></div></figure>
+    <figure class="p-visual p-visual-3 reveal"><div class="cap"><span>Photo</span><span>工作坊現場</span></div></figure>
+  </div>
+</section>
+
+<!-- 幕五｜INVITATION -->
+<section class="act-invite" id="invite">
+  <div class="invite-inner">
+    <div>
+      <div class="act-meta">Act V · 邀請</div>
+      <h2 class="invite-title">一起<em>看見</em>，<br/>一起<em>書寫</em>。</h2>
+      <p class="invite-sub">無論你是研究者、政策制定者、農民、學生，或只是一個願意花一個下午閱讀的陌生人——你都是這場對話的一部分。</p>
+    </div>
+    <div class="invite-actions">
+      <a class="v15-btn v15-btn-primary" href="#"><span>下載白皮書</span><span class="arrow">→</span></a>
+      <a class="v15-btn v15-btn-ghost" href="#">加入公開論壇</a>
+      <a class="v15-btn v15-btn-ghost" href="#">媒體聯絡</a>
+    </div>
+  </div>
+</section>
+
+<footer class="v15-foot">
+  <div>© 2026 尊嚴農業 Dignity Farming Initiative · Taiwan</div>
+  <div><a href="#">Privacy</a> · <a href="#">Credits</a> · <a href="#">Contact</a></div>
+</footer>
+
+</div><!-- /.fw-page-v15 -->
+
+<script>
+(function() {
+  'use strict';
+  var root = document.getElementById('page');
+  if (!root) return;
+
+  /* Hero entrance — stagger 每個 char */
+  requestAnimationFrame(function() {
+    var heroChars = root.querySelectorAll('.hook-title .char');
+    heroChars.forEach(function(c, i) { c.style.transitionDelay = (0.2 + i * 0.04) + 's'; });
+    root.classList.add('js-ready');
+  });
+
+  /* Scroll progress + scrolled state */
+  var progress = root.querySelector('.v15-progress');
+  window.addEventListener('scroll', function() {
+    var h = document.documentElement;
+    var pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    if (progress) progress.style.width = pct + '%';
+    root.classList.toggle('scrolled', h.scrollTop > 10);
+  }, { passive: true });
+
+  /* Page switcher — 切換 data-page 觀察 28 頁配色 */
+  var switcher = document.getElementById('pageSwitcher');
+  if (switcher) {
+    switcher.addEventListener('change', function(e) {
+      root.setAttribute('data-page', e.target.value);
+    });
+  }
+  /* method card 點擊切色 */
+  root.querySelectorAll('[data-goto]').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      root.setAttribute('data-page', card.dataset.goto);
+      if (switcher) switcher.value = card.dataset.goto;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    /* Reveal */
+    var revealIo = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -60px 0px' });
+    root.querySelectorAll('.reveal, [data-proof]').forEach(function(el) { revealIo.observe(el); });
+
+    /* Scramble — proof 3 數字 */
+    var scrambleIo = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = el.dataset.scramble;
+        var chars = '0123456789./';
+        var iter = 0;
+        var finalArr = target.split('');
+        var len = finalArr.length;
+        var interval = setInterval(function() {
+          var out = '';
+          for (var i = 0; i < len; i++) {
+            if (i < iter) out += finalArr[i];
+            else out += chars[Math.floor(Math.random() * chars.length)];
+          }
+          el.textContent = out;
+          iter += 1 / 3;
+          if (iter >= len) {
+            clearInterval(interval);
+            el.textContent = target;
+          }
+        }, 60);
+        scrambleIo.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    root.querySelectorAll('[data-scramble]').forEach(function(el) { scrambleIo.observe(el); });
+
+    /* Count-up — Stat band 4 數字 */
+    var countIo = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseFloat(el.dataset.count);
+        var dec = parseInt(el.dataset.dec || '0');
+        var start = performance.now();
+        var duration = 1400;
+        function step(now) {
+          var t = Math.min(1, (now - start) / duration);
+          var eased = 1 - Math.pow(1 - t, 4);
+          el.textContent = (target * eased).toFixed(dec);
+          if (t < 1) requestAnimationFrame(step);
+          else el.textContent = dec ? target.toFixed(dec) : target.toString();
+        }
+        requestAnimationFrame(step);
+        countIo.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    root.querySelectorAll('[data-count]').forEach(function(el) { countIo.observe(el); });
+  } else {
+    /* Fallback: 全部直接顯示 */
+    root.querySelectorAll('.reveal, [data-proof]').forEach(function(el) { el.classList.add('in'); });
+    root.querySelectorAll('[data-scramble]').forEach(function(el) { el.textContent = el.dataset.scramble; });
+    root.querySelectorAll('[data-count]').forEach(function(el) { el.textContent = el.dataset.count; });
+  }
+})();
+</script>
+
+</body>
+</html>
