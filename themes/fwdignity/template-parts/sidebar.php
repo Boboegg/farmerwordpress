@@ -59,16 +59,6 @@ $fw_side_args = wp_parse_args( $args ?? array(), array(
           <span class="fw-tool-txt">職業病認定標準</span>
           <i class="fas fa-download fw-tool-arr"></i>
         </a></li>
-        <li><a href="/downloads/checklist.pdf" target="_blank" rel="noopener">
-          <span class="fw-tool-ic"><i class="fas fa-heartbeat"></i></span>
-          <span class="fw-tool-txt">自我健康檢核表</span>
-          <i class="fas fa-download fw-tool-arr"></i>
-        </a></li>
-        <li><a href="https://www.hpa.gov.tw/Video/RecommendVideo.aspx?nodeid=851&vid=627" target="_blank" rel="noopener">
-          <span class="fw-tool-ic"><i class="fas fa-running"></i></span>
-          <span class="fw-tool-txt">我家也是健身房</span>
-          <i class="fas fa-external-link-alt fw-tool-arr"></i>
-        </a></li>
         <li><a href="https://agrstat.moa.gov.tw/sdweb/public/maintenance/Announce.aspx" target="_blank" rel="noopener">
           <span class="fw-tool-ic"><i class="fas fa-chart-pie"></i></span>
           <span class="fw-tool-txt">農業統計數據庫</span>
