@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尊嚴農業 v2 色彩系統 v0.1（待拍板）</title>
+<style>
+  :root{
+    /* 第一層：品牌核心（LOGO 實抽） */
+    --brand-deep:#3E542E; --brand:#627250; --sprout:#A7B070; --sprout-light:#DADCA9;
+    --cream:#EEE9D5; --paper:#F7F4EA; --ink:#2A331F;
+    /* 第二層：任務群語意色（橄欖世界調和） */
+    --task-insure:#C29B3C;  /* 💰 保險權益・蜜金 */
+    --task-gear:#C4703F;    /* 🛡️ 安全裝備・柿橙 */
+    --task-health:#52918C;  /* 🌡️ 健康防護・湖青 */
+    --task-subsidy:#5E7FA0; /* 📋 補助資源・田水藍 */
+    --task-course:#8A6B4E;  /* 🎓 課程・書卷褐 */
+    --task-start:#A7B070;   /* 🌱 新手起步・芽綠（=品牌嫩芽） */
+    /* 第三層：功能與動效 */
+    --ok:#6E8B3D; --warn:#A84B2F; --info:#5B7A78; --focus:#D9DC6A;
+    /* 中性階 */
+    --muted:#5A6350; --subtle:#8C927F; --line:#D9D6C6;
+  }
+  *{margin:0;box-sizing:border-box}
+  body{font-family:"Noto Sans TC",-apple-system,sans-serif;background:var(--paper);color:var(--ink);padding:48px 24px;line-height:1.85}
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{font-size:28px;margin-bottom:4px}
+  .sub{color:var(--muted);margin-bottom:40px;font-size:15px}
+  h2{font-size:20px;margin:48px 0 16px;padding-left:12px;border-left:5px solid var(--brand-deep)}
+  .note{font-size:14px;color:var(--muted);margin:-8px 0 16px}
+  /* 色卡 */
+  .swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .sw{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+  .sw .chip{height:84px}
+  .sw .meta{padding:10px 12px;font-size:13px}
+  .sw .meta b{display:block;font-size:14px}
+  .sw .meta code{color:var(--muted);font-size:12px}
+  /* 任務群卡 */
+  .tasks{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+  .task{border-radius:18px;padding:22px;color:#fff;min-height:120px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:filter .25s, box-shadow .25s}
+  .task:hover{filter:brightness(1.08);box-shadow:0 10px 28px rgba(42,51,31,.18)}
+  .task .t{font-size:19px;font-weight:700}
+  .task .d{font-size:13.5px;opacity:.92}
+  /* 按鈕態 */
+  .btnrow{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{border:none;border-radius:999px;padding:14px 30px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .25s cubic-bezier(.16,1,.3,1)}
+  .btn-primary{background:var(--brand-deep);color:var(--cream)}
+  .btn-primary:hover{background:#2F4122;transform:translateY(-2px);box-shadow:0 8px 22px rgba(62,84,46,.32)}
+  .btn-sprout{background:var(--sprout);color:var(--ink)}
+  .btn-sprout:hover{background:var(--sprout-light)}
+  .btn-ghost{background:transparent;color:var(--brand-deep);border:2px solid var(--brand-deep)}
+  .btn-ghost:hover{background:var(--cream)}
+  .btn:focus-visible{outline:4px solid var(--focus);outline-offset:2px}
+  .pill{padding:6px 14px;border-radius:999px;font-size:13.5px;font-weight:700}
+  /* 學術門 */
+  .academic{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px;margin-top:8px}
+  .academic h3{font-family:"Noto Serif TC",serif;font-size:24px;color:var(--brand-deep);letter-spacing:.02em}
+  .divider{display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--sprout)}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+  .chart{display:flex;gap:8px;align-items:flex-end;height:120px;margin-top:12px}
+  .bar{flex:1;border-radius:6px 6px 0 0;position:relative}
+  .bar span{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--muted)}
+  /* 動效示範 */
+  .fx{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .breathe{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 35% 30%, var(--sprout-light), var(--sprout));animation:breathe 3s ease-in-out infinite}
+  @keyframes breathe{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(167,176,112,.5)}50%{transform:scale(1.08);box-shadow:0 0 0 22px rgba(167,176,112,0)}}
+  .shift{padding:18px 26px;border-radius:14px;background:var(--cream);border:1px solid var(--line);transition:background .4s}
+  .shift:hover{background:var(--sprout-light)}
+  .count{font-size:34px;font-weight:900;color:var(--task-health);font-variant-numeric:tabular-nums}
+  .gray{filter:grayscale(1)}
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--subtle);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>尊嚴農業 v2 色彩系統 <span style="color:var(--sprout)">v0.1</span></h1>
+  <p class="sub">三層架構：品牌核心（LOGO 實抽）→ 任務群語意色 → 功能與動效色｜全部由橄欖世界調和展開，多而不亂｜待 Bobo 拍板</p>
+
+  <h2>第一層：品牌核心（不動，來自 LOGO）</h2>
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#3E542E"></div><div class="meta"><b>品牌深綠</b><code>#3E542E</code></div></div>
+    <div class="sw"><div class="chip" style="background:#627250"></div><div class="meta"><b>中橄欖</b><code>#627250</code></div></div>
+    <div class="sw"><div class="chip" style="background:#A7B070"></div><div class="meta"><b>芽綠</b><code>#A7B070</code></div></div>
+    <div class="sw"><div class="chip" style="background:#DADCA9"></div><div class="meta"><b>淺芽黃</b><code>#DADCA9</code></div></div>
+    <div class="sw"><div class="chip" style="background:#EEE9D5"></div><div class="meta"><b>暖米（主底）</b><code>#EEE9D5</code></div></div>
+    <div class="sw"><div class="chip" style="background:#F7F4EA;border-bottom:1px solid var(--line)"></div><div class="meta"><b>紙白（卡片）</b><code>#F7F4EA</code></div></div>
+    <div class="sw"><div class="chip" style="background:#2A331F"></div><div class="meta"><b>墨綠字</b><code>#2A331F</code></div></div>
+  </div>
+
+  <h2>第二層：任務群語意色（農民門的區辨度在這裡）</h2>
+  <p class="note">每個任務群一個識別色——這是舊設計「每章節有色」邏輯的進化版；色相彼此拉開（金／橙／青／藍／褐／綠），但飽和度統一壓在大地調，同屬一個世界。滑鼠移上去看 hover 動效。</p>
+  <div class="tasks">
+    <div class="task" style="background:var(--task-insure)"><div class="t">💰 我要算保險與權益</div><div class="d">蜜金 #C29B3C・試算器×2＋保險知識</div></div>
+    <div class="task" style="background:var(--task-gear)"><div class="t">🛡️ 工作安全裝備</div><div class="d">柿橙 #C4703F・PPE／農機／溫室</div></div>
+    <div class="task" style="background:var(--task-health)"><div class="t">🌡️ 健康與防護</div><div class="d">湖青 #52918C・熱危害／骨肌／農藥／心靈</div></div>
+    <div class="task" style="background:var(--task-subsidy)"><div class="t">📋 找補助資源</div><div class="d">田水藍 #5E7FA0・補助指南</div></div>
+    <div class="task" style="background:var(--task-course)"><div class="t">🎓 我想上課</div><div class="d">書卷褐 #8A6B4E・培力課程</div></div>
+    <div class="task" style="background:var(--task-start);color:var(--ink)"><div class="t">🌱 我剛開始務農</div><div class="d">芽綠 #A7B070＝品牌嫩芽色・新手一條龍</div></div>
+  </div>
+
+  <h2>第三層：功能與動效色</h2>
+  <div class="btnrow" style="margin-bottom:18px">
+    <button class="btn btn-primary">主要行動</button>
+    <button class="btn btn-sprout">次要行動</button>
+    <button class="btn btn-ghost">輕量行動</button>
+    <span class="pill" style="background:var(--ok);color:#fff">✓ 成功 #6E8B3D</span>
+    <span class="pill" style="background:var(--warn);color:#fff">⚠ 警示 #A84B2F</span>
+    <span class="pill" style="background:var(--info);color:#fff">ℹ 資訊 #5B7A78</span>
+    <span class="pill" style="background:var(--focus);color:var(--ink)">⌨ 鍵盤焦點 #D9DC6A</span>
+  </div>
+  <div class="fx">
+    <div class="breathe" title="呼吸粒子（JS 動效的色彩基底）"></div>
+    <div class="shift">hover 色移卡片（變色不變形）</div>
+    <div><div class="count">1,247</div><div style="font-size:13px;color:var(--muted)">count-up 數字色（湖青）</div></div>
+  </div>
+
+  <h2>學術門語彙（同 token、編輯感詮釋）</h2>
+  <div class="academic">
+    <h3>農業工作者熱危害之教育介入成效</h3>
+    <div class="divider">✦</div>
+    <p style="max-width:640px;font-size:15.5px">襯線標題呼應 LOGO 明體標準字；✦ 分隔線直接取自 LOGO 副標語彙。圖表序列色由第二層任務色轉任——</p>
+    <div class="chart">
+      <div class="bar" style="height:88%;background:var(--task-health)"><span>52%</span></div>
+      <div class="bar" style="height:70%;background:var(--task-subsidy)"><span>41%</span></div>
+      <div class="bar" style="height:55%;background:var(--task-insure)"><span>33%</span></div>
+      <div class="bar" style="height:42%;background:var(--task-gear)"><span>25%</span></div>
+      <div class="bar" style="height:30%;background:var(--task-course)"><span>18%</span></div>
+      <div class="bar" style="height:22%;background:var(--sprout)"><span>13%</span></div>
+    </div>
+  </div>
+
+  <h2>色盲／灰階壓力測試</h2>
+  <p class="note">六個任務色去掉顏色後仍靠明度差可分——確保色弱使用者與黑白列印場景不失效。</p>
+  <div class="tasks gray">
+    <div class="task" style="background:var(--task-insure)"><div class="t">💰 保險</div></div>
+    <div class="task" style="background:var(--task-gear)"><div class="t">🛡️ 裝備</div></div>
+    <div class="task" style="background:var(--task-health)"><div class="t">🌡️ 健康</div></div>
+    <div class="task" style="background:var(--task-subsidy)"><div class="t">📋 補助</div></div>
+    <div class="task" style="background:var(--task-course)"><div class="t">🎓 課程</div></div>
+    <div class="task" style="background:var(--task-start);color:var(--ink)"><div class="t">🌱 起步</div></div>
+  </div>
+
+  <footer>proto-v2-palette v0.1｜2026-07-06｜品牌核心=LOGO 實抽色（assets/brand/logo-final-2026）｜任務語意色/功能色=波波蛋提案待拍板｜對比度精算與 WCAG 驗證在原型定稿階段執行</footer>
+</div>
+</body>
+</html>

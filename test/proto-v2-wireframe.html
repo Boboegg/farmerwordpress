@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>v2 頁面分鏡＋特效配置（待討論）</title>
+<style>
+  :root{
+    --brand-deep:#3E542E; --brand:#627250; --sprout:#A7B070; --sprout-light:#DADCA9;
+    --cream:#EEE9D5; --paper:#F7F4EA; --ink:#2A331F;
+    --task-insure:#C29B3C; --task-gear:#C4703F; --task-health:#52918C;
+    --task-subsidy:#5E7FA0; --task-course:#8A6B4E; --task-start:#A7B070;
+    --ok:#6E8B3D; --warn:#A84B2F; --info:#5B7A78; --focus:#D9DC6A;
+    --muted:#5A6350; --line:#D9D6C6;
+  }
+  *{margin:0;box-sizing:border-box}
+  body{font-family:"Noto Sans TC",-apple-system,sans-serif;background:#E5E2D5;color:var(--ink);padding:40px 20px;line-height:1.7}
+  .wrap{max-width:1160px;margin:0 auto}
+  h1{font-size:26px;margin-bottom:6px}
+  .sub{color:var(--muted);margin-bottom:32px;font-size:14.5px}
+  h2{font-size:21px;margin:56px 0 6px}
+  .pagenote{font-size:14px;color:var(--muted);margin-bottom:18px}
+  /* 分鏡畫布 */
+  .canvas{background:var(--paper);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 6px 24px rgba(42,51,31,.08)}
+  .sec{padding:26px 30px;position:relative;border-bottom:2px dashed var(--line)}
+  .sec:last-child{border-bottom:none}
+  .sec .label{position:absolute;top:10px;right:12px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:60%}
+  .fx{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--ink);color:var(--sprout-light);white-space:nowrap}
+  .fx.content{background:var(--warn);color:#fff}
+  .secname{font-size:12.5px;font-weight:900;color:var(--brand);letter-spacing:.1em;margin-bottom:8px}
+  .ph{background:repeating-linear-gradient(45deg,#D8D4C4,#D8D4C4 8px,#E3DFD0 8px,#E3DFD0 16px);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+  /* hero 元件 */
+  .hero-a{background:var(--cream)}
+  .hero-b{background:var(--brand-deep);color:var(--cream)}
+  .hero-flex{display:flex;gap:28px;align-items:center}
+  .hero-txt{flex:1.2}
+  .hero-txt .kicker{font-size:13px;letter-spacing:.25em;color:var(--sprout);font-weight:700;margin-bottom:8px}
+  .hero-txt h3{font-size:30px;line-height:1.35;margin-bottom:12px;font-weight:900}
+  .hero-b .hero-txt h3{color:var(--cream)}
+  .hero-txt p{font-size:15px;opacity:.85;max-width:400px}
+  .gates{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  .gate{border-radius:18px;padding:26px;cursor:pointer;transition:all .3s}
+  .gate:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(42,51,31,.2)}
+  .gate.farmer{background:var(--brand-deep);color:var(--cream)}
+  .gate.research{background:#fff;border:2px solid var(--brand-deep);color:var(--brand-deep)}
+  .hero-b .gate.research{background:transparent;color:var(--cream);border-color:var(--sprout)}
+  .gate .g-t{font-size:21px;font-weight:900;margin-bottom:6px}
+  .gate .g-d{font-size:14px;opacity:.85}
+  .row{display:grid;gap:14px}
+  .cards3{grid-template-columns:repeat(3,1fr)}
+  .cards2{grid-template-columns:repeat(2,1fr)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;font-size:14px}
+  .card b{display:block;margin-bottom:6px;font-size:15.5px}
+  .statband{display:flex;gap:40px;justify-content:center;background:var(--brand-deep);border-radius:14px;padding:22px;color:var(--cream)}
+  .stat .n{font-size:30px;font-weight:900;color:var(--sprout-light);font-variant-numeric:tabular-nums}
+  .stat .l{font-size:13px;opacity:.8}
+  /* 任務卡 */
+  .taskgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .tk{border-radius:16px;padding:20px;color:#fff;font-weight:700;font-size:17px;min-height:88px;display:flex;align-items:flex-end;cursor:pointer;transition:filter .25s}
+  .tk:hover{filter:brightness(1.1)}
+  /* 學術 hero */
+  .serif{font-family:"Noto Serif TC",serif}
+  .divider{display:flex;align-items:center;gap:12px;margin:14px 0;color:var(--sprout)}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+  /* 特效菜單表 */
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;font-size:14px}
+  th{background:var(--brand-deep);color:var(--cream);padding:10px 14px;text-align:left;font-size:13.5px}
+  td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:var(--paper)}
+  .no{color:var(--warn);font-weight:700}
+  .legend{display:flex;gap:10px;margin-bottom:16px;font-size:13px;align-items:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>v2 頁面分鏡＋特效配置</h1>
+  <p class="sub">半保真：真色票＋佔位圖＋段落骨架。<span class="fx">黑標＝特效</span>＆<span class="fx content">紅標＝內容待補/待議</span>，逐段給意見即可。</p>
+  <div class="legend"></div>
+
+  <!-- ===== 首頁 ===== -->
+  <h2>① 首頁（敘事開場＋雙門分流）</h2>
+  <p class="pagenote">A/B 兩版差異只在第 1 段首屏底色：A＝暖米底（親切先行）、B＝深綠底（品牌先行，LOGO 世界直接展開）。下方以 A 示意、B 段落相同。</p>
+  <div class="canvas">
+    <div class="sec hero-a">
+      <div class="label"><span class="fx">標題逐字進場</span><span class="fx">背景微視差</span><span class="fx">呼吸芽點×2</span><span class="fx content">使命宣言文案待議</span><span class="fx content">首屏照片待策展</span></div>
+      <div class="secname">S1・HERO 敘事開場</div>
+      <div class="hero-flex">
+        <div class="hero-txt">
+          <div class="kicker">農民有尊嚴</div>
+          <h3>共構雲嘉農業工作者<br>職業健康的社會安全網</h3>
+          <p>一句補述：說明這是誰、在做什麼（文案待議）。</p>
+        </div>
+        <div class="ph" style="width:38%;height:170px">真實照片（田野/活動）</div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="label"><span class="fx">進場 stagger</span><span class="fx">hover 抬升</span></div>
+      <div class="secname">S2・雙門分流</div>
+      <div class="gates">
+        <div class="gate farmer"><div class="g-t">🌾 我是農民</div><div class="g-d">找實用資訊：保險試算、安全防護、補助、課程</div></div>
+        <div class="gate research"><div class="g-t">📚 研究與政策</div><div class="g-d">看計畫成果：研究出版、倡議論述、團隊</div></div>
+      </div>
+    </div>
+    <div class="sec" style="background:var(--cream)">
+      <div class="label"><span class="fx">count-up</span><span class="fx content">數據值待 Bobo 提供</span></div>
+      <div class="secname">S3・信任數據帶</div>
+      <div class="statband">
+        <div class="stat"><div class="n">36+</div><div class="l">實用與研究頁面</div></div>
+        <div class="stat"><div class="n">000</div><div class="l">課程場次（待）</div></div>
+        <div class="stat"><div class="n">000</div><div class="l">服務人次（待）</div></div>
+        <div class="stat"><div class="n">00</div><div class="l">合作單位（待）</div></div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="label"><span class="fx">stagger</span><span class="fx">hover 色移</span></div>
+      <div class="secname">S4・兩側精選（農民 3＋研究 3）</div>
+      <div class="row cards3" style="margin-bottom:14px">
+        <div class="card" style="border-top:4px solid var(--task-insure)"><b>💰 退休金試算</b>三分鐘算出你的退休金</div>
+        <div class="card" style="border-top:4px solid var(--task-health)"><b>🌡️ 熱天工作防護</b>夏季農事的自我保護</div>
+        <div class="card" style="border-top:4px solid var(--task-subsidy)"><b>📋 補助資源</b>找得到、看得懂、申請得了</div>
+      </div>
+      <div class="row cards3">
+        <div class="card" style="border-top:4px solid var(--brand)"><b>📖 研究出版</b>計畫學術產出</div>
+        <div class="card" style="border-top:4px solid var(--brand)"><b>🎧 Podcast</b>聽見田裡的聲音</div>
+        <div class="card" style="border-top:4px solid var(--brand)"><b>🖼️ 圖解懶人包</b>研究轉譯的視覺化知識</div>
+      </div>
+    </div>
+    <div class="sec" style="background:var(--paper)">
+      <div class="label"><span class="fx">滾動進場淡入</span><span class="fx content">敘事文案沿用倡議頁改寫（後議）</span></div>
+      <div class="secname">S5・尊嚴農業是什麼（計畫敘事帶）</div>
+      <div class="hero-flex">
+        <div class="ph" style="width:32%;height:120px">紀實照</div>
+        <div style="flex:1">
+          <div class="divider serif">✦</div>
+          <p style="font-size:15px">三句話講清楚計畫的為什麼＋一個「了解倡議」CTA──把學術門的靈魂在首頁露一角。</p>
+          <div class="divider serif">✦</div>
+        </div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="label"><span class="fx">無特效（快）</span></div>
+      <div class="secname">S6・最新消息×3＋FOOTER（沿用 Customizer 動態 4 欄）</div>
+      <div class="row cards3"><div class="card">消息 1</div><div class="card">消息 2</div><div class="card">消息 3</div></div>
+    </div>
+  </div>
+
+  <!-- ===== 農民門 ===== -->
+  <h2>② 農民門首頁（明亮服務感）</h2>
+  <p class="pagenote">原則：零學習成本——進來 3 秒內看懂「點哪裡」。大字、大觸控、低動效。</p>
+  <div class="canvas">
+    <div class="sec hero-a">
+      <div class="label"><span class="fx">無進場動畫（直接可見）</span></div>
+      <div class="secname">F1・門房（迷你 hero）</div>
+      <h3 style="font-size:24px;font-weight:900">你今天需要什麼？</h3>
+      <p style="font-size:14.5px;color:var(--muted)">一句話＋直接進任務。不放輪播、不放大圖。</p>
+    </div>
+    <div class="sec">
+      <div class="label"><span class="fx">hover 亮度</span><span class="fx">focus ring（鍵盤）</span></div>
+      <div class="secname">F2・六任務大卡（語意色）</div>
+      <div class="taskgrid">
+        <div class="tk" style="background:var(--task-insure)">💰 我要算保險與權益</div>
+        <div class="tk" style="background:var(--task-gear)">🛡️ 工作安全裝備</div>
+        <div class="tk" style="background:var(--task-health)">🌡️ 健康與防護</div>
+        <div class="tk" style="background:var(--task-subsidy)">📋 找補助資源</div>
+        <div class="tk" style="background:var(--task-course)">🎓 我想上課</div>
+        <div class="tk" style="background:var(--task-start);color:var(--ink)">🌱 我剛開始務農</div>
+      </div>
+    </div>
+    <div class="sec" style="background:var(--cream)">
+      <div class="label"><span class="fx">count-up（輕）</span></div>
+      <div class="secname">F3・直達工具列（試算器捷徑）</div>
+      <div class="row cards2">
+        <div class="card"><b>🧮 退休金試算</b>直接開算 →</div>
+        <div class="card"><b>🧮 職災權益試算</b>直接開算 →</div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="label"><span class="fx">hover 色移</span></div>
+      <div class="secname">F4・認識我們（跨門橋）</div>
+      <div class="row cards3">
+        <div class="card"><b>🤝 尊嚴農業倡議</b>我們為什麼做這件事</div>
+        <div class="card"><b>👥 研究團隊</b>誰在陪你</div>
+        <div class="card"><b>📞 聯繫我們</b>有問題直接找我們</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 學術門 ===== -->
+  <h2>③ 學術門首頁（編輯感）</h2>
+  <p class="pagenote">原則：期刊的可信──襯線、留白、資料視覺化；動效克制到「精確」。</p>
+  <div class="canvas">
+    <div class="sec" style="background:#fff">
+      <div class="label"><span class="fx">淡入（0.2s 內）</span><span class="fx content">定位論述一段（後議）</span></div>
+      <div class="secname">R1・編輯 HERO</div>
+      <div class="serif">
+        <div class="kicker" style="color:var(--sprout);letter-spacing:.25em;font-size:13px">DIGNITY FARMING INITIATIVE</div>
+        <h3 style="font-size:26px;color:var(--brand-deep);font-weight:700">以研究與教育介入，回應農業工作者的職業健康</h3>
+        <div class="divider">✦</div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="label"><span class="fx">stagger</span></div>
+      <div class="secname">R2・研究成果三欄（出版／懶人包／Podcast）</div>
+      <div class="row cards3">
+        <div class="card"><b class="serif">研究出版</b>期刊與研討會產出清單</div>
+        <div class="card"><b class="serif">圖解懶人包</b>研究轉譯</div>
+        <div class="card"><b class="serif">Podcast</b>聽見田裡的聲音</div>
+      </div>
+    </div>
+    <div class="sec" style="background:var(--paper)">
+      <div class="label"><span class="fx">count-up</span><span class="fx">圖表進場（bar 生長）</span><span class="fx content">統計數據待整理</span></div>
+      <div class="secname">R3・研究產出數據帶（序列色圖表）</div>
+      <div class="ph" style="height:90px">產出統計圖表（任務色轉圖表序列色）</div>
+    </div>
+    <div class="sec">
+      <div class="label"><span class="fx">hover 色移</span></div>
+      <div class="secname">R4・介入場域（跨門橋：健康/職安的學術入口）</div>
+      <div class="row cards2">
+        <div class="card"><b>熱危害預防之教育介入</b>→ 同一頁，農民門叫「熱天工作防護」</div>
+        <div class="card"><b>農藥安全與健康識能</b>→ 同一頁，農民門叫「農藥安全」</div>
+      </div>
+    </div>
+    <div class="sec" style="background:var(--cream)">
+      <div class="label"><span class="fx">無特效</span></div>
+      <div class="secname">R5・團隊＋合作單位帶</div>
+      <div class="ph" style="height:70px">團隊頭像列＋單位 logo 列</div>
+    </div>
+  </div>
+
+  <!-- ===== 特效菜單 ===== -->
+  <h2>④ 特效總菜單（JS／CSS 配置表）</h2>
+  <p class="pagenote">原則沿用 4/19 裁決：動畫服務敘事，不炫技；全部支援 prefers-reduced-motion 降級。</p>
+  <table>
+    <tr><th>特效</th><th>用在哪</th><th>服務什麼</th><th>技術</th></tr>
+    <tr><td><b>標題逐字進場</b></td><td>僅首頁 S1</td><td>開場儀式感</td><td>CSS ＋ 少量 JS，全站只此一處</td></tr>
+    <tr><td><b>卡片 stagger 進場</b></td><td>全站卡片群</td><td>閱讀節奏引導</td><td>IntersectionObserver，逐張 0.06s</td></tr>
+    <tr><td><b>hover 色移／亮度</b></td><td>全部可點元素</td><td>「這裡可以按」回饋</td><td>純 CSS，變色不變形（防 layout shift）</td></tr>
+    <tr><td><b>count-up 數字</b></td><td>首頁 S3、學術 R3</td><td>成果可信度</td><td>進視窗觸發 1.5s</td></tr>
+    <tr><td><b>背景微視差</b></td><td>僅首頁 hero 照片</td><td>空間深度</td><td>transform 3-5%，行動版關閉</td></tr>
+    <tr><td><b>呼吸芽點</b></td><td>首頁 hero 裝飾×2</td><td>品牌生命力（LOGO 嫩芽的動態延伸）</td><td>CSS animation，低頻率</td></tr>
+    <tr><td><b>圖表生長進場</b></td><td>學術門圖表</td><td>資料的「呈現感」</td><td>寬/高 transition</td></tr>
+    <tr><td><b>捲動進度條</b></td><td>長內容頁（研究文章、指南）</td><td>閱讀定位</td><td>scroll listener 一條</td></tr>
+    <tr><td><b>focus ring 芽黃</b></td><td>全站</td><td>鍵盤無障礙</td><td>:focus-visible</td></tr>
+    <tr><td class="no">✗ cursor 特效／3D tilt 全面用／橫向長捲動</td><td colspan="3" class="no">4/19 agents 否決維持；農民門 F1-F2 刻意零進場動畫（內容直接可見，高齡優先）</td></tr>
+  </table>
+
+  <p style="margin-top:36px;font-size:14px;color:var(--muted)">內容紅標共 6 處待議：使命宣言、首屏照片、數據值×2、計畫敘事文案、學術定位論述——都是 Step 4-6 的討論素材，不擋原型。</p>
+</div>
+</body>
+</html>
