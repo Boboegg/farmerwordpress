@@ -1,0 +1,1215 @@
+/* ============================================================
+   fwdignity · page-safety-sub.css
+   職業安全 3 子頁共用樣式
+     - personal-protective-equipment (Pink Red #F43F5E)
+     - labor-saving-machinery        (Sky Blue #0EA5E9)
+     - greenhouse-zone               (Amber #F59E0B)
+   ============================================================ */
+
+body[data-page="personal-protective-equipment"] .fw-page-v15-main,
+body[data-page="labor-saving-machinery"] .fw-page-v15-main,
+body[data-page="greenhouse-zone"] .fw-page-v15-main { display: none; }
+
+/* ===== PPE · Pink Red ===== */
+body[data-page="personal-protective-equipment"] {
+  --os-main: #F43F5E;
+  --os-deep: #881337;
+  --os-bg:   #FFE4E6;
+  --os-contrast: #F59E0B;
+  --os-main-rgb: 244,63,94;
+}
+
+/* ===== 省工農機 · Sky Blue ===== */
+body[data-page="labor-saving-machinery"] {
+  --os-main: #0EA5E9;
+  --os-deep: #0C4A6E;
+  --os-bg:   #E0F2FE;
+  --os-contrast: #F59E0B;
+  --os-main-rgb: 14,165,233;
+}
+
+/* ===== 溫室 · Amber ===== */
+body[data-page="greenhouse-zone"] {
+  --os-main: #F59E0B;
+  --os-deep: #78350F;
+  --os-bg:   #FEF3C7;
+  --os-contrast: #15803D;
+  --os-main-rgb: 245,158,11;
+}
+
+.os-sub { min-width: 0; padding-bottom: 60px; }
+
+/* ========== Back link ========== */
+.os-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(var(--os-main-rgb), 0.1);
+  border: 1px solid rgba(var(--os-main-rgb), 0.25);
+  border-radius: 999px;
+  color: var(--os-deep);
+  font-weight: 700;
+  font-size: 13.5px;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: all 0.3s var(--e-out);
+}
+.os-back:hover {
+  background: var(--os-main);
+  color: #fff;
+  border-color: var(--os-main);
+  transform: translateX(-4px);
+}
+
+/* ========== Section common ========== */
+.os-sec { margin-bottom: 56px; }
+.os-sec-head { margin-bottom: 28px; }
+.os-kicker {
+  font-family: Inter, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--os-main);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.os-kicker i { color: var(--os-contrast); font-size: 14px; }
+.os-sec-title {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: var(--os-deep);
+  margin: 0 0 10px;
+}
+.os-sec-title .accent { color: var(--os-main); }
+.os-sec-sub {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--c-text-muted);
+  margin: 8px 0 0;
+  max-width: 820px;
+}
+
+/* ========== Hero ========== */
+.os-sub-hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--os-bg) 0%, #FEFCF7 50%, rgba(var(--os-main-rgb), 0.2) 100%);
+  border-radius: var(--r-lg);
+  padding: 52px 44px 44px;
+  margin-bottom: 48px;
+  border: 1px solid rgba(var(--os-main-rgb), 0.18);
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(var(--os-main-rgb), 0.1);
+}
+.os-sub-hero-deco { position: absolute; inset: 0; pointer-events: none; }
+.os-sub-hero-deco i {
+  position: absolute;
+  color: rgba(var(--os-main-rgb), 0.08);
+  animation: osFloat 7s ease-in-out infinite;
+}
+.os-sub-deco-1 { top: 24px; right: 40px; font-size: 130px; animation-delay: 0s; }
+.os-sub-deco-2 { bottom: 16px; right: 150px; font-size: 90px; color: rgba(245,158,11,0.14) !important; animation-delay: 1.5s; }
+.os-sub-hero-inner { position: relative; z-index: 2; max-width: 720px; }
+.os-sub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(var(--os-main-rgb), 0.14);
+  border: 1px solid rgba(var(--os-main-rgb), 0.4);
+  color: var(--os-deep);
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 0.04em;
+}
+.os-sub-badge i { color: var(--os-main); }
+.os-sub-title {
+  font-family: "Inter Tight", "Noto Sans TC", sans-serif;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--os-deep);
+  margin: 0 0 14px;
+}
+.os-sub-title .accent { color: var(--os-main); position: relative; }
+.os-sub-title .accent::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 4px;
+  height: 12px;
+  background: rgba(245,158,11,0.3);
+  z-index: -1;
+  border-radius: 4px;
+}
+.os-sub-tagline {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--os-main);
+  line-height: 1.65;
+  margin: 0 0 20px;
+}
+.os-sub-intro {
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 20px 24px;
+  border: 1px solid rgba(255,255,255,0.8);
+  margin-bottom: 20px;
+}
+.os-sub-intro p {
+  margin: 0 0 10px;
+  line-height: 1.85;
+  font-size: 15px;
+  color: var(--c-text);
+}
+.os-sub-intro p:last-child { margin-bottom: 0; }
+.os-sub-data {
+  background: rgba(var(--os-main-rgb), 0.08);
+  border-left: 4px solid var(--os-main);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+.os-sub-data h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--os-deep);
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.os-sub-data h4 i { color: var(--os-main); }
+.os-sub-data ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.os-sub-data li {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+  padding-left: 16px;
+  position: relative;
+}
+.os-sub-data li::before {
+  content: '›';
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--os-main);
+  font-weight: 900;
+}
+.os-sub-data small {
+  display: block;
+  margin-top: 8px;
+  font-style: italic;
+  color: var(--c-text-subtle);
+  font-size: 12px;
+}
+.os-sub-data p { font-size: 14px; line-height: 1.8; color: var(--c-text); margin: 0 0 6px; }
+@media (max-width: 700px) {
+  .os-sub-hero { padding: 36px 24px 32px; }
+  .os-sub-title { font-size: 32px; }
+}
+
+/* ========== PPE per-equipment 小照片(跟農機具同樣風格) ========== */
+.ppe-photo {
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--ccl);
+  transition: transform 0.5s var(--e-out);
+}
+.ppe-equip:hover .ppe-photo:not(.nophoto) { transform: scale(1.06); }
+
+.ppe-photo.nophoto {
+  background: linear-gradient(135deg, var(--cc) 0%, color-mix(in srgb, var(--cc) 70%, #000) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.ppe-photo.nophoto::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+.ppe-photo.nophoto i {
+  font-size: 48px;
+  color: rgba(255,255,255,0.9);
+  z-index: 2;
+  transition: transform 0.3s var(--e-out);
+}
+.ppe-equip:hover .ppe-photo.nophoto i {
+  transform: scale(1.12) rotate(-4deg);
+}
+/* 避免 body 再出現重複 icon */
+.ppe-equip:has(.ppe-photo) > i { display: none; }
+
+/* ========== PPE categories ========== */
+.ppe-cat {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-line);
+  border-left: 6px solid var(--cc);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all 0.3s var(--e-out);
+}
+.ppe-cat:hover {
+  transform: translateX(4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  border-left-width: 10px;
+}
+.ppe-cat-head {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 22px 28px;
+  background: var(--ccl);
+}
+.ppe-cat-num {
+  font-family: "Inter Tight", Inter, sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--cc);
+  opacity: 0.45;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.ppe-cat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+.ppe-cat-head h3 {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--cc);
+  margin: 0 0 4px;
+}
+.ppe-cat-head p {
+  font-size: 14px;
+  color: var(--c-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+.ppe-equip-grid {
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.ppe-equip {
+  padding: 0;
+  background: #FAFAFA;
+  border-radius: 12px;
+  border: 1px solid #F0F0F0;
+  transition: all 0.3s var(--e-out);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ppe-equip:hover {
+  background: #fff;
+  border-color: var(--cc);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.1);
+}
+.ppe-equip > :not(.ppe-photo) { padding-left: 18px; padding-right: 18px; }
+.ppe-equip i {
+  font-size: 20px;
+  color: var(--cc);
+  margin: 14px 0 8px;
+}
+.ppe-equip > .ppe-when { margin-bottom: 10px; width: fit-content; }
+.ppe-equip > h4 { margin-top: 4px; }
+.ppe-equip > p { padding-bottom: 18px; }
+.ppe-equip h4 {
+  font-size: 15.5px;
+  font-weight: 800;
+  margin: 0 0 4px;
+  color: var(--c-text);
+}
+.ppe-when {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cc);
+  background: var(--ccl);
+  padding: 2px 8px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+.ppe-equip p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--c-text-muted);
+  margin: 0;
+}
+.ppe-warning {
+  display: flex;
+  gap: 14px;
+  padding: 16px 22px;
+  margin: 4px 28px 24px;
+  background: #FFF3E0;
+  border-radius: 10px;
+  border-left: 4px solid #E65100;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #7C2D12;
+}
+.ppe-warning i { color: #E65100; font-size: 18px; margin-top: 2px; flex-shrink: 0; }
+
+/* ========== PPE Risk Check ========== */
+.os-risk-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-line);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 820px) { .os-risk-card { grid-template-columns: 1fr; } }
+
+.os-risk-q { display: flex; flex-direction: column; gap: 10px; }
+.os-risk-q label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--c-surface-muted);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s var(--e-out);
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--c-text);
+}
+.os-risk-q label:hover { background: var(--os-bg); }
+.os-risk-q label:has(.os-risk-cb:checked) {
+  background: rgba(var(--os-main-rgb), 0.12);
+  color: var(--os-deep);
+  font-weight: 600;
+}
+.os-risk-cb {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: var(--os-main);
+  flex-shrink: 0;
+}
+
+.os-risk-result {
+  background: linear-gradient(135deg, var(--os-bg) 0%, #FEFCF7 100%);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  border: 1px solid rgba(var(--os-main-rgb), 0.2);
+  text-align: center;
+  position: sticky;
+  top: 170px;
+}
+.os-risk-meter {
+  height: 14px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.os-risk-meter-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #DC2626 0%, #F59E0B 50%, #16A34A 100%);
+  transition: width 0.6s var(--e-out);
+  border-radius: 999px;
+}
+.os-risk-score {
+  font-family: "Inter Tight", Inter, sans-serif;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--os-main);
+  letter-spacing: -0.02em;
+}
+.os-risk-score-divider {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--c-text-subtle);
+  margin: 0 4px;
+}
+.os-risk-score-total {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--c-text-muted);
+}
+.os-risk-msg {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--c-text);
+  margin: 12px 0 0;
+  font-weight: 600;
+}
+
+/* ========== SOP cards ========== */
+.os-sop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+@media (max-width: 820px) { .os-sop-grid { grid-template-columns: 1fr; } }
+
+.os-sop-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  border: 1px solid var(--c-line);
+  border-top: 4px solid;
+}
+.os-sop-on { border-top-color: #16A34A; }
+.os-sop-off { border-top-color: #DC2626; }
+.os-sop-card h3 {
+  font-size: 18px;
+  font-weight: 900;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.os-sop-on h3 { color: #15803D; }
+.os-sop-off h3 { color: #B91C1C; }
+.os-sop-card ol {
+  margin: 0;
+  padding: 0 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.os-sop-card li {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: var(--c-text);
+}
+.os-sop-card li mark {
+  background: rgba(245,158,11,0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  color: var(--os-deep);
+}
+.os-sop-note {
+  margin: 16px 0 0;
+  padding: 12px 16px;
+  background: rgba(22,163,74,0.06);
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: #15803D;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.os-sop-note i { margin-top: 2px; flex-shrink: 0; }
+
+/* ========== Legal cards ========== */
+.os-legal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.os-legal-item {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 22px 24px;
+  border: 1px solid var(--c-line);
+  transition: all 0.3s var(--e-out);
+}
+.os-legal-item:hover {
+  border-color: var(--os-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+.os-legal-item h4 {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: var(--os-deep);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.os-legal-item h4 i { color: var(--os-main); margin-top: 2px; flex-shrink: 0; }
+.os-legal-item p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+  margin: 0;
+}
+
+/* ========== Machinery cat(省工農機) ========== */
+.mach-cat {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-line);
+  border-left: 6px solid var(--cc);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: all 0.3s var(--e-out);
+}
+.mach-cat:hover {
+  transform: translateX(4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  border-left-width: 10px;
+}
+.mach-cat-head {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 22px 28px;
+  background: var(--ccl);
+}
+.mach-cat-num {
+  font-family: "Inter Tight", Inter, sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--cc);
+  opacity: 0.45;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.mach-cat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--cc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  flex-shrink: 0;
+}
+.mach-cat-head h3 {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--cc);
+  margin: 0 0 8px;
+}
+.mach-cat-pain {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--c-text);
+  line-height: 1.75;
+  margin: 0;
+}
+.mach-cat-pain i { color: #C62828; margin-top: 4px; flex-shrink: 0; }
+.mach-equip-grid {
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+.mach-equip {
+  padding: 0;
+  background: #FAFAFA;
+  border-radius: 12px;
+  border: 1px solid #F0F0F0;
+  transition: all 0.3s var(--e-out);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.mach-equip:hover {
+  background: #fff;
+  border-color: var(--cc);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.1);
+}
+.mach-photo {
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  background-color: #E5E7EB;
+  transition: transform 0.5s var(--e-out);
+}
+.mach-equip:hover .mach-photo:not(.nophoto) { transform: scale(1.06); }
+
+/* 無照片佔位塊:主題色漸層 + 中央大 icon */
+.mach-photo.nophoto {
+  background: linear-gradient(135deg, var(--cc) 0%, color-mix(in srgb, var(--cc) 70%, #000) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.mach-photo.nophoto::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 0%, transparent 60%);
+  pointer-events: none;
+}
+.mach-photo.nophoto i {
+  font-size: 56px;
+  color: rgba(255,255,255,0.9);
+  z-index: 2;
+  transition: transform 0.3s var(--e-out);
+}
+.mach-equip:hover .mach-photo.nophoto i {
+  transform: scale(1.12) rotate(-4deg);
+}
+/* 避免 body 再出現同一個 icon */
+.mach-equip:has(.mach-photo.nophoto) > i {
+  display: none;
+}
+.mach-equip > :not(.mach-photo) { padding-left: 20px; padding-right: 20px; }
+.mach-equip > i:not(.mach-photo *) {
+  padding-top: 14px;
+  padding-bottom: 0;
+}
+.mach-equip i {
+  font-size: 20px;
+  color: var(--cc);
+  margin: 14px 0 8px;
+}
+.mach-equip > span.mach-subsidy { margin: 0 20px 18px; width: fit-content; }
+.mach-equip > h4,
+.mach-equip > p { margin-top: 4px; }
+.mach-equip > p { margin-bottom: 10px; }
+.mach-equip h4 {
+  font-size: 15.5px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: var(--c-text);
+}
+.mach-equip p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--c-text-muted);
+  margin: 0 0 10px;
+}
+.mach-subsidy {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245,158,11,0.14);
+  color: #B45309;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ========== Subsidy info cards ========== */
+.os-subsidy-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+@media (max-width: 900px) { .os-subsidy-info { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .os-subsidy-info { grid-template-columns: 1fr; } }
+
+.os-info-card {
+  background: var(--c-surface);
+  border-radius: 14px;
+  padding: 20px 18px;
+  border: 1px solid var(--c-line);
+  text-align: center;
+  transition: all 0.3s var(--e-out);
+}
+.os-info-card:hover {
+  border-color: var(--os-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+.os-info-card i {
+  font-size: 24px;
+  color: var(--os-main);
+  margin-bottom: 10px;
+  display: block;
+}
+.os-info-card h4 {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  color: var(--os-deep);
+}
+.os-info-card p {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--c-text-muted);
+  margin: 0;
+}
+
+/* ========== Apply steps ========== */
+.os-apply-steps {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  border: 1px solid var(--c-line);
+  margin-bottom: 20px;
+}
+.os-apply-steps h3 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--os-deep);
+  margin: 0 0 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.os-apply-steps h3 i { color: var(--os-main); }
+.os-steps-row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.os-step {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 16px 12px;
+  background: var(--os-bg);
+  border-radius: 12px;
+  border: 1px solid rgba(var(--os-main-rgb), 0.2);
+}
+.os-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--os-main);
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 12px rgba(var(--os-main-rgb), 0.3);
+}
+.os-step h4 {
+  font-size: 14.5px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  color: var(--os-deep);
+}
+.os-step p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--c-text-muted);
+  margin: 0;
+}
+.os-step-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--os-main);
+  font-size: 16px;
+  padding-top: 30px;
+  flex-shrink: 0;
+}
+@media (max-width: 820px) {
+  .os-step-arrow { display: none; }
+}
+
+/* ========== Safety items grid(農機安全) ========== */
+.os-safety-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.os-safety-item {
+  background: var(--c-surface);
+  border-radius: 14px;
+  padding: 22px;
+  border: 1px solid var(--c-line);
+  transition: all 0.3s var(--e-out);
+}
+.os-safety-item:hover {
+  border-color: var(--os-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+.os-safety-item i {
+  font-size: 22px;
+  color: var(--os-main);
+  margin-bottom: 10px;
+  display: block;
+}
+.os-safety-item h4 {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: var(--os-deep);
+}
+.os-safety-item p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--c-text-muted);
+  margin: 0;
+}
+
+/* ========== Greenhouse hazard cards ========== */
+.os-gh-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+@media (max-width: 820px) { .os-gh-grid { grid-template-columns: 1fr; } }
+
+.os-gh-card {
+  background: var(--gcl);
+  border-radius: var(--r-lg);
+  padding: 26px 28px;
+  border-left: 6px solid var(--gc);
+  transition: all 0.3s var(--e-out);
+}
+.os-gh-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
+  border-left-width: 10px;
+}
+.os-gh-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--gc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.os-gh-card h3 {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--gc);
+  margin: 0 0 14px;
+}
+.os-gh-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 10px;
+}
+.os-gh-big {
+  font-family: "Inter Tight", Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--gc);
+  letter-spacing: -0.01em;
+}
+.os-gh-stat span:last-child {
+  font-size: 13.5px;
+  color: var(--c-text-muted);
+  font-weight: 600;
+}
+.os-gh-card p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--c-text);
+  margin: 0 0 14px;
+}
+.os-gh-tip {
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.55);
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--c-text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.os-gh-tip i {
+  color: #D4A017;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* ========== Greenhouse control cards ========== */
+.os-gh-ctrl-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.os-gh-ctrl {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 24px 22px;
+  border: 1px solid var(--c-line);
+  border-top: 4px solid var(--gc);
+  transition: all 0.3s var(--e-out);
+}
+.os-gh-ctrl:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+  border-top-width: 6px;
+}
+.os-gh-ctrl-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.04);
+  color: var(--gc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+.os-gh-ctrl h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: var(--gc);
+}
+.os-gh-ctrl ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.os-gh-ctrl li {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.os-gh-ctrl li::before {
+  content: '•';
+  position: absolute;
+  left: 6px;
+  color: var(--gc);
+  font-weight: 900;
+}
+
+/* ========== Greenhouse SOP grid ========== */
+.os-gh-sop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+.os-gh-sop-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 24px 22px;
+  border: 1px solid var(--c-line);
+  border-top: 4px solid var(--gc);
+  transition: all 0.3s var(--e-out);
+}
+.os-gh-sop-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+}
+.os-gh-sop-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gc);
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.os-gh-sop-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: var(--gc);
+}
+.os-gh-sop-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.os-gh-sop-card li {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.os-gh-sop-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 4px;
+  color: var(--gc);
+  font-weight: 900;
+}
+
+/* ========== Greenhouse Emergency cards ========== */
+.os-gh-emerg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.os-gh-emerg {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 22px 24px;
+  border: 1px solid var(--c-line);
+  border-left: 4px solid #DC2626;
+  transition: all 0.3s var(--e-out);
+}
+.os-gh-emerg:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.08);
+}
+.os-gh-emerg-icon {
+  font-size: 22px;
+  color: #DC2626;
+  margin-bottom: 10px;
+}
+.os-gh-emerg h4 {
+  font-size: 15.5px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: #B91C1C;
+}
+.os-gh-emerg p {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+  margin: 0;
+}
+
+/* ========== Buttons(os-btn) ========== */
+.os-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  background: linear-gradient(135deg, var(--os-main) 0%, var(--os-deep) 100%);
+  color: #fff !important;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(var(--os-main-rgb), 0.35);
+  transition: all 0.3s var(--e-out);
+  letter-spacing: 0.02em;
+}
+.os-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(var(--os-main-rgb), 0.45);
+}
+
+/* ========== References collapse ========== */
+.os-refs-details {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-line);
+  padding: 20px 26px;
+  transition: all 0.3s var(--e-out);
+}
+.os-refs-details[open] {
+  padding: 26px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+.os-refs-details summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.os-refs-details summary::-webkit-details-marker { display: none; }
+.os-refs-details .os-sec-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.os-refs-arrow {
+  font-size: 15px;
+  color: var(--os-main);
+  transition: transform 0.3s var(--e-out);
+}
+.os-refs-details[open] .os-refs-arrow { transform: rotate(180deg); }
+.os-refs-subhead {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--os-deep);
+  margin: 20px 0 8px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--c-line);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.os-refs-subhead i { color: var(--os-main); }
+.os-refs-note {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+  margin: 0 0 10px;
+}
+.os-refs-note a { color: var(--os-main); text-decoration: underline; }
+.os-refs-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.os-refs-list li {
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+  padding-left: 16px;
+  position: relative;
+}
+.os-refs-list li::before {
+  content: '›';
+  position: absolute;
+  left: 0; top: 0;
+  color: var(--os-main);
+  font-weight: 900;
+}
+.os-refs-list a {
+  color: var(--os-main);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--os-main-rgb), 0.3);
+}
+.os-refs-list a:hover { text-decoration-color: var(--os-main); }

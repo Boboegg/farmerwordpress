@@ -1,0 +1,177 @@
+/* ============================================================
+   fwdignity · home-polish.css
+   第四輪收尾：氣象 marquee 獨立跑道 / CTA 縮小 / news list active /
+   還原 news_magazine 原版 fadeIn 動畫
+   ============================================================ */
+
+/* ========== 氣象條加寬 + marquee 獨立 viewport ========== */
+.fw-ticker-weather {
+  width: 620px !important;
+  gap: 12px !important;
+}
+@media (max-width: 1100px) { .fw-ticker-weather { width: 520px !important; } }
+@media (max-width: 900px)  { .fw-ticker-weather { display: none !important; } }
+
+/* 砍掉舊的 .fw-w-text 包裝行為 */
+.fw-ticker-weather .fw-w-text { display: none; }
+
+/* badge 單獨顯示（不再包在 text 裡） */
+.fw-ticker-weather > .fw-w-badge {
+  flex-shrink: 0;
+  background: var(--c-accent);
+  color: var(--c-primary-deep);
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+/* message 專屬 viewport — overflow 隔離,marquee 不會跑到 badge */
+.fw-w-msg-vp {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  height: 24px;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+.fw-w-msg-vp .fw-w-message {
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fwWScroll 22s linear infinite;
+  padding-left: 100%;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.fw-ticker-weather:hover .fw-w-message { animation-play-state: paused; }
+@keyframes fwWScroll {
+  0%   { transform: translate(0, -50%); }
+  100% { transform: translate(-100%, -50%); }
+}
+
+/* ========== 最新動態 — 還原 news_magazine fadeIn 動畫風格 ========== */
+.fw-news-feature.is-active {
+  animation: fwNewsFade 0.5s ease;
+}
+@keyframes fwNewsFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 右側列表：active 高亮（還原原版 border-left + brand-light bg） */
+.fw-news-list .fw-news-li {
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  border-radius: 8px;
+  padding: 14px 14px 14px 18px;
+  transition: all 0.3s var(--e-out);
+  margin-bottom: 4px;
+}
+.fw-news-list .fw-news-li:hover {
+  background: rgba(21,128,61,0.04);
+}
+.fw-news-list .fw-news-li.is-active {
+  background: var(--c-primary-light);
+  border-left-color: var(--c-primary);
+}
+.fw-news-list .fw-news-li.is-active .fw-news-list-title {
+  color: var(--c-primary-deep);
+  font-weight: 900;
+}
+.fw-news-list .fw-news-li .fw-news-meta {
+  margin-bottom: 6px;
+}
+
+/* 把原本的 a 樣式覆蓋掉（結構改成 li 直接承載互動） */
+.fw-news-list li a { display: none; }
+
+/* ========== 側邊倡議 CTA 卡縮小（Image #39） ========== */
+.fw-side-cta-card {
+  padding: 18px 18px !important;
+}
+.fw-side-cta-icon {
+  width: 42px !important;
+  height: 42px !important;
+  font-size: 17px !important;
+  margin-bottom: 10px !important;
+}
+.fw-side-cta-title {
+  font-size: 16px !important;
+  margin-bottom: 6px !important;
+}
+.fw-side-cta-desc {
+  font-size: 12.5px !important;
+  line-height: 1.65 !important;
+  margin-bottom: 14px !important;
+}
+.fw-side-cta-btn {
+  padding: 9px 18px !important;
+  font-size: 13px !important;
+}
+.fw-side-cta-card::before {
+  width: 110px !important;
+  height: 110px !important;
+}
+
+/* ========== 所有動態按鈕 — 砍掉底部那顆（已回 head-row 右側） ========== */
+.fw-news-more-wrap { display: none; }
+
+/* ========== head-row 對齊調整：按鈕與標題垂直置中,消除空白 ========== */
+.fw-sec-head-row {
+  align-items: center !important;
+  margin-bottom: 22px !important;
+}
+.fw-sec-head-row .fw-sec-subtitle {
+  margin-bottom: 0 !important;
+}
+.fw-sec-head-row .fw-sec-title {
+  margin-bottom: 8px !important;
+}
+
+/* ========== 側邊倡議按鈕 solo 版（只留一顆顯眼按鈕） ========== */
+.fw-side-cta-btn-solo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, var(--c-accent) 0%, var(--c-accent-deep) 100%);
+  color: #fff !important;
+  border-radius: 16px;
+  font-family: "Inter Tight", "Noto Sans TC", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(245,158,11,0.32);
+  transition: all 0.3s var(--e-out);
+  position: relative;
+  overflow: hidden;
+}
+.fw-side-cta-btn-solo i {
+  font-size: 18px;
+}
+.fw-side-cta-btn-solo::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  transition: left 0.6s var(--e-out);
+}
+.fw-side-cta-btn-solo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(245,158,11,0.45);
+  background: linear-gradient(135deg, var(--c-accent-deep) 0%, #92400E 100%);
+}
+.fw-side-cta-btn-solo:hover::after {
+  left: 100%;
+}

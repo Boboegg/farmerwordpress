@@ -1,0 +1,296 @@
+/* ============================================================
+   fwdignity · site-parts.css
+   全站共用:走馬燈 + 氣象 + 側邊欄(sidebar partial)
+   enqueued on ALL pages(非首頁專屬)
+   ============================================================ */
+
+/* ========== 走馬燈 + 氣象 ========== */
+.fw-ticker-row {
+  display: flex;
+  background: var(--c-primary-deep);
+  color: #fff;
+  height: 52px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.fw-ticker-words {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.fw-ticker-track {
+  display: flex;
+  gap: 48px;
+  white-space: nowrap;
+  animation: fwTicker 32s linear infinite;
+  padding-left: 24px;
+  font-family: "Inter Tight", "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+}
+.fw-ticker-track span { display: inline-flex; align-items: center; gap: 12px; }
+.fw-ticker-track > span::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--c-accent);
+  display: inline-block;
+  flex-shrink: 0;
+}
+.fw-ticker-track .en {
+  font-family: Inter, sans-serif;
+  font-weight: 900;
+  color: var(--c-accent);
+  letter-spacing: 0.25em;
+}
+@keyframes fwTicker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.fw-ticker-words:hover .fw-ticker-track { animation-play-state: paused; }
+
+.fw-ticker-weather {
+  width: 620px;
+  background: rgba(255,255,255,0.08);
+  border-left: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+@media (max-width: 1100px) { .fw-ticker-weather { width: 520px; } }
+@media (max-width: 900px)  { .fw-ticker-weather { display: none; } }
+
+.fw-w-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  color: var(--c-primary-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.fw-w-badge {
+  flex-shrink: 0;
+  background: var(--c-accent);
+  color: var(--c-primary-deep);
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+.fw-w-msg-vp {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  height: 24px;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+.fw-w-msg-vp .fw-w-message {
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fwWScroll 22s linear infinite;
+  padding-left: 100%;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.fw-ticker-weather:hover .fw-w-message { animation-play-state: paused; }
+@keyframes fwWScroll {
+  0%   { transform: translate(0, -50%); }
+  100% { transform: translate(-100%, -50%); }
+}
+.fw-w-cta {
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: all 0.3s var(--e-out);
+  color: #fff !important;
+  flex-shrink: 0;
+}
+.fw-w-cta:hover {
+  background: var(--c-accent);
+  color: var(--c-primary-deep) !important;
+  border-color: var(--c-accent);
+}
+
+/* ========== 側邊欄(sidebar partial) ========== */
+.fw-aside { position: relative; }
+.fw-aside-inner {
+  position: sticky;
+  top: 160px; /* navbar 92 + ticker 52 + buffer */
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+@media (max-width: 1100px) {
+  .fw-aside-inner { position: static; }
+}
+
+.fw-side-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-line);
+  padding: 22px;
+  transition: all 0.3s var(--e-out);
+}
+.fw-side-card:hover { box-shadow: 0 10px 28px rgba(21,128,61,0.08); }
+.fw-side-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--c-primary-deep);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--c-primary-light);
+  position: relative;
+}
+.fw-side-title::after {
+  content: ''; position: absolute; bottom: -2px; left: 0;
+  width: 40px; height: 2px; background: var(--c-accent);
+}
+.fw-side-title i { color: var(--c-accent); font-size: 15px; }
+
+/* 分眾 */
+.fw-side-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.fw-aud {
+  background: #FAF7F0;
+  border-radius: 14px;
+  padding: 16px 12px;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: all 0.3s var(--e-out);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+}
+.fw-aud-icon {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--ac-light);
+  color: var(--ac);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  transition: all 0.3s var(--e-out);
+}
+.fw-aud-name { font-size: 13px; font-weight: 800; color: var(--c-text); line-height: 1.3; }
+.fw-aud-desc { font-size: 11px; color: var(--c-text-subtle); line-height: 1.4; }
+.fw-aud:hover {
+  background: var(--ac); border-color: var(--ac); transform: translateY(-3px);
+}
+.fw-aud:hover .fw-aud-icon { background: rgba(255,255,255,0.25); color: #fff; transform: scale(1.1); }
+.fw-aud:hover .fw-aud-name, .fw-aud:hover .fw-aud-desc { color: #fff; }
+.fw-aud.a-beginner { --ac: #DC2626; --ac-light: #FEE2E2; }
+.fw-aud.a-young    { --ac: #65A30D; --ac-light: #ECFCCB; }
+.fw-aud.a-senior   { --ac: #92400E; --ac-light: #FEF3C7; }
+.fw-aud.a-public   { --ac: #1E40AF; --ac-light: #DBEAFE; }
+
+/* 倡議 solo 按鈕 */
+.fw-side-cta-btn-solo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, var(--c-accent) 0%, var(--c-accent-deep) 100%);
+  color: #fff !important;
+  border-radius: 16px;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(245,158,11,0.32);
+  transition: all 0.3s var(--e-out);
+  position: relative;
+  overflow: hidden;
+}
+.fw-side-cta-btn-solo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(245,158,11,0.45);
+  background: linear-gradient(135deg, var(--c-accent-deep) 0%, #92400E 100%);
+}
+
+/* 工具 / 快連 list */
+.fw-side-tool-list { list-style: none; padding: 0; margin: 0; }
+.fw-side-tool-list li { margin-bottom: 10px; }
+.fw-side-tool-list li:last-child { margin-bottom: 0; }
+.fw-side-tool-list a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px;
+  background: #FAF7F0;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-text);
+  transition: all 0.3s var(--e-out);
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+.fw-tool-ic {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #fff; color: var(--c-primary);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 13px; flex-shrink: 0;
+}
+.fw-tool-txt { flex-grow: 1; }
+.fw-tool-arr { margin-left: auto; color: var(--c-text-subtle); font-size: 12px; }
+.fw-side-tool-list a:hover {
+  background: var(--c-primary-light);
+  border-color: var(--c-primary);
+  transform: translateX(4px);
+}
+.fw-side-tool-list a:hover .fw-tool-ic { background: var(--c-primary); color: #fff; }
+.fw-side-tool-list a:hover .fw-tool-arr { color: var(--c-primary); }
+
+/* ========== Scroll Progress Bar(全站) ========== */
+.v15-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--c-primary) 0%, var(--c-accent) 100%);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(245,158,11,0.4);
+}
+
+/* ========== 通用頁面 layout 包裝(main + aside) ========== */
+.fw-page-layout {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 36px;
+}
+@media (max-width: 1100px) {
+  .fw-page-layout { grid-template-columns: 1fr; gap: 40px; padding: 40px 20px 60px; }
+}
+.fw-page-layout > main { min-width: 0; }

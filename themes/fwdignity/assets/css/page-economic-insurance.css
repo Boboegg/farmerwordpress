@@ -1,0 +1,522 @@
+/* ============================================================
+   fwdignity · page-economic-insurance.css
+   經濟與保險 Hub · MASTER FINAL 2026-04-20
+     ei-main   · #0891B2 (青 / info)
+     ei-deep   · #164E63 (深青 / info-deep)
+     ei-bg     · #CFFAFE (淺青 / info-light)
+     ei-accent · #F59E0B (琥珀金 / accent)
+     ei-gold-deep · #B45309
+     ei-gold-bg   · #FEF3C7
+   ============================================================ */
+
+body[data-page="economic-insurance"] .fw-page-v15-main { display: none; }
+body[data-page="economic-insurance"] {
+  --ei-main:   #0891B2;
+  --ei-deep:   #164E63;
+  --ei-bg:     #CFFAFE;
+  --ei-accent: #F59E0B;
+  --ei-gold-deep: #B45309;
+  --ei-gold-bg:   #FEF3C7;
+  --ei-danger: #DC2626;
+  --ei-success: #15803D;
+  --ei-success-bg: #DCFCE7;
+  --ei-line: #E5E1D8;
+}
+
+.ei-main { min-width: 0; padding-bottom: 60px; }
+.ei-main > * + * { margin-top: 44px; }
+
+/* ===== Hero ===== */
+.ei-hero {
+  position: relative;
+  padding: 80px 52px 72px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, var(--ei-deep) 0%, var(--ei-main) 70%, #22D3EE 130%);
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+}
+.ei-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(245,158,11,0.22) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  z-index: -1;
+}
+.ei-hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+}
+.ei-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(245,158,11,0.22);
+  border: 1px solid rgba(245,158,11,0.55);
+  border-radius: 999px;
+  color: #FEF3C7;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.ei-hero h1 {
+  font-size: clamp(30px, 4.5vw, 44px);
+  font-weight: 900;
+  line-height: 1.22;
+  margin: 0 0 14px;
+  color: #fff;
+  letter-spacing: -0.015em;
+}
+.ei-hero h1 .accent { color: #FEF3C7; }
+.ei-hero-subtitle {
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.92);
+  margin: 0 0 20px;
+  max-width: 620px;
+}
+.ei-hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ei-hero-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.95);
+}
+.ei-hero-list li i {
+  color: #FEF3C7;
+  font-size: 16px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+.ei-hero-list strong { color: #fff; font-weight: 800; }
+.ei-hero-note {
+  display: flex;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.1);
+  border: 1px dashed rgba(255,255,255,0.28);
+  border-radius: 12px;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 22px;
+}
+.ei-hero-note i { color: #FEF3C7; margin-top: 3px; flex-shrink: 0; }
+.ei-hero-note strong { color: #FEF3C7; font-weight: 800; }
+.ei-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.ei-btn-primary, .ei-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.ei-btn-primary {
+  background: var(--ei-accent);
+  color: var(--ei-deep);
+}
+.ei-btn-primary:hover { background: #FBBF24; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(245,158,11,0.45); }
+.ei-btn-secondary {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+.ei-btn-secondary:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
+
+/* Hero stats */
+.ei-hero-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.ei-stat-card {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+}
+.ei-stat-icon {
+  width: 52px; height: 52px;
+  background: var(--ei-accent);
+  color: var(--ei-deep);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+}
+.ei-stat-number {
+  display: block;
+  font-family: Inter, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+}
+.ei-stat-label { display: block; font-size: 13px; color: rgba(255,255,255,0.9); margin-top: 2px; }
+.ei-stat-source { display: block; font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 3px; }
+
+/* ===== Section Header ===== */
+.ei-sec { padding: 0 4px; }
+.ei-section-head {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.ei-section-head .kicker {
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--ei-main);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.ei-section-head h2 {
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 900;
+  color: var(--ei-deep);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+.ei-section-head h2 .accent { color: var(--ei-main); }
+.ei-section-head p {
+  color: var(--c-text-muted);
+  font-size: 14px;
+  margin: 0 auto;
+  max-width: 620px;
+  line-height: 1.8;
+}
+
+/* ===== 3 主題入口 ===== */
+.ei-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.ei-topic {
+  display: block;
+  padding: 32px 28px;
+  background: #fff;
+  border: 1px solid var(--ei-line);
+  border-radius: 16px;
+  border-top: 5px solid var(--ei-main);
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s var(--e-out);
+  position: relative;
+  overflow: hidden;
+}
+.ei-topic:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(8,145,178,0.15);
+  border-top-color: var(--ei-accent);
+}
+.ei-topic-icon {
+  width: 56px; height: 56px;
+  background: var(--ei-bg);
+  color: var(--ei-main);
+  border-radius: 14px;
+  display: grid; place-items: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.ei-topic h3 {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--ei-deep);
+  margin: 0 0 4px;
+}
+.ei-topic-desc {
+  font-size: 13px;
+  color: var(--c-text-muted);
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+.ei-topic-highlights {
+  padding: 14px 16px;
+  background: var(--ei-bg);
+  border-radius: 10px;
+  font-size: 12.5px;
+  color: var(--ei-deep);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.ei-topic-highlights strong { color: var(--ei-main); }
+.ei-topic-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ei-main);
+  font-weight: 800;
+  font-size: 13.5px;
+}
+.ei-topic:hover .ei-topic-cta { color: var(--ei-accent); }
+.ei-topic-coming {
+  padding: 10px 14px;
+  background: var(--ei-gold-bg);
+  color: var(--ei-gold-deep);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===== 保險速覽表 ===== */
+.ei-snap-wrap {
+  background: #fff;
+  border: 1px solid var(--ei-line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(8,145,178,0.06);
+}
+.ei-snap-header {
+  padding: 22px 26px;
+  background: linear-gradient(135deg, var(--ei-deep), var(--ei-main));
+  color: #fff;
+}
+.ei-snap-header h3 { margin: 0 0 4px; font-size: 18px; font-weight: 900; }
+.ei-snap-header p { margin: 0; font-size: 13px; color: rgba(255,255,255,0.88); }
+.ei-snap-table-wrap { overflow-x: auto; }
+.ei-snap-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 680px;
+}
+.ei-snap-table th, .ei-snap-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--ei-line);
+  vertical-align: middle;
+}
+.ei-snap-table thead th {
+  background: var(--ei-bg);
+  color: var(--ei-deep);
+  font-weight: 900;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+}
+.ei-snap-table tbody tr:hover { background: #F0FBFF; }
+.ei-snap-table tbody tr:last-child td { border-bottom: none; }
+.ei-snap-table .insurance-name { font-weight: 800; color: var(--ei-deep); }
+.ei-snap-table .insurance-name small { display: block; color: var(--c-text-muted); font-weight: 500; font-size: 11.5px; margin-top: 2px; }
+.ei-snap-highlight { color: var(--ei-main); font-weight: 800; }
+.ei-snap-note {
+  padding: 6px 10px;
+  background: var(--ei-gold-bg);
+  color: var(--ei-gold-deep);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+}
+.ei-snap-link {
+  color: var(--ei-main);
+  font-weight: 800;
+  text-decoration: none;
+}
+.ei-snap-link:hover { text-decoration: underline; }
+.ei-snap-wip { color: var(--ei-gold-deep); font-weight: 700; font-style: italic; }
+.ei-snap-footnote {
+  padding: 14px 26px;
+  background: #F9FBFA;
+  color: var(--c-text-muted);
+  font-size: 12px;
+  line-height: 1.7;
+  border-top: 1px solid var(--ei-line);
+}
+
+/* ===== 試算工具區 ===== */
+.ei-tools {
+  padding: 40px 32px;
+  background: linear-gradient(135deg, var(--ei-bg) 0%, #fff 100%);
+  border-radius: 18px;
+  border: 1px solid var(--ei-bg);
+}
+.ei-tools-header { text-align: center; margin-bottom: 26px; }
+.ei-tools-header h3 { font-size: 20px; font-weight: 900; color: var(--ei-deep); margin: 0 0 6px; }
+.ei-tools-header p { color: var(--c-text-muted); font-size: 13.5px; margin: 0; }
+.ei-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.ei-tool-card {
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--ei-line);
+  border-radius: 14px;
+  transition: all 0.25s;
+}
+.ei-tool-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ei-main);
+  box-shadow: 0 12px 26px rgba(8,145,178,0.14);
+}
+.ei-tool-card.internal {
+  border-top: 4px solid var(--ei-accent);
+  background: linear-gradient(135deg, #fff 0%, var(--ei-gold-bg) 120%);
+}
+.ei-tool-info h4 {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--ei-deep);
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ei-tool-info h4 .tool-badge {
+  font-size: 10.5px;
+  padding: 3px 10px;
+  background: var(--ei-accent);
+  color: var(--ei-deep);
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+.ei-tool-info h4 .tool-badge.external {
+  background: var(--ei-bg);
+  color: var(--ei-deep);
+}
+.ei-tool-info p {
+  font-size: 13px;
+  color: var(--c-text);
+  line-height: 1.7;
+  margin: 0 0 14px;
+}
+.ei-tool-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--ei-main);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.ei-tool-link:hover { background: var(--ei-deep); transform: translateX(3px); }
+.ei-tool-link.accent { background: var(--ei-accent); color: var(--ei-deep); }
+.ei-tool-link.accent:hover { background: var(--ei-gold-deep); color: #fff; }
+
+/* ===== 聯絡窗口 ===== */
+.ei-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+.ei-contact-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 16px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid var(--ei-line);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s;
+}
+.ei-contact-card:hover { border-color: var(--ei-main); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(8,145,178,0.1); }
+.ei-contact-icon {
+  width: 56px; height: 56px;
+  background: var(--ei-bg);
+  color: var(--ei-main);
+  border-radius: 12px;
+  display: grid; place-items: center;
+  font-size: 22px;
+}
+.ei-contact-card h4 { font-size: 15px; font-weight: 900; color: var(--ei-deep); margin: 0 0 4px; }
+.ei-contact-card p { font-size: 12.5px; color: var(--c-text-muted); margin: 0; line-height: 1.65; }
+
+/* ===== 免責 + 交叉 ===== */
+.ei-disclaimer {
+  padding: 20px 24px;
+  background: var(--ei-gold-bg);
+  border-left: 4px solid var(--ei-accent);
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--ei-gold-deep);
+}
+.ei-disclaimer strong { font-weight: 900; }
+
+.ei-cross {
+  padding: 32px;
+  background: linear-gradient(135deg, var(--ei-bg) 0%, #fff 100%);
+  border-radius: 16px;
+  border: 1px solid var(--ei-bg);
+}
+.ei-cross h3 { font-size: 18px; font-weight: 900; color: var(--ei-deep); margin: 0 0 14px; }
+.ei-cross-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.ei-cross-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid var(--ei-bg);
+  border-radius: 10px;
+  color: var(--ei-deep);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13.5px;
+  transition: all 0.2s;
+}
+.ei-cross-card:hover { transform: translateX(3px); border-color: var(--ei-main); background: var(--ei-bg); }
+.ei-cross-icon {
+  width: 36px; height: 36px;
+  background: var(--ei-bg);
+  color: var(--ei-main);
+  border-radius: 10px;
+  display: grid; place-items: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.ei-cross-card:hover .ei-cross-icon { background: var(--ei-main); color: #fff; }
+
+/* ===== RWD ===== */
+@media (max-width: 960px) {
+  .ei-hero { padding: 52px 26px 48px; }
+  .ei-hero-grid { grid-template-columns: 1fr; }
+  .ei-topic-grid { grid-template-columns: 1fr; }
+  .ei-tools { padding: 28px 20px; }
+}
