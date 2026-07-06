@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尊嚴農業 設計系統 MASTER FINAL — 2026-04-20 拍板</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700;900&family=Inter+Tight:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c-primary: #15803D;
+  --c-primary-deep: #14532D;
+  --c-primary-light: #DCFCE7;
+  --c-accent: #F59E0B;
+  --c-accent-deep: #B45309;
+  --c-warning: #DC2626;
+  --c-info: #0891B2;
+  --c-bg: #FEFCF7;
+  --c-surface: #FFFFFF;
+  --c-surface-muted: #F5F2EB;
+  --c-text: #0F2818;
+  --c-text-muted: #475569;
+  --c-text-subtle: #94A3B8;
+  --c-line: #E5E1D8;
+  --c-line-strong: #CBD0C5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Noto Sans TC", system-ui, sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.75;
+  font-size: 18px;
+}
+.wrap { max-width: 1280px; margin: 0 auto; padding: 64px 32px; }
+
+h1 {
+  font-family: "Inter Tight", "Noto Sans TC", sans-serif;
+  font-size: clamp(44px, 6vw, 88px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: var(--c-primary-deep);
+}
+h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 80px 0 24px;
+  color: var(--c-primary-deep);
+  border-bottom: 3px solid var(--c-accent);
+  padding-bottom: 12px;
+  display: inline-block;
+}
+h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 32px 0 12px;
+  color: var(--c-text);
+}
+p, li { color: var(--c-text); }
+
+/* Hero */
+.hero {
+  padding: 56px 40px;
+  background: linear-gradient(135deg, var(--c-primary-light) 0%, var(--c-bg) 100%);
+  border-radius: 32px;
+  margin-bottom: 32px;
+}
+.hero .tag {
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--c-primary);
+  padding: 6px 14px; background: var(--c-surface);
+  border-radius: 999px; margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(21, 128, 61, 0.06);
+}
+.hero .meta { color: var(--c-text-muted); font-size: 16px; margin-top: 16px; }
+
+/* Notes */
+.note {
+  background: var(--c-primary-light);
+  border-left: 4px solid var(--c-primary);
+  padding: 16px 20px; border-radius: 16px;
+  font-size: 16px; color: var(--c-primary-deep);
+  margin: 16px 0;
+}
+.note.warn {
+  background: #FFEDD5; border-left-color: #EA580C;
+  color: #7C2D12;
+}
+.note.danger {
+  background: #FEE2E2; border-left-color: #DC2626;
+  color: #881337;
+}
+.note strong { font-weight: 900; }
+
+/* Summary table */
+.summary-table {
+  width: 100%; border-collapse: collapse; margin: 16px 0 32px;
+  background: var(--c-surface); border-radius: 24px; overflow: hidden;
+  border: 1px solid var(--c-line);
+  font-size: 15px;
+}
+.summary-table th, .summary-table td {
+  padding: 14px 18px; text-align: left;
+  border-bottom: 1px solid var(--c-line);
+}
+.summary-table th {
+  background: var(--c-surface-muted); font-weight: 700;
+  color: var(--c-primary-deep); font-size: 14px;
+  letter-spacing: 0.05em;
+}
+.summary-table tr:last-child td { border-bottom: none; }
+.pill {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: 12px; font-weight: 700; font-family: Inter, sans-serif;
+  letter-spacing: 0.05em;
+}
+.pill-v3  { background: #DCFCE7; color: #14532D; }
+.pill-v14 { background: #FFEDD5; color: #7C2D12; }
+.pill-v15 { background: #DBEAFE; color: #1E3A8A; }
+.pill-v2  { background: #EDE9FE; color: #4C1D95; }
+.pill-new { background: #FEF3C7; color: #78350F; }
+
+/* Swatch grids */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px; margin-bottom: 32px;
+}
+.swatch {
+  background: var(--c-surface); border-radius: 24px;
+  overflow: hidden; border: 1px solid var(--c-line);
+  transition: all 0.3s ease;
+}
+.swatch:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(21, 128, 61, 0.14); }
+.swatch-color {
+  height: 92px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-family: Inter, monospace; font-size: 13px; font-weight: 600;
+  gap: 4px; text-align: center;
+}
+.swatch-color.on-light { color: var(--c-text); }
+.swatch-color.on-dark  { color: #fff; }
+.swatch-color .hex { font-size: 13px; }
+.swatch-color .role { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.85; }
+.swatch-info { padding: 14px 18px; }
+.swatch-info .name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+.swatch-info .hex {
+  font-family: Inter, monospace; font-size: 12px;
+  color: var(--c-text-muted); letter-spacing: 0.05em;
+}
+.swatch-info .desc { font-size: 13px; color: var(--c-text-subtle); margin-top: 6px; line-height: 1.6; }
+.swatch-info .contrast {
+  display: inline-block; font-family: Inter, monospace;
+  font-size: 11px; padding: 2px 8px;
+  background: var(--c-primary-light); color: var(--c-primary-deep);
+  border-radius: 8px; font-weight: 600; margin-top: 6px;
+}
+
+/* Chapter card */
+.chapter {
+  background: var(--c-surface); border-radius: 32px;
+  padding: 28px; border: 1px solid var(--c-line);
+  margin-bottom: 20px;
+}
+.chapter-title { font-size: 24px; font-weight: 900; margin-bottom: 4px; }
+.chapter-en {
+  font-family: Inter, sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--c-text-muted); margin-bottom: 20px;
+}
+.chapter-swatches {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+}
+.chapter-swatches .swatch-color { height: 70px; font-size: 11px; border-radius: 14px; }
+.chapter-sample {
+  margin-top: 20px; padding: 18px 22px; border-radius: 20px;
+  display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: center;
+}
+.chapter-sample .btn {
+  padding: 12px 24px; border-radius: 999px;
+  font-family: "Noto Sans TC", sans-serif; font-size: 15px; font-weight: 700;
+  border: none; cursor: pointer; color: #fff;
+}
+
+/* Sub-page grid */
+.subpage-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px; margin-bottom: 28px;
+}
+.subpage {
+  background: var(--c-surface); border: 1px solid var(--c-line);
+  border-radius: 20px; overflow: hidden;
+}
+.subpage-color {
+  height: 92px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-family: Inter, monospace; font-weight: 600;
+  color: #fff; text-align: center; padding: 0 8px;
+}
+.subpage-color .hex { font-size: 12px; font-weight: 700; }
+.subpage-color .bg-hex { font-size: 10px; opacity: 0.7; margin-top: 2px; }
+.subpage-info { padding: 12px 16px; }
+.subpage-info .zh { font-weight: 700; font-size: 15px; }
+.subpage-info .slug {
+  font-family: Inter, monospace; font-size: 11px;
+  color: var(--c-text-subtle); letter-spacing: 0.05em;
+}
+.subpage-info .tags { margin-top: 8px; display: flex; gap: 4px; flex-wrap: wrap; }
+
+/* Typography demos */
+.font-card {
+  background: var(--c-surface); border-radius: 24px;
+  padding: 28px 32px; border: 1px solid var(--c-line);
+  margin-bottom: 14px;
+}
+.font-card .label {
+  font-family: Inter, sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--c-text-muted); margin-bottom: 12px;
+}
+.display-inter   { font-family: "Inter Tight", sans-serif; font-size: 80px; font-weight: 900; line-height: 1; letter-spacing: -0.02em; color: var(--c-primary-deep); }
+.heading-sans    { font-family: "Noto Sans TC", sans-serif; font-size: 44px; font-weight: 900; line-height: 1.1; color: var(--c-text); }
+.heading-serif   { font-family: "Noto Serif TC", serif; font-size: 36px; font-weight: 700; line-height: 1.3; color: var(--c-text); }
+.body-sample     { font-family: "Noto Sans TC", sans-serif; font-size: 18px; font-weight: 400; line-height: 1.85; color: var(--c-text); }
+.kicker-sample   { font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--c-primary); }
+
+/* Scale demo */
+.scale-row {
+  display: flex; align-items: baseline; gap: 24px;
+  padding: 12px 0; border-bottom: 1px solid var(--c-line);
+}
+.scale-row:last-child { border-bottom: none; }
+.scale-size {
+  font-family: Inter, monospace; font-size: 13px;
+  color: var(--c-text-muted); min-width: 80px;
+}
+.scale-sample { color: var(--c-text); }
+
+/* Radius / Shadow demos */
+.grid-4 {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px; margin-bottom: 24px;
+}
+.radius-box {
+  background: var(--c-primary-light); border: 2px solid var(--c-primary);
+  padding: 32px 16px; text-align: center;
+  font-family: Inter, monospace; font-size: 13px; font-weight: 600;
+  color: var(--c-primary-deep);
+}
+.shadow-box {
+  background: var(--c-surface); padding: 28px 20px; border-radius: 20px;
+  text-align: center; font-family: Inter, monospace; font-size: 13px;
+}
+.shadow-sm  { box-shadow: 0 2px 8px rgba(21, 128, 61, 0.06); }
+.shadow-md  { box-shadow: 0 8px 24px rgba(21, 128, 61, 0.10); }
+.shadow-lg  { box-shadow: 0 16px 48px rgba(21, 128, 61, 0.14); }
+.shadow-hover { box-shadow: 0 24px 60px rgba(21, 128, 61, 0.18); }
+
+/* Button examples */
+.btn-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px; margin-bottom: 24px;
+}
+.btn-demo {
+  padding: 16px 20px; background: var(--c-surface); border: 1px solid var(--c-line);
+  border-radius: 20px; text-align: center;
+}
+.btn-demo .lbl {
+  display: block; font-family: Inter, sans-serif; font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--c-text-muted); margin-bottom: 10px;
+}
+.fw-btn {
+  padding: 14px 28px; border-radius: 999px;
+  font-family: "Noto Sans TC", sans-serif; font-size: 15px; font-weight: 700;
+  border: none; cursor: pointer; display: inline-flex;
+  align-items: center; gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fw-btn-primary { background: var(--c-primary); color: #fff; }
+.fw-btn-primary:hover { background: var(--c-primary-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(21, 128, 61, 0.24); }
+.fw-btn-ghost { background: transparent; color: var(--c-primary); border: 2px solid var(--c-primary); }
+.fw-btn-ghost:hover { background: var(--c-primary-light); }
+.fw-btn-accent { background: var(--c-accent); color: #fff; }
+.fw-btn-accent:hover { background: var(--c-accent-deep); }
+
+/* Animation list */
+.anim-list {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+.anim-card {
+  background: var(--c-surface); border: 1px solid var(--c-line);
+  border-radius: 20px; padding: 20px 22px;
+}
+.anim-card .name {
+  font-weight: 900; color: var(--c-primary-deep);
+  font-size: 17px; margin-bottom: 6px;
+}
+.anim-card .trigger {
+  font-family: Inter, monospace; font-size: 12px;
+  color: var(--c-text-muted); display: block; margin-bottom: 8px;
+}
+.anim-card .desc { font-size: 14px; line-height: 1.7; color: var(--c-text); }
+
+/* Footer */
+.footer {
+  margin-top: 80px; padding-top: 32px;
+  border-top: 2px solid var(--c-line);
+  color: var(--c-text-muted); font-size: 14px;
+}
+.footer code {
+  font-family: Inter, monospace; font-size: 13px;
+  background: var(--c-surface-muted); padding: 2px 6px; border-radius: 6px;
+}
+
+/* Section anchor */
+.toc {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px; margin-bottom: 32px;
+}
+.toc a {
+  background: var(--c-surface); border: 1px solid var(--c-line);
+  border-radius: 16px; padding: 14px 18px;
+  color: var(--c-text); text-decoration: none;
+  font-size: 14px; font-weight: 600;
+  transition: all 0.2s ease;
+}
+.toc a:hover { background: var(--c-primary-light); border-color: var(--c-primary); color: var(--c-primary-deep); }
+.toc a .num {
+  font-family: Inter, sans-serif; font-size: 11px;
+  color: var(--c-primary); letter-spacing: 0.15em;
+  display: block; margin-bottom: 2px;
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- ============= HERO ============= -->
+<section class="hero">
+  <span class="tag">Design System · Master Final</span>
+  <h1>尊嚴農業</h1>
+  <div class="meta">
+    <strong>2026-04-20 最終拍板版</strong> · 45 頁完整設計規範 · 配色 + 字體 + 尺寸 + 動畫 + 特效<br/>
+    取代：V1 暖米 / V14 Happy Hues 單獨版 / V15 MASTER OKLCH 29 頁版 / V16（全部作廢）
+  </div>
+</section>
+
+<div class="note">
+  <strong>設計原則</strong>：明亮溫暖 · 圓潤親和 · 大字清晰 · 中高齡友善 · WordPress 可實作 · APA 7 引用嚴謹<br/>
+  <strong>TA</strong>：新手農民 / 青農 / 資深農友 / 一般民眾 + 補助單位（60+ 高齡佔大宗）
+</div>
+
+<!-- ============= TOC ============= -->
+<nav class="toc">
+  <a href="#overview"><span class="num">00</span>45 頁決策總表</a>
+  <a href="#main"><span class="num">01</span>主站配色 14 色</a>
+  <a href="#chapters"><span class="num">02</span>7 章節配色</a>
+  <a href="#audience"><span class="num">03</span>4 分眾配色</a>
+  <a href="#subpages"><span class="num">04</span>21 子頁配色</a>
+  <a href="#typography"><span class="num">05</span>字體系統</a>
+  <a href="#scale"><span class="num">06</span>字級階</a>
+  <a href="#spacing"><span class="num">07</span>圓角 / 陰影 / 間距</a>
+  <a href="#buttons"><span class="num">08</span>按鈕規格</a>
+  <a href="#motion"><span class="num">09</span>動畫 / 特效</a>
+  <a href="#donts"><span class="num">10</span>Don't List</a>
+</nav>
+
+<!-- ============= 00 總表 ============= -->
+<h2 id="overview">00 · 45 頁配色決策總表</h2>
+
+<table class="summary-table">
+  <thead>
+    <tr><th>類型</th><th>頁數</th><th>配色來源</th><th>說明</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>主站首頁</td><td>1</td><td><span class="pill pill-v3">V3 Forest Bold</span></td><td>14 色主站 token</td></tr>
+    <tr><td>7 章節主頁</td><td>7</td><td><span class="pill pill-v3">V3 Forest Bold</span></td><td>每章 Main/Deep/BG/Contrast 4 token</td></tr>
+    <tr><td>4 分眾頁</td><td>4</td><td><span class="pill pill-v3">V3 Forest Bold</span></td><td>Start/Young/Senior/Public</td></tr>
+    <tr><td>職業安全子頁（ppe/machinery/greenhouse）</td><td>3</td><td><span class="pill pill-v14">V14 Happy Hues</span></td><td>暖色多彩，每頁獨立 palette</td></tr>
+    <tr><td>健康促進子頁（heat/msd/pesticide/mental）</td><td>4</td><td><span class="pill pill-v14">V14 Happy Hues</span></td><td>心理/生理並存，色相跨度大</td></tr>
+    <tr><td>經濟-職災保險（occ）</td><td>1</td><td><span class="pill pill-v15">V15 MILESTONE</span></td><td>靛藍（信任）</td></tr>
+    <tr><td>經濟-農業保險（crop）</td><td>1</td><td><span class="pill pill-v15">V15 MILESTONE</span></td><td>青綠（作物）</td></tr>
+    <tr><td>經濟-補助資源（subsidy）</td><td>1</td><td><span class="pill pill-v14">V14 Happy Hues</span></td><td>黃（資源/金）</td></tr>
+    <tr><td>經濟-職災試算（calc1）</td><td>1</td><td><span class="pill pill-new">🆕 淺藍新選</span></td><td>oklch(55% 0.14 230) — 信任 / 計算</td></tr>
+    <tr><td>經濟-退休金試算（calc2）</td><td>1</td><td><span class="pill pill-new">🆕 淺橙新選</span></td><td>oklch(55% 0.15 45) — 退休 / 溫暖</td></tr>
+    <tr><td>研究成果-出版/懶人包/下載/Podcast</td><td>4</td><td><span class="pill pill-v15">V15 MILESTONE</span></td><td>深藍 / 天青 / 亮紫 / 洋紅</td></tr>
+    <tr><td>研究成果-相關資源（rel）</td><td>1</td><td><span class="pill pill-v14">V14 Happy Hues</span></td><td>紫（連結 / 延伸）</td></tr>
+    <tr><td>About 子頁（researchteam/contact）</td><td>2</td><td><span class="pill pill-v2">V2 我補</span></td><td>中森林綠 + 萊姆綠（延伸主站）</td></tr>
+    <tr><td>最新消息（news）</td><td>1</td><td><span class="pill pill-v14">V14 Happy Hues</span></td><td>橘（新鮮 / 動態）</td></tr>
+    <tr style="background: var(--c-surface-muted); font-weight: 700;"><td>總計</td><td>45 頁</td><td>5 組系統</td><td>主站 12 + 子頁 21 + 其他（ABOUT 子頁含在 33 中重算 = 實際 33 子頁 + 12 主站）</td></tr>
+  </tbody>
+</table>
+
+<!-- ============= 01 主站 ============= -->
+<h2 id="main">01 · 主站配色（V3 Forest Bold，14 色）</h2>
+
+<div class="swatch-grid">
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #15803D"><span class="hex">#15803D</span><span class="role">PRIMARY</span></div>
+    <div class="swatch-info"><div class="name">森林綠</div><div class="hex">--c-primary</div><div class="desc">全站主色、Logo、主 CTA</div><span class="contrast">5.87:1 ★AAA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #14532D"><span class="hex">#14532D</span><span class="role">PRIMARY DEEP</span></div>
+    <div class="swatch-info"><div class="name">深森林</div><div class="hex">--c-primary-deep</div><div class="desc">Hover、標題強調</div><span class="contrast">11.2:1 ★AAA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #DCFCE7"><span class="hex">#DCFCE7</span><span class="role">PRIMARY LIGHT</span></div>
+    <div class="swatch-info"><div class="name">淺綠底</div><div class="hex">--c-primary-light</div><div class="desc">區塊背景、tag</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #F59E0B"><span class="hex">#F59E0B</span><span class="role">ACCENT</span></div>
+    <div class="swatch-info"><div class="name">陽光金</div><div class="hex">--c-accent</div><div class="desc">強調、次 CTA、underline</div><span class="contrast">4.8:1 ★AA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #B45309"><span class="hex">#B45309</span><span class="role">ACCENT DEEP</span></div>
+    <div class="swatch-info"><div class="name">深金</div><div class="hex">--c-accent-deep</div><div class="desc">Accent hover</div><span class="contrast">4.69:1 ★AA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #DC2626"><span class="hex">#DC2626</span><span class="role">WARNING</span></div>
+    <div class="swatch-info"><div class="name">莓紅</div><div class="hex">--c-warning</div><div class="desc">警示、重要資訊</div><span class="contrast">4.6:1 ★AA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #0891B2"><span class="hex">#0891B2</span><span class="role">INFO</span></div>
+    <div class="swatch-info"><div class="name">天青</div><div class="hex">--c-info</div><div class="desc">提示、註解</div><span class="contrast">4.7:1 ★AA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #FEFCF7; border: 1px solid #E5E1D8;"><span class="hex">#FEFCF7</span><span class="role">BG</span></div>
+    <div class="swatch-info"><div class="name">米白底</div><div class="hex">--c-bg</div><div class="desc">主背景（禁純白）</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #FFFFFF; border: 1px solid #E5E1D8;"><span class="hex">#FFFFFF</span><span class="role">SURFACE</span></div>
+    <div class="swatch-info"><div class="name">純白</div><div class="hex">--c-surface</div><div class="desc">卡片底</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #F5F2EB"><span class="hex">#F5F2EB</span><span class="role">SURFACE MUTED</span></div>
+    <div class="swatch-info"><div class="name">暖灰</div><div class="hex">--c-surface-muted</div><div class="desc">輔助區塊</div></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #0F2818"><span class="hex">#0F2818</span><span class="role">TEXT</span></div>
+    <div class="swatch-info"><div class="name">墨綠</div><div class="hex">--c-text</div><div class="desc">正文</div><span class="contrast">15.2:1 ★AAA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #475569"><span class="hex">#475569</span><span class="role">TEXT MUTED</span></div>
+    <div class="swatch-info"><div class="name">石板灰</div><div class="hex">--c-text-muted</div><div class="desc">次要文字</div><span class="contrast">7.4:1 ★AAA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #94A3B8"><span class="hex">#94A3B8</span><span class="role">TEXT SUBTLE</span></div>
+    <div class="swatch-info"><div class="name">淺灰</div><div class="hex">--c-text-subtle</div><div class="desc">說明</div><span class="contrast">3.8:1</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #E5E1D8"><span class="hex">#E5E1D8</span><span class="role">LINE</span></div>
+    <div class="swatch-info"><div class="name">細線</div><div class="hex">--c-line</div><div class="desc">細邊框</div></div>
+  </div>
+</div>
+
+<!-- ============= 02 章節 ============= -->
+<h2 id="chapters">02 · 7 章節配色（每章 4 token）</h2>
+
+<div class="chapter">
+  <div class="chapter-title">01 · 關於 About</div>
+  <div class="chapter-en">FOREST GREEN</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #15803D">Main<br/>#15803D</div>
+    <div class="swatch-color on-dark" style="background: #14532D">Deep<br/>#14532D</div>
+    <div class="swatch-color on-light" style="background: #DCFCE7">BG<br/>#DCFCE7</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+  <div class="chapter-sample" style="background: #DCFCE7">
+    <div><div style="color:#14532D; font-weight: 700; font-size: 18px;">中正大學跨域研究團隊</div><div style="color:#475569; font-size: 14px; margin-top: 2px;">共構雲嘉農業工作者職業健康的社會安全網</div></div>
+    <button class="btn" style="background: #15803D">進入關於</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">02 · 職業安全 Safety</div>
+  <div class="chapter-en">ORANGE RED</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #EA580C">Main<br/>#EA580C</div>
+    <div class="swatch-color on-dark" style="background: #9A3412">Deep<br/>#9A3412</div>
+    <div class="swatch-color on-light" style="background: #FFEDD5">BG<br/>#FFEDD5</div>
+    <div class="swatch-color on-dark" style="background: #1E40AF">Contrast<br/>#1E40AF</div>
+  </div>
+  <div class="chapter-sample" style="background: #FFEDD5">
+    <div><div style="color:#9A3412; font-weight: 700; font-size: 18px;">職業安全</div><div style="color:#475569; font-size: 14px; margin-top: 2px;">PPE / 省工農機 / 溫室專區</div></div>
+    <button class="btn" style="background: #EA580C">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">03 · 健康促進 Health</div>
+  <div class="chapter-en">CYAN</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #0891B2">Main<br/>#0891B2</div>
+    <div class="swatch-color on-dark" style="background: #164E63">Deep<br/>#164E63</div>
+    <div class="swatch-color on-light" style="background: #CFFAFE">BG<br/>#CFFAFE</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+  <div class="chapter-sample" style="background: #CFFAFE">
+    <div><div style="color:#164E63; font-weight: 700; font-size: 18px;">健康促進</div><div style="color:#475569; font-size: 14px; margin-top: 2px;">熱傷害 / 肌肉骨骼 / 農藥 / 心理健康</div></div>
+    <button class="btn" style="background: #0891B2">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">04 · 經濟與保險 Economic</div>
+  <div class="chapter-en">AMBER GOLD</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #D97706">Main<br/>#D97706</div>
+    <div class="swatch-color on-dark" style="background: #78350F">Deep<br/>#78350F</div>
+    <div class="swatch-color on-light" style="background: #FEF3C7">BG<br/>#FEF3C7</div>
+    <div class="swatch-color on-dark" style="background: #15803D">Contrast<br/>#15803D</div>
+  </div>
+  <div class="chapter-sample" style="background: #FEF3C7">
+    <div><div style="color:#78350F; font-weight: 700; font-size: 18px;">經濟與保險</div><div style="color:#475569; font-size: 14px; margin-top: 2px;">職災保險 / 農作物保險 / 補助資源</div></div>
+    <button class="btn" style="background: #D97706">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">05 · 培力課程 Empower</div>
+  <div class="chapter-en">VIOLET</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #7C3AED">Main<br/>#7C3AED</div>
+    <div class="swatch-color on-dark" style="background: #4C1D95">Deep<br/>#4C1D95</div>
+    <div class="swatch-color on-light" style="background: #EDE9FE">BG<br/>#EDE9FE</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+  <div class="chapter-sample" style="background: #EDE9FE">
+    <div><div style="color:#4C1D95; font-weight: 700; font-size: 18px;">培力課程</div><div style="color:#475569; font-size: 14px; margin-top: 2px;">影片 / 工作坊 / 在地培訓</div></div>
+    <button class="btn" style="background: #7C3AED">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">06 · 尊嚴倡議 Advocacy</div>
+  <div class="chapter-en">ROSE</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #E11D48">Main<br/>#E11D48</div>
+    <div class="swatch-color on-dark" style="background: #881337">Deep<br/>#881337</div>
+    <div class="swatch-color on-light" style="background: #FFE4E6">BG<br/>#FFE4E6</div>
+    <div class="swatch-color on-dark" style="background: #0891B2">Contrast<br/>#0891B2</div>
+  </div>
+  <div class="chapter-sample" style="background: #FFE4E6">
+    <div><div style="color:#881337; font-weight: 700; font-size: 18px;">尊嚴倡議</div><div style="color:#475569; font-size: 14px; margin-top: 2px;">核心主張 / 時間軸 / 政策連署</div></div>
+    <button class="btn" style="background: #E11D48">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">07 · 研究成果 Research</div>
+  <div class="chapter-en">INDIGO</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #1E40AF">Main<br/>#1E40AF</div>
+    <div class="swatch-color on-dark" style="background: #1E3A8A">Deep<br/>#1E3A8A</div>
+    <div class="swatch-color on-light" style="background: #DBEAFE">BG<br/>#DBEAFE</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+  <div class="chapter-sample" style="background: #DBEAFE">
+    <div><div style="color:#1E3A8A; font-weight: 700; font-size: 18px;">研究成果</div><div style="color:#475569; font-size: 14px; margin-top: 2px;">研究出版 / Podcast / 下載專區</div></div>
+    <button class="btn" style="background: #1E40AF">進入章節</button>
+  </div>
+</div>
+
+<!-- ============= 03 分眾 ============= -->
+<h2 id="audience">03 · 4 分眾配色</h2>
+
+<div class="chapter">
+  <div class="chapter-title">Start · 入門（新手務農）</div>
+  <div class="chapter-en">FRESH GREEN</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #16A34A">Main<br/>#16A34A</div>
+    <div class="swatch-color on-dark" style="background: #14532D">Deep<br/>#14532D</div>
+    <div class="swatch-color on-light" style="background: #DCFCE7">BG<br/>#DCFCE7</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">Young · 青年（青農）</div>
+  <div class="chapter-en">ROYAL BLUE</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #2563EB">Main<br/>#2563EB</div>
+    <div class="swatch-color on-dark" style="background: #1E3A8A">Deep<br/>#1E3A8A</div>
+    <div class="swatch-color on-light" style="background: #DBEAFE">BG<br/>#DBEAFE</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">Senior · 銀髮（資深農友）</div>
+  <div class="chapter-en">WARM ORANGE</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #EA580C">Main<br/>#EA580C</div>
+    <div class="swatch-color on-dark" style="background: #7C2D12">Deep<br/>#7C2D12</div>
+    <div class="swatch-color on-light" style="background: #FFEDD5">BG<br/>#FFEDD5</div>
+    <div class="swatch-color on-dark" style="background: #15803D">Contrast<br/>#15803D</div>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">Public · 大眾（一般民眾）</div>
+  <div class="chapter-en">AMBER</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #D97706">Main<br/>#D97706</div>
+    <div class="swatch-color on-dark" style="background: #78350F">Deep<br/>#78350F</div>
+    <div class="swatch-color on-light" style="background: #FEF3C7">BG<br/>#FEF3C7</div>
+    <div class="swatch-color on-dark" style="background: #15803D">Contrast<br/>#15803D</div>
+  </div>
+</div>
+
+<!-- ============= 04 子頁 ============= -->
+<h2 id="subpages">04 · 21 子頁配色（按來源分組）</h2>
+
+<h3>V14 Happy Hues 組（10 頁）— 暖色多彩，每頁獨立 palette</h3>
+<div class="subpage-grid">
+  <div class="subpage"><div class="subpage-color" style="background: #f45d48"><span class="hex">#f45d48</span><span class="bg-hex">BG #f8f5f2</span></div><div class="subpage-info"><div class="zh">熱傷害</div><div class="slug">heat</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FFEDD5;color:#7C2D12">健康促進</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #3da9fc"><span class="hex">#3da9fc</span><span class="bg-hex">BG #f8f5f2</span></div><div class="subpage-info"><div class="zh">肌肉骨骼</div><div class="slug">msd</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FFEDD5;color:#7C2D12">健康促進</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #4fc4cf; color:#181818"><span class="hex">#4fc4cf</span><span class="bg-hex">BG #f2f4f6</span></div><div class="subpage-info"><div class="zh">農藥安全</div><div class="slug">pesticide</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FFEDD5;color:#7C2D12">健康促進</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #a786df"><span class="hex">#a786df</span><span class="bg-hex">BG #fffffe</span></div><div class="subpage-info"><div class="zh">心理健康</div><div class="slug">mental</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FFEDD5;color:#7C2D12">健康促進</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #f9bc60; color:#020826"><span class="hex">#f9bc60</span><span class="bg-hex">BG #eaddcf</span></div><div class="subpage-info"><div class="zh">個人防護 PPE</div><div class="slug">ppe</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FFEDD5;color:#7C2D12">職業安全</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #2cb67d"><span class="hex">#2cb67d</span><span class="bg-hex">BG #fffffe</span></div><div class="subpage-info"><div class="zh">省工農機</div><div class="slug">machinery</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FFEDD5;color:#7C2D12">職業安全</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #c3f0ca; color:#33272a"><span class="hex">#c3f0ca</span><span class="bg-hex">BG #fffffe</span></div><div class="subpage-info"><div class="zh">溫室專區</div><div class="slug">greenhouse</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FFEDD5;color:#7C2D12">職業安全</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #ffd803; color:#272343"><span class="hex">#ffd803</span><span class="bg-hex">BG #fffffe</span></div><div class="subpage-info"><div class="zh">農業補助資源</div><div class="slug">subsidy</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FEF3C7;color:#78350F">經濟與保險</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #994ff3"><span class="hex">#994ff3</span><span class="bg-hex">BG #f2f4f6</span></div><div class="subpage-info"><div class="zh">相關資源</div><div class="slug">rel</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#DBEAFE;color:#1E3A8A">研究成果</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: #ff8e3c; color:#0d0d0d"><span class="hex">#ff8e3c</span><span class="bg-hex">BG #fffffe</span></div><div class="subpage-info"><div class="zh">最新消息</div><div class="slug">news</div><div class="tags"><span class="pill pill-v14">V14</span><span class="pill" style="background:#FFE4E6;color:#881337">特殊</span></div></div></div>
+</div>
+
+<h3>V15 MILESTONE 組（6 頁）— OKLCH 感知均勻，中明度</h3>
+<div class="subpage-grid">
+  <div class="subpage"><div class="subpage-color" style="background: oklch(52% 0.16 250)"><span class="hex">oklch(52% 0.16 250)</span><span class="bg-hex">BG oklch(94% 0.03 250)</span></div><div class="subpage-info"><div class="zh">職業災害保險</div><div class="slug">occ</div><div class="tags"><span class="pill pill-v15">V15</span><span class="pill" style="background:#FEF3C7;color:#78350F">經濟與保險</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: oklch(52% 0.13 165)"><span class="hex">oklch(52% 0.13 165)</span><span class="bg-hex">BG oklch(94% 0.03 165)</span></div><div class="subpage-info"><div class="zh">農業保險</div><div class="slug">crop</div><div class="tags"><span class="pill pill-v15">V15</span><span class="pill" style="background:#FEF3C7;color:#78350F">經濟與保險</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: oklch(52% 0.14 240)"><span class="hex">oklch(52% 0.14 240)</span><span class="bg-hex">BG oklch(94% 0.03 240)</span></div><div class="subpage-info"><div class="zh">研究出版</div><div class="slug">pub</div><div class="tags"><span class="pill pill-v15">V15</span><span class="pill" style="background:#DBEAFE;color:#1E3A8A">研究成果</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: oklch(65% 0.15 200)"><span class="hex">oklch(65% 0.15 200)</span><span class="bg-hex">BG oklch(95% 0.04 200)</span></div><div class="subpage-info"><div class="zh">圖解懶人包</div><div class="slug">infographic</div><div class="tags"><span class="pill pill-v15">V15</span><span class="pill" style="background:#DBEAFE;color:#1E3A8A">研究成果</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: oklch(55% 0.22 275)"><span class="hex">oklch(55% 0.22 275)</span><span class="bg-hex">BG oklch(94% 0.05 275)</span></div><div class="subpage-info"><div class="zh">下載專區</div><div class="slug">dl</div><div class="tags"><span class="pill pill-v15">V15</span><span class="pill" style="background:#DBEAFE;color:#1E3A8A">研究成果</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: oklch(58% 0.17 320)"><span class="hex">oklch(58% 0.17 320)</span><span class="bg-hex">BG oklch(94% 0.04 320)</span></div><div class="subpage-info"><div class="zh">Podcast</div><div class="slug">pod</div><div class="tags"><span class="pill pill-v15">V15</span><span class="pill" style="background:#DBEAFE;color:#1E3A8A">研究成果</span></div></div></div>
+</div>
+
+<h3>V2 我補 · About 延伸綠組（2 頁）</h3>
+<div class="subpage-grid">
+  <div class="subpage"><div class="subpage-color" style="background: oklch(60% 0.15 155)"><span class="hex">oklch(60% 0.15 155)</span><span class="bg-hex">BG oklch(94% 0.04 155)</span></div><div class="subpage-info"><div class="zh">研究團隊</div><div class="slug">researchteam</div><div class="tags"><span class="pill pill-v2">V2 補</span><span class="pill" style="background:#DCFCE7;color:#14532D">About</span></div></div></div>
+  <div class="subpage"><div class="subpage-color" style="background: oklch(68% 0.17 145)"><span class="hex">oklch(68% 0.17 145)</span><span class="bg-hex">BG oklch(95% 0.04 145)</span></div><div class="subpage-info"><div class="zh">聯繫我們</div><div class="slug">contact</div><div class="tags"><span class="pill pill-v2">V2 補</span><span class="pill" style="background:#DCFCE7;color:#14532D">About</span></div></div></div>
+</div>
+
+<h3>🆕 新選色組（2 頁）— 試算工具專用</h3>
+<div class="subpage-grid">
+  <div class="subpage">
+    <div class="subpage-color" style="background: oklch(55% 0.14 230)"><span class="hex">oklch(55% 0.14 230)</span><span class="bg-hex">BG oklch(97% 0.015 225)</span></div>
+    <div class="subpage-info">
+      <div class="zh">職災試算表</div><div class="slug">calc1</div>
+      <div class="tags"><span class="pill pill-new">🆕 淺藍</span><span class="pill" style="background:#FEF3C7;color:#78350F">經濟與保險</span></div>
+      <div class="desc" style="font-size:12px;color:var(--c-text-muted);margin-top:8px">Main 4.7:1 AA ★ · Deep oklch(42% 0.16 235) · Contrast oklch(25% 0.05 235)</div>
+    </div>
+  </div>
+  <div class="subpage">
+    <div class="subpage-color" style="background: oklch(55% 0.15 45)"><span class="hex">oklch(55% 0.15 45)</span><span class="bg-hex">BG oklch(97% 0.02 60)</span></div>
+    <div class="subpage-info">
+      <div class="zh">退休金試算</div><div class="slug">calc2</div>
+      <div class="tags"><span class="pill pill-new">🆕 淺橙</span><span class="pill" style="background:#FEF3C7;color:#78350F">經濟與保險</span></div>
+      <div class="desc" style="font-size:12px;color:var(--c-text-muted);margin-top:8px">Main 4.6:1 AA ★ · Deep oklch(42% 0.13 45) · Contrast oklch(27% 0.05 50)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============= 05 字體 ============= -->
+<h2 id="typography">05 · 字體系統</h2>
+
+<div class="note"><strong>4 個 family</strong>：Inter Tight（Display）· Noto Sans TC（內文/標題主力）· Noto Serif TC（文章內文可選）· Inter（UI 小字/數字）</div>
+
+<div class="font-card">
+  <div class="label">Display · Inter Tight 900 · 中英文品牌標題</div>
+  <div class="display-inter">DIGNITY 尊嚴</div>
+</div>
+
+<div class="font-card">
+  <div class="label">Heading Sans · Noto Sans TC 900 · 章節主標 36-48px（hero 可到 88px）</div>
+  <div class="heading-sans">共構雲嘉農業工作者職業健康的社會安全網</div>
+</div>
+
+<div class="font-card">
+  <div class="label">Heading Serif · Noto Serif TC 700 · 文章標題（研究成果子頁可選）</div>
+  <div class="heading-serif">台日農職保制度比較：富山縣明信片調查對民雄的啟示</div>
+</div>
+
+<div class="font-card">
+  <div class="label">Body · Noto Sans TC 400 · 18-20px · line-height 1.85</div>
+  <p class="body-sample">
+    尊嚴農業採矩陣式資訊架構（Matrix Information Architecture），定位為動態的「農業健康與安全知識樞紐」。前端透過 4 大分眾入口針對不同生命週期的農民進行精準內容策展；後端則建構 7 大資料庫主選單，確保知識儲存的系統性與學術嚴謹度。
+  </p>
+</div>
+
+<div class="font-card">
+  <div class="label">Kicker · Inter 600 · 12-14px · letter-spacing 0.25em UPPERCASE</div>
+  <div class="kicker-sample">OCCUPATIONAL SAFETY · KNOWLEDGE HUB · 2026</div>
+</div>
+
+<!-- ============= 06 字級階 ============= -->
+<h2 id="scale">06 · 字級階（8 階全整數）</h2>
+
+<div class="font-card">
+  <div class="label">所有字級（12 / 14 / 16 / 18 / 22 / 28 / 36 / 48 + Hero 88）</div>
+  <div class="scale-row"><span class="scale-size">12px</span><span class="scale-sample" style="font-size:12px">標籤 / tag / 版權宣告</span></div>
+  <div class="scale-row"><span class="scale-size">14px</span><span class="scale-sample" style="font-size:14px">次要說明 / caption / kicker</span></div>
+  <div class="scale-row"><span class="scale-size">16px</span><span class="scale-sample" style="font-size:16px">導覽列 / 按鈕 / 註解</span></div>
+  <div class="scale-row"><span class="scale-size">18px</span><span class="scale-sample" style="font-size:18px">正文主力（中高齡 override 下限）</span></div>
+  <div class="scale-row"><span class="scale-size">22px</span><span class="scale-sample" style="font-size:22px">lead paragraph / 副標</span></div>
+  <div class="scale-row"><span class="scale-size">28px</span><span class="scale-sample" style="font-size:28px; font-weight:700">H3 段落標</span></div>
+  <div class="scale-row"><span class="scale-size">36px</span><span class="scale-sample" style="font-size:36px; font-weight:900">H2 章節標</span></div>
+  <div class="scale-row"><span class="scale-size">48px</span><span class="scale-sample" style="font-size:48px; font-weight:900; line-height:1.1">H1 頁面標</span></div>
+  <div class="scale-row"><span class="scale-size">88px</span><span class="scale-sample" style="font-size:64px; font-weight:900; line-height:1; letter-spacing:-0.02em; color: var(--c-primary-deep)">Hero 品牌</span></div>
+</div>
+
+<div class="note"><strong>行高</strong>：正文 1.85（東亞字體友善 ≥ 1.75）· Hero 1.05 · H2/H3 1.15-1.3 · <strong>字間距</strong>：大字中文 0.04em 抗擠、Hero 英文 -0.02em 拉近</div>
+
+<!-- ============= 07 圓角 / 陰影 / 間距 ============= -->
+<h2 id="spacing">07 · 圓角 / 陰影 / 間距</h2>
+
+<h3>圓角系統（Radius Scale）</h3>
+<div class="grid-4">
+  <div class="radius-box" style="border-radius: 8px">8px<br/>tag · badge</div>
+  <div class="radius-box" style="border-radius: 16px">16px<br/>input · small card</div>
+  <div class="radius-box" style="border-radius: 24px">24px<br/>main card</div>
+  <div class="radius-box" style="border-radius: 32px">32px<br/>hero · feature</div>
+  <div class="radius-box" style="border-radius: 48px">48px<br/>large block</div>
+  <div class="radius-box" style="border-radius: 999px">pill<br/>button</div>
+</div>
+
+<h3>陰影系統（綠調，呼應主色）</h3>
+<div class="grid-4">
+  <div class="shadow-box shadow-sm">sm<br/>0 2px 8px 6%</div>
+  <div class="shadow-box shadow-md">md<br/>0 8px 24px 10%</div>
+  <div class="shadow-box shadow-lg">lg<br/>0 16px 48px 14%</div>
+  <div class="shadow-box shadow-hover">hover<br/>0 24px 60px 18%</div>
+</div>
+
+<h3>間距系統（Spacing Scale）</h3>
+<div class="font-card">
+  <table class="summary-table" style="margin:0">
+    <thead><tr><th>用途</th><th>值</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>組件內部 padding</td><td>16 / 20 / 24 / 28 / 32 px</td><td>按組件大小遞增</td></tr>
+      <tr><td>卡片間 gap</td><td>14 / 16 / 20 / 24 px</td><td>grid / flex</td></tr>
+      <tr><td>Section 垂直節奏</td><td><strong>96 px</strong></td><td>大段落切換（不用彩色腰帶）</td></tr>
+      <tr><td>內文容器最大寬</td><td>640 / 720 / 1280 px</td><td>中文可讀性 optimal 640-720</td></tr>
+      <tr><td>Touch target 最小</td><td>44 × 44 px</td><td>中高齡友善</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============= 08 按鈕 ============= -->
+<h2 id="buttons">08 · 按鈕規格</h2>
+
+<div class="btn-grid">
+  <div class="btn-demo">
+    <span class="lbl">Primary 主 CTA</span>
+    <button class="fw-btn fw-btn-primary">瀏覽研究成果 →</button>
+  </div>
+  <div class="btn-demo">
+    <span class="lbl">Ghost 次 CTA</span>
+    <button class="fw-btn fw-btn-ghost">下載報告</button>
+  </div>
+  <div class="btn-demo">
+    <span class="lbl">Accent 強調</span>
+    <button class="fw-btn fw-btn-accent">立即加入</button>
+  </div>
+</div>
+
+<div class="note">
+  <strong>按鈕共通規格</strong>：padding <code>14px 28px</code> · border-radius <code>999px</code>（pill） · font-weight 700 · font-size 15-16px · hover translateY(-2px) + shadow-md · transition 0.3s cubic-bezier(0.16,1,0.3,1) · 無 box-shadow 平時、hover 才出現
+</div>
+
+<!-- ============= 09 動畫 ============= -->
+<h2 id="motion">09 · 動畫 / 特效清單</h2>
+
+<div class="note warn"><strong>核心鐵律</strong>：內容預設可見 · 動畫是加分不是必要 · hover 用 color / opacity 不用 scale（防 layout shift） · prefers-reduced-motion 全關</div>
+
+<div class="anim-list">
+  <div class="anim-card">
+    <div class="name">Hero Data-Split 逐字顯現</div>
+    <span class="trigger">首屏載入 · hook-title .char</span>
+    <div class="desc">每個字 stagger transitionDelay `0.2 + i * 0.04s`，opacity 0→1 + translateY 10px→0。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Scroll Progress Bar</div>
+    <span class="trigger">scroll 事件 · .v15-progress</span>
+    <div class="desc">頂部橫線寬度跟 scroll 百分比同步，主色漸層填充。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Scrolled Header State</div>
+    <span class="trigger">scrollTop &gt; 10 · body.scrolled</span>
+    <div class="desc">Header 縮小 + 背景霧化 + shadow 出現，用 transform 不動 height。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Topic / News / Media Card Stagger</div>
+    <span class="trigger">reveal · IntersectionObserver</span>
+    <div class="desc">卡片進場 transitionDelay `i * 0.08s`（news/topic）或 `i * 0.06s`（media），opacity + translateY 30px。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Stat Count-Up</div>
+    <span class="trigger">進視窗 · [data-count]</span>
+    <div class="desc">數字從 0 ease-out 跑到目標值，1.5s 內完成。中文數量大時用 Intl.NumberFormat 千分位。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Stat Scramble（章節頁用）</div>
+    <span class="trigger">進視窗 · [data-scramble]</span>
+    <div class="desc">數字隨機字元亂跳 1s 後定住。章節頁 stat band 專用，比 count-up 更抓眼。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Tilt Card（partner 卡）</div>
+    <span class="trigger">mousemove · [data-tilt]</span>
+    <div class="desc">滑鼠位置 → perspective 1000px + rotateX/Y ±5°，離開時回正。only hover 裝置。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Magnetic CTA</div>
+    <span class="trigger">mousemove · [data-magnetic]</span>
+    <div class="desc">主 CTA 按鈕跟隨滑鼠 ±8px 位移，離開時彈回（cubic-bezier snap）。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Marquee 跑馬燈</div>
+    <span class="trigger">CSS 無限 · @keyframes</span>
+    <div class="desc">章節關鍵字橫向無限滾動，中英混雜文案（比純文字飽滿），hover 時暫停。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Page Switcher 切章換色</div>
+    <span class="trigger">select change · data-page</span>
+    <div class="desc">body[data-page] 變化 → CSS custom properties 切換，background transition 0.6s。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Partner Card Sticky（Feature Row）</div>
+    <span class="trigger">CSS position: sticky</span>
+    <div class="desc">佐久 / 台大雲林 / 南佐久 partner 卡右欄 sticky top 120px，左欄內容滑過時卡片不動。</div>
+  </div>
+  <div class="anim-card">
+    <div class="name">Hover Color Shift</div>
+    <span class="trigger">:hover（@media hover: hover）</span>
+    <div class="desc">連結、卡片 hover 用 background-color / border-color 變化，不用 transform scale，防 layout shift。</div>
+  </div>
+</div>
+
+<div class="note" style="margin-top:24px">
+  <strong>Easing 常數</strong>：<code>--v15-e-out: cubic-bezier(0.16, 1, 0.3, 1)</code>（柔和減速，一般過渡）· <code>--v15-e-snap: cubic-bezier(0.34, 1.56, 0.64, 1)</code>（Q 彈回彈，CTA / magnetic 用）
+</div>
+
+<!-- ============= 10 Don't ============= -->
+<h2 id="donts">10 · Don't List（嚴禁事項）</h2>
+
+<div class="note danger">
+  ❌ <strong>配色禁區</strong>：老茶米黃 <code>#854D0E</code> × 深咖啡（沉悶）· 純黑 <code>#000</code> / 純白 <code>#FFF</code>（太硬）· 深咖啡當主色（老派政府公文感）· 灰階主調（農業是生命不是金融）· 單色調（7 章節必須有區辨度）<br/><br/>
+  ❌ <strong>字體禁區</strong>：細體 serif（中高齡看不清）· 字級 &lt; 18px 當正文 · 行高 &lt; 1.75（東亞字體擠死）· letter-spacing &lt; 0 用在中文<br/><br/>
+  ❌ <strong>互動禁區</strong>：hover 用 transform scale（layout shift）· 動畫在首屏 &gt; 0.2s delay（看到空白）· scrub 動畫動到 hero 文字 opacity（內容被吞）· emoji 當圖示（統一用 SVG Heroicons/Lucide）<br/><br/>
+  ❌ <strong>內容禁區</strong>：AI 擅自改文案 / 數字 / 引用（2026-04-20 紅線） · 編造團隊成員 / KPI / 期刊名 · 部署前未跑 content diff 驗證<br/><br/>
+  ❌ <strong>動畫強度</strong>：matrix / cyberpunk / HUD / scanner 軍事感（本案是紀錄片電影感，非 sci-fi）
+</div>
+
+<!-- ============= 結語 ============= -->
+<div class="footer">
+  <p>
+    <strong>拍板日期</strong>：2026-04-20 ·
+    <strong>取代版本</strong>：V14 Happy Hues 單獨版 / V15 MASTER OKLCH 29 頁版 / V16（全作廢）<br/>
+    <strong>來源檔</strong>：<code>test/palette-v3-forest-bold-2026-04-20.html</code>（主站/章節/分眾）+ <code>test/palette-v14.html</code>（Happy Hues 子頁）+ <code>test/palette-v15-showcase-MILESTONE-2026-04-19.html</code>（V15 MILESTONE 子頁）+ <code>test/palette-all-pages-v2-2026-04-20.html</code>（V2 我補 ABOUT 組）<br/>
+    <strong>實作檔</strong>：<code>themes/fwdignity/assets/css/v15-master.css</code>（1360 行）+ <code>themes/fwdignity/assets/js/v15-master.js</code>（151 行）<br/>
+    <strong>Vault</strong>：<code>Projects/P8-尊嚴農業/design-system-v15-master.md</code>（本定案已同步）
+  </p>
+</div>
+
+</div>
+</body>
+</html>

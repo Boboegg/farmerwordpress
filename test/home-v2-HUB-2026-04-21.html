@@ -1,0 +1,1571 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尊嚴農業 · 首頁 v2 HUB（2026-04-21 Demo）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@500;700&family=Inter+Tight:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+/* ============ V3 Forest Bold Tokens ============ */
+:root {
+  --c-primary: #15803D;
+  --c-primary-deep: #14532D;
+  --c-primary-light: #DCFCE7;
+  --c-accent: #F59E0B;
+  --c-accent-deep: #B45309;
+  --c-warning: #DC2626;
+  --c-info: #0891B2;
+  --c-bg: #FEFCF7;
+  --c-surface: #FFFFFF;
+  --c-surface-muted: #F5F2EB;
+  --c-text: #0F2818;
+  --c-text-muted: #475569;
+  --c-text-subtle: #94A3B8;
+  --c-line: #E5E1D8;
+  --c-line-strong: #CBD0C5;
+
+  /* 章節色 */
+  --ch-about: #15803D;
+  --ch-safety: #EA580C;
+  --ch-health: #0891B2;
+  --ch-economy: #D97706;
+  --ch-empower: #7C3AED;
+  --ch-advocacy: #E11D48;
+  --ch-research: #1E40AF;
+
+  --r-sm: 12px; --r-md: 16px; --r-lg: 24px; --r-xl: 32px; --r-pill: 999px;
+  --e-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --e-snap: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Noto Sans TC", system-ui, sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.85;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img, svg { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* ============ 01 TOPBAR ============ */
+.topbar {
+  height: 32px;
+  background: var(--c-primary-deep);
+  color: #fff;
+  font-size: 12px;
+  font-family: Inter, "Noto Sans TC", sans-serif;
+  letter-spacing: 0.05em;
+}
+.topbar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar-brand { font-weight: 700; letter-spacing: 0.2em; }
+.topbar-brand small { opacity: 0.6; margin-left: 8px; letter-spacing: 0; }
+.topbar-right { display: flex; align-items: center; gap: 20px; }
+.topbar-search {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+.topbar-search:hover { background: rgba(255,255,255,0.2); }
+.topbar-social { display: flex; gap: 14px; }
+.topbar-social a {
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.12);
+  transition: all 0.3s var(--e-out);
+}
+.topbar-social a:hover { background: var(--c-accent); transform: translateY(-1px); }
+
+/* ============ 02 NAVBAR ============ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(254, 252, 247, 0.85);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--c-line);
+  transition: box-shadow 0.3s var(--e-out);
+}
+.navbar.scrolled {
+  box-shadow: 0 4px 16px rgba(21, 128, 61, 0.08);
+}
+.navbar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-family: "Inter Tight", "Noto Sans TC", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--c-primary-deep);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.logo-mark {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--c-primary) 0%, var(--c-primary-deep) 100%);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.24);
+}
+.nav-menu {
+  display: flex;
+  gap: 4px;
+  flex-grow: 1;
+  justify-content: center;
+}
+.nav-item {
+  position: relative;
+}
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-text);
+  border-radius: 10px;
+  transition: all 0.2s var(--e-out);
+  white-space: nowrap;
+}
+.nav-link .fa-chevron-down { font-size: 10px; opacity: 0.5; }
+.nav-link:hover { background: var(--c-primary-light); color: var(--c-primary-deep); }
+.nav-link.active { color: var(--c-primary); }
+
+/* dropdown */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background: var(--c-surface);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+  border: 1px solid var(--c-line);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s var(--e-out);
+  z-index: 200;
+}
+.nav-item:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--c-text);
+  transition: all 0.15s;
+}
+.nav-dropdown a:hover { background: var(--c-primary-light); color: var(--c-primary-deep); }
+
+.nav-cta {
+  padding: 10px 22px;
+  background: var(--c-accent);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s var(--e-out);
+  flex-shrink: 0;
+}
+.nav-cta:hover { background: var(--c-accent-deep); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35); }
+
+/* ============ 03 MARQUEE + 氣象 ============ */
+.ticker-row {
+  display: flex;
+  background: var(--c-primary-deep);
+  color: #fff;
+  height: 48px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ticker-words {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.ticker-words-track {
+  display: flex;
+  gap: 48px;
+  white-space: nowrap;
+  animation: tickerSlide 28s linear infinite;
+  padding-left: 24px;
+  font-family: "Inter Tight", "Noto Sans TC", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+}
+.ticker-words-track span { display: inline-flex; align-items: center; gap: 12px; }
+.ticker-words-track span::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--c-accent);
+  display: inline-block;
+}
+.ticker-words-track .en {
+  font-family: Inter, sans-serif;
+  font-weight: 900;
+  color: var(--c-accent);
+  letter-spacing: 0.25em;
+}
+@keyframes tickerSlide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-words:hover .ticker-words-track { animation-play-state: paused; }
+
+.ticker-weather {
+  width: 420px;
+  background: rgba(255,255,255,0.08);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.ticker-weather .w-icon {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--c-accent);
+  color: var(--c-primary-deep);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.ticker-weather .w-text {
+  flex-grow: 1;
+  line-height: 1.35;
+}
+.ticker-weather .w-badge {
+  display: inline-block;
+  background: var(--c-accent);
+  color: var(--c-primary-deep);
+  font-weight: 700;
+  padding: 1px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  margin-right: 6px;
+  letter-spacing: 0.05em;
+}
+.ticker-weather .w-cta {
+  padding: 4px 12px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: all 0.3s var(--e-out);
+  flex-shrink: 0;
+}
+.ticker-weather .w-cta:hover { background: var(--c-accent); color: var(--c-primary-deep); border-color: var(--c-accent); }
+
+/* ============ MAIN LAYOUT ============ */
+.main-wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 40px;
+}
+@media (max-width: 1024px) { .main-wrap { grid-template-columns: 1fr; } .aside { display: none; } }
+
+/* ============ SECTION COMMON ============ */
+.sec { margin-bottom: 72px; }
+.sec-kicker {
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: var(--c-primary);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.sec-kicker::before {
+  content: ''; display: inline-block;
+  width: 24px; height: 2px; background: var(--c-accent);
+}
+.sec-title {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--c-primary-deep);
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+.sec-title .accent { color: var(--c-primary); }
+.sec-subtitle {
+  font-size: 16px;
+  color: var(--c-text-muted);
+  margin-bottom: 28px;
+  line-height: 1.75;
+}
+.sec-head { margin-bottom: 32px; }
+.sec-head.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.sec-more {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-primary);
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--c-primary);
+  transition: all 0.3s var(--e-out);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.sec-more:hover { background: var(--c-primary); color: #fff; }
+
+/* ============ 04 SLIDER ============ */
+.slider {
+  background: linear-gradient(135deg, var(--c-primary-light) 0%, var(--c-surface) 100%);
+  border-radius: var(--r-xl);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+}
+.slider::before {
+  content: ''; position: absolute;
+  right: -80px; top: -80px;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, var(--c-accent) 0%, transparent 70%);
+  opacity: 0.15;
+  border-radius: 50%;
+}
+.slider-content { position: relative; z-index: 2; max-width: 640px; }
+.slider-badge {
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.25em;
+  background: var(--c-surface);
+  color: var(--c-primary);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(21,128,61,0.08);
+}
+.slider-title {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--c-primary-deep);
+}
+.slider-desc { font-size: 16px; color: var(--c-text-muted); margin-bottom: 28px; max-width: 560px; }
+.slider-actions { display: flex; gap: 12px; }
+.btn-primary {
+  padding: 14px 28px;
+  background: var(--c-primary);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--e-out);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--c-primary-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(21,128,61,0.24); }
+.btn-ghost {
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--c-primary);
+  border: 2px solid var(--c-primary);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s var(--e-out);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-ghost:hover { background: var(--c-primary-light); }
+.slider-dots {
+  position: absolute;
+  bottom: 24px; left: 48px;
+  display: flex; gap: 6px;
+}
+.slider-dots .dot {
+  width: 32px; height: 4px;
+  background: rgba(21,128,61,0.2);
+  border-radius: 999px;
+  cursor: pointer; transition: all 0.3s;
+}
+.slider-dots .dot.active { background: var(--c-primary); width: 56px; }
+.slider-notice {
+  position: absolute;
+  top: 24px; right: 24px;
+  font-size: 11px;
+  color: var(--c-text-subtle);
+  font-family: Inter, monospace;
+  background: rgba(255,255,255,0.6);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* ============ 05 最新動態 Magazine ============ */
+.news-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 16px;
+  min-height: 480px;
+}
+.news-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-line);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s var(--e-out);
+  display: flex;
+  flex-direction: column;
+}
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(21,128,61,0.12);
+  border-color: var(--c-primary);
+}
+.news-card.feat { grid-row: span 2; }
+.news-thumb {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--c-primary-light) 0%, var(--c-primary) 100%);
+  position: relative;
+}
+.news-card.feat .news-thumb { aspect-ratio: unset; flex: 1; min-height: 280px; }
+.news-thumb::after {
+  content: attr(data-placeholder);
+  position: absolute;
+  bottom: 16px; left: 16px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.15em;
+  font-family: Inter, monospace;
+}
+.news-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; }
+.news-card.feat .news-body { padding: 24px 28px; }
+.news-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  width: fit-content;
+}
+.news-tag.t-health { background: #CFFAFE; color: #164E63; }
+.news-tag.t-safety { background: #FFEDD5; color: #7C2D12; }
+.news-tag.t-event { background: var(--c-primary-light); color: var(--c-primary-deep); }
+.news-tag.t-research { background: #DBEAFE; color: #1E3A8A; }
+.news-tag.t-advocacy { background: #FFE4E6; color: #881337; }
+.news-title {
+  font-size: 18px; font-weight: 700; line-height: 1.45;
+  color: var(--c-text);
+}
+.news-card.feat .news-title { font-size: 26px; line-height: 1.3; }
+.news-meta {
+  margin-top: auto;
+  padding-top: 8px;
+  font-size: 12px;
+  color: var(--c-text-subtle);
+  font-family: Inter, monospace;
+  letter-spacing: 0.05em;
+  display: flex; gap: 12px;
+}
+
+/* ============ 06 三大核心主題 ============ */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) { .topic-grid { grid-template-columns: 1fr; } }
+.topic-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 32px 28px;
+  border: 1px solid var(--c-line);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--e-out);
+  display: flex; flex-direction: column; min-height: 320px;
+}
+.topic-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 5px;
+  background: var(--tc); transition: height 0.3s var(--e-out);
+}
+.topic-card::after {
+  content: ''; position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, var(--tc) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.4s var(--e-out);
+  pointer-events: none;
+}
+.topic-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--tc);
+  box-shadow: 0 20px 56px rgba(21,128,61,0.14);
+}
+.topic-card:hover::before { height: 8px; }
+.topic-card:hover::after { opacity: 0.08; }
+.topic-icon {
+  width: 60px; height: 60px; border-radius: 16px;
+  background: var(--tc-light);
+  color: var(--tc);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  transition: transform 0.3s var(--e-out);
+}
+.topic-card:hover .topic-icon { transform: scale(1.08) rotate(-3deg); }
+.topic-name { font-size: 24px; font-weight: 900; color: var(--c-text); margin-bottom: 14px; }
+.topic-list { font-size: 15px; color: var(--c-text-muted); }
+.topic-list li { padding: 6px 0; display: flex; align-items: center; gap: 8px; }
+.topic-list li i { color: var(--tc); font-size: 13px; }
+.topic-arrow {
+  margin-top: auto; align-self: flex-end;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--c-surface-muted);
+  color: var(--c-text-muted);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s var(--e-out);
+}
+.topic-card:hover .topic-arrow {
+  background: var(--tc); color: #fff; transform: translateX(4px);
+}
+
+.topic-card.t-health   { --tc: #0891B2; --tc-light: #CFFAFE; }
+.topic-card.t-safety   { --tc: #EA580C; --tc-light: #FFEDD5; }
+.topic-card.t-economy  { --tc: #D97706; --tc-light: #FEF3C7; }
+
+/* ============ 07 分眾 4 入口 ============ */
+.audience-wrap {
+  background: var(--c-surface-muted);
+  border-radius: var(--r-xl);
+  padding: 48px 40px;
+}
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 768px) { .audience-grid { grid-template-columns: repeat(2, 1fr); } }
+.audience-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 28px 20px;
+  text-align: center;
+  border: 1px solid var(--c-line);
+  transition: all 0.4s var(--e-out);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.audience-card:hover {
+  transform: translateY(-6px);
+  background: var(--ac);
+  border-color: var(--ac);
+  color: #fff;
+}
+.audience-card:hover .audience-desc { color: rgba(255,255,255,0.85); }
+.audience-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--ac-light);
+  color: var(--ac);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  transition: all 0.3s var(--e-out);
+}
+.audience-card:hover .audience-icon {
+  background: rgba(255,255,255,0.2); color: #fff; transform: scale(1.1);
+}
+.audience-name { font-size: 17px; font-weight: 700; }
+.audience-desc { font-size: 13px; color: var(--c-text-subtle); }
+.audience-card.a-beginner  { --ac: #16A34A; --ac-light: #DCFCE7; }
+.audience-card.a-young     { --ac: #2563EB; --ac-light: #DBEAFE; }
+.audience-card.a-senior    { --ac: #EA580C; --ac-light: #FFEDD5; }
+.audience-card.a-public    { --ac: #D97706; --ac-light: #FEF3C7; }
+.audience-cta {
+  margin-top: 24px;
+  display: flex; justify-content: center;
+}
+.audience-cta a {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--c-accent) 0%, var(--c-accent-deep) 100%);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex; align-items: center; gap: 10px;
+  box-shadow: 0 8px 24px rgba(245,158,11,0.3);
+  transition: all 0.3s var(--e-out);
+}
+.audience-cta a:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(245,158,11,0.4); }
+
+/* ============ 08 七個視角一張網 ============ */
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1024px) { .chapter-grid { grid-template-columns: repeat(2, 1fr); } }
+.ch-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  padding: 24px 20px;
+  border: 1px solid var(--c-line);
+  border-top: 4px solid var(--cc);
+  transition: all 0.3s var(--e-out);
+  display: flex; flex-direction: column; gap: 12px; min-height: 200px;
+}
+.ch-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+  border-color: var(--cc);
+  border-top-width: 6px;
+}
+.ch-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.ch-icon {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: var(--cc-light);
+  color: var(--cc);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.ch-num {
+  font-family: Inter, sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--cc);
+  letter-spacing: 0.15em;
+}
+.ch-name { font-size: 20px; font-weight: 900; color: var(--c-text); }
+.ch-desc { font-size: 13px; color: var(--c-text-muted); line-height: 1.65; }
+.ch-link {
+  margin-top: auto;
+  font-size: 13px; font-weight: 700;
+  color: var(--cc);
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.ch-card.c-about    { --cc: #15803D; --cc-light: #DCFCE7; }
+.ch-card.c-safety   { --cc: #EA580C; --cc-light: #FFEDD5; }
+.ch-card.c-health   { --cc: #0891B2; --cc-light: #CFFAFE; }
+.ch-card.c-economy  { --cc: #D97706; --cc-light: #FEF3C7; }
+.ch-card.c-empower  { --cc: #7C3AED; --cc-light: #EDE9FE; }
+.ch-card.c-advocacy { --cc: #E11D48; --cc-light: #FFE4E6; }
+.ch-card.c-research { --cc: #1E40AF; --cc-light: #DBEAFE; }
+
+/* ============ 09 關鍵數字（輕量 1 組） ============ */
+.stat-band {
+  background: var(--c-primary-deep);
+  color: #fff;
+  border-radius: var(--r-xl);
+  padding: 40px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.stat-band::before {
+  content: '數字會說話';
+  position: absolute;
+  right: -10px; top: 10px;
+  font-size: 140px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.04);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.stat-kicker {
+  font-family: Inter, sans-serif;
+  font-size: 12px; font-weight: 600; letter-spacing: 0.25em;
+  color: var(--c-accent); margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.stat-head {
+  font-size: 28px; font-weight: 900;
+  color: #fff; margin-bottom: 32px; line-height: 1.3;
+}
+.stat-head .hl { color: var(--c-accent); }
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative; z-index: 2;
+}
+@media (max-width: 768px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+.stat-item .lbl {
+  font-family: Inter, sans-serif;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+  color: var(--c-accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.stat-item .val {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 60px; font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: flex; align-items: baseline; gap: 4px;
+}
+.stat-item .val sub {
+  font-size: 18px; font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  position: static;
+}
+.stat-item .desc {
+  margin-top: 10px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+.stat-pending {
+  position: absolute;
+  bottom: 16px; right: 48px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-family: Inter, monospace;
+  letter-spacing: 0.1em;
+}
+
+/* ============ 10 影音專區 ============ */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) { .media-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .media-grid { grid-template-columns: 1fr; } }
+.media-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-line);
+  overflow: hidden;
+  transition: all 0.3s var(--e-out);
+  display: flex; flex-direction: column;
+}
+.media-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(21,128,61,0.12);
+  border-color: var(--c-primary);
+}
+.media-thumb {
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, #0F2818 0%, var(--c-primary-deep) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.media-thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 12px; left: 16px;
+  color: rgba(255,255,255,0.5);
+  font-size: 11px;
+  font-family: Inter, monospace;
+  letter-spacing: 0.1em;
+}
+.media-play {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px; height: 60px; border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 20px;
+  transition: all 0.3s var(--e-out);
+}
+.media-card:hover .media-play {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.media-type {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: rgba(255,255,255,0.9);
+  color: var(--c-primary-deep);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+}
+.media-body { padding: 18px 22px; }
+.media-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--c-text);
+  line-height: 1.5; margin-bottom: 8px;
+}
+.media-meta {
+  display: flex; gap: 12px;
+  font-size: 12px;
+  color: var(--c-text-subtle);
+  font-family: Inter, monospace;
+  letter-spacing: 0.05em;
+}
+
+/* ============ ASIDE ============ */
+.aside { position: relative; }
+.aside-inner { position: sticky; top: 140px; display: flex; flex-direction: column; gap: 20px; }
+
+.side-card {
+  background: var(--c-surface);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--c-line);
+  padding: 24px;
+  transition: all 0.3s var(--e-out);
+}
+.side-card:hover { box-shadow: 0 8px 24px rgba(21,128,61,0.08); }
+.side-title {
+  font-size: 15px; font-weight: 900;
+  color: var(--c-primary-deep);
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--c-line);
+}
+.side-title i { color: var(--c-accent); }
+
+/* side 分眾 mini */
+.side-audience-mini {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.side-audience-mini a {
+  background: var(--c-surface-muted);
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--c-text);
+  transition: all 0.3s var(--e-out);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  border: 1px solid transparent;
+}
+.side-audience-mini a i { font-size: 20px; color: var(--c-primary); }
+.side-audience-mini a:hover {
+  background: var(--c-primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.side-audience-mini a:hover i { color: #fff; }
+
+.side-tool-list li { margin-bottom: 10px; }
+.side-tool-list li:last-child { margin-bottom: 0; }
+.side-tool-list a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 12px;
+  background: var(--c-surface-muted);
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s var(--e-out);
+  border: 1px solid transparent;
+}
+.side-tool-list a .ic {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--c-surface); color: var(--c-primary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+}
+.side-tool-list a:hover {
+  background: var(--c-primary-light);
+  border-color: var(--c-primary);
+  transform: translateX(4px);
+}
+.side-tool-list a .arr { margin-left: auto; color: var(--c-text-subtle); }
+
+/* ============ FOOTER ============ */
+.footer {
+  background: var(--c-primary-deep);
+  color: rgba(255,255,255,0.85);
+  margin-top: 48px;
+  padding: 64px 0 32px;
+}
+.footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+@media (max-width: 900px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+.footer-col h4 {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--c-accent);
+  display: inline-block;
+}
+.footer-brand .logo {
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.footer-brand .logo-mark { background: var(--c-accent); color: var(--c-primary-deep); }
+.footer-brand p {
+  font-size: 13px; line-height: 1.85;
+  color: rgba(255,255,255,0.7);
+  max-width: 320px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.footer-links a:hover { color: var(--c-accent); padding-left: 4px; }
+.footer-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.footer-tags a {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.8);
+  transition: all 0.2s;
+}
+.footer-tags a:hover { background: var(--c-accent); color: var(--c-primary-deep); border-color: var(--c-accent); }
+.footer-contact { font-size: 13px; line-height: 1.9; }
+.footer-contact p { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.footer-contact p i { color: var(--c-accent); width: 16px; }
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ============ MOBILE DOCK（未實作，僅標示） ============ */
+
+/* ============ reveal base ============ */
+.reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s var(--e-out); }
+.reveal.in { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-brand">DIGNITY · 尊嚴農業 <small>Farmer Worker Dignity · 中正大學 × 臺大雲林</small></div>
+    <div class="topbar-right">
+      <div class="topbar-search"><i class="fas fa-search"></i> 搜尋全站</div>
+      <div class="topbar-social">
+        <a href="https://www.facebook.com/profile.php?id=61575048498498" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" title="LINE"><i class="fab fa-line"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark"><i class="fas fa-seedling"></i></span>
+      尊嚴農業
+    </a>
+    <div class="nav-menu">
+      <div class="nav-item"><a href="/" class="nav-link active">首頁</a></div>
+      <div class="nav-item">
+        <a href="/about/" class="nav-link">關於 <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown">
+          <a href="/about/">關於計畫</a>
+          <a href="/about/ResearchTeam/">研究團隊</a>
+          <a href="/about/contact/">聯繫我們</a>
+          <a href="/about/day/">行事曆</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/occupational-safety/" class="nav-link">職業安全 <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown">
+          <a href="/occupational-safety/personal-protective-equipment/">個人防護具 (PPE)</a>
+          <a href="/occupational-safety/labor-saving-machinery/">省工農機</a>
+          <a href="/occupational-safety/greenhouse-zone/">溫室專區</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/healthgood/" class="nav-link">健康促進 <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown">
+          <a href="/healthgood/subpage-heat/">熱傷害</a>
+          <a href="/healthgood/subpage-msd/">肌肉骨骼</a>
+          <a href="/healthgood/subpage-pesticide/">農藥安全</a>
+          <a href="/healthgood/subpage-mental/">心理健康</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/economic-insurance/" class="nav-link">經濟與保險 <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown">
+          <a href="/economic-insurance/occupational-accident-insurance/">職業災害保險</a>
+          <a href="/economic-insurance/crop-insurance/">農業保險</a>
+          <a href="/economic-insurance/agricultural-subsidy-resources/">農業補助資源</a>
+          <a href="/economic-insurance/worker-occupational-accident-calculator/">職災試算表</a>
+          <a href="/economic-insurance/farmer-worker-retirement-calculator/">退休金試算表</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="/farmer-study/" class="nav-link">培力課程</a></div>
+      <div class="nav-item"><a href="/dignity-farming-initiative/" class="nav-link">倡議</a></div>
+      <div class="nav-item">
+        <a href="/research-result/" class="nav-link">研究成果 <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown">
+          <a href="/research-result/research-publication/">研究出版</a>
+          <a href="/research-result/infographic/">圖解懶人包</a>
+          <a href="/research-result/download-zone/">下載專區</a>
+          <a href="/research-result/podcast/">Podcast</a>
+          <a href="/research-result/related-resources/">相關資源</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="/thenews/" class="nav-link">最新消息</a></div>
+    </div>
+    <a href="/dignity-farming-initiative/" class="nav-cta"><i class="fas fa-bullhorn"></i> 加入倡議</a>
+  </div>
+</nav>
+
+<!-- ============ MARQUEE + 氣象 ============ -->
+<div class="ticker-row">
+  <div class="ticker-words">
+    <div class="ticker-words-track">
+      <span>看見 <span class="en">SEE</span></span>
+      <span>論證 <span class="en">EVIDENCE</span></span>
+      <span>改變 <span class="en">CHANGE</span></span>
+      <span>尊嚴 <span class="en">DIGNITY</span></span>
+      <span>農民是工作者</span>
+      <span>不是補助對象</span>
+      <!-- duplicate for seamless loop -->
+      <span>看見 <span class="en">SEE</span></span>
+      <span>論證 <span class="en">EVIDENCE</span></span>
+      <span>改變 <span class="en">CHANGE</span></span>
+      <span>尊嚴 <span class="en">DIGNITY</span></span>
+      <span>農民是工作者</span>
+      <span>不是補助對象</span>
+    </div>
+  </div>
+  <div class="ticker-weather">
+    <div class="w-icon"><i class="fas fa-cloud-sun"></i></div>
+    <div class="w-text">
+      <span class="w-badge">嘉義民雄</span>
+      即時氣象連線中 · 為您分析農事建議
+    </div>
+    <a href="/occupational-safety/" class="w-cta">防護指引 →</a>
+  </div>
+</div>
+
+<!-- ============ MAIN ============ -->
+<div class="main-wrap">
+
+  <!-- MAIN COLUMN -->
+  <main>
+
+    <!-- ④ SLIDER -->
+    <section class="sec reveal">
+      <div class="slider">
+        <div class="slider-notice">WP Shortcode · [home_highlight_slider]</div>
+        <div class="slider-content">
+          <span class="slider-badge">HIGHLIGHTED · 重要公告</span>
+          <h2 class="slider-title">輪播區·由 WordPress 後台<br/>即時更新重要公告</h2>
+          <p class="slider-desc">本區塊由 WP shortcode <code>[home_highlight_slider]</code> 動態輸出，內容由後台管理員維護，本 demo 使用佔位顯示。</p>
+          <div class="slider-actions">
+            <a href="#" class="btn-primary">閱讀更多 <i class="fas fa-arrow-right"></i></a>
+            <a href="/thenews/" class="btn-ghost">所有動態</a>
+          </div>
+        </div>
+        <div class="slider-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ 最新動態 -->
+    <section class="sec reveal">
+      <div class="sec-head row">
+        <div>
+          <span class="sec-kicker">LATEST · 持續更新</span>
+          <h2 class="sec-title">最新<span class="accent">動態</span></h2>
+          <p class="sec-subtitle">研究進展、田野紀錄、政策倡議、工作坊與活動公告。</p>
+        </div>
+        <a href="/thenews/" class="sec-more">所有動態 <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="news-grid">
+        <article class="news-card feat">
+          <div class="news-thumb" data-placeholder="FEATURED · 封面圖 / PLACEHOLDER"></div>
+          <div class="news-body">
+            <span class="news-tag t-event">焦點報導</span>
+            <h3 class="news-title">［本區由 WP news_magazine_layout shortcode 拉最新 1 則封面 + 4 則列表］</h3>
+            <div class="news-meta"><span>shortcode</span><span>news_magazine_layout count=5</span></div>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-thumb" data-placeholder="IMG"></div>
+          <div class="news-body">
+            <span class="news-tag t-health">健康促進</span>
+            <h3 class="news-title">［最新動態第 2 則 · 自動抓 WP 文章］</h3>
+            <div class="news-meta"><span>2026·04·20</span></div>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-thumb" data-placeholder="IMG"></div>
+          <div class="news-body">
+            <span class="news-tag t-research">研究成果</span>
+            <h3 class="news-title">［最新動態第 3 則 · 自動抓 WP 文章］</h3>
+            <div class="news-meta"><span>2026·04·18</span></div>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-thumb" data-placeholder="IMG"></div>
+          <div class="news-body">
+            <span class="news-tag t-safety">職業安全</span>
+            <h3 class="news-title">［最新動態第 4 則 · 自動抓 WP 文章］</h3>
+            <div class="news-meta"><span>2026·04·15</span></div>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-thumb" data-placeholder="IMG"></div>
+          <div class="news-body">
+            <span class="news-tag t-advocacy">尊嚴倡議</span>
+            <h3 class="news-title">［最新動態第 5 則 · 自動抓 WP 文章］</h3>
+            <div class="news-meta"><span>2026·04·12</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ⑥ 三大核心主題 -->
+    <section class="sec reveal">
+      <div class="sec-head">
+        <span class="sec-kicker">CORE · 三大核心主題</span>
+        <h2 class="sec-title"><span class="accent">守護</span> 您的農業生活</h2>
+        <p class="sec-subtitle">從健康到經濟，我們提供全方位的支持</p>
+      </div>
+      <div class="topic-grid">
+        <a href="/healthgood/" class="topic-card t-health">
+          <div class="topic-icon"><i class="fas fa-heart-pulse"></i></div>
+          <h3 class="topic-name">健康促進</h3>
+          <ul class="topic-list">
+            <li><i class="fas fa-check"></i> 熱危害防治</li>
+            <li><i class="fas fa-check"></i> 肌肉骨骼保養</li>
+            <li><i class="fas fa-check"></i> 農藥安全防護</li>
+          </ul>
+          <div class="topic-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="/occupational-safety/" class="topic-card t-safety">
+          <div class="topic-icon"><i class="fas fa-helmet-safety"></i></div>
+          <h3 class="topic-name">職業安全</h3>
+          <ul class="topic-list">
+            <li><i class="fas fa-check"></i> 個人防護具 (PPE)</li>
+            <li><i class="fas fa-check"></i> 省力化輔具</li>
+            <li><i class="fas fa-check"></i> 智慧穿戴裝置</li>
+          </ul>
+          <div class="topic-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+        <a href="/economic-insurance/" class="topic-card t-economy">
+          <div class="topic-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3 class="topic-name">經濟保險</h3>
+          <ul class="topic-list">
+            <li><i class="fas fa-check"></i> 職災保險試算</li>
+            <li><i class="fas fa-check"></i> 農作物保險</li>
+            <li><i class="fas fa-check"></i> 補助資源懶人包</li>
+          </ul>
+          <div class="topic-arrow"><i class="fas fa-arrow-right"></i></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ⑦ 分眾 4 入口（完整版）-->
+    <section class="sec reveal">
+      <div class="audience-wrap">
+        <div class="sec-head" style="margin-bottom: 28px;">
+          <span class="sec-kicker">AUDIENCE · 請選擇您的身分與需求</span>
+          <h2 class="sec-title" style="font-size: 28px;">4 種身分<span class="accent">入口</span></h2>
+        </div>
+        <div class="audience-grid">
+          <a href="/beginner-farmers/" class="audience-card a-beginner">
+            <div class="audience-icon"><i class="fas fa-hat-cowboy-side"></i></div>
+            <div class="audience-name">想務農與新手農友</div>
+            <div class="audience-desc">入門資源、風險介紹</div>
+          </a>
+          <a href="/young-farmers/" class="audience-card a-young">
+            <div class="audience-icon"><i class="fas fa-tractor"></i></div>
+            <div class="audience-name">青農與創業</div>
+            <div class="audience-desc">技術與保險</div>
+          </a>
+          <a href="/experienced-farmers/" class="audience-card a-senior">
+            <div class="audience-icon"><i class="fas fa-seedling"></i></div>
+            <div class="audience-name">資深農友</div>
+            <div class="audience-desc">慢性病、自身權益</div>
+          </a>
+          <a href="/Public/" class="audience-card a-public">
+            <div class="audience-icon"><i class="fas fa-handshake"></i></div>
+            <div class="audience-name">一般民眾</div>
+            <div class="audience-desc">尊農倡議與支持</div>
+          </a>
+        </div>
+        <div class="audience-cta">
+          <a href="/dignity-farming-initiative/"><i class="fas fa-bullhorn"></i> 尊嚴農業倡議</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑧ 七個視角一張網 -->
+    <section class="sec reveal">
+      <div class="sec-head row">
+        <div>
+          <span class="sec-kicker">METHOD · 七個視角 · 一張網</span>
+          <h2 class="sec-title">完整 <span class="accent">7 章節</span> 導覽</h2>
+          <p class="sec-subtitle">章節之間彼此扣連，形成一張完整的農業工作者職業健康知識網。</p>
+        </div>
+      </div>
+      <div class="chapter-grid">
+        <a href="/about/" class="ch-card c-about">
+          <div class="ch-head"><div class="ch-icon"><i class="fas fa-compass"></i></div><span class="ch-num">01 / ABOUT</span></div>
+          <h3 class="ch-name">關於計畫</h3>
+          <p class="ch-desc">研究團隊 · 計畫緣起 · 合作夥伴 · 聯繫我們。</p>
+          <span class="ch-link">進入章節 <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="/occupational-safety/" class="ch-card c-safety">
+          <div class="ch-head"><div class="ch-icon"><i class="fas fa-helmet-safety"></i></div><span class="ch-num">02 / SAFETY</span></div>
+          <h3 class="ch-name">職業安全</h3>
+          <p class="ch-desc">個人防護具 · 省工農機 · 溫室專區。</p>
+          <span class="ch-link">進入章節 <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="/healthgood/" class="ch-card c-health">
+          <div class="ch-head"><div class="ch-icon"><i class="fas fa-heart-pulse"></i></div><span class="ch-num">03 / HEALTH</span></div>
+          <h3 class="ch-name">健康促進</h3>
+          <p class="ch-desc">熱傷害 · 肌肉骨骼 · 農藥 · 心理健康。</p>
+          <span class="ch-link">進入章節 <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="/economic-insurance/" class="ch-card c-economy">
+          <div class="ch-head"><div class="ch-icon"><i class="fas fa-shield-halved"></i></div><span class="ch-num">04 / ECONOMY</span></div>
+          <h3 class="ch-name">經濟與保險</h3>
+          <p class="ch-desc">職災保險 · 農作物保險 · 補助資源 · 試算工具。</p>
+          <span class="ch-link">進入章節 <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="/farmer-study/" class="ch-card c-empower">
+          <div class="ch-head"><div class="ch-icon"><i class="fas fa-graduation-cap"></i></div><span class="ch-num">05 / EMPOWER</span></div>
+          <h3 class="ch-name">培力課程</h3>
+          <p class="ch-desc">農學堂系列 · 影片 · 工作坊 · 在地培訓。</p>
+          <span class="ch-link">進入章節 <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="/dignity-farming-initiative/" class="ch-card c-advocacy">
+          <div class="ch-head"><div class="ch-icon"><i class="fas fa-bullhorn"></i></div><span class="ch-num">06 / ADVOCACY</span></div>
+          <h3 class="ch-name">尊嚴倡議</h3>
+          <p class="ch-desc">核心主張 · 時間軸 · 政策連署。</p>
+          <span class="ch-link">進入章節 <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="/research-result/" class="ch-card c-research">
+          <div class="ch-head"><div class="ch-icon"><i class="fas fa-flask"></i></div><span class="ch-num">07 / RESEARCH</span></div>
+          <h3 class="ch-name">研究成果</h3>
+          <p class="ch-desc">研究出版 · 圖解懶人包 · 下載 · Podcast · 相關資源。</p>
+          <span class="ch-link">進入章節 <i class="fas fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ⑨ 關鍵數字（待補數據）-->
+    <section class="sec reveal">
+      <div class="stat-band">
+        <div class="stat-kicker">● EVIDENCE · 數字說話</div>
+        <h3 class="stat-head">不是口號，是<span class="hl">可驗證的田野資料</span>。</h3>
+        <div class="stat-grid">
+          <div class="stat-item">
+            <div class="lbl">AVERAGE AGE</div>
+            <div class="val">[待補]<sub>歲</sub></div>
+            <div class="desc">臺灣農業人口平均年齡</div>
+          </div>
+          <div class="stat-item">
+            <div class="lbl">FIELDWORK</div>
+            <div class="val">[待補]<sub>年</sub></div>
+            <div class="desc">累積跨縣市田野調查</div>
+          </div>
+          <div class="stat-item">
+            <div class="lbl">INTERVIEWS</div>
+            <div class="val">[待補]<sub>+ 份</sub></div>
+            <div class="desc">深度訪談資料庫</div>
+          </div>
+          <div class="stat-item">
+            <div class="lbl">CHAPTERS</div>
+            <div class="val">7<sub>大主題</sub></div>
+            <div class="desc">整合研究視野（對應網站 7 章節）</div>
+          </div>
+        </div>
+        <div class="stat-pending">※ 數據待研究團隊確認後補入，不編造</div>
+      </div>
+    </section>
+
+    <!-- ⑩ 影音專區 -->
+    <section class="sec reveal">
+      <div class="sec-head row">
+        <div>
+          <span class="sec-kicker">MEDIA · 多媒體內容</span>
+          <h2 class="sec-title">影音<span class="accent">專區</span></h2>
+          <p class="sec-subtitle">Podcast · 工作坊紀錄 · 田野影片 · 圖解懶人包。</p>
+        </div>
+        <a href="/research-result/podcast/" class="sec-more">全部影音 <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="media-grid">
+        <article class="media-card">
+          <div class="media-thumb" data-label="PODCAST · 01">
+            <span class="media-type">PODCAST</span>
+            <div class="media-play"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="media-body">
+            <h3 class="media-title">［shortcode 動態抓 knowledge_podcast_grid count=6］</h3>
+            <div class="media-meta"><span>shortcode</span><span>count=6</span></div>
+          </div>
+        </article>
+        <article class="media-card">
+          <div class="media-thumb" data-label="VIDEO · 02">
+            <span class="media-type">VIDEO</span>
+            <div class="media-play"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="media-body">
+            <h3 class="media-title">［影音項目 2 · 自動輸出］</h3>
+            <div class="media-meta"><span>自動</span></div>
+          </div>
+        </article>
+        <article class="media-card">
+          <div class="media-thumb" data-label="WORKSHOP · 03">
+            <span class="media-type">工作坊</span>
+            <div class="media-play"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="media-body">
+            <h3 class="media-title">［影音項目 3 · 自動輸出］</h3>
+            <div class="media-meta"><span>自動</span></div>
+          </div>
+        </article>
+        <article class="media-card">
+          <div class="media-thumb" data-label="FIELD · 04">
+            <span class="media-type">田野影片</span>
+            <div class="media-play"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="media-body">
+            <h3 class="media-title">［影音項目 4 · 自動輸出］</h3>
+            <div class="media-meta"><span>自動</span></div>
+          </div>
+        </article>
+        <article class="media-card">
+          <div class="media-thumb" data-label="PODCAST · 05">
+            <span class="media-type">PODCAST</span>
+            <div class="media-play"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="media-body">
+            <h3 class="media-title">［影音項目 5 · 自動輸出］</h3>
+            <div class="media-meta"><span>自動</span></div>
+          </div>
+        </article>
+        <article class="media-card">
+          <div class="media-thumb" data-label="INFO · 06">
+            <span class="media-type">圖解</span>
+            <div class="media-play"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="media-body">
+            <h3 class="media-title">［影音項目 6 · 自動輸出］</h3>
+            <div class="media-meta"><span>自動</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ASIDE -->
+  <aside class="aside">
+    <div class="aside-inner">
+      <!-- 側邊分眾 mini（和主區大卡不同）-->
+      <div class="side-card">
+        <div class="side-title"><i class="fas fa-users-viewfinder"></i> 身分快速切換</div>
+        <div class="side-audience-mini">
+          <a href="/beginner-farmers/"><i class="fas fa-hat-cowboy-side"></i>新手農友</a>
+          <a href="/young-farmers/"><i class="fas fa-tractor"></i>青農創業</a>
+          <a href="/experienced-farmers/"><i class="fas fa-seedling"></i>資深農友</a>
+          <a href="/Public/"><i class="fas fa-handshake"></i>一般民眾</a>
+        </div>
+      </div>
+
+      <!-- 實用工具箱（現有）-->
+      <div class="side-card">
+        <div class="side-title"><i class="fas fa-toolbox"></i> 實用工具箱</div>
+        <ul class="side-tool-list">
+          <li><a href="https://www.osha.gov.tw/48110/48363/133456/48395/nodelist" target="_blank">
+            <span class="ic"><i class="fas fa-file-medical-alt"></i></span>
+            職業病認定標準
+            <i class="fas fa-download arr"></i>
+          </a></li>
+          <li><a href="/downloads/checklist.pdf" target="_blank">
+            <span class="ic"><i class="fas fa-heartbeat"></i></span>
+            自我健康檢核表
+            <i class="fas fa-download arr"></i>
+          </a></li>
+          <li><a href="https://www.hpa.gov.tw/Video/RecommendVideo.aspx?nodeid=851&vid=627" target="_blank">
+            <span class="ic"><i class="fas fa-running"></i></span>
+            我家也是健身房
+            <i class="fas fa-external-link-alt arr"></i>
+          </a></li>
+          <li><a href="https://agrstat.moa.gov.tw/sdweb/public/maintenance/Announce.aspx" target="_blank">
+            <span class="ic"><i class="fas fa-chart-pie"></i></span>
+            農業統計數據庫
+            <i class="fas fa-arrow-right arr"></i>
+          </a></li>
+        </ul>
+      </div>
+
+      <!-- 快速連結 -->
+      <div class="side-card">
+        <div class="side-title"><i class="fas fa-compass"></i> 快速連結</div>
+        <ul class="side-tool-list">
+          <li><a href="/"><span class="ic"><i class="fas fa-home"></i></span>回到首頁<i class="fas fa-arrow-right arr"></i></a></li>
+          <li><a href="/thenews/"><span class="ic"><i class="fas fa-calendar-alt"></i></span>掌握最新動態<i class="fas fa-arrow-right arr"></i></a></li>
+          <li><a href="/about/"><span class="ic"><i class="fas fa-users"></i></span>關於我們<i class="fas fa-arrow-right arr"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="logo"><span class="logo-mark"><i class="fas fa-seedling"></i></span>尊嚴農業</div>
+        <p>農業尊嚴 — 共建雲嘉農業工作者職業健康社會安全網。國立中正大學 × 臺大醫院雲林分院，實踐場域：嘉義縣民雄鄉。</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>熱門關鍵字</h4>
+        <div class="footer-tags">
+          <a href="/healthgood/subpage-heat/">#熱傷害</a>
+          <a href="/healthgood/subpage-msd/">#肌肉骨骼</a>
+          <a href="/healthgood/subpage-pesticide/">#農藥安全</a>
+          <a href="/dignity-farming-initiative/">#民雄</a>
+          <a href="/economic-insurance/crop-insurance/">#職災保險</a>
+          <a href="/young-farmers/">#青農</a>
+          <a href="/farmer-study/">#食農教育</a>
+          <a href="/experienced-farmers/">#高齡農民</a>
+          <a href="/occupational-safety/">#職業安全</a>
+          <a href="/healthgood/subpage-mental/">#心理健康</a>
+          <a href="/occupational-safety/labor-saving-machinery/">#省工農機</a>
+          <a href="/research-result/podcast/">#Podcast</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>友善連結</h4>
+        <div class="footer-links">
+          <a href="https://www.moa.gov.tw/" target="_blank">農業部 <i class="fas fa-external-link-alt" style="font-size:9px"></i></a>
+          <a href="https://www.osha.gov.tw/" target="_blank">職安署 <i class="fas fa-external-link-alt" style="font-size:9px"></i></a>
+          <a href="https://www.ccu.edu.tw/" target="_blank">中正大學 <i class="fas fa-external-link-alt" style="font-size:9px"></i></a>
+          <a href="https://www.ylh.gov.tw/" target="_blank">臺大雲林分院 <i class="fas fa-external-link-alt" style="font-size:9px"></i></a>
+          <a href="https://www.hisp.ntu.edu.tw/" target="_blank">新作坊 <i class="fas fa-external-link-alt" style="font-size:9px"></i></a>
+          <a href="https://www.bli.gov.tw/" target="_blank">勞保局 <i class="fas fa-external-link-alt" style="font-size:9px"></i></a>
+          <a href="https://www.ilosh.gov.tw/" target="_blank">勞動研究所 <i class="fas fa-external-link-alt" style="font-size:9px"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>聯繫資訊</h4>
+        <div class="footer-contact">
+          <p><i class="fas fa-map-marker-alt"></i> 嘉義縣民雄鄉</p>
+          <p><i class="fas fa-university"></i> 國立中正大學</p>
+          <p><i class="fas fa-hospital"></i> 臺大醫院雲林分院</p>
+          <p style="margin-top: 12px;">
+            <a href="https://www.facebook.com/profile.php?id=61575048498498" target="_blank" style="margin-right:8px;"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 尊嚴農業 · Farmer Worker Dignity · 中正大學 × 臺大雲林</div>
+      <div>Design System MASTER FINAL · 2026-04-20</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scrolled state
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>
+</body>
+</html>

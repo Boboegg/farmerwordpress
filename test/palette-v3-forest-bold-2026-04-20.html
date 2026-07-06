@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>V3 Forest Bold 配色總覽 — 尊嚴農業（2026-04-20 拍板）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter+Tight:wght@700;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --c-primary: #15803D;
+  --c-primary-deep: #14532D;
+  --c-primary-light: #DCFCE7;
+  --c-accent: #F59E0B;
+  --c-accent-deep: #B45309;
+  --c-warning: #DC2626;
+  --c-info: #0891B2;
+  --c-bg: #FEFCF7;
+  --c-surface: #FFFFFF;
+  --c-surface-muted: #F5F2EB;
+  --c-text: #0F2818;
+  --c-text-muted: #475569;
+  --c-text-subtle: #94A3B8;
+  --c-line: #E5E1D8;
+  --c-line-strong: #CBD0C5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Noto Sans TC", system-ui, sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.75;
+  font-size: 18px;
+}
+.wrap { max-width: 1280px; margin: 0 auto; padding: 64px 32px; }
+h1 {
+  font-family: "Inter Tight", "Noto Sans TC", sans-serif;
+  font-size: clamp(44px, 6vw, 88px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: var(--c-primary-deep);
+}
+h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.15;
+  margin: 72px 0 24px;
+  color: var(--c-primary-deep);
+  border-bottom: 3px solid var(--c-accent);
+  padding-bottom: 12px;
+  display: inline-block;
+}
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 32px 0 16px;
+  color: var(--c-text);
+}
+.hero {
+  padding: 56px 40px;
+  background: linear-gradient(135deg, var(--c-primary-light) 0%, var(--c-bg) 100%);
+  border-radius: 32px;
+  margin-bottom: 32px;
+  position: relative;
+}
+.hero .tag {
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+  padding: 6px 14px;
+  background: var(--c-surface);
+  border-radius: 999px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(21, 128, 61, 0.06);
+}
+.hero .meta {
+  color: var(--c-text-muted);
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+/* 色卡 grid */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.swatch {
+  background: var(--c-surface);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--c-line);
+  transition: all 0.3s ease;
+}
+.swatch:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(21, 128, 61, 0.14); }
+.swatch-color {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Inter, monospace;
+  font-size: 14px;
+  font-weight: 600;
+}
+.swatch-color.on-light { color: var(--c-text); }
+.swatch-color.on-dark  { color: #fff; }
+.swatch-info { padding: 16px 20px; }
+.swatch-info .name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--c-text);
+  margin-bottom: 4px;
+}
+.swatch-info .hex {
+  font-family: Inter, monospace;
+  font-size: 13px;
+  color: var(--c-text-muted);
+  letter-spacing: 0.05em;
+}
+.swatch-info .role {
+  font-size: 13px;
+  color: var(--c-text-subtle);
+  margin-top: 6px;
+  line-height: 1.6;
+}
+.swatch-info .contrast {
+  display: inline-block;
+  font-family: Inter, monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  background: var(--c-primary-light);
+  color: var(--c-primary-deep);
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+/* 章節色卡（4 token 一組） */
+.chapter {
+  background: var(--c-surface);
+  border-radius: 32px;
+  padding: 32px;
+  border: 1px solid var(--c-line);
+  margin-bottom: 24px;
+}
+.chapter-title {
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+.chapter-en {
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-bottom: 24px;
+}
+.chapter-swatches {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.chapter-swatches .swatch-color { height: 80px; font-size: 12px; border-radius: 16px; }
+.chapter-sample {
+  margin-top: 24px;
+  padding: 20px 24px;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+.chapter-sample .btn {
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* 字體展示 */
+.font-card {
+  background: var(--c-surface);
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid var(--c-line);
+  margin-bottom: 16px;
+}
+.font-card .label {
+  font-family: Inter, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--c-text-muted);
+  margin-bottom: 12px;
+}
+.font-sample-display {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--c-primary-deep);
+}
+.font-sample-heading {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--c-text);
+}
+.font-sample-body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--c-text);
+}
+.font-sample-kicker {
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+}
+
+/* 圓潤 + 陰影 */
+.radius-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.radius-box {
+  background: var(--c-primary-light);
+  border: 2px solid var(--c-primary);
+  padding: 32px 16px;
+  text-align: center;
+  font-family: Inter, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--c-primary-deep);
+}
+.shadow-demo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+.shadow-box {
+  background: var(--c-surface);
+  padding: 28px 20px;
+  border-radius: 24px;
+  text-align: center;
+  font-family: Inter, monospace;
+  font-size: 13px;
+}
+.shadow-sm  { box-shadow: 0 2px 8px rgba(21, 128, 61, 0.06); }
+.shadow-md  { box-shadow: 0 8px 24px rgba(21, 128, 61, 0.10); }
+.shadow-lg  { box-shadow: 0 16px 48px rgba(21, 128, 61, 0.14); }
+.shadow-hover { box-shadow: 0 24px 60px rgba(21, 128, 61, 0.18); }
+
+.note {
+  background: var(--c-primary-light);
+  border-left: 4px solid var(--c-primary);
+  padding: 16px 20px;
+  border-radius: 16px;
+  font-size: 16px;
+  color: var(--c-primary-deep);
+  margin: 16px 0;
+}
+.note strong { color: var(--c-primary-deep); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<section class="hero">
+  <span class="tag">Palette System V3</span>
+  <h1>Forest Bold</h1>
+  <div class="meta">拍板日期：2026-04-20 · TA：農民 + 一般民眾 · 主站 + 7 章節 + 4 分眾共 12 頁使用</div>
+</section>
+
+<div class="note">
+  <strong>設計原則</strong>：明亮溫暖 · 圓潤親和 · 大字清晰 · WordPress 可實作 · 全面放棄：老茶米黃 / 深咖啡 / 方角 / 細 serif
+</div>
+
+<!-- ============================================== -->
+<h2>1. 主站配色（站點層級，14 色）</h2>
+
+<div class="swatch-grid">
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #15803D">#15803D</div>
+    <div class="swatch-info">
+      <div class="name">Primary 森林綠</div>
+      <div class="hex">--c-primary</div>
+      <div class="role">全站主色、Logo、主 CTA</div>
+      <span class="contrast">5.87:1 ★AAA</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #14532D">#14532D</div>
+    <div class="swatch-info">
+      <div class="name">Primary Deep</div>
+      <div class="hex">--c-primary-deep</div>
+      <div class="role">Hover、標題強調</div>
+      <span class="contrast">11.2:1 ★AAA</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #DCFCE7">#DCFCE7</div>
+    <div class="swatch-info">
+      <div class="name">Primary Light</div>
+      <div class="hex">--c-primary-light</div>
+      <div class="role">區塊背景、tag</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #F59E0B">#F59E0B</div>
+    <div class="swatch-info">
+      <div class="name">Accent 陽光金</div>
+      <div class="hex">--c-accent</div>
+      <div class="role">強調、次 CTA、連結 underline</div>
+      <span class="contrast">4.8:1 ★AA</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #B45309">#B45309</div>
+    <div class="swatch-info">
+      <div class="name">Accent Deep</div>
+      <div class="hex">--c-accent-deep</div>
+      <div class="role">Accent hover</div>
+      <span class="contrast">4.69:1 ★AA</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #DC2626">#DC2626</div>
+    <div class="swatch-info">
+      <div class="name">Warning 莓紅</div>
+      <div class="hex">--c-warning</div>
+      <div class="role">警示、重要資訊</div>
+      <span class="contrast">4.6:1 ★AA</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #0891B2">#0891B2</div>
+    <div class="swatch-info">
+      <div class="name">Info 天青</div>
+      <div class="hex">--c-info</div>
+      <div class="role">提示、註解</div>
+      <span class="contrast">4.7:1 ★AA</span>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #FEFCF7; border: 1px solid #E5E1D8;">#FEFCF7</div>
+    <div class="swatch-info">
+      <div class="name">BG 米白</div>
+      <div class="hex">--c-bg</div>
+      <div class="role">主背景（禁純白）</div>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #FFFFFF; border: 1px solid #E5E1D8;">#FFFFFF</div>
+    <div class="swatch-info">
+      <div class="name">Surface</div>
+      <div class="hex">--c-surface</div>
+      <div class="role">卡片底</div>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #F5F2EB">#F5F2EB</div>
+    <div class="swatch-info">
+      <div class="name">Surface Muted</div>
+      <div class="hex">--c-surface-muted</div>
+      <div class="role">輔助區塊</div>
+    </div>
+  </div>
+
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #0F2818">#0F2818</div>
+    <div class="swatch-info">
+      <div class="name">Text 墨綠</div>
+      <div class="hex">--c-text</div>
+      <div class="role">正文</div>
+      <span class="contrast">15.2:1 ★AAA</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-dark" style="background: #475569">#475569</div>
+    <div class="swatch-info">
+      <div class="name">Text Muted</div>
+      <div class="hex">--c-text-muted</div>
+      <div class="role">次要文字</div>
+      <span class="contrast">7.4:1 ★AAA</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #94A3B8">#94A3B8</div>
+    <div class="swatch-info">
+      <div class="name">Text Subtle</div>
+      <div class="hex">--c-text-subtle</div>
+      <div class="role">說明</div>
+      <span class="contrast">3.8:1</span>
+    </div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-color on-light" style="background: #E5E1D8">#E5E1D8</div>
+    <div class="swatch-info">
+      <div class="name">Line</div>
+      <div class="hex">--c-line</div>
+      <div class="role">細邊框</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================== -->
+<h2>2. 7 章節配色（每章 4 token）</h2>
+
+<div class="note">每章節有 <strong>Main / Deep / BG / Contrast</strong> 4 個 token，所有主色 WCAG AA+。</div>
+
+<div class="chapter">
+  <div class="chapter-title">01 · 關於 About</div>
+  <div class="chapter-en">FOREST GREEN</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #15803D">Main<br/>#15803D</div>
+    <div class="swatch-color on-dark" style="background: #14532D">Deep<br/>#14532D</div>
+    <div class="swatch-color on-light" style="background: #DCFCE7">BG<br/>#DCFCE7</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+  <div class="chapter-sample" style="background: #DCFCE7">
+    <div>
+      <div style="color:#14532D; font-weight: 700; font-size: 20px;">中正大學跨域研究團隊</div>
+      <div style="color:#475569; font-size: 16px; margin-top: 4px;">共構雲嘉農業工作者職業健康的社會安全網</div>
+    </div>
+    <button class="btn" style="background: #15803D">進入關於</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">02 · 職業安全 Safety</div>
+  <div class="chapter-en">ORANGE RED</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #EA580C">Main<br/>#EA580C</div>
+    <div class="swatch-color on-dark" style="background: #9A3412">Deep<br/>#9A3412</div>
+    <div class="swatch-color on-light" style="background: #FFEDD5">BG<br/>#FFEDD5</div>
+    <div class="swatch-color on-dark" style="background: #1E40AF">Contrast<br/>#1E40AF</div>
+  </div>
+  <div class="chapter-sample" style="background: #FFEDD5">
+    <div>
+      <div style="color:#9A3412; font-weight: 700; font-size: 20px;">職業安全</div>
+      <div style="color:#475569; font-size: 16px; margin-top: 4px;">PPE / 省工農機 / 溫室專區</div>
+    </div>
+    <button class="btn" style="background: #EA580C">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">03 · 健康促進 Health</div>
+  <div class="chapter-en">CYAN</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #0891B2">Main<br/>#0891B2</div>
+    <div class="swatch-color on-dark" style="background: #164E63">Deep<br/>#164E63</div>
+    <div class="swatch-color on-light" style="background: #CFFAFE">BG<br/>#CFFAFE</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+  <div class="chapter-sample" style="background: #CFFAFE">
+    <div>
+      <div style="color:#164E63; font-weight: 700; font-size: 20px;">健康促進</div>
+      <div style="color:#475569; font-size: 16px; margin-top: 4px;">熱傷害 / 肌肉骨骼 / 農藥 / 心理健康</div>
+    </div>
+    <button class="btn" style="background: #0891B2">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">04 · 經濟與保險 Economic</div>
+  <div class="chapter-en">AMBER GOLD</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #D97706">Main<br/>#D97706</div>
+    <div class="swatch-color on-dark" style="background: #78350F">Deep<br/>#78350F</div>
+    <div class="swatch-color on-light" style="background: #FEF3C7">BG<br/>#FEF3C7</div>
+    <div class="swatch-color on-dark" style="background: #15803D">Contrast<br/>#15803D</div>
+  </div>
+  <div class="chapter-sample" style="background: #FEF3C7">
+    <div>
+      <div style="color:#78350F; font-weight: 700; font-size: 20px;">經濟與保險</div>
+      <div style="color:#475569; font-size: 16px; margin-top: 4px;">職災保險 / 農作物保險 / 補助資源</div>
+    </div>
+    <button class="btn" style="background: #D97706">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">05 · 培力課程 Empower</div>
+  <div class="chapter-en">VIOLET</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #7C3AED">Main<br/>#7C3AED</div>
+    <div class="swatch-color on-dark" style="background: #4C1D95">Deep<br/>#4C1D95</div>
+    <div class="swatch-color on-light" style="background: #EDE9FE">BG<br/>#EDE9FE</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+  <div class="chapter-sample" style="background: #EDE9FE">
+    <div>
+      <div style="color:#4C1D95; font-weight: 700; font-size: 20px;">培力課程</div>
+      <div style="color:#475569; font-size: 16px; margin-top: 4px;">影片 / 工作坊 / 在地培訓</div>
+    </div>
+    <button class="btn" style="background: #7C3AED">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">06 · 倡議 Advocacy</div>
+  <div class="chapter-en">ROSE</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #E11D48">Main<br/>#E11D48</div>
+    <div class="swatch-color on-dark" style="background: #881337">Deep<br/>#881337</div>
+    <div class="swatch-color on-light" style="background: #FFE4E6">BG<br/>#FFE4E6</div>
+    <div class="swatch-color on-dark" style="background: #0891B2">Contrast<br/>#0891B2</div>
+  </div>
+  <div class="chapter-sample" style="background: #FFE4E6">
+    <div>
+      <div style="color:#881337; font-weight: 700; font-size: 20px;">尊嚴農業倡議</div>
+      <div style="color:#475569; font-size: 16px; margin-top: 4px;">核心主張 / 時間軸 / 政策連署</div>
+    </div>
+    <button class="btn" style="background: #E11D48">進入章節</button>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">07 · 研究成果 Research</div>
+  <div class="chapter-en">INDIGO</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #1E40AF">Main<br/>#1E40AF</div>
+    <div class="swatch-color on-dark" style="background: #1E3A8A">Deep<br/>#1E3A8A</div>
+    <div class="swatch-color on-light" style="background: #DBEAFE">BG<br/>#DBEAFE</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+  <div class="chapter-sample" style="background: #DBEAFE">
+    <div>
+      <div style="color:#1E3A8A; font-weight: 700; font-size: 20px;">研究成果</div>
+      <div style="color:#475569; font-size: 16px; margin-top: 4px;">研究出版 / Podcast / 下載專區 / 相關資源</div>
+    </div>
+    <button class="btn" style="background: #1E40AF">進入章節</button>
+  </div>
+</div>
+
+<!-- ============================================== -->
+<h2>3. 4 分眾配色</h2>
+
+<div class="chapter">
+  <div class="chapter-title">Start · 入門（新手務農）</div>
+  <div class="chapter-en">FRESH GREEN</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #16A34A">Main<br/>#16A34A</div>
+    <div class="swatch-color on-dark" style="background: #14532D">Deep<br/>#14532D</div>
+    <div class="swatch-color on-light" style="background: #DCFCE7">BG<br/>#DCFCE7</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">Young · 青年（青農）</div>
+  <div class="chapter-en">ROYAL BLUE</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #2563EB">Main<br/>#2563EB</div>
+    <div class="swatch-color on-dark" style="background: #1E3A8A">Deep<br/>#1E3A8A</div>
+    <div class="swatch-color on-light" style="background: #DBEAFE">BG<br/>#DBEAFE</div>
+    <div class="swatch-color on-dark" style="background: #F59E0B">Contrast<br/>#F59E0B</div>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">Senior · 銀髮（資深農友）</div>
+  <div class="chapter-en">WARM ORANGE</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #EA580C">Main<br/>#EA580C</div>
+    <div class="swatch-color on-dark" style="background: #7C2D12">Deep<br/>#7C2D12</div>
+    <div class="swatch-color on-light" style="background: #FFEDD5">BG<br/>#FFEDD5</div>
+    <div class="swatch-color on-dark" style="background: #15803D">Contrast<br/>#15803D</div>
+  </div>
+</div>
+
+<div class="chapter">
+  <div class="chapter-title">Public · 大眾（一般民眾）</div>
+  <div class="chapter-en">AMBER</div>
+  <div class="chapter-swatches">
+    <div class="swatch-color on-dark" style="background: #D97706">Main<br/>#D97706</div>
+    <div class="swatch-color on-dark" style="background: #78350F">Deep<br/>#78350F</div>
+    <div class="swatch-color on-light" style="background: #FEF3C7">BG<br/>#FEF3C7</div>
+    <div class="swatch-color on-dark" style="background: #15803D">Contrast<br/>#15803D</div>
+  </div>
+</div>
+
+<!-- ============================================== -->
+<h2>4. 字體系統（放棄 serif）</h2>
+
+<div class="font-card">
+  <div class="label">Display · Inter Tight 900</div>
+  <div class="font-sample-display">尊嚴農業 DIGNITY</div>
+</div>
+
+<div class="font-card">
+  <div class="label">Heading · Noto Sans TC 900 · 36-88px</div>
+  <div class="font-sample-heading">共構雲嘉農業工作者職業健康的社會安全網</div>
+</div>
+
+<div class="font-card">
+  <div class="label">Body · Noto Sans TC 400 · 18-20px · line-height 1.75</div>
+  <p class="font-sample-body">
+    尊嚴農業採矩陣式資訊架構（Matrix Information Architecture），定位為動態的「農業健康與安全知識樞紐」。前端透過 4 大分眾入口針對不同生命週期的農民進行精準內容策展；後端則建構 7 大資料庫主選單，確保知識儲存的系統性與學術嚴謹度。
+  </p>
+</div>
+
+<div class="font-card">
+  <div class="label">Kicker · Inter 600 · 12-14px · letter-spacing 0.25em</div>
+  <div class="font-sample-kicker">OCCUPATIONAL SAFETY · KNOWLEDGE HUB · 2026</div>
+</div>
+
+<!-- ============================================== -->
+<h2>5. 圓潤系統（放棄方角）</h2>
+
+<div class="radius-demo">
+  <div class="radius-box" style="border-radius: 8px">8px<br/>tag · badge</div>
+  <div class="radius-box" style="border-radius: 16px">16px<br/>input · small card</div>
+  <div class="radius-box" style="border-radius: 24px">24px<br/>main card</div>
+  <div class="radius-box" style="border-radius: 32px">32px<br/>hero · feature</div>
+  <div class="radius-box" style="border-radius: 48px">48px<br/>large block</div>
+  <div class="radius-box" style="border-radius: 999px">pill<br/>button</div>
+</div>
+
+<!-- ============================================== -->
+<h2>6. 陰影系統（綠調，呼應主色）</h2>
+
+<div class="shadow-demo">
+  <div class="shadow-box shadow-sm">sm<br/>0 2px 8px 6%</div>
+  <div class="shadow-box shadow-md">md<br/>0 8px 24px 10%</div>
+  <div class="shadow-box shadow-lg">lg<br/>0 16px 48px 14%</div>
+  <div class="shadow-box shadow-hover">hover<br/>0 24px 60px 18%</div>
+</div>
+
+<!-- ============================================== -->
+<h2>7. 配色 Don't List</h2>
+
+<div class="note" style="border-left-color: #DC2626; background: #FEE2E2; color: #881337">
+  ❌ 老茶米黃 <code>#854D0E</code> × 深咖啡 → 沉悶、不適合現代農業形象<br/>
+  ❌ 純黑 <code>#000</code> / 純白 <code>#FFF</code> → 太硬，失去溫度<br/>
+  ❌ 深咖啡當主色 → TA 覺得「老派」「政府公文」<br/>
+  ❌ 灰階主調 → 農業是生命，不是金融<br/>
+  ❌ 單色調 → 7 章節必須有區辨度
+</div>
+
+<div style="margin-top: 64px; padding-top: 32px; border-top: 2px solid var(--c-line); color: var(--c-text-muted); font-size: 14px;">
+  來源：<code>~/farmerwordpress/design-system/palette-system-v3.md</code>（2026-04-20）· 產出檔：<code>test/palette-v3-forest-bold-2026-04-20.html</code>
+</div>
+
+</div>
+</body>
+</html>

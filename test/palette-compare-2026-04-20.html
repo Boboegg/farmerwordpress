@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>子頁配色對比 V1 vs V2 — 尊嚴農業</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Noto Sans TC", sans-serif; background: #FEFCF7; color: #0F2818; line-height: 1.6; font-size: 17px; }
+.wrap { max-width: 1600px; margin: 0 auto; padding: 48px 32px; }
+h1 { font-size: clamp(36px, 4vw, 56px); font-weight: 900; color: #14532D; margin-bottom: 12px; line-height: 1.1; }
+.meta { color: #475569; margin-bottom: 24px; font-size: 15px; }
+h2 { font-size: 26px; font-weight: 900; margin: 48px 0 16px; color: #14532D; border-bottom: 3px solid #F59E0B; padding-bottom: 8px; display: inline-block; }
+.note { background: #DCFCE7; border-left: 4px solid #15803D; padding: 14px 18px; border-radius: 16px; margin: 12px 0; font-size: 14px; color: #14532D; }
+.note.red { background: #FEE2E2; border-left-color: #DC2626; color: #881337; }
+
+/* 欄位標題 */
+.compare-header {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #15803D;
+  color: #fff;
+  border-radius: 16px 16px 0 0;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.compare-header .label-v1 { background: rgba(255,255,255,0.15); padding: 6px 12px; border-radius: 8px; }
+.compare-header .label-v2 { background: rgba(245, 158, 11, 0.3); padding: 6px 12px; border-radius: 8px; }
+
+/* 對比 row */
+.compare-row {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #E5E1D8;
+  align-items: center;
+  background: #fff;
+}
+.compare-row:nth-child(even) { background: #F5F2EB; }
+.compare-row:last-child { border-radius: 0 0 16px 16px; }
+.page-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: #0F2818;
+}
+.page-name .slug { display: block; font-family: Inter, monospace; font-size: 11px; color: #94A3B8; font-weight: 400; margin-top: 2px; }
+
+.color-box {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  align-items: center;
+}
+.color-swatch {
+  width: 70px;
+  height: 60px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+.color-info {
+  font-family: Inter, monospace;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.color-info .hex {
+  font-weight: 700;
+  color: #0F2818;
+  font-size: 13px;
+}
+.color-info .name-zh {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #475569;
+  margin-top: 2px;
+  font-size: 12px;
+}
+.color-info .tag {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+.tag.v14 { background: #FEE2E2; color: #881337; }
+.tag.v15 { background: #DBEAFE; color: #1E3A8A; }
+.tag.new { background: #FEF3C7; color: #78350F; }
+
+.compare-table { border-radius: 16px; box-shadow: 0 8px 24px rgba(21, 128, 61, 0.08); overflow: hidden; margin-bottom: 40px; }
+
+/* 區段 banner */
+.section-banner {
+  padding: 12px 20px;
+  background: #F59E0B;
+  color: #78350F;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>子頁配色對比 · V1 vs V2</h1>
+<div class="meta">
+  V1 = <code>palette-all-pages-2026-04-20.html</code>（V3 主站 + <strong>V14 Happy Hues 子頁</strong> hex 深色）<br>
+  V2 = <code>palette-all-pages-v2-2026-04-20.html</code>（V3 主站 + <strong>V15 MILESTONE OKLCH 子頁</strong> 中明度）
+</div>
+
+<div class="note red">
+  <strong>主站 + 7 章節主頁 + 4 分眾（共 12 頁）兩版完全一樣</strong>，只比較 17 + 2 + 1 個子頁（差異處）
+</div>
+
+<div class="note">
+  色塊 hover 看實色；V14 深色用 <span class="tag v14">深色警示</span> 標；V15 MILESTONE 用 <span class="tag v15">中明度</span> 標
+</div>
+
+<h2>職業安全子頁（3 頁）</h2>
+<div class="compare-table">
+  <div class="compare-header">
+    <div>頁 / slug</div>
+    <div class="label-v1">V1 · V14 Happy Hues</div>
+    <div class="label-v2">V2 · V15 MILESTONE OKLCH</div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">個人防護 (PPE)<span class="slug">ppe</span></div>
+    <div class="color-box">
+      <div class="color-swatch" style="background: #F9BC60"></div>
+      <div class="color-info"><div class="hex">#F9BC60</div><div class="name-zh">SAFETY GOLD</div><span class="tag v14">V14</span></div>
+    </div>
+    <div class="color-box">
+      <div class="color-swatch" style="background: oklch(70% 0.17 85)"></div>
+      <div class="color-info"><div class="hex">oklch(70% 0.17 85)</div><div class="name-zh">金黃</div><span class="tag v15">V15</span></div>
+    </div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">省工農機<span class="slug">machinery</span></div>
+    <div class="color-box">
+      <div class="color-swatch" style="background: #2CB67D"></div>
+      <div class="color-info"><div class="hex">#2CB67D</div><div class="name-zh">MACHINERY GREEN</div><span class="tag v14">V14</span></div>
+    </div>
+    <div class="color-box">
+      <div class="color-swatch" style="background: oklch(58% 0.16 140)"></div>
+      <div class="color-info"><div class="hex">oklch(58% 0.16 140)</div><div class="name-zh">翠綠</div><span class="tag v15">V15</span></div>
+    </div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">溫室專區<span class="slug">greenhouse</span></div>
+    <div class="color-box">
+      <div class="color-swatch" style="background: #C3F0CA"></div>
+      <div class="color-info"><div class="hex">#C3F0CA</div><div class="name-zh">SPROUT GREEN 淡</div><span class="tag v14">V14</span></div>
+    </div>
+    <div class="color-box">
+      <div class="color-swatch" style="background: oklch(68% 0.14 150)"></div>
+      <div class="color-info"><div class="hex">oklch(68% 0.14 150)</div><div class="name-zh">柔綠</div><span class="tag v15">V15</span></div>
+    </div>
+  </div>
+</div>
+
+<h2>健康促進子頁（4 頁）</h2>
+<div class="compare-table">
+  <div class="compare-header"><div>頁 / slug</div><div class="label-v1">V1 · V14</div><div class="label-v2">V2 · V15 MILESTONE</div></div>
+
+  <div class="compare-row">
+    <div class="page-name">熱傷害<span class="slug">heat</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #F45D48"></div><div class="color-info"><div class="hex">#F45D48</div><div class="name-zh">HEAT RED</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(60% 0.21 25)"></div><div class="color-info"><div class="hex">oklch(60% 0.21 25)</div><div class="name-zh">燒土橘紅</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">肌肉骨骼<span class="slug">msd</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #3DA9FC"></div><div class="color-info"><div class="hex">#3DA9FC</div><div class="name-zh">BONE BLUE</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(58% 0.16 230)"></div><div class="color-info"><div class="hex">oklch(58% 0.16 230)</div><div class="name-zh">海藍</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">農藥安全<span class="slug">pesticide</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #4FC4CF"></div><div class="color-info"><div class="hex">#4FC4CF</div><div class="name-zh">PESTICIDE CYAN</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(60% 0.13 180)"></div><div class="color-info"><div class="hex">oklch(60% 0.13 180)</div><div class="name-zh">青綠</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">心理健康<span class="slug">mental</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #A786DF"></div><div class="color-info"><div class="hex">#A786DF</div><div class="name-zh">LAVENDER</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(62% 0.14 300)"></div><div class="color-info"><div class="hex">oklch(62% 0.14 300)</div><div class="name-zh">洋紅紫</div><span class="tag v15">V15</span></div></div>
+  </div>
+</div>
+
+<h2>經濟與保險子頁（5 頁）</h2>
+<div class="compare-table">
+  <div class="compare-header"><div>頁 / slug</div><div class="label-v1">V1 · V14</div><div class="label-v2">V2 · V15 MILESTONE</div></div>
+
+  <div class="compare-row">
+    <div class="page-name">職業災害保險<span class="slug">occ</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #094067"></div><div class="color-info"><div class="hex">#094067</div><div class="name-zh">INS NAVY ⚠️ 深</div><span class="tag v14">V14 深</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(52% 0.16 250)"></div><div class="color-info"><div class="hex">oklch(52% 0.16 250)</div><div class="name-zh">寶石藍</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">農業保險<span class="slug">crop</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #00473E"></div><div class="color-info"><div class="hex">#00473E</div><div class="name-zh">CROP DARK ⚠️ 深</div><span class="tag v14">V14 深</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(52% 0.13 165)"></div><div class="color-info"><div class="hex">oklch(52% 0.13 165)</div><div class="name-zh">深青綠</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">農業補助資源<span class="slug">subsidy</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #FFD803"></div><div class="color-info"><div class="hex">#FFD803</div><div class="name-zh">SUBSIDY YELLOW</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(72% 0.18 88)"></div><div class="color-info"><div class="hex">oklch(72% 0.18 88)</div><div class="name-zh">蜂蜜金</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">職災試算表<span class="slug">calc1</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #078080"></div><div class="color-info"><div class="hex">#078080</div><div class="name-zh">TOOL TEAL</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(58% 0.12 195)"></div><div class="color-info"><div class="hex">oklch(58% 0.12 195)</div><div class="name-zh">灰青</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">退休金試算表<span class="slug">calc2</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #8C7851"></div><div class="color-info"><div class="hex">#8C7851</div><div class="name-zh">RETIRE BROWN</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(50% 0.08 70)"></div><div class="color-info"><div class="hex">oklch(50% 0.08 70)</div><div class="name-zh">卡其</div><span class="tag v15">V15</span></div></div>
+  </div>
+</div>
+
+<h2>研究成果子頁（5 頁）</h2>
+<div class="compare-table">
+  <div class="compare-header"><div>頁 / slug</div><div class="label-v1">V1 · V14</div><div class="label-v2">V2 · V15 MILESTONE</div></div>
+
+  <div class="compare-row">
+    <div class="page-name">研究出版<span class="slug">pub</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #00214D"></div><div class="color-info"><div class="hex">#00214D</div><div class="name-zh">ACADEMIC NAVY ⚠️ 深</div><span class="tag v14">V14 深</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(52% 0.14 240)"></div><div class="color-info"><div class="hex">oklch(52% 0.14 240)</div><div class="name-zh">鋼藍</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">圖解懶人包<span class="slug">infographic</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #0EA5E9"></div><div class="color-info"><div class="hex">#0EA5E9</div><div class="name-zh">INFO SKY BLUE（我補 V1）</div><span class="tag new">我補</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(65% 0.15 200)"></div><div class="color-info"><div class="hex">oklch(65% 0.15 200)</div><div class="name-zh">解說藍（我補 V2）</div><span class="tag new">我補</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">下載專區<span class="slug">dl</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #7F5AF0"></div><div class="color-info"><div class="hex">#7F5AF0</div><div class="name-zh">DOWNLOAD PURPLE</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(55% 0.22 275)"></div><div class="color-info"><div class="hex">oklch(55% 0.22 275)</div><div class="name-zh">紫藍</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">Podcast<span class="slug">pod</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #9656A1"></div><div class="color-info"><div class="hex">#9656A1</div><div class="name-zh">PODCAST PURPLE</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(58% 0.17 320)"></div><div class="color-info"><div class="hex">oklch(58% 0.17 320)</div><div class="name-zh">玫紅</div><span class="tag v15">V15</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">相關資源<span class="slug">rel</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #994FF3"></div><div class="color-info"><div class="hex">#994FF3</div><div class="name-zh">RESOURCE PURPLE</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(58% 0.22 285)"></div><div class="color-info"><div class="hex">oklch(58% 0.22 285)</div><div class="name-zh">紫</div><span class="tag v15">V15</span></div></div>
+  </div>
+</div>
+
+<h2>About 子頁（2 頁）</h2>
+<div class="compare-table">
+  <div class="compare-header"><div>頁 / slug</div><div class="label-v1">V1 · 我補</div><div class="label-v2">V2 · 我補</div></div>
+
+  <div class="compare-row">
+    <div class="page-name">研究團隊<span class="slug">researchteam</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #166534"></div><div class="color-info"><div class="hex">#166534</div><div class="name-zh">TEAM DEEP GREEN</div><span class="tag new">我補 V1</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(60% 0.15 155)"></div><div class="color-info"><div class="hex">oklch(60% 0.15 155)</div><div class="name-zh">中森林綠</div><span class="tag new">我補 V2</span></div></div>
+  </div>
+
+  <div class="compare-row">
+    <div class="page-name">聯繫我們<span class="slug">contact</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #22C55E"></div><div class="color-info"><div class="hex">#22C55E</div><div class="name-zh">CONTACT LIME</div><span class="tag new">我補 V1</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(68% 0.17 145)"></div><div class="color-info"><div class="hex">oklch(68% 0.17 145)</div><div class="name-zh">萊姆綠</div><span class="tag new">我補 V2</span></div></div>
+  </div>
+</div>
+
+<h2>特殊頁：最新消息</h2>
+<div class="compare-table">
+  <div class="compare-header"><div>頁 / slug</div><div class="label-v1">V1 · V14</div><div class="label-v2">V2 · V15 MILESTONE</div></div>
+
+  <div class="compare-row">
+    <div class="page-name">最新消息<span class="slug">news</span></div>
+    <div class="color-box"><div class="color-swatch" style="background: #FF8E3C"></div><div class="color-info"><div class="hex">#FF8E3C</div><div class="name-zh">NEWS ORANGE</div><span class="tag v14">V14</span></div></div>
+    <div class="color-box"><div class="color-swatch" style="background: oklch(65% 0.19 40)"></div><div class="color-info"><div class="hex">oklch(65% 0.19 40)</div><div class="name-zh">橙</div><span class="tag v15">V15</span></div></div>
+  </div>
+</div>
+
+<div style="margin-top: 48px; padding-top: 24px; border-top: 2px solid #E5E1D8; color: #475569; font-size: 13px;">
+  產出：<code>test/palette-compare-2026-04-20.html</code> · 主站 + 7 章節 + 4 分眾（12 頁）兩版完全相同
+</div>
+
+</div>
+</body>
+</html>
