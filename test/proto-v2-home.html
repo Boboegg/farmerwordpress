@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尊嚴農業 v2 首頁原型（佔位內容）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-deep:#3E542E; --brand:#627250; --sprout:#A7B070; --sprout-light:#DADCA9;
+    --cream:#EEE9D5; --paper:#F7F4EA; --ink:#2A331F;
+    --task-insure:#C29B3C; --task-gear:#C4703F; --task-health:#52918C;
+    --task-subsidy:#5E7FA0; --task-course:#8A6B4E; --task-start:#A7B070;
+    --warn:#A84B2F; --focus:#D9DC6A; --muted:#5A6350; --line:#D9D6C6;
+  }
+  *{margin:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC",sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;font-size:18px}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:4px solid var(--focus);outline-offset:2px;border-radius:4px}
+  .ph-tag{font-size:12px;background:var(--warn);color:#fff;padding:2px 8px;border-radius:999px;vertical-align:middle;font-weight:700;white-space:nowrap}
+
+  /* ====== 導覽 ====== */
+  header{position:sticky;top:0;background:rgba(247,244,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
+  .nav{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
+  .wordmark{font-family:"Noto Serif TC",serif;font-weight:900;font-size:22px;color:var(--brand-deep);display:flex;align-items:center;gap:10px}
+  .wordmark .bud{width:14px;height:22px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:linear-gradient(160deg,var(--sprout-light),var(--sprout));transform:rotate(14deg)}
+  nav ul{display:flex;gap:6px;list-style:none}
+  nav a{padding:10px 16px;border-radius:999px;font-weight:700;font-size:16px;transition:background .25s}
+  nav a:hover{background:var(--cream)}
+  nav a.cta{background:var(--brand-deep);color:var(--cream)}
+  nav a.cta:hover{background:#2F4122}
+
+  /* ====== S1+S2 第一屏 ====== */
+  .s1{position:relative;overflow:hidden;transition:background .5s}
+  .s1-inner{max-width:1140px;margin:0 auto;padding:56px 24px 34px;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+  .kicker{letter-spacing:.3em;font-weight:700;color:var(--brand);font-size:14px;margin-bottom:14px}
+  h1{font-size:clamp(30px,4.2vw,44px);line-height:1.4;font-weight:900;margin-bottom:16px}
+  h1 .ch{display:inline-block;opacity:0;transform:translateY(.4em);animation:chIn .5s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes chIn{to{opacity:1;transform:none}}
+  .lede{font-size:17px;color:var(--muted);max-width:430px}
+  .heroimg{aspect-ratio:4/3;border-radius:22px;background:repeating-linear-gradient(45deg,#D8D4C4,#D8D4C4 10px,#E3DFD0 10px,#E3DFD0 20px);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--muted);font-size:14.5px;position:relative;transform:translateY(var(--plx,0))}
+  .bud-fx{position:absolute;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:radial-gradient(circle at 35% 25%,var(--sprout-light),var(--sprout));animation:breathe 3.6s ease-in-out infinite}
+  .bud1{width:34px;height:52px;top:8%;right:6%;transform:rotate(18deg)}
+  .bud2{width:22px;height:34px;bottom:12%;left:4%;transform:rotate(-12deg);animation-delay:1.4s}
+  @keyframes breathe{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12);transform:scale(1.06) rotate(16deg)}}
+  .gates{max-width:1140px;margin:0 auto;padding:0 24px 60px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .gate{border-radius:20px;padding:30px 32px;cursor:pointer;transition:transform .3s,box-shadow .3s;min-height:150px;display:flex;flex-direction:column;justify-content:space-between}
+  .gate:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(42,51,31,.22)}
+  .gate .gt{font-size:23px;font-weight:900;margin-bottom:6px}
+  .gate .gd{font-size:15.5px;opacity:.88}
+  .gate .arrow{font-size:14px;font-weight:700;margin-top:14px;opacity:.75}
+  .gate-farmer{background:var(--brand-deep);color:var(--cream)}
+  .gate-research{background:#fff;border:2.5px solid var(--brand-deep);color:var(--brand-deep)}
+
+  /* ---- B 版（深綠開場）覆蓋 ---- */
+  body.vb .s1{background:var(--brand-deep)}
+  body.vb .s1 .kicker{color:var(--sprout-light)}
+  body.vb .s1 h1{color:var(--cream)}
+  body.vb .s1 .lede{color:rgba(238,233,213,.75)}
+  body.vb .gates-wrap{background:var(--brand-deep)}
+  body.vb .gate-farmer{background:var(--cream);color:var(--brand-deep)}
+  body.vb .gate-research{background:transparent;border-color:var(--sprout);color:var(--cream)}
+  body:not(.vb) .s1{background:var(--cream)}
+
+  /* ====== 段落共用 ====== */
+  section{padding:64px 0}
+  .inner{max-width:1140px;margin:0 auto;padding:0 24px}
+  .sechead{font-size:26px;font-weight:900;margin-bottom:8px}
+  .subnote{color:var(--muted);font-size:15px;margin-bottom:28px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;transition:box-shadow .3s,transform .3s;border-top:5px solid var(--line)}
+  .card:hover{box-shadow:0 10px 26px rgba(42,51,31,.12);transform:translateY(-2px)}
+  .card b{display:block;font-size:17.5px;margin-bottom:6px}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* S4 敘事帶 */
+  .story{background:var(--cream)}
+  .story .inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+  .divider{display:flex;align-items:center;gap:12px;color:var(--sprout);margin:14px 0;font-size:18px}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--brand);opacity:.35}
+  .serif{font-family:"Noto Serif TC",serif}
+  .storyimg{aspect-ratio:16/10;border-radius:20px;background:repeating-linear-gradient(45deg,#D8D4C4,#D8D4C4 10px,#E3DFD0 10px,#E3DFD0 20px);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+  .story p.body{font-size:16.5px;max-width:520px}
+  .btn{display:inline-block;border-radius:999px;padding:13px 30px;font-weight:700;font-size:16px;background:var(--brand-deep);color:var(--cream);margin-top:18px;transition:all .3s}
+  .btn:hover{background:#2F4122;transform:translateY(-2px);box-shadow:0 8px 20px rgba(62,84,46,.3)}
+
+  /* footer */
+  footer{background:var(--brand-deep);color:var(--cream);padding:52px 0 30px;font-size:14.5px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:30px}
+  footer h4{font-size:15px;margin-bottom:10px;color:var(--sprout-light)}
+  footer li{list-style:none;opacity:.85;margin-bottom:6px}
+  .copy{border-top:1px solid rgba(238,233,213,.2);padding-top:18px;opacity:.7;font-size:13px}
+
+  /* 切換鈕 */
+  .switch{position:fixed;right:18px;bottom:18px;z-index:99;background:var(--ink);color:var(--sprout-light);border:none;border-radius:999px;padding:13px 22px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+
+  @media (max-width:820px){
+    .s1-inner,.gates,.story .inner{grid-template-columns:1fr}
+    .cards{grid-template-columns:1fr}
+    .fgrid{grid-template-columns:1fr 1fr}
+    nav ul{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    h1 .ch{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="wordmark" href="#"><span class="bud"></span>尊嚴農業</a>
+    <nav aria-label="主導覽">
+      <ul>
+        <li><a class="cta" href="#farmer">農民專區</a></li>
+        <li><a href="#research">研究與政策</a></li>
+        <li><a href="#">最新消息</a></li>
+        <li><a href="#">關於</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- S1 開場 -->
+<div class="s1">
+  <div class="s1-inner">
+    <div>
+      <div class="kicker">農民有尊嚴 <span class="ph-tag">宣言文案待議</span></div>
+      <h1 id="headline">共構雲嘉農業工作者職業健康的社會安全網</h1>
+      <p class="lede">【佔位】一句補述：這是誰、在為誰做什麼——三十個字內講完。</p>
+    </div>
+    <div class="heroimg" id="plx">
+      <span>📷 首屏真實照片</span><span class="ph-tag">照片策展待議</span>
+      <div class="bud-fx bud1"></div><div class="bud-fx bud2"></div>
+    </div>
+  </div>
+  <!-- S2 雙門（同一屏） -->
+  <div class="gates-wrap"><div class="gates">
+    <a class="gate gate-farmer reveal" id="farmer" href="#">
+      <div><div class="gt">🌾 我是農民</div>
+      <div class="gd">找實用資訊——保險試算、安全防護、補助資源、上課</div></div>
+      <div class="arrow">進入農民專區 →</div>
+    </a>
+    <a class="gate gate-research reveal" id="research" href="#">
+      <div><div class="gt">📚 研究與政策</div>
+      <div class="gd">看計畫成果——研究出版、倡議論述、圖解懶人包、團隊</div></div>
+      <div class="arrow">進入研究專區 →</div>
+    </a>
+  </div></div>
+</div>
+
+<!-- S3 兩側精選 -->
+<section>
+  <div class="inner">
+    <div class="sechead reveal">現在就能用</div>
+    <p class="subnote reveal">農民側精選三件＋研究側精選三件（內容屆時由後台挑選）</p>
+    <div class="cards" style="margin-bottom:18px">
+      <div class="card reveal" style="border-top-color:var(--task-insure)"><b>💰 退休金試算</b><p>【佔位】三分鐘算出你的退休金</p></div>
+      <div class="card reveal" style="border-top-color:var(--task-health)"><b>🌡️ 熱天工作防護</b><p>【佔位】夏季農事的自我保護重點</p></div>
+      <div class="card reveal" style="border-top-color:var(--task-subsidy)"><b>📋 補助資源</b><p>【佔位】找得到、看得懂、申請得了</p></div>
+    </div>
+    <div class="cards">
+      <div class="card reveal" style="border-top-color:var(--brand)"><b class="serif">📖 研究出版</b><p>【佔位】計畫學術產出清單</p></div>
+      <div class="card reveal" style="border-top-color:var(--brand)"><b class="serif">🎧 Podcast</b><p>【佔位】聽見田裡的聲音</p></div>
+      <div class="card reveal" style="border-top-color:var(--brand)"><b class="serif">🖼️ 圖解懶人包</b><p>【佔位】研究轉譯的視覺化知識</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- S4 計畫敘事帶 -->
+<section class="story">
+  <div class="inner">
+    <div class="storyimg reveal">📷 紀實照 <span class="ph-tag" style="margin-left:8px">待策展</span></div>
+    <div class="reveal">
+      <div class="divider serif">✦</div>
+      <div class="sechead serif" style="font-size:24px">尊嚴農業是什麼 <span class="ph-tag">敘事文案待議</span></div>
+      <p class="body">【佔位】三句話：為什麼有這個計畫（困境）→ 我們相信什麼（信念）→ 我們正在做什麼（行動）。以倡議頁內容為底改寫。</p>
+      <a class="btn" href="#">了解尊嚴農業倡議</a>
+      <div class="divider serif">✦</div>
+    </div>
+  </div>
+</section>
+
+<!-- S5 最新消息 -->
+<section>
+  <div class="inner">
+    <div class="sechead reveal">最新消息</div>
+    <p class="subnote reveal">自動帶入最新三篇</p>
+    <div class="cards">
+      <div class="card reveal"><b>【佔位】消息標題一</b><p>2026-06-XX・一句摘要</p></div>
+      <div class="card reveal"><b>【佔位】消息標題二</b><p>2026-06-XX・一句摘要</p></div>
+      <div class="card reveal"><b>【佔位】消息標題三</b><p>2026-05-XX・一句摘要</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <div class="fgrid">
+      <div><h4>尊嚴農業</h4><li>【Customizer 動態】計畫 tagline</li><li>指導單位／主持單位／夥伴</li></div>
+      <div><h4>快速連結</h4><li>農民專區</li><li>研究與政策</li><li>最新消息</li></div>
+      <div><h4>友善連結</h4><li>【Customizer 動態】</li></div>
+      <div><h4>聯絡我們</h4><li>【Customizer 動態】地址／電話／email</li></div>
+    </div>
+    <div class="copy">© 2026 尊嚴農業 Dignity Farming Initiative・佔位 footer（實作沿用既有 Customizer 動態 4 欄）</div>
+  </div>
+</footer>
+
+<button class="switch" id="sw" aria-label="切換 A/B 版開場">🎨 看 B 版（深綠開場）</button>
+
+<script>
+  // 標題逐字進場（全站唯一儀式感，僅首頁 S1）
+  const h = document.getElementById('headline');
+  h.innerHTML = [...h.textContent].map((c,i)=>`<span class="ch" style="animation-delay:${.15+i*.035}s">${c}</span>`).join('');
+  // stagger 進場
+  const io = new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+  }),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.08+'s';io.observe(el);});
+  // hero 照片微視差（行動版與 reduced-motion 自動無效）
+  if(matchMedia('(min-width:820px) and (prefers-reduced-motion:no-preference)').matches){
+    addEventListener('scroll',()=>{
+      document.getElementById('plx').style.setProperty('--plx', (scrollY*.06)+'px');
+    },{passive:true});
+  }
+  // A/B 切換
+  const sw=document.getElementById('sw');
+  sw.addEventListener('click',()=>{
+    document.body.classList.toggle('vb');
+    sw.textContent = document.body.classList.contains('vb') ? '🎨 看 A 版（暖米開場）' : '🎨 看 B 版（深綠開場）';
+  });
+</script>
+</body>
+</html>
