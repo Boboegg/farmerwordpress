@@ -34,3 +34,6 @@ backups/page-*-content.html
 
 # /tmp 產生的暫存
 /tmp/wp-*
+
+# 本地 WP 快照（線上 DB/uploads 單向拉取，不入 git）
+.snapshots/
