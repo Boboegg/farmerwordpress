@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尊嚴農業｜田野誌首頁原型 v2（融入式開場＋下拉＋特效升級）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-deep:#3E542E; --brand:#627250; --sprout:#A7B070; --sprout-light:#DADCA9;
+    --cream:#EEE9D5; --paper:#F7F4EA; --ink:#2A331F;
+    --muted:#5A6350; --line:#C9C5B2; --focus:#D9DC6A;
+    --serif:"Noto Serif TC",serif; --sans:"Noto Sans TC",sans-serif;
+    --fs-1:14px; --fs-2:16px; --fs-3:18px; --fs-4:22px; --fs-5:28px; --fs-6:40px; --fs-7:56px; --fs-8:76px;
+  }
+  *{margin:0;box-sizing:border-box}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);font-size:var(--fs-3);line-height:1.85}
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;opacity:.028;z-index:999;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit;cursor:pointer}
+  :focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+  .ph{font-size:12px;background:#A84B2F;color:#fff;padding:1px 8px;border-radius:2px;font-weight:700;vertical-align:middle}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 28px}
+
+  .rule-top{height:3px;background:var(--brand-deep)}
+  header{border-bottom:1px solid var(--line);background:var(--cream);position:sticky;top:0;z-index:50}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0 12px;position:relative}
+  .wordmark{font-family:var(--serif);font-weight:900;font-size:var(--fs-4);letter-spacing:.12em}
+  .wordmark small{font-family:var(--sans);font-weight:400;font-size:var(--fs-1);color:var(--muted);letter-spacing:.28em;margin-left:14px}
+  nav ul{display:flex;gap:8px;list-style:none}
+  nav li{position:relative}
+  .navlink{background:none;border:none;font-size:var(--fs-2);font-weight:500;letter-spacing:.08em;padding:10px 14px;border-bottom:2px solid transparent;transition:border-color .25s;color:var(--ink)}
+  .navlink:hover{border-bottom-color:var(--brand-deep)}
+  .navlink .car{font-size:11px;color:var(--brand);margin-left:4px;display:inline-block;transition:transform .25s}
+  li.open .navlink .car{transform:rotate(180deg)}
+  li.open .navlink{border-bottom-color:var(--brand-deep)}
+  /* 下拉大選單（點擊式） */
+  .dd{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);min-width:300px;
+    background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--brand-deep);
+    opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s;z-index:60}
+  li.open .dd{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .dd .dd-head{font-size:var(--fs-1);letter-spacing:.3em;color:var(--brand);padding:16px 22px 8px;font-family:var(--serif)}
+  .dd a{display:flex;justify-content:space-between;align-items:baseline;padding:13px 22px;min-height:48px;font-size:var(--fs-3);font-weight:500;border-top:1px solid var(--line);transition:background .2s,padding-left .25s}
+  .dd a:hover{background:var(--cream);padding-left:30px}
+  .dd a .sub{font-size:var(--fs-1);color:var(--muted)}
+
+  /* 手機選單 */
+  .mtoggle{display:none;background:none;border:1.5px solid var(--brand-deep);color:var(--brand-deep);font-size:var(--fs-2);font-weight:700;padding:8px 18px;letter-spacing:.15em;border-radius:2px}
+  .msheet{display:none}
+
+  /* ── S1 開場：融入式嫩芽 ── */
+  .s1{padding:76px 0 0}
+  .s1-grid{display:grid;grid-template-columns:1fr 100px;gap:24px;align-items:start}
+  .s1 h1{font-family:var(--serif);font-weight:900;font-size:clamp(38px,6.4vw,var(--fs-8));line-height:1.32;letter-spacing:.04em;max-width:15em}
+  .s1 h1 .ch{display:inline-block;opacity:0;transform:translateY(.35em)}
+  body.intro-play .s1 h1 .ch{animation:chIn .55s cubic-bezier(.16,1,.3,1) forwards}
+  body.intro-done .s1 h1 .ch{opacity:1;transform:none}
+  @keyframes chIn{to{opacity:1;transform:none}}
+  .s1 .lede{margin-top:24px;font-size:var(--fs-3);color:var(--muted);max-width:34em;opacity:0;transition:opacity .8s .9s}
+  body.intro-play .s1 .lede,body.intro-done .s1 .lede{opacity:1}
+  .vert{writing-mode:vertical-rl;letter-spacing:.42em;font-family:var(--serif);font-weight:600;font-size:var(--fs-2);color:var(--brand);display:flex;align-items:center;gap:16px;justify-self:end;padding-top:4px}
+  /* SVG 芽 */
+  .bud-svg{width:56px;height:84px;overflow:visible}
+  .bud-svg path{fill:none;stroke:var(--brand);stroke-width:2.2;stroke-linecap:round}
+  .bud-svg .fillleaf{fill:url(#leafgrad);opacity:0;stroke:none}
+  body.intro-play .bud-svg .draw{stroke-dasharray:220;stroke-dashoffset:220;animation:draw 1.15s cubic-bezier(.4,0,.2,1) forwards}
+  body.intro-play .bud-svg .draw.d2{animation-delay:.28s}
+  body.intro-play .bud-svg .fillleaf{animation:leafIn .7s 1.05s forwards}
+  body.intro-done .bud-svg .draw{stroke-dasharray:none;opacity:.35}
+  body.intro-done .bud-svg .fillleaf{opacity:1}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes leafIn{to{opacity:1}}
+  .replay{background:none;border:none;color:var(--muted);font-size:12.5px;letter-spacing:.1em;margin-top:10px;writing-mode:horizontal-tb;opacity:.7}
+  .replay:hover{color:var(--brand-deep);opacity:1}
+
+  /* 照片帶＋Ken Burns */
+  .photoband{margin-top:60px}
+  .photo{aspect-ratio:21/8;overflow:hidden;position:relative}
+  .photo .kb{position:absolute;inset:0;background:repeating-linear-gradient(45deg,#DBD7C6,#DBD7C6 12px,#E4E0D0 12px,#E4E0D0 24px);display:flex;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:var(--fs-1)}
+  @media (prefers-reduced-motion:no-preference){.photo .kb{animation:kenburns 22s ease-in-out infinite alternate}}
+  @keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.07) translate(-1.5%,1.5%)}}
+  .caption{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:10px 0 14px;font-size:var(--fs-1);color:var(--muted);letter-spacing:.06em}
+
+  /* 目次 */
+  .s2{padding:96px 0}
+  .kanji-label{display:flex;align-items:center;gap:14px;margin-bottom:44px}
+  .seal{width:34px;height:34px;border:1.5px solid var(--brand-deep);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:var(--fs-2);font-weight:700;color:var(--brand-deep)}
+  .kanji-label h2{font-family:var(--serif);font-size:var(--fs-5);font-weight:700;letter-spacing:.18em}
+  .toc{display:grid;grid-template-columns:1.16fr .84fr}
+  .vol{padding:38px 44px 44px;border:1px solid var(--line)}
+  .vol+.vol{border-left:none}
+  .vol .no{font-size:var(--fs-1);letter-spacing:.34em;color:var(--brand);margin-bottom:10px}
+  .vol h3{font-family:var(--serif);font-size:var(--fs-6);font-weight:900;letter-spacing:.06em;line-height:1.3}
+  .vol h3 .accent{color:var(--brand-deep)}
+  .vol .desc{color:var(--muted);font-size:var(--fs-2);margin:12px 0 26px}
+  .vol ol{list-style:none}
+  .vol li{border-top:1px solid var(--line)}
+  .vol li a{display:flex;justify-content:space-between;align-items:baseline;padding:14px 2px;font-size:var(--fs-3);font-weight:500;transition:padding-left .3s cubic-bezier(.16,1,.3,1)}
+  .vol li a:hover{padding-left:14px}
+  .vol li a::after{content:"→";font-size:var(--fs-2);color:var(--brand);opacity:0;transition:opacity .3s}
+  .vol li a:hover::after{opacity:1}
+  .vol li .sub{font-size:var(--fs-1);color:var(--muted);font-weight:400}
+  .vol-farmer{background:var(--paper)}
+  .enter{display:inline-block;margin-top:26px;font-weight:700;font-size:var(--fs-2);color:var(--brand-deep);border-bottom:2px solid var(--brand-deep);padding-bottom:3px;letter-spacing:.1em}
+
+  .s3{padding:0 0 96px}
+  .pick{border-top:1px solid var(--line)}
+  .pick a{display:grid;grid-template-columns:52px 1fr auto;gap:22px;align-items:baseline;padding:24px 2px;transition:background .3s}
+  .pick a:hover{background:var(--paper)}
+  .pick .idx{font-family:var(--serif);font-size:var(--fs-4);color:var(--brand);font-weight:700}
+  .pick b{font-size:var(--fs-4);font-weight:700;font-family:var(--serif);letter-spacing:.04em}
+  .pick p{font-size:var(--fs-2);color:var(--muted);margin-top:4px}
+  .pick .tag{font-size:var(--fs-1);letter-spacing:.2em;color:var(--brand);white-space:nowrap}
+  .pick:last-child{border-bottom:1px solid var(--line)}
+
+  .s4{padding:0 0 96px;text-align:center}
+  .star{color:var(--sprout);font-size:var(--fs-3);margin-bottom:40px}
+  .s4 blockquote{font-family:var(--serif);font-size:var(--fs-5);font-weight:600;line-height:2;letter-spacing:.06em;max-width:24em;margin:0 auto}
+  .s4 .sig{margin-top:34px;font-size:var(--fs-2);color:var(--muted);letter-spacing:.18em}
+  .s4 .more{display:inline-block;margin-top:30px;font-weight:700;font-size:var(--fs-2);border:1.5px solid var(--brand-deep);color:var(--brand-deep);padding:12px 34px;border-radius:2px;letter-spacing:.14em;transition:all .3s}
+  .s4 .more:hover{background:var(--brand-deep);color:var(--cream)}
+
+  .s5{padding:0 0 96px}
+  .news{border-top:1px solid var(--line)}
+  .news a{display:grid;grid-template-columns:120px 1fr;gap:26px;padding:16px 2px;border-bottom:1px solid var(--line);font-size:var(--fs-3);transition:background .3s}
+  .news a:hover{background:var(--paper)}
+  .news time{color:var(--muted);font-size:var(--fs-2);letter-spacing:.08em;font-variant-numeric:tabular-nums}
+
+  /* 頁腳生長芽 */
+  .grow-wrap{display:flex;justify-content:center;padding:8px 0 30px}
+  .grow-svg{width:44px;height:66px}
+  .grow-svg path{fill:none;stroke:var(--sprout);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:220;stroke-dashoffset:var(--grow,220);transition:stroke-dashoffset .2s linear}
+
+  footer{background:var(--brand-deep);color:var(--cream);padding:52px 0 30px;font-size:var(--fs-2)}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:34px}
+  footer h4{font-family:var(--serif);font-size:var(--fs-2);margin-bottom:12px;color:var(--sprout-light);letter-spacing:.2em}
+  footer li{list-style:none;opacity:.85;margin-bottom:7px;font-size:var(--fs-1)}
+  .copy{border-top:1px solid rgba(238,233,213,.25);padding-top:18px;opacity:.65;font-size:13px;letter-spacing:.06em}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* 手機快捷列＋touch 回饋 */
+  .quickbar{display:none}
+  @media (hover:none){
+    a:active,button:active,.vol li a:active{transform:scale(.985);transition:transform .08s}
+  }
+  @media (max-width:860px){
+    .s1-grid{grid-template-columns:1fr}
+    .vert{writing-mode:horizontal-tb;letter-spacing:.3em;justify-self:start;order:-1;align-items:center}
+    .bud-svg{width:34px;height:52px}
+    .toc{grid-template-columns:1fr}
+    .vol+.vol{border-left:1px solid var(--line);border-top:none}
+    .fgrid{grid-template-columns:1fr 1fr}
+    nav ul{display:none}
+    .mtoggle{display:block}
+    .msheet{display:block;position:fixed;inset:0;background:var(--cream);z-index:100;padding:30px 28px;overflow:auto;transform:translateY(-102%);transition:transform .35s cubic-bezier(.16,1,.3,1)}
+    .msheet.open{transform:none}
+    .msheet .mclose{float:right;font-size:var(--fs-4);background:none;border:none;color:var(--brand-deep);font-weight:700;padding:4px 10px}
+    .msheet .dd-head{font-family:var(--serif);font-size:var(--fs-1);letter-spacing:.3em;color:var(--brand);margin:26px 0 4px}
+    .msheet a{display:block;padding:14px 2px;font-size:var(--fs-4);font-weight:500;border-bottom:1px solid var(--line)}
+    .pick a{grid-template-columns:40px 1fr}
+    .pick .tag{display:none}
+    .quickbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--brand-deep);box-shadow:0 -1px 0 var(--line)}
+    .quickbar a{flex:1;text-align:center;color:var(--cream);font-weight:700;font-size:var(--fs-3);padding:15px 8px;letter-spacing:.1em}
+    .quickbar a+a{border-left:1px solid rgba(238,233,213,.25)}
+    body{padding-bottom:54px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal,.s1 h1 .ch,.s1 .lede{opacity:1;transform:none}
+    .bud-svg .draw{stroke-dasharray:none}
+    .bud-svg .fillleaf{opacity:1}
+  }
+</style>
+</head>
+<body>
+<div class="rule-top"></div>
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="#">尊嚴農業<small>DIGNITY FARMING</small></a>
+    <nav aria-label="主導覽"><ul>
+      <li id="dd-farmer">
+        <button class="navlink" aria-expanded="false">農民專區<span class="car">▾</span></button>
+        <div class="dd">
+          <div class="dd-head">第一輯・實用</div>
+          <a href="#">我要算保險與權益 <span class="sub">試算×2</span></a>
+          <a href="#">工作安全裝備</a>
+          <a href="#">健康與防護</a>
+          <a href="#">找補助資源</a>
+          <a href="#">我想上課</a>
+          <a href="#">我剛開始務農 <span class="sub">新手</span></a>
+          <a href="#">聽見田裡的聲音 <span class="sub">Podcast</span></a>
+          <a href="#">下載專區</a>
+        </div>
+      </li>
+      <li id="dd-research">
+        <button class="navlink" aria-expanded="false">研究與政策<span class="car">▾</span></button>
+        <div class="dd">
+          <div class="dd-head">第二輯・研究</div>
+          <a href="#">尊嚴農業倡議</a>
+          <a href="#">研究成果</a>
+          <a href="#">研究出版</a>
+          <a href="#">研究團隊</a>
+        </div>
+      </li>
+      <li><button class="navlink">最新消息</button></li>
+      <li><button class="navlink">關於</button></li>
+    </ul></nav>
+    <button class="mtoggle" id="mtoggle">選單</button>
+  </div>
+</header>
+
+<div class="msheet" id="msheet">
+  <button class="mclose" id="mclose">✕ 關閉</button>
+  <div class="dd-head">第一輯・實用</div>
+  <a href="#">我要算保險與權益</a><a href="#">工作安全裝備</a><a href="#">健康與防護</a>
+  <a href="#">找補助資源</a><a href="#">我想上課</a><a href="#">我剛開始務農</a>
+  <a href="#">聽見田裡的聲音（Podcast）</a><a href="#">下載專區</a>
+  <div class="dd-head">第二輯・研究</div>
+  <a href="#">尊嚴農業倡議</a><a href="#">研究成果</a><a href="#">研究出版</a><a href="#">研究團隊</a>
+  <div class="dd-head">全站</div>
+  <a href="#">最新消息</a><a href="#">關於</a><a href="#">聯繫我們</a>
+</div>
+
+<!-- S1 融入式開場 -->
+<section class="s1">
+  <div class="wrap">
+    <div class="s1-grid">
+      <div>
+        <h1 id="headline">共構雲嘉農業工作者職業健康的社會安全網</h1>
+        <p class="lede">【佔位・宣言補述】一句話說明這是誰、為誰而做。 <span class="ph">文案待議</span></p>
+      </div>
+      <div class="vert">
+        <svg class="bud-svg" viewBox="0 0 68 100" aria-hidden="true">
+          <defs>
+            <linearGradient id="leafgrad" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#DADCA9"/><stop offset="1" stop-color="#A7B070"/>
+            </linearGradient>
+          </defs>
+          <path class="fillleaf" d="M31,92 C12,72 10,42 32,8 C39,36 40,66 31,92 Z"/>
+          <path class="fillleaf" d="M36,96 C56,76 60,46 44,14 C34,42 32,72 36,96 Z" style="animation-delay:1.25s"/>
+          <path class="draw" d="M31,92 C12,72 10,42 32,8 C39,36 40,66 31,92 Z"/>
+          <path class="draw d2" d="M36,96 C56,76 60,46 44,14 C34,42 32,72 36,96 Z"/>
+        </svg>
+        <span>農民有尊嚴・二〇二六</span>
+        <button class="replay" id="replay" title="重播開場動畫">↺ 重播開場</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap photoband">
+    <div class="photo"><div class="kb">📷 首屏真實照片・Ken Burns 呼吸 <span class="ph">照片策展待議</span></div></div>
+    <div class="caption"><span>【佔位圖說】嘉義民雄・田間訪視紀錄</span><span>攝影：計畫團隊</span></div>
+  </div>
+</section>
+
+<!-- S2 目次 -->
+<section class="s2" id="toc">
+  <div class="wrap">
+    <div class="kanji-label reveal"><span class="seal">目</span><h2>本站目次</h2></div>
+    <div class="toc">
+      <div class="vol vol-farmer reveal">
+        <div class="no">第一輯・實用</div>
+        <h3>我是<span class="accent">農民</span></h3>
+        <p class="desc">找得到、看得懂、用得上——為農友整理的實用資訊。</p>
+        <ol>
+          <li><a href="#">我要算保險與權益 <span class="sub">退休金・職災試算</span></a></li>
+          <li><a href="#">工作安全裝備 <span class="sub">防護具・農機・溫室</span></a></li>
+          <li><a href="#">健康與防護 <span class="sub">熱危害・農藥・身心</span></a></li>
+          <li><a href="#">找補助資源</a></li>
+          <li><a href="#">我想上課</a></li>
+          <li><a href="#">我剛開始務農 <span class="sub">新手一條龍</span></a></li>
+          <li><a href="#">聽見田裡的聲音 <span class="sub">Podcast</span></a></li>
+          <li><a href="#">下載專區</a></li>
+        </ol>
+        <a class="enter" href="#">進入農民專區</a>
+      </div>
+      <div class="vol reveal">
+        <div class="no">第二輯・研究</div>
+        <h3>研究與政策</h3>
+        <p class="desc">計畫的學術產出與倡議論述。</p>
+        <ol>
+          <li><a href="#">尊嚴農業倡議 <span class="sub">我們相信什麼</span></a></li>
+          <li><a href="#">研究成果</a></li>
+          <li><a href="#">研究出版</a></li>
+          <li><a href="#">研究團隊</a></li>
+        </ol>
+        <a class="enter" href="#">進入研究專區</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S3 本期精選 -->
+<section class="s3">
+  <div class="wrap">
+    <div class="kanji-label reveal"><span class="seal">選</span><h2>本期精選</h2></div>
+    <div class="pick reveal"><a href="#"><span class="idx">壹</span><span><b>退休金試算——三分鐘算出你的老後</b><p>【佔位】一句導讀。</p></span><span class="tag">實用工具</span></a></div>
+    <div class="pick reveal"><a href="#"><span class="idx">貳</span><span><b>熱天工作，怎麼保護自己</b><p>【佔位】一句導讀。</p></span><span class="tag">健康防護</span></a></div>
+    <div class="pick reveal"><a href="#"><span class="idx">參</span><span><b>聽見田裡的聲音——最新一集上線</b><p>【佔位】一句導讀。</p></span><span class="tag">研究轉譯</span></a></div>
+  </div>
+</section>
+
+<!-- S4 發刊詞 -->
+<section class="s4">
+  <div class="wrap reveal">
+    <div class="star">✦</div>
+    <blockquote>「【佔位・發刊詞】三句話：<br>為什麼有這個計畫、我們相信什麼、<br>我們正在做什麼。」<span class="ph">文案待議</span></blockquote>
+    <div class="sig">—— 尊嚴農業計畫團隊</div><br>
+    <a class="more" href="#">了解尊嚴農業倡議</a>
+  </div>
+</section>
+
+<!-- S5 近期紀事 -->
+<section class="s5">
+  <div class="wrap">
+    <div class="kanji-label reveal"><span class="seal">誌</span><h2>近期紀事</h2></div>
+    <div class="news reveal">
+      <a href="#"><time>2026.06.—</time><span>【佔位】消息標題一</span></a>
+      <a href="#"><time>2026.06.—</time><span>【佔位】消息標題二</span></a>
+      <a href="#"><time>2026.05.—</time><span>【佔位】消息標題三</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 頁腳生長芽（scroll-linked） -->
+<div class="grow-wrap" title="讀完整頁，芽就長滿">
+  <svg class="grow-svg" id="growbud" viewBox="0 0 68 100" aria-hidden="true">
+    <path d="M31,92 C12,72 10,42 32,8 C39,36 40,66 31,92 Z"/>
+    <path d="M36,96 C56,76 60,46 44,14 C34,42 32,72 36,96 Z"/>
+  </svg>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h4>尊嚴農業</h4><li>【Customizer 動態】tagline</li><li>指導單位／主持單位／夥伴</li></div>
+      <div><h4>快速連結</h4><li>農民專區</li><li>研究與政策</li><li>最新消息</li></div>
+      <div><h4>友善連結</h4><li>【Customizer 動態】</li></div>
+      <div><h4>聯絡我們</h4><li>【Customizer 動態】</li></div>
+    </div>
+    <div class="copy">© 2026 尊嚴農業 Dignity Farming Initiative</div>
+  </div>
+</footer>
+
+<!-- 手機底部快捷列（示意：實作時農民門內常駐） -->
+<div class="quickbar" aria-label="快速工具">
+  <a href="#">🧮 算保險</a><a href="#">📋 找補助</a>
+</div>
+
+<script>
+  // ── 融入式開場：首次播放、回訪靜態 ──
+  const played = sessionStorage.getItem('fw-intro');
+  function runIntro(force){
+    document.body.classList.remove('intro-done','intro-play');
+    if(!force && played){ document.body.classList.add('intro-done'); return; }
+    void document.body.offsetWidth; // reflow 重置動畫
+    document.body.classList.add('intro-play');
+    sessionStorage.setItem('fw-intro','1');
+  }
+  const h=document.getElementById('headline');
+  h.innerHTML=[...h.textContent].map((c,i)=>`<span class="ch" style="animation-delay:${.25+i*.045}s">${c}</span>`).join('');
+  runIntro(false);
+  document.getElementById('replay').addEventListener('click',()=>runIntro(true));
+
+  // ── stagger 進場 ──
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*.09+'s';io.observe(el)});
+
+  // ── 下拉大選單（點擊式＋Esc＋點外關） ──
+  ['dd-farmer','dd-research'].forEach(id=>{
+    const li=document.getElementById(id), btn=li.querySelector('.navlink');
+    btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      const isOpen=li.classList.contains('open');
+      document.querySelectorAll('nav li.open').forEach(x=>{x.classList.remove('open');x.querySelector('.navlink').setAttribute('aria-expanded','false')});
+      if(!isOpen){li.classList.add('open');btn.setAttribute('aria-expanded','true')}
+    });
+  });
+  document.addEventListener('click',()=>document.querySelectorAll('nav li.open').forEach(x=>x.classList.remove('open')));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('nav li.open').forEach(x=>x.classList.remove('open'))});
+
+  // ── 手機選單 ──
+  const ms=document.getElementById('msheet');
+  document.getElementById('mtoggle').addEventListener('click',()=>ms.classList.add('open'));
+  document.getElementById('mclose').addEventListener('click',()=>ms.classList.remove('open'));
+
+  // ── 頁腳生長芽：捲動進度 → 描邊 ──
+  const gb=document.getElementById('growbud');
+  if(matchMedia('(prefers-reduced-motion:no-preference)').matches){
+    addEventListener('scroll',()=>{
+      const max=document.documentElement.scrollHeight-innerHeight;
+      const p=Math.min(1,scrollY/(max||1));
+      gb.style.setProperty('--grow',220*(1-p));
+      gb.querySelectorAll('path').forEach(el=>el.style.strokeDashoffset=220*(1-p));
+    },{passive:true});
+    gb.querySelectorAll('path').forEach(el=>{el.style.strokeDasharray=220;el.style.strokeDashoffset=220});
+  }
+</script>
+</body>
+</html>
