@@ -3,33 +3,71 @@
  * Template Name: 研究出版（期刊與季會發表）
  * Slug: research-publication
  */
-get_header(); ?>
+get_header();
 
-<div class="fw-page-layout">
+$research_material_ids = array_values(
+    array_filter(
+        array_map( 'absint', (array) get_option( 'fwdignity_research_material_ids', array() ) )
+    )
+);
+
+$research_materials = array();
+foreach ( $research_material_ids as $research_material_id ) {
+    $research_material = get_post( $research_material_id );
+    if (
+        $research_material instanceof WP_Post
+        && 'attachment' === $research_material->post_type
+        && 'application/pdf' === get_post_mime_type( $research_material )
+    ) {
+        $research_materials[] = $research_material;
+    }
+}
+?>
+
+<div class="fw-page-layout fw-page-layout--full">
 
 <main class="rs-main" id="main" role="main">
 
       <!-- Hero -->
-      <section class="rs-hero reveal">
+      <section class="rs-hero">
         <div class="rs-hero-inner">
           <span class="rs-hero-badge"><i class="fas fa-book-open"></i> PUBLICATION</span>
-          <h1 data-hook-title>研究出版與季會發表</h1>
+          <h1>研究出版</h1>
           <p class="rs-hero-lead">本計畫團隊於 HISP 人文創新與社會實踐計畫季會、國內外期刊與研討會之學術發表紀錄，呈現從田野到論述的研究軌跡。</p>
-          <div class="rs-hero-stats">
-            <div class="rs-hero-stat"><b><span data-count="3">3</span></b><span>HISP 季會發表</span></div>
-            <div class="rs-hero-stat"><b><span data-count="2">2</span></b><span>期刊論文撰寫中</span></div>
-            <div class="rs-hero-stat"><b>2025-2026</b><span>發表年度</span></div>
-          </div>
+          <p class="rs-refresh-note">正式書目、發表資訊與外部連結將逐筆核對後持續更新。</p>
         </div>
       </section>
 
+      <?php if ( $research_materials ) : ?>
+      <section class="rs-sec rs-materials" aria-labelledby="rs-materials-title">
+        <div class="rs-sec-head">
+          <div>
+            <h2 id="rs-materials-title">本計畫研究資料</h2>
+            <p>工作坊與季會簡報 PDF。</p>
+          </div>
+        </div>
+        <div class="rs-pub-list">
+          <?php foreach ( $research_materials as $research_material ) : ?>
+            <a href="<?php echo esc_url( wp_get_attachment_url( $research_material->ID ) ); ?>" target="_blank" rel="noopener" class="rs-pub">
+              <span class="rs-pub-type">PDF</span>
+              <div class="rs-pub-body">
+                <h3><?php echo esc_html( get_the_title( $research_material ) ); ?></h3>
+                <p class="rs-pub-meta">尊嚴農業 · <em>研究資料</em></p>
+              </div>
+              <span class="rs-pub-cta">開啟 PDF <i class="fas fa-arrow-up-right-from-square"></i></span>
+            </a>
+          <?php endforeach; ?>
+        </div>
+      </section>
+      <?php endif; ?>
+
       <!-- 類型說明 -->
-      <section class="rs-sec reveal">
+      <section class="rs-sec">
         <div class="rs-sec-head">
           <div class="rs-sec-icon"><i class="fas fa-list-check"></i></div>
           <div>
-            <h2>發表<span class="accent">類型</span></h2>
-            <p>本頁收錄 3 種學術產出類型。</p>
+            <h2>發表類型</h2>
+            <p>依學術產出形式整理現有公開紀錄。</p>
           </div>
         </div>
         <div class="rs-legend">
@@ -40,7 +78,7 @@ get_header(); ?>
       </section>
 
       <!-- 2026 發表 -->
-      <section class="rs-sec reveal">
+      <section class="rs-sec">
         <div class="rs-pub-year"><i class="fas fa-calendar-days"></i> 2026</div>
         <div class="rs-pub-list">
           <a href="https://www.hisp.ntu.edu.tw/teams/ccu#achievements" target="_blank" rel="noopener" class="rs-pub">
@@ -56,7 +94,7 @@ get_header(); ?>
       </section>
 
       <!-- 2025 發表 -->
-      <section class="rs-sec reveal">
+      <section class="rs-sec">
         <div class="rs-pub-year"><i class="fas fa-calendar-days"></i> 2025</div>
         <div class="rs-pub-list">
           <a href="https://www.hisp.ntu.edu.tw/teams/ccu#achievements" target="_blank" rel="noopener" class="rs-pub">
@@ -81,11 +119,11 @@ get_header(); ?>
       </section>
 
       <!-- 撰寫中 -->
-      <section class="rs-sec reveal">
+      <section class="rs-sec">
         <div class="rs-sec-head">
           <div class="rs-sec-icon"><i class="fas fa-pen-ruler"></i></div>
           <div>
-            <h2>撰寫<span class="accent">中</span></h2>
+            <h2>撰寫中</h2>
             <p>規劃投稿學術期刊之論文主題。</p>
           </div>
         </div>
@@ -104,21 +142,19 @@ get_header(); ?>
       </section>
 
       <!-- 交叉連結 -->
-      <section class="rs-sec reveal">
+      <section class="rs-sec">
         <div class="rs-cross">
           <h3>延伸閱讀</h3>
           <div class="rs-cross-links">
             <a href="/research-results/"><i class="fas fa-circle-nodes"></i>研究成果總覽</a>
             <a href="/podcast/"><i class="fas fa-podcast"></i>Podcast 節目</a>
-            <a href="/download-zone/"><i class="fas fa-download"></i>下載專區</a>
-            <a href="/related-resources/"><i class="fas fa-link"></i>相關資源</a>
+            <a href="<?php echo esc_url( home_url( '/research-results/related-resources/' ) ); ?>"><i class="fas fa-link"></i>相關資源</a>
           </div>
         </div>
       </section>
 
     </main>
 
-<?php get_template_part( 'template-parts/sidebar' ); ?>
 </div>
 
 <?php get_footer();

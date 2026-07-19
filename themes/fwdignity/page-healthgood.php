@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 健康促進
+ * Slug: healthgood
  * fwdignity · page-healthgood.php v2
  * 健康促進 章節 Hub(slug=healthgood) — 擴充版
  *

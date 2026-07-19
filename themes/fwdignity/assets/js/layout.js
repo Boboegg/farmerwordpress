@@ -21,17 +21,44 @@
     burger.addEventListener('click', function() {
       const open = nav.classList.toggle('open');
       burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (open) {
+        const firstControl = nav.querySelector('.fw-nav-menu a, .fw-nav-menu button');
+        if (firstControl) firstControl.focus();
+      }
     });
   }
 
-  // dropdown keyboard a11y
-  nav.querySelectorAll('.fw-nav-item.has-dropdown > .fw-nav-link').forEach(function(link) {
-    link.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const parent = link.parentElement;
-        parent.classList.toggle('focus-open');
-      }
+  const dropdowns = nav.querySelectorAll('.fw-nav-item.has-dropdown');
+
+  function closeDropdowns(except) {
+    dropdowns.forEach(function(item) {
+      if (item === except) return;
+      item.classList.remove('focus-open');
+      const trigger = item.querySelector(':scope > .fw-nav-trigger');
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
     });
+  }
+
+  nav.querySelectorAll('.fw-nav-trigger').forEach(function(trigger) {
+    trigger.addEventListener('click', function() {
+      const parent = trigger.parentElement;
+      const willOpen = !parent.classList.contains('focus-open');
+      closeDropdowns(parent);
+      parent.classList.toggle('focus-open', willOpen);
+      trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(event) {
+    if (!nav.contains(event.target)) closeDropdowns();
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeDropdowns();
+      nav.classList.remove('open');
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+      if (burger) burger.focus();
+    }
   });
 })();

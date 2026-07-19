@@ -1,0 +1,1310 @@
+/*
+ * 尊嚴農業全站拍板版型，2026-07-14。
+ *
+ * 這支檔案只負責資訊層級、網格與響應式排列。
+ * 色彩、字體、字級、元件幾何、陰影、頁尾與既有粗線均由清朗田野 3.3.0 管理。
+ */
+
+/* 01 首頁：B 編輯頭版＋A 圓潤外框 */
+body[data-page="home"] .fw-home-v04-hero {
+  width: min(1320px, calc(100% - 56px)) !important;
+  min-height: 520px !important;
+  margin: 48px auto 56px !important;
+  border-radius: var(--fw-radius-card) !important;
+  overflow: hidden !important;
+}
+
+body[data-page="home"] .fw-home-v04-hero-content {
+  min-height: 520px !important;
+  max-width: 1120px !important;
+  justify-content: flex-end !important;
+  padding-bottom: 72px !important;
+}
+
+body[data-page="home"] .fw-home-v06-weather {
+  width: min(1320px, calc(100% - 56px)) !important;
+  margin: 24px auto 0 !important;
+  border: 1px solid var(--fw-color-line) !important;
+  border-radius: var(--fw-radius-card) !important;
+  overflow: hidden !important;
+}
+
+body[data-page="home"] .fw-home-v06-weather-layout {
+  padding-inline: 24px !important;
+}
+
+body[data-page="home"] .fw-home-v06-news-section {
+  padding-top: 72px !important;
+}
+
+body[data-page="home"] .fw-home-v06-editorial-news {
+  grid-template-columns: minmax(0, 1.8fr) minmax(320px, .8fr) !important;
+  gap: 36px !important;
+}
+
+body[data-page="home"] .fw-home-v06-feature {
+  min-height: 620px !important;
+}
+
+body[data-page="home"] .fw-home-v06-news-picker-panel {
+  align-self: stretch !important;
+}
+
+body[data-page="home"] .fw-home-v04-framework-layout {
+  grid-template-columns: minmax(260px, .75fr) minmax(0, 1.75fr) !important;
+}
+
+/* 02 全部內容：左側篩選＋一致卡片網格 */
+body[data-page="thenews"] .tnews-workspace {
+  grid-template-columns: 264px minmax(0, 1fr) !important;
+  gap: 28px !important;
+}
+
+body[data-page="thenews"] .tnews-filter-panel {
+  position: sticky !important;
+  top: 104px !important;
+  align-self: start !important;
+}
+
+body[data-page="thenews"] .tnews-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 20px !important;
+  align-items: start !important;
+}
+
+body[data-page="thenews"] .tnews-grid > .tnews-card {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-self: start !important;
+}
+
+body[data-page="thenews"] .tnews-grid > .tnews-card .tnews-card-media {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: var(--fw-thumb-card-ratio, 3 / 2) !important;
+}
+
+/* 03 田間知識與資源：單層六卡 */
+body[data-page="farming-guide"] .fg-guide__quick-nav {
+  display: none !important;
+}
+
+body[data-page="farming-guide"] .fg-guide__task-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body[data-page="farming-guide"] .fg-guide__task {
+  min-width: 0 !important;
+}
+
+/* 04 田野入口：A 田野雜誌 */
+body[data-page="field-learning"] .field-family-pathways {
+  display: none !important;
+}
+
+body[data-page="field-learning"] .field-home-intro-grid {
+  grid-template-columns: minmax(260px, .48fr) minmax(0, 1.52fr) !important;
+  gap: 32px !important;
+  align-items: center !important;
+}
+
+body[data-page="field-learning"] .field-featured {
+  grid-template-columns: minmax(0, 1.55fr) minmax(340px, .85fr) !important;
+}
+
+body[data-page="field-learning"] .field-record-grid {
+  grid-template-columns: 1.35fr .825fr .825fr !important;
+}
+
+body[data-page="field-notes"] .field-notes-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+}
+
+body[data-page="field-notes"] .field-notes-grid > .field-note {
+  grid-column: span 4 !important;
+}
+
+body[data-page="field-notes"] .field-notes-grid > .field-note:first-child {
+  grid-column: span 8 !important;
+}
+
+body[data-page="people-who-farm"] .pf-question-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+body[data-page="people-who-farm"] .pf-question-entry {
+  grid-column: auto !important;
+}
+
+body[data-page="people-who-farm"] .pf-question-entry:first-child {
+  grid-column: 1 / -1 !important;
+}
+
+body[data-page="farmer-study"] .training-record-list {
+  grid-template-columns: 1.4fr .8fr .8fr !important;
+}
+
+/* 05 五個田野主題：A 問題專刊 */
+body:is(
+  [data-page="body-and-farm-work"],
+  [data-page="changing-farm-work"],
+  [data-page="rural-support"],
+  [data-page="risk-and-responsibility"],
+  [data-page="knowledge-in-the-field"]
+) .pf-topic-hero {
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 24px !important;
+  padding-bottom: 40px !important;
+}
+
+body:is(
+  [data-page="body-and-farm-work"],
+  [data-page="changing-farm-work"],
+  [data-page="rural-support"],
+  [data-page="risk-and-responsibility"],
+  [data-page="knowledge-in-the-field"]
+) .pf-topic-hero__copy {
+  max-width: none !important;
+}
+
+body:is(
+  [data-page="body-and-farm-work"],
+  [data-page="changing-farm-work"],
+  [data-page="rural-support"],
+  [data-page="risk-and-responsibility"],
+  [data-page="knowledge-in-the-field"]
+) :is(.pf-topic-hero__core, .pf-topic-hero__lead) {
+  max-width: 1100px !important;
+}
+
+body:is(
+  [data-page="body-and-farm-work"],
+  [data-page="changing-farm-work"],
+  [data-page="rural-support"],
+  [data-page="risk-and-responsibility"],
+  [data-page="knowledge-in-the-field"]
+) .pf-topic-hero__core {
+  font-size: 20px !important;
+}
+
+body:is(
+  [data-page="body-and-farm-work"],
+  [data-page="changing-farm-work"],
+  [data-page="rural-support"],
+  [data-page="risk-and-responsibility"],
+  [data-page="knowledge-in-the-field"]
+) .pf-topic-feature {
+  grid-template-columns: minmax(0, 1.45fr) minmax(340px, .75fr) !important;
+}
+
+body:is(
+  [data-page="body-and-farm-work"],
+  [data-page="changing-farm-work"],
+  [data-page="rural-support"],
+  [data-page="risk-and-responsibility"],
+  [data-page="knowledge-in-the-field"]
+) .pf-content-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+/* 06 聽見田裡的聲音：A 主打單集＋節目架 */
+body[data-page="podcast"] .mh-feature-stage,
+body[data-page="podcast"] .mh-feature-slide {
+  grid-template-columns: minmax(0, 7fr) minmax(380px, 5fr) !important;
+}
+
+body[data-page="podcast"] .mh-podcast-desk {
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .75fr) !important;
+}
+
+body[data-page="podcast"] .mh-archive-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+}
+
+body[data-page="podcast"] .mh-archive-item {
+  grid-template-columns: 150px minmax(0, 1fr) !important;
+}
+
+body[data-page="podcast"] .mh-archive-item .mh-row-action {
+  grid-column: 2 !important;
+  justify-self: start !important;
+}
+
+body[data-page="podcast"] .mh-archive-item--text-only {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+body[data-page="podcast"] .mh-archive-item--text-only .mh-row-action {
+  grid-column: 1 !important;
+}
+
+/* 07 研究、資源與倡議：A 研究到行動路徑 */
+body[data-page="research-results"] .ra-topic-list {
+  display: block !important;
+  counter-reset: research-path !important;
+}
+
+body[data-page="research-results"] .ra-topic-list > a {
+  max-width: 980px !important;
+  margin-bottom: 14px !important;
+}
+
+body[data-page="research-results"] .ra-action-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+body[data-page="research-results"] .ra-output-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body:is(
+  [data-page="research-publications"],
+  [data-page="related-resources"],
+  [data-page="dignity-farming-initiative"]
+) :is(.rs-main, .adv-main) {
+  max-width: 1120px !important;
+  margin-inline: auto !important;
+}
+
+body[data-page="dignity-farming-initiative"] .adv-timeline {
+  max-width: 880px !important;
+  margin-inline: auto !important;
+}
+
+/* 08 認識尊嚴農業與研究團隊：A 計畫敘事 */
+body:is([data-page="about"], [data-page="researchteam"]) :is(.ab-hero-inner, .as-hero-inner) {
+  max-width: 980px !important;
+}
+
+body[data-page="about"] .ab-field {
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, .8fr) !important;
+}
+
+body[data-page="about"] .ab-action-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+body:is([data-page="about"], [data-page="researchteam"]) :is(.ab-team-grid, .as-team-grid) {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+/* 09 文章單篇：C 雜誌開場 */
+body.single .article-entry:has(.article-featured-image) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(400px, .95fr) !important;
+  column-gap: 44px !important;
+  align-items: start !important;
+  max-width: 1180px !important;
+  margin-inline: auto !important;
+}
+
+body.single .article-entry:has(.article-featured-image) .article-header {
+  grid-column: 1 !important;
+  align-self: center !important;
+}
+
+body.single .article-entry:has(.article-featured-image) .article-featured-image {
+  grid-column: 2 !important;
+  margin-top: 0 !important;
+}
+
+body.single .article-entry:has(.article-featured-image) :is(.article-content, .article-tags) {
+  grid-column: 1 / -1 !important;
+  width: min(100% - 48px, var(--fw-reading-width)) !important;
+  margin-inline: auto !important;
+}
+
+body.single :is(.article-related, .article-return) {
+  max-width: 1180px !important;
+  margin-inline: auto !important;
+}
+
+/* 全站桌機排版基準：同一層級只允許一套字級、間距與幾何。 */
+@media (min-width: 821px) {
+  /* 桌機頁面共用密度：區塊節奏上限以約 1.5 倍正文行高為準；Podcast 維持已通過目視版本。 */
+  body:not([data-page="podcast"]) {
+    --fw-section-space: 48px;
+    --fw-section-space-compact: 32px;
+  }
+
+  body[data-page="field-learning"] .field-home-intro-inner {
+    padding-block: 32px !important;
+  }
+
+  body[data-page="field-learning"] .field-home-intro-grid > p {
+    max-width: 760px !important;
+  }
+
+  body[data-page="field-learning"] .field-section {
+    padding-block: 40px !important;
+  }
+
+  body:is([data-page="research-publications"], [data-page="related-resources"]) :is(.rs-hero, .rs-sec) {
+    padding-block: 32px !important;
+  }
+  body.fw-page-v15 :is(.ra-page, .rs-main, .ab-main, .article-shell) {
+    font-size: var(--fw-font-size-body) !important;
+    line-height: var(--fw-line-height-body) !important;
+  }
+
+  body.fw-page-v15 :is(.ra-page, .rs-main, .ab-main, .article-shell) h1 {
+    font-family: var(--fw-font-serif) !important;
+    font-size: var(--fw-font-size-h1) !important;
+    font-weight: 700 !important;
+    line-height: var(--fw-line-height-h1) !important;
+  }
+
+  body.fw-page-v15 :is(.ra-page, .rs-main, .ab-main, .article-shell) h2 {
+    font-family: var(--fw-font-serif) !important;
+    font-size: var(--fw-font-size-h2) !important;
+    font-weight: 700 !important;
+    line-height: var(--fw-line-height-h2) !important;
+  }
+
+  body.fw-page-v15 :is(.ra-page, .rs-main, .ab-main, .article-shell) h3 {
+    font-family: var(--fw-font-serif) !important;
+    font-size: var(--fw-font-size-h3) !important;
+    font-weight: 700 !important;
+    line-height: var(--fw-line-height-h3) !important;
+  }
+
+  body.fw-page-v15 :is(.ra-page, .rs-main, .ab-main, .article-shell) h4 {
+    font-family: var(--fw-font-sans) !important;
+    font-size: var(--fw-font-size-h4) !important;
+    font-weight: 700 !important;
+    line-height: var(--fw-line-height-h4) !important;
+  }
+
+  body.fw-page-v15 :is(
+    .ra-section-head > p, .ra-topic-copy p, .ra-output-grid span, .ra-action-link span span,
+    .rs-hero-lead, .as-hero-lead, .ab-hero-lead, .rs-sec-head p, .ab-sec-head p
+  ) {
+    font-size: var(--fw-font-size-summary) !important;
+    line-height: var(--fw-line-height-summary) !important;
+  }
+
+  body.fw-page-v15 :is(
+    .ra-output-grid strong, .ra-action-link strong,
+    .ra-topic-copy h3, .rs-pub h3, .ab-four-item h3, .ab-action h3, .ab-team-card .name
+  ) {
+    font-family: var(--fw-font-serif) !important;
+    font-size: var(--fw-font-size-card-title) !important;
+    font-weight: 700 !important;
+    line-height: var(--fw-line-height-card-title) !important;
+  }
+
+  body.fw-page-v15 :is(.ra-kicker, .rs-refresh-note, .rs-pub-meta, .article-meta, .article-eyebrow) {
+    font-size: var(--fw-font-size-meta) !important;
+    font-weight: 500 !important;
+    line-height: var(--fw-line-height-meta) !important;
+  }
+
+  body.fw-page-v15 :is(.rs-pub-authors, .ab-four-item p, .ab-action p, .ab-team-card .title) {
+    font-size: var(--fw-font-size-summary) !important;
+    line-height: var(--fw-line-height-summary) !important;
+  }
+
+  body.fw-page-v15 :is(.rs-pub, .ab-origin, .ab-four-item, .ab-action, .ab-team-card) {
+    border-radius: var(--fw-radius-card) !important;
+  }
+
+  body[data-page="research-results"] .ra-topic-copy :is(h3, p) {
+    margin: 0 !important;
+  }
+
+  body[data-page="research-results"] .ra-action-grid {
+    gap: 18px !important;
+    border: 0 !important;
+  }
+
+  body[data-page="research-results"] :is(.ra-action-link, .ra-output-grid > a) {
+    border: 1px solid var(--fw-color-line) !important;
+    border-radius: var(--fw-radius-card) !important;
+  }
+
+  body.fw-page-v15 :is(#fw-footer-search-input, .fw-footer-search button) {
+    font-size: var(--fw-font-size-control) !important;
+    line-height: var(--fw-line-height-control) !important;
+  }
+
+  /* 全站角色字級：舊頁面只保留內容，不得各自放大同一層級。 */
+  body.fw-page-v15 main :is(
+    .fg-guide__task-heading h3,
+    .pf-question-entry h3,
+    .training-topic-grid h3,
+    .training-record-list h3,
+    .mh-archive-copy h3,
+    .fw-home-v07-guide-task strong,
+    .mh-series-name strong,
+    .mh-related-grid > a strong
+  ) {
+    font-family: var(--fw-font-serif) !important;
+    font-size: var(--fw-font-size-card-title) !important;
+    font-weight: 700 !important;
+    line-height: var(--fw-line-height-card-title) !important;
+  }
+
+  body.fw-page-v15 main :is(
+    .fw-home-v06-feature-copy > p:not(.fw-home-v04-meta),
+    .fw-home-v06-media-body > p:not(.fw-home-v06-media-meta),
+    .fw-home-v04-framework-card p,
+    .tnews-card-body > p,
+    .field-featured-copy > p:not(.field-eyebrow),
+    .field-record-copy > p,
+    .field-section-lead,
+    .pf-page-intro__lead,
+    .pf-topic-hero__lead,
+    .pf-content-card__body > p,
+    .training-topic-grid p,
+    .training-record-list p,
+    .mh-archive-copy > p:last-child,
+    .mh-queue-item strong,
+    .mh-video-item strong
+  ) {
+    font-family: var(--fw-font-sans) !important;
+    font-size: var(--fw-font-size-summary) !important;
+    font-weight: 400 !important;
+    line-height: var(--fw-line-height-summary) !important;
+  }
+
+  body.fw-page-v15 main :is(.tnews-kicker, .field-eyebrow, .pf-eyebrow) {
+    font-size: var(--fw-font-size-meta) !important;
+    font-weight: 500 !important;
+    line-height: var(--fw-line-height-meta) !important;
+  }
+
+  body.fw-page-v15 main :is(.pf-content-card__labels span, .edu-ws-category, .ab-field-tag) {
+    border-radius: var(--fw-radius-tag) !important;
+    font-size: var(--fw-font-size-meta) !important;
+    font-weight: 700 !important;
+    line-height: var(--fw-line-height-meta) !important;
+  }
+
+  body[data-page="about"] .ab-field-tag {
+    backdrop-filter: none !important;
+  }
+
+  body[data-page="home"] .fw-home-v06-feature {
+    border-radius: var(--fw-radius-card) !important;
+  }
+
+  /* 全部內容：每張卡片沿用同一媒體框與自然內容高度。 */
+  body[data-page="thenews"] .tnews-card-media,
+  body[data-page="thenews"] .tnews-card-media img {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  body[data-page="thenews"] .tnews-card-body {
+    min-height: 0 !important;
+  }
+
+  /* 做農的人：各卡依內容自然收合，不以同列最高卡製造大片空白。 */
+  body[data-page="people-who-farm"] .pf-question-grid {
+    gap: 20px !important;
+    align-items: start !important;
+    border: 0 !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry {
+    height: auto !important;
+    align-self: start !important;
+    overflow: hidden !important;
+    border-right: 1px solid var(--fw-color-line) !important;
+    border-bottom: 1px solid var(--fw-color-line) !important;
+    border-left: 1px solid var(--fw-color-line) !important;
+    border-radius: var(--fw-radius-card) !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry__body {
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry .pf-text-link {
+    margin-top: 20px !important;
+    padding-top: 0 !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry:first-child {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr) !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry:first-child .pf-question-entry__media {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: var(--fw-thumb-card-ratio, 3 / 2) !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry:not(:first-child) {
+    display: grid !important;
+    grid-template-columns: var(--fw-thumb-list-width, 220px) minmax(0, 1fr) !important;
+    align-items: start !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry:not(:first-child) .pf-question-entry__media {
+    width: var(--fw-thumb-list-width, 220px) !important;
+    height: var(--fw-thumb-list-height, 140px) !important;
+    min-height: 0 !important;
+    margin: 20px 0 0 20px !important;
+    aspect-ratio: auto !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry__body {
+    padding: 20px !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry__number {
+    margin-bottom: 12px !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry__summary {
+    margin-top: 12px !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-question-entry__start {
+    margin-top: 16px !important;
+    padding-top: 12px !important;
+  }
+
+  /* 2026-07-14 全站桌機資訊層級與密度收斂 */
+  body[data-page="thenews"] .tnews-intro-inner {
+    padding-block: 24px !important;
+  }
+
+  body[data-page="thenews"] .tnews-intro p:last-child {
+    max-width: none !important;
+    margin-top: 12px !important;
+  }
+
+  body[data-page="field-learning"] .field-home-intro-grid {
+    grid-template-columns: max-content minmax(0, 1fr) !important;
+    gap: 64px !important;
+  }
+
+  body[data-page="field-learning"] .field-home-intro-grid > p {
+    max-width: none !important;
+  }
+
+  body[data-page="field-learning"] .field-index-band {
+    padding-block: 32px !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  body[data-page="field-learning"] .field-index-band .field-section-head {
+    margin-bottom: 12px !important;
+  }
+
+  body[data-page="field-learning"] .field-topic-list a {
+    min-height: 60px !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-hub {
+    padding-top: 24px !important;
+    padding-bottom: 48px !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-page-intro {
+    max-width: none !important;
+    padding-bottom: 32px !important;
+  }
+
+  body[data-page="people-who-farm"] .pf-page-intro__lead {
+    max-width: 1120px !important;
+  }
+
+  body[data-page="people-who-farm"] :is(.pf-topic-desk, .pf-recent) {
+    padding-block: 40px !important;
+  }
+
+  body[data-page="research-results"] .ra-intro {
+    max-width: none !important;
+    padding-bottom: 36px !important;
+  }
+
+  body[data-page="research-results"] .ra-lead,
+  body[data-page="research-results"] .ra-section-head > p {
+    max-width: none !important;
+  }
+
+  body[data-page="research-results"] .ra-section {
+    padding-block: 40px !important;
+  }
+
+  body[data-page="research-results"] .ra-section-head {
+    grid-template-columns: max-content minmax(0, 1fr) !important;
+    gap: 72px !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* 農學堂：不同內容量的卡片各自收合；影音區沿用全站暖頁底。 */
+  body[data-page="farmer-study"] .training-record-list {
+    align-items: start !important;
+  }
+
+  body[data-page="farmer-study"] .training-record {
+    height: auto !important;
+    align-self: start !important;
+  }
+
+  body[data-page="farmer-study"] .training-media {
+    background: var(--fw-color-page) !important;
+  }
+
+  /* 五個田野主題：副標可隨 Aa 放大；卡片內容不再把行動連結推到空白底部。 */
+  body:is(
+    [data-page="body-and-farm-work"],
+    [data-page="changing-farm-work"],
+    [data-page="rural-support"],
+    [data-page="risk-and-responsibility"],
+    [data-page="knowledge-in-the-field"]
+  ) .pf-topic-hero__core {
+    font-size: var(--fw-font-size-h4) !important;
+    line-height: var(--fw-line-height-h4) !important;
+  }
+
+  body:is(
+    [data-page="body-and-farm-work"],
+    [data-page="changing-farm-work"],
+    [data-page="rural-support"],
+    [data-page="risk-and-responsibility"],
+    [data-page="knowledge-in-the-field"]
+  ) .pf-content-card--featured .pf-content-card__body {
+    height: auto !important;
+    align-self: start !important;
+    justify-content: flex-start !important;
+  }
+
+  body:is(
+    [data-page="body-and-farm-work"],
+    [data-page="changing-farm-work"],
+    [data-page="rural-support"],
+    [data-page="risk-and-responsibility"],
+    [data-page="knowledge-in-the-field"]
+  ) .pf-content-card--featured .pf-content-card__media {
+    height: var(--fw-thumb-feature-height, 430px) !important;
+    min-height: var(--fw-thumb-feature-height, 430px) !important;
+  }
+
+  body:is(
+    [data-page="body-and-farm-work"],
+    [data-page="changing-farm-work"],
+    [data-page="rural-support"],
+    [data-page="risk-and-responsibility"],
+    [data-page="knowledge-in-the-field"]
+  ) .pf-content-card__action {
+    margin-top: 12px !important;
+    padding-top: 0 !important;
+    font-size: var(--fw-font-size-meta) !important;
+    line-height: var(--fw-line-height-meta) !important;
+  }
+
+  /* Podcast 節目架：縮圖依比例顯示、文字欄自然高度，不再產生 461px 空卡。 */
+  body[data-page="podcast"] .mh-archive-list {
+    align-items: start !important;
+    border-top: 0 !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-item {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 18px !important;
+    align-items: start !important;
+    align-self: start !important;
+    border: 1px solid var(--fw-color-line) !important;
+    border-radius: var(--fw-radius-card) !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-visual {
+    align-self: start !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-thumb {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-copy > p:last-child {
+    display: -webkit-box !important;
+    overflow: hidden !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 3 !important;
+  }
+
+  /* Podcast 主打：7:5 回到既定骨架，摘要不再把圖片欄下方撐出大片空白。 */
+  body[data-page="podcast"] .mh-feature-copy {
+    padding: 28px 30px !important;
+  }
+
+  body[data-page="podcast"] .mh-feature-excerpt {
+    display: -webkit-box !important;
+    overflow: hidden !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-line-clamp: 5 !important;
+  }
+
+  /* 這批 Podcast 封面四周像素皆為同一色，延伸原圖而非露出灰色 UI 底。 */
+  body.fw-page-v15[data-page="podcast"] main :is(
+    .mh-feature-player,
+    .mh-feature-visual,
+    .mh-feature-visual img
+  ),
+  body.fw-page-v15.single main .article-entry.category-podcast :is(
+    .article-featured-image,
+    .article-featured-image img
+  ) {
+    background: #ADB850 !important;
+  }
+
+  /* 縮圖 C：固定角色框、完整內容優先；Hero、文章主圖與正文圖片不在此列。 */
+  body.fw-page-v15 main :is(
+    .tnews-card-media,
+    .field-featured-media,
+    .field-record-media,
+    .field-note-media,
+    .pf-question-entry__media,
+    .pf-content-card__media,
+    .training-record-media,
+    .edu-video-thumb,
+    .ab-team-photo,
+    .as-team-photo,
+    .fw-home-v06-media-visual,
+    .mh-feature-visual,
+    .mh-podcast-cover,
+    .mh-video-visual,
+    .mh-video-thumb,
+    .mh-archive-thumb,
+    .mh-series-latest-player,
+    .mh-series-latest-visual
+  ) {
+    overflow: hidden !important;
+    background: var(--fw-color-surface) !important;
+  }
+
+  body.fw-page-v15 main :is(
+    .tnews-card-media,
+    .field-featured-media,
+    .field-record-media,
+    .field-note-media,
+    .pf-question-entry__media,
+    .pf-content-card__media,
+    .training-record-media,
+    .edu-video-thumb,
+    .ab-team-photo,
+    .as-team-photo,
+    .fw-home-v06-media-visual,
+    .mh-feature-visual,
+    .mh-podcast-cover,
+    .mh-video-thumb,
+    .mh-archive-thumb,
+    .mh-series-latest-visual
+  ) img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+  }
+
+  body.fw-page-v15 main :is(
+    .field-record-media,
+    .field-note-media,
+    .pf-question-entry__media,
+    .pf-content-card__media,
+    .training-record-media
+  ) {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: var(--fw-thumb-card-ratio, 3 / 2) !important;
+  }
+
+  body[data-page="home"] .fw-home-v06-feature {
+    min-height: var(--fw-thumb-feature-height, 430px) !important;
+    height: auto !important;
+    align-items: start !important;
+  }
+
+  body[data-page="home"] .fw-home-v06-feature > img {
+    width: 100% !important;
+    height: var(--fw-thumb-feature-height, 430px) !important;
+    min-height: 0 !important;
+    max-height: var(--fw-thumb-feature-height, 430px) !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: var(--fw-color-surface) !important;
+  }
+
+  body[data-page="home"] .fw-home-v06-news-picker-item img {
+    width: 72px !important;
+    height: 48px !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: var(--fw-color-surface) !important;
+  }
+
+  /* 內容資料庫標籤：提高到最終裁決層，避免舊 is-format 白字規則勝出。 */
+  body.fw-page-v15[data-page="thenews"] main .tnews-card-tags span {
+    color: var(--fw-color-ink) !important;
+    background: var(--fw-color-surface-alt) !important;
+    border: 1px solid var(--fw-color-line) !important;
+    border-left: 4px solid var(--fw-color-accent-text) !important;
+  }
+
+  body.fw-page-v15[data-page="thenews"] main .tnews-card-tags .is-format {
+    color: var(--fw-color-ink) !important;
+    background: var(--fw-color-surface-alt) !important;
+    border-color: var(--fw-color-line) !important;
+    border-left-color: var(--fw-color-primary) !important;
+  }
+
+  body.fw-page-v15[data-page="thenews"] main .tnews-card-tags .is-people-topic {
+    color: var(--fw-color-ink) !important;
+    background: var(--fw-color-surface-alt) !important;
+    border-left-color: var(--fw-topic-field) !important;
+  }
+
+  body.fw-page-v15[data-page="thenews"] main .tnews-card-tags .is-more {
+    color: var(--fw-color-muted) !important;
+    background: transparent !important;
+    border-left-width: 1px !important;
+  }
+
+  body[data-page="field-learning"] .field-featured-media,
+  body:is(
+    [data-page="body-and-farm-work"],
+    [data-page="changing-farm-work"],
+    [data-page="rural-support"],
+    [data-page="risk-and-responsibility"],
+    [data-page="knowledge-in-the-field"]
+  ) .pf-content-card--featured .pf-content-card__media {
+    height: var(--fw-thumb-feature-height, 430px) !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+  }
+
+  body.fw-page-v15 main :is(.edu-video-thumb, .fw-home-v06-media-visual, .mh-video-thumb, .mh-archive-thumb) {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: var(--fw-thumb-wide-ratio, 16 / 9) !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-item {
+    grid-template-columns: var(--fw-thumb-list-width, 220px) minmax(0, 1fr) !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-thumb {
+    width: var(--fw-thumb-list-width, 220px) !important;
+  }
+
+  body.fw-page-v15 main :is(.mh-podcast-cover, .ab-team-photo, .as-team-photo) {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: var(--fw-thumb-square-ratio, 1 / 1) !important;
+  }
+
+  /* 認識尊嚴農業：7:5 計畫敘事首屏。 */
+  body[data-page="about"] .ab-hero {
+    padding-block: 40px !important;
+  }
+
+  body[data-page="about"] .ab-hero-inner {
+    display: grid !important;
+    grid-template-columns: minmax(0, 7fr) minmax(360px, 5fr) !important;
+    gap: 18px 56px !important;
+    width: 100% !important;
+    max-width: none !important;
+    align-items: start !important;
+  }
+
+  body[data-page="about"] .ab-hero-badge {
+    grid-column: 1 / -1 !important;
+    justify-self: start !important;
+    margin-bottom: 4px !important;
+  }
+
+  body[data-page="about"] .ab-hero h1 {
+    grid-column: 1 !important;
+    grid-row: 2 / span 2 !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="about"] .ab-hero-lead {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="about"] .ab-hero-quote {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    margin: 4px 0 0 !important;
+    font-size: var(--fw-font-size-summary) !important;
+    line-height: var(--fw-line-height-summary) !important;
+  }
+
+  /* 相關資源：同頁完成研究資料與外部資源，不再新增下載頁。 */
+  body[data-page="related-resources"] .rs-main {
+    max-width: 1240px !important;
+  }
+
+  body[data-page="related-resources"] .rs-hero-inner {
+    display: grid !important;
+    grid-template-columns: minmax(0, 7fr) minmax(360px, 5fr) !important;
+    gap: 14px 52px !important;
+    width: 100% !important;
+    max-width: none !important;
+    align-items: start !important;
+  }
+
+  body[data-page="related-resources"] .rs-hero-badge {
+    grid-column: 1 / -1 !important;
+    justify-self: start !important;
+  }
+
+  body[data-page="related-resources"] .rs-hero h1 {
+    grid-column: 1 !important;
+    grid-row: 2 / span 2 !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="related-resources"] :is(.rs-hero-lead, .rs-refresh-note) {
+    grid-column: 2 !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body[data-page="related-resources"] .rs-hero-lead {
+    grid-row: 2 !important;
+  }
+
+  body[data-page="related-resources"] .rs-refresh-note {
+    grid-row: 3 !important;
+  }
+
+  body[data-page="related-resources"] .rs-sec {
+    padding-block: 32px !important;
+  }
+
+  body[data-page="related-resources"] .rs-pub-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  body[data-page="related-resources"] .rs-pub {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    gap: 10px 16px !important;
+    min-height: 150px !important;
+    padding: 20px !important;
+    align-content: start !important;
+  }
+
+  body[data-page="related-resources"] .rs-pub-cta {
+    grid-column: 2 !important;
+    justify-self: start !important;
+    margin-top: 4px !important;
+  }
+
+  /* 單篇文章：保留 7:5 雜誌開場，移除突兀外框與白色拼接。 */
+  body.single .article-shell {
+    padding-top: 24px !important;
+  }
+
+  body.single .article-entry,
+  body.single .article-entry:has(.article-featured-image) {
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body.single .article-entry:has(.article-featured-image) {
+    grid-template-columns: minmax(0, 7fr) minmax(400px, 5fr) !important;
+    gap: 48px !important;
+  }
+
+  body.single .article-header {
+    padding: 24px 0 28px !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  body.single .article-featured-image {
+    height: 480px !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: var(--fw-radius-card) !important;
+  }
+
+  body.single .article-featured-image img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 480px !important;
+    object-fit: contain !important;
+  }
+
+  /* Podcast 單篇：播放器留在標題下方，主圖固定右欄，不再互相搶 grid 空位。 */
+  body.single .article-entry.category-podcast:has(.article-featured-image) {
+    grid-template-columns: minmax(0, 7fr) minmax(360px, 5fr) !important;
+    column-gap: 32px !important;
+    row-gap: 0 !important;
+  }
+
+  body.single .article-entry.category-podcast:has(.article-featured-image) .article-header {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+  }
+
+  body.single .article-entry.category-podcast:has(.article-featured-image) .article-audio {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    padding: 0 0 24px !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  body.single .article-entry.category-podcast:has(.article-featured-image) .article-featured-image {
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: start !important;
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  body.single .article-entry.category-podcast:has(.article-featured-image) .article-featured-image img {
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  body.single .article-entry.category-podcast:has(.article-featured-image) .article-content {
+    grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+  }
+
+  body.single .article-entry.category-podcast:has(.article-featured-image) .article-tags {
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
+  }
+
+  /* 一般文章特色圖：依原圖比例自然縮放，不建立固定灰色畫布。 */
+  body.single .article-entry:not(.category-podcast):has(.article-featured-image) .article-featured-image {
+    display: grid !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    place-items: start center !important;
+    align-self: center !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+  }
+
+  body.single .article-entry:not(.category-podcast):has(.article-featured-image) .article-featured-image img {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 480px !important;
+    object-fit: contain !important;
+    border-radius: var(--fw-radius-card) !important;
+  }
+
+  body.single .article-entry:not(.category-podcast):has(.article-featured-image) .article-featured-image figcaption {
+    width: 100% !important;
+  }
+
+  body.single .article-content {
+    padding-block: 48px !important;
+    color: var(--fw-color-reading) !important; /* 2026-07-17：原 --fw-color-body 未定義（健檢 A3-F5） */
+    background: transparent !important;
+    font-family: var(--fw-font-sans) !important;
+    font-size: var(--fw-font-size-long-body) !important;
+    line-height: var(--fw-line-height-long-body) !important;
+  }
+
+  /* 舊文章首個 UAGB 資訊標題在畫面上承接章節 H2，資料庫內容不改寫。 */
+  body.single .article-content > .wp-block-uagb-info-box:first-child h3.uagb-ifb-title {
+    font-family: var(--fw-font-serif) !important;
+    font-size: var(--fw-font-size-h2) !important;
+    font-weight: 700 !important;
+    line-height: var(--fw-line-height-h2) !important;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1240px) {
+  body[data-page="thenews"] .tnews-workspace {
+    grid-template-columns: 248px minmax(0, 1fr) !important;
+    gap: 24px !important;
+  }
+
+  body[data-page="farming-guide"] .fg-guide__task-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-item {
+    grid-template-columns: var(--fw-thumb-list-width, 220px) minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 800px) {
+  body[data-page="home"] .fw-home-v04-hero,
+  body[data-page="home"] .fw-home-v06-weather {
+    width: min(100% - 36px, 1320px) !important;
+    margin: 24px auto 36px !important;
+  }
+
+  body[data-page="home"] .fw-home-v04-hero {
+    min-height: 520px !important;
+  }
+
+  body[data-page="home"] .fw-home-v04-hero-content {
+    min-height: 520px !important;
+    padding: 36px 22px !important;
+  }
+
+  body[data-page="home"] .fw-home-v06-weather-layout {
+    padding-inline: 18px !important;
+  }
+
+  body[data-page="home"] :is(
+    .fw-home-v06-editorial-news,
+    .fw-home-v06-news-picker-panel,
+    .fw-home-v04-framework-layout,
+    .fw-home-v04-framework-grid
+  ) {
+    display: block !important;
+  }
+
+  body[data-page="home"] .fw-home-v06-feature {
+    min-height: 0 !important;
+  }
+
+  body[data-page="home"] .fw-home-v06-news-picker-panel {
+    margin-top: 20px !important;
+  }
+
+  body[data-page="thenews"] .tnews-workspace,
+  body[data-page="thenews"] .tnews-page.has-js.is-filter-collapsed .tnews-workspace {
+    display: block !important;
+  }
+
+  body[data-page="thenews"] .tnews-filter-panel,
+  body[data-page="thenews"] .tnews-page.has-js.is-filter-collapsed .tnews-filter-panel {
+    position: static !important;
+    width: auto !important;
+    margin-bottom: 28px !important;
+  }
+
+  body[data-page="thenews"] .tnews-grid {
+    display: block !important;
+  }
+
+  body[data-page="thenews"] .tnews-grid > .tnews-card,
+  body[data-page="thenews"] .tnews-grid > .tnews-card:nth-child(n+4) {
+    display: block !important;
+    margin-bottom: 18px !important;
+  }
+
+  body[data-page="thenews"] .tnews-grid > .tnews-card .tnews-card-media,
+  body[data-page="thenews"] .tnews-grid > .tnews-card:first-child .tnews-card-media,
+  body[data-page="thenews"] .tnews-grid > .tnews-card:nth-child(n+4) .tnews-card-media {
+    min-height: 220px !important;
+  }
+
+  body[data-page="thenews"] .tnews-card-body {
+    min-height: 0 !important;
+  }
+
+  body[data-page="farming-guide"] .fg-guide__task-grid,
+  body[data-page="field-learning"] :is(.field-home-intro-grid, .field-featured, .field-record-grid),
+  body[data-page="field-notes"] .field-notes-grid,
+  body[data-page="people-who-farm"] .pf-question-grid,
+  body[data-page="farmer-study"] .training-record-list {
+    grid-template-columns: 1fr !important;
+  }
+
+  body[data-page="field-notes"] .field-notes-grid > .field-note,
+  body[data-page="field-notes"] .field-notes-grid > .field-note:first-child,
+  body[data-page="people-who-farm"] .pf-question-entry,
+  body[data-page="people-who-farm"] .pf-question-entry:first-child,
+  body[data-page="people-who-farm"] .pf-question-entry:nth-child(4) {
+    grid-column: auto !important;
+  }
+
+  body:is(
+    [data-page="body-and-farm-work"],
+    [data-page="changing-farm-work"],
+    [data-page="rural-support"],
+    [data-page="risk-and-responsibility"],
+    [data-page="knowledge-in-the-field"]
+  ) :is(.pf-topic-hero, .pf-topic-feature, .pf-content-list) {
+    display: block !important;
+  }
+
+  body[data-page="podcast"] :is(
+    .mh-feature-stage,
+    .mh-feature-slide,
+    .mh-podcast-desk,
+    .mh-archive-list,
+    .mh-archive-item
+  ) {
+    display: block !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-item {
+    margin-bottom: 18px !important;
+  }
+
+  body[data-page="podcast"] .mh-archive-item .mh-row-action {
+    margin-top: 14px !important;
+  }
+
+  body[data-page="research-results"] :is(.ra-action-grid, .ra-output-grid),
+  body[data-page="about"] :is(.ab-field, .ab-action-grid, .ab-team-grid),
+  body[data-page="researchteam"] .as-team-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.single .article-entry,
+  body.single .article-entry:has(.article-featured-image) {
+    display: block !important;
+    max-width: var(--fw-reading-width) !important;
+  }
+
+  body.single .article-entry:has(.article-featured-image) :is(.article-content, .article-tags) {
+    width: min(100% - 36px, var(--fw-reading-width)) !important;
+  }
+
+  body.single :is(.article-related, .article-return) {
+    max-width: var(--fw-reading-width) !important;
+  }
+}

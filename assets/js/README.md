@@ -31,7 +31,7 @@
 ## 更新方式
 
 ```bash
-cd /Users/boboegg/farmerwordpress
+cd "$(git rev-parse --show-toplevel)"
 npm install gsap@<new-version> --save-dev
 cp node_modules/gsap/dist/gsap.min.js assets/js/
 cp node_modules/gsap/dist/ScrollTrigger.min.js assets/js/

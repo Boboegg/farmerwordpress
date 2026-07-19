@@ -91,7 +91,7 @@ get_header(); ?>
           <i class="fas fa-file-invoice-dollar"></i>
           <span>職災給付申請書下載</span>
         </a>
-        <a href="tel:+880412589988" class="cc-official-item">
+        <a href="tel:0412589988" class="cc-official-item">
           <i class="fas fa-phone"></i>
           <span>勞保局客服 0412-58-9988</span>
         </a>

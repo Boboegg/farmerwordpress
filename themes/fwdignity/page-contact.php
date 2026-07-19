@@ -5,7 +5,7 @@
  */
 get_header(); ?>
 
-<div class="fw-page-layout">
+<div class="fw-page-layout fw-page-layout--full">
 
 <main class="as-main" id="main" role="main">
 
@@ -84,8 +84,7 @@ get_header(); ?>
       <h3>延伸閱讀</h3>
       <div class="as-cross-links">
         <a href="/about/"><i class="fas fa-info-circle"></i>關於我們</a>
-        <a href="/researchteam/"><i class="fas fa-users"></i>研究團隊</a>
-        <a href="/day/"><i class="fas fa-calendar-days"></i>行事曆</a>
+        <a href="<?php echo esc_url( home_url( '/about/researchteam/' ) ); ?>"><i class="fas fa-users"></i>研究團隊</a>
         <a href="/dignity-farming-initiative/"><i class="fas fa-bullhorn"></i>加入倡議</a>
       </div>
     </div>
@@ -93,7 +92,6 @@ get_header(); ?>
 
 </main>
 
-<?php get_template_part( 'template-parts/sidebar' ); ?>
 </div>
 
 <?php get_footer();

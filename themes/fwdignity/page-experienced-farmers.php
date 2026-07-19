@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 資深農友
+ * Slug: experienced-farmers
  * fwdignity theme — page-experienced-farmers.php
  * 資深農友 分眾入口頁(slug=experienced-farmers)· WARM ORANGE
  *

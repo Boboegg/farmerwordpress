@@ -1,3 +1,39 @@
+/* ===== 治理搬遷（2026-07-17 Phase D 批③）——本家族屬未發布休眠頁，重開前須依清朗田野 3.3.0 重寫（封條政策不變） ===== */
+
+body[data-page="healthgood"] {
+  --hp-main: var(--fw-topic-health);
+  --hp-deep: var(--fw-color-primary-deep);
+  --hp-bg: var(--fw-color-paper);
+  --hp-contrast: var(--fw-color-accent);
+  --hp-contrast-deep: var(--fw-color-accent-text);
+  --hp-main-rgb: 85, 110, 65;
+}
+
+body[data-page="healthgood"] .hp-phone.is-poison .hp-phone-num {
+  color: var(--fw-topic-health) !important;
+}
+
+body.fw-page-v15 main .hp-hero {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .hp-hero :is(p, li) {
+  color: var(--fw-color-muted) !important;
+}
+
+body.fw-page-v15 main .hp-hero::before,
+body.fw-page-v15 main .hp-hero::after {
+  background: none !important;
+}
+
+body.fw-page-v15 main .hp-hero-deco {
+  display: none !important;
+}
+
 /* ============================================================
    fwdignity · page-healthgood.css
    健康促進 Hub 頁樣式 · HEALTH · CYAN
@@ -166,19 +202,13 @@ body[data-page="healthgood"] {
   color: #fff;
   box-shadow: 0 8px 22px rgba(8,145,178,0.4);
 }
-.hp-btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(8,145,178,0.5);
-}
+
 .hp-btn-secondary {
   background: #fff;
   color: var(--hp-deep);
   border: 2px solid var(--hp-main);
 }
-.hp-btn-secondary:hover {
-  background: var(--hp-bg);
-  transform: translateY(-2px);
-}
+
 @media (max-width: 700px) {
   .hp-hero { padding: 40px 26px 36px; }
   .hp-hero-title { font-size: 38px; }
@@ -206,11 +236,7 @@ body[data-page="healthgood"] {
   transition: all 0.3s var(--e-out);
   overflow: hidden;
 }
-.hp-stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  border-color: var(--sc);
-}
+
 .hp-stat-icon {
   width: 56px; height: 56px;
   border-radius: 14px;
@@ -268,11 +294,7 @@ body[data-page="healthgood"] {
   margin-bottom: 22px;
   transition: all 0.3s var(--e-out);
 }
-.hp-topic:hover {
-  transform: translateX(4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  border-left-width: 10px;
-}
+
 .hp-topic-head {
   display: grid;
   grid-template-columns: auto auto 1fr auto;
@@ -341,10 +363,7 @@ body[data-page="healthgood"] {
   flex-shrink: 0;
   text-decoration: none;
 }
-.hp-topic:hover .hp-topic-cta {
-  transform: translateX(6px) scale(1.05);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-}
+
 
 /* 主題內 6 mini icons */
 .hp-topic-icons {
@@ -363,11 +382,7 @@ body[data-page="healthgood"] {
   border: 1px solid #F0F0F0;
   transition: all 0.3s var(--e-out);
 }
-.hp-topic-mini:hover {
-  background: var(--tcl);
-  border-color: var(--tc);
-  transform: translateY(-2px);
-}
+
 .hp-topic-mini i {
   font-size: 20px;
   color: var(--tc);
@@ -379,9 +394,7 @@ body[data-page="healthgood"] {
   align-items: center;
   justify-content: center;
 }
-.hp-topic-mini:hover i {
-  background: #fff;
-}
+
 .hp-topic-mini h5 {
   font-size: 14.5px;
   font-weight: 800;
@@ -456,10 +469,7 @@ body[data-page="healthgood"] {
   transition: all 0.25s var(--e-out);
   font-family: inherit;
 }
-.hp-quiz-age:hover {
-  background: var(--hp-bg);
-  border-color: var(--hp-main);
-}
+
 .hp-quiz-age.is-active {
   background: var(--hp-main);
   border-color: var(--hp-main);
@@ -487,7 +497,7 @@ body[data-page="healthgood"] {
   line-height: 1.5;
   color: var(--c-text);
 }
-.hp-quiz-item:hover { background: #fff; border-color: var(--hp-main); }
+
 .hp-quiz-item input { width: 18px; height: 18px; accent-color: var(--hp-main); }
 .hp-quiz-item:has(input:checked) {
   background: rgba(8,145,178,0.06);
@@ -521,7 +531,7 @@ body[data-page="healthgood"] {
   margin-top: 10px;
   font-family: inherit;
 }
-.hp-quiz-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(8,145,178,0.4); }
+
 
 .hp-quiz-result {
   margin-top: 24px;
@@ -558,7 +568,7 @@ body[data-page="healthgood"] {
   text-decoration: none;
   transition: transform 0.25s var(--e-out);
 }
-.hp-quiz-topic:hover { transform: translateX(4px); }
+
 .hp-quiz-topic i { color: var(--tt); font-size: 18px; }
 .hp-quiz-topic-body strong { display: block; font-size: 14px; color: var(--c-text); }
 .hp-quiz-topic-body small { display: block; font-size: 12px; color: var(--c-text-muted); margin-top: 2px; }
@@ -579,7 +589,7 @@ body[data-page="healthgood"] {
   transition: all 0.25s;
   font-family: inherit;
 }
-.hp-quiz-reset:hover { border-color: var(--hp-main); color: var(--hp-main); }
+
 
 /* ========== 今天能下田嗎 ========== */
 .hp-heat-row {
@@ -677,7 +687,7 @@ body[data-page="healthgood"] {
   font-family: inherit;
   white-space: nowrap;
 }
-.hp-hr-btn:hover { background: #B91C1C; transform: translateY(-2px); }
+
 
 .hp-hr-result {
   margin-top: 16px;
@@ -759,9 +769,7 @@ body[data-page="healthgood"] {
   border: 1px solid var(--c-line);
   transition: all 0.3s var(--e-out);
 }
-.hp-rights-col:hover {
-  box-shadow: 0 16px 36px rgba(0,0,0,0.08);
-}
+
 .hp-rights-icon {
   width: 52px; height: 52px;
   border-radius: 14px;
@@ -863,7 +871,7 @@ body[data-page="healthgood"] {
   text-decoration: none;
   margin-right: 12px;
 }
-.hp-rights-disclaimer a:hover { text-decoration: underline; }
+
 
 /* Hospital list */
 .hp-hosp-list {
@@ -921,11 +929,7 @@ body[data-page="healthgood"] {
   color: inherit;
   transition: all 0.2s var(--e-out);
 }
-.hp-phone:hover {
-  background: #fff;
-  border-color: #E5E7EB;
-  transform: translateX(3px);
-}
+
 .hp-phone-num {
   font-family: "Inter Tight", Inter, sans-serif;
   font-size: 18px;
@@ -1006,7 +1010,7 @@ body[data-page="healthgood"] {
   text-decoration: underline;
   text-decoration-color: rgba(8,145,178,0.3);
 }
-.hp-cross-body a:hover { text-decoration-color: var(--hp-main); }
+
 
 /* ========== References ========== */
 .hp-refs-details {
@@ -1067,7 +1071,7 @@ body[data-page="healthgood"] {
   text-decoration: underline;
   text-decoration-color: rgba(8,145,178,0.3);
 }
-.hp-refs-list a:hover { text-decoration-color: var(--hp-main); }
+
 
 .hp-refs-subhead {
   font-size: 14px;
@@ -1088,3 +1092,57 @@ body[data-page="healthgood"] {
   margin: 0;
 }
 .hp-refs-note a { color: var(--hp-main); text-decoration: underline; }
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .hp-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(8,145,178,0.5);
+}
+  .hp-btn-secondary:hover {
+  background: var(--hp-bg);
+  transform: translateY(-2px);
+}
+  .hp-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border-color: var(--sc);
+}
+  .hp-topic:hover {
+  transform: translateX(4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border-left-width: 10px;
+}
+  .hp-topic:hover .hp-topic-cta {
+  transform: translateX(6px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+}
+  .hp-topic-mini:hover {
+  background: var(--tcl);
+  border-color: var(--tc);
+  transform: translateY(-2px);
+}
+  .hp-topic-mini:hover i {
+  background: #fff;
+}
+  .hp-quiz-age:hover {
+  background: var(--hp-bg);
+  border-color: var(--hp-main);
+}
+  .hp-quiz-item:hover { background: #fff; border-color: var(--hp-main); }
+  .hp-quiz-submit:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(8,145,178,0.4); }
+  .hp-quiz-topic:hover { transform: translateX(4px); }
+  .hp-quiz-reset:hover { border-color: var(--hp-main); color: var(--hp-main); }
+  .hp-hr-btn:hover { background: #B91C1C; transform: translateY(-2px); }
+  .hp-rights-col:hover {
+  box-shadow: 0 16px 36px rgba(0,0,0,0.08);
+}
+  .hp-rights-disclaimer a:hover { text-decoration: underline; }
+  .hp-phone:hover {
+  background: #fff;
+  border-color: #E5E7EB;
+  transform: translateX(3px);
+}
+  .hp-cross-body a:hover { text-decoration-color: var(--hp-main); }
+  .hp-refs-list a:hover { text-decoration-color: var(--hp-main); }
+}

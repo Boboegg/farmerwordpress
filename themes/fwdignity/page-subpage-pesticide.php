@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 農藥安全
+ * Slug: subpage-pesticide
  * fwdignity · page-subpage-pesticide.php
  * 農藥安全子頁(slug=subpage-pesticide)· 紫 #7C3AED
  */

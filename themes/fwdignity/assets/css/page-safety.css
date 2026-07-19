@@ -1,3 +1,38 @@
+/* ===== 治理搬遷（2026-07-17 Phase D 批③）——本家族屬未發布休眠頁，重開前須依清朗田野 3.3.0 重寫（封條政策不變） ===== */
+
+body:is(
+  [data-page="occupational-safety"], [data-page="personal-protective-equipment"],
+  [data-page="labor-saving-machinery"], [data-page="greenhouse-zone"]
+) {
+  --os-main: var(--fw-topic-safety);
+  --os-deep: var(--fw-color-primary-deep);
+  --os-bg: var(--fw-color-paper);
+  --os-contrast: var(--fw-color-accent);
+  --os-contrast-deep: var(--fw-color-accent-text);
+  --os-main-rgb: 147, 89, 47;
+}
+
+body.fw-page-v15 main .os-hero {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .os-hero :is(p, li) {
+  color: var(--fw-color-muted) !important;
+}
+
+body.fw-page-v15 main .os-hero::before,
+body.fw-page-v15 main .os-hero::after {
+  background: none !important;
+}
+
+body.fw-page-v15 main .os-hero-deco {
+  display: none !important;
+}
+
 /* ============================================================
    fwdignity · page-safety.css
    職業安全 章節 Hub 頁專屬樣式
@@ -184,19 +219,13 @@ body[data-page="occupational-safety"] {
   color: #fff;
   box-shadow: 0 8px 22px rgba(234,88,12,0.4);
 }
-.os-btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 32px rgba(234,88,12,0.5);
-}
+
 .os-btn-secondary {
   background: #fff;
   color: var(--os-deep);
   border: 2px solid var(--os-main);
 }
-.os-btn-secondary:hover {
-  background: var(--os-bg);
-  transform: translateY(-2px);
-}
+
 @media (max-width: 700px) {
   .os-hero { padding: 40px 26px 36px; }
   .os-hero-title { font-size: 38px; }
@@ -234,14 +263,8 @@ body[data-page="occupational-safety"] {
   transition: transform 0.5s var(--e-out);
   pointer-events: none;
 }
-.os-stat-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  border-top-width: 6px;
-}
-.os-stat-card:hover::before {
-  transform: translate(30%, -50%) scale(1.2);
-}
+
+
 .os-stat-num {
   font-family: "Inter Tight", Inter, sans-serif;
   font-size: 48px;
@@ -341,7 +364,7 @@ body[data-page="occupational-safety"] {
   letter-spacing: 0.02em;
 }
 .os-h-level summary::-webkit-details-marker { display: none; }
-.os-h-level summary:hover { opacity: 0.94; }
+
 .os-h-num { font-size: 18px; flex-shrink: 0; }
 .os-h-label { flex: 1; }
 .os-h-arrow {
@@ -386,11 +409,7 @@ body[data-page="occupational-safety"] {
   color: var(--hc);
   transition: all 0.3s var(--e-out);
 }
-.os-hazard-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  border-left-width: 10px;
-}
+
 .os-hazard-icon {
   width: 56px;
   height: 56px;
@@ -405,9 +424,7 @@ body[data-page="occupational-safety"] {
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   transition: transform 0.3s var(--e-out);
 }
-.os-hazard-card:hover .os-hazard-icon {
-  transform: scale(1.08) rotate(-6deg);
-}
+
 .os-hazard-card h4 {
   font-size: 22px;
   font-weight: 900;
@@ -478,13 +495,8 @@ body[data-page="occupational-safety"] {
   transition: opacity 0.35s;
   pointer-events: none;
 }
-.os-subpage-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 26px 52px rgba(0,0,0,0.12);
-  border-color: var(--spc);
-  border-top-width: 6px;
-}
-.os-subpage-card:hover::before { opacity: 0.06; }
+
+
 .os-subpage-num {
   font-family: "Inter Tight", Inter, sans-serif;
   font-size: 48px;
@@ -510,9 +522,7 @@ body[data-page="occupational-safety"] {
   position: relative;
   z-index: 2;
 }
-.os-subpage-card:hover .os-subpage-icon {
-  transform: scale(1.08) rotate(-4deg);
-}
+
 .os-subpage-card h3 {
   font-size: 22px;
   font-weight: 900;
@@ -542,7 +552,7 @@ body[data-page="occupational-safety"] {
   position: relative;
   z-index: 2;
 }
-.os-subpage-card:hover .os-subpage-link { gap: 14px; }
+
 
 /* ========== ⑥ References 折疊 ========== */
 .os-refs-details {
@@ -625,6 +635,46 @@ body[data-page="occupational-safety"] {
   text-decoration: underline;
   text-decoration-color: rgba(234,88,12,0.3);
 }
-.os-refs-list a:hover {
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .os-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(234,88,12,0.5);
+}
+  .os-btn-secondary:hover {
+  background: var(--os-bg);
+  transform: translateY(-2px);
+}
+  .os-stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-top-width: 6px;
+}
+  .os-stat-card:hover::before {
+  transform: translate(30%, -50%) scale(1.2);
+}
+  .os-h-level summary:hover { opacity: 0.94; }
+  .os-hazard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-left-width: 10px;
+}
+  .os-hazard-card:hover .os-hazard-icon {
+  transform: scale(1.08) rotate(-6deg);
+}
+  .os-subpage-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 52px rgba(0,0,0,0.12);
+  border-color: var(--spc);
+  border-top-width: 6px;
+}
+  .os-subpage-card:hover::before { opacity: 0.06; }
+  .os-subpage-card:hover .os-subpage-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+  .os-subpage-card:hover .os-subpage-link { gap: 14px; }
+  .os-refs-list a:hover {
   text-decoration-color: var(--os-main);
+}
 }

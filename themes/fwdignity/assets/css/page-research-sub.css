@@ -1,11 +1,6 @@
 /* ============================================================
    fwdignity · page-research-sub.css
-   研究成果 5 子頁共用樣式（同 Research Blue 主系，accent 區分）
-     research-publication · Blue   #1E40AF
-     podcast              · Purple #7C3AED
-     infographic          · Amber  #F59E0B
-     download-zone        · Cyan   #0891B2
-     related-resources    · Green  #15803D
+   研究成果子頁共用樣式：Clear Field canonical palette
    ============================================================ */
 
 body[data-page="research-publication"] .fw-page-v15-main,
@@ -21,16 +16,20 @@ body[data-page="podcast"],
 body[data-page="infographic"],
 body[data-page="download-zone"],
 body[data-page="related-resources"] {
-  --rs-main: #1E40AF;
-  --rs-deep: #1E3A8A;
-  --rs-bg:   #DBEAFE;
+  --rs-main: var(--fw-color-primary);
+  --rs-deep: var(--fw-color-primary-deep);
+  --rs-bg: var(--fw-color-paper);
 }
 body[data-page="research-publication"],
-body[data-page="research-publications"] { --rs-accent: #1E40AF; --rs-accent-bg: #DBEAFE; --rs-accent-deep: #1E3A8A; }
-body[data-page="podcast"]              { --rs-accent: #7C3AED; --rs-accent-bg: #EDE9FE; --rs-accent-deep: #4C1D95; }
-body[data-page="infographic"]          { --rs-accent: #F59E0B; --rs-accent-bg: #FEF3C7; --rs-accent-deep: #92400E; }
-body[data-page="download-zone"]        { --rs-accent: #0891B2; --rs-accent-bg: #CFFAFE; --rs-accent-deep: #155E75; }
-body[data-page="related-resources"]    { --rs-accent: #15803D; --rs-accent-bg: #DCFCE7; --rs-accent-deep: #14532D; }
+body[data-page="research-publications"],
+body[data-page="podcast"],
+body[data-page="infographic"],
+body[data-page="download-zone"],
+body[data-page="related-resources"] {
+  --rs-accent: var(--fw-color-primary);
+  --rs-accent-bg: var(--fw-color-paper);
+  --rs-accent-deep: var(--fw-color-primary-deep);
+}
 
 /* ===== 通用容器 ===== */
 .rs-main { min-width: 0; padding-bottom: 60px; }
@@ -39,18 +38,16 @@ body[data-page="related-resources"]    { --rs-accent: #15803D; --rs-accent-bg: #
 /* ===== Hero ===== */
 .rs-hero {
   position: relative;
-  padding: 72px 48px;
-  background: linear-gradient(135deg, var(--rs-accent-deep) 0%, var(--rs-accent) 100%);
-  border-radius: 20px;
-  color: #fff;
+  padding: 48px;
+  background: var(--fw-color-surface);
+  border: 1px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-card);
+  color: var(--fw-color-ink);
   overflow: hidden;
 }
 .rs-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 40%);
-  pointer-events: none;
+  content: none;
+  display: none;
 }
 .rs-hero-inner { position: relative; z-index: 1; max-width: 900px; }
 .rs-hero-badge {
@@ -58,51 +55,51 @@ body[data-page="related-resources"]    { --rs-accent: #15803D; --rs-accent-bg: #
   align-items: center;
   gap: 8px;
   padding: 7px 16px;
-  background: rgba(255,255,255,0.18);
-  border: 1px solid rgba(255,255,255,0.35);
-  border-radius: 999px;
-  color: #fff;
-  font-family: Inter, sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  background: var(--fw-color-paper);
+  border: 1px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-tag);
+  color: var(--fw-color-link);
+  font-family: var(--fw-font-sans);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 500;
+  letter-spacing: 0;
   text-transform: uppercase;
   margin-bottom: 18px;
 }
 .rs-hero h1 {
-  font-size: clamp(28px, 4vw, 40px);
-  font-weight: 900;
-  line-height: 1.25;
+  font-family: var(--fw-font-serif);
+  font-size: var(--fw-font-size-h1);
+  font-weight: 700;
+  line-height: var(--fw-line-height-h1);
   margin: 0 0 14px;
-  color: #fff;
+  color: var(--fw-color-ink);
 }
 .rs-hero-lead {
-  font-size: 16px;
-  line-height: 1.85;
-  color: rgba(255,255,255,0.92);
+  font-size: var(--fw-font-size-body);
+  line-height: var(--fw-line-height-body);
+  color: var(--fw-color-muted);
   margin: 0 0 22px;
   max-width: 720px;
 }
 .rs-hero-stats { display: flex; flex-wrap: wrap; gap: 18px; }
 .rs-hero-stat {
   padding: 12px 20px;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
+  background: var(--fw-color-paper);
+  border: 1px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-card);
 }
 .rs-hero-stat b {
   display: block;
-  font-family: Inter, sans-serif;
-  font-size: 22px;
-  font-weight: 900;
-  color: #fff;
+  font-family: var(--fw-font-sans);
+  font-size: var(--fw-font-size-card-title);
+  font-weight: 700;
+  color: var(--fw-color-ink);
   margin-bottom: 2px;
 }
-.rs-hero-stat span { font-size: 12.5px; color: rgba(255,255,255,0.82); }
+.rs-hero-stat span { font-size: var(--fw-font-size-meta); color: var(--fw-color-muted); }
 
 /* ===== Section Header ===== */
-.rs-sec { padding: 0 8px; }
+.rs-sec { margin: 0; padding: 38px 0; border-top: 1px solid var(--fw-color-line); }
 .rs-sec-head {
   display: flex;
   align-items: center;
@@ -113,34 +110,36 @@ body[data-page="related-resources"]    { --rs-accent: #15803D; --rs-accent-bg: #
 }
 .rs-sec-icon {
   width: 48px; height: 48px;
-  background: var(--rs-accent-bg);
-  color: var(--rs-accent);
-  border-radius: 12px;
+  background: var(--fw-color-primary);
+  color: var(--fw-color-on-dark);
+  border-radius: var(--fw-radius-control);
   display: grid; place-items: center;
   font-size: 20px;
   flex-shrink: 0;
 }
 .rs-sec-head h2 {
-  font-size: 24px;
-  font-weight: 900;
-  color: var(--rs-accent-deep);
+  font-size: var(--fw-font-size-h2);
+  font-weight: 700;
+  color: var(--fw-color-ink);
   margin: 0 0 2px;
 }
-.rs-sec-head h2 .accent { color: var(--rs-accent); }
-.rs-sec-head p { color: var(--c-text-muted); font-size: 13.5px; margin: 0; }
+.rs-sec-head h2 .accent { color: inherit; }
+.rs-sec-head p { color: var(--fw-color-muted); font-size: var(--fw-font-size-body); margin: 0; }
 
 /* ===== 期刊發表 list（research-publication） ===== */
 .rs-pub-year {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  background: var(--rs-accent);
-  color: #fff;
-  border-radius: 6px;
-  font-family: Inter, sans-serif;
-  font-weight: 900;
-  font-size: 14px;
+  min-height: 48px;
+  padding: 8px 0;
+  background: transparent;
+  color: var(--fw-color-primary);
+  border-bottom: 1px solid var(--fw-color-line);
+  border-radius: 0;
+  font-family: var(--fw-font-serif);
+  font-weight: 700;
+  font-size: var(--fw-font-size-h3);
   margin: 18px 0 12px;
 }
 .rs-pub-list { display: flex; flex-direction: column; gap: 14px; }
@@ -150,62 +149,55 @@ body[data-page="related-resources"]    { --rs-accent: #15803D; --rs-accent-bg: #
   gap: 18px;
   align-items: start;
   padding: 20px 24px;
-  background: #fff;
-  border: 1px solid #EEE;
-  border-left: 4px solid var(--rs-accent);
-  border-radius: 12px;
+  background: var(--fw-color-surface);
+  border: 1px solid var(--fw-color-line);
+  border-left: 3px solid var(--fw-color-primary);
+  border-radius: var(--fw-radius-card);
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s var(--e-out);
+  transition: border-color var(--fw-motion-duration) var(--fw-ease-out);
 }
-.rs-pub:hover {
-  transform: translateX(4px);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
-  border-left-width: 8px;
-}
+
 .rs-pub-type {
   padding: 6px 12px;
-  background: var(--rs-accent-bg);
-  color: var(--rs-accent-deep);
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 800;
+  background: var(--fw-color-paper);
+  color: var(--fw-color-accent-text);
+  border-radius: var(--fw-radius-tag);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 500;
   white-space: nowrap;
   flex-shrink: 0;
 }
 .rs-pub-body h3 {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--rs-accent-deep);
+  font-size: var(--fw-font-size-h3);
+  font-weight: 700;
+  color: var(--fw-color-ink);
   margin: 0 0 6px;
-  line-height: 1.5;
+  line-height: var(--fw-line-height-h3);
 }
 .rs-pub-meta {
-  font-family: Inter, sans-serif;
-  font-size: 12.5px;
-  color: var(--c-text-muted);
+  font-family: var(--fw-font-sans);
+  font-size: var(--fw-font-size-meta);
+  color: var(--fw-color-muted);
   margin: 0 0 8px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
 }
-.rs-pub-meta em { color: var(--rs-accent); font-style: italic; font-weight: 600; }
-.rs-pub-authors { font-size: 13px; color: var(--c-text); margin: 0; line-height: 1.7; }
+.rs-pub-meta em { color: var(--fw-color-link); font-style: italic; font-weight: 500; }
+.rs-pub-authors { font-size: var(--fw-font-size-summary); color: var(--fw-color-muted); margin: 0; line-height: var(--fw-line-height-summary); }
 .rs-pub-cta {
   align-self: center;
   padding: 8px 14px;
-  background: transparent;
-  color: var(--rs-accent);
-  border: 1.5px solid var(--rs-accent);
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 12.5px;
+  background: var(--fw-color-paper);
+  color: var(--fw-color-accent-text);
+  border: 1px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-control);
+  font-weight: 700;
+  font-size: var(--fw-font-size-meta);
   white-space: nowrap;
   flex-shrink: 0;
-  transition: all 0.2s;
+  transition: color var(--fw-motion-duration) var(--fw-ease-out), background-color var(--fw-motion-duration) var(--fw-ease-out), border-color var(--fw-motion-duration) var(--fw-ease-out);
 }
-.rs-pub:hover .rs-pub-cta {
-  background: var(--rs-accent);
-  color: #fff;
-}
+
 
 /* ===== Type Legend ===== */
 .rs-legend {
@@ -213,25 +205,26 @@ body[data-page="related-resources"]    { --rs-accent: #15803D; --rs-accent-bg: #
   flex-wrap: wrap;
   gap: 10px;
   padding: 14px 18px;
-  background: var(--rs-accent-bg);
-  border-radius: 10px;
+  background: var(--fw-color-surface);
+  border: 1px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-control);
   margin-bottom: 20px;
 }
 .rs-legend-item {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12.5px;
-  color: var(--rs-accent-deep);
-  font-weight: 600;
+  font-size: var(--fw-font-size-meta);
+  color: var(--fw-color-muted);
+  font-weight: 500;
 }
 .rs-legend-item b {
   padding: 2px 8px;
-  background: #fff;
-  color: var(--rs-accent);
-  border-radius: 4px;
-  font-size: 11.5px;
-  font-weight: 800;
+  background: var(--fw-color-surface-alt);
+  color: var(--fw-color-primary);
+  border-radius: var(--fw-radius-tag);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
 }
 
 /* ===== 研究方向 4 卡 ===== */
@@ -242,31 +235,31 @@ body[data-page="related-resources"]    { --rs-accent: #15803D; --rs-accent-bg: #
 }
 .rs-topic {
   padding: 22px;
-  background: #fff;
-  border: 1px solid #EEE;
-  border-top: 4px solid var(--rs-accent);
-  border-radius: 12px;
+  background: var(--fw-color-surface);
+  border: 1px solid var(--fw-color-line);
+  border-top: 4px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-card);
 }
 .rs-topic-icon {
   width: 44px; height: 44px;
-  background: var(--rs-accent-bg);
-  color: var(--rs-accent);
-  border-radius: 10px;
+  background: var(--fw-color-primary);
+  color: var(--fw-color-on-dark);
+  border-radius: var(--fw-radius-control);
   display: grid; place-items: center;
   font-size: 18px;
   margin-bottom: 14px;
 }
-.rs-topic h3 { font-size: 15.5px; font-weight: 900; color: var(--rs-accent-deep); margin: 0 0 8px; }
-.rs-topic p { font-size: 13px; line-height: 1.75; color: var(--c-text); margin: 0; }
+.rs-topic h3 { font-size: var(--fw-font-size-h3); font-weight: 700; color: var(--fw-color-ink); margin: 0 0 8px; }
+.rs-topic p { font-size: var(--fw-font-size-body); line-height: var(--fw-line-height-body); color: var(--fw-color-muted); margin: 0; }
 
 /* ===== CTA / 交叉 ===== */
 .rs-cross {
   padding: 32px;
-  background: linear-gradient(135deg, var(--rs-accent-bg) 0%, #fff 100%);
-  border-radius: 16px;
-  border: 1px solid var(--rs-accent-bg);
+  background: var(--fw-color-paper);
+  border-radius: var(--fw-radius-card);
+  border: 1px solid var(--fw-color-line);
 }
-.rs-cross h3 { font-size: 18px; font-weight: 900; color: var(--rs-accent-deep); margin: 0 0 14px; }
+.rs-cross h3 { font-size: var(--fw-font-size-h4); font-weight: 700; color: var(--fw-color-ink); margin: 0 0 14px; }
 .rs-cross-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -276,26 +269,53 @@ body[data-page="related-resources"]    { --rs-accent: #15803D; --rs-accent-bg: #
   display: flex;
   align-items: center;
   gap: 10px;
+  min-height: var(--fw-control-height);
   padding: 12px 16px;
-  background: #fff;
-  border: 1px solid var(--rs-accent-bg);
-  border-radius: 10px;
-  color: var(--rs-accent-deep);
+  background: var(--fw-color-primary);
+  border: 1px solid var(--fw-color-primary);
+  border-radius: var(--fw-radius-control);
+  color: var(--fw-color-on-dark);
   text-decoration: none;
   font-weight: 700;
-  font-size: 13.5px;
-  transition: all 0.2s;
+  font-size: var(--fw-font-size-control);
+  transition: background-color var(--fw-motion-duration) var(--fw-ease-out), border-color var(--fw-motion-duration) var(--fw-ease-out);
 }
-.rs-cross-links a:hover {
-  transform: translateX(3px);
-  border-color: var(--rs-accent);
-  background: var(--rs-accent-bg);
-}
-.rs-cross-links a i { color: var(--rs-accent); }
+
+.rs-cross-links a i { color: var(--fw-color-on-dark); }
 
 /* ===== RWD ===== */
 @media (max-width: 860px) {
   .rs-hero { padding: 48px 24px; }
   .rs-pub { grid-template-columns: 1fr; }
   .rs-pub-type, .rs-pub-cta { width: fit-content; }
+}
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .rs-pub:hover { border-color: var(--fw-color-primary); }
+  .rs-pub:hover .rs-pub-cta {
+  background: var(--fw-color-primary);
+  border-color: var(--fw-color-primary);
+  color: var(--fw-color-on-dark);
+}
+  .rs-cross-links a:hover {
+  border-color: var(--fw-color-primary-deep);
+  background: var(--fw-color-primary-deep);
+}
+}
+
+/* ===== 治理下沉區（2026-07-17 Phase D 批③，自 site-v2-page-foundation.css 遷入，逐字含 !important） ===== */
+
+/* 批③ 註：podcast/infographic/download-zone 選擇器分支之 --rs-* 於該些頁零消費（page-media-hub 已 canonical 化），保留原選擇器僅為逐字搬運。 */
+body[data-page="research-publication"],
+body[data-page="research-publications"],
+body[data-page="podcast"],
+body:is([data-page="infographic"], [data-page="download-zone"]),
+body[data-page="related-resources"] {
+  --rs-main: var(--fw-topic-research);
+  --rs-deep: var(--fw-color-primary-deep);
+  --rs-bg: var(--fw-color-paper);
+  --rs-accent: var(--fw-topic-research);
+  --rs-accent-bg: var(--fw-color-surface-alt);
+  --rs-accent-deep: var(--fw-color-primary-deep);
 }

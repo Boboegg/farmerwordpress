@@ -1,0 +1,42 @@
+{
+  "captured_at": "2026-07-15",
+  "scope": "修正四篇 Facebook 匯入文章日期前的 LocalWP 可回復快照；正文、圖片與分類不在本次修改範圍。",
+  "posts": [
+    {
+      "ID": 2193,
+      "post_title": "季工作會議籌備：走訪打貓果菜生產合作社",
+      "post_status": "publish",
+      "post_date": "2026-07-14 18:50:08",
+      "post_date_gmt": "2026-07-14 10:50:08",
+      "post_modified": "2026-07-14 18:50:08",
+      "source_date": "2026-06-05 00:00:00"
+    },
+    {
+      "ID": 2196,
+      "post_title": "到民雄鄉農會分享計畫成果與農業職業傷病議題",
+      "post_status": "publish",
+      "post_date": "2026-07-14 18:50:08",
+      "post_date_gmt": "2026-07-14 10:50:08",
+      "post_modified": "2026-07-14 18:50:08",
+      "source_date": "2026-05-12 00:00:00"
+    },
+    {
+      "ID": 2199,
+      "post_title": "中正E報：《風吹過田埂時　在她與土地之間》報導",
+      "post_status": "publish",
+      "post_date": "2026-07-14 18:50:08",
+      "post_date_gmt": "2026-07-14 10:50:08",
+      "post_modified": "2026-07-14 18:50:08",
+      "source_date": "2026-06-24 13:39:00"
+    },
+    {
+      "ID": 2202,
+      "post_title": "恭賀嚴佳祥先生榮獲第八屆全國百大青農",
+      "post_status": "publish",
+      "post_date": "2026-07-14 18:50:08",
+      "post_date_gmt": "2026-07-14 10:50:08",
+      "post_modified": "2026-07-14 18:50:08",
+      "source_date": "2026-06-26 11:31:00"
+    }
+  ]
+}

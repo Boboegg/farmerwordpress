@@ -1,63 +1,58 @@
 <?php
 /**
+ * Template Name: 尊嚴農業倡議
+ * Slug: dignity-farming-initiative
  * fwdignity · page-dignity-farming-initiative.php
- * 尊嚴農業倡議 · Advocacy Red #E11D48
- * 🔴 紅線:文字 / 數字 / 引用 1:1 復用原頁。
+ * 尊嚴農業倡議頁面模板。
  */
 get_header();
 ?>
 
-<div class="fw-page-layout">
+<div class="fw-page-layout fw-page-layout--full">
 
 <main class="adv-main" id="main" role="main">
 
   <!-- Hero 全幅敘事 -->
   <section class="adv-hero">
-    <div class="adv-hero-noise" aria-hidden="true"></div>
-    <div class="adv-hero-deco" aria-hidden="true">
-      <i class="fas fa-bullhorn adv-deco-1"></i>
-      <i class="fas fa-seedling adv-deco-2"></i>
-      <i class="fas fa-hand-fist adv-deco-3"></i>
-    </div>
     <div class="adv-hero-inner">
       <span class="adv-hero-badge"><i class="fas fa-bullhorn"></i> ADVOCACY</span>
-      <h1 class="adv-hero-title" data-hook-title>尊嚴<span class="accent">農業倡議</span></h1>
+      <h1 class="adv-hero-title">尊嚴農業倡議</h1>
       <p class="adv-hero-tagline">「讓每一位農業工作者，都能在安全與尊嚴中勞動。」</p>
       <p class="adv-hero-lead">農業作為國家發展基礎，具備無可替代的公共利益;然而，支撐此一龐大體系的第一線農業工作者，長期處於勞動權益保障與職業健康防護的邊緣地帶。本倡議以嘉義縣民雄鄉為核心實踐場域，透過跨領域學術研究、醫療專業介入及草根社會行動，系統性地探究雲嘉地區農業工作者的職業健康困境，致力建構農業工作者職業健康的社會安全網。</p>
       <div class="adv-hero-actions">
-        <a href="#adv-timeline" class="adv-btn-primary" data-magnetic><i class="fas fa-timeline"></i> 倡議歷程</a>
+        <a href="#adv-timeline" class="adv-btn-primary"><i class="fas fa-timeline"></i> 倡議歷程</a>
         <a href="#adv-pillars" class="adv-btn-secondary"><i class="fas fa-file-signature"></i> 核心主張</a>
       </div>
     </div>
   </section>
 
   <!-- ① 為什麼需要 -->
-  <section class="adv-sec reveal" id="adv-why">
+  <section class="adv-sec" id="adv-why">
     <div class="adv-sec-head">
       <div class="adv-sec-icon"><i class="fas fa-question-circle"></i></div>
       <div>
-        <h2>為什麼需要<span class="accent">尊嚴農業倡議</span>?</h2>
+        <h2>為什麼需要尊嚴農業倡議?</h2>
         <p>農業勞動現場的結構性困境</p>
       </div>
     </div>
     <div class="adv-problem-grid">
       <div class="adv-problem">
-        <div class="adv-problem-icon" style="--pc:#C62828; --pcl:#FEE2E2;"><i class="fas fa-person-falling-burst"></i></div>
+        <div class="adv-problem-icon"><i class="fas fa-person-falling-burst"></i></div>
         <h3>職災隱形化</h3>
         <p>農民非勞動基準法適用對象，職業災害缺乏完整通報機制。近年曾發生中壯年農民高溫田間猝死、到院前缺乏完整醫學檢驗數據、職災認定困難致遺屬權益受損之案例（案例改編，身分資訊已去識別）。此類隱形化正是制度亟需改革之處。</p>
       </div>
       <div class="adv-problem">
-        <div class="adv-problem-icon" style="--pc:#1565C0; --pcl:#DBEAFE;"><i class="fas fa-person-cane"></i></div>
+        <div class="adv-problem-icon"><i class="fas fa-person-cane"></i></div>
         <h3>高齡化危機</h3>
         <p>依主計總處農家戶口及經濟調查，台灣農民平均年齡約 64 歲，務農人口老化快速（行政院主計總處，2023）。長年高強度反覆勞動導致肌肉骨骼疾病（Osborne et al., 2012），農民卻普遍將病痛視為勞動的「宿命」，延誤就醫，錯失早期治療黃金期。</p>
       </div>
       <div class="adv-problem">
-        <div class="adv-problem-icon" style="--pc:#7C3AED; --pcl:#EDE9FE;"><i class="fas fa-shield-halved"></i></div>
+        <div class="adv-problem-icon"><i class="fas fa-shield-halved"></i></div>
         <h3>社會安全網不足</h3>
         <p>農民職業災害保險自 2018 年 11 月試辦、2024 年 11 月保障升級，就醫津貼調整為門診 100 元／住院 1,200 元每日（勞動部勞工保險局，2024）。然整體投保率仍有改善空間，新住民、移工、女農等特殊族群近用率更低（來源待確認）。現行制度仍偏重「災後補償」，職災預防教育、定期職業健康檢查與復工重建機制的連結待深化。</p>
       </div>
       <div class="adv-problem">
-        <div class="adv-problem-icon" style="--pc:#0D9488; --pcl:#CCFBF1;"><i class="fas fa-book-open-reader"></i></div>
+        <div class="adv-problem-icon"><i class="fas fa-book-open-reader"></i></div>
         <h3>健康識能與資訊落差</h3>
         <p>現有職安健康資訊多為工業導向，農民在數位近用與健康識能上面臨多重障礙。傳統農村文化中，農民習慣將身體病痛內化為年齡增長的自然老化現象，採取忍耐或偏方因應，成為防護網最難跨越的無形屏障。</p>
       </div>
@@ -70,11 +65,11 @@ get_header();
   </section>
 
   <!-- ② 核心主張 -->
-  <section class="adv-sec reveal" id="adv-pillars">
+  <section class="adv-sec" id="adv-pillars">
     <div class="adv-sec-head">
       <div class="adv-sec-icon"><i class="fas fa-file-signature"></i></div>
       <div>
-        <h2>核心<span class="accent">倡議主張</span></h2>
+        <h2>核心倡議主張</h2>
         <p>我們認為農業工作者應當享有的基本權利</p>
       </div>
     </div>
@@ -103,11 +98,11 @@ get_header();
   </section>
 
   <!-- ③ 倡議歷程 時間軸 -->
-  <section class="adv-sec reveal" id="adv-timeline">
+  <section class="adv-sec" id="adv-timeline">
     <div class="adv-sec-head">
       <div class="adv-sec-icon"><i class="fas fa-timeline"></i></div>
       <div>
-        <h2>倡議<span class="accent">歷程</span></h2>
+        <h2>倡議歷程</h2>
         <p>從研究啟動到政策倡議，記錄每一步行動。</p>
       </div>
     </div>
@@ -153,11 +148,11 @@ get_header();
   </section>
 
   <!-- ④ 倡議行動與傳播 -->
-  <section class="adv-sec reveal" id="adv-focus-groups">
+  <section class="adv-sec" id="adv-focus-groups">
     <div class="adv-sec-head">
       <div class="adv-sec-icon"><i class="fas fa-users-rectangle"></i></div>
       <div>
-        <h2>倡議行動與<span class="accent">傳播</span></h2>
+        <h2>倡議行動與傳播</h2>
         <p>記錄農民的真實聲音與倡議行動，深度座談紀實 + 自製 Podcast 系列驅動公共對話。</p>
       </div>
     </div>
@@ -229,25 +224,25 @@ get_header();
   </section>
 
   <!-- ⑤ CTA -->
-  <section class="adv-sec adv-cta-sec reveal" id="adv-cta">
+  <section class="adv-sec adv-cta-sec" id="adv-cta">
     <div class="adv-cta-card">
-      <h2>加入我們，<span class="accent">一起守護農業尊嚴</span></h2>
+      <h2>加入我們，一起守護農業尊嚴</h2>
       <p>當我們在超市收銀台把平價蔬果放入購物袋時，其背後是無數農民透支關節、脊椎與生命健康所換來的沉重代價。歡迎關注我們的倡議平台，了解更多農業職業健康議題，並將這份關懷分享給更多人。</p>
       <div class="adv-cta-btns">
-        <a href="/about/" class="adv-btn-primary" data-magnetic><i class="fas fa-users"></i> 關於我們</a>
+        <a href="/about/" class="adv-btn-primary"><i class="fas fa-users"></i> 關於我們</a>
         <a href="/thenews/" class="adv-btn-secondary"><i class="fas fa-newspaper"></i> 看最新動態</a>
       </div>
     </div>
   </section>
 
   <!-- ⑥ 交叉連結 -->
-  <section class="adv-sec reveal">
+  <section class="adv-sec">
     <h3 class="adv-cross-title"><i class="fas fa-link"></i> 延伸探索</h3>
     <div class="adv-cross-grid">
-      <a href="/occupational-safety/" class="adv-cross" style="--cc:#EA580C;"><i class="fas fa-helmet-safety"></i><span>職業安全</span><small>防護具型錄與風險評估</small></a>
-      <a href="/healthgood/" class="adv-cross" style="--cc:#0891B2;"><i class="fas fa-heart-pulse"></i><span>健康促進</span><small>復健運動與職醫地圖</small></a>
-      <a href="/economic-insurance/" class="adv-cross" style="--cc:#D97706;"><i class="fas fa-shield-cat"></i><span>經濟與保險</span><small>職災保險與補助資源</small></a>
-      <a href="/farmer-study/" class="adv-cross" style="--cc:#7C3AED;"><i class="fas fa-graduation-cap"></i><span>農學堂</span><small>微學習影片與工作坊</small></a>
+      <span class="adv-cross" aria-disabled="true"><i class="fas fa-helmet-safety"></i><span>職業安全</span><small>防護具型錄與風險評估</small></span>
+      <span class="adv-cross" aria-disabled="true"><i class="fas fa-heart-pulse"></i><span>健康促進</span><small>復健運動與職醫地圖</small></span>
+      <span class="adv-cross" aria-disabled="true"><i class="fas fa-shield-cat"></i><span>經濟與保險</span><small>職災保險與補助資源</small></span>
+      <a href="/farmer-study/" class="adv-cross"><i class="fas fa-graduation-cap"></i><span>農學堂</span><small>微學習影片與工作坊</small></a>
     </div>
   </section>
 
@@ -258,14 +253,14 @@ get_header();
     .adv-refs-list.apa7 li em { font-style: italic; }
     .adv-refs-list.apa7 li a { word-break: break-all; }
     .adv-refs-open { padding: 1.5em 0; }
-    .adv-refs-note { font-size: .9em; color: #555; margin-bottom: 1em; }
+    .adv-refs-note { font-size: .9em; color: var(--fw-color-muted); margin-bottom: 1em; }
   </style>
-  <section class="adv-sec adv-refs reveal">
+  <section class="adv-sec adv-refs">
     <div class="adv-refs-open">
       <div class="adv-sec-head">
         <div class="adv-sec-icon"><i class="fas fa-book-open"></i></div>
         <div>
-          <h2>參考<span class="accent">資料</span></h2>
+          <h2>參考資料</h2>
           <p>本頁內容依 APA 第 7 版格式引用以下政府文件與學術文獻。部分跨國比較資料標示「來源待確認」，將於後續補齊。</p>
         </div>
       </div>
@@ -280,7 +275,6 @@ get_header();
 
 </main>
 
-<?php get_template_part( 'template-parts/sidebar' ); ?>
 </div>
 
 <?php get_footer(); ?>

@@ -1,3 +1,46 @@
+/* ===== 治理搬遷（2026-07-17 Phase D 批③）——本家族屬未發布休眠頁，重開前須依清朗田野 3.3.0 重寫（封條政策不變） ===== */
+
+body:is(
+  [data-page="subpage-heat"], [data-page="subpage-pesticide"],
+  [data-page="subpage-msd"], [data-page="subpage-mental"]
+) {
+  --hps-main: var(--fw-topic-health);
+  --hps-deep: var(--fw-color-primary-deep);
+  --hps-bg: var(--fw-color-paper);
+  --hps-main-rgb: 85, 110, 65;
+}
+
+body:is(
+  [data-page="subpage-heat"], [data-page="subpage-pesticide"],
+  [data-page="subpage-msd"], [data-page="subpage-mental"]
+) .hps-stretch.after {
+  border-top-color: var(--fw-topic-health) !important;
+}
+
+body:is(
+  [data-page="subpage-heat"], [data-page="subpage-pesticide"],
+  [data-page="subpage-msd"], [data-page="subpage-mental"]
+) .hps-stretch.after li::before {
+  color: var(--fw-topic-health) !important;
+}
+
+body.fw-page-v15 main .hps-hero {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .hps-hero :is(p, li) {
+  color: var(--fw-color-muted) !important;
+}
+
+body.fw-page-v15 main .hps-hero::before,
+body.fw-page-v15 main .hps-hero::after {
+  background: none !important;
+}
+
 /* ============================================================
    fwdignity · page-health-sub.css
    健康促進 4 子頁共用樣式
@@ -55,12 +98,7 @@ body[data-page="subpage-mental"] {
   margin-bottom: 24px;
   transition: all 0.3s var(--e-out);
 }
-.hps-back:hover {
-  background: var(--hps-main);
-  color: #fff;
-  border-color: var(--hps-main);
-  transform: translateX(-4px);
-}
+
 
 /* ========== Hero ========== */
 .hps-hero {
@@ -285,12 +323,7 @@ body[data-page="subpage-mental"] {
   border: 1px solid #F0F0F0;
   transition: all 0.3s var(--e-out);
 }
-.hps-habit:hover {
-  background: #fff;
-  border-color: var(--hps-main);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
+
 .hps-habit-num {
   width: 36px; height: 36px;
   border-radius: 50%;
@@ -365,10 +398,7 @@ body[data-page="subpage-mental"] {
   border-left: 4px solid var(--hps-main);
   transition: all 0.3s var(--e-out);
 }
-.hps-sop:hover {
-  background: #fff;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
+
 .hps-sop.emergency {
   background: #FEF2F2;
   border-left-color: #DC2626;
@@ -415,12 +445,7 @@ body[data-page="subpage-mental"] {
   border: 1px solid #F0F0F0;
   transition: all 0.3s var(--e-out);
 }
-.hps-res:hover {
-  background: #fff;
-  border-color: var(--hps-main);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
+
 .hps-res h4 {
   font-size: 14.5px;
   font-weight: 800;
@@ -600,11 +625,7 @@ body[data-page="subpage-mental"] {
   color: inherit;
   transition: all 0.3s var(--e-out);
 }
-.hps-emergency-card:hover {
-  background: linear-gradient(135deg, #FEE2E2 0%, #fff 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(220,38,38,0.2);
-}
+
 .hps-emergency-left { display: flex; align-items: center; gap: 14px; }
 .hps-emergency-left i { font-size: 28px; color: #DC2626; }
 .hps-emergency-left strong { display: block; font-size: 15px; color: #B91C1C; }
@@ -657,12 +678,7 @@ body[data-page="subpage-mental"] {
   border: 1px solid #F0F0F0;
   transition: all 0.3s var(--e-out);
 }
-.hps-crop:hover {
-  background: #fff;
-  border-color: var(--hps-main);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
+
 .hps-crop-head {
   display: flex;
   align-items: center;
@@ -800,12 +816,7 @@ body[data-page="subpage-mental"] {
   text-align: center;
   transition: all 0.3s var(--e-out);
 }
-.hps-tool:hover {
-  background: #fff;
-  border-color: var(--hps-main);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
+
 .hps-tool i {
   font-size: 28px;
   color: var(--hps-main);
@@ -851,12 +862,7 @@ body[data-page="subpage-mental"] {
   border: 1px solid #F0F0F0;
   transition: all 0.3s var(--e-out);
 }
-.hps-stressor:hover {
-  background: #fff;
-  border-color: var(--hps-main);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
+
 .hps-stressor i {
   font-size: 24px;
   color: var(--hps-main);
@@ -996,12 +1002,7 @@ body[data-page="subpage-mental"] {
   color: inherit;
   transition: all 0.3s var(--e-out);
 }
-.hps-hotline:hover {
-  background: #fff;
-  border-color: var(--hps-main);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
+
 .hps-hotline.primary {
   background: linear-gradient(135deg, var(--hps-bg) 0%, #fff 100%);
   border: 2px solid var(--hps-main);
@@ -1094,11 +1095,7 @@ body[data-page="subpage-mental"] {
   text-decoration: none;
   transition: all 0.3s var(--e-out);
 }
-.hps-cross-grid a:hover {
-  border-color: var(--hps-main);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-}
+
 .hps-cross-grid a i {
   font-size: 22px;
   color: var(--hps-main);
@@ -1172,4 +1169,64 @@ body[data-page="subpage-mental"] {
   text-decoration: underline;
   text-decoration-color: rgba(var(--hps-main-rgb), 0.3);
 }
-.hps-refs-list a:hover { text-decoration-color: var(--hps-main); }
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .hps-back:hover {
+  background: var(--hps-main);
+  color: #fff;
+  border-color: var(--hps-main);
+  transform: translateX(-4px);
+}
+  .hps-habit:hover {
+  background: #fff;
+  border-color: var(--hps-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+  .hps-sop:hover {
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+  .hps-res:hover {
+  background: #fff;
+  border-color: var(--hps-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+  .hps-emergency-card:hover {
+  background: linear-gradient(135deg, #FEE2E2 0%, #fff 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(220,38,38,0.2);
+}
+  .hps-crop:hover {
+  background: #fff;
+  border-color: var(--hps-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+  .hps-tool:hover {
+  background: #fff;
+  border-color: var(--hps-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+  .hps-stressor:hover {
+  background: #fff;
+  border-color: var(--hps-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+  .hps-hotline:hover {
+  background: #fff;
+  border-color: var(--hps-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+  .hps-cross-grid a:hover {
+  border-color: var(--hps-main);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+  .hps-refs-list a:hover { text-decoration-color: var(--hps-main); }
+}

@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 個人防護裝備
+ * Slug: personal-protective-equipment
  * fwdignity · page-personal-protective-equipment.php
  * PPE 子頁(slug=personal-protective-equipment)
  *

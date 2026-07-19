@@ -3,27 +3,30 @@
  * Template Name: 關於我們
  * Slug: about
  */
-get_header(); ?>
+get_header();
 
-<div class="fw-page-layout">
+$advocacy_url = fwdignity_get_public_page_url( 'dignity-farming-initiative' );
+?>
+
+<div class="fw-page-layout fw-page-layout--full">
 
 <main class="ab-main" id="main" role="main">
 
   <!-- Hero -->
-  <section class="ab-hero reveal">
+  <section class="ab-hero">
     <div class="ab-hero-inner">
       <span class="ab-hero-badge"><i class="fas fa-leaf"></i> ABOUT US</span>
-      <h1 data-hook-title>尊嚴農業：<br>共構雲嘉農業工作者<br>職業健康的<span class="accent">社會安全網</span></h1>
+      <h1>尊嚴農業：<br>共構雲嘉農業工作者<br>職業健康的社會安全網</h1>
       <p class="ab-hero-lead">本計畫聚焦農業工作者之<strong>職業健康</strong>與<strong>社會安全網</strong>建構，回應農民長期面臨之高溫曝露、重複性勞動、農藥使用及政策保障不足等風險。雖已有農保與農職保制度，然在認定、預防與制度落差方面仍存缺口，難以全面維護農民健康（勞動部勞工保險局，2024）。</p>
       <p class="ab-hero-quote">農民是工作者，不是補助對象。</p>
     </div>
   </section>
 
   <!-- 計畫緣起（4 面向） -->
-  <section class="ab-sec reveal">
+  <section class="ab-sec">
     <div class="ab-sec-head">
       <span class="kicker">Origin · 計畫緣起</span>
-      <h2>研究的<span class="accent">四大面向</span></h2>
+      <h2>研究的四大面向</h2>
       <p>從風險掌握到政策倡議，建構完整的農業職業健康社會安全網。</p>
     </div>
     <div class="ab-origin">
@@ -31,22 +34,22 @@ get_header(); ?>
       <div class="ab-four">
         <div class="ab-four-item">
           <span class="ab-four-num">01</span>
-          <h4>基礎調查</h4>
+          <h3>基礎調查</h3>
           <p>掌握農業勞動現場的傷病樣態與健康風險。</p>
         </div>
         <div class="ab-four-item">
           <span class="ab-four-num">02</span>
-          <h4>政策研究</h4>
+          <h3>政策研究</h3>
           <p>進行跨國比較，檢視現行社會保障不足。</p>
         </div>
         <div class="ab-four-item">
           <span class="ab-four-num">03</span>
-          <h4>健康教育</h4>
+          <h3>健康教育</h3>
           <p>發展在地適切的健康促進教育模組。</p>
         </div>
         <div class="ab-four-item">
           <span class="ab-four-num">04</span>
-          <h4>社會倡議</h4>
+          <h3>社會倡議</h3>
           <p>凝聚多方共識，推動政策修正與制度改革。</p>
         </div>
       </div>
@@ -54,10 +57,10 @@ get_header(); ?>
   </section>
 
   <!-- 實踐場域 -->
-  <section class="ab-sec reveal">
+  <section class="ab-sec">
     <div class="ab-sec-head">
       <span class="kicker">Field · 實踐場域</span>
-      <h2>嘉義縣<span class="accent">民雄鄉</span></h2>
+      <h2>嘉義縣民雄鄉</h2>
       <p>以典型臺灣農村的產業結構為研究基地，承載「農業即生活」的地方認同。</p>
     </div>
     <div class="ab-field">
@@ -70,57 +73,50 @@ get_header(); ?>
         <p>嘉義縣民雄鄉位於嘉南平原中部，海拔約 25 公尺，地勢平坦，屬亞熱帶至熱帶季風氣候，具備優良的農業生產條件，尤其適合<strong>鳳梨、熱帶水果</strong>之栽培。</p>
         <p>全鄉面積約 85.5 平方公里，人口約七萬人，為嘉義縣人口最多且人口密度最高之鄉鎮。民雄擁有嘉義縣面積最大的耕地（5,070 公頃），農民數約七千人，主要作物涵蓋稻米、雜糧、蔬果、鳳梨與蓮藕，展現典型臺灣農村的產業結構（民雄鄉公所，n.d.；以上在地數據來源待確認）。</p>
         <p>稻米耕作形塑了平原農業景觀，並承載地方居民之日常生活與歲時循環，形成「<strong>農業即生活</strong>」的地方認同，兼具社會、經濟與文化之代表性。</p>
-        <div class="ab-field-stats">
-          <div class="ab-field-stat"><b>25m</b><span>平均海拔</span></div>
-          <div class="ab-field-stat"><b>85.5km²</b><span>全鄉面積</span></div>
-          <div class="ab-field-stat"><b>~7 萬</b><span>全鄉人口</span></div>
-          <div class="ab-field-stat"><b>5,070 ha</b><span>耕地面積</span></div>
-          <div class="ab-field-stat"><b>~7,000</b><span>農民人數</span></div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- 行動設計 4 卡 -->
-  <section class="ab-sec reveal">
+  <section class="ab-sec">
     <div class="ab-sec-head">
       <span class="kicker">Action · 行動設計</span>
-      <h2>四個<span class="accent">行動面向</span></h2>
+      <h2>四個行動面向</h2>
       <p>從科學實證到政策推動，建構以農民為中心的系統性行動。</p>
     </div>
     <div class="ab-action-grid">
       <div class="ab-action">
         <span class="ab-action-num">01</span>
         <div class="ab-action-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-        <h4>揭示農業勞動的<br>健康風險</h4>
+        <h3>揭示農業勞動的<br>健康風險</h3>
         <p>釐清農業工作者常見職業傷病的類型、成因與其與勞動史、社會史的關聯。透過問卷、訪談、田野調查與臨床檢測，掌握農業勞動者在高溫、農藥暴露、重複性勞動下的健康樣態，建構農民職業健康的科學性資料基礎（Osborne et al., 2012）。</p>
       </div>
       <div class="ab-action">
         <span class="ab-action-num">02</span>
         <div class="ab-action-icon"><i class="fas fa-scale-balanced"></i></div>
-        <h4>檢視制度落差與<br>跨國比較</h4>
+        <h3>檢視制度落差與<br>跨國比較</h3>
         <p>剖析臺灣現行農民健康保險、農職災保等制度在認定與保障上的困境，並參照日本、韓國、澳洲等國經驗。以比較政策的視角，檢視國內外在職災認定、補償制度、預防教育、醫療支持等面向的差異，提出具在地適切性與可行性的改進建議。</p>
       </div>
       <div class="ab-action">
         <span class="ab-action-num">03</span>
         <div class="ab-action-icon"><i class="fas fa-graduation-cap"></i></div>
-        <h4>建立以農民為中心<br>的教育模組</h4>
+        <h3>建立以農民為中心<br>的教育模組</h3>
         <p>發展健康促進教育課程，涵蓋正確工作姿勢、農藥安全、肌肉骨骼疾病預防等主題。結合大學社會責任（USR）與社區陪伴學習，強調農民自我健康識能與社群互助機制。</p>
       </div>
       <div class="ab-action">
         <span class="ab-action-num">04</span>
         <div class="ab-action-icon"><i class="fas fa-handshake"></i></div>
-        <h4>連結多元行動者<br>以推動政策變革</h4>
+        <h3>連結多元行動者<br>以推動政策變革</h3>
         <p>整合大學、醫院、農會、青農組織與社區發展協會，形成跨部門協作平台。透過論壇、媒體報導、策展與公共對話，提升社會對農民職業健康的認識，促使相關部會修正政策並投入資源。</p>
       </div>
     </div>
   </section>
 
   <!-- 研究團隊 preview -->
-  <section class="ab-sec reveal">
+  <section class="ab-sec">
     <div class="ab-sec-head">
       <span class="kicker">Team · 研究團隊</span>
-      <h2>跨領域<span class="accent">共同研究</span></h2>
+      <h2>研究團隊</h2>
       <p>由國立中正大學與臺大醫院雲林分院共同組成，結合教育、傳播、勞工、政治、職業醫學等專業。</p>
     </div>
     <div class="ab-team">
@@ -129,7 +125,7 @@ get_header(); ?>
           <h3>主持團隊</h3>
           <p>計畫由國立中正大學與臺大醫院雲林分院共同主持，整合跨校與跨領域之協同研究者，共同推動農業工作者職業健康的社會安全網建構。</p>
         </div>
-        <a href="/researchteam/" class="ab-team-cta">查看全部團隊成員 <i class="fas fa-arrow-right"></i></a>
+        <a href="<?php echo esc_url( home_url( '/about/researchteam/' ) ); ?>" class="ab-team-cta">查看全部團隊成員 <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="ab-team-grid">
         <div class="ab-team-card">
@@ -185,14 +181,15 @@ get_header(); ?>
   </section>
 
   <!-- 最終 CTA -->
-  <section class="ab-sec reveal">
+  <section class="ab-sec">
     <div class="ab-final-cta">
       <h3>讓農業勞動者的<br>健康與尊嚴被看見</h3>
       <p>本計畫邀請農會、社區組織、青農夥伴、衛教人員與關心農業的每一位公民，一起共構雲嘉農業工作者的社會安全網。</p>
-      <div class="ab-final-btns">
-        <a href="/dignity-farming-initiative/" class="btn-primary" data-magnetic><i class="fas fa-bullhorn"></i> 加入尊嚴農業倡議</a>
-        <a href="/contact/" class="btn-ghost" data-magnetic><i class="fas fa-envelope"></i> 聯繫我們</a>
-      </div>
+      <?php if ( $advocacy_url ) : ?>
+        <div class="ab-final-btns">
+          <a href="<?php echo esc_url( $advocacy_url ); ?>" class="btn-primary"><i class="fas fa-bullhorn"></i> 加入尊嚴農業倡議</a>
+        </div>
+      <?php endif; ?>
     </div>
   </section>
 
@@ -203,13 +200,13 @@ get_header(); ?>
     .ab-refs-list.apa7 li em { font-style: italic; }
     .ab-refs-list.apa7 li a { word-break: break-all; }
     .ab-refs-open { padding: 1.5em 0; }
-    .ab-refs-note { font-size: .9em; color: #555; margin-bottom: 1em; }
+    .ab-refs-note { font-size: .9em; color: var(--fw-color-muted); margin-bottom: 1em; }
   </style>
-  <section class="ab-sec ab-refs reveal">
+  <section class="ab-sec ab-refs">
     <div class="ab-refs-open">
       <div class="ab-sec-head">
         <span class="kicker"><i class="fas fa-book-open"></i> References · 參考資料</span>
-        <h2>參考<span class="accent">資料</span></h2>
+        <h2>參考資料</h2>
         <p class="ab-refs-note">本頁引用依 APA 第 7 版格式整理；在地數據（耕地面積、農民人數等）標示「來源待確認」者將於後續版本補齊原始出處。</p>
       </div>
       <ul class="ab-refs-list apa7">
@@ -222,7 +219,6 @@ get_header(); ?>
 
 </main>
 
-<?php get_template_part( 'template-parts/sidebar' ); ?>
 </div>
 
 <?php get_footer();

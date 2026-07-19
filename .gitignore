@@ -18,6 +18,11 @@ gha-creds-*.json
 node_modules/
 package-lock.json
 
+# 本機瀏覽器檢查與工作流輸出（可重建，可能包含瀏覽器狀態）
+.playwright-cli/
+.superpowers/
+output/
+
 # ============================================
 # Backups (2026-04-20)
 # 整站備份不進 git：DB 含密碼 hash、uploads 301MB 圖片

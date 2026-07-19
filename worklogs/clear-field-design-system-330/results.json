@@ -1,0 +1,1477 @@
+{
+  "generatedAt": "2026-07-13T16:22:59.785Z",
+  "themeVersion": "3.3.0",
+  "cases": [
+    {
+      "name": "home-hero-desktop",
+      "path": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/home-hero-desktop.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959710730-1",
+      "audit": {
+        "url": "https://fwdignity-local.local/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 0,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": null,
+        "firstTag": null,
+        "firstControl": {
+          "radius": "4px",
+          "height": 44
+        },
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": {
+          "background": "rgb(67, 88, 50)",
+          "marginTop": "28px",
+          "marginBottom": "28px",
+          "paddingTop": "46px",
+          "paddingBottom": "46px"
+        },
+        "homeMediaCard": {
+          "background": "rgb(52, 69, 45)",
+          "radius": "14px",
+          "shadow": "none"
+        },
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "暫停自動輪播",
+            "height": 44
+          },
+          {
+            "label": "上一則消息",
+            "height": 44
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9751/devtools/browser/344c9574-91f0-4339-8bca-1c82ed60178a",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86052:930486:0714/002154.402698:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "home-media-desktop",
+      "path": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/home-media-desktop.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959715412-2",
+      "audit": {
+        "url": "https://fwdignity-local.local/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 1155,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": null,
+        "firstTag": null,
+        "firstControl": {
+          "radius": "4px",
+          "height": 44
+        },
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": {
+          "background": "rgb(67, 88, 50)",
+          "marginTop": "28px",
+          "marginBottom": "28px",
+          "paddingTop": "46px",
+          "paddingBottom": "46px"
+        },
+        "homeMediaCard": {
+          "background": "rgb(52, 69, 45)",
+          "radius": "14px",
+          "shadow": "none"
+        },
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "暫停自動輪播",
+            "height": 44
+          },
+          {
+            "label": "上一則消息",
+            "height": 44
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9752/devtools/browser/831da108-a990-4606-b7a9-39e48a99f3ad",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86073:930826:0714/002158.943643:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "home-footer-desktop",
+      "path": "/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/home-footer-desktop.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959720012-3",
+      "audit": {
+        "url": "https://fwdignity-local.local/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 2472,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": null,
+        "firstTag": null,
+        "firstControl": {
+          "radius": "4px",
+          "height": 44
+        },
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": {
+          "background": "rgb(67, 88, 50)",
+          "marginTop": "28px",
+          "marginBottom": "28px",
+          "paddingTop": "46px",
+          "paddingBottom": "46px"
+        },
+        "homeMediaCard": {
+          "background": "rgb(52, 69, 45)",
+          "radius": "14px",
+          "shadow": "none"
+        },
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "暫停自動輪播",
+            "height": 44
+          },
+          {
+            "label": "上一則消息",
+            "height": 44
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9753/devtools/browser/62ce115d-cb35-4eea-a836-1dfe320398a9",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86089:931075:0714/002203.382906:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "news-desktop",
+      "path": "/thenews/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/news-desktop.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959724626-4",
+      "audit": {
+        "url": "https://fwdignity-local.local/thenews/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 265,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": {
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.06) 0px 4px 14px 0px"
+        },
+        "firstTag": {
+          "radius": "2px",
+          "background": "rgb(240, 240, 236)",
+          "borderLeft": "rgb(67, 88, 50) 4px"
+        },
+        "firstControl": {
+          "radius": "4px",
+          "height": 44
+        },
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "收合篩選欄",
+            "height": 44
+          },
+          {
+            "label": "套用篩選",
+            "height": 44
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9754/devtools/browser/aaa9dde7-9490-49aa-b42e-973b9817d8ae",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86105:931352:0714/002207.845122:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "podcast-desktop",
+      "path": "/podcast/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/podcast-desktop.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959728993-5",
+      "audit": {
+        "url": "https://fwdignity-local.local/podcast/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 413,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": {
+          "radius": "0px",
+          "shadow": "rgba(37, 51, 30, 0.06) 0px 4px 14px 0px"
+        },
+        "firstTag": null,
+        "firstControl": {
+          "radius": "4px",
+          "height": 44
+        },
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "暫停自動輪播",
+            "height": 44
+          },
+          {
+            "label": "上一則精選",
+            "height": 44
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9755/devtools/browser/05b306ec-1e65-4879-bafd-7cd324af30ec",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86146:931634:0714/002212.278560:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "people-desktop",
+      "path": "/people-who-farm/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/people-desktop.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959736690-6",
+      "audit": {
+        "url": "https://fwdignity-local.local/people-who-farm/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 92,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": null,
+        "filterTool": null,
+        "firstTag": null,
+        "firstControl": null,
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "INPUT",
+            "height": 46.59375
+          },
+          {
+            "label": "送出搜尋",
+            "height": 46.59375
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9756/devtools/browser/cc128a7d-77f3-4692-b2db-7643cfd0f26b",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86161:931933:0714/002220.412367:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "guide-desktop",
+      "path": "/farming-guide/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/guide-desktop.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959740742-7",
+      "audit": {
+        "url": "https://fwdignity-local.local/farming-guide/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 374,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": null,
+        "firstTag": null,
+        "firstControl": null,
+        "firstImage": null,
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "INPUT",
+            "height": 46.59375
+          },
+          {
+            "label": "送出搜尋",
+            "height": 46.59375
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9757/devtools/browser/9374e8a6-b9d9-4d80-b18d-e15cc52c5e58",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86176:932235:0714/002223.962940:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "field-notes-desktop",
+      "path": "/field-notes/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/field-notes-desktop.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959744979-8",
+      "audit": {
+        "url": "https://fwdignity-local.local/field-notes/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 92,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": null,
+        "firstTag": {
+          "radius": "2px",
+          "background": "rgb(240, 240, 236)",
+          "borderLeft": "rgb(123, 93, 18) 4px"
+        },
+        "firstControl": {
+          "radius": "4px",
+          "height": 44
+        },
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "篩選",
+            "height": 44
+          },
+          {
+            "label": "INPUT",
+            "height": 44
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9758/devtools/browser/46986877-4a54-49e9-8d03-66f08f151efa",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86191:932505:0714/002228.681931:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "research-tablet",
+      "path": "/research-results/",
+      "viewport": {
+        "width": 1025,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/research-tablet.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959751865-9",
+      "audit": {
+        "url": "https://fwdignity-local.local/research-results/",
+        "viewport": {
+          "width": 1025,
+          "height": 1000
+        },
+        "scrollY": 135,
+        "documentWidth": 1025,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 135,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "false"
+        },
+        "panel": {
+          "hidden": true,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": null,
+        "filterTool": null,
+        "firstTag": null,
+        "firstControl": null,
+        "firstImage": null,
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "INPUT",
+            "height": 46.59375
+          },
+          {
+            "label": "送出搜尋",
+            "height": 46.59375
+          },
+          {
+            "label": "開啟田野誌子選單",
+            "height": 48
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 48
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 48
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9759/devtools/browser/d59537f4-fd38-44f3-96a3-558e017d1ffd",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86206:932804:0714/002235.152028:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "article-desktop-reader",
+      "path": "/?p=1829",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/article-desktop-reader.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959755615-10",
+      "audit": {
+        "url": "https://fwdignity-local.local/%e3%80%8c%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84%e3%80%8d%e8%be%b2%e5%ad%b8%e5%a0%82%ef%bc%8d%e7%81%b6%e8%85%b3%e5%88%b0%e7%94%b0%e9%87%8e%ef%bc%9a%e5%a5%b3%e6%80%a7%e8%be%b2%e6%b0%91%e7%9a%84%e5%a4%9a/",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "scrollY": 108,
+        "documentWidth": 1440,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "xlarge",
+        "storedReaderSize": "xlarge",
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "38px",
+          "lineHeight": "53.96px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": {
+          "color": "rgb(26, 26, 26)",
+          "size": "24px",
+          "lineHeight": "45.6px",
+          "family": "\"Noto Sans TC\", \"PingFang TC\", \"Microsoft JhengHei\", sans-serif"
+        },
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "true"
+        },
+        "panel": {
+          "hidden": false,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": null,
+        "firstTag": {
+          "radius": "2px",
+          "background": "rgb(240, 240, 236)",
+          "borderLeft": "rgb(55, 110, 124) 4px"
+        },
+        "firstControl": null,
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": "li",
+          "text": "指導單位國家科學委員會",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "開啟田野誌子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟研究與行動子選單",
+            "height": 44
+          },
+          {
+            "label": "開啟認識尊嚴農業子選單",
+            "height": 44
+          },
+          {
+            "label": "INPUT",
+            "height": 52
+          },
+          {
+            "label": "送出搜尋",
+            "height": 52
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": {
+        "opened": true,
+        "largeApplied": true,
+        "stayedOpen": true,
+        "largeStored": true,
+        "escapeClosed": true,
+        "escapeRestoredFocus": true,
+        "outsideClosed": true,
+        "xlargeApplied": true,
+        "xlargeStored": true,
+        "panelOpen": true
+      },
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9760/devtools/browser/9f34f1c9-079a-4ab9-b973-f73c750e1000",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86221:933050:0714/002238.979954:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "article-mobile-reader",
+      "path": "/?p=1829",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/article-mobile-reader.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959763944-11",
+      "audit": {
+        "url": "https://fwdignity-local.local/%e3%80%8c%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84%e3%80%8d%e8%be%b2%e5%ad%b8%e5%a0%82%ef%bc%8d%e7%81%b6%e8%85%b3%e5%88%b0%e7%94%b0%e9%87%8e%ef%bc%9a%e5%a5%b3%e6%80%a7%e8%be%b2%e6%b0%91%e7%9a%84%e5%a4%9a/",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollY": 120,
+        "documentWidth": 390,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "xlarge",
+        "storedReaderSize": "xlarge",
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "38px",
+          "lineHeight": "53.96px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": {
+          "color": "rgb(26, 26, 26)",
+          "size": "24px",
+          "lineHeight": "45.6px",
+          "family": "\"Noto Sans TC\", \"PingFang TC\", \"Microsoft JhengHei\", sans-serif"
+        },
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "true"
+        },
+        "panel": {
+          "hidden": false,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": null,
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": null,
+        "firstTag": {
+          "radius": "2px",
+          "background": "rgb(240, 240, 236)",
+          "borderLeft": "rgb(55, 110, 124) 4px"
+        },
+        "firstControl": null,
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": "li",
+          "text": "指導單位國家科學委員會",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "選單",
+            "height": 44
+          },
+          {
+            "label": "INPUT",
+            "height": 52
+          },
+          {
+            "label": "送出搜尋",
+            "height": 52
+          },
+          {
+            "label": "調整文字大小",
+            "height": 56
+          },
+          {
+            "label": "標準",
+            "height": 72
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": {
+        "opened": true,
+        "largeApplied": true,
+        "stayedOpen": true,
+        "largeStored": true,
+        "escapeClosed": true,
+        "escapeRestoredFocus": true,
+        "outsideClosed": true,
+        "xlargeApplied": true,
+        "xlargeStored": true,
+        "panelOpen": true
+      },
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9761/devtools/browser/3e368b41-03fc-417c-9bee-2e540052c669",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86263:933430:0714/002247.540171:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    },
+    {
+      "name": "condition-mobile-bottom-nav",
+      "path": "/thenews/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentStatus": 200,
+      "screenshot": "/Users/boboegg/farmerwordpress/output/playwright/clear-field-design-system-330/audit/condition-mobile-bottom-nav.png",
+      "profileDir": "/var/folders/gv/0lpmw2gj51z6vdcm1xsy83n00000gn/T/fwdignity-330-audit-1783959772349-12",
+      "audit": {
+        "url": "https://fwdignity-local.local/thenews/",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollY": 92,
+        "documentWidth": 390,
+        "overflow": false,
+        "pageBackground": "rgb(253, 251, 247)",
+        "footerBackground": "rgb(37, 51, 30)",
+        "navbarHeight": 92,
+        "themeAssets": {
+          "tokens": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-tokens.css?ver=3.3.0",
+          "foundation": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/css/site-v2-page-foundation.css?ver=3.3.0",
+          "reader": "https://fwdignity-local.local/wp-content/themes/fwdignity/assets/js/reader-size-control.js?ver=3.3.0"
+        },
+        "readerSize": "standard",
+        "storedReaderSize": null,
+        "h1": {
+          "size": "48px",
+          "lineHeight": "63.36px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "h2": {
+          "size": "34px",
+          "lineHeight": "46.92px",
+          "weight": "700",
+          "family": "\"Noto Serif TC\", \"Songti TC\", serif"
+        },
+        "article": null,
+        "reader": {
+          "width": "56px",
+          "height": "56px",
+          "radius": "50%",
+          "shadow": "rgba(37, 51, 30, 0.18) 0px 6px 18px 0px",
+          "expanded": "true"
+        },
+        "panel": {
+          "hidden": false,
+          "width": "328px",
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.16) 0px 16px 40px 0px"
+        },
+        "bottomNav": {
+          "height": 79,
+          "gap": 16,
+          "overlapsTrigger": false,
+          "overlapsPanel": false
+        },
+        "firstCard": {
+          "radius": "14px",
+          "shadow": "none",
+          "transition": "color, background-color, border-color, box-shadow, opacity"
+        },
+        "filterTool": {
+          "radius": "14px",
+          "shadow": "rgba(37, 51, 30, 0.06) 0px 4px 14px 0px"
+        },
+        "firstTag": {
+          "radius": "2px",
+          "background": "rgb(240, 240, 236)",
+          "borderLeft": "rgb(67, 88, 50) 4px"
+        },
+        "firstControl": {
+          "radius": "4px",
+          "height": 0
+        },
+        "firstImage": {
+          "filter": "none",
+          "transform": "none",
+          "transition": "opacity"
+        },
+        "homeBand": null,
+        "homeMediaCard": null,
+        "minimumText": {
+          "selector": ".fw-logo-en",
+          "text": "DIGNITY FARMING",
+          "size": 15
+        },
+        "minimumControls": [
+          {
+            "label": "選單",
+            "height": 44
+          },
+          {
+            "label": "套用篩選",
+            "height": 44
+          },
+          {
+            "label": "INPUT",
+            "height": 44
+          },
+          {
+            "label": "最新發布\n            最早發布",
+            "height": 44
+          },
+          {
+            "label": "搜尋",
+            "height": 44
+          }
+        ],
+        "unexpectedColors": [],
+        "unexpectedWeights": [],
+        "nonBrand900": [],
+        "unexpectedFamilies": [],
+        "brokenImages": [],
+        "revealHidden": 0
+      },
+      "readerFunctional": null,
+      "runtimeErrors": [],
+      "consoleErrors": [],
+      "chromeStderr": [
+        "DevTools listening on ws://127.0.0.1:9762/devtools/browser/c516f7ff-cd28-4b02-8c90-fe86244da446",
+        "Trying to load the allocator multiple times. This is *not* supported.",
+        "[86280:933778:0714/002255.664221:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT"
+      ]
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

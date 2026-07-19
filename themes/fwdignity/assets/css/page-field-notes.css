@@ -1,0 +1,937 @@
+.field-notes-page {
+  --fn-page: var(--fw-color-page);
+  --fn-paper: var(--fw-color-paper);
+  --fn-surface: var(--fw-color-surface);
+  --fn-surface-alt: var(--fw-color-surface-alt);
+  --fn-primary: var(--fw-color-primary);
+  --fn-primary-deep: var(--fw-color-primary-deep);
+  --fn-ink: var(--fw-color-ink);
+  --fn-paper: var(--fw-color-paper);
+  --fn-surface: var(--fw-color-surface);
+  --fn-muted: var(--fw-color-muted);
+  --fn-link: var(--fw-color-link);
+  --fn-link-hover: var(--fw-color-link-hover);
+  --fn-accent: var(--fw-color-accent-text);
+  --fn-line: var(--fw-color-line);
+  --fn-focus: var(--fw-color-focus);
+  --fn-on-dark: var(--fw-color-on-dark);
+  --fn-topic: var(--fw-topic-field);
+  min-height: 70vh;
+  color: var(--fn-ink);
+  background: var(--fn-page);
+}
+
+.field-notes-page *,
+.field-notes-page *::before,
+.field-notes-page *::after {
+  box-sizing: border-box;
+}
+
+.field-notes-intro {
+  background: var(--fn-paper);
+  border-block: 1px solid var(--fn-line);
+}
+
+.field-notes-intro > div,
+.field-trajectory,
+.field-contexts,
+.field-notes-results {
+  width: min(100% - 56px, var(--fw-content-width));
+  margin-inline: auto;
+}
+
+.field-notes-intro > div {
+  padding-block: 42px;
+}
+
+.field-notes-eyebrow {
+  margin: 0 0 8px;
+  color: var(--fn-topic);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.field-notes-intro h1 {
+  margin: 0;
+  font: 700 var(--fw-font-size-h1)/1.2 var(--fw-font-serif);
+  letter-spacing: 0;
+}
+
+.field-notes-intro p:last-child {
+  max-width: 880px;
+  margin: 14px 0 0;
+  color: var(--fn-muted);
+  font-size: var(--fw-font-size-lead);
+  line-height: var(--fw-line-height-body);
+}
+
+.field-trajectory {
+  padding-block: var(--fw-section-space-compact);
+}
+
+.field-trajectory-head,
+.field-notes-result-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.field-trajectory-head h2,
+.field-contexts h2,
+.field-notes-result-head h2 {
+  margin: 0;
+  font: 700 var(--fw-font-size-h2)/1.3 var(--fw-font-serif);
+}
+
+.field-trajectory-head > p {
+  max-width: 520px;
+  margin: 0;
+  color: var(--fn-muted);
+  font-size: var(--fw-font-size-summary);
+  line-height: 1.75;
+}
+
+.field-trajectory-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--fn-line);
+  border-left: 1px solid var(--fn-line);
+}
+
+.field-trajectory-list li {
+  min-width: 0;
+  border-right: 1px solid var(--fn-line);
+  border-bottom: 1px solid var(--fn-line);
+}
+
+.field-trajectory-list a {
+  display: grid;
+  grid-template-columns: 28px 54px minmax(0, 1fr);
+  gap: 12px;
+  min-height: 148px;
+  padding: 20px 18px;
+  align-items: start;
+  color: var(--fn-ink);
+  background: var(--fn-surface);
+  text-decoration: none;
+}
+
+.field-trajectory-list a:focus-visible {
+  color: var(--fn-link-hover);
+  background: var(--fn-surface-alt);
+}
+
+.field-trajectory-index {
+  color: var(--fn-accent);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 500; /* PhaseC 對齊現行渲染 */
+}
+
+.field-trajectory-list time {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--fn-topic);
+}
+
+.field-trajectory-list time b {
+  font-size: var(--fw-font-size-meta);
+}
+
+.field-trajectory-list time small {
+  color: var(--fn-muted);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.field-trajectory-list strong {
+  font: 700 var(--fw-font-size-summary)/1.55 var(--fw-font-serif);
+}
+
+.field-contexts {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 30px;
+  padding-block: 30px;
+  border-block: 1px solid var(--fn-line);
+}
+
+.field-contexts-head {
+  align-self: center;
+}
+
+.field-context-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  border-left: 1px solid var(--fn-line);
+}
+
+.field-context-list a {
+  display: flex;
+  min-height: 82px;
+  padding: 15px 18px;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--fn-ink);
+  border-right: 1px solid var(--fn-line);
+  border-block: 1px solid var(--fn-line);
+  text-decoration: none;
+}
+
+.field-context-list a:focus-visible {
+  color: var(--fn-link-hover);
+  background: var(--fn-paper);
+}
+
+.field-context-list strong {
+  font: 700 var(--fw-font-size-h4)/1.45 var(--fw-font-serif);
+}
+
+.field-context-list span {
+  margin-top: 4px;
+  color: var(--fn-muted);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.field-notes-results {
+  padding-block: var(--fw-section-space) 72px;
+}
+
+.field-notes-result-head {
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--fn-line);
+}
+
+.field-notes-result-head > strong {
+  color: var(--fn-muted);
+  font-size: var(--fw-font-size-meta);
+}
+
+.field-notes-controls {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.field-notes-filter-toggle,
+.field-notes-search button,
+.field-notes-filter-actions button {
+  min-height: var(--fw-control-height);
+  color: var(--fn-on-dark);
+  background: var(--fn-primary);
+  border: 1px solid var(--fn-primary);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.field-notes-filter-toggle {
+  display: inline-flex;
+  padding-inline: 15px;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--fw-radius-small);
+}
+
+.field-notes-filter-toggle:focus-visible {
+  background: var(--fn-primary-deep);
+}
+
+.field-notes-filter-toggle b {
+  display: grid;
+  min-width: 22px;
+  height: 22px;
+  padding-inline: 6px;
+  place-items: center;
+  color: var(--fn-ink);
+  background: var(--fn-paper);
+  border-radius: 50%;
+  font-size: var(--fw-font-size-meta);
+}
+
+.field-notes-toolbar {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) auto auto;
+  gap: 10px;
+  align-items: end;
+}
+
+.field-notes-toolbar > label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--fn-muted);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.field-notes-toolbar input,
+.field-notes-toolbar select {
+  min-width: 0;
+  min-height: var(--fw-control-height);
+  padding-inline: 12px;
+  color: var(--fn-ink);
+  background: var(--fn-surface);
+  border: 1px solid var(--fn-line);
+  border-radius: var(--fw-radius-small);
+  font: inherit;
+}
+
+.field-notes-search {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0 !important;
+}
+
+.field-notes-search input {
+  border-radius: var(--fw-radius-small) 0 0 var(--fw-radius-small);
+}
+
+.field-notes-search button {
+  min-width: 70px;
+  border-radius: 0 var(--fw-radius-small) var(--fw-radius-small) 0;
+}
+
+.field-notes-view {
+  display: flex;
+  height: var(--fw-control-height);
+}
+
+.field-notes-view button {
+  min-width: 64px;
+  min-height: var(--fw-control-height);
+  padding-inline: 11px;
+  color: var(--fn-primary);
+  background: var(--fn-surface);
+  border: 1px solid var(--fn-line);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.field-notes-view button:first-child {
+  border-radius: var(--fw-radius-small) 0 0 var(--fw-radius-small);
+}
+
+.field-notes-view button:last-child {
+  border-left: 0;
+  border-radius: 0 var(--fw-radius-small) var(--fw-radius-small) 0;
+}
+
+.field-notes-view button.is-active {
+  color: var(--fn-on-dark);
+  background: var(--fn-primary);
+  border-color: var(--fn-primary);
+}
+
+.field-notes-page button:focus-visible,
+.field-notes-page input:focus-visible,
+.field-notes-page select:focus-visible,
+.field-notes-page a:focus-visible {
+  outline: 3px solid var(--fn-focus);
+  outline-offset: 2px;
+}
+
+.field-notes-filter-drawer {
+  margin-bottom: 22px;
+  padding: 22px 24px;
+  background: var(--fn-surface);
+  border: 1px solid var(--fn-line);
+  border-radius: var(--fw-radius-card);
+}
+
+.field-notes-filter-drawer[hidden] {
+  display: none;
+}
+
+.field-notes-filter-drawer-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: start;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--fn-line);
+}
+
+.field-notes-filter-drawer-head > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.field-notes-filter-drawer-head strong {
+  font-size: var(--fw-font-size-summary);
+}
+
+.field-notes-filter-drawer-head span {
+  color: var(--fn-muted);
+  font-size: var(--fw-font-size-meta);
+}
+
+.field-notes-filter-close {
+  display: grid;
+  width: var(--fw-control-height);
+  height: var(--fw-control-height);
+  padding: 0;
+  place-items: center;
+  color: var(--fn-primary);
+  background: transparent;
+  border: 1px solid var(--fn-line);
+  border-radius: var(--fw-radius-small);
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.field-notes-filter-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.field-notes-filter-group {
+  min-width: 0;
+  margin: 0;
+  padding: 18px 0 8px;
+  border: 0;
+}
+
+.field-notes-filter-group legend {
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.field-notes-filter-group > label {
+  margin-right: 5px;
+}
+
+.field-notes-filter-option {
+  display: inline-grid;
+  grid-template-columns: 18px auto auto;
+  gap: 7px;
+  min-height: var(--fw-control-height);
+  padding: 6px 8px;
+  align-items: center;
+  color: var(--fn-muted);
+  border-radius: var(--fw-radius-small);
+  cursor: pointer;
+}
+
+.field-notes-filter-option.is-selected {
+  color: var(--fn-ink);
+  background: var(--fn-surface-alt);
+}
+
+.field-notes-filter-option input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.field-notes-checkbox {
+  width: 17px;
+  height: 17px;
+  border: 1px solid var(--fn-muted);
+  border-radius: var(--fw-radius-small);
+}
+
+.field-notes-filter-option input:focus + .field-notes-checkbox {
+  outline: 3px solid var(--fn-focus);
+  outline-offset: 2px;
+}
+
+.field-notes-filter-option input:checked + .field-notes-checkbox {
+  /* 2026-07-17 去毯化：勾選環由 inset 陰影改 padding＋background-clip（規格陰影僅限三 token）。 */
+  padding: 3px;
+  background: var(--fn-primary);
+  background-clip: content-box;
+  border-color: var(--fn-primary);
+}
+
+.field-notes-filter-option small {
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.field-notes-filter-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--fn-line);
+}
+
+.field-notes-filter-actions button {
+  padding-inline: 18px;
+  border-radius: var(--fw-radius-small);
+}
+
+.field-notes-filter-actions a {
+  color: var(--fn-link);
+  font-size: var(--fw-font-size-meta);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.field-notes-active {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.field-notes-active a {
+  padding: 6px 9px;
+  color: var(--fn-primary);
+  background: var(--fn-surface-alt);
+  border: 1px solid var(--fn-line);
+  border-radius: var(--fw-radius-small);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.field-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.field-notes-grid[hidden],
+.field-notes-timeline[hidden] {
+  display: none;
+}
+
+.field-note {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--fn-surface);
+  border: 1px solid var(--fn-line);
+  border-radius: var(--fw-radius-card);
+}
+
+.field-note-media {
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--fn-surface-alt);
+}
+
+.field-note-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.field-note-copy {
+  padding: 18px 19px 20px;
+}
+
+.field-note-copy > time {
+  color: var(--fn-topic);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.field-note-place {
+  margin: 4px 0 0 !important;
+  color: var(--fn-accent) !important;
+  font-size: var(--fw-font-size-meta) !important;
+  font-weight: 700;
+}
+
+.field-note h2 {
+  margin: 10px 0 9px;
+  font: 700 var(--fw-font-size-card-title)/1.45 var(--fw-font-serif);
+}
+
+.field-note h2 a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--fn-line);
+  text-underline-offset: 4px;
+}
+
+
+
+.field-note-copy > p:not(.field-note-place) {
+  margin: 0;
+  color: var(--fn-muted);
+  font-size: var(--fw-font-size-summary);
+  line-height: 1.75;
+}
+
+.field-note-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.field-note-terms span {
+  padding: 4px 7px;
+  color: var(--fn-primary);
+  background: var(--fn-surface-alt);
+  border: 1px solid var(--fn-line);
+  border-radius: var(--fw-radius-small);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 400; /* PhaseC 對齊現行渲染 */
+}
+
+.field-notes-grid .field-note-card--text-only {
+  grid-column: 1 / -1;
+  background: transparent;
+  border-inline: 0;
+  border-radius: 0;
+}
+
+.field-notes-grid .field-note-card--text-only .field-note-copy {
+  display: grid;
+  grid-template-columns: 130px minmax(240px, 0.85fr) minmax(260px, 1.15fr);
+  gap: 10px 28px;
+  padding-inline: 0;
+  align-items: start;
+}
+
+.field-notes-grid .field-note-card--text-only .field-note-copy > time {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.field-notes-grid .field-note-card--text-only .field-note-place {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.field-notes-grid .field-note-card--text-only h2 {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+}
+
+.field-notes-grid .field-note-card--text-only .field-note-copy > p:not(.field-note-place) {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.field-notes-grid .field-note-card--text-only .field-note-terms {
+  grid-column: 2 / -1;
+  margin-top: 0;
+}
+
+.field-notes-timeline {
+  display: block;
+}
+
+.field-timeline-year {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  border-top: 1px solid var(--fn-line);
+}
+
+.field-timeline-year > h3 {
+  position: sticky;
+  top: 108px;
+  align-self: start;
+  margin: 22px 0;
+  color: var(--fn-accent);
+  font-size: var(--fw-font-size-h3);
+  font-weight: 700;
+}
+
+.field-timeline-year > div {
+  border-left: 1px solid var(--fn-line);
+}
+
+.field-note--timeline {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 220px minmax(0, 1fr);
+  gap: 18px;
+  padding: 22px 0 22px 24px;
+  align-items: start;
+  overflow: visible;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--fn-line);
+  border-radius: 0;
+}
+
+.field-note--timeline::before {
+  content: "";
+  position: absolute;
+  top: 27px;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  background: var(--fn-primary);
+  border: 2px solid var(--fn-page);
+  border-radius: 50%;
+}
+
+.field-note-timeline-date {
+  color: var(--fn-topic);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.field-note--timeline .field-note-media {
+  aspect-ratio: 3 / 2;
+}
+
+.field-note--timeline .field-note-copy {
+  padding: 0;
+}
+
+.field-note--timeline h2 {
+  margin-top: 0;
+  font-size: var(--fw-font-size-h3);
+}
+
+.field-note--timeline.field-note-card--text-only {
+  grid-template-columns: 72px minmax(0, 1fr);
+}
+
+.field-notes-pagination {
+  display: flex;
+  gap: 5px;
+  margin-top: 28px;
+}
+
+.field-notes-pagination .page-numbers {
+  display: grid;
+  min-width: var(--fw-control-height);
+  height: var(--fw-control-height);
+  padding-inline: 8px;
+  place-items: center;
+  color: var(--fn-link);
+  background: var(--fn-surface);
+  border: 1px solid var(--fn-line);
+  border-radius: var(--fw-radius-small);
+  text-decoration: none;
+}
+
+.field-notes-pagination .current {
+  color: var(--fn-on-dark);
+  background: var(--fn-primary);
+  border-color: var(--fn-primary);
+}
+
+.field-notes-empty {
+  padding: 56px 28px;
+  text-align: center;
+  background: var(--fn-surface);
+  border: 1px solid var(--fn-line);
+}
+
+.field-notes-empty h2 {
+  margin: 0 0 8px;
+  font: 700 var(--fw-font-size-h3)/1.4 var(--fw-font-serif);
+}
+
+.field-notes-empty p {
+  color: var(--fn-muted);
+}
+
+.field-notes-empty a {
+  color: var(--fn-link);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 1040px) {
+  .field-trajectory-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .field-contexts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .field-context-list {
+    border-top: 1px solid var(--fn-line);
+  }
+
+  .field-notes-controls {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .field-notes-view {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+
+  .field-notes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .field-notes-grid .field-note-card--text-only .field-note-copy {
+    grid-template-columns: 120px minmax(220px, 0.8fr) minmax(240px, 1.2fr);
+    gap: 10px 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .field-notes-intro > div,
+  .field-trajectory,
+  .field-contexts,
+  .field-notes-results {
+    width: min(100% - 32px, var(--fw-content-width));
+  }
+
+  .field-notes-intro h1 {
+    /* 2026-07-17 去毯化：行動版現值＝執法層強制 48px；待 S-3。 */
+    font-size: var(--fw-font-size-h1);
+  }
+
+  .field-trajectory-head,
+  .field-notes-result-head {
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .field-trajectory-list,
+  .field-context-list,
+  .field-notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-notes-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .field-notes-filter-toggle,
+  .field-notes-view {
+    justify-self: start;
+  }
+
+  .field-notes-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .field-notes-search {
+    grid-column: 1 / -1;
+  }
+
+  .field-notes-view {
+    grid-column: 1;
+  }
+
+  .field-notes-filter-groups {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .field-notes-grid .field-note-card--text-only .field-note-copy {
+    display: block;
+  }
+
+  .field-notes-grid .field-note-card--text-only h2,
+  .field-notes-grid .field-note-card--text-only .field-note-copy > p:not(.field-note-place),
+  .field-notes-grid .field-note-card--text-only .field-note-terms {
+    margin-top: 10px;
+  }
+
+  .field-timeline-year {
+    grid-template-columns: 62px minmax(0, 1fr);
+  }
+
+  .field-note--timeline {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  .field-note--timeline .field-note-media {
+    grid-column: 2;
+  }
+
+  .field-note--timeline .field-note-copy {
+    grid-column: 2;
+  }
+
+  .field-note--timeline.field-note-card--text-only {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+}
+
+/* 2026-07-17 W3 去毯化：互動元素轉場由源碼自持（值＝執法層現行強制）。 */
+.field-trajectory-list a,
+.field-context-list a,
+.field-notes-filter-toggle,
+.field-notes-search button,
+.field-notes-filter-actions button,
+.field-notes-view button,
+.field-notes-filter-option,
+.field-notes-checkbox,
+.field-note h2 a,
+.field-notes-pagination .page-numbers {
+  transition: color var(--fw-motion-duration) var(--fw-ease-out), background-color var(--fw-motion-duration) var(--fw-ease-out), border-color var(--fw-motion-duration) var(--fw-ease-out);
+}
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .field-trajectory-list a:hover {
+  color: var(--fn-link-hover);
+  background: var(--fn-surface-alt);
+}
+  .field-context-list a:hover {
+  color: var(--fn-link-hover);
+  background: var(--fn-paper);
+}
+  .field-notes-filter-toggle:hover, .field-notes-search button:hover, .field-notes-filter-actions button:hover {
+  background: var(--fn-primary-deep);
+}
+  .field-notes-filter-option:hover {
+  color: var(--fn-ink);
+  background: var(--fn-surface-alt);
+}
+  .field-note h2 a:hover {
+  color: var(--fn-link-hover);
+  text-decoration-color: currentColor;
+}
+}
+
+/* ===== 治理下沉區（2026-07-17 Phase D 批②，自 site-v2-page-foundation.css 遷入，逐字含 !important） ===== */
+
+body[data-page="field-notes"] .field-notes-intro {
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+}
+
+body.fw-page-v15 main :is(
+  .field-notes-filter-toggle, .field-notes-search button, .field-notes-view button
+) {
+  color: var(--fw-color-on-dark) !important;
+}
+
+body[data-page="field-notes"] .field-notes-view button:not(.is-active) {
+  color: var(--fw-color-ink) !important;
+}
+
+body[data-page="field-notes"] .field-notes-filter-toggle b {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-surface-alt) !important;
+}
+
+body[data-page="field-notes"] .field-notes-filter-option input:checked + .field-notes-checkbox {
+  box-shadow: inset 0 0 0 3px var(--fw-color-surface-alt) !important;
+}
+
+body[data-page="field-notes"] :is(
+  .field-notes-filter-option.is-selected, .field-notes-active a, .field-note-terms span
+) {
+  background: var(--fw-color-surface-alt) !important;
+}

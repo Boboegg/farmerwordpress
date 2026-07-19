@@ -1,0 +1,1005 @@
+/*
+ * 尊嚴農業 v2 page-family adapter
+ * Existing page CSS retains layout structure; all visual roles resolve here.
+ */
+
+body.fw-page-v15 {
+  --fw-topic-current: var(--fw-color-primary);
+  color: var(--fw-color-ink);
+  background: var(--fw-color-page);
+}
+
+/* 批② 裁決：topic-current 家族定義與檔頭預設同分（0,1,1）、靠檔內順序取勝——不得下沉。 */
+body[data-page="field-learning"],
+body[data-page="field-notes"],
+body[data-page="field-events"] {
+  --fw-topic-current: var(--fw-topic-field);
+}
+
+body[data-page="farmer-study"] {
+  --fw-topic-current: var(--fw-topic-learning);
+}
+
+body:is(
+  [data-page="healthgood"], [data-page="subpage-heat"],
+  [data-page="subpage-pesticide"], [data-page="subpage-msd"],
+  [data-page="subpage-mental"]
+) {
+  --fw-topic-current: var(--fw-topic-health);
+}
+
+body:is(
+  [data-page="occupational-safety"], [data-page="personal-protective-equipment"],
+  [data-page="labor-saving-machinery"], [data-page="greenhouse-zone"]
+) {
+  --fw-topic-current: var(--fw-topic-safety);
+}
+
+body:is(
+  [data-page="economic-insurance"], [data-page="occupational-accident-insurance"],
+  [data-page="crop-insurance"], [data-page="agricultural-subsidy-resources"],
+  [data-page="worker-occupational-accident-calculator"],
+  [data-page="farmer-worker-retirement-calculator"]
+) {
+  --fw-topic-current: var(--fw-topic-policy);
+}
+
+/* 2026-07-17 Phase D 批①回置：--fw-topic-current 定義與檔頭預設值（body.fw-page-v15）specificity 同分 (0,1,1)，
+   勝負靠順序——所有 topic-current 覆寫必須留在 foundation 預設之後，不得下沉。 */
+body[data-page="research-result"],
+body[data-page="research-results"],
+body[data-page="research-publications"],
+body[data-page="podcast"],
+body:is([data-page="infographic"], [data-page="download-zone"]),
+body[data-page="related-resources"] {
+  --fw-topic-current: var(--fw-topic-research);
+}
+
+body[data-page="dignity-farming-initiative"] {
+  --fw-topic-current: var(--fw-topic-advocacy);
+}
+
+
+
+/* 2026-07-17 Phase D 批②：田野（field/fn）＋做農的人＋農學堂家族治理已下沉各家族檔尾；
+   四家族舊 vocab adapter（僅 paper/surface 有消費者，已補進家族檔）與 --pf-* 死塊移除；
+   field-events 不在像素驗證網內，其規則全數留置。 */
+
+/* 2026-07-17 Phase D 批③：休眠家族（hp/hps/os/ei/es/cc/bf/adv）adapter 與皮膚規則已搬遷至各家族 CSS 檔首
+   「治理搬遷區」（重開前依 3.3.0 重寫的封條政策不變）；--rr-*／--refresh-* 死變數塊（全 theme 零消費實證）移除；
+   --rs-/--ab-/--as- 存活 var 塊下沉各家族檔。研究關於家族之「樣式」規則因 refresh 載入順序依賴（foundation 後載
+   於 refresh，下沉即反轉勝負）全數留置——詳批③報告。 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2026-07-17 Phase D 批①：home／thenews／article／podcast 家族專屬治理已下沉至各家族 CSS 檔尾
+   「治理下沉區」（逐字含 !important）；死 adapter（--home/--tn/--mh/--article 副本）移除。 */
+
+/* Research, advocacy, and project identity */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 2026-07-17 去毯化 Phase B：3.2 世代字級／幾何舊網與重複動態網已移除——
+   同選擇器規則由檔尾 3.3.0 final ruling layer 全面取代（舊網因後載順序本已全數失效）。
+   保留：15px 下限守門、meta 色治理（389-403 舊段，色彩部分無後繼）、字重正規化網（源碼未逐元素對齊前不拆）。 */
+
+/* No visible text leaf may fall below the 15px metadata floor. */
+body.fw-page-v15 main :is(a, span, strong, b, cite, label) {
+  font-size: max(1em, var(--fw-font-size-meta)) !important;
+  letter-spacing: 0 !important;
+}
+
+body.fw-page-v15 main :is(h1, h2, h3, h4) :is(a, span, strong, b, cite) {
+  font-size: inherit !important;
+}
+
+
+
+
+/* 2026-07-17 Phase C 裁決：本網「保留不拆」。拆除會讓被它壓住的治理規則翻盤——
+   field 家族 time/date 會翻 topic 藍、hero-badge 翻 topic 色；且 WP 自動 class
+   （status-publish／category-*）使 article 容器長期命中 [class*="status"]/[class*="category"]，
+   拆網＝文章容器色翻 primary。此屬治理層選擇器設計問題，需治理層重構才能解，非零漂移操作。 */
+body.fw-page-v15 main :is(
+  small, time, label, legend,
+  [class*="meta"], [class*="eyebrow"], [class*="kicker"],
+  [class*="badge"], [class*="count"],
+  [class*="date"], [class*="month"], [class*="status"],
+  [class*="category"], [class*="type"],
+  .org, .role, .desc, .mh-meta, .rs-pub-meta,
+  .rs-legend-item, .as-role-label, .adv-tl-tag,
+  .tnews-facet-label, .tnews-card-tags span
+) {
+  font-family: var(--fw-font-sans) !important;
+  font-size: var(--fw-font-size-meta) !important;
+  color: var(--fw-color-muted) !important;
+  letter-spacing: 0 !important;
+}
+
+/* 2026-07-17 Phase D 批①回置：與上方 meta 網 specificity 同分 (0,2,3)，勝負靠順序——必須留在網之後，不得下沉。 */
+body[data-page="home"] :is(.fw-home-v04-meta, .fw-home-v06-news-picker-item span > span) {
+  color: var(--fw-color-accent-text) !important;
+}
+
+
+
+
+/* Canonical text roles override private gray-green and amber variants. */
+body.fw-page-v15 main:is(
+  .pf-hub, .pf-topic-page, .ra-page, .rr-main, .rs-main,
+  .adv-main, .ab-main, .as-main
+) :is(p, li, .desc, .role, .title, .pf-breadcrumb, .pf-link-status) {
+  color: var(--fw-color-muted) !important;
+}
+
+body.fw-page-v15 main :is(
+  [class*="eyebrow"], [class*="kicker"],
+  .pf-breadcrumb a, .ra-breadcrumb a
+) {
+  color: var(--fw-topic-current) !important;
+}
+
+body.fw-page-v15 main :is(
+  .field-topic-number, .field-trajectory-index, .field-note-place,
+  .mh-series-number, .mh-queue-item > span,
+  .ra-topic-number, .pf-topic-link__number,
+  .pf-topic-preview__number, .pf-topic-navigation a > span
+) {
+  color: var(--fw-color-accent-text) !important;
+}
+
+/* 批② 裁決：本規則與舊 meta 網同分（0,2,2）、靠順序取勝——不得下沉（任務書預測案例證實）。 */
+body:is([data-page="field-learning"], [data-page="field-notes"], [data-page="farmer-study"]) main :is(
+  time, [class*="date"], [class*="place"], [class*="location"]
+) {
+  color: var(--fw-topic-field) !important;
+}
+
+
+
+body.fw-page-v15 main :is(
+  .rs-pub-cta, .rs-pub-type, .adv-tl-tag, .adv-fg-badge,
+  .ab-four-num, .ab-action-num, .as-role-label
+) {
+  color: var(--fw-color-accent-text) !important;
+  background: var(--fw-color-surface-alt) !important;
+  border-color: var(--fw-color-line) !important;
+}
+
+body.fw-page-v15 main :is(
+  .rr-btn-primary, .adv-btn-primary, .btn-primary, .adv-cta-btns a,
+  .rs-cross-links a, .as-cross-links a, .ab-team-cta
+) {
+  color: var(--fw-color-on-dark) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body[data-page="research-results"] :is(
+  .ra-breadcrumb span, .ra-topic-copy span,
+  .ra-action-link span span, .ra-output-grid span
+) {
+  color: var(--fw-color-muted) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+body.fw-page-v15 main :is(
+  .training-hero, .rr-hero, .rs-hero, .ab-hero, .as-hero, .ab-final-cta
+) {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main :is(
+  .training-hero, .rr-hero, .rs-hero, .ab-hero, .as-hero, .ab-final-cta
+) :is(p, li) {
+  color: var(--fw-color-muted) !important;
+}
+
+body.fw-page-v15 main :is(
+  .training-hero, .rr-hero, .rs-hero, .ab-hero, .as-hero
+)::before,
+body.fw-page-v15 main :is(
+  .training-hero, .rr-hero, .rs-hero, .ab-hero, .as-hero
+)::after {
+  background: none !important;
+}
+
+body.fw-page-v15 main .rr-hero-deco {
+  display: none !important;
+}
+
+/* 批③ 分拆：.adv-hero-tagline 已搬遷 advocacy；.rs-pub-authors 因 refresh 載入順序依賴留置。 */
+body.fw-page-v15 main .rs-pub-authors {
+  color: var(--fw-color-muted) !important;
+}
+
+body:is(
+  [data-page="research-publications"], [data-page="related-resources"],
+  [data-page="about"]
+) main :is(.accent, .char, .ab-field-stat b) {
+  color: var(--fw-color-accent-text) !important;
+}
+
+/* Clear Field color governance: neutral large surfaces, monochrome headings, and explicit links. */
+body.fw-page-v15 main :is(h1, h2, h3, h4) {
+  color: var(--fw-color-ink) !important;
+}
+
+body.fw-page-v15 main :is(h1, h2, h3, h4) :is(a, span, strong, b, em, i, cite) {
+  color: inherit !important;
+}
+
+body.fw-page-v15 main a:where(:not(.button):not([class*="button"]):not([class*="btn"]):not([role="button"])) {
+  color: var(--fw-color-link) !important;
+  text-decoration-line: underline !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+}
+
+body.fw-page-v15 main a:where(:not(.button):not([class*="button"]):not([class*="btn"]):not([role="button"])):hover {
+  color: var(--fw-color-link-hover) !important;
+}
+
+body.fw-page-v15 main :is(h1, h2, h3, h4) a {
+  color: inherit !important;
+  text-decoration-line: none !important;
+}
+
+body.fw-page-v15 main :is([class*="eyebrow"], [class*="kicker"]) {
+  color: var(--fw-color-muted) !important;
+  background: transparent !important;
+  border-color: var(--fw-color-line) !important;
+}
+
+body.fw-page-v15 main :is(
+  [class*="badge"], [class*="tag"], [class*="category"], [class*="type"]
+) {
+  color: var(--fw-topic-current) !important;
+  background: transparent !important;
+  border-color: var(--fw-topic-current) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 批② 分拆：field-learning／field-notes／farmer-study 部分已下沉；fe 未在像素驗證網內，留置。 */
+body[data-page="field-events"] .field-events-intro {
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 批③ 分拆：ei/es/cc/bf 標頭部分已搬遷各家族檔；.fw-ticker-row 為已退役 ticker 的死選擇器，留置備查。 */
+body.fw-page-v15 .fw-ticker-row {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-paper) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 .fw-ticker-row :is(a, span, strong) {
+  color: var(--fw-color-ink) !important;
+}
+
+/* 批② 分拆：field-learning／field-notes 部分已下沉；fe 留置。 */
+body[data-page="field-events"] :is(.field-event-status, .field-event-status--cancelled, .field-event-status--ended) {
+  background: var(--fw-color-surface-alt) !important;
+}
+
+
+
+body[data-page="field-events"] .field-event-status--open {
+  color: var(--fw-color-on-dark) !important;
+  background: var(--fw-color-primary) !important;
+}
+
+
+
+
+
+
+
+
+/* Remove compounded top spacing from the research/about family. */
+body:is(
+  [data-page="research-results"], [data-page="research-publications"],
+  [data-page="related-resources"], [data-page="dignity-farming-initiative"],
+  [data-page="about"], [data-page="researchteam"]
+) .fw-page-layout {
+  padding-top: 0;
+}
+
+body:is(
+  [data-page="research-results"], [data-page="research-publications"],
+  [data-page="related-resources"], [data-page="dignity-farming-initiative"],
+  [data-page="about"], [data-page="researchteam"]
+) :is(.ra-page, .rr-main, .rs-main, .adv-main, .ab-main, .as-main) {
+  padding-top: 0 !important;
+}
+
+body:is(
+  [data-page="research-publications"], [data-page="related-resources"],
+  [data-page="dignity-farming-initiative"], [data-page="about"], [data-page="researchteam"]
+) :is(.rr-hero, .rs-hero, .adv-hero, .ab-hero, .as-hero) {
+  margin: 0 !important;
+  padding: 22px 48px 36px !important;
+}
+
+body:is(
+  [data-page="research-publications"], [data-page="related-resources"],
+  [data-page="dignity-farming-initiative"], [data-page="about"], [data-page="researchteam"]
+) :is(.rr-hero-badge, .rs-hero-badge, .adv-hero-badge, .ab-hero-badge, .as-hero-badge) {
+  margin-bottom: 10px !important;
+  padding: 6px 12px !important;
+  border-radius: var(--fw-radius-small) !important;
+}
+
+body:is(
+  [data-page="research-publications"], [data-page="related-resources"],
+  [data-page="dignity-farming-initiative"], [data-page="about"], [data-page="researchteam"]
+) :is(.rr-main, .rs-main, .adv-main, .ab-main, .as-main) > * + * {
+  margin-top: 0 !important;
+}
+
+body[data-page="research-results"] .ra-page {
+  padding-top: 0;
+}
+
+body[data-page="research-results"] .ra-intro {
+  padding: 0 0 48px;
+}
+
+body[data-page="research-results"] .ra-breadcrumb {
+  margin-bottom: 0;
+}
+
+body[data-page="research-results"] .ra-kicker {
+  margin-bottom: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 820px) {
+  body.fw-page-v15 main h1 { font-size: 48px !important; }
+  body.fw-page-v15 main h2 { font-size: 34px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.fw-page-v15 main *,
+  body.fw-page-v15 main *::before,
+  body.fw-page-v15 main *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================================================
+   3.3.0 final public-page ruling layer
+   Canonical source: 網站現行設計規範-清朗田野-2026-07-13.md
+   ======================================================================== */
+
+/* Reader-selected scales. H1 intentionally remains fixed at 48px. */
+html[data-fw-reader-size="large"] {
+  --fw-font-size-h2: 36px;
+  --fw-font-size-h3: 26px;
+  --fw-font-size-h4: 22px;
+  --fw-font-size-card-title: 24px;
+  --fw-font-size-body: 20px;
+  --fw-font-size-long-body: 22px;
+  --fw-font-size-lead: 20px;
+  --fw-font-size-summary: 19px;
+  --fw-font-size-nav: 18px;
+  --fw-font-size-control: 17px;
+  --fw-font-size-meta: 16px;
+  --fw-line-height-h2: 1.4;
+  --fw-line-height-h3: 1.48;
+  --fw-line-height-h4: 1.55;
+  --fw-line-height-card-title: 1.55;
+  --fw-line-height-body: 1.82;
+  --fw-line-height-long-body: 1.88;
+  --fw-line-height-summary: 1.78;
+}
+
+html[data-fw-reader-size="xlarge"] {
+  --fw-font-size-h2: 38px;
+  --fw-font-size-h3: 28px;
+  --fw-font-size-h4: 24px;
+  --fw-font-size-card-title: 26px;
+  --fw-font-size-body: 22px;
+  --fw-font-size-long-body: 24px;
+  --fw-font-size-lead: 22px;
+  --fw-font-size-summary: 20px;
+  --fw-font-size-nav: 20px;
+  --fw-font-size-control: 18px;
+  --fw-font-size-meta: 18px;
+  --fw-line-height-h2: 1.42;
+  --fw-line-height-h3: 1.5;
+  --fw-line-height-h4: 1.58;
+  --fw-line-height-card-title: 1.58;
+  --fw-line-height-body: 1.85;
+  --fw-line-height-long-body: 1.9;
+  --fw-line-height-summary: 1.8;
+}
+
+body.fw-page-v15 {
+  color: var(--fw-color-ink);
+  background: var(--fw-color-page);
+  font-family: var(--fw-font-sans);
+  font-size: var(--fw-font-size-body);
+  font-weight: 400;
+  line-height: var(--fw-line-height-body);
+  letter-spacing: 0;
+}
+
+body.fw-page-v15 main h1 {
+  color: var(--fw-color-ink) !important;
+  font-family: var(--fw-font-serif) !important;
+  font-size: var(--fw-font-size-h1) !important;
+  font-weight: 700 !important;
+  line-height: var(--fw-line-height-h1) !important;
+  letter-spacing: 0 !important;
+}
+
+body.fw-page-v15 main h2 {
+  color: var(--fw-color-ink) !important;
+  font-family: var(--fw-font-serif) !important;
+  font-size: var(--fw-font-size-h2) !important;
+  font-weight: 700 !important;
+  line-height: var(--fw-line-height-h2) !important;
+  letter-spacing: 0 !important;
+}
+
+body.fw-page-v15 main h3 {
+  color: var(--fw-color-ink) !important;
+  font-family: var(--fw-font-serif) !important;
+  font-size: var(--fw-font-size-h3) !important;
+  font-weight: 700 !important;
+  line-height: var(--fw-line-height-h3) !important;
+  letter-spacing: 0 !important;
+}
+
+body.fw-page-v15 main h4 {
+  color: var(--fw-color-ink) !important;
+  font-family: var(--fw-font-sans) !important;
+  font-size: var(--fw-font-size-h4) !important;
+  font-weight: 700 !important;
+  line-height: var(--fw-line-height-h4) !important;
+  letter-spacing: 0 !important;
+}
+
+body.fw-page-v15 main :is(
+  article[class*="-card"], a[class*="-card"],
+  div[class$="-card"], div[class*="-card "],
+  li[class*="-card"], section[class*="-card"],
+  .field-note, .field-featured, .article-related article
+) :is(h2, h3) {
+  font-family: var(--fw-font-serif) !important;
+  font-size: var(--fw-font-size-card-title) !important;
+  font-weight: 700 !important;
+  line-height: var(--fw-line-height-card-title) !important;
+}
+
+body.fw-page-v15 main :is(p, li) {
+  font-family: var(--fw-font-sans) !important;
+  font-size: var(--fw-font-size-body) !important;
+  font-weight: 400 !important;
+  line-height: var(--fw-line-height-body) !important;
+  letter-spacing: 0 !important;
+}
+
+body.fw-page-v15 main :is(
+  [class*="summary"], [class*="excerpt"], [class*="description"],
+  [class*="-desc"], [class*="-intro"] > p,
+  .role, .adv-hero-tagline, .rs-pub-authors
+) {
+  font-size: var(--fw-font-size-summary) !important;
+  font-weight: 400 !important;
+  line-height: var(--fw-line-height-summary) !important;
+}
+
+
+
+
+
+body.fw-page-v15 main :is(
+  small, time, label, legend,
+  [class*="meta"], [class*="eyebrow"], [class*="kicker"],
+  [class*="badge"], [class*="count"], [class*="date"],
+  [class*="month"], [class*="status"], [class*="tag"],
+  [class*="category"], [class*="type"]
+) {
+  font-size: var(--fw-font-size-meta) !important;
+  font-weight: 500 !important;
+  line-height: var(--fw-line-height-meta) !important;
+  letter-spacing: 0 !important;
+}
+
+body.fw-page-v15 main :is(button, input, select, textarea, .button, [class*="button"], [class*="-btn"]) {
+  min-height: var(--fw-control-height);
+  font-family: var(--fw-font-sans) !important;
+  font-size: var(--fw-font-size-control) !important;
+  font-weight: 700 !important;
+  line-height: var(--fw-line-height-control) !important;
+  letter-spacing: 0 !important;
+}
+
+body.fw-page-v15 :is(.fw-nav-link, .fw-dropdown a) {
+  font-family: var(--fw-font-sans);
+  font-size: var(--fw-font-size-nav);
+  font-weight: 700;
+  line-height: var(--fw-line-height-nav);
+  letter-spacing: 0;
+}
+
+/* Keyboard focus uses a dark 3px ring plus a 2px warm separator. */
+body.fw-page-v15 :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--fw-color-focus);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--fw-color-focus-separator);
+}
+
+body.fw-page-v15 :is(button, input, select, textarea, [aria-disabled="true"]):disabled,
+body.fw-page-v15 [aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: .32;
+}
+
+/* C outer / B inner geometry. */
+body.fw-page-v15 main :is(
+  article[class*="-card"], a[class*="-card"],
+  div[class$="-card"], div[class*="-card "],
+  li[class*="-card"], section[class*="-card"],
+  .field-note, .field-featured, .field-index-band,
+  .article-entry, .article-related article,
+  [class*="-panel"], [class*="-dialog"], [class*="-popover"]
+) {
+  border-radius: var(--fw-radius-card) !important;
+}
+
+body.fw-page-v15 :is(
+  button, input, select, textarea, .button,
+  [class*="button"], [class*="-btn"], [class*="-control"],
+  .fw-dropdown a
+) {
+  border-radius: var(--fw-radius-control) !important;
+}
+
+body.fw-page-v15 main :is(
+  .tnews-card-tags span, .field-note-terms span, .article-topics a,
+  .rs-pub-type, .adv-tl-tag, .adv-fg-badge, .as-role-label,
+  .es-card-tag, [class*="-badge"], [class*="-status"]
+) {
+  border-radius: var(--fw-radius-tag) !important;
+}
+
+/* Classification tags are neutral; role is carried by a four-pixel left line. */
+body.fw-page-v15 main :is(
+  .tnews-card-tags span, .field-note-terms span, .article-topics a,
+  .rs-pub-type, .adv-tl-tag, .adv-fg-badge, .as-role-label, .es-card-tag
+) {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-surface-alt) !important;
+  border: 1px solid var(--fw-color-line) !important;
+  border-left: 4px solid var(--fw-color-accent-text) !important;
+}
+
+
+
+body[data-page="field-notes"] .field-note-terms span {
+  border-left-color: var(--fw-topic-field) !important;
+}
+
+/* 2026-07-17 Phase D 批①回置：與分類標籤角色線網 specificity 同分 (0,2,3)，必須留在網之後，不得下沉。 */
+body.fw-page-v15 main .article-topics a {
+  border-left-color: var(--fw-topic-field) !important;
+}
+
+
+
+
+
+
+
+body[data-page="field-events"] .field-event-status {
+  color: var(--fw-color-accent-text) !important;
+  background: var(--fw-color-status-change-bg) !important;
+  border: 1px solid var(--fw-color-line) !important;
+  border-radius: var(--fw-radius-tag) !important;
+}
+
+body[data-page="field-events"] .field-event-status--open {
+  color: var(--fw-color-primary) !important;
+  background: var(--fw-color-status-open-bg) !important;
+}
+
+body[data-page="field-events"] :is(.field-event-status--full, .field-event-status--cancelled) {
+  color: var(--fw-color-danger) !important;
+  background: var(--fw-color-status-danger-bg) !important;
+}
+
+body[data-page="field-events"] .field-event-status--ended {
+  color: var(--fw-color-muted) !important;
+  background: var(--fw-color-status-neutral-bg) !important;
+}
+
+body.fw-page-v15 main .pf-link-status {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--fw-color-status-neutral) !important;
+  background: var(--fw-color-surface) !important;
+  border-color: var(--fw-color-line) !important;
+}
+
+body.fw-page-v15 main .pf-link-status::before {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--fw-color-status-neutral);
+  content: "";
+}
+
+/* B role-based depth: content stays flat; tools and floating UI carry depth. */
+body.fw-page-v15 main :is(
+  article[class*="-card"], a[class*="-card"],
+  div[class$="-card"], div[class*="-card "],
+  li[class*="-card"], section[class*="-card"],
+  .field-note, .field-featured, .article-entry, .article-related article
+) {
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main :is(
+  .tnews-filter-panel, .field-notes-filter-bar, .field-notes-filter-form,
+  .mh-filter-bar, .ei-tools, .cc-tool-shell
+) {
+  box-shadow: var(--fw-shadow-tool) !important;
+}
+
+body.fw-page-v15 main :is(.field-notes-filter-drawer, .mh-filter-drawer) {
+  box-shadow: var(--fw-shadow-popover) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Photos stay natural and content is visible without JavaScript. */
+body.fw-page-v15 main img {
+  filter: none;
+  transition-property: opacity;
+}
+
+body.fw-page-v15 main :is(.reveal, [class*="reveal"]) {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+body.fw-page-v15 main *,
+body.fw-page-v15 main *::before,
+body.fw-page-v15 main *::after {
+  animation: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* One conservative transition system; no element rises, scales, or rotates on hover. */
+body.fw-page-v15 *,
+body.fw-page-v15 *::before,
+body.fw-page-v15 *::after {
+  transition-property: color, background-color, border-color, box-shadow, opacity;
+  transition-duration: var(--fw-motion-duration);
+  transition-timing-function: var(--fw-ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.fw-page-v15 main *:hover {
+    transform: none;
+  }
+
+  body.fw-page-v15 main :is(
+    article[class*="-card"], a[class*="-card"],
+    div[class$="-card"], div[class*="-card "],
+    li[class*="-card"], section[class*="-card"],
+    .field-note, .field-featured, .article-related article
+  ):hover {
+    box-shadow: none;
+    border-color: var(--fw-color-primary);
+  }
+
+  body.fw-page-v15 main img:hover,
+  body[data-page="home"] .fw-home-v06-media-card:hover .fw-home-v06-media-visual img {
+    filter: none;
+    transform: none;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  body.fw-page-v15 main *:hover {
+    transform: none;
+  }
+}
+
+/* Reader control: C floating entry with the approved anchored panel on all sizes. */
+.fw-reader-control {
+  --fw-reader-bottom-clearance: 18px;
+  position: fixed;
+  right: calc(18px + env(safe-area-inset-right));
+  bottom: calc(var(--fw-reader-bottom-clearance) + env(safe-area-inset-bottom));
+  z-index: 1100;
+  width: 56px;
+  font-family: var(--fw-font-sans);
+  color: var(--fw-color-ink);
+}
+
+body.fw-page-v15 button.fw-reader-trigger {
+  width: 56px;
+  height: 56px;
+  min-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--fw-color-on-dark);
+  background: var(--fw-color-primary);
+  border: 1px solid var(--fw-color-primary-deep);
+  border-radius: 50% !important;
+  box-shadow: var(--fw-shadow-floating);
+  font: 700 18px/1 var(--fw-font-sans);
+  cursor: pointer;
+}
+
+body.fw-page-v15 button.fw-reader-trigger:hover,
+body.fw-page-v15 button.fw-reader-trigger[aria-expanded="true"] {
+  color: var(--fw-color-on-dark);
+  background: var(--fw-color-primary-deep);
+  border-color: var(--fw-color-primary-deep);
+}
+
+.fw-reader-panel {
+  position: absolute;
+  right: 0;
+  bottom: 68px;
+  width: min(328px, calc(100vw - 36px));
+  max-width: 328px;
+  padding: 20px;
+  color: var(--fw-color-ink);
+  background: var(--fw-color-surface);
+  border: 1px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-card);
+  box-shadow: var(--fw-shadow-popover);
+}
+
+.fw-reader-panel[hidden] {
+  display: none !important;
+}
+
+.fw-reader-title {
+  margin: 0;
+  color: var(--fw-color-ink);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.fw-reader-note {
+  margin: 6px 0 16px;
+  color: var(--fw-color-muted);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.fw-reader-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.fw-reader-option {
+  min-height: 44px;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: var(--fw-color-ink);
+  background: var(--fw-color-surface);
+  border: 1px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-control);
+  font: 700 var(--fw-font-size-control)/var(--fw-line-height-control) var(--fw-font-sans);
+  cursor: pointer;
+}
+
+.fw-reader-option[aria-pressed="true"] {
+  color: var(--fw-color-primary-deep);
+  background: var(--fw-color-surface-alt);
+  border-color: var(--fw-color-primary);
+}
+
+.fw-reader-option[aria-pressed="true"]::after {
+  content: "✓";
+}
+
+@media (max-width: 420px) {
+  .fw-reader-control {
+    right: calc(18px + env(safe-area-inset-right));
+  }
+
+  .fw-reader-panel {
+    width: calc(100vw - 36px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  body.fw-page-v15 *,
+  body.fw-page-v15 *::before,
+  body.fw-page-v15 *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+/* Final legacy-weight and residual-color normalization.
+   2026-07-17 Phase C 裁決：本節四網「保留不拆」。拆除實測 15/15 路由全數漂移
+   （抽樣對齊 19 筆仍不足——網的實際覆蓋面為全站性），與上方 meta 網同屬
+   治理層重構範圍；拆除須以逐家族視覺回歸為前提，不是零漂移操作。 */
+body.fw-page-v15 main :is(a, span, small, time, cite) {
+  font-weight: inherit !important;
+}
+
+body.fw-page-v15 main :is(strong, b) {
+  font-weight: 700 !important;
+}
+
+body.fw-page-v15 main :is(
+  small, time, label, legend,
+  [class*="meta"], [class*="eyebrow"], [class*="kicker"],
+  [class*="count"], [class*="date"], [class*="month"],
+  .tnews-facet-label, .field-trajectory-index,
+  .mh-series-number, .mh-series-facts, .mh-feature-dots span,
+  .mh-queue-item > span, .mh-related-grid > a span
+) {
+  font-weight: 500 !important;
+}
+
+body.fw-page-v15 main :is(
+  button, .button, [class*="button"], [class*="-btn"],
+  [class*="badge"], [class*="tag"], [class*="status"],
+  .article-topics a, .article-tags > span,
+  .mh-text-link, .mh-row-action, .article-related-link,
+  .fw-home-v04-text-link, .fw-home-v06-weather-link,
+  .fw-home-v06-news-read, .fw-home-v06-audio-all,
+  .fw-home-v06-media-action
+) {
+  font-weight: 700 !important;
+}

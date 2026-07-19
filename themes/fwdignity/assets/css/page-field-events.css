@@ -1,0 +1,241 @@
+.field-events-page {
+  --fe-page: var(--fw-color-page);
+  --fe-paper: var(--fw-color-paper);
+  --fe-surface: var(--fw-color-surface);
+  --fe-surface-alt: var(--fw-color-surface-alt);
+  --fe-primary: var(--fw-color-primary);
+  --fe-ink: var(--fw-color-ink);
+  --fe-paper: var(--fw-color-paper);
+  --fe-surface: var(--fw-color-surface);
+  --fe-muted: var(--fw-color-muted);
+  --fe-link: var(--fw-color-link);
+  --fe-link-hover: var(--fw-color-link-hover);
+  --fe-accent: var(--fw-color-accent-text);
+  --fe-line: var(--fw-color-line);
+  --fe-focus: var(--fw-color-focus);
+  --fe-danger: var(--fw-color-danger);
+  --fe-on-dark: var(--fw-color-on-dark);
+  --fe-topic: var(--fw-topic-field);
+  min-height: 70vh;
+  color: var(--fe-ink);
+  background: var(--fe-page);
+}
+
+.field-events-page *,
+.field-events-page *::before,
+.field-events-page *::after {
+  box-sizing: border-box;
+}
+
+.field-events-hero {
+  background: var(--fe-paper);
+  border-block: 1px solid var(--fe-line);
+}
+
+.field-events-hero > div,
+.field-events-section {
+  width: min(100% - 56px, var(--fw-content-width));
+  margin-inline: auto;
+}
+
+.field-events-hero > div {
+  padding-block: 42px;
+}
+
+.field-events-eyebrow {
+  margin: 0 0 8px;
+  color: var(--fe-topic);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.field-events-hero h1 {
+  margin: 0;
+  font: 700 var(--fw-font-size-h1)/1.2 var(--fw-font-serif);
+  letter-spacing: 0;
+}
+
+.field-events-hero p:last-child {
+  max-width: 880px;
+  margin: 14px 0 0;
+  color: var(--fe-muted);
+  font-size: var(--fw-font-size-lead);
+  line-height: var(--fw-line-height-body);
+}
+
+.field-events-section {
+  padding-block: var(--fw-section-space);
+}
+
+.field-events-section-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: end;
+  margin-bottom: 24px;
+}
+
+.field-events-section-head h2 {
+  margin: 0;
+  font: 700 var(--fw-font-size-h2)/1.3 var(--fw-font-serif);
+}
+
+.field-event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field-event-card {
+  min-width: 0;
+  padding: 24px;
+  background: var(--fe-surface);
+  border: 1px solid var(--fe-line);
+  border-radius: var(--fw-radius-card);
+}
+
+.field-event-status {
+  display: inline-block;
+  padding: 5px 8px;
+  color: var(--fe-primary);
+  background: var(--fe-surface-alt);
+  border: 1px solid var(--fe-line);
+  border-radius: var(--fw-radius-small);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.field-event-status--open {
+  color: var(--fe-on-dark);
+  background: var(--fe-primary);
+  border-color: var(--fe-primary);
+}
+
+.field-event-status--cancelled {
+  color: var(--fe-danger);
+}
+
+.field-event-status--ended {
+  color: var(--fe-muted);
+}
+
+.field-event-date {
+  margin: 18px 0 0;
+  color: var(--fe-topic);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 800;
+}
+
+.field-event-card h2 {
+  margin: 9px 0;
+  font: 700 var(--fw-font-size-h3)/1.4 var(--fw-font-serif);
+}
+
+.field-event-card h2 a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--fe-line);
+  text-underline-offset: 4px;
+}
+
+
+
+.field-event-card > p:not(.field-event-date):not(.field-event-location) {
+  color: var(--fe-muted);
+  font-size: var(--fw-font-size-summary);
+  line-height: 1.7;
+}
+
+.field-event-location {
+  color: var(--fe-accent);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 800;
+}
+
+.field-event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.field-event-actions a {
+  display: inline-flex;
+  min-height: var(--fw-control-height);
+  padding-inline: 14px;
+  align-items: center;
+  color: var(--fe-link);
+  border: 1px solid var(--fe-link);
+  border-radius: var(--fw-radius-small);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.field-event-actions .is-primary {
+  color: var(--fe-on-dark);
+  background: var(--fe-primary);
+  border-color: var(--fe-primary);
+}
+
+.field-events-page a:focus-visible {
+  outline: 3px solid var(--fe-focus);
+  outline-offset: 2px;
+}
+
+.field-events-empty {
+  max-width: var(--fw-reading-width);
+  padding: 28px 30px;
+  color: var(--fe-muted);
+  background: var(--fe-surface);
+  border-left: 4px solid var(--fe-primary);
+  border-block: 1px solid var(--fe-line);
+}
+
+.field-events-empty strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--fe-ink);
+  font: 700 var(--fw-font-size-h4)/1.4 var(--fw-font-serif);
+}
+
+.field-events-empty p {
+  margin: 0;
+  font-size: var(--fw-font-size-summary);
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .field-event-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .field-events-hero > div,
+  .field-events-section {
+    width: min(100% - 32px, var(--fw-content-width));
+  }
+
+  .field-events-hero h1 {
+    font-size: 40px;
+  }
+
+  .field-event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-events-section-head {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .field-event-card h2 a:hover {
+  color: var(--fe-link-hover);
+  text-decoration-color: currentColor;
+}
+}

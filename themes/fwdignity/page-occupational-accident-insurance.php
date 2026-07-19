@@ -281,7 +281,7 @@ get_header(); ?>
       <div class="es-official-grid">
         <a href="https://www.bli.gov.tw/0100668.html" target="_blank" rel="noopener" class="es-official-item"><i class="fas fa-building-columns"></i> 勞保局・農民保險組・職業傷害給付科</a>
         <a href="tel:+886223961266" class="es-official-item"><i class="fas fa-phone"></i> 勞保局 02-2396-1266 轉 2800（農民保險組專線）</a>
-        <a href="tel:+880412589988" class="es-official-item"><i class="fas fa-phone"></i> 勞保局客服 0412-58-9988</a>
+        <a href="tel:0412589988" class="es-official-item"><i class="fas fa-phone"></i> 勞保局客服 0412-58-9988</a>
         <div class="es-official-item" style="cursor:default;"><i class="fas fa-people-roof"></i> 戶籍所在地農會（第一線）</div>
       </div>
       <p style="margin-top:14px;font-size:12.5px;color:var(--c-text-muted);"><i class="fas fa-external-link-alt"></i> 本頁 FAQ 精選自農業部，完整 23 題請見 <a href="https://www.moa.gov.tw/ws.php?id=2508945" target="_blank" rel="noopener" style="color:var(--es-accent);font-weight:700;">農業部官方 FAQ</a>。</p>

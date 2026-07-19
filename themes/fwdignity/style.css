@@ -3,8 +3,8 @@ Theme Name: fwdignity
 Theme URI: https://fwdignity.com
 Author: 尊嚴農業 × 國立中正大學 × 臺大醫院雲林分院
 Author URI: https://fwdignity.com
-Description: 尊嚴農業 Standalone WordPress Theme（V15 MASTER 設計系統）。取代 Astra child theme，採用 OKLCH 28 頁切色、五幕敘事首頁、七 section 章節頁、data-page 驅動。
-Version: 1.0-skeleton
+Description: 尊嚴農業自訂 WordPress Theme；現行視覺採「清朗田野 × 編輯紙本」3.3.0 設計系統與 v4 資訊架構。
+Version: 3.3.0
 Requires at least: 6.0
 Tested up to: 6.5
 Requires PHP: 8.1
@@ -15,6 +15,6 @@ Tags: custom-theme, academic, agriculture, occupational-safety
 */
 
 /* =============================================================
-   fwdignity v1.0-skeleton — 2026-04-20
-   Phase 1a：theme header only；實際樣式在 assets/css/v15-master.css（S2 移植）
+   fwdignity 3.3.0 — 2026-07-15
+   實際樣式由 assets/css 的現行共用層載入；角色與優先序以清朗田野規格為準。
    ============================================================= */

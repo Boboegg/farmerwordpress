@@ -1,942 +1,666 @@
-/* ============================================================
-   fwdignity · page-farmer-study.css
-   農學堂 培力課程 · Empower Purple
-   Main #7C3AED · Deep #4C1D95 · BG #EDE9FE · Contrast #F59E0B
-   ============================================================ */
-
-body[data-page="farmer-study"] .fw-page-v15-main { display: none; }
-
-body[data-page="farmer-study"] {
-  --fs-main: #7C3AED;
-  --fs-deep: #4C1D95;
-  --fs-bg:   #EDE9FE;
-  --fs-contrast: #F59E0B;
-  --fs-main-rgb: 124,58,237;
+.training-page {
+  --tr-page: var(--fw-color-page);
+  --tr-paper: var(--fw-color-paper);
+  --tr-surface: var(--fw-color-surface);
+  --tr-surface-alt: var(--fw-color-surface-alt);
+  --tr-primary: var(--fw-color-primary);
+  --tr-primary-deep: var(--fw-color-primary-deep);
+  --tr-ink: var(--fw-color-ink);
+  --tr-muted: var(--fw-color-muted);
+  --tr-link: var(--fw-color-link);
+  --tr-link-hover: var(--fw-color-link-hover);
+  --tr-accent: var(--fw-color-accent-text);
+  --tr-line: var(--fw-color-line);
+  --tr-focus: var(--fw-color-focus);
+  --tr-on-dark: var(--fw-color-on-dark);
+  --tr-learning: var(--fw-topic-learning);
+  min-height: 70vh;
+  color: var(--tr-ink);
+  background: var(--tr-page);
 }
 
-.fs-main { min-width: 0; padding-bottom: 60px; }
+.training-page *,
+.training-page *::before,
+.training-page *::after {
+  box-sizing: border-box;
+}
 
-/* ========== Hero ========== */
-.fs-hero {
-  position: relative;
-  background: linear-gradient(135deg, #2E1065 0%, #4C1D95 45%, #7C3AED 100%);
-  color: #fff;
-  border-radius: var(--r-lg);
-  padding: 64px 52px 52px;
-  margin-bottom: 32px;
-  overflow: hidden;
-  box-shadow: 0 16px 44px rgba(124,58,237,0.25);
+.training-hero {
+  background: var(--tr-paper);
+  border-block: 1px solid var(--tr-line);
 }
-.fs-hero-deco { position: absolute; inset: 0; pointer-events: none; }
-.fs-hero-deco i {
-  position: absolute;
-  color: rgba(255,255,255,0.08);
-  animation: fsFloat 7s ease-in-out infinite;
+
+.training-hero > div,
+.training-section {
+  width: min(100% - 56px, var(--fw-content-width));
+  margin-inline: auto;
 }
-.fs-deco-1 { top: 30px; right: 48px; font-size: 170px; animation-delay: 0s; }
-.fs-deco-2 { bottom: 32px; right: 220px; font-size: 110px; color: rgba(245,158,11,0.14) !important; animation-delay: 1.5s; }
-.fs-deco-3 { top: 55%; right: 100px; font-size: 85px; color: rgba(255,255,255,0.1) !important; animation-delay: 3s; }
-@keyframes fsFloat {
-  0%,100% { transform: translateY(0) rotate(0); }
-  50% { transform: translateY(-14px) rotate(5deg); }
+
+.training-hero > div {
+  padding-block: 32px;
 }
-.fs-hero-inner { position: relative; z-index: 2; max-width: 780px; }
-.fs-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(245,158,11,0.22);
-  border: 1px solid rgba(245,158,11,0.5);
-  color: var(--fs-contrast);
-  font-family: Inter, sans-serif;
-  font-weight: 800;
-  padding: 8px 20px;
-  border-radius: 999px;
-  font-size: 13px;
-  letter-spacing: 0.16em;
-  margin-bottom: 22px;
+
+.training-eyebrow {
+  margin: 0 0 8px;
+  color: var(--tr-learning);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+  line-height: 1.35;
 }
-.fs-hero-badge i { color: var(--fs-contrast); }
-.fs-hero-title {
-  font-family: "Inter Tight", "Noto Sans TC", sans-serif;
-  font-size: 56px;
-  font-weight: 900;
-  line-height: 1.15;
-  color: #fff;
-  margin: 0 0 18px;
-  letter-spacing: -0.01em;
+
+.training-hero h1 {
+  margin: 0;
+  font: 700 var(--fw-font-size-h1)/var(--fw-line-height-h1) var(--fw-font-serif);
+  letter-spacing: 0;
 }
-.fs-hero-title .accent {
-  color: var(--fs-contrast);
-  position: relative;
+
+.training-hero > div > p:not(.training-eyebrow) {
+  max-width: 880px;
+  margin: 16px 0 24px;
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-lead);
+  line-height: var(--fw-line-height-body);
 }
-.fs-hero-subtitle {
-  font-size: 16px;
-  line-height: 1.9;
-  color: rgba(255,255,255,0.9);
-  margin: 0 0 26px;
-  max-width: 720px;
-}
-.fs-hero-nav {
+
+.training-hero nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 8px 20px;
 }
-.fs-chip {
+
+.training-hero nav a {
   display: inline-flex;
+  min-height: var(--fw-control-height);
   align-items: center;
-  gap: 8px;
-  padding: 9px 18px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 999px;
-  color: #fff;
-  font-size: 13.5px;
+  color: var(--tr-link);
+  font-size: var(--fw-font-size-meta);
   font-weight: 700;
-  text-decoration: none;
-  transition: all 0.25s var(--e-out);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-.fs-chip:hover {
-  background: var(--fs-contrast);
-  border-color: var(--fs-contrast);
-  color: var(--fs-deep);
-  transform: translateY(-2px);
-}
-.fs-hero-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px 0 0;
-  border-top: 1px solid rgba(255,255,255,0.14);
-}
-@media (max-width: 640px) { .fs-hero-stats { grid-template-columns: 1fr; gap: 14px; } }
-
-.fs-hero-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-}
-.fs-hero-stat-num {
-  font-family: "Inter Tight", Inter, sans-serif;
-  font-size: 44px;
-  font-weight: 900;
-  color: var(--fs-contrast);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-.fs-hero-stat-num small { font-size: 22px; font-weight: 700; }
-.fs-hero-stat-label {
-  font-size: 13.5px;
-  color: rgba(255,255,255,0.82);
-  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-@media (max-width: 700px) {
-  .fs-hero { padding: 44px 24px 38px; }
-  .fs-hero-title { font-size: 38px; }
+.training-hero nav a:focus-visible {
+  color: var(--tr-link-hover);
 }
 
-/* ========== Section common ========== */
-.fs-sec {
-  background: var(--c-surface);
-  border-radius: var(--r-lg);
-  padding: 34px 38px;
-  margin-bottom: 22px;
-  border: 1px solid var(--c-line);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+.training-page a:focus-visible,
+.training-page button:focus-visible {
+  outline: 3px solid var(--tr-focus);
+  outline-offset: 2px;
 }
-.fs-sec-head {
+
+.training-section {
+  padding-block: 40px;
+}
+
+.training-section + .training-section {
+  border-top: 1px solid var(--tr-line);
+}
+
+.training-section-head {
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
-  margin-bottom: 24px;
-  padding-bottom: 18px;
-  border-bottom: 2px solid var(--fs-bg);
+  justify-content: space-between;
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 26px;
 }
-.fs-sec-icon {
-  width: 52px; height: 52px;
-  border-radius: 14px;
-  background: var(--fs-bg);
-  color: var(--fs-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  flex-shrink: 0;
-}
-.fs-sec-head h2 {
-  font-size: 26px;
-  font-weight: 900;
-  color: var(--fs-deep);
-  margin: 0 0 6px;
-}
-.fs-sec-head h2 .accent { color: var(--fs-main); }
-.fs-sec-head p {
-  font-size: 14.5px;
-  color: var(--c-text-muted);
+
+.training-section-head h2 {
   margin: 0;
+  font: 700 var(--fw-font-size-h2)/var(--fw-line-height-h2) var(--fw-font-serif);
+}
+
+.training-section-head > p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-summary);
+  line-height: 1.75;
+}
+
+.training-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--tr-line);
+  border-left: 1px solid var(--tr-line);
+}
+
+.training-topic-grid article {
+  min-height: 192px;
+  padding: 24px;
+  background: var(--tr-surface);
+  border-right: 1px solid var(--tr-line);
+  border-bottom: 1px solid var(--tr-line);
+}
+
+.training-topic-grid article > span {
+  color: var(--tr-accent);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.training-topic-grid h3 {
+  margin: 22px 0 9px;
+  font: 700 var(--fw-font-size-h4)/var(--fw-line-height-h3) var(--fw-font-serif);
+}
+
+.training-topic-grid p {
+  margin: 0;
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-summary);
   line-height: 1.7;
 }
 
-/* ========== ① 六大主題 ========== */
-.fs-path-grid {
+.training-record-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-@media (max-width: 900px) { .fs-path-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .fs-path-grid { grid-template-columns: 1fr; } }
-
-.fs-path {
-  padding: 24px 22px;
-  background: #FAFAFA;
-  border-radius: 14px;
-  border: 1px solid #EEE;
-  border-top: 4px solid var(--pc);
-  transition: all 0.3s var(--e-out);
-  cursor: pointer;
-}
-.fs-path:hover {
-  background: #fff;
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
-  border-top-width: 6px;
-}
-.fs-path-icon {
-  width: 52px; height: 52px;
-  border-radius: 14px;
-  background: var(--pcl);
-  color: var(--pc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  margin-bottom: 14px;
-  transition: transform 0.3s var(--e-out);
-}
-.fs-path:hover .fs-path-icon { transform: scale(1.08) rotate(-4deg); }
-.fs-path h4 {
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--pc);
-  margin: 0 0 6px;
-}
-.fs-path p {
-  font-size: 13.5px;
-  color: var(--c-text-muted);
-  line-height: 1.7;
-  margin: 0;
-}
-
-/* ========== Shortcode wrap ========== */
-.fs-shortcode-wrap {
-  padding: 0;
-}
-
-/* ========== [farmer_videos] shortcode 輸出 .edu-video-* ========== */
-.edu-video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
-@media (max-width: 900px) { .edu-video-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .edu-video-grid { grid-template-columns: 1fr; } }
 
-.edu-video-card {
-  background: #FAFAFA;
-  border-radius: 14px;
+.training-record {
+  min-width: 0;
   overflow: hidden;
-  border: 1px solid #EEE;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s var(--e-out);
-  text-decoration: none;
-  color: inherit;
+  background: var(--tr-surface);
+  border: 1px solid var(--tr-line);
+  border-radius: var(--fw-radius-card);
 }
-.edu-video-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 36px rgba(124,58,237,0.14);
-  border-color: var(--fs-main);
-}
-.edu-video-thumb {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  background: #111;
+
+.training-record-media {
+  display: block;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
+  background: var(--tr-surface-alt);
 }
-.edu-video-thumb img {
+
+.training-record-media img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s var(--e-out);
-  opacity: 0.95;
 }
-.edu-video-card:hover .edu-video-thumb img {
-  transform: scale(1.08);
-  opacity: 1;
+
+.training-record__body {
+  padding: 22px 24px 24px;
 }
+
+.training-record-list time {
+  color: var(--tr-learning);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
+}
+
+.training-record-list h3 {
+  margin: 10px 0;
+  font: 700 var(--fw-font-size-h3)/var(--fw-line-height-h3) var(--fw-font-serif);
+}
+
+.training-record-list h3 a,
+.training-text-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.training-record-list h3 a {
+  text-decoration-color: var(--tr-line);
+}
+
+
+
+.training-record-list p {
+  margin: 0 0 14px;
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-summary);
+  line-height: 1.75;
+}
+
+.training-text-link {
+  color: var(--tr-link);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 400; /* PhaseC 對齊現行渲染 */
+}
+
+.training-record--text-only {
+  grid-column: 1 / -1;
+  background: transparent;
+  border-inline: 0;
+  border-radius: 0;
+}
+
+.training-record--text-only .training-record__body {
+  display: grid;
+  grid-template-columns: 150px minmax(260px, 0.9fr) minmax(280px, 1.1fr) auto;
+  gap: 12px 26px;
+  padding-inline: 0;
+  align-items: start;
+}
+
+.training-record--text-only time {
+  grid-row: 1 / span 2;
+}
+
+.training-record--text-only h3,
+.training-record--text-only p {
+  margin: 0;
+}
+
+.training-record--text-only .training-text-link {
+  white-space: nowrap;
+}
+
+.training-empty,
+.edu-fetch-error,
+.edu-fetch-empty {
+  padding: 36px 24px;
+  color: var(--tr-muted);
+  text-align: center;
+  background: var(--tr-surface);
+  border: 1px solid var(--tr-line);
+}
+
+.training-media {
+  width: 100%;
+  max-width: none;
+  padding-inline: max(28px, calc((100% - var(--fw-content-width)) / 2));
+  background: var(--tr-surface);
+  border-block: 1px solid var(--tr-line);
+}
+
+.edu-video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.edu-video-card {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--tr-ink);
+  background: var(--tr-surface);
+  border: 1px solid var(--tr-line);
+  border-radius: var(--fw-radius-card);
+}
+
+.edu-video-thumb {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--tr-paper);
+}
+
+.edu-video-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .edu-video-play {
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%) scale(0.88);
-  width: 56px; height: 56px;
-  background: rgba(255,255,255,0.95);
-  color: var(--fs-deep);
+  inset: 50% auto auto 50%;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  color: var(--tr-on-dark);
+  background: var(--tr-primary);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  padding-left: 4px;
-  opacity: 0;
-  transition: all 0.3s var(--e-out);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+  transform: translate(-50%, -50%);
 }
-.edu-video-card:hover .edu-video-play {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
-}
-.edu-video-duration {
-  position: absolute;
-  bottom: 10px; right: 10px;
-  background: rgba(0,0,0,0.75);
-  color: #fff;
-  padding: 3px 10px;
-  border-radius: 5px;
-  font-size: 11.5px;
-  font-weight: 700;
-}
+
 .edu-video-info {
-  padding: 16px 18px 18px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+  padding: 18px 19px 20px;
 }
+
 .edu-video-tags {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-.edu-tag-topic {
-  font-size: 11.5px;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 6px;
-  background: var(--fs-bg);
-  color: var(--fs-deep);
-  letter-spacing: 0.02em;
-}
-.edu-video-title {
-  font-size: 15px;
-  font-weight: 800;
-  margin: 0 0 8px;
-  line-height: 1.5;
-  color: var(--c-text);
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.edu-video-card:hover .edu-video-title { color: var(--fs-main); }
-.edu-video-desc {
-  font-size: 13px;
-  color: var(--c-text-muted);
-  line-height: 1.6;
-  margin: 0 0 12px;
-  flex-grow: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.edu-video-link {
-  font-size: 13.5px;
+  color: var(--tr-learning);
+  font-size: var(--fw-font-size-meta);
   font-weight: 700;
-  color: var(--fs-main);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: gap 0.2s var(--e-out);
 }
-.edu-video-card:hover .edu-video-link { gap: 10px; }
+
+.edu-video-title {
+  margin: 9px 0;
+  color: var(--tr-ink);
+  font: 700 var(--fw-font-size-h4)/1.45 var(--fw-font-serif);
+}
+
+.edu-video-desc {
+  margin: 0 0 13px;
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-meta);
+  line-height: 1.65;
+}
+
+.edu-video-link,
+.edu-video-more a {
+  color: var(--tr-link);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 400; /* PhaseC 對齊現行渲染 */
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .edu-video-more {
   display: flex;
+  gap: 10px;
   align-items: center;
-  gap: 12px;
-  margin-top: 22px;
-  padding: 16px 22px;
-  background: var(--fs-bg);
-  border-radius: 12px;
-  border: 1px solid rgba(124,58,237,0.2);
-  font-size: 13.5px;
-  color: var(--fs-deep);
-  flex-wrap: wrap;
+  margin-top: 18px;
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-meta);
 }
-.edu-video-more > i:first-child {
-  font-size: 18px;
-  color: var(--fs-main);
-  flex-shrink: 0;
-}
-.edu-video-more span { flex-grow: 1; line-height: 1.6; }
+
 .edu-video-more a {
-  font-weight: 800;
-  color: var(--fs-main);
-  text-decoration: none;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: gap 0.2s;
-}
-.edu-video-more a:hover { gap: 8px; }
-
-.edu-fetch-error, .edu-fetch-empty {
-  padding: 30px;
-  text-align: center;
-  background: #FEF3C7;
-  border-radius: 12px;
-  color: #92400E;
-  font-size: 14px;
+  margin-left: auto;
 }
 
-/* ========== [farmer_courses] shortcode 輸出 .edu-ws-* ========== */
 .edu-ws-list {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  border-top: 1px solid var(--tr-line);
 }
+
 .edu-ws-item {
-  display: flex;
-  gap: 20px;
-  padding: 20px 22px;
-  background: #FAFAFA;
-  border-radius: 14px;
-  border: 1px solid #EEE;
-  align-items: flex-start;
-  transition: all 0.3s var(--e-out);
-}
-.edu-ws-item:hover {
-  background: #fff;
-  border-color: var(--fs-main);
-  transform: translateX(4px);
-  box-shadow: 0 10px 24px rgba(124,58,237,0.12);
-}
-.edu-ws-date-box {
-  min-width: 72px;
-  padding: 14px 10px;
-  background: linear-gradient(135deg, var(--fs-main) 0%, var(--fs-deep) 100%);
-  color: #fff;
-  border-radius: 12px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) auto;
+  gap: 22px;
+  min-height: 126px;
+  padding-block: 18px;
   align-items: center;
+  border-bottom: 1px solid var(--tr-line);
+}
+
+.edu-ws-date-box {
+  display: flex;
+  width: 66px;
+  height: 72px;
+  flex-direction: column;
   justify-content: center;
-  line-height: 1;
-  flex-shrink: 0;
-  box-shadow: 0 6px 16px rgba(124,58,237,0.3);
+  text-align: center;
+  color: var(--tr-on-dark);
+  background: var(--tr-primary);
 }
+
 .edu-ws-month {
-  font-size: 12px;
-  font-weight: 700;
-  opacity: 0.85;
-  letter-spacing: 0.04em;
+  font-size: var(--fw-font-size-meta);
 }
+
 .edu-ws-day {
-  font-size: 28px;
-  font-weight: 900;
-  margin: 4px 0 0;
-  font-family: "Inter Tight", Inter, sans-serif;
+  font-size: var(--fw-font-size-h3);
+  font-weight: 500; /* PhaseC 對齊現行渲染（date 家族 500 網現值） */
+  line-height: 1.1;
 }
-.edu-ws-weekday {
-  font-size: 11.5px;
-  font-weight: 600;
-  opacity: 0.8;
-  margin-top: 2px;
-}
-.edu-ws-content { flex-grow: 1; min-width: 0; }
+
 .edu-ws-meta {
   display: flex;
-  align-items: center;
-  gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 8px;
+  gap: 10px;
+  color: var(--fw-color-muted); /* PhaseC 對齊現行渲染 */
+  font-size: var(--fw-font-size-meta);
+  font-weight: 500;
 }
-.edu-ws-status {
-  font-size: 12px;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-}
-.edu-ws-open {
-  background: #DCFCE7;
-  color: #15803D;
-}
-.edu-ws-open i {
-  font-size: 7px;
-  animation: eduPulseDot 1.5s infinite;
-}
-@keyframes eduPulseDot { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
-.edu-ws-closed {
-  background: #F3F4F6;
-  color: #6B7280;
-}
-.edu-ws-full {
-  background: #FEF3C7;
-  color: #92400E;
-}
-.edu-ws-category {
-  font-size: 12px;
-  font-weight: 700;
-  padding: 3px 10px;
-  background: var(--fs-bg);
-  color: var(--fs-deep);
-  border-radius: 999px;
-}
+
 .edu-ws-title {
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--fs-deep);
-  margin: 0 0 8px;
-  line-height: 1.5;
+  margin: 7px 0;
+  font: 700 var(--fw-font-size-h4)/var(--fw-line-height-h3) var(--fw-font-serif);
 }
-.edu-ws-details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-size: 12.5px;
-  color: var(--c-text-muted);
-  margin-bottom: 8px;
-}
-.edu-ws-details i { color: var(--fs-main); margin-right: 4px; }
+
 .edu-ws-desc {
-  font-size: 13.5px;
-  color: var(--c-text-muted);
-  line-height: 1.65;
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-meta);
+  line-height: 1.65;
 }
-.edu-ws-action { flex-shrink: 0; align-self: center; }
+
 .edu-ws-register {
   display: inline-flex;
+  min-height: var(--fw-control-height);
+  padding-inline: 14px;
   align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
-  background: linear-gradient(135deg, var(--fs-main) 0%, var(--fs-deep) 100%);
-  color: #fff !important;
-  font-weight: 800;
-  font-size: 13.5px;
+  gap: 7px;
+  color: var(--tr-on-dark);
+  background: var(--tr-primary);
+  border-radius: var(--fw-radius-small);
+  font-size: var(--fw-font-size-meta);
+  font-weight: 700;
   text-decoration: none;
-  border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(124,58,237,0.3);
-  transition: all 0.3s var(--e-out);
-  white-space: nowrap;
 }
-.edu-ws-register:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(124,58,237,0.42);
+
+.training-platform-band {
+  background: var(--tr-paper);
+  border-block: 1px solid var(--tr-line);
 }
-.edu-ws-ended {
-  font-size: 13px;
-  color: #9CA3AF;
+
+.training-platform-inner {
+  padding-block: 40px;
+}
+
+.training-platform-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--tr-line);
+  border-left: 1px solid var(--tr-line);
+}
+
+.training-platform-grid a {
+  min-height: 230px;
+  padding: 24px;
+  color: var(--tr-ink);
+  background: var(--tr-surface);
+  border-right: 1px solid var(--tr-line);
+  border-bottom: 1px solid var(--tr-line);
+  text-decoration: none;
+}
+
+.training-platform-grid a:focus-visible {
+  color: var(--tr-link-hover);
+  background: var(--tr-surface-alt);
+}
+
+.training-platform-grid span {
+  color: var(--tr-learning);
+  font-size: var(--fw-font-size-meta);
   font-weight: 700;
 }
 
-@media (max-width: 640px) {
-  .edu-ws-item { flex-direction: column; }
-  .edu-ws-date-box {
-    flex-direction: row;
-    min-width: auto;
-    gap: 8px;
-    padding: 8px 14px;
-    align-items: center;
-  }
-  .edu-ws-day { font-size: 18px; margin: 0; }
-  .edu-ws-action { align-self: flex-start; }
+.training-platform-grid h3 {
+  margin: 18px 0 10px;
+  font: 700 var(--fw-font-size-h4)/1.45 var(--fw-font-serif);
 }
 
-/* Shortcode 未註冊時的 fallback 卡 */
-.fs-fallback {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 20px;
-  align-items: center;
-  padding: 24px 28px;
-  background: linear-gradient(135deg, var(--fs-bg) 0%, #fff 100%);
-  border-radius: 14px;
-  border: 1px solid rgba(124,58,237,0.18);
-}
-@media (max-width: 640px) {
-  .fs-fallback { grid-template-columns: 1fr; text-align: center; gap: 14px; }
-}
-.fs-fallback-icon {
-  width: 64px; height: 64px;
-  border-radius: 16px;
-  background: #FEF2F2;
-  color: #DC2626;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  flex-shrink: 0;
-}
-@media (max-width: 640px) { .fs-fallback-icon { margin: 0 auto; } }
-.fs-fallback-body h4 {
-  font-size: 17px;
-  font-weight: 900;
-  color: var(--fs-deep);
-  margin: 0 0 6px;
-}
-.fs-fallback-body p {
-  font-size: 14px;
-  color: var(--c-text-muted);
+.training-platform-grid p {
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-meta);
   line-height: 1.7;
-  margin: 0;
-}
-.fs-fallback-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 22px;
-  background: linear-gradient(135deg, var(--fs-main) 0%, var(--fs-deep) 100%);
-  color: #fff !important;
-  border-radius: 10px;
-  font-weight: 800;
-  font-size: 14px;
-  text-decoration: none;
-  transition: all 0.3s var(--e-out);
-  box-shadow: 0 6px 18px rgba(124,58,237,0.3);
-  white-space: nowrap;
-}
-.fs-fallback-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(124,58,237,0.42);
 }
 
-/* ========== ③ 平台卡 ========== */
-.fs-group-title {
-  font-size: 17px;
-  font-weight: 900;
-  color: var(--fs-deep);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 16px;
+.training-platform-grid strong {
+  color: var(--tr-link);
+  font-size: var(--fw-font-size-meta);
 }
-.fs-group-title i { color: var(--fs-main); }
-.fs-group-title + .fs-platform-grid { margin-bottom: 24px; }
 
-.fs-platform-grid {
+.training-resource-list {
+  border-top: 1px solid var(--tr-line);
+}
+
+.training-resource-list a {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-bottom: 16px;
+  grid-template-columns: 260px minmax(0, 1fr) 24px;
+  gap: 20px;
+  min-height: 72px;
+  align-items: center;
+  color: var(--tr-ink);
+  border-bottom: 1px solid var(--tr-line);
+  text-decoration: none;
 }
+
+.training-resource-list a:focus-visible {
+  color: var(--tr-link-hover);
+  background: var(--tr-surface-alt);
+}
+
+.training-resource-list span {
+  color: var(--tr-muted);
+  font-size: var(--fw-font-size-meta);
+}
+
+.training-resource-list strong {
+  font: 700 var(--fw-font-size-summary)/1.45 var(--fw-font-serif);
+}
+
+.training-resource-list b {
+  color: var(--tr-link);
+}
+
+@media (max-width: 1040px) {
+  .training-topic-grid,
+  .edu-video-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .training-platform-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .training-record--text-only .training-record__body {
+    grid-template-columns: 120px minmax(220px, 0.9fr) minmax(240px, 1.1fr);
+  }
+
+  .training-record--text-only .training-text-link {
+    grid-column: 2 / -1;
+  }
+}
+
 @media (max-width: 720px) {
-  .fs-platform-grid { grid-template-columns: 1fr; }
-}
-.fs-platform {
-  position: relative;
-  padding: 24px 26px;
-  background: #FAFAFA;
-  border-radius: 14px;
-  border: 1px solid #EEE;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s var(--e-out);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.fs-platform:hover {
-  background: #fff;
-  border-color: var(--pc);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
-}
-.fs-platform-badge {
-  position: absolute;
-  top: 16px; right: 16px;
-  padding: 3px 10px;
-  border-radius: 5px;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-}
-.fs-platform-badge.tw {
-  background: var(--fs-bg);
-  color: var(--fs-deep);
-}
-.fs-platform-badge.intl {
-  background: #FEF3C7;
-  color: #B45309;
-}
-.fs-platform-head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-right: 50px;
-}
-.fs-platform-icon {
-  width: 42px; height: 42px;
-  border-radius: 12px;
-  background: var(--pcl);
-  color: var(--pc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-.fs-platform h4 {
-  font-size: 15.5px;
-  font-weight: 900;
-  color: var(--c-text);
-  margin: 0 0 2px;
-  line-height: 1.4;
-}
-.fs-platform-org {
-  font-size: 12px;
-  color: var(--c-text-muted);
-  font-weight: 600;
-}
-.fs-platform p {
-  font-size: 13.5px;
-  line-height: 1.75;
-  color: var(--c-text-muted);
-  margin: 0;
-}
-.fs-platform-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.fs-platform-tags span {
-  padding: 3px 9px;
-  background: var(--pcl);
-  color: var(--pc);
-  border-radius: 5px;
-  font-size: 11.5px;
-  font-weight: 700;
+  .training-hero > div,
+  .training-section {
+    width: min(100% - 32px, var(--fw-content-width));
+  }
+
+  /* 2026-07-17 去毯化：行動版 40px 覆寫係死碼（foundation 於 ≤820 強制 H1=48px，
+     實渲染一直是 48）；移除以維持源碼＝實況。行動版 H1 是否縮小屬 S-3 待 Bobo 裁決。 */
+
+  .training-section-head {
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .training-topic-grid,
+  .training-record-list,
+  .edu-video-grid,
+  .training-platform-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .training-record--text-only .training-record__body {
+    display: block;
+  }
+
+  .training-record--text-only h3,
+  .training-record--text-only p,
+  .training-record--text-only .training-text-link {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .edu-ws-item {
+    grid-template-columns: 62px minmax(0, 1fr);
+  }
+
+  .edu-ws-action {
+    grid-column: 2;
+  }
+
+  .training-resource-list a {
+    grid-template-columns: 1fr 24px;
+    padding-block: 14px;
+  }
+
+  .training-resource-list span {
+    grid-column: 1 / -1;
+  }
 }
 
-/* ========== ⑤ 教材下載 ========== */
-.fs-dl-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 12px;
-}
-.fs-dl {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 14px;
-  align-items: center;
-  padding: 16px 20px;
-  background: #FAFAFA;
-  border-radius: 12px;
-  border: 1px solid #EEE;
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s var(--e-out);
-}
-.fs-dl:hover {
-  background: #fff;
-  border-color: var(--dc);
-  transform: translateX(4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-}
-.fs-dl-icon {
-  width: 42px; height: 42px;
-  border-radius: 10px;
-  background: color-mix(in srgb, var(--dc) 12%, transparent);
-  color: var(--dc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
-}
-.fs-dl-info h4 {
-  font-size: 14.5px;
-  font-weight: 800;
-  color: var(--c-text);
-  margin: 0 0 4px;
-  line-height: 1.4;
-}
-.fs-dl-info span {
-  font-size: 12px;
-  color: var(--c-text-muted);
-  line-height: 1.5;
-}
-.fs-dl-arrow {
-  color: var(--dc);
-  font-size: 16px;
-  flex-shrink: 0;
-  transition: transform 0.3s var(--e-out);
-}
-.fs-dl:hover .fs-dl-arrow { transform: translateX(4px); }
-
-/* ========== ⑥ 流程 ========== */
-.fs-flow {
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
-  flex-wrap: nowrap;
-}
-@media (max-width: 900px) { .fs-flow { flex-direction: column; } }
-
-.fs-flow-step {
-  flex: 1;
-  padding: 28px 24px;
-  background: linear-gradient(135deg, #FAFAFA 0%, color-mix(in srgb, var(--fc) 8%, #fff) 100%);
-  border-radius: 14px;
-  border: 1px solid #EEE;
-  border-top: 4px solid var(--fc);
-  text-align: center;
-  transition: all 0.3s var(--e-out);
-}
-.fs-flow-step:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(0,0,0,0.08);
-  border-top-width: 6px;
-}
-.fs-flow-num {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: var(--fc);
-  color: #fff;
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  font-weight: 900;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-.fs-flow-icon {
-  font-size: 32px;
-  color: var(--fc);
-  margin-bottom: 12px;
-}
-.fs-flow-step h4 {
-  font-size: 16px;
-  font-weight: 900;
-  color: var(--fc);
-  margin: 0 0 8px;
-}
-.fs-flow-step p {
-  font-size: 13px;
-  line-height: 1.75;
-  color: var(--c-text-muted);
-  margin: 0;
-}
-.fs-flow-arrow {
-  display: flex;
-  align-items: center;
-  color: var(--fs-main);
-  font-size: 22px;
-  padding: 0 4px;
-}
-@media (max-width: 900px) {
-  .fs-flow-arrow { transform: rotate(90deg); padding: 8px 0; justify-content: center; }
+/* 2026-07-17 去毯化 Phase A：互動元素動態＝規格五屬性白名單＋160ms
+   （原由 foundation 全域 !important 強制，本檔自備後不再依賴毯子）。 */
+.training-hero nav a,
+.training-record-list h3 a,
+.training-text-link,
+.training-platform-grid a,
+.training-resource-list a,
+.edu-video-link,
+.edu-video-more a,
+.edu-ws-register {
+  transition:
+    color var(--fw-motion-duration) var(--fw-ease-out),
+    background-color var(--fw-motion-duration) var(--fw-ease-out),
+    border-color var(--fw-motion-duration) var(--fw-ease-out);
 }
 
-.fs-partners {
-  margin-top: 26px;
-  padding: 20px 24px;
-  background: var(--fs-bg);
-  border-radius: 12px;
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .training-hero nav a:hover {
+  color: var(--tr-link-hover);
 }
-.fs-partners h4 {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--fs-deep);
-  margin: 0 0 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  .training-record-list h3 a:hover {
+  color: var(--tr-link-hover);
+  text-decoration-color: currentColor;
 }
-.fs-partners h4 i { color: var(--fs-main); }
-.fs-partner-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  .training-platform-grid a:hover {
+  color: var(--tr-link-hover);
+  background: var(--tr-surface-alt);
 }
-.fs-partner-tags span {
-  padding: 5px 12px;
-  background: #fff;
-  color: var(--fs-deep);
-  border: 1px solid rgba(124,58,237,0.2);
-  border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 700;
-  transition: all 0.2s;
+  .training-resource-list a:hover {
+  color: var(--tr-link-hover);
+  background: var(--tr-surface-alt);
 }
-.fs-partner-tags span:hover {
-  background: var(--fs-main);
-  color: #fff;
-  border-color: var(--fs-main);
-  transform: translateY(-2px);
 }
 
-/* ========== ⑦ 交叉連結 ========== */
-.fs-cross-title {
-  font-size: 20px;
-  font-weight: 900;
-  color: var(--fs-deep);
-  margin: 0 0 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* ===== 治理下沉區（2026-07-17 Phase D 批②，自 site-v2-page-foundation.css 遷入，逐字含 !important） ===== */
+
+body[data-page="farmer-study"] :is(.edu-ws-date-box, .edu-ws-register) :is(span, strong),
+body[data-page="farmer-study"] .edu-ws-register {
+  color: var(--fw-color-on-dark) !important;
 }
-.fs-cross-title i { color: var(--fs-main); }
-.fs-cross-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+
+body.fw-page-v15[data-page="farmer-study"] main .edu-ws-date-box .edu-ws-month {
+  color: var(--fw-color-on-dark) !important;
 }
-.fs-cross {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 20px 22px;
-  background: #FAFAFA;
-  border-radius: 12px;
-  border: 1px solid #EEE;
-  border-left: 4px solid var(--cc);
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.3s var(--e-out);
+
+body[data-page="farmer-study"] a[href*="academy.moa.gov.tw"]:not(.edu-ws-register) {
+  color: var(--fw-color-link) !important;
 }
-.fs-cross:hover {
-  background: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
-  border-left-width: 7px;
+
+body[data-page="farmer-study"] .training-dark {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
 }
-.fs-cross i {
-  font-size: 22px;
-  color: var(--cc);
+
+body[data-page="farmer-study"] .edu-video-card {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-surface) !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
 }
-.fs-cross span {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--fs-deep);
-  margin-top: 4px;
+
+body[data-page="farmer-study"] :is(.training-dark, .edu-video-card) :is(h2, h3) {
+  color: var(--fw-color-ink) !important;
 }
-.fs-cross small {
-  font-size: 12.5px;
-  color: var(--c-text-muted);
-  line-height: 1.55;
+
+body[data-page="farmer-study"] :is(.training-dark, .edu-video-card) :is(p, [class*="meta"]) {
+  color: var(--fw-color-muted) !important;
+}
+
+body[data-page="farmer-study"] .training-hero {
+  min-height: 310px;
+}
+
+body[data-page="farmer-study"] .training-hero > div {
+  padding-block: 40px;
+}
+
+body[data-page="farmer-study"] .training-hero {
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
 }

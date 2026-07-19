@@ -1,3 +1,47 @@
+/* ===== 治理搬遷（2026-07-17 Phase D 批③）——本家族屬未發布休眠頁，重開前須依清朗田野 3.3.0 重寫（封條政策不變） ===== */
+
+body[data-page="economic-insurance"] {
+  --ei-main: var(--fw-topic-policy);
+  --ei-deep: var(--fw-color-primary-deep);
+  --ei-bg: var(--fw-color-paper);
+  --ei-accent: var(--fw-color-accent);
+  --ei-gold-deep: var(--fw-color-accent-text);
+  --ei-gold-bg: var(--fw-color-surface-alt);
+  --ei-danger: var(--fw-color-danger);
+  --ei-success: var(--fw-topic-health);
+  --ei-success-bg: var(--fw-color-surface-alt);
+  --ei-line: var(--fw-color-line);
+}
+
+body.fw-page-v15 main .ei-snap-header {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-paper) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .ei-snap-header :is(a, h2, h3, p, span, strong) {
+  color: var(--fw-color-ink) !important;
+}
+
+body.fw-page-v15 main .ei-hero {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .ei-hero :is(p, li) {
+  color: var(--fw-color-muted) !important;
+}
+
+body.fw-page-v15 main .ei-hero::before,
+body.fw-page-v15 main .ei-hero::after {
+  background: none !important;
+}
+
 /* ============================================================
    fwdignity · page-economic-insurance.css
    經濟與保險 Hub · MASTER FINAL 2026-04-20
@@ -137,13 +181,13 @@ body[data-page="economic-insurance"] {
   background: var(--ei-accent);
   color: var(--ei-deep);
 }
-.ei-btn-primary:hover { background: #FBBF24; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(245,158,11,0.45); }
+
 .ei-btn-secondary {
   background: rgba(255,255,255,0.14);
   color: #fff;
   border: 1.5px solid rgba(255,255,255,0.4);
 }
-.ei-btn-secondary:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
+
 
 /* Hero stats */
 .ei-hero-stats {
@@ -233,11 +277,7 @@ body[data-page="economic-insurance"] {
   position: relative;
   overflow: hidden;
 }
-.ei-topic:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 42px rgba(8,145,178,0.15);
-  border-top-color: var(--ei-accent);
-}
+
 .ei-topic-icon {
   width: 56px; height: 56px;
   background: var(--ei-bg);
@@ -277,7 +317,7 @@ body[data-page="economic-insurance"] {
   font-weight: 800;
   font-size: 13.5px;
 }
-.ei-topic:hover .ei-topic-cta { color: var(--ei-accent); }
+
 .ei-topic-coming {
   padding: 10px 14px;
   background: var(--ei-gold-bg);
@@ -327,7 +367,7 @@ body[data-page="economic-insurance"] {
   position: sticky;
   top: 0;
 }
-.ei-snap-table tbody tr:hover { background: #F0FBFF; }
+
 .ei-snap-table tbody tr:last-child td { border-bottom: none; }
 .ei-snap-table .insurance-name { font-weight: 800; color: var(--ei-deep); }
 .ei-snap-table .insurance-name small { display: block; color: var(--c-text-muted); font-weight: 500; font-size: 11.5px; margin-top: 2px; }
@@ -346,7 +386,7 @@ body[data-page="economic-insurance"] {
   font-weight: 800;
   text-decoration: none;
 }
-.ei-snap-link:hover { text-decoration: underline; }
+
 .ei-snap-wip { color: var(--ei-gold-deep); font-weight: 700; font-style: italic; }
 .ei-snap-footnote {
   padding: 14px 26px;
@@ -379,11 +419,7 @@ body[data-page="economic-insurance"] {
   border-radius: 14px;
   transition: all 0.25s;
 }
-.ei-tool-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--ei-main);
-  box-shadow: 0 12px 26px rgba(8,145,178,0.14);
-}
+
 .ei-tool-card.internal {
   border-top: 4px solid var(--ei-accent);
   background: linear-gradient(135deg, #fff 0%, var(--ei-gold-bg) 120%);
@@ -429,9 +465,9 @@ body[data-page="economic-insurance"] {
   text-decoration: none;
   transition: all 0.2s;
 }
-.ei-tool-link:hover { background: var(--ei-deep); transform: translateX(3px); }
+
 .ei-tool-link.accent { background: var(--ei-accent); color: var(--ei-deep); }
-.ei-tool-link.accent:hover { background: var(--ei-gold-deep); color: #fff; }
+
 
 /* ===== 聯絡窗口 ===== */
 .ei-contact-grid {
@@ -451,7 +487,7 @@ body[data-page="economic-insurance"] {
   color: inherit;
   transition: all 0.25s;
 }
-.ei-contact-card:hover { border-color: var(--ei-main); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(8,145,178,0.1); }
+
 .ei-contact-icon {
   width: 56px; height: 56px;
   background: var(--ei-bg);
@@ -501,7 +537,7 @@ body[data-page="economic-insurance"] {
   font-size: 13.5px;
   transition: all 0.2s;
 }
-.ei-cross-card:hover { transform: translateX(3px); border-color: var(--ei-main); background: var(--ei-bg); }
+
 .ei-cross-icon {
   width: 36px; height: 36px;
   background: var(--ei-bg);
@@ -511,7 +547,7 @@ body[data-page="economic-insurance"] {
   font-size: 15px;
   flex-shrink: 0;
 }
-.ei-cross-card:hover .ei-cross-icon { background: var(--ei-main); color: #fff; }
+
 
 /* ===== RWD ===== */
 @media (max-width: 960px) {
@@ -519,4 +555,28 @@ body[data-page="economic-insurance"] {
   .ei-hero-grid { grid-template-columns: 1fr; }
   .ei-topic-grid { grid-template-columns: 1fr; }
   .ei-tools { padding: 28px 20px; }
+}
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .ei-btn-primary:hover { background: #FBBF24; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(245,158,11,0.45); }
+  .ei-btn-secondary:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
+  .ei-topic:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(8,145,178,0.15);
+  border-top-color: var(--ei-accent);
+}
+  .ei-topic:hover .ei-topic-cta { color: var(--ei-accent); }
+  .ei-snap-table tbody tr:hover { background: #F0FBFF; }
+  .ei-snap-link:hover { text-decoration: underline; }
+  .ei-tool-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ei-main);
+  box-shadow: 0 12px 26px rgba(8,145,178,0.14);
+}
+  .ei-tool-link:hover { background: var(--ei-deep); transform: translateX(3px); }
+  .ei-tool-link.accent:hover { background: var(--ei-gold-deep); color: #fff; }
+  .ei-contact-card:hover { border-color: var(--ei-main); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(8,145,178,0.1); }
+  .ei-cross-card:hover { transform: translateX(3px); border-color: var(--ei-main); background: var(--ei-bg); }
+  .ei-cross-card:hover .ei-cross-icon { background: var(--ei-main); color: #fff; }
 }

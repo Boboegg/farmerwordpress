@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 省力機械
+ * Slug: labor-saving-machinery
  * fwdignity · page-labor-saving-machinery.php
  * 省工農機子頁(slug=labor-saving-machinery)· 天青 #0EA5E9
  * 🔴 紅線:文字 / 數字 / 引用 1:1 復用原頁。

@@ -1,0 +1,2392 @@
+<!doctype html>
+<html lang="zh-Hant-TW" data-desktop-only="true">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1440">
+  <meta name="color-scheme" content="light">
+  <title>尊嚴農業｜電腦版最終版型選擇室 v2</title>
+  <style>:root {
+  --fw-paper: #FDFBF7;
+  --fw-paper-soft: #F7F6F1;
+  --fw-surface: #FFFFFF;
+  --fw-surface-muted: #F0F0EC;
+  --fw-brand: #435832;
+  --fw-brand-dark: #314225;
+  --fw-ink: #283121;
+  --fw-body: #1A1A1A;
+  --fw-muted: #566155;
+  --fw-gold: #7B5D12;
+  --fw-line: #E0E0E0;
+  --fw-footer: #25331E;
+  --fw-warning: #A24A3D;
+  --fw-shadow: 0 10px 30px rgba(37, 51, 30, .08);
+  --fw-serif: "Noto Serif TC", "Songti TC", serif;
+  --fw-sans: "Noto Sans TC", "PingFang TC", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 1180px;
+  margin: 0;
+  background: #ECEDE8;
+  color: var(--fw-body);
+  font-family: var(--fw-sans);
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: .2em;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--fw-ink);
+  outline-offset: 3px;
+}
+
+.room-masthead {
+  color: var(--fw-paper-soft);
+  background: var(--fw-footer);
+  border-bottom: 4px solid var(--fw-brand);
+}
+
+.room-masthead__inner,
+.room-nav__inner,
+.room-main {
+  width: min(100% - 48px, 1400px);
+  margin-inline: auto;
+}
+
+.room-masthead__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 48px;
+  align-items: end;
+  padding-block: 44px 38px;
+}
+
+.room-kicker {
+  margin: 0 0 8px;
+  color: var(--fw-gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.mock-kicker {
+  margin: 0 0 8px;
+  color: var(--fw-gold);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.room-masthead .room-kicker {
+  color: #D7C486;
+}
+
+.room-masthead h1 {
+  max-width: 900px;
+  margin: 0;
+  font: 700 48px/1.22 var(--fw-serif);
+  letter-spacing: -.025em;
+}
+
+.room-masthead p:not(.room-kicker) {
+  max-width: 850px;
+  margin: 14px 0 0;
+  color: #DCE4D8;
+  font-size: 17px;
+}
+
+.room-status {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, .04);
+}
+
+.room-status strong {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--fw-serif);
+  font-size: 20px;
+}
+
+.room-status p {
+  margin: 0 !important;
+  font-size: 14px !important;
+}
+
+.room-nav {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  background: rgba(253, 251, 247, .97);
+  border-bottom: 1px solid var(--fw-line);
+  box-shadow: 0 4px 14px rgba(37, 51, 30, .05);
+}
+
+.room-nav__inner {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  align-items: center;
+  min-height: 62px;
+}
+
+.room-nav strong {
+  color: var(--fw-ink);
+  font-family: var(--fw-serif);
+}
+
+.room-nav ol {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.room-nav a {
+  display: grid;
+  min-height: 62px;
+  place-items: center;
+  border-left: 1px solid var(--fw-line);
+  color: var(--fw-ink);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.room-nav a:hover {
+  background: var(--fw-paper-soft);
+}
+
+.room-main {
+  padding-block: 40px 96px;
+}
+
+.room-guidance {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.room-guidance article {
+  padding: 20px 24px;
+  border-left: 4px solid var(--fw-brand);
+  background: var(--fw-surface);
+}
+
+.room-guidance h2 {
+  margin: 0 0 6px;
+  color: var(--fw-ink);
+  font: 700 22px/1.35 var(--fw-serif);
+}
+
+.room-guidance p {
+  margin: 0;
+  color: var(--fw-muted);
+}
+
+.page-preview {
+  scroll-margin-top: 82px;
+  margin-bottom: 64px;
+}
+
+.page-preview__head {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: end;
+  margin-bottom: 16px;
+}
+
+.page-preview__number {
+  padding-top: 6px;
+  color: var(--fw-gold);
+  border-top: 4px solid var(--fw-gold);
+  font: 700 26px/1 var(--fw-serif);
+}
+
+.page-preview__title {
+  margin: 0;
+  color: var(--fw-ink);
+  font: 700 34px/1.25 var(--fw-serif);
+}
+
+.page-preview__decision {
+  margin: 5px 0 0;
+  color: var(--fw-muted);
+}
+
+.page-preview__badge {
+  padding: 7px 10px;
+  color: var(--fw-brand);
+  border: 1px solid var(--fw-brand);
+  border-radius: 4px;
+  background: var(--fw-paper);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.site-canvas {
+  overflow: hidden;
+  max-width: 1320px;
+  margin-inline: auto;
+  border: 1px solid #D6D9D1;
+  border-radius: 14px;
+  background: var(--fw-paper);
+  box-shadow: var(--fw-shadow);
+}
+
+.mock-site-header {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  align-items: center;
+  min-height: 86px;
+  padding-inline: 42px;
+  background: var(--fw-surface);
+  border-bottom: 1px solid var(--fw-line);
+}
+
+.mock-brand {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.mock-brand__mark {
+  display: grid;
+  width: 48px;
+  aspect-ratio: 1;
+  place-items: center;
+  color: white;
+  background: var(--fw-brand);
+  font: 700 20px/1 var(--fw-serif);
+}
+
+.mock-brand__name {
+  color: var(--fw-ink);
+  font: 700 18px/1.25 var(--fw-serif);
+}
+
+.mock-brand__name span {
+  display: block;
+  color: var(--fw-muted);
+  font: 500 15px/1.5 var(--fw-sans);
+  letter-spacing: .04em;
+}
+
+.mock-site-header nav {
+  justify-self: end;
+}
+
+.mock-site-header ul {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mock-site-header a {
+  color: var(--fw-ink);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.mock-main {
+  padding: 32px 48px 48px;
+}
+
+.mock-page {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.mock-page h1 {
+  color: var(--fw-ink);
+  font: 700 48px/1.32 var(--fw-serif);
+  letter-spacing: -.015em;
+}
+
+.mock-page h2 {
+  color: var(--fw-ink);
+  font: 700 34px/1.38 var(--fw-serif);
+}
+
+.mock-page h3 {
+  color: var(--fw-ink);
+  font: 700 24px/1.45 var(--fw-serif);
+}
+
+.mock-page h4 {
+  color: var(--fw-ink);
+  font: 700 20px/1.5 var(--fw-sans);
+}
+
+.mock-alert {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 64px;
+  margin: -32px -48px 32px;
+  padding: 6px 48px;
+  color: var(--fw-ink);
+  background: #FFF8ED;
+  border-bottom: 1px solid #E8D4B4;
+}
+
+.mock-alert__label {
+  color: var(--fw-warning);
+  font-weight: 700;
+}
+
+.mock-alert__title {
+  font-weight: 700;
+}
+
+.mock-alert__detail {
+  color: var(--fw-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.mock-hero,
+.mock-section {
+  margin: 0 0 48px;
+}
+
+.mock-hero:last-child,
+.mock-section:last-child {
+  margin-bottom: 0;
+}
+
+.mock-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.mock-grid--8-4 {
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+}
+
+.mock-grid--7-5 {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+}
+
+.mock-grid--5-7 {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+}
+
+.mock-grid--4-4-4,
+.mock-card-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mock-card-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.mock-section__head {
+  display: flex;
+  gap: 28px;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.mock-section__head h2,
+.mock-section__head h3,
+.mock-hero h1,
+.mock-hero h2 {
+  margin: 0;
+  color: var(--fw-ink);
+  font-family: var(--fw-serif);
+  line-height: 1.28;
+  letter-spacing: -.015em;
+}
+
+.mock-hero h1 {
+  font-size: 48px;
+  line-height: 1.32;
+}
+
+.mock-page > header h1 {
+  margin: 0;
+  color: var(--fw-ink);
+  font: 700 48px/1.32 var(--fw-serif);
+  letter-spacing: -.015em;
+}
+
+.mock-hero h2,
+.mock-section__head h2 {
+  font-size: 34px;
+  line-height: 1.38;
+}
+
+.mock-section__head h3 {
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+.mock-section__head p,
+.mock-hero p {
+  margin: 8px 0 0;
+  color: var(--fw-muted);
+}
+
+.mock-media {
+  display: block;
+  overflow: hidden;
+  min-height: 220px;
+  margin: 0;
+  border-radius: 14px;
+  background: #E8ECE3;
+}
+
+.mock-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mock-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--fw-line);
+  border-radius: 14px;
+  background: var(--fw-surface);
+}
+
+.mock-card h2,
+.mock-card h3,
+.mock-card h4 {
+  margin: 0 0 8px;
+  color: var(--fw-ink);
+  font-family: var(--fw-serif);
+  line-height: 1.38;
+}
+
+.mock-card h2 {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.mock-card h3 {
+  font-size: 22px;
+}
+
+.mock-card h4 {
+  font-family: var(--fw-sans);
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.mock-card p {
+  margin: 0;
+  color: var(--fw-muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.mock-meta {
+  color: var(--fw-gold) !important;
+  font-size: 15px !important;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.mock-button,
+.mock-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.mock-button {
+  padding: 8px 16px;
+  color: white;
+  border: 1px solid var(--fw-brand);
+  border-radius: 4px;
+  background: var(--fw-brand);
+  text-decoration: none;
+}
+
+.mock-link {
+  color: var(--fw-brand);
+}
+
+.mock-list,
+.mock-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mock-list > li,
+.mock-timeline > li {
+  padding-block: 16px;
+  border-bottom: 1px solid var(--fw-line);
+}
+
+.mock-list > li:first-child,
+.mock-timeline > li:first-child {
+  padding-top: 0;
+}
+
+.mock-list > li:last-child,
+.mock-timeline > li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.mock-aside {
+  padding: 22px;
+  border-left: 4px solid var(--fw-brand);
+  border-radius: 14px;
+  background: var(--fw-paper-soft);
+}
+
+.mock-aside h2,
+.mock-aside h3 {
+  margin: 0 0 8px;
+  color: var(--fw-ink);
+  font-family: var(--fw-serif);
+}
+
+.mock-aside p {
+  margin: 0;
+  color: var(--fw-muted);
+}
+
+.home-headline .mock-media,
+.home-lead__media {
+  aspect-ratio: 16 / 8.6;
+  min-height: 0;
+  margin-bottom: 18px;
+}
+
+.home-headline h1,
+.home-intro h1 {
+  max-width: 19ch;
+}
+
+.home-rail {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+}
+
+.home-alert .mock-alert__heading {
+  display: block;
+  margin: 0;
+  color: var(--fw-ink);
+  font: 700 17px/1.5 var(--fw-sans);
+}
+
+.home-alert p {
+  margin: 0;
+}
+
+.mock-alert__content {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.mock-alert__content p {
+  color: var(--fw-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.home-alert .mock-kicker {
+  margin-bottom: 2px;
+}
+
+.home-alert .mock-link {
+  margin-top: 0;
+}
+
+.home-editorial__grid {
+  align-items: start;
+}
+
+.home-lead__copy h2 {
+  margin: 4px 0 8px;
+  color: var(--fw-ink);
+  font: 700 34px/1.38 var(--fw-serif);
+}
+
+.home-lead__copy p:not(.mock-meta) {
+  margin: 0;
+  color: var(--fw-muted);
+}
+
+.home-intro {
+  align-self: start;
+}
+
+.home-intro__actions {
+  display: grid;
+  justify-items: start;
+  margin-top: 16px;
+}
+
+.home-latest__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.home-latest__item {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.home-latest__item .mock-media {
+  min-height: 0;
+  aspect-ratio: 1;
+}
+
+.home-latest__item h3 {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.news-feature .mock-media,
+.news-headline__media,
+.field-feature .mock-media,
+.topic-feature .mock-media,
+.about-hero .mock-media,
+.article-opening .mock-media {
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+}
+
+.news-layout {
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
+.news-index {
+  align-self: start;
+  padding: 18px;
+  border-top: 4px solid var(--fw-brand);
+  border-radius: 14px;
+  background: var(--fw-surface);
+}
+
+.news-featured__grid {
+  align-items: stretch;
+}
+
+.news-headline {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(260px, 5fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.news-headline__media {
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.news-headline h2 {
+  margin: 4px 0 8px;
+  color: var(--fw-ink);
+  font: 700 34px/1.38 var(--fw-serif);
+}
+
+.news-headline p:not(.mock-meta),
+.news-secondary p:not(.mock-meta),
+.news-timeline p:not(.mock-meta) {
+  margin: 0;
+  color: var(--fw-muted);
+}
+
+.news-secondary-list {
+  display: grid;
+  gap: 20px;
+}
+
+.news-secondary {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.news-secondary__media {
+  min-height: 0;
+  aspect-ratio: 1;
+}
+
+.news-secondary h3 {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.news-archive__layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 28px;
+}
+
+.news-date-index h2,
+.news-date-index h3 {
+  margin: 0;
+  color: var(--fw-ink);
+  font-family: var(--fw-serif);
+}
+
+.news-date-index h3 {
+  margin-top: 14px;
+  font-size: 24px;
+  line-height: 1.45;
+}
+
+.news-date-index a {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.news-timeline__group {
+  margin-bottom: 28px;
+}
+
+.news-timeline__group > h3 {
+  margin: 0 0 12px;
+  color: var(--fw-gold);
+  font-size: 15px;
+}
+
+.news-timeline__item {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.news-timeline__item > time {
+  color: var(--fw-gold);
+  font-weight: 700;
+}
+
+.news-timeline__item h4 {
+  margin: 2px 0 6px;
+  color: var(--fw-ink);
+  font: 700 20px/1.5 var(--fw-sans);
+}
+
+.news-index ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-index li {
+  padding-block: 8px;
+  border-bottom: 1px solid var(--fw-line);
+}
+
+.guide-grid .mock-card {
+  min-height: 190px;
+  border-top: 4px solid var(--fw-brand);
+}
+
+.guide-card-grid .mock-card {
+  min-height: 190px;
+  border-top: 4px solid var(--fw-brand);
+}
+
+.guide-task-card__status {
+  margin-top: 12px !important;
+  color: var(--fw-muted) !important;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.field-people-lead {
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+}
+
+.field-people-layout {
+  display: grid;
+  gap: 20px;
+}
+
+.field-feature {
+  align-items: start;
+}
+
+.field-feature__lead .mock-media,
+.topic-feature__lead .mock-media {
+  min-height: 0;
+  aspect-ratio: 16 / 8.8;
+  margin-bottom: 16px;
+}
+
+.field-feature__lead h2,
+.topic-feature__lead h2 {
+  margin: 4px 0 8px;
+  color: var(--fw-ink);
+  font: 700 34px/1.38 var(--fw-serif);
+}
+
+.field-feature__lead > p:not(.mock-meta),
+.topic-feature__lead > p:not(.mock-meta) {
+  margin: 0;
+  color: var(--fw-muted);
+}
+
+.field-briefs h2,
+.topic-evidence h3,
+.media-series h3 {
+  margin: 0;
+  color: var(--fw-ink);
+  font-family: var(--fw-serif);
+}
+
+.field-briefs .mock-list h3,
+.topic-evidence .mock-list h3,
+.media-series .mock-list h3 {
+  margin: 2px 0 0;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.field-person-card .mock-media,
+.field-video-card .mock-media {
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  margin: -20px -20px 16px;
+  border-radius: 14px 14px 0 0;
+}
+
+.field-person-card--lead .mock-media {
+  aspect-ratio: 16 / 8.6;
+}
+
+.field-person-card > p:not(.mock-meta),
+.field-people-rest .mock-card > p:not(.mock-meta) {
+  margin: 0;
+  color: var(--fw-muted);
+}
+
+.field-training-media {
+  margin-top: 32px;
+}
+
+.field-video-card h3 {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.training-media-face {
+  padding: 24px;
+  background: var(--fw-surface);
+  border: 1px solid var(--fw-line);
+  border-radius: 14px;
+}
+
+.training-media-face .mock-card {
+  background: var(--fw-surface);
+}
+
+.topic-intro {
+  max-width: 1100px;
+  margin-bottom: 24px;
+}
+
+.topic-intro h1 {
+  max-width: none;
+}
+
+.topic-intro__summary {
+  max-width: 1100px;
+  margin-top: 14px !important;
+  color: var(--fw-body) !important;
+  font-size: 20px;
+  line-height: 1.75;
+}
+
+.topic-intro > p:last-child {
+  max-width: 980px;
+  margin: 10px 0 0;
+  color: var(--fw-muted);
+}
+
+.topic-feature {
+  align-items: start;
+}
+
+.media-feature__cover {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  background: var(--fw-surface);
+}
+
+.media-feature__cover img {
+  object-fit: contain;
+}
+
+.media-feature__episode > .mock-grid {
+  align-items: center;
+}
+
+.media-feature__episode h2 {
+  margin: 4px 0 8px;
+  color: var(--fw-ink);
+  font: 700 22px/1.5 var(--fw-serif);
+}
+
+.media-feature__episode p:not(.mock-meta) {
+  margin: 0;
+  color: var(--fw-muted);
+}
+
+.media-recent {
+  padding: 6px 0 0 20px;
+  border-left: 1px solid var(--fw-line);
+}
+
+.media-recent > h2 {
+  margin: 0 0 8px;
+  color: var(--fw-ink);
+  font: 700 34px/1.38 var(--fw-serif);
+}
+
+.media-recent li {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 14px;
+}
+
+.media-recent img {
+  width: 72px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.media-recent h3 {
+  margin: 1px 0 0;
+  color: var(--fw-ink);
+  font: 700 22px/1.5 var(--fw-serif);
+}
+
+.media-library .mock-section__head > p {
+  max-width: 500px;
+  text-align: right;
+}
+
+.media-archive > h3 {
+  margin: 0;
+  color: var(--fw-ink);
+  font: 700 24px/1.45 var(--fw-serif);
+}
+
+.media-archive .mock-list h3 {
+  margin: 2px 0 0;
+  color: var(--fw-ink);
+  font: 700 22px/1.5 var(--fw-serif);
+}
+
+.research-path {
+  counter-reset: path;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block: 1px solid var(--fw-line);
+}
+
+.research-path li {
+  min-height: 132px;
+  padding: 20px;
+  border-right: 1px solid var(--fw-line);
+}
+
+.research-path li:last-child {
+  border-right: 0;
+}
+
+.research-latest__media {
+  grid-area: media;
+  min-height: 0;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.research-latest {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  grid-template-areas:
+    "meta meta"
+    "media title"
+    "media link";
+  gap: 10px 16px;
+  align-content: start;
+}
+
+.research-latest > .mock-meta {
+  grid-area: meta;
+}
+
+.research-latest > h2 {
+  grid-area: title;
+  align-self: end;
+}
+
+.research-latest > .mock-link {
+  grid-area: link;
+  align-self: start;
+  justify-self: start;
+  margin-top: 0;
+}
+
+.research-path strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--fw-ink);
+  font: 700 20px/1.35 var(--fw-serif);
+}
+
+.team-grid,
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.team-text-row,
+.about-team-text-row {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 20px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--fw-line);
+}
+
+.about-hero__layout,
+.about-team-lead__layout {
+  align-items: center;
+}
+
+.about-hero__statement {
+  margin-top: 20px;
+  font: 700 20px/1.5 var(--fw-serif);
+}
+
+.about-field-media {
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+}
+
+.about-team-lead {
+  margin-bottom: 20px;
+}
+
+.about-team-lead__media,
+.about-team-card__media {
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.about-team-lead__media {
+  aspect-ratio: 16 / 9;
+}
+
+.about-team-lead__media img,
+.about-team-card__media img {
+  object-position: center 15%;
+}
+
+.about-team-card__media {
+  margin: -20px -20px 16px;
+  border-radius: 14px 14px 0 0;
+}
+
+.about-team-text-list {
+  margin-top: 24px;
+}
+
+.about-team-text-list > h3 {
+  margin: 0 0 8px;
+  color: var(--fw-ink);
+  font: 700 24px/1.45 var(--fw-serif);
+}
+
+.article-opening {
+  align-items: center;
+}
+
+.article-opening .mock-media {
+  max-height: 480px;
+}
+
+.article-opening .mock-media img {
+  max-height: 480px;
+  object-fit: contain;
+  background: var(--fw-surface);
+}
+
+.mock-prose {
+  max-width: 780px;
+  margin: 0 auto;
+  color: var(--fw-body);
+  font: 400 20px/1.85 var(--fw-sans);
+}
+
+.mock-prose h2 {
+  margin: 40px 0 16px;
+  color: var(--fw-ink);
+  font: 700 34px/1.38 var(--fw-serif);
+}
+
+.mock-prose p {
+  margin: 0 0 1.4em;
+}
+
+.article-player {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 14px;
+  color: var(--fw-paper-soft);
+  background: var(--fw-footer);
+  border-radius: 4px;
+}
+
+.article-player__play {
+  display: grid;
+  width: 48px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .6);
+  border-radius: 50%;
+}
+
+.mock-site-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  padding: 34px 48px;
+  color: var(--fw-paper-soft);
+  background: var(--fw-footer);
+}
+
+.mock-site-footer h3 {
+  margin: 0 0 8px;
+  font: 700 24px/1.45 var(--fw-serif);
+}
+
+.mock-site-footer p,
+.mock-site-footer ul {
+  margin: 0;
+  color: #DCE4D8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.mock-site-footer ul {
+  padding: 0;
+  list-style: none;
+}
+
+.reading-control {
+  position: fixed;
+  z-index: 40;
+  right: 18px;
+  bottom: 18px;
+  display: grid;
+  width: 56px;
+  aspect-ratio: 1;
+  place-items: center;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  background: var(--fw-brand);
+  box-shadow: 0 6px 18px rgba(37, 51, 30, .18);
+  font-weight: 700;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+</head>
+<body>
+  <header class="room-masthead">
+    <div class="room-masthead__inner">
+      <div>
+        <p class="room-kicker">清朗田野 3.3.0・桌機骨架定案</p>
+        <h1>九類頁面最終版型選擇室 v2</h1>
+        <p>這次直接看完整的桌機頁面骨架：真實內容、實際密度、真正的區塊關係。手機與特效延後，不讓兩種問題混在一起。</p>
+      </div>
+      <aside class="room-status">
+        <strong>本輪只看三件事</strong>
+        <p>資訊先後、留白密度、區塊是否合理。色彩、字體、幾何與深綠頁尾沿用既定規格。</p>
+      </aside>
+    </div>
+  </header>
+  <nav class="room-nav" aria-label="九類頁面快速跳轉">
+    <div class="room-nav__inner"><strong>逐頁檢視</strong><ol>
+  <li><a href="#page-01" aria-label="前往 首頁">01</a></li>
+  <li><a href="#page-02" aria-label="前往 最新消息">02</a></li>
+  <li><a href="#page-03" aria-label="前往 田間知識與資源">03</a></li>
+  <li><a href="#page-04" aria-label="前往 田野入口與集合">04</a></li>
+  <li><a href="#page-05" aria-label="前往 五個田野主題">05</a></li>
+  <li><a href="#page-06" aria-label="前往 聽見田裡的聲音">06</a></li>
+  <li><a href="#page-07" aria-label="前往 研究、資源與倡議">07</a></li>
+  <li><a href="#page-08" aria-label="前往 認識尊嚴農業與研究團隊">08</a></li>
+  <li><a href="#page-09" aria-label="前往 文章單篇">09</a></li></ol></div>
+  </nav>
+  <main class="room-main">
+    <section class="room-guidance" aria-label="檢視說明">
+      <article><h2>平衡緊湊，不是全面壓縮</h2><p>主章節 48px、標題到內容 24px、欄距 20–24px；不讓父層與子層間距重複相加。</p></article>
+      <article><h2>區塊靠內容模式分，不靠滿頁框線</h2><p>大章節用留白或單一底色面；細線只給時間流、清單與表格；卡片只包獨立可操作內容。</p></article>
+    </section>
+    
+  <section class="page-preview" id="page-01" data-page-family="01">
+    <header class="page-preview__head">
+      <span class="page-preview__number">01</span>
+      <div>
+        <h2 class="page-preview__title">首頁</h2>
+        <p class="page-preview__decision">警示先行｜8:4 編輯頭版 B</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--home">
+        
+      <section class="mock-alert home-alert" aria-labelledby="home-alert-title">
+        <div class="mock-alert__label">
+          <p class="mock-kicker">民雄田間快訊</p>
+          <strong class="mock-alert__heading" id="home-alert-title">今日作業前，先看田間環境</strong>
+        </div>
+        <div class="mock-alert__content" role="status">
+          <strong>高溫熱危害預警</strong>
+          <p>⚠️ 高溫特報 (35°C)：請務必多喝水、每工作30分鐘至陰涼處休息，慎防熱衰竭！</p>
+        </div>
+        <a class="mock-alert__action mock-link" href="https://fwdignity-local.local/farming-guide/">查看田間知識與資源 <span aria-hidden="true">→</span></a>
+      </section>
+
+      <section class="mock-hero home-editorial" aria-labelledby="home-editorial-title">
+        <div class="mock-grid mock-grid--8-4 home-editorial__grid">
+          <article class="home-lead">
+            <figure class="mock-media home-lead__media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2026/07/h0rR-pG8Gt1CY089B2pq4.jpg" alt="EP218：愛上種田的父女檔 張耀廣、張立涵">
+            </figure>
+            <div class="home-lead__copy">
+              <p class="mock-meta">Podcast｜2026.07.02</p>
+              <h2><a href="https://fwdignity-local.local/podcast-ep-218/">EP218：愛上種田的父女檔 張耀廣、張立涵</a></h2>
+              <p>我們的節目訪問過很多位農夫，節目裡我常問他們：會不會希望自己的孩子也務農？大部分...</p>
+              <a class="mock-button" href="https://fwdignity-local.local/podcast-ep-218/">閱讀消息</a>
+            </div>
+          </article>
+
+          <aside class="mock-aside home-intro" aria-labelledby="home-editorial-title">
+            <p class="mock-kicker">尊嚴農業</p>
+            <h1 id="home-editorial-title">共構雲嘉農業工作者職業健康的社會安全網</h1>
+            <p>本計畫聚焦農業工作者之職業健康與社會安全網建構，回應農民長期面臨之高溫曝露、重複性勞動、農藥使用及政策保障不足等風險。</p>
+            <nav class="home-intro__actions" aria-label="計畫主要入口">
+              <a class="mock-button" href="https://fwdignity-local.local/about/">認識計畫</a>
+              <a class="mock-link" href="https://fwdignity-local.local/farming-guide/">查看田間知識與資源 <span aria-hidden="true">→</span></a>
+            </nav>
+          </aside>
+        </div>
+      </section>
+
+      <section class="mock-section home-latest" aria-labelledby="home-latest-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">News &amp; Updates</p>
+            <h2 id="home-latest-title">最新消息</h2>
+          </div>
+          <a class="mock-link" href="https://fwdignity-local.local/thenews/">看全部最新消息</a>
+        </header>
+        <div class="home-latest__list">
+          <article class="mock-card home-latest__item">
+            <figure class="mock-media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2026/05/52ZTreIH_Cwu6Ai__Zavj-1024x1024.jpg" alt="EP211：我是農婦，也是營銷大師 民雄青農 陳怡吟、簡伶君、陳珮欣">
+            </figure>
+            <div>
+              <p class="mock-meta">Podcast｜2026.05.14</p>
+              <h3><a href="https://fwdignity-local.local/podcast-ep-211/">EP211：我是農婦，也是營銷大師 民雄青農 陳怡吟、簡伶君、陳珮欣</a></h3>
+              <p>雖然不少人從小對未來的工作充滿想像跟期待，但有時，生命的多樣的歷程，總是讓人生有...</p>
+            </div>
+          </article>
+          <article class="mock-card home-latest__item">
+            <figure class="mock-media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2026/05/ex6Cu2NUAEljPfs8OPwT7-1024x1024.jpg" alt="EP210：從鏡頭到鋤頭 陳韻如的斜槓哲學">
+            </figure>
+            <div>
+              <p class="mock-meta">Podcast｜2026.05.07</p>
+              <h3><a href="https://fwdignity-local.local/podcast-ep-210/">EP210：從鏡頭到鋤頭 陳韻如的斜槓哲學</a></h3>
+              <p>認識今天的來賓陳韻如，大概是二十年前，當時，她是南藝大的研究生，也是紀錄片導演，...</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+
+  <section class="page-preview" id="page-02" data-page-family="02">
+    <header class="page-preview__head">
+      <span class="page-preview__number">02</span>
+      <div>
+        <h2 class="page-preview__title">最新消息</h2>
+        <p class="page-preview__decision">頭條＋兩則次要消息｜年份／月份索引＋單欄時間流</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--thenews">
+        
+      <header class="mock-section news-intro">
+        <p class="mock-kicker">News &amp; Updates</p>
+        <h1>最新消息</h1>
+        <p>收錄尊嚴農業的消息文章、田野紀錄、Podcast、YouTube、影音與教材；可依內容形式與主題交叉查找。</p>
+      </header>
+
+      <section class="mock-section news-featured" aria-label="精選消息">
+        <div class="mock-grid mock-grid--7-5 news-featured__grid">
+          <article class="mock-card news-headline">
+            <figure class="mock-media news-headline__media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2026/07/h0rR-pG8Gt1CY089B2pq4.jpg" alt="EP218：愛上種田的父女檔 張耀廣、張立涵">
+            </figure>
+            <div class="news-headline__copy">
+              <p class="mock-meta">Podcast｜2026.07.02</p>
+              <h2><a href="https://fwdignity-local.local/podcast-ep-218/">EP218：愛上種田的父女檔 張耀廣、張立涵</a></h2>
+              <p>我們的節目訪問過很多位農夫，節目裡我常問他們：會不會希望自己的孩子也務農？大部分的人都告訴我：不會。</p>
+              <a class="mock-link" href="https://fwdignity-local.local/podcast-ep-218/">閱讀內容 <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+
+          <div class="news-secondary-list" aria-label="次要消息">
+            <article class="mock-card news-secondary">
+              <figure class="mock-media news-secondary__media">
+                <img src="https://fwdignity-local.local/wp-content/uploads/2026/05/52ZTreIH_Cwu6Ai__Zavj-1024x1024.jpg" alt="EP211：我是農婦，也是營銷大師 民雄青農 陳怡吟、簡伶君、陳珮欣">
+              </figure>
+              <div>
+                <p class="mock-meta">Podcast｜2026.05.14</p>
+                <h3><a href="https://fwdignity-local.local/podcast-ep-211/">EP211：我是農婦，也是營銷大師 民雄青農 陳怡吟、簡伶君、陳珮欣</a></h3>
+                <p>雖然不少人從小對未來的工作充滿想像跟期待，但有時，生命的多樣的歷程，總是讓人生有著不同的規劃與安排。</p>
+              </div>
+            </article>
+            <article class="mock-card news-secondary">
+              <figure class="mock-media news-secondary__media">
+                <img src="https://fwdignity-local.local/wp-content/uploads/2026/05/ex6Cu2NUAEljPfs8OPwT7-1024x1024.jpg" alt="EP210：從鏡頭到鋤頭 陳韻如的斜槓哲學">
+              </figure>
+              <div>
+                <p class="mock-meta">Podcast｜2026.05.07</p>
+                <h3><a href="https://fwdignity-local.local/podcast-ep-210/">EP210：從鏡頭到鋤頭 陳韻如的斜槓哲學</a></h3>
+                <p>認識今天的來賓陳韻如，大概是二十年前，當時，她是南藝大的研究生，也是紀錄片導演，不過，她現在在水林種田，也在學校教書，是一位斜槓農夫。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="mock-section news-archive" aria-labelledby="news-archive-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">全部公開內容</p>
+            <h2 id="news-archive-title">找到 45 篇內容</h2>
+          </div>
+          <a class="mock-link" href="https://fwdignity-local.local/thenews/">開啟完整主題篩選</a>
+        </header>
+
+        <div class="news-archive__layout">
+          <aside class="mock-aside news-date-index" aria-labelledby="news-date-index-title">
+            <h2 id="news-date-index-title">年份／月份</h2>
+            <nav aria-label="消息年份與月份索引">
+              <section class="news-date-index__year" aria-labelledby="news-year-2026">
+                <h3 id="news-year-2026">2026 年 <span>16</span></h3>
+                <ul class="mock-list">
+                  <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2026-07">7 月 <span>1</span></a></li>
+                  <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2026-05">5 月 <span>2</span></a></li>
+                  <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2026-04">4 月 <span>4</span></a></li>
+                  <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2026-03">3 月 <span>1</span></a></li>
+                  <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2026-02">2 月 <span>5</span></a></li>
+                  <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2026-01">1 月 <span>3</span></a></li>
+                </ul>
+              </section>
+              <ul class="mock-list news-date-index__past">
+                <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2025">2025 年 <span>13</span></a></li>
+                <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2024">2024 年 <span>2</span></a></li>
+                <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2023">2023 年 <span>8</span></a></li>
+                <li><a href="https://fwdignity-local.local/thenews/" data-preview-index="2022">2022 年 <span>6</span></a></li>
+              </ul>
+            </nav>
+          </aside>
+
+          <div class="mock-timeline news-timeline">
+            <section class="news-timeline__group" aria-labelledby="news-month-202607">
+              <h3 id="news-month-202607"><time datetime="2026-07">2026 年 7 月</time></h3>
+              <ol class="mock-list">
+                <li class="news-timeline__item">
+                  <time datetime="2026-07-02">07.02</time>
+                  <div>
+                    <p class="mock-meta">Podcast</p>
+                    <h4><a href="https://fwdignity-local.local/podcast-ep-218/">EP218：愛上種田的父女檔 張耀廣、張立涵</a></h4>
+                    <p>我們的節目訪問過很多位農夫，節目裡我常問他們：會不會希望自己的孩子也務農？</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+
+            <section class="news-timeline__group" aria-labelledby="news-month-202605">
+              <h3 id="news-month-202605"><time datetime="2026-05">2026 年 5 月</time></h3>
+              <ol class="mock-list">
+                <li class="news-timeline__item">
+                  <time datetime="2026-05-14">05.14</time>
+                  <div>
+                    <p class="mock-meta">Podcast</p>
+                    <h4><a href="https://fwdignity-local.local/podcast-ep-211/">EP211：我是農婦，也是營銷大師 民雄青農 陳怡吟、簡伶君、陳珮欣</a></h4>
+                    <p>雖然不少人從小對未來的工作充滿想像跟期待，但有時，生命的多樣的歷程，總是讓人生有著不同的規劃與安排。</p>
+                  </div>
+                </li>
+                <li class="news-timeline__item">
+                  <time datetime="2026-05-07">05.07</time>
+                  <div>
+                    <p class="mock-meta">Podcast</p>
+                    <h4><a href="https://fwdignity-local.local/podcast-ep-210/">EP210：從鏡頭到鋤頭 陳韻如的斜槓哲學</a></h4>
+                    <p>認識今天的來賓陳韻如，大概是二十年前，當時，她是南藝大的研究生，也是紀錄片導演。</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+
+            <section class="news-timeline__group" aria-labelledby="news-month-202604">
+              <h3 id="news-month-202604"><time datetime="2026-04">2026 年 4 月</time></h3>
+              <ol class="mock-list">
+                <li class="news-timeline__item">
+                  <time datetime="2026-04-30">04.30</time>
+                  <div>
+                    <p class="mock-meta">Podcast</p>
+                    <h4><a href="https://fwdignity-local.local/podcast-ep-209/">EP209：兩個女人與鳳梨田的酸甜人生 郭合、吳芳滿</a></h4>
+                    <p>在嘉義民雄三興村鳳梨田裡，經常會看見到一對母女的身影，她們辛勤的勞動，種著好吃的鳳梨。</p>
+                  </div>
+                </li>
+                <li class="news-timeline__item">
+                  <time datetime="2026-04-23">04.23</time>
+                  <div>
+                    <p class="mock-meta">Podcast</p>
+                    <h4><a href="https://fwdignity-local.local/podcast-ep-208/">EP208：如何找到農業品牌運營心法 鄭宜玲</a></h4>
+                    <p>會認識今天的來賓鄭宜玲，是因為鳳梨哥則諭，印象中，有天則諭說要介紹新朋友跟我認識。</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+
+            <section class="news-timeline__group" aria-labelledby="news-month-202603">
+              <h3 id="news-month-202603"><time datetime="2026-03">2026 年 3 月</time></h3>
+              <ol class="mock-list">
+                <li class="news-timeline__item">
+                  <time datetime="2026-03-31">03.31</time>
+                  <div>
+                    <p class="mock-meta">農學堂</p>
+                    <h4><a href="https://fwdignity-local.local/%e3%80%8c%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84%e3%80%8d%e8%be%b2%e5%ad%b8%e5%a0%82%ef%bc%8d%e7%81%b6%e8%85%b3%e5%88%b0%e7%94%b0%e9%87%8e%ef%bc%9a%e5%a5%b3%e6%80%a7%e8%be%b2%e6%b0%91%e7%9a%84%e5%a4%9a/">「活動紀錄」農學堂－灶腳到田野：女性農民的多重勞動與性別分工</a></h4>
+                    <p>作為農學堂的第一堂課，這場座談提前額滿、盛況空前。</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
+          </div>
+        </div>
+      </section>
+    
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+
+  <section class="page-preview" id="page-03" data-page-family="03">
+    <header class="page-preview__head">
+      <span class="page-preview__number">03</span>
+      <div>
+        <h2 class="page-preview__title">田間知識與資源</h2>
+        <p class="page-preview__decision">單層 3×2 六入口任務卡</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--farming-guide">
+        
+      <header class="mock-section guide-intro">
+        <p class="mock-kicker">田間知識與資源</p>
+        <h1>田間知識與資源</h1>
+        <p>把健康、農藥、農機、經濟、保險與制度等跨專業資訊整理成容易理解、可以查證，也知道下一步去哪裡確認的內容。</p>
+      </header>
+
+      <section class="mock-section guide-tasks" aria-labelledby="guide-tasks-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">01</p>
+            <h2 id="guide-tasks-title">六大知識入口</h2>
+          </div>
+        </header>
+
+        <div class="mock-card-grid mock-card-grid--3 guide-card-grid">
+          <article class="mock-card guide-task-card" id="guide-task-body-health">
+            <p class="mock-meta">01</p>
+            <h3>身體與健康</h3>
+            <p>肩頸／手腕／下背負荷、高溫、疲勞、就醫與職業傷病。</p>
+            <p class="guide-task-card__status"><span aria-hidden="true">●</span> 內容整理中</p>
+            <a class="mock-link" href="https://fwdignity-local.local/farming-guide/#fg-task-body-health">查看此入口 <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="mock-card guide-task-card" id="guide-task-pesticide-protection">
+            <p class="mock-meta">02</p>
+            <h3>農藥與防護</h3>
+            <p>標示辨識、防護、暴露後處理與正式查詢。</p>
+            <p class="guide-task-card__status"><span aria-hidden="true">●</span> 內容整理中</p>
+            <a class="mock-link" href="https://fwdignity-local.local/farming-guide/#fg-task-pesticide-protection">查看此入口 <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="mock-card guide-task-card" id="guide-task-machinery-environment">
+            <p class="mock-meta">03</p>
+            <h3>農機與工作環境</h3>
+            <p>設備操作風險、姿勢、流程與改善案例。</p>
+            <p class="guide-task-card__status"><span aria-hidden="true">●</span> 內容整理中</p>
+            <a class="mock-link" href="https://fwdignity-local.local/farming-guide/#fg-task-machinery-environment">查看此入口 <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="mock-card guide-task-card" id="guide-task-economy-security">
+            <p class="mock-meta">04</p>
+            <h3>經濟、保險與保障</h3>
+            <p>農職保、申請流程、可查詢窗口與制度更新。</p>
+            <p class="guide-task-card__status"><span aria-hidden="true">●</span> 內容整理中</p>
+            <a class="mock-link" href="https://fwdignity-local.local/farming-guide/#fg-task-economy-security">查看此入口 <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="mock-card guide-task-card" id="guide-task-learning-support">
+            <p class="mock-meta">05</p>
+            <h3>學習與支持</h3>
+            <p>農學堂教材、學習路徑、社區與醫療支持。</p>
+            <p class="guide-task-card__status"><span aria-hidden="true">●</span> 內容整理中</p>
+            <a class="mock-link" href="https://fwdignity-local.local/farming-guide/#fg-task-learning-support">查看此入口 <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="mock-card guide-task-card" id="guide-task-tools-resources">
+            <p class="mock-meta">06</p>
+            <h3>工具與正式資源</h3>
+            <p>檢核表、下載、外部查詢與更新紀錄。</p>
+            <p class="guide-task-card__status"><span aria-hidden="true">●</span> 內容整理中</p>
+            <a class="mock-link" href="https://fwdignity-local.local/farming-guide/#fg-task-tools-resources">查看此入口 <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+    
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+
+  <section class="page-preview" id="page-04" data-page-family="04">
+    <header class="page-preview__head">
+      <span class="page-preview__number">04</span>
+      <div>
+        <h2 class="page-preview__title">田野入口與集合</h2>
+        <p class="page-preview__decision">田野雜誌 A｜7:5 主稿與短訊，接續做農的人與白色影音內容面</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--field-journal">
+        
+      <section class="mock-hero field-magazine" aria-labelledby="field-magazine-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">田野誌</p>
+            <h1 id="field-magazine-title">田野紀錄</h1>
+            <p>以照片、文字與影音保存每一次走入農村現場的觀察，記錄場域、人物、工作情境與可確認的田野發現。</p>
+          </div>
+          <a class="mock-link" href="https://fwdignity-local.local/field-notes/">查看全部田野紀錄 →</a>
+        </header>
+
+        <div class="mock-grid mock-grid--7-5 field-feature">
+          <article class="field-feature__lead">
+            <a class="mock-media" href="https://fwdignity-local.local/%e3%80%8c%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84%e3%80%8d%e8%be%b2%e5%ad%b8%e5%a0%82%ef%bc%8d%e7%81%b6%e8%85%b3%e5%88%b0%e7%94%b0%e9%87%8e%ef%bc%9a%e5%a5%b3%e6%80%a7%e8%be%b2%e6%b0%91%e7%9a%84%e5%a4%9a/">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2026/03/image.png" alt="「活動紀錄」農學堂－灶腳到田野：女性農民的多重勞動與性別分工">
+            </a>
+            <p class="mock-meta"><time datetime="2026-03-31">2026.03.31</time>｜本期田野</p>
+            <h2><a href="https://fwdignity-local.local/%e3%80%8c%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84%e3%80%8d%e8%be%b2%e5%ad%b8%e5%a0%82%ef%bc%8d%e7%81%b6%e8%85%b3%e5%88%b0%e7%94%b0%e9%87%8e%ef%bc%9a%e5%a5%b3%e6%80%a7%e8%be%b2%e6%b0%91%e7%9a%84%e5%a4%9a/">「活動紀錄」農學堂－灶腳到田野：女性農民的多重勞動與性別分工</a></h2>
+            <p>作為農學堂的第一堂課，這場座談提前額滿、盛況空前，參加者不僅有許多女性青農，也包含青農聯誼會長、記者、民雄農會的同仁與教授都慕名而來，共同關心地方農業。</p>
+            <a class="mock-link" href="https://fwdignity-local.local/%e3%80%8c%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84%e3%80%8d%e8%be%b2%e5%ad%b8%e5%a0%82%ef%bc%8d%e7%81%b6%e8%85%b3%e5%88%b0%e7%94%b0%e9%87%8e%ef%bc%9a%e5%a5%b3%e6%80%a7%e8%be%b2%e6%b0%91%e7%9a%84%e5%a4%9a/">閱讀完整紀錄 →</a>
+          </article>
+
+          <aside class="mock-aside field-briefs" aria-labelledby="field-briefs-title">
+            <p class="mock-kicker">近期紀錄</p>
+            <h2 id="field-briefs-title">從田間短訊接著讀</h2>
+            <ol class="mock-list">
+              <li>
+                <p class="mock-meta"><time datetime="2026-02-19">2026.02.19</time>｜溫室・環境設施</p>
+                <h3><a href="https://fwdignity-local.local/%e5%b0%8a%e5%9a%b4%e8%be%b2%e6%a5%ad%e5%9c%98%e9%9a%8a%e4%b8%8b%e7%94%b0%e5%8e%bb%ef%bc%81/">尊嚴農業團隊下田去！</a></h3>
+              </li>
+              <li>
+                <p class="mock-meta"><time datetime="2026-02-19">2026.02.19</time>｜農學堂</p>
+                <h3><a href="https://fwdignity-local.local/%e8%be%b2%e5%ad%b8%e5%a0%82%e7%ac%ac%e4%ba%8c%e5%9b%9e%ef%bc%81%e8%be%b2%e5%8f%8b%e9%86%ab%e5%b8%ab%e5%8b%95%e8%8c%b2%e5%8b%95/">農學堂第二回！農友醫師動茲動</a></h3>
+              </li>
+              <li>
+                <p class="mock-meta"><time datetime="2025-12-24">2025.12.24</time>｜農學堂</p>
+                <h3><a href="https://fwdignity-local.local/%e8%be%b2%e5%ad%b8%e5%a0%82%e7%ac%ac%e4%b8%80%e5%9b%9e%ef%bd%9c%e7%88%86%e6%bb%bf%e6%84%9f%e8%ac%9d%ef%bc%81%e5%a5%b3%e5%8a%9b%e6%ba%ab%e6%9a%96%e6%b0%91%e9%9b%84%e8%a1%97%e5%8d%80/">農學堂第一回｜爆滿感謝！女力溫暖民雄街區</a></h3>
+              </li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section class="mock-section field-pathways" aria-labelledby="field-pathways-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">兩條延伸閱讀路徑</p>
+            <h2 id="field-pathways-title">做農的人 × 農學堂</h2>
+          </div>
+          <p>問題策展保持非對稱節奏；影音學習集中在單一白色內容面。</p>
+        </header>
+
+        <div class="mock-section field-people-layout" aria-label="做農的人五個問題">
+          <div class="mock-grid mock-grid--7-5 field-people-lead">
+            <article class="mock-card field-person-card field-person-card--lead">
+              <div class="mock-media">
+                <img src="https://fwdignity-local.local/wp-content/uploads/2026/01/image-1024x1024.png" alt="【我的民雄朋友們】EP195：尊嚴農業：走進農田裡的診間-社會學醫生眼中的勞動者">
+              </div>
+              <p class="mock-meta">做農的人｜從 EP195 開始</p>
+              <h3><a href="https://fwdignity-local.local/people-who-farm/body-and-farm-work/">身體如何承受農務？</a></h3>
+              <p>農務的負荷不只發生在受傷當下，也累積在姿勢、工時、暴露、疲勞與心理壓力裡。</p>
+            </article>
+            <article class="mock-card field-person-card">
+              <div class="mock-media">
+                <img src="https://fwdignity-local.local/wp-content/uploads/2025/12/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2-2025-12-28-161230-e1769658388712.webp" alt="【我的民雄朋友們】EP159：斜槓務農竟成全職有機蓮藕農　愛香米 鄭富賢">
+              </div>
+              <p class="mock-meta">做農的人｜從 EP159 開始</p>
+              <h3><a href="https://fwdignity-local.local/people-who-farm/changing-farm-work/">農業工作正在怎麼改變？</a></h3>
+              <p>高齡、缺工、代耕、有機生產與新技術，正在重新安排誰做什麼、怎麼做，以及風險轉到哪裡。</p>
+            </article>
+          </div>
+          <div class="mock-grid mock-grid--4-4-4 field-people-rest">
+            <article class="mock-card">
+              <p class="mock-meta">做農的人</p>
+              <h3><a href="https://fwdignity-local.local/people-who-farm/rural-support/">誰在撐起農村？</a></h3>
+              <p>農村由田間勞動、家務照顧、社群協調與地方支持共同撐住，其中許多工作長期不被看見。</p>
+            </article>
+            <article class="mock-card">
+              <p class="mock-meta">做農的人</p>
+              <h3><a href="https://fwdignity-local.local/people-who-farm/risk-and-responsibility/">風險由誰承擔？</a></h3>
+              <p>職傷、災損、收入中斷與申請成本不只由個人承擔，也反映制度如何接住或漏接。</p>
+            </article>
+            <article class="mock-card">
+              <p class="mock-meta">做農的人</p>
+              <h3><a href="https://fwdignity-local.local/people-who-farm/knowledge-in-the-field/">知識如何走進田間？</a></h3>
+              <p>知識要能進入田間，必須被取得、理解、信任並轉成可做的行動，而不只是被放上網站。</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="training-media-face field-training-media" aria-labelledby="field-training-media-title">
+          <header class="mock-section__head">
+            <div>
+              <p class="mock-kicker">農學堂・影音學習</p>
+              <h3 id="field-training-media-title">農業部官方影音</h3>
+            </div>
+            <p>內容由來源平台更新，影片連結回到原發布頁。</p>
+          </header>
+          <div class="mock-card-grid mock-card-grid--3">
+            <article class="mock-card field-video-card">
+              <a class="mock-media" href="https://www.youtube.com/watch?v=jVzOQBPlg3o">
+                <img src="https://img.youtube.com/vi/jVzOQBPlg3o/mqdefault.jpg" alt="農業氣象1150714">
+              </a>
+              <p class="mock-meta"><time datetime="2026-07-13">2026.07.13</time></p>
+              <h3><a href="https://www.youtube.com/watch?v=jVzOQBPlg3o">農業氣象1150714</a></h3>
+            </article>
+            <article class="mock-card field-video-card">
+              <a class="mock-media" href="https://www.youtube.com/watch?v=PbeiDLLldQY">
+                <img src="https://img.youtube.com/vi/PbeiDLLldQY/mqdefault.jpg" alt="農業氣象1150713">
+              </a>
+              <p class="mock-meta"><time datetime="2026-07-12">2026.07.12</time></p>
+              <h3><a href="https://www.youtube.com/watch?v=PbeiDLLldQY">農業氣象1150713</a></h3>
+            </article>
+            <article class="mock-card field-video-card">
+              <a class="mock-media" href="https://www.youtube.com/watch?v=yXEAA4MyXk8">
+                <img src="https://img.youtube.com/vi/yXEAA4MyXk8/mqdefault.jpg" alt="農業氣象1150712">
+              </a>
+              <p class="mock-meta"><time datetime="2026-07-11">2026.07.11</time></p>
+              <h3><a href="https://www.youtube.com/watch?v=yXEAA4MyXk8">農業氣象1150712</a></h3>
+            </article>
+          </div>
+        </div>
+      </section>
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+
+  <section class="page-preview" id="page-05" data-page-family="05">
+    <header class="page-preview__head">
+      <span class="page-preview__number">05</span>
+      <div>
+        <h2 class="page-preview__title">五個田野主題</h2>
+        <p class="page-preview__decision">問題專刊 A｜全寬正式問句與 20px 副標，直接銜接 7:5 主稿</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--field-topic">
+        
+      <header class="mock-hero topic-intro" data-topic-options-removed="true">
+        <p class="mock-kicker">做農的人・問題專刊</p>
+        <h1>身體如何承受農務？</h1>
+        <p class="topic-intro__summary">農務的負荷不只發生在受傷當下，也累積在姿勢、工時、暴露、疲勞與心理壓力裡。</p>
+        <p>農務工作常同時面對高溫、重複動作、彎腰負重、農藥暴露與長時間勞動。這些負擔不一定立即成為傷害，卻可能在日復一日的工作中累積。</p>
+      </header>
+
+      <section class="mock-section topic-story" aria-labelledby="topic-story-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">從這裡開始</p>
+            <h2 id="topic-story-title">一篇主稿，接上同題證據</h2>
+          </div>
+          <a class="mock-link" href="https://fwdignity-local.local/thenews/?topic%5B%5D=body-workload">查看本題全部內容 →</a>
+        </header>
+        <div class="mock-grid mock-grid--7-5 topic-feature">
+          <article class="topic-feature__lead">
+            <a class="mock-media" href="https://fwdignity-local.local/%e3%80%90%e6%88%91%e7%9a%84%e6%b0%91%e9%9b%84%e6%9c%8b%e5%8f%8b%e5%80%91%e3%80%91ep195%ef%bc%9a%e5%b0%8a%e5%9a%b4%e8%be%b2%e6%a5%ad%ef%bc%9a%e8%b5%b0%e9%80%b2%e8%be%b2%e7%94%b0%e8%a3%a1%e7%9a%84/">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2026/01/image-1024x1024.png" alt="【我的民雄朋友們】EP195：尊嚴農業：走進農田裡的診間-社會學醫生眼中的勞動者">
+            </a>
+            <p class="mock-meta">Podcast｜風險由誰承擔？｜<time datetime="2026-01-29">2026.01.29</time></p>
+            <h2><a href="https://fwdignity-local.local/%e3%80%90%e6%88%91%e7%9a%84%e6%b0%91%e9%9b%84%e6%9c%8b%e5%8f%8b%e5%80%91%e3%80%91ep195%ef%bc%9a%e5%b0%8a%e5%9a%b4%e8%be%b2%e6%a5%ad%ef%bc%9a%e8%b5%b0%e9%80%b2%e8%be%b2%e7%94%b0%e8%a3%a1%e7%9a%84/">【我的民雄朋友們】EP195：尊嚴農業：走進農田裡的診間-社會學醫生眼中的勞動者</a></h2>
+            <p>大家有聽過「職業醫學科」嗎？這集邀請臺大醫院雲林分院職業醫學科的陳宗延醫師，來到節目中聊聊農民的健康議題。</p>
+            <a class="mock-button" href="https://fwdignity-local.local/%e3%80%90%e6%88%91%e7%9a%84%e6%b0%91%e9%9b%84%e6%9c%8b%e5%8f%8b%e5%80%91%e3%80%91ep195%ef%bc%9a%e5%b0%8a%e5%9a%b4%e8%be%b2%e6%a5%ad%ef%bc%9a%e8%b5%b0%e9%80%b2%e8%be%b2%e7%94%b0%e8%a3%a1%e7%9a%84/">閱讀主稿</a>
+          </article>
+
+          <aside class="mock-aside topic-evidence" aria-labelledby="topic-evidence-title">
+            <p class="mock-kicker">同題內容</p>
+            <h3 id="topic-evidence-title">田野、培力與影音</h3>
+            <ul class="mock-list">
+              <li>
+                <p class="mock-meta">培力與活動・影片｜<time datetime="2026-03-31">2026.03.31</time></p>
+                <h3><a href="https://fwdignity-local.local/%e3%80%8c%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84%e3%80%8d%e8%be%b2%e5%ad%b8%e5%a0%82%ef%bc%8d%e7%81%b6%e8%85%b3%e5%88%b0%e7%94%b0%e9%87%8e%ef%bc%9a%e5%a5%b3%e6%80%a7%e8%be%b2%e6%b0%91%e7%9a%84%e5%a4%9a/">「活動紀錄」農學堂－灶腳到田野：女性農民的多重勞動與性別分工</a></h3>
+              </li>
+              <li>
+                <p class="mock-meta">田野紀錄｜<time datetime="2026-02-19">2026.02.19</time></p>
+                <h3><a href="https://fwdignity-local.local/%e5%b0%8a%e5%9a%b4%e8%be%b2%e6%a5%ad%e5%9c%98%e9%9a%8a%e4%b8%8b%e7%94%b0%e5%8e%bb%ef%bc%81/">尊嚴農業團隊下田去！</a></h3>
+              </li>
+              <li>
+                <p class="mock-meta">影片｜<time datetime="2025-12-26">2025.12.26</time></p>
+                <h3><a href="https://fwdignity-local.local/youtube/">職業病認定-旋轉肌袖症候群</a></h3>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+
+  <section class="page-preview" id="page-06" data-page-family="06">
+    <header class="page-preview__head">
+      <span class="page-preview__number">06</span>
+      <div>
+        <h2 class="page-preview__title">聽見田裡的聲音</h2>
+        <p class="page-preview__decision">主打單集＋節目架 A｜左側主打、右側三集近期內容，後接系列與典藏</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--media-hub">
+        
+      <section class="mock-hero media-feature" aria-labelledby="media-feature-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">聽見田裡的聲音</p>
+            <h1 id="media-feature-title">聽見田裡的聲音</h1>
+            <p>從田間到餐桌，從勞動到尊嚴。透過 Podcast 與影音內容，我們記錄雲嘉農業工作者的實踐故事、健康困境與在地知識，讓第一線的聲音被聽見。</p>
+          </div>
+          <a class="mock-link" href="https://fwdignity-local.local/podcast/#mh-archive">前往全部聲音與影像 →</a>
+        </header>
+
+        <div class="mock-grid mock-grid--7-5">
+          <article class="mock-card media-feature__episode">
+            <div class="mock-grid mock-grid--5-7">
+              <a class="mock-media media-feature__cover" href="https://fwdignity-local.local/podcast-ep-218/">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2026/07/h0rR-pG8Gt1CY089B2pq4.jpg" alt="EP218：愛上種田的父女檔 張耀廣、張立涵">
+              </a>
+              <div>
+                <p class="mock-meta">我的民雄朋友們｜<time datetime="2026-07-02">2026.07.02</time>｜01:00:06</p>
+                <h2><a href="https://fwdignity-local.local/podcast-ep-218/">EP218：愛上種田的父女檔 張耀廣、張立涵</a></h2>
+                <p>我們的節目訪問過很多位農夫，節目裡我常問他們：會不會希望自己的孩子也務農？大部分的人都告訴我：不會。因為工作太辛苦了，又不穩定，如果有更好的工作，還是別務農好了。今天的來賓是一對父女，和其它的來賓有點不一樣，因為父親是農夫，女兒也是農夫，務農是他們的主要工作。</p>
+                <a class="mock-button" href="https://m.cdn.firstory.me/track/cl0vof5aq004x0i375to981ze/cmr3a565j0hzq01uod6by7qgw/https%3A%2F%2Ffile.cdn.firstory.me%2FRecord%2Fcl0vof5aq004x0i375to981ze%2Fcmr3a565j0hzr01uo5sz5amqz.mp3?v=1782983558822">播放本集</a>
+                <a class="mock-link" href="https://fwdignity-local.local/podcast-ep-218/">查看完整內容 →</a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="media-recent" aria-labelledby="media-recent-title">
+            <p class="mock-kicker">近期內容</p>
+            <h2 id="media-recent-title">接著收聽三集</h2>
+            <ol class="mock-list">
+              <li>
+                <img src="https://fwdignity-local.local/wp-content/uploads/2026/05/52ZTreIH_Cwu6Ai__Zavj-300x300.jpg" alt="EP211：我是農婦，也是營銷大師 民雄青農 陳怡吟、簡伶君、陳珮欣">
+                <div><p class="mock-meta">EP211｜01:05:22</p><h3><a href="https://fwdignity-local.local/podcast-ep-211/">我是農婦，也是營銷大師</a></h3></div>
+              </li>
+              <li>
+                <img src="https://fwdignity-local.local/wp-content/uploads/2026/05/ex6Cu2NUAEljPfs8OPwT7-300x300.jpg" alt="EP210：從鏡頭到鋤頭 陳韻如的斜槓哲學">
+                <div><p class="mock-meta">EP210｜01:02:51</p><h3><a href="https://fwdignity-local.local/podcast-ep-210/">從鏡頭到鋤頭 陳韻如的斜槓哲學</a></h3></div>
+              </li>
+              <li>
+                <img src="https://fwdignity-local.local/wp-content/uploads/2026/04/OXo6uEARRrNDxX8Hlbegq-300x300.jpg" alt="EP209：兩個女人與鳳梨田的酸甜人生 郭合、吳芳滿">
+                <div><p class="mock-meta">EP209｜01:04:13</p><h3><a href="https://fwdignity-local.local/podcast-ep-209/">兩個女人與鳳梨田的酸甜人生</a></h3></div>
+              </li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section class="mock-section media-library" aria-labelledby="media-library-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">系列與典藏</p>
+            <h2 id="media-library-title">沿著節目找，或直接翻閱 41 篇內容</h2>
+          </div>
+          <p>不再重複鋪陳兩個大型最新區塊，主打單集之後直接進入可持續瀏覽的節目架。</p>
+        </header>
+        <div class="mock-grid mock-grid--5-7">
+          <aside class="mock-aside media-series" aria-labelledby="media-series-title">
+            <p class="mock-kicker">節目系列</p>
+            <h3 id="media-series-title">依節目持續收聽</h3>
+            <ul class="mock-list">
+              <li>
+                <p class="mock-meta">39 集｜更新至 2026.07.02</p>
+                <h3><a href="https://fwdignity-local.local/media-series/minxiong-friends/">我的民雄朋友們</a></h3>
+              </li>
+              <li>
+                <p class="mock-meta">1 集｜更新至 2026.02.19</p>
+                <h3><a href="https://fwdignity-local.local/media-series/minxiong-women-universe/">民雄女農的多重宇宙</a></h3>
+              </li>
+            </ul>
+          </aside>
+
+          <div class="mock-card media-archive" aria-labelledby="media-archive-title">
+            <p class="mock-kicker">全部聲音與影像</p>
+            <h3 id="media-archive-title">典藏清單</h3>
+            <ol class="mock-list">
+              <li><p class="mock-meta"><time datetime="2026-04-23">2026.04.23</time>｜Podcast・EP208</p><h3><a href="https://fwdignity-local.local/podcast-ep-208/">如何找到農業品牌運營心法 鄭宜玲</a></h3></li>
+              <li><p class="mock-meta"><time datetime="2026-04-16">2026.04.16</time>｜Podcast・EP207</p><h3><a href="https://fwdignity-local.local/podcast-ep-207/">會讓你的孩子務農嗎？ 民雄青農 吳明鴻、郭芷妘</a></h3></li>
+              <li><p class="mock-meta"><time datetime="2026-04-09">2026.04.09</time>｜Podcast・EP206</p><h3><a href="https://fwdignity-local.local/podcast-ep-206/">民雄為何總會種出超強小蕃茄？ 周嘉鴻、林佳民、嚴佳祥</a></h3></li>
+              <li><p class="mock-meta"><time datetime="2026-03-31">2026.03.31</time>｜影片・田野紀錄</p><h3><a href="https://fwdignity-local.local/%e3%80%8c%e6%b4%bb%e5%8b%95%e7%b4%80%e9%8c%84%e3%80%8d%e8%be%b2%e5%ad%b8%e5%a0%82%ef%bc%8d%e7%81%b6%e8%85%b3%e5%88%b0%e7%94%b0%e9%87%8e%ef%bc%9a%e5%a5%b3%e6%80%a7%e8%be%b2%e6%b0%91%e7%9a%84%e5%a4%9a/">「活動紀錄」農學堂－灶腳到田野：女性農民的多重勞動與性別分工</a></h3></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+
+  <section class="page-preview" id="page-07" data-page-family="07">
+    <header class="page-preview__head">
+      <span class="page-preview__number">07</span>
+      <div>
+        <h2 class="page-preview__title">研究、資源與倡議</h2>
+        <p class="page-preview__decision">研究到行動路徑 A</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--research-action">
+        
+      <section class="mock-hero research-hero" aria-labelledby="research-hero-title">
+        <div class="mock-grid mock-grid--7-5 research-hero__layout">
+          <div class="research-hero__main">
+            <p class="mock-kicker">問題 → 研究 → 共作 → 公開成果</p>
+            <h1 id="research-hero-title">研究與行動</h1>
+            <p>尊嚴農業的研究從農業工作者面對的真實問題開始。田野經驗進入調查與共同理解，再透過培力、知識轉譯、公共討論與倡議回到現場。</p>
+            <ol class="research-path" aria-label="研究到行動路徑">
+              <li>
+                <strong>問題</strong>
+                <span>從身體、工作、家庭、制度與知識的真實處境起步。</span>
+              </li>
+              <li>
+                <strong>研究</strong>
+                <span>讓田野經驗進入調查、比較與共同理解。</span>
+              </li>
+              <li>
+                <strong>共作</strong>
+                <span>透過田野紀錄、共同學習與課程成果持續修正。</span>
+              </li>
+              <li>
+                <strong>公開成果</strong>
+                <span>把出版、資源與研究團隊整理成可查閱的入口。</span>
+              </li>
+            </ol>
+          </div>
+
+          <article class="mock-card research-latest">
+            <p class="mock-meta">最新公開內容 · 2026.07.02</p>
+            <figure class="mock-media research-latest__media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2026/07/h0rR-pG8Gt1CY089B2pq4.jpg" alt="EP218：愛上種田的父女檔 張耀廣、張立涵" loading="lazy">
+            </figure>
+            <h2>EP218：愛上種田的父女檔 張耀廣、張立涵</h2>
+            <a class="mock-link" href="https://fwdignity-local.local/podcast-ep-218/">閱讀並收聽</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="mock-section research-actions" aria-labelledby="research-actions-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">行動如何發生</p>
+            <h2 id="research-actions-title">三個完整行動入口</h2>
+          </div>
+          <p>把問題帶回現場，讓不同知識彼此校正。</p>
+        </header>
+        <div class="mock-grid mock-grid--4-4-4 research-action-grid">
+          <article class="mock-card research-action-card">
+            <p class="mock-meta">田野與共學</p>
+            <h3>田野誌</h3>
+            <p>研究問題回到田間，透過田野紀錄、共同學習與課程成果持續修正。</p>
+            <a class="mock-link" href="https://fwdignity-local.local/field-learning/">走進田野誌</a>
+          </article>
+          <article class="mock-card research-action-card">
+            <p class="mock-meta">語音與影音</p>
+            <h3>聽見田裡的聲音</h3>
+            <p>把訪談、現場經驗與專業知識轉成可聽、可看、可繼續討論的內容。</p>
+            <a class="mock-link" href="https://fwdignity-local.local/podcast/">前往節目架</a>
+          </article>
+          <article class="mock-card research-action-card">
+            <p class="mock-meta">公共倡議</p>
+            <h3>尊嚴農業倡議</h3>
+            <p>將田野與研究中反覆出現的制度問題，帶進公共討論與倡議。</p>
+            <a class="mock-link" href="https://fwdignity-local.local/dignity-farming-initiative/">了解倡議脈絡</a>
+          </article>
+        </div>
+      </section>
+    
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+
+  <section class="page-preview" id="page-08" data-page-family="08">
+    <header class="page-preview__head">
+      <span class="page-preview__number">08</span>
+      <div>
+        <h2 class="page-preview__title">認識尊嚴農業與研究團隊</h2>
+        <p class="page-preview__decision">計畫敘事 A＋團隊自動適配</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--about-team">
+        
+      <section class="mock-hero about-hero" aria-labelledby="about-hero-title">
+        <div class="mock-grid mock-grid--7-5 about-hero__layout">
+          <header class="about-hero__copy">
+            <p class="mock-kicker">計畫緣起 · 嘉義縣民雄鄉</p>
+            <h1 id="about-hero-title">尊嚴農業：共構雲嘉農業工作者職業健康的社會安全網</h1>
+            <p>本計畫聚焦農業工作者之職業健康與社會安全網建構，回應農民長期面臨之高溫曝露、重複性勞動、農藥使用及政策保障不足等風險。</p>
+            <aside class="mock-aside about-hero__statement">
+              <p>農民是工作者，不是補助對象。</p>
+            </aside>
+          </header>
+          <figure class="mock-media about-field-media">
+            <img src="https://fwdignity-local.local/wp-content/uploads/2025/12/image-4.webp" alt="嘉義縣民雄鄉實踐場域" loading="lazy">
+          </figure>
+        </div>
+      </section>
+
+      <section class="mock-section about-team" aria-labelledby="about-team-title">
+        <header class="mock-section__head">
+          <div>
+            <p class="mock-kicker">跨域共作</p>
+            <h2 id="about-team-title">研究團隊</h2>
+          </div>
+          <p>由國立中正大學與臺大醫院雲林分院共同組成，結合教育、傳播、勞工、政治、職業醫學等專業。</p>
+        </header>
+
+        <article class="mock-card about-team-lead">
+          <div class="mock-grid mock-grid--7-5 about-team-lead__layout">
+            <div class="about-team-lead__copy">
+              <p class="mock-meta">國立中正大學 · 計畫主持人</p>
+              <h3>詹盛如</h3>
+              <p>教育學研究所特聘教授暨副校長。計畫由國立中正大學與臺大醫院雲林分院共同主持，整合跨校與跨領域的研究與實務團隊。</p>
+            </div>
+            <figure class="mock-media about-team-lead__media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2025/12/詹勝如-1-scaled-e1766588165755.jpg" alt="詹盛如" loading="lazy">
+            </figure>
+          </div>
+        </article>
+
+        <div class="mock-card-grid about-team-grid" data-layout="auto-fit" aria-label="有照片的團隊成員">
+          <article class="mock-card about-team-card">
+            <figure class="mock-media about-team-card__media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2025/12/管中祥-1-scaled.jpg" alt="管中祥" loading="lazy">
+            </figure>
+            <p class="mock-meta">國立中正大學</p>
+            <h3>管中祥</h3>
+            <p>共同主持人兼執行長 · 傳播學系教授兼系主任</p>
+          </article>
+          <article class="mock-card about-team-card">
+            <figure class="mock-media about-team-card__media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2025/12/117640342-scaled.jpg" alt="陳毓璟" loading="lazy">
+            </figure>
+            <p class="mock-meta">國立中正大學</p>
+            <h3>陳毓璟</h3>
+            <p>共同主持人 · 成人及繼續教育教授</p>
+          </article>
+          <article class="mock-card about-team-card">
+            <figure class="mock-media about-team-card__media">
+              <img src="https://fwdignity-local.local/wp-content/uploads/2025/12/李廿偉.webp" alt="李念偉" loading="lazy">
+            </figure>
+            <p class="mock-meta">臺大醫院雲林分院</p>
+            <h3>李念偉</h3>
+            <p>共同主持人 · 環境及職業醫學部主任</p>
+          </article>
+        </div>
+
+        <div class="about-team-text-list" aria-labelledby="about-team-text-title">
+          <h3 id="about-team-text-title">無照片成員以文字列呈現</h3>
+          <ul class="mock-list">
+            <li class="about-team-text-row">
+              <strong>顏孟芬</strong>
+              <span>博士後研究員 · 高齡社會勞動與福祉研究中心 · 國立中正大學</span>
+            </li>
+            <li class="about-team-text-row">
+              <strong>曾柏鴻</strong>
+              <span>專案助理 · 高齡社會勞動與福祉研究中心 · 國立中正大學</span>
+            </li>
+            <li class="about-team-text-row">
+              <strong>陳俊榮</strong>
+              <span>專任助理</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+
+  <section class="page-preview" id="page-09" data-page-family="09">
+    <header class="page-preview__head">
+      <span class="page-preview__number">09</span>
+      <div>
+        <h2 class="page-preview__title">文章單篇</h2>
+        <p class="page-preview__decision">雜誌開場 C＋純閱讀正文 A</p>
+      </div>
+      <span class="page-preview__badge">桌機 1440px</span>
+    </header>
+    <div class="site-canvas">
+      
+    <header class="mock-site-header">
+      <div class="mock-brand" aria-label="尊嚴農業">
+        <span class="mock-brand__mark" aria-hidden="true">禾</span>
+        <strong class="mock-brand__name">尊嚴農業<span>DIGNITY FARMING</span></strong>
+      </div>
+      <nav aria-label="網站主要導覽">
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">最新消息</a></li>
+          <li><a href="#">田野誌</a></li>
+          <li><a href="#">聽見田裡的聲音</a></li>
+          <li><a href="#">田間知識與資源</a></li>
+          <li><a href="#">研究與行動</a></li>
+          <li><a href="#">認識尊嚴農業</a></li>
+        </ul>
+      </nav>
+    </header>
+      <main class="mock-main mock-page mock-page--article-single">
+        
+      <article class="article-page">
+        <section class="mock-hero mock-grid mock-grid--7-5 article-opening" aria-labelledby="article-title">
+          <header class="article-opening__copy">
+            <p class="mock-kicker">Podcast 單篇</p>
+            <h1 id="article-title">EP218：愛上種田的父女檔 張耀廣、張立涵</h1>
+            <p class="mock-meta"><time datetime="2026-07-02">2026.07.02</time> · Podcast · 農民人物與農業生產</p>
+            <p>今天的來賓是一對父女，和其它的來賓有點不一樣，因為父親是農夫，女兒也是農夫，務農是他們的主要工作。</p>
+            <div class="article-player" role="group" aria-label="EP218 Podcast 播放器">
+              <span class="article-player__play" aria-hidden="true">▶</span>
+              <span class="article-player__label">
+                <strong>直接播放 EP218</strong>
+                <small>01:00:06</small>
+              </span>
+              <audio class="article-player__audio" controls preload="none" src="https://m.cdn.firstory.me/track/cl0vof5aq004x0i375to981ze/cmr3a565j0hzq01uod6by7qgw/https%3A%2F%2Ffile.cdn.firstory.me%2FRecord%2Fcl0vof5aq004x0i375to981ze%2Fcmr3a565j0hzr01uo5sz5amqz.mp3?v=1782983558822">您的瀏覽器不支援音訊播放。</audio>
+            </div>
+          </header>
+          <figure class="mock-media article-featured-media" data-max-height="480">
+            <img src="https://fwdignity-local.local/wp-content/uploads/2026/07/h0rR-pG8Gt1CY089B2pq4.jpg" alt="EP218：愛上種田的父女檔 張耀廣、張立涵" loading="eager">
+          </figure>
+        </section>
+
+        <section class="mock-section article-reading" aria-labelledby="article-reading-title">
+          <header class="mock-section__head">
+            <div>
+              <p class="mock-kicker">純閱讀正文</p>
+              <h2 id="article-reading-title">節目內容</h2>
+            </div>
+            <p>正文維持 780px 閱讀寬度，依文件結構自然往下閱讀。</p>
+          </header>
+          <div class="mock-prose article-content">
+            <p>我們的節目訪問過很多位農夫，節目裡我常問他們：會不會希望自己的孩子也務農？大部分的人都告訴我：不會。因為工作太辛苦了，又不穩定，如果有更好的工作，還是別務農好了。</p>
+            <p>今天的來賓是一對父女，和其它的來賓有點不一樣，因為父親是農夫，女兒也是農夫，務農是他們的主要工作。</p>
+            <p>爸爸是張耀廣，從小就跟著父母一起從事農業。過去曾短暫在工廠上班，但因小孩多、開銷大，工廠月薪無法負擔，故又回歸務農。</p>
+            <p>女兒是張立函，以前很討厭務農，曾在外地工作，但產生職業倦怠，且工廠休假少、薪水固定，後來在家人的建議下回鄉務農，收入也比工廠好，非常開心。</p>
+            <p>原本在上班的立函為什麼會在父親建議回鄉種田？父女一起工作，會遇什麼的衝突？種田，會有成就感？</p>
+            <h2>節目來源</h2>
+            <p><a href="https://open.firstory.me/story/cmr3a565j0hzq01uod6by7qgw" target="_blank" rel="noopener noreferrer">Firstory 原始節目頁</a></p>
+          </div>
+        </section>
+      </article>
+    
+      </main>
+      
+    <footer class="mock-site-footer">
+      <div><h3>尊嚴農業</h3><p>共構雲嘉農業工作者職業健康的社會安全網</p></div>
+      <div><h3>快速連結</h3><ul><li>田間知識與資源</li><li>研究與行動</li></ul></div>
+      <div><h3>研究與共作</h3><p>國立中正大學團隊與地方夥伴共同整理、研究與公開。</p></div>
+    </footer>
+    </div>
+  </section>
+  </main>
+  <button class="reading-control" type="button" aria-label="調整閱讀文字大小">Aa</button>
+</body>
+</html>

@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 一般大眾
+ * Slug: Public
  * fwdignity theme — page-Public.php
  * 一般民眾 分眾入口頁(slug=Public)· AMBER
  *

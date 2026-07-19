@@ -1,0 +1,1137 @@
+/*
+ * 尊嚴農業全站版型候選
+ * 只供獨立 Chrome 暫時注入；不由 WordPress 或正式 theme 載入。
+ * 所有顏色、字體、字級、幾何與陰影均引用清朗田野 3.3.0 canonical tokens。
+ */
+
+html[data-layout-preview] {
+  scroll-behavior: auto !important;
+}
+
+html[data-layout-preview] body {
+  overflow-x: hidden !important;
+}
+
+html[data-layout-preview] :is(.reveal, [class*="reveal"]) {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+html[data-layout-preview] main {
+  isolation: isolate;
+}
+
+html[data-layout-preview] .layout-preview-toc {
+  border: 1px solid var(--fw-color-line);
+  border-radius: var(--fw-radius-card);
+  background: var(--fw-color-paper);
+  padding: 22px;
+}
+
+html[data-layout-preview] .layout-preview-toc > strong {
+  display: block;
+  margin-bottom: 12px;
+  font: 700 var(--fw-font-size-control)/1.5 var(--fw-font-sans);
+  color: var(--fw-color-ink);
+}
+
+html[data-layout-preview] .layout-preview-toc a {
+  display: block;
+  padding: 8px 0;
+  color: var(--fw-color-link);
+  font: 500 var(--fw-font-size-meta)/1.6 var(--fw-font-sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 01 首頁 A：任務先行 */
+html[data-layout-preview="home-a"] .fw-home-v04 {
+  display: grid !important;
+  grid-template-columns:
+    minmax(24px, 1fr)
+    minmax(0, 780px)
+    minmax(320px, 508px)
+    minmax(24px, 1fr) !important;
+  column-gap: 32px !important;
+}
+
+html[data-layout-preview="home-a"] .fw-home-v04-hero {
+  grid-column: 2 !important;
+  min-height: 560px !important;
+  margin: 56px 0 64px !important;
+  border-radius: var(--fw-radius-card) !important;
+  overflow: hidden !important;
+}
+
+html[data-layout-preview="home-a"] .fw-home-v04-hero-content {
+  min-height: 560px !important;
+  padding: 56px 48px !important;
+}
+
+html[data-layout-preview="home-a"] .fw-home-v06-weather {
+  grid-column: 3 !important;
+  align-self: stretch !important;
+  margin: 56px 0 64px !important;
+  border: 1px solid var(--fw-color-line) !important;
+  border-radius: var(--fw-radius-card) !important;
+  background: var(--fw-color-surface) !important;
+}
+
+html[data-layout-preview="home-a"] .fw-home-v06-weather-layout {
+  height: 100% !important;
+  align-content: center !important;
+  grid-template-columns: 1fr !important;
+  gap: 28px !important;
+}
+
+html[data-layout-preview="home-a"] .fw-home-v04 > :is(
+  .fw-home-v06-news-section,
+  .fw-home-v04-audio,
+  .fw-home-v04-resources,
+  .fw-home-v04-framework
+) {
+  grid-column: 1 / -1 !important;
+}
+
+/* 01 首頁 B：編輯頭版 */
+html[data-layout-preview="home-b"] .fw-home-v04-hero {
+  min-height: 520px !important;
+}
+
+html[data-layout-preview="home-b"] .fw-home-v04-hero-content {
+  min-height: 520px !important;
+  max-width: 1120px !important;
+  justify-content: flex-end !important;
+  padding-bottom: 72px !important;
+}
+
+html[data-layout-preview="home-b"] .fw-home-v06-news-section {
+  padding-top: 72px !important;
+}
+
+html[data-layout-preview="home-b"] .fw-home-v06-editorial-news {
+  grid-template-columns: minmax(0, 1.8fr) minmax(320px, .8fr) !important;
+  gap: 36px !important;
+}
+
+html[data-layout-preview="home-b"] .fw-home-v06-feature {
+  min-height: 620px !important;
+}
+
+html[data-layout-preview="home-b"] .fw-home-v06-news-picker-panel {
+  align-self: stretch !important;
+}
+
+html[data-layout-preview="home-b"] .fw-home-v04-framework-layout {
+  grid-template-columns: minmax(260px, .75fr) minmax(0, 1.75fr) !important;
+}
+
+/* 01 首頁 C：田野展卷 */
+html[data-layout-preview="home-c"] .fw-home-v04-hero {
+  min-height: 76vh !important;
+  max-height: 820px !important;
+}
+
+html[data-layout-preview="home-c"] .fw-home-v04-hero-content {
+  min-height: 76vh !important;
+  max-width: 1040px !important;
+  justify-content: flex-end !important;
+  padding-bottom: 88px !important;
+}
+
+html[data-layout-preview="home-c"] .fw-home-v06-weather {
+  max-width: 1040px !important;
+  margin: 48px auto 88px !important;
+  border-left-width: 4px !important;
+}
+
+html[data-layout-preview="home-c"] .fw-home-v06-news-section > .fw-home-v04-wrap,
+html[data-layout-preview="home-c"] .fw-home-v04-resources > .fw-home-v04-wrap,
+html[data-layout-preview="home-c"] .fw-home-v04-framework-layout {
+  max-width: 1080px !important;
+}
+
+html[data-layout-preview="home-c"] .fw-home-v06-editorial-news {
+  grid-template-columns: 1fr !important;
+  gap: 28px !important;
+}
+
+html[data-layout-preview="home-c"] .fw-home-v06-news-picker-panel {
+  display: grid !important;
+  grid-template-columns: 260px minmax(0, 1fr) !important;
+  gap: 28px !important;
+}
+
+html[data-layout-preview="home-c"] .fw-home-v04-framework-layout {
+  grid-template-columns: 1fr !important;
+}
+
+html[data-layout-preview="home-c"] .fw-home-v04-framework-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* 02 最新消息 A：頭條＋時間流 */
+html[data-layout-preview="news-a"] .tnews-workspace {
+  display: block !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-filter-panel {
+  position: static !important;
+  max-width: var(--fw-content-width) !important;
+  margin: 0 auto 44px !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-filter-form {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto !important;
+  gap: 20px !important;
+  align-items: start !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-results {
+  max-width: var(--fw-content-width) !important;
+  margin-inline: auto !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-grid {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-grid > .tnews-card:first-child {
+  grid-column: span 8 !important;
+  grid-row: span 2 !important;
+  display: block !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-grid > .tnews-card:first-child .tnews-card-media {
+  min-height: 420px !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-grid > .tnews-card:nth-child(2),
+html[data-layout-preview="news-a"] .tnews-grid > .tnews-card:nth-child(3) {
+  grid-column: span 4 !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-grid > .tnews-card:nth-child(n+4) {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: 220px minmax(0, 1fr) !important;
+  min-height: 0 !important;
+}
+
+html[data-layout-preview="news-a"] .tnews-grid > .tnews-card:nth-child(n+4) .tnews-card-media {
+  min-height: 190px !important;
+}
+
+/* 02 最新消息 B：日期索引 */
+html[data-layout-preview="news-b"] .tnews-workspace {
+  grid-template-columns: 286px minmax(0, 1fr) !important;
+  gap: 42px !important;
+}
+
+html[data-layout-preview="news-b"] .tnews-filter-panel {
+  position: sticky !important;
+  top: 104px !important;
+  align-self: start !important;
+}
+
+html[data-layout-preview="news-b"] .tnews-grid {
+  display: block !important;
+}
+
+html[data-layout-preview="news-b"] .tnews-card {
+  display: grid !important;
+  grid-template-columns: 190px minmax(0, 1fr) !important;
+  margin-bottom: 18px !important;
+  min-height: 0 !important;
+}
+
+html[data-layout-preview="news-b"] .tnews-card-media {
+  min-height: 168px !important;
+}
+
+html[data-layout-preview="news-b"] .tnews-card-body {
+  padding: 22px 26px !important;
+}
+
+/* 02 最新消息 C：主題編輯網格 */
+html[data-layout-preview="news-c"] .tnews-workspace {
+  display: block !important;
+}
+
+html[data-layout-preview="news-c"] .tnews-filter-panel {
+  position: static !important;
+  max-width: var(--fw-content-width) !important;
+  margin: 0 auto 40px !important;
+}
+
+html[data-layout-preview="news-c"] .tnews-filter-form {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto !important;
+  gap: 18px !important;
+}
+
+html[data-layout-preview="news-c"] .tnews-results {
+  max-width: var(--fw-content-width) !important;
+  margin-inline: auto !important;
+}
+
+html[data-layout-preview="news-c"] .tnews-grid {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+}
+
+html[data-layout-preview="news-c"] .tnews-card {
+  grid-column: span 4 !important;
+}
+
+html[data-layout-preview="news-c"] .tnews-card:first-child {
+  grid-column: span 8 !important;
+}
+
+html[data-layout-preview="news-c"] .tnews-card:nth-child(2) {
+  grid-column: span 4 !important;
+}
+
+html[data-layout-preview="news-c"] .tnews-card:nth-child(3),
+html[data-layout-preview="news-c"] .tnews-card:nth-child(4) {
+  grid-column: span 6 !important;
+}
+
+/* 03 指南 A：任務清單 */
+html[data-layout-preview="guide-a"] .fg-guide__quick-nav {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="guide-a"] .fg-guide__task-grid {
+  display: block !important;
+}
+
+html[data-layout-preview="guide-a"] .fg-guide__task {
+  display: grid !important;
+  grid-template-columns: minmax(250px, .75fr) minmax(0, 1.25fr) !important;
+  gap: 32px !important;
+  margin-bottom: 18px !important;
+  padding: 30px 34px !important;
+}
+
+html[data-layout-preview="guide-a"] .fg-guide__task-heading {
+  align-self: start !important;
+}
+
+/* 03 指南 B：雙軸工作台 */
+html[data-layout-preview="guide-b"] .fg-guide {
+  display: grid !important;
+  grid-template-columns: 340px minmax(0, 1fr) !important;
+  column-gap: 52px !important;
+  align-items: start !important;
+}
+
+html[data-layout-preview="guide-b"] .fg-guide__intro {
+  grid-column: 1 !important;
+  position: sticky !important;
+  top: 104px !important;
+  align-self: start !important;
+}
+
+html[data-layout-preview="guide-b"] .fg-guide__quick-nav {
+  grid-template-columns: 1fr !important;
+}
+
+html[data-layout-preview="guide-b"] .fg-guide__tasks,
+html[data-layout-preview="guide-b"] .fg-guide__resources {
+  grid-column: 2 !important;
+}
+
+html[data-layout-preview="guide-b"] .fg-guide__tasks {
+  margin-top: 0 !important;
+}
+
+html[data-layout-preview="guide-b"] .fg-guide__task-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* 03 指南 C：情境起步 */
+html[data-layout-preview="guide-c"] .fg-guide__intro {
+  max-width: 920px !important;
+  margin-inline: auto !important;
+}
+
+html[data-layout-preview="guide-c"] .fg-guide__quick-nav {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="guide-c"] .fg-guide__task-grid {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+}
+
+html[data-layout-preview="guide-c"] .fg-guide__task {
+  grid-column: span 5 !important;
+  min-height: 330px !important;
+}
+
+html[data-layout-preview="guide-c"] .fg-guide__task:nth-child(1),
+html[data-layout-preview="guide-c"] .fg-guide__task:nth-child(4) {
+  grid-column: span 7 !important;
+}
+
+/* 04 田野 A：田野雜誌 */
+html[data-layout-preview="field-a"] .field-home-intro-grid {
+  grid-template-columns: minmax(280px, .8fr) minmax(0, 1.2fr) !important;
+}
+
+html[data-layout-preview="field-a"] .field-featured {
+  grid-template-columns: minmax(0, 1.55fr) minmax(340px, .85fr) !important;
+}
+
+html[data-layout-preview="field-a"] .field-record-grid {
+  grid-template-columns: 1.35fr .825fr .825fr !important;
+}
+
+html[data-layout-preview="field-a"] .field-notes-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="field-a"] .field-notes-grid > .field-note {
+  grid-column: span 4 !important;
+}
+
+html[data-layout-preview="field-a"] .field-notes-grid > .field-note:first-child {
+  grid-column: span 8 !important;
+}
+
+html[data-layout-preview="field-a"] .pf-question-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="field-a"] .pf-question-entry {
+  grid-column: span 4 !important;
+}
+
+html[data-layout-preview="field-a"] .pf-question-entry:first-child,
+html[data-layout-preview="field-a"] .pf-question-entry:nth-child(4) {
+  grid-column: span 8 !important;
+}
+
+html[data-layout-preview="field-a"] .training-record-list {
+  grid-template-columns: 1.4fr .8fr .8fr !important;
+}
+
+/* 04 田野 B：時間軸 */
+html[data-layout-preview="field-b"] :is(
+  .field-record-grid,
+  .field-notes-grid,
+  .pf-content-list,
+  .training-record-list
+) {
+  display: block !important;
+}
+
+html[data-layout-preview="field-b"] :is(
+  .field-record-card,
+  .field-note,
+  .pf-content-card,
+  .training-record
+) {
+  display: grid !important;
+  grid-template-columns: 210px minmax(0, 1fr) !important;
+  margin: 0 0 20px 28px !important;
+  border-left: 3px solid var(--fw-topic-field) !important;
+}
+
+html[data-layout-preview="field-b"] .field-family-pathways {
+  grid-template-columns: 1fr !important;
+  max-width: 980px !important;
+}
+
+html[data-layout-preview="field-b"] .pf-question-grid,
+html[data-layout-preview="field-b"] .training-topic-grid {
+  grid-template-columns: 1fr !important;
+}
+
+html[data-layout-preview="field-b"] .field-topic-list {
+  display: block !important;
+}
+
+html[data-layout-preview="field-b"] .field-topic-list > a {
+  margin-bottom: 10px !important;
+}
+
+/* 04 田野 C：主題地圖 */
+html[data-layout-preview="field-c"] .field-family-pathways {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="field-c"] .field-topic-list,
+html[data-layout-preview="field-c"] .training-topic-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="field-c"] .pf-question-grid {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="field-c"] .pf-question-entry {
+  grid-column: span 6 !important;
+}
+
+html[data-layout-preview="field-c"] .pf-question-entry:first-child {
+  grid-column: 1 / -1 !important;
+}
+
+html[data-layout-preview="field-c"] .field-notes-grid,
+html[data-layout-preview="field-c"] .training-record-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* 05 主題 A：問題專刊 */
+html[data-layout-preview="topics-a"] .pf-topic-hero {
+  grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr) !important;
+  gap: 48px !important;
+}
+
+html[data-layout-preview="topics-a"] .pf-topic-feature {
+  grid-template-columns: minmax(0, 1.45fr) minmax(340px, .75fr) !important;
+}
+
+html[data-layout-preview="topics-a"] .pf-content-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+/* 05 主題 B：導讀＋證據列 */
+html[data-layout-preview="topics-b"] .pf-topic-page {
+  display: grid !important;
+  grid-template-columns: 260px minmax(0, 1fr) !important;
+  column-gap: 48px !important;
+  align-items: start !important;
+}
+
+html[data-layout-preview="topics-b"] .pf-breadcrumb,
+html[data-layout-preview="topics-b"] .pf-topic-hero,
+html[data-layout-preview="topics-b"] .pf-topic-pager {
+  grid-column: 1 / -1 !important;
+}
+
+html[data-layout-preview="topics-b"] .pf-topic-navigation {
+  grid-column: 1 !important;
+  position: sticky !important;
+  top: 104px !important;
+}
+
+html[data-layout-preview="topics-b"] :is(
+  .pf-topic-feature,
+  .pf-topic-content,
+  .pf-topic-research,
+  .pf-empty-state
+) {
+  grid-column: 2 !important;
+}
+
+html[data-layout-preview="topics-b"] .pf-topic-hero__copy {
+  max-width: var(--fw-reading-width) !important;
+}
+
+html[data-layout-preview="topics-b"] .pf-content-list {
+  display: block !important;
+}
+
+html[data-layout-preview="topics-b"] .pf-content-card {
+  display: grid !important;
+  grid-template-columns: 200px minmax(0, 1fr) !important;
+  margin-bottom: 18px !important;
+}
+
+/* 05 主題 C：交叉主題索引 */
+html[data-layout-preview="topics-c"] .pf-topic-hero {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="topics-c"] .pf-topic-navigation {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="topics-c"] .pf-content-list {
+  display: block !important;
+}
+
+html[data-layout-preview="topics-c"] .pf-content-card {
+  display: grid !important;
+  grid-template-columns: 230px minmax(0, 1fr) !important;
+  margin-bottom: 18px !important;
+}
+
+html[data-layout-preview="topics-c"] .pf-topic-research {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr) !important;
+}
+
+/* 06 影音 A：主打單集＋節目架 */
+html[data-layout-preview="media-a"] .mh-feature-stage {
+  grid-template-columns: minmax(0, 1.55fr) minmax(340px, .75fr) !important;
+}
+
+html[data-layout-preview="media-a"] .mh-podcast-desk {
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .75fr) !important;
+}
+
+html[data-layout-preview="media-a"] .mh-archive-list {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 20px !important;
+}
+
+html[data-layout-preview="media-a"] .mh-archive-item {
+  grid-template-columns: 150px minmax(0, 1fr) !important;
+}
+
+html[data-layout-preview="media-a"] .mh-archive-item .mh-row-action {
+  grid-column: 2 !important;
+}
+
+/* 06 影音 B：播放清單 */
+html[data-layout-preview="media-b"] .mh-feature {
+  padding-bottom: 36px !important;
+}
+
+html[data-layout-preview="media-b"] .mh-feature-stage {
+  grid-template-columns: 320px minmax(0, 1fr) !important;
+}
+
+html[data-layout-preview="media-b"] .mh-feature-player {
+  min-height: 240px !important;
+}
+
+html[data-layout-preview="media-b"] .mh-podcast-desk {
+  grid-template-columns: 360px minmax(0, 1fr) !important;
+}
+
+html[data-layout-preview="media-b"] .mh-archive-list {
+  display: block !important;
+}
+
+html[data-layout-preview="media-b"] .mh-archive-item {
+  display: grid !important;
+  grid-template-columns: 140px minmax(0, 1fr) auto !important;
+  min-height: 0 !important;
+  margin-bottom: 14px !important;
+}
+
+html[data-layout-preview="media-b"] .mh-archive-visual {
+  min-height: 130px !important;
+}
+
+html[data-layout-preview="media-b"] .mh-row-action {
+  align-self: center !important;
+  min-width: 116px !important;
+}
+
+/* 06 影音 C：聲音年表 */
+html[data-layout-preview="media-c"] .mh-series-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="media-c"] .mh-archive-list {
+  display: block !important;
+  position: relative !important;
+  padding-left: 34px !important;
+}
+
+html[data-layout-preview="media-c"] .mh-archive-list::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 auto 0 10px !important;
+  width: 2px !important;
+  background: var(--fw-color-line) !important;
+}
+
+html[data-layout-preview="media-c"] .mh-archive-item {
+  display: grid !important;
+  grid-template-columns: 180px minmax(0, 1fr) auto !important;
+  margin-bottom: 18px !important;
+  border-left: 4px solid var(--fw-topic-field) !important;
+}
+
+/* 07 研究 A：研究到行動路徑 */
+html[data-layout-preview="research-a"] .ra-topic-list {
+  display: block !important;
+  counter-reset: research-path !important;
+}
+
+html[data-layout-preview="research-a"] .ra-topic-list > a {
+  max-width: 980px !important;
+  margin-bottom: 14px !important;
+}
+
+html[data-layout-preview="research-a"] .ra-action-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="research-a"] .ra-output-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="research-a"] :is(.rs-main, .adv-main) {
+  max-width: 1120px !important;
+}
+
+html[data-layout-preview="research-a"] .adv-timeline {
+  max-width: 880px !important;
+}
+
+/* 07 研究 B：出版書架 */
+html[data-layout-preview="research-b"] .ra-page {
+  display: grid !important;
+  grid-template-columns: 300px minmax(0, 1fr) !important;
+  column-gap: 48px !important;
+  align-items: start !important;
+}
+
+html[data-layout-preview="research-b"] .ra-breadcrumb,
+html[data-layout-preview="research-b"] .ra-intro {
+  grid-column: 1 / -1 !important;
+}
+
+html[data-layout-preview="research-b"] .ra-questions {
+  grid-column: 1 !important;
+  position: sticky !important;
+  top: 104px !important;
+}
+
+html[data-layout-preview="research-b"] .ra-actions,
+html[data-layout-preview="research-b"] .ra-outputs {
+  grid-column: 2 !important;
+}
+
+html[data-layout-preview="research-b"] .ra-topic-list,
+html[data-layout-preview="research-b"] .ra-action-grid,
+html[data-layout-preview="research-b"] .ra-output-grid {
+  grid-template-columns: 1fr !important;
+}
+
+html[data-layout-preview="research-b"] .rs-main {
+  display: grid !important;
+  grid-template-columns: 250px minmax(0, 1fr) !important;
+  column-gap: 42px !important;
+}
+
+html[data-layout-preview="research-b"] .rs-hero {
+  grid-column: 1 / -1 !important;
+}
+
+html[data-layout-preview="research-b"] .rs-sec {
+  grid-column: 2 !important;
+}
+
+html[data-layout-preview="research-b"] .rs-sec:has(.rs-legend) {
+  grid-column: 1 !important;
+  grid-row: span 4 !important;
+  position: sticky !important;
+  top: 104px !important;
+}
+
+/* 07 研究 C：證據索引 */
+html[data-layout-preview="research-c"] .ra-topic-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="research-c"] .ra-action-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="research-c"] .ra-output-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="research-c"] .rs-main {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 30px !important;
+}
+
+html[data-layout-preview="research-c"] .rs-hero {
+  grid-column: 1 / -1 !important;
+}
+
+html[data-layout-preview="research-c"] .rs-sec {
+  margin: 0 !important;
+}
+
+html[data-layout-preview="research-c"] .adv-problem-grid,
+html[data-layout-preview="research-c"] .adv-pillar-grid,
+html[data-layout-preview="research-c"] .adv-fg-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+/* 08 關於 A：計畫敘事 */
+html[data-layout-preview="about-a"] .ab-hero-inner,
+html[data-layout-preview="about-a"] .as-hero-inner {
+  max-width: 980px !important;
+}
+
+html[data-layout-preview="about-a"] .ab-field {
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, .8fr) !important;
+}
+
+html[data-layout-preview="about-a"] .ab-action-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+html[data-layout-preview="about-a"] .ab-team-grid,
+html[data-layout-preview="about-a"] .as-team-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+/* 08 關於 B：機構檔案 */
+html[data-layout-preview="about-b"] .ab-sec {
+  display: grid !important;
+  grid-template-columns: 250px minmax(0, 1fr) !important;
+  gap: 36px !important;
+  align-items: start !important;
+}
+
+html[data-layout-preview="about-b"] .ab-sec-head {
+  grid-column: 1 !important;
+}
+
+html[data-layout-preview="about-b"] .ab-sec > :not(.ab-sec-head) {
+  grid-column: 2 !important;
+}
+
+html[data-layout-preview="about-b"] .ab-team-grid,
+html[data-layout-preview="about-b"] .as-team-grid {
+  display: block !important;
+}
+
+html[data-layout-preview="about-b"] .ab-team-card,
+html[data-layout-preview="about-b"] .as-team-card {
+  display: grid !important;
+  grid-template-columns: 120px minmax(0, 1fr) !important;
+  margin-bottom: 14px !important;
+}
+
+html[data-layout-preview="about-b"] .as-inst-section {
+  display: grid !important;
+  grid-template-columns: 240px minmax(0, 1fr) !important;
+  gap: 32px !important;
+}
+
+html[data-layout-preview="about-b"] .as-inst-header {
+  grid-column: 1 !important;
+  align-self: start !important;
+}
+
+html[data-layout-preview="about-b"] .as-role-subsection {
+  grid-column: 2 !important;
+}
+
+/* 08 關於 C：人物與場域 */
+html[data-layout-preview="about-c"] .ab-field {
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .65fr) !important;
+}
+
+html[data-layout-preview="about-c"] .ab-field-img {
+  min-height: 560px !important;
+}
+
+html[data-layout-preview="about-c"] .ab-team-grid,
+html[data-layout-preview="about-c"] .as-team-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+}
+
+html[data-layout-preview="about-c"] .ab-action-grid {
+  grid-template-columns: 1fr !important;
+}
+
+html[data-layout-preview="about-c"] .ab-action {
+  display: grid !important;
+  grid-template-columns: 88px minmax(0, 1fr) !important;
+}
+
+/* 09 單篇 A：純閱讀 */
+html[data-layout-preview="single-a"] .article-shell {
+  max-width: var(--fw-content-width) !important;
+}
+
+html[data-layout-preview="single-a"] .article-entry,
+html[data-layout-preview="single-a"] .article-related,
+html[data-layout-preview="single-a"] .article-return {
+  max-width: var(--fw-reading-width) !important;
+  margin-inline: auto !important;
+}
+
+html[data-layout-preview="single-a"] .article-header,
+html[data-layout-preview="single-a"] .article-content {
+  max-width: var(--fw-reading-width) !important;
+}
+
+/* 09 單篇 B：欄外導覽 */
+html[data-layout-preview="single-b"] .article-entry.has-layout-preview-toc {
+  display: grid !important;
+  grid-template-columns: minmax(0, var(--fw-reading-width)) 260px !important;
+  column-gap: 48px !important;
+  align-items: start !important;
+  max-width: 1100px !important;
+  margin-inline: auto !important;
+}
+
+html[data-layout-preview="single-b"] .article-entry.has-layout-preview-toc > :not(.layout-preview-toc) {
+  grid-column: 1 !important;
+}
+
+html[data-layout-preview="single-b"] .article-entry.has-layout-preview-toc > .layout-preview-toc {
+  grid-column: 2 !important;
+  grid-row: 3 / span 2 !important;
+  position: sticky !important;
+  top: 104px !important;
+}
+
+html[data-layout-preview="single-b"] .article-content {
+  max-width: var(--fw-reading-width) !important;
+}
+
+html[data-layout-preview="single-b"] .article-related {
+  max-width: 1100px !important;
+}
+
+/* 09 單篇 C：雜誌開場 */
+html[data-layout-preview="single-c"] .article-entry:has(.article-featured-image) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(400px, .95fr) !important;
+  column-gap: 44px !important;
+  align-items: start !important;
+  max-width: 1180px !important;
+  margin-inline: auto !important;
+}
+
+html[data-layout-preview="single-c"] .article-entry:has(.article-featured-image) .article-header {
+  grid-column: 1 !important;
+  align-self: center !important;
+}
+
+html[data-layout-preview="single-c"] .article-entry:has(.article-featured-image) .article-featured-image {
+  grid-column: 2 !important;
+  margin-top: 0 !important;
+}
+
+html[data-layout-preview="single-c"] .article-entry:has(.article-featured-image) .article-content,
+html[data-layout-preview="single-c"] .article-entry:has(.article-featured-image) .article-tags {
+  grid-column: 1 / -1 !important;
+  width: min(100%, var(--fw-reading-width)) !important;
+  margin-inline: auto !important;
+}
+
+html[data-layout-preview="single-c"] .article-related,
+html[data-layout-preview="single-c"] .article-return {
+  max-width: 1180px !important;
+  margin-inline: auto !important;
+}
+
+/* 所有候選的平板與手機降級 */
+@media (max-width: 800px) {
+  html[data-layout-preview] main {
+    min-width: 0 !important;
+  }
+
+  html[data-layout-preview^="home-"] .fw-home-v04 {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="home-"] .fw-home-v04-hero,
+  html[data-layout-preview^="home-"] .fw-home-v06-weather {
+    margin: 24px 18px 36px !important;
+  }
+
+  html[data-layout-preview^="home-"] .fw-home-v04-hero {
+    min-height: 520px !important;
+    max-height: none !important;
+  }
+
+  html[data-layout-preview^="home-"] .fw-home-v04-hero-content {
+    min-height: 520px !important;
+    padding: 36px 22px !important;
+  }
+
+  html[data-layout-preview^="home-"] :is(
+    .fw-home-v06-editorial-news,
+    .fw-home-v06-news-picker-panel,
+    .fw-home-v04-framework-layout,
+    .fw-home-v04-framework-grid
+  ) {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="news-"] .tnews-workspace,
+  html[data-layout-preview^="news-"] .tnews-filter-form,
+  html[data-layout-preview^="news-"] .tnews-grid {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="news-"] .tnews-filter-panel {
+    position: static !important;
+    margin: 0 18px 28px !important;
+  }
+
+  html[data-layout-preview^="news-"] .tnews-card {
+    display: block !important;
+    margin-bottom: 18px !important;
+  }
+
+  html[data-layout-preview^="news-"] .tnews-card-media {
+    min-height: 220px !important;
+  }
+
+  html[data-layout-preview^="guide-"] .fg-guide {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="guide-"] .fg-guide__intro {
+    position: static !important;
+  }
+
+  html[data-layout-preview^="guide-"] .fg-guide__quick-nav,
+  html[data-layout-preview^="guide-"] .fg-guide__task-grid,
+  html[data-layout-preview^="guide-"] .fg-guide__task {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="guide-"] .fg-guide__task {
+    min-height: 0 !important;
+  }
+
+  html[data-layout-preview^="field-"] :is(
+    .field-home-intro-grid,
+    .field-featured,
+    .field-family-pathways,
+    .field-record-grid,
+    .field-notes-grid,
+    .pf-question-grid,
+    .pf-content-list,
+    .training-record-list,
+    .training-topic-grid,
+    .field-topic-list
+  ) {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="field-"] :is(
+    .field-record-card,
+    .field-note,
+    .pf-content-card,
+    .training-record
+  ) {
+    display: block !important;
+    margin: 0 0 18px !important;
+  }
+
+  html[data-layout-preview^="topics-"] .pf-topic-page,
+  html[data-layout-preview^="topics-"] :is(
+    .pf-topic-hero,
+    .pf-topic-feature,
+    .pf-topic-navigation,
+    .pf-content-list,
+    .pf-content-card,
+    .pf-topic-research
+  ) {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="topics-"] .pf-topic-navigation {
+    position: static !important;
+  }
+
+  html[data-layout-preview^="topics-"] .pf-content-card {
+    margin-bottom: 18px !important;
+  }
+
+  html[data-layout-preview^="media-"] :is(
+    .mh-feature-stage,
+    .mh-podcast-desk,
+    .mh-archive-list,
+    .mh-archive-item,
+    .mh-series-list
+  ) {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="media-"] .mh-archive-list {
+    padding-left: 0 !important;
+  }
+
+  html[data-layout-preview^="media-"] .mh-archive-list::before {
+    display: none !important;
+  }
+
+  html[data-layout-preview^="media-"] .mh-archive-item {
+    margin-bottom: 18px !important;
+  }
+
+  html[data-layout-preview^="research-"] :is(
+    .ra-page,
+    .ra-topic-list,
+    .ra-action-grid,
+    .ra-output-grid,
+    .rs-main,
+    .adv-problem-grid,
+    .adv-pillar-grid,
+    .adv-fg-grid
+  ) {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="research-"] :is(.ra-questions, .rs-sec:has(.rs-legend)) {
+    position: static !important;
+  }
+
+  html[data-layout-preview^="research-"] :is(.ra-section, .rs-sec, .adv-sec) {
+    margin-bottom: 36px !important;
+  }
+
+  html[data-layout-preview^="about-"] :is(
+    .ab-sec,
+    .ab-field,
+    .ab-action-grid,
+    .ab-team-grid,
+    .as-team-grid,
+    .as-inst-section,
+    .ab-team-card,
+    .as-team-card,
+    .ab-action
+  ) {
+    display: block !important;
+  }
+
+  html[data-layout-preview^="about-"] .ab-field-img {
+    width: 100% !important;
+    min-height: 0 !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  html[data-layout-preview^="about-"] :is(.ab-team-card, .as-team-card) {
+    margin-bottom: 18px !important;
+  }
+
+  html[data-layout-preview^="single-"] .article-entry,
+  html[data-layout-preview^="single-"] .article-entry:has(.article-featured-image) {
+    display: block !important;
+    max-width: var(--fw-reading-width) !important;
+  }
+
+  html[data-layout-preview="single-b"] .layout-preview-toc {
+    position: static !important;
+    margin-bottom: 28px !important;
+  }
+
+  html[data-layout-preview^="single-"] .article-related,
+  html[data-layout-preview^="single-"] .article-return {
+    max-width: var(--fw-reading-width) !important;
+  }
+}

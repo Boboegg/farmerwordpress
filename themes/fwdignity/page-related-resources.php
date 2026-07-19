@@ -5,31 +5,27 @@
  */
 get_header(); ?>
 
-<div class="fw-page-layout">
+<div class="fw-page-layout fw-page-layout--full">
 
 <main class="rs-main" id="main" role="main">
 
   <!-- Hero -->
-  <section class="rs-hero reveal">
+  <section class="rs-hero">
     <div class="rs-hero-inner">
       <span class="rs-hero-badge"><i class="fas fa-link"></i> RESOURCES</span>
-      <h1 data-hook-title>相關資源</h1>
-      <p class="rs-hero-lead">整理政府單位、學術機構、非營利組織的農業職業健康與社會安全相關資源，方便農業工作者、衛教人員與研究者快速取得權威資訊。</p>
-      <div class="rs-hero-stats">
-        <div class="rs-hero-stat"><b><span data-count="4">4</span></b><span>資源類別</span></div>
-        <div class="rs-hero-stat"><b>官方</b><span>政府與學術來源</span></div>
-        <div class="rs-hero-stat"><b>持續更新</b><span>定期審查</span></div>
-      </div>
+      <h1>相關資源</h1>
+      <p class="rs-hero-lead">整理政府單位、學術機構與支持系統的農業職業健康及社會安全相關資源，方便農業工作者、衛教人員與研究者延伸查閱。</p>
+      <p class="rs-refresh-note">外部網站內容與網址可能變動，使用時仍應以各管理機關最新公告為準。</p>
     </div>
   </section>
 
   <!-- 類別 legend -->
-  <section class="rs-sec reveal">
+  <section class="rs-sec">
     <div class="rs-sec-head">
       <div class="rs-sec-icon"><i class="fas fa-sitemap"></i></div>
       <div>
-        <h2>資源<span class="accent">類別</span></h2>
-        <p>四大類別，依使用需求分類。</p>
+        <h2>資源類別</h2>
+        <p>依目前收錄內容與使用需求分類。</p>
       </div>
     </div>
     <div class="rs-legend">
@@ -41,8 +37,8 @@ get_header(); ?>
   </section>
 
   <!-- 政府單位 -->
-  <section class="rs-sec reveal">
-    <div class="rs-pub-year"><i class="fas fa-landmark"></i> 政府主管機關</div>
+  <section class="rs-sec">
+    <h2 class="rs-pub-year"><i class="fas fa-landmark"></i> 政府主管機關</h2>
     <div class="rs-pub-list">
       <a href="https://www.moa.gov.tw/" target="_blank" rel="noopener" class="rs-pub">
         <span class="rs-pub-type">政府</span>
@@ -75,8 +71,8 @@ get_header(); ?>
   </section>
 
   <!-- 保險機構 -->
-  <section class="rs-sec reveal">
-    <div class="rs-pub-year"><i class="fas fa-shield-halved"></i> 保險與權益</div>
+  <section class="rs-sec">
+    <h2 class="rs-pub-year"><i class="fas fa-shield-halved"></i> 保險與權益</h2>
     <div class="rs-pub-list">
       <a href="https://www.bli.gov.tw/" target="_blank" rel="noopener" class="rs-pub">
         <span class="rs-pub-type">保險</span>
@@ -109,8 +105,8 @@ get_header(); ?>
   </section>
 
   <!-- 學術研究 -->
-  <section class="rs-sec reveal">
-    <div class="rs-pub-year"><i class="fas fa-graduation-cap"></i> 學術研究資源</div>
+  <section class="rs-sec">
+    <h2 class="rs-pub-year"><i class="fas fa-graduation-cap"></i> 學術研究資源</h2>
     <div class="rs-pub-list">
       <a href="https://www.hisp.ntu.edu.tw/" target="_blank" rel="noopener" class="rs-pub">
         <span class="rs-pub-type">學術</span>
@@ -143,8 +139,8 @@ get_header(); ?>
   </section>
 
   <!-- 支持與求助 -->
-  <section class="rs-sec reveal">
-    <div class="rs-pub-year"><i class="fas fa-hand-holding-heart"></i> 支持與求助管道</div>
+  <section class="rs-sec">
+    <h2 class="rs-pub-year"><i class="fas fa-hand-holding-heart"></i> 支持與求助管道</h2>
     <div class="rs-pub-list">
       <a href="https://dep.mohw.gov.tw/DOMHAOH/cp-4902-48209-107.html" target="_blank" rel="noopener" class="rs-pub">
         <span class="rs-pub-type">支持</span>
@@ -168,21 +164,19 @@ get_header(); ?>
   </section>
 
   <!-- 交叉連結 -->
-  <section class="rs-sec reveal">
+  <section class="rs-sec">
     <div class="rs-cross">
-      <h3>延伸閱讀</h3>
+      <h2>延伸閱讀</h2>
       <div class="rs-cross-links">
         <a href="/research-results/"><i class="fas fa-circle-nodes"></i>研究成果總覽</a>
-        <a href="/research-publications/"><i class="fas fa-book-open"></i>研究出版</a>
+        <a href="<?php echo esc_url( home_url( '/research-results/research-publications/' ) ); ?>"><i class="fas fa-book-open"></i>研究出版</a>
         <a href="/podcast/"><i class="fas fa-podcast"></i>Podcast</a>
-        <a href="/download-zone/"><i class="fas fa-download"></i>下載專區</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<?php get_template_part( 'template-parts/sidebar' ); ?>
 </div>
 
 <?php get_footer();

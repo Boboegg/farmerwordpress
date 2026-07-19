@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 心理健康
+ * Slug: subpage-mental
  * fwdignity · page-subpage-mental.php
  * 心靈紓壓子頁(slug=subpage-mental)· 綠 #15803D
  */

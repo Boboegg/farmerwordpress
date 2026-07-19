@@ -56,24 +56,8 @@
   updateProgress();
   window.addEventListener('scroll', updateProgress, { passive: true });
 
-  // ===== 3. IntersectionObserver reveal stagger =====
-  const revealEls = document.querySelectorAll('.reveal, .bf-scenario-card, .bf-stat-card, .bf-pillar, .bf-explore-card, .bf-emergency-item');
-  revealEls.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)';
-  });
-  const io = new IntersectionObserver(entries => {
-    const visible = entries.filter(e => e.isIntersecting);
-    visible.forEach((e, idx) => {
-      setTimeout(() => {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-      }, idx * 80);
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  revealEls.forEach(el => io.observe(el));
+  // Content stays visible by default. Scroll-triggered hiding made long pages
+  // appear blank in no-scroll, screenshot, and assistive browsing contexts.
 
   // ===== 4. Stat Count-Up [data-count] — 用 DOM 節點重組,不碰 innerHTML =====
   const nfZh = new Intl.NumberFormat('zh-Hant', { maximumFractionDigits: 1 });

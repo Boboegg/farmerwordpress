@@ -26,6 +26,7 @@ $team = array(
         array( 'name'=>'顏孟芬', 'role'=>'博士後研究員', 'org'=>'高齡社會勞動與福祉研究中心', 'desc'=>'國立中正大學', 'img'=>'' ),
         array( 'name'=>'曾柏鴻', 'role'=>'專案助理', 'org'=>'高齡社會勞動與福祉研究中心', 'desc'=>'國立中正大學', 'img'=>'' ),
         array( 'name'=>'曾志桓', 'role'=>'專案助理', 'org'=>'高齡社會勞動與福祉研究中心', 'desc'=>'國立中正大學', 'img'=>'uploads/2025/12/S__10928178.jpg' ),
+        array( 'name'=>'陳俊榮', 'role'=>'專任助理', 'org'=>'', 'desc'=>'', 'img'=>'uploads/2025/12/485657-portrait2-20260716.jpg' ),
       ),
     ),
   ),
@@ -49,13 +50,6 @@ $team = array(
     ),
   ),
 );
-
-$total = 0;
-foreach ( $team as $inst ) {
-  foreach ( $inst['roles'] as $members ) {
-    $total += count( $members );
-  }
-}
 ?>
 
 <style>
@@ -64,32 +58,32 @@ foreach ( $team as $inst ) {
 .as-inst-header {
   display: flex; align-items: center; gap: 14px;
   padding: 16px 24px; margin-bottom: 28px;
-  border-left: 6px solid var(--as-main, #2c5f2d);
-  background: linear-gradient(90deg, var(--as-bg2, #f4f1e8), transparent);
+  border-left: 6px solid var(--fw-color-primary);
+  background: var(--fw-color-paper);
   border-radius: 6px;
 }
 .as-inst-header i {
-  font-size: 28px; color: var(--as-main, #2c5f2d);
+  font-size: 28px; color: var(--fw-color-primary);
 }
 .as-inst-header h2 {
-  margin: 0; font-size: 26px; font-weight: 800;
-  letter-spacing: 0.02em; color: var(--as-fg, #1a1a1a);
+  margin: 0; font-size: var(--fw-font-size-h3); font-weight: 700;
+  letter-spacing: 0; color: var(--fw-color-ink);
 }
-.as-role-subsection { margin: 32px 0; padding-left: 28px; border-left: 2px dashed var(--as-border, #d4c9ad); }
+.as-role-subsection { margin: 32px 0; padding-left: 28px; border-left: 2px dashed var(--fw-color-line); }
 .as-role-label {
-  display: inline-block; font-size: 14px; font-weight: 700;
-  letter-spacing: 0.08em; color: var(--as-main, #2c5f2d);
+  display: inline-block; font-size: var(--fw-font-size-meta); font-weight: 700;
+  letter-spacing: 0.08em; color: var(--fw-color-primary);
   padding: 4px 12px; margin-bottom: 16px;
-  background: var(--as-bg2, #f4f1e8); border-radius: 4px;
+  background: var(--fw-color-paper); border-radius: 4px;
   text-transform: uppercase;
 }
 @media (max-width: 768px) {
-  .as-inst-header h2 { font-size: 22px; }
+  .as-inst-header h2 { font-size: var(--fw-font-size-h4); }
   .as-role-subsection { padding-left: 16px; }
 }
 </style>
 
-<div class="fw-page-layout">
+<div class="fw-page-layout fw-page-layout--full">
 
 <main class="as-main" id="main" role="main">
 
@@ -97,8 +91,8 @@ foreach ( $team as $inst ) {
   <section class="as-hero reveal">
     <div class="as-hero-inner">
       <span class="as-hero-badge"><i class="fas fa-users"></i> RESEARCH TEAM</span>
-      <h1 data-hook-title>跨領域<span class="accent">共同研究</span></h1>
-      <p class="as-hero-lead">本計畫由國立中正大學與臺大醫院雲林分院共同主持，結合教育、傳播、勞工關係、政治、職業醫學、機械工程、運動科學等領域專業，共 <?php echo intval( $total ); ?> 位成員共同推動農業工作者職業健康的社會安全網建構。</p>
+      <h1>研究團隊</h1>
+      <p class="as-hero-lead">本計畫由國立中正大學與臺大醫院雲林分院共同主持，結合教育、傳播、勞工關係、政治、職業醫學、機械工程、運動科學等領域專業。</p>
     </div>
   </section>
 
@@ -116,21 +110,22 @@ foreach ( $team as $inst ) {
           <div class="as-team-grid">
             <?php foreach ( $members as $m ) :
               $img = ! empty( $m['img'] ) ? content_url( $m['img'] ) : '';
-              $placeholder = ! $img;
             ?>
-            <div class="as-team-card">
+            <div class="as-team-card<?php echo $img ? ' as-team-card--with-photo' : ' as-team-card--text-only'; ?>">
+              <?php if ( $img ) : ?>
               <div class="as-team-photo">
-                <?php if ( $placeholder ) : ?>
-                  <div style="width:100%;height:100%;display:grid;place-items:center;background:linear-gradient(135deg,var(--as-bg2),#fff);font-size:48px;color:var(--as-main);font-weight:900;font-family:'Lora',serif;"><?php echo esc_html( mb_substr( $m['name'], 0, 1 ) ); ?></div>
-                <?php else : ?>
-                  <img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $m['name'] ); ?>" loading="lazy">
-                <?php endif; ?>
+                <img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $m['name'] ); ?>" loading="lazy">
               </div>
+              <?php endif; ?>
               <div class="as-team-info">
-                <span class="org"><?php echo esc_html( $m['org'] ); ?></span>
+                <?php if ( ! empty( $m['org'] ) ) : ?>
+                  <span class="org"><?php echo esc_html( $m['org'] ); ?></span>
+                <?php endif; ?>
                 <h3 class="name"><?php echo esc_html( $m['name'] ); ?></h3>
                 <p class="role"><?php echo esc_html( $m['role'] ); ?></p>
-                <p class="desc"><?php echo esc_html( $m['desc'] ); ?></p>
+                <?php if ( ! empty( $m['desc'] ) ) : ?>
+                  <p class="desc"><?php echo esc_html( $m['desc'] ); ?></p>
+                <?php endif; ?>
               </div>
             </div>
             <?php endforeach; ?>
@@ -145,17 +140,14 @@ foreach ( $team as $inst ) {
     <div class="as-cross">
       <h3>延伸閱讀</h3>
       <div class="as-cross-links">
-        <a href="/about/"><i class="fas fa-info-circle"></i>關於我們</a>
-        <a href="/contact/"><i class="fas fa-envelope"></i>聯繫我們</a>
-        <a href="/day/"><i class="fas fa-calendar-days"></i>行事曆</a>
-        <a href="/research-result/"><i class="fas fa-circle-nodes"></i>研究成果</a>
+        <a href="/about/"><i class="fas fa-info-circle"></i>認識尊嚴農業</a>
+        <a href="<?php echo esc_url( home_url( '/research-results/' ) ); ?>"><i class="fas fa-circle-nodes"></i>研究成果</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<?php get_template_part( 'template-parts/sidebar' ); ?>
 </div>
 
 <?php get_footer();

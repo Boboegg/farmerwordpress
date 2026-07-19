@@ -1,4 +1,6 @@
-# 尊嚴農業網站設計系統 — V16 OKLCH Tinted Neutral 定案
+# 尊嚴農業網站設計系統 — V16 OKLCH Tinted Neutral（歷史，已停用）
+
+> **2026-07-13 起不得作為現役規格。**唯一完整現行檔為 `/Users/boboegg/bobohome-agent-claude/300_Areas/尊嚴農業/網站現行設計規範-清朗田野-2026-07-13.md`（清朗田野 × 編輯紙本，`2026-07-13-final-approved`）。本檔以下 V16 色彩、28 頁私人色盤、字級、圓角與陰影僅供歷史追溯；不得提供新 theme 的 token 或裁決。保留本檔而不複製新規格，是為維持「只有一份完整現役規則」。
 
 > **定案日期**：2026-04-11
 > **取代**：V14 Happy Hues（白底量瞎）+ V15 v1-v4（漸進式 override）

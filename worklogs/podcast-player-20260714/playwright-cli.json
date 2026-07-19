@@ -1,0 +1,20 @@
+{
+  "browser": {
+    "browserName": "chromium",
+    "launchOptions": {
+      "headless": true,
+      "args": [
+        "--ignore-certificate-errors",
+        "--autoplay-policy=no-user-gesture-required",
+        "--mute-audio"
+      ]
+    },
+    "contextOptions": {
+      "ignoreHTTPSErrors": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      }
+    }
+  }
+}

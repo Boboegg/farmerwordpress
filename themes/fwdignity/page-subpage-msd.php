@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 肌肉骨骼傷害
+ * Slug: subpage-msd
  * fwdignity · page-subpage-msd.php
  * 骨骼肌肉保健子頁(slug=subpage-msd)· 藍 #1E40AF
  */

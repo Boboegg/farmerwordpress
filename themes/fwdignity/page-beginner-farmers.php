@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 新手農友
+ * Slug: beginner-farmers
  * fwdignity theme — page-beginner-farmers.php
  * 新手務農 分眾入口頁(slug=beginner-farmers)
  *

@@ -1,3 +1,49 @@
+/* ===== 治理搬遷（2026-07-17 Phase D 批③）——本家族屬未發布休眠頁，重開前須依清朗田野 3.3.0 重寫（封條政策不變） ===== */
+
+body:is(
+  [data-page="occupational-accident-insurance"], [data-page="crop-insurance"],
+  [data-page="agricultural-subsidy-resources"]
+) {
+  --es-main: var(--fw-topic-policy);
+  --es-deep: var(--fw-color-primary-deep);
+  --es-bg: var(--fw-color-paper);
+  --es-accent: var(--fw-topic-policy);
+  --es-accent-deep: var(--fw-color-primary-deep);
+  --es-accent-bg: var(--fw-color-surface-alt);
+  --es-gold-bg: var(--fw-color-surface-alt);
+  --es-gold-deep: var(--fw-color-accent-text);
+  --es-line: var(--fw-color-line);
+}
+
+body.fw-page-v15 main .es-table-head {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-paper) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .es-table-head :is(a, h2, h3, p, span, strong) {
+  color: var(--fw-color-ink) !important;
+}
+
+body.fw-page-v15 main .es-hero {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .es-hero :is(p, li) {
+  color: var(--fw-color-muted) !important;
+}
+
+body.fw-page-v15 main .es-hero::before,
+body.fw-page-v15 main .es-hero::after {
+  background: none !important;
+}
+
 /* ============================================================
    fwdignity · page-economic-sub.css
    經濟與保險 3 子頁共用 · MASTER FINAL 2026-04-20
@@ -183,7 +229,7 @@ body[data-page="agricultural-subsidy-resources"]  { --es-accent: #F59E0B; --es-a
   font-size: 12.5px;
   letter-spacing: 0.04em;
 }
-.es-table tbody tr:hover { background: #FAFAFA; }
+
 .es-table tbody tr:last-child td { border-bottom: none; }
 .es-table td strong, .es-table td b { color: var(--es-accent-deep); font-weight: 800; }
 .es-table .hl { color: var(--es-accent); font-weight: 800; }
@@ -213,10 +259,7 @@ body[data-page="agricultural-subsidy-resources"]  { --es-accent: #F59E0B; --es-a
   transition: all 0.3s var(--e-out);
   position: relative;
 }
-.es-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(8,145,178,0.1);
-}
+
 .es-card-icon {
   width: 48px; height: 48px;
   background: var(--es-accent-bg);
@@ -374,8 +417,8 @@ body[data-page="agricultural-subsidy-resources"]  { --es-accent: #F59E0B; --es-a
   font-size: 13px;
   transition: all 0.2s;
 }
-.es-official-item:hover { background: var(--es-accent); color: #fff; transform: translateX(3px); }
-.es-official-item:hover i { color: #fff; }
+
+
 .es-official-item i { color: var(--es-accent); font-size: 16px; flex-shrink: 0; }
 
 /* ===== Sources ===== */
@@ -395,7 +438,7 @@ body[data-page="agricultural-subsidy-resources"]  { --es-accent: #F59E0B; --es-a
   word-break: break-all;
 }
 .es-sources a { color: var(--es-main); text-decoration: none; }
-.es-sources a:hover { text-decoration: underline; }
+
 
 /* ===== Cross links ===== */
 .es-cross {
@@ -420,11 +463,24 @@ body[data-page="agricultural-subsidy-resources"]  { --es-accent: #F59E0B; --es-a
   font-size: 13px;
   transition: all 0.2s;
 }
-.es-cross-grid a:hover { transform: translateX(3px); border-color: var(--es-main); }
+
 .es-cross-grid a i { color: var(--es-main); }
 
 /* ===== RWD ===== */
 @media (max-width: 720px) {
   .es-hero { padding: 44px 22px 40px; }
   .es-grid, .es-steps { grid-template-columns: 1fr; }
+}
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .es-table tbody tr:hover { background: #FAFAFA; }
+  .es-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(8,145,178,0.1);
+}
+  .es-official-item:hover { background: var(--es-accent); color: #fff; transform: translateX(3px); }
+  .es-official-item:hover i { color: #fff; }
+  .es-sources a:hover { text-decoration: underline; }
+  .es-cross-grid a:hover { transform: translateX(3px); border-color: var(--es-main); }
 }

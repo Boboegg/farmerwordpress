@@ -1,0 +1,111 @@
+/*
+ * 尊嚴農業 canonical design tokens 3.3.0
+ * 2026-07-13 Bobo 定案：「清朗田野 × 編輯紙本」。
+ * 本檔是現役色彩、字體、幾何與效果的唯一 token 來源。
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Neutral surfaces and text roles */
+  --fw-color-page: #FDFBF7;
+  --fw-color-paper: #F5F5F2;
+  --fw-color-surface: #FFFFFF;
+  --fw-color-surface-alt: #F0F0EC;
+  --fw-color-primary: #435832;
+  --fw-color-primary-deep: #314225;
+  --fw-color-ink: #283121;
+  --fw-color-muted: #566155;
+  --fw-color-reading: #1A1A1A;
+  --fw-color-reading-muted: #4A4A4A;
+  --fw-color-link: #435832;
+  --fw-color-link-hover: #314225;
+  --fw-color-accent: #A57E26;
+  --fw-color-accent-text: #7B5D12;
+  --fw-color-line: #E0E0E0;
+  --fw-color-focus: #283121;
+  --fw-color-focus-separator: #F7F6F1;
+  --fw-color-danger: #A24A3D;
+  --fw-color-footer-background: #25331E;
+  --fw-color-on-dark: #F7F6F1;
+  --fw-color-on-dark-muted: #DCE4D8;
+
+  /* Approved semantic status surfaces */
+  --fw-color-status-open-bg: #E8ECE3;
+  --fw-color-status-change-bg: #F7EED9;
+  --fw-color-status-danger-bg: #F7E7E3;
+  --fw-color-status-neutral-bg: #F0F0EC;
+  --fw-color-status-neutral: #737970;
+
+  /* Media surfaces remain light except for the home-only band. */
+  --fw-color-media-background: #F5F5F2;
+  --fw-color-media-card: #FFFFFF;
+  --fw-home-media-band: #435832;
+  --fw-home-media-band-card: #34452D;
+
+  /* Small semantic marks only; page families do not own private palettes. */
+  --fw-topic-field: #376E7C;
+  --fw-topic-policy: #376E7C;
+  --fw-topic-research: #376E7C;
+  --fw-topic-health: var(--fw-color-primary);
+  --fw-topic-safety: var(--fw-color-accent-text);
+  --fw-topic-learning: var(--fw-color-accent-text);
+  --fw-topic-advocacy: var(--fw-color-accent-text);
+  --fw-sprout: var(--fw-color-accent);
+
+  /* Font families and standard reader scale */
+  --fw-font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --fw-font-serif: "Noto Serif TC", "Songti TC", serif;
+  --fw-font-size-h1: 48px;
+  --fw-font-size-h2: 34px;
+  --fw-font-size-h3: 24px;
+  --fw-font-size-h4: 20px;
+  --fw-font-size-card-title: 22px;
+  --fw-font-size-body: 18px;
+  --fw-font-size-long-body: 20px;
+  --fw-font-size-lead: 18px;
+  --fw-font-size-summary: 17px;
+  --fw-font-size-nav: 17px;
+  --fw-font-size-control: 16px;
+  --fw-font-size-meta: 15px;
+  --fw-line-height-h1: 1.32;
+  --fw-line-height-h2: 1.38;
+  --fw-line-height-h3: 1.45;
+  --fw-line-height-h4: 1.5;
+  --fw-line-height-card-title: 1.5;
+  --fw-line-height-body: 1.8;
+  --fw-line-height-long-body: 1.85;
+  --fw-line-height-summary: 1.75;
+  --fw-line-height-nav: 1.5;
+  --fw-line-height-control: 1.5;
+  --fw-line-height-meta: 1.6;
+  --fw-line-height-heading: var(--fw-line-height-h1);
+
+  /* Layout and role-based geometry */
+  --fw-content-width: 1320px;
+  --fw-reading-width: 780px;
+  /* 間距三層關係（2026-07-17 明文化，健檢 S-4）：本檔 64/56 為行動版基準；
+     桌機（>=821px）由 site-v3-layout-final 收斂為規格值 48/32；podcast 頁豁免維持已目視版本。 */
+  --fw-section-space: 64px;
+  --fw-section-space-compact: 56px;
+  --fw-control-height: 44px;
+  --fw-radius-card: 14px;
+  --fw-radius-control: 4px;
+  --fw-radius-tag: 2px;
+  --fw-radius-small: var(--fw-radius-control);
+  --fw-thumb-card-ratio: 3 / 2;
+  --fw-thumb-wide-ratio: 16 / 9;
+  --fw-thumb-square-ratio: 1 / 1;
+  --fw-thumb-list-width: 220px;
+  --fw-thumb-list-height: 140px;
+  --fw-thumb-feature-height: 430px;
+
+  /* B: role-based depth */
+  --fw-shadow-tool: 0 4px 14px rgba(37, 51, 30, .06);
+  --fw-shadow-popover: 0 16px 40px rgba(37, 51, 30, .16);
+  --fw-shadow-floating: 0 6px 18px rgba(37, 51, 30, .18);
+
+  /* Motion */
+  --fw-motion-duration: 160ms;
+  --fw-ease-out: ease-out;
+}

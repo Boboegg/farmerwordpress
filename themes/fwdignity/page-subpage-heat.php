@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 熱危害預防
+ * Slug: subpage-heat
  * fwdignity · page-subpage-heat.php
  * 熱危害預防子頁(slug=subpage-heat)· 紅 #DC2626
  * 🔴 紅線:文字 / 數字 / 引用 1:1 復用原頁。

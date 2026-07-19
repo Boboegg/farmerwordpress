@@ -1,3 +1,47 @@
+/* ===== 治理搬遷（2026-07-17 Phase D 批③）——本家族屬未發布休眠頁，重開前須依清朗田野 3.3.0 重寫（封條政策不變） ===== */
+
+body:is(
+  [data-page="worker-occupational-accident-calculator"],
+  [data-page="farmer-worker-retirement-calculator"]
+) {
+  --cc-main: var(--fw-topic-policy);
+  --cc-deep: var(--fw-color-primary-deep);
+  --cc-bg: var(--fw-color-paper);
+  --cc-accent: var(--fw-color-accent);
+  --cc-gold-bg: var(--fw-color-surface-alt);
+  --cc-gold-deep: var(--fw-color-accent-text);
+  --cc-line: var(--fw-color-line);
+}
+
+body.fw-page-v15 main .cc-tool-header {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-paper) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .cc-tool-header :is(a, h2, h3, p, span, strong) {
+  color: var(--fw-color-ink) !important;
+}
+
+body.fw-page-v15 main .cc-hero {
+  color: var(--fw-color-ink) !important;
+  background: var(--fw-color-page) !important;
+  background-image: none !important;
+  border-color: var(--fw-color-line) !important;
+  box-shadow: none !important;
+}
+
+body.fw-page-v15 main .cc-hero :is(p, li) {
+  color: var(--fw-color-muted) !important;
+}
+
+body.fw-page-v15 main .cc-hero::before,
+body.fw-page-v15 main .cc-hero::after {
+  background: none !important;
+}
+
 /* ============================================================
    fwdignity · page-calc.css
    試算工具 2 頁共用樣式 · MASTER FINAL 2026-04-20
@@ -209,7 +253,7 @@ body[data-page="farmer-worker-retirement-calculator"] {
   font-weight: 700;
   transition: all 0.2s;
 }
-.cc-tool-btn:hover { background: var(--cc-accent); color: var(--cc-deep); border-color: var(--cc-accent); }
+
 .cc-tool-iframe {
   display: block;
   width: 100%;
@@ -254,8 +298,8 @@ body[data-page="farmer-worker-retirement-calculator"] {
   font-size: 13.5px;
   transition: all 0.2s;
 }
-.cc-official-item:hover { background: var(--cc-main); color: #fff; transform: translateX(3px); }
-.cc-official-item:hover i { color: #fff; }
+
+
 .cc-official-item i { color: var(--cc-main); font-size: 18px; }
 
 /* ===== 交叉連結 ===== */
@@ -281,7 +325,7 @@ body[data-page="farmer-worker-retirement-calculator"] {
   font-size: 13px;
   transition: all 0.2s;
 }
-.cc-cross-links a:hover { transform: translateX(3px); border-color: var(--cc-main); }
+
 .cc-cross-links a i { color: var(--cc-main); }
 
 /* ===== RWD ===== */
@@ -290,4 +334,12 @@ body[data-page="farmer-worker-retirement-calculator"] {
   .cc-guide { padding: 22px 20px; }
   .cc-tool-iframe { min-height: 1600px; }
   .cc-tool-iframe.short { min-height: 1300px; }
+}
+
+/* 2026-07-16 W2-B：以下 hover 規則統一移入 hover-capable gate（規格 §六），原位置移除或分拆。 */
+@media (hover: hover) and (pointer: fine) {
+  .cc-tool-btn:hover { background: var(--cc-accent); color: var(--cc-deep); border-color: var(--cc-accent); }
+  .cc-official-item:hover { background: var(--cc-main); color: #fff; transform: translateX(3px); }
+  .cc-official-item:hover i { color: #fff; }
+  .cc-cross-links a:hover { transform: translateX(3px); border-color: var(--cc-main); }
 }

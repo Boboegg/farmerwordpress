@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 職業安全
+ * Slug: occupational-safety
  * fwdignity theme — page-occupational-safety.php
  * 職業安全 章節 Hub 頁(slug=occupational-safety)
  *

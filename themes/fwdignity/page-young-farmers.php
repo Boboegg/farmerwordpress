@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 青年農友
+ * Slug: young-farmers
  * fwdignity theme — page-young-farmers.php
  * 青農 分眾入口頁(slug=young-farmers)· ROYAL BLUE
  *

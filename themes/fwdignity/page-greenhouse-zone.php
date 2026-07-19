@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 溫室專區
+ * Slug: greenhouse-zone
  * fwdignity · page-greenhouse-zone.php
  * 溫室作業子頁(slug=greenhouse-zone)· 琥珀 #F59E0B
  * 🔴 紅線:文字 / 數字 / 引用 1:1 復用原頁。
